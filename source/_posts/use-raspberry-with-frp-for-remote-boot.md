@@ -23,15 +23,14 @@ date: 2018-07-19 22:56:39
     需要用到的设备有：
 
     0.  用来进行远程开机以及远程控制的设备一台；
-        
+
     1.  具有 **IP/MAC绑定** 功能的路由器一台；
-        
+
     2.  树莓派一台；
-        
+
     3.  支持 WOL 的 PC 一台；
-        
+
     4.  带有公网 IP 的服务器一台。
-    
 
 3.  具体操作
 
@@ -43,10 +42,10 @@ date: 2018-07-19 22:56:39
         ipconfig -all
         ```
 
-        来查看 
-        
-        ![MACWindows.png](https://i.loli.net/2018/07/19/5b507b1a4128f.png) 
-        
+        来查看
+
+        ![MACWindows.png](https://i.loli.net/2018/07/19/5b507b1a4128f.png)
+
         在 **raspberry** 下可以使用
 
         ```shell
@@ -54,9 +53,9 @@ date: 2018-07-19 22:56:39
         ```
 
         来查看
-        
+
         ![MACraspberry.png](https://i.loli.net/2018/07/19/5b507b1a4292a.png)
-        
+
         可以看到树莓派有两个 MAC 地址，由于我是使用无线连接所以我选择的是第二个 _wlan0_。 然后使用 **IP/MAC绑定** 功能将两台设备与 IP 进行绑定，绑定的时候建议就选择当前使用的 IP 以免用了其他设备正在使用的 IP，造成 IP 冲突。 如果绑定了其他的 IP，请在绑定成功后重启设备。
 
     1.  PC WOL 配置
@@ -69,22 +68,22 @@ date: 2018-07-19 22:56:39
 
         > 魔法数据包（Magic Packet）是一个广播性的帧（frame），透过端口7或端口9进行发送，且可以用无连接（Connectionless protocol）的通信协议（如UDP、IPX）来传递，不过一般而言多是用UDP，原因是Novell公司的Netware网络操作系统的IPX协议已经愈来愈少机会被使用。 在魔法数据包内，每次都会先有连续6个"FF"（十六进制，换算成二进制即：11111111）的数据，即：FF FF FF FF FF FF，在连续6个"FF"后则开始带出MAC地址信息，有时还会带出4字节或6字节的密码，一旦经由网卡侦测、解读、研判（广播）魔法数据包的内容，内容中的MAC地址、密码若与电脑自身的地址、密码吻合，就会启动唤醒、引导的程序。
 
-        所以我们要先设置 BIOS 打开「**网卡唤醒**」这一功能，由于各个品牌主板的 BIOS 各不相同，所以设置的方法也各式各样，大家可以自行搜索「**wake on lan 设置**」，来寻找正确的方式。不过大多是在 **电源管理**（Power Management Setup）中。 然后是系统上的设置，这里我以 _Windows 10 17134.165_ 版本为例。 首先右键「**网络**」-「**属性**」来打开「**网络和共享中心**」面板： 
-        
+        所以我们要先设置 BIOS 打开「**网卡唤醒**」这一功能，由于各个品牌主板的 BIOS 各不相同，所以设置的方法也各式各样，大家可以自行搜索「**wake on lan 设置**」，来寻找正确的方式。不过大多是在 **电源管理**（Power Management Setup）中。 然后是系统上的设置，这里我以 _Windows 10 17134.165_ 版本为例。 首先右键「**网络**」-「**属性**」来打开「**网络和共享中心**」面板：
+
         ![4.png](https://i.loli.net/2018/07/19/5b507b129fdee.png)
-        
+
         在左侧单击「**更改适配器设置**」-右键你现在正在使用的网卡-「**属性**」来打开「**属性**」面板：
-        
+
         ![1.png](https://i.loli.net/2018/07/19/5b507b12983ac.png)
-        
+
         单击上方的「**配置**」-选择「**高级**」选项卡-在属性类别中将「**关机 网络唤醒**」和「**魔术封包唤醒**」的值设置为「**开启**」：
-        
+
         ![3.png](https://i.loli.net/2018/07/19/5b507b129f1e7.png)
-        
+
         选择「**电源管理**」选项卡-勾选「**允许计算机关闭此设备以节约电源**」和「**允许此设备唤醒计算机**」选项：
-        
+
         ![2.png](https://i.loli.net/2018/07/19/5b507b1298186.png)
-        
+
         就此，PC 端的设置已经完成了。
 
     2.  带公网 IP 的服务器配置
@@ -92,46 +91,46 @@ date: 2018-07-19 22:56:39
         带公网 IP 的服务器，大家可以去阿里云或者腾讯云买一台最低配的就可以了，我的这台是之前在腾讯云薅羊毛薅的。 这个服务器的作用主要是运行 _frp_ 的服务端来使局域网内的树莓派可以内网穿透。 _frp_ 是一个免费的开源的内网穿透软件，而且部署简单方便。具体方式如下：
 
         我们可以在 [https://github.com/fatedier/frp/releases](https://github.com/fatedier/frp/releases) 下载指定架构下的版本，我在腾讯云服务器上使用的 _Ubuntu_ 系统，所以选择的是 `frp_0.20.0_linux_amd64.tar.gz` 这个版本。可以下载下来使用 _FTP_ 来放到服务器上，也可以在服务器上使用：
-    
+
         ```shell
         wget https://github.com/fatedier/frp/releases/download/v0.20.0/frp_0.20.0_linux_amd64.tar.gz
         ```
-        
+
         来直接下载到服务器上。
-    
+
     3.  下载完成后使用：
-    
+
         ```shell
         tar -zxvf frp_0.20.0_linux_amd64.tar.gz
         ```
         解压文件。
-    
+
     4.  进入目录：
-    
+
         ```shell
         cd frp_2.20.0_linux_amd64
         ```
 
     5.  通过 `rm` 命令来删除 `frpc` 和 `frpc.ini` 两个文件
-        
+
         ```shell
         rm frpc frpc.ini
         ```
-        
+
     6.  打开配置文件 `frps.ini`
-        
+
         ```shell
         vim frps.ini
-        ```    
-        
+        ```
+
     7.  更改配置如下：
-        
+
         ```ini
         [common]
         bind_port = 7000           #与客户端绑定的进行通信的端口
         vhost_http_port = 6081     #访问客户端web服务自定义的端口号
         ```
-        
+
         注：
 
         1.  「#」 后面的是注释，可以不写；
@@ -139,13 +138,13 @@ date: 2018-07-19 22:56:39
         2.  这边 _Vim_ 的用法可以上搜索引擎查一下，这里不多赘述。
 
     8.  然后启动服务：
-        
+
         ```shell
         ./frps -c ./frps.ini
         ```
-        
+
         这个是前台启动服务，会输出日志信息，是用来调试的用的，到时调试成功了就可以使用后台服务启动：
-        
+
         ```shell
         nohup ./frps -c ./frps.ini &
         ```
@@ -154,37 +153,37 @@ date: 2018-07-19 22:56:39
 
 4.  树莓派配置
 
-    我现在使用的是 _Raspberry 3B_，当时是在淘宝 _￥195_ 的价格买的，如果配上电源以及 _SD_ 卡的等配件一共是 _￥278.9_。清单如下： 
-    
+    我现在使用的是 _Raspberry 3B_，当时是在淘宝 _￥195_ 的价格买的，如果配上电源以及 _SD_ 卡的等配件一共是 _￥278.9_。清单如下：
+
     ![list.png](https://i.loli.net/2018/07/19/5b507b12b3fed.png)
-    
+
     之后的系统安装我就不在这详细说明了，网上有很多详细的教程。 树莓派的配置和服务器配置其实是差不多的，不同的是服务器上的部署的是 _frp_ 的服务端，而树莓派上的部署的是客户端。 从下载到解压的步骤和服务器端是一模一样的，只要照着之前的步骤做就可以了。 从第三步删除文件开始有所不同：
 
     0.  在服务器上我们删除的是 `frpc` 和 `frpc.ini`，这两个是 _frp_ 的客户端程序和客户端配置文件，同理我们在树莓派也就是服务器端上就要删除 `frps` 和 `frps.ini` 这两个文件：
-    
+
         ```shell
         rm frps frps.ini
         ```
-        
+
     1.  打开配置文件 `frpc.ini`
-    
+
         ```shell
         vim frpc.ini
         ```
-    
+
     2.  更改配置如下：
-    
+
         ```ini
         [common]
         server_addr = 118.126.***.***
         server_port = 7000
-        
+
         [ssh]
         type = tcp
         local_ip = 192.168.1.100
         local_port = 22
         remote_port = 6022
-        
+
         [mysql]
         type = tcp
         local_port = 3306
@@ -192,19 +191,18 @@ date: 2018-07-19 22:56:39
         ```
 
         `server_addr` 即为服务器的公网 IP 的地址，`server_port` 为之前在服务端配置时的 `bind_port`，这里我用的是 `7000`。 然后是需要内网穿透的服务的配置，我这里写了两个，一个是 _SSH_，一个是 _MySQL_。如果只要能进行远程连接的话我们只需要 _SSH_ 的配置就好了，这里要注意的就是 `remote_port`，自定义的端口号，不要填 `22`，因为在服务器上已经被占用了（被用于服务器的 _SSH_），所以你要选一个没被占用的端口来使用，这里我用的是 `6022`。
-    
+
     3.  然后启动服务：
-    
+
         ```shell
         ./frpc -c ./frpc.ini
         ```
-    
+
         同样的，后台服务启动是：
-    
+
         ```shell
         nohup ./frpc -c ./frpc.ini &
         ```
-    
 
 5.  测试 _frp_
 
@@ -215,13 +213,13 @@ date: 2018-07-19 22:56:39
     ```
 
     然后键入树莓派的密码就可以了：
-    
+
     ![SSHraspberryPC.png](https://i.loli.net/2018/07/19/5b507b1a44208.png)
-    
+
     当然也可以用手机的移动网络来访问：
-    
+
     ![SSHPhone.png](https://i.loli.net/2018/07/19/5b507b1a5450c.png)
-    
+
     至此我们已经成功的内网内网穿透了，即可以从外网访问内网设备了，接下来我们就要通过树莓派来使家中的 PC 开机了。
 
 6.  在树莓派上使用 _WOL_ 控制 PC 开机
@@ -233,14 +231,14 @@ date: 2018-07-19 22:56:39
     # -*- encoding: utf-8 -*-
     from __future__ import absolute_import
     from __future__ import unicode_literals
-    
+
     import argparse
     import socket
     import struct
-    
+
     BROADCAST_IP = '255.255.255.255'
     DEFAULT_PORT = 9
-    
+
     def create_magic_packet(macaddress):
         if len(macaddress) == 12:
             pass
@@ -249,16 +247,16 @@ date: 2018-07-19 22:56:39
             macaddress = macaddress.replace(sep, '')
         else:
             raise ValueError('Incorrect MAC address format')
-    
+
         # Pad the synchronization stream
         data = b'FFFFFFFFFFFF' + (macaddress * 16).encode()
         send_data = b''
-    
+
         # Split up the hex values in pack
         for i in range(0, len(data), 2):
             send_data += struct.pack(b'B', int(data[i: i + 2], 16))
         return send_data
-    
+
     def send_magic_packet(*macs, **kwargs):
         packets = []
         ip = kwargs.pop('ip_address', BROADCAST_IP)
@@ -266,18 +264,18 @@ date: 2018-07-19 22:56:39
         for k in kwargs:
             raise TypeError('send_magic_packet() got an unexpected keyword '
                             'argument {!r}'.format(k))
-    
+
         for mac in macs:
             packet = create_magic_packet(mac)
             packets.append(packet)
-    
+
         sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
         sock.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, 1)
         sock.connect((ip, port))
         for packet in packets:
             sock.send(packet)
         sock.close()
-    
+
     def main(argv=None):
         parser = argparse.ArgumentParser(
             description='Wake one or more computers using the wake on lan'
@@ -301,7 +299,7 @@ date: 2018-07-19 22:56:39
             help='The port of the host to send the magic packet to (default 9)')
         args = parser.parse_args(argv)
         send_magic_packet(*args.macs, ip_address=args.i, port=args.p)
-    
+
     if __name__ == '__main__':  # pragma: nocover
         main()
     ```
@@ -317,22 +315,21 @@ date: 2018-07-19 22:56:39
 7.  其他
 
     1.  事后，我用 _Wireshark_ 抓了包，找到了这个 _Magic Packet_：
-    
+
         ![6.png](https://i.loli.net/2018/07/19/5b507b12b69cb.png)
-    
+
         发现和 _Wiki_ 上说的一样：以 `6` 个 `FF` 开始，并且重复 `16` 遍 MAC 地址。
-    
+
     2.  可以看到，我在树莓派上的 _frp_ 配置文件中有一个 _MySQL_ 的条目：
-    
+
         ```ini
         [mysql]
         type = tcp
         local_port = 3306
         remote_port = 3306
         ```
-        
+
         当如此设置后，并且在树莓派上安装 _MySQL_，就可以在外网用类似的方法来访问内网的数据库了。 同样的，我们知道，网站（HTTP）是通过 `80` 端口来传输的，由此如果我们在树莓派上有部署网站的话，那么就可以通过 _frp_ 进行类似的配置（这部分可能会有一些不同），我们就可以在外网访问该网站了。
-    
 
 8.  总结
 
