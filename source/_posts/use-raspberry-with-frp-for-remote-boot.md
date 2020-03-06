@@ -93,7 +93,9 @@ date: 2018-07-19 22:56:39
 
         我们可以在 [https://github.com/fatedier/frp/releases](https://github.com/fatedier/frp/releases) 下载指定架构下的版本，我在腾讯云服务器上使用的 _Ubuntu_ 系统，所以选择的是 `frp_0.20.0_linux_amd64.tar.gz` 这个版本。可以下载下来使用 _FTP_ 来放到服务器上，也可以在服务器上使用：
     
-            wget https://github.com/fatedier/frp/releases/download/v0.20.0/frp_0.20.0_linux_amd64.tar.gz
+        ```shell
+        wget https://github.com/fatedier/frp/releases/download/v0.20.0/frp_0.20.0_linux_amd64.tar.gz
+        ```
         
         来直接下载到服务器上。
     
