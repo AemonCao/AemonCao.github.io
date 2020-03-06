@@ -16,6 +16,8 @@ date: 2018-09-20 17:26:59
 
 之前有写过 _Windows_ 版本的 _ArchiSteamFarm_ 在**树莓派**上的挂卡教程，那次过后到现在已经一年多了，_Steam_ 库又新进了批货，所以又要挂一次啦。这次呢，发现 _ArchiSteamFarm_ 已经更新到了 **3.3.6.0** 版本，所以就准备用最新的版本。还有就是由于众所周知的原因，国内很难正常的登录 _Steam_，所以这次挂机的平台从自家的树莓派转移到了 _Google Cloud_ 上。
 
+<!-- more -->
+
 0.  准备
 
     0.  最新版本的 _ArchiSteamFarm_，具体可以去[这里](https://github.com/JustArchi/ArchiSteamFarm/releases)下载，我用的是 **3.3.6.0** 版本（这个作者更新得很勤快）；

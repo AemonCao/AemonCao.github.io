@@ -13,6 +13,8 @@ date: 2017-06-28 10:34:28
 
 今天在刷 FCC [0](http://(http://www.freecodecamp.cn) "| FreeCodeCamp中文社区") 的时候遇到这么一题 [1](http://(http://www.freecodecamp.cn/challenges/falsy-bouncer) "Falsy Bouncer | FreeCodeCamp中文社区") ，记录一下。
 
+<!-- more -->
+
 0.  Falsy Bouncer（真假美猴王）
 
     过滤数组假值 删除数组中的所有假值。 在 `JavaScript` 中，假值有 `false`、`null`、`0`、`""`、`undefined` 和 `NaN`。
