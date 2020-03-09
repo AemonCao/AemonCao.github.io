@@ -37,70 +37,70 @@ categories:
 
 ##  开始使用
 
-0.  进行连接
+### 进行连接
 
-    点击远程资源管理器图标，在 SSH TARGETS 栏中点击加号，来新建一个 ssh 连接：
+点击远程资源管理器图标，在 SSH TARGETS 栏中点击加号，来新建一个 ssh 连接：
 
-    ![SSH TARGETS](https://i.loli.net/2020/03/08/mlqFf1N9nuxRaEp.png)
+![SSH TARGETS](https://i.loli.net/2020/03/08/mlqFf1N9nuxRaEp.png)
 
-    输入：
+输入：
 
-    ```shell
-    ssh user@host
-    ```
+```shell
+ssh user@host
+```
 
-    `user` 是用来登录的用户名，`host` 则是你需要远程的服务器的地址。
+`user` 是用来登录的用户名，`host` 则是你需要远程的服务器的地址。
 
-    ssh 的默认端口是 22，如果你修改过该端口，则需要使用 p 参数：
+ssh 的默认端口是 22，如果你修改过该端口，则需要使用 p 参数：
 
-    ```shell
-    ssh -p 9588 user@host
-    ```
+```shell
+ssh -p 9588 user@host
+```
 
-    9588 则是新的 ssh 端口。
+9588 则是新的 ssh 端口。
 
-    回车，然后选择一个配置文件进行保存。
+回车，然后选择一个配置文件进行保存。
 
-    这时候在左侧 SSH TARGETS 下将会出现以你的 host 为名称的项目，右键选择在连接当前窗口或者在新窗口，进行连接。
+这时候在左侧 SSH TARGETS 下将会出现以你的 host 为名称的项目，右键选择在连接当前窗口或者在新窗口，进行连接。
 
-    ![password.png](https://i.loli.net/2020/03/08/jXhLQ2UgY5Gwl3f.png)
+![password.png](https://i.loli.net/2020/03/08/jXhLQ2UgY5Gwl3f.png)
 
-    输入当前用户名所对应的密码。
+输入当前用户名所对应的密码。
 
-    这时你的窗口左下角将会将会显示正在连接：
+这时你的窗口左下角将会将会显示正在连接：
 
-    ![Opening](https://i.loli.net/2020/03/08/Fa6xRzThrIsEYUN.png)
+![Opening](https://i.loli.net/2020/03/08/Fa6xRzThrIsEYUN.png)
 
-    等待一段时间后。如果变成以下样式，则为连接成功：
+等待一段时间后。如果变成以下样式，则为连接成功：
 
-    ![success.png](https://i.loli.net/2020/03/08/v6jDnFKbcJPWLRl.png)
+![success.png](https://i.loli.net/2020/03/08/v6jDnFKbcJPWLRl.png)
 
-1.  选择文件夹
+### 选择文件夹
 
-    连接成功后，你要选择需要进行工作的文件夹，基本上是一个项目的根目录。
+连接成功后，你要选择需要进行工作的文件夹，基本上是一个项目的根目录。
 
-    0.  点击左侧边栏的 Expoler（或者使用快捷键 Ctrl+Shift+E）打开资源管理器：
+0.  点击左侧边栏的 Expoler（或者使用快捷键 Ctrl+Shift+E）打开资源管理器：
 
-        ![expoler.png](https://i.loli.net/2020/03/08/Tltvb9aLrmq67CI.png)
+    ![expoler.png](https://i.loli.net/2020/03/08/Tltvb9aLrmq67CI.png)
 
-    1.  点击 Open Folder 按钮来选择文件夹：
+1.  点击 Open Folder 按钮来选择文件夹：
 
-        ![open-folder.png](https://i.loli.net/2020/03/08/2JU7CYA5i6T1Fzc.png)
+    ![open-folder.png](https://i.loli.net/2020/03/08/2JU7CYA5i6T1Fzc.png)
 
-    2.  点击 OK，这时可能需要你再次输入密码，之后你的资源管理器中就会有选择文件夹下的文件了。
+2.  点击 OK，这时可能需要你再次输入密码，之后你的资源管理器中就会有选择文件夹下的文件了。
 
-2.  权限修改
+### 权限修改
 
-    这时候你已经可以点击任意一个文件来进行预览了，为什么说是预览呢，因为当你尝试编辑并保存时，系统会有如下警告：
+这时候你已经可以点击任意一个文件来进行预览了，为什么说是预览呢，因为当你尝试编辑并保存时，系统会有如下警告：
 
-    ![error.png](https://i.loli.net/2020/03/08/BemOgUkIxCsjPrh.png)
+![error.png](https://i.loli.net/2020/03/08/BemOgUkIxCsjPrh.png)
 
-    提示权限不够。
+提示权限不够。
 
-    最简单的方法是执行以下命令：
+最简单的方法是执行以下命令：
 
-    ```shell
-    sudo chmod 777 /path
-    ```
+```shell
+sudo chmod 777 /path
+```
 
-    之后再保存的话就可以顺利保存成功了。
+之后再保存的话就可以顺利保存成功了。
