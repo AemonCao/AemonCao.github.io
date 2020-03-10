@@ -17,42 +17,44 @@ date: 2017-06-15 15:09:19
 
 <!-- more -->
 
-0.  _JavaScript_ 方法
+##  JavaScript 方法
 
-    ```javascript
-    [].forEach.call($$("*"), function(a) {
-        a.style.outline = "1px solid #" + (~~(Math.random() * (1 & lt; & lt; 24))).toString(16)
-    })
-    ```
+```javascript
+[].forEach.call($$("*"), function(a) {
+    a.style.outline = "1px solid #" + (~~(Math.random() * (1 & lt; & lt; 24))).toString(16)
+})
+```
 
-    在 _F12_ 中输入此段 _JavaScript_ 代码，就可以显示各个节点的外部框架。
+在 _F12_ 中输入此段 _JavaScript_ 代码，就可以显示各个节点的外部框架。
 
-    效果如下：
+效果如下：
 
-    ![js](https://ooo.0o0.ooo/2017/06/15/594230a99e355.png)
+![js](https://ooo.0o0.ooo/2017/06/15/594230a99e355.png)
 
-    原网站：
+原网站：
 
-    ![原网站](https://ooo.0o0.ooo/2017/06/15/594230a9285a6.png)
+![原网站](https://ooo.0o0.ooo/2017/06/15/594230a9285a6.png)
 
-1.  _CSS_ 方法
+##  CSS 方法
 
-    ```css
-    * {background-color: rgba(255, 0, 0, .2);}
-    * * {background-color: rgba(0, 255, 0, .2);}
-    * * * {background-color: rgba(0, 0, 255, .2);}
-    * * * * {background-color: rgba(255, 0, 255, .2);}
-    * * * * * {background-color: rgba(0, 255, 255, .2);}
-    * * * * * * {background-color: rgba(255, 255, 0, .2);}
-    ```
+```css
+* {background-color: rgba(255, 0, 0, .2);}
+* * {background-color: rgba(0, 255, 0, .2);}
+* * * {background-color: rgba(0, 0, 255, .2);}
+* * * * {background-color: rgba(255, 0, 255, .2);}
+* * * * * {background-color: rgba(0, 255, 255, .2);}
+* * * * * * {background-color: rgba(255, 255, 0, .2);}
+```
 
-    只要在网站中使用这一段 _CSS_ 样式，就能看到如下效果：
+只要在网站中使用这一段 _CSS_ 样式，就能看到如下效果：
 
-    ![css](https://ooo.0o0.ooo/2017/06/15/594230a9a0f03.png)
+![css](https://ooo.0o0.ooo/2017/06/15/594230a9a0f03.png)
 
-
+##  总结
 
 两种方法都有自己的优缺点，_JavaScript_ 的使用方便，但是只能适用于单个网站；而 _CSS_ 样式适用于数量多的网站（只需要在公共 _CSS_ 文件中加入这些代码就可以了）。
+
+##  来源
 
 > [代码来源-知乎](https://www.zhihu.com/question/27432017/answer/40621923)
 
