@@ -12,11 +12,13 @@ categories:
 date: 2019-03-22 15:59:27
 ---
 
-> 前些天看了 Netflix 出品的 [_Love, Death & Robots_](https://www.netflix.com/title/80174608) ，第十四集讲的就是这个故事，动画很好，小说也写得很好，特地转载一下。 转载自：[http://www.eleefeed.com/f/201939](http://www.eleefeed.com/f/201939)
+前些天看了 Netflix 出品的 [_Love, Death & Robots_](https://www.netflix.com/title/80174608) ，第十四集讲的就是这个故事，动画很好，小说也写得很好，特地转载一下。 转载自：[http://www.eleefeed.com/f/201939](http://www.eleefeed.com/f/201939)
 
 <!-- more -->
 
-齐玛蓝 文/【英】阿拉斯泰尔·雷诺兹 译/陈日锋 图/蔡定一
+##  齐玛蓝 
+
+文/【英】阿拉斯泰尔·雷诺兹 译/陈日锋 图/蔡定一
 
 * * *
 
