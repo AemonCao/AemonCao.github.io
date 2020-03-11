@@ -21,7 +21,7 @@ timezone: Asia/Shanghai
 
 # URL
 ## If your site is put in a subdirectory, set url as 'http://yoursite.com/child' and root as '/child/'
-url: http://blog.aemon.me/
+url: http://121.36.153.71:9588/
 root: /
 permalink: :year/:month/:day/:title/
 permalink_defaults:
@@ -107,3 +107,23 @@ theme: next
 ## Docs: https://hexo.io/docs/deployment.html
 deploy:
   type: ''
+
+symbols_count_time:
+	symbols: true
+  time: false
+  total_symbols: false
+  total_time: false
+  exclude_codeblock: true
+  awl: 2
+  wpm: 275
+  suffix: "mins."
+
+feed:
+  type:
+    - atom
+    - rss2
+  path:
+    - atom.xml
+    - rss2.xml
+  limit: 20
+  icon: /images/avatar.jpg

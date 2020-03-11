@@ -1,14 +1,12 @@
 ---
 title: 两种方法显示节点的层次结构
 tags:
+  - WEB前端
   - CSS
   - JavaScript
-  - WEB前端
 url: 35.html
 id: 35
 categories:
-  - CSS
-  - JavaScript
   - WEB 前端
 date: 2017-06-15 15:09:19
 ---
