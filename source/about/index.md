@@ -5,7 +5,7 @@ date: 2020-03-11 09:58:43
 
 关于我什么呢，我也不知道，放一些一直以来收集的骚话吧！
 
-*   别人能想出来的，我也一定能想出来。在计算机里头，没有任何黑魔法。所有的东西，只不过是我现在不知道而已，总有一天，我会把所有的细节、所有内部的东西都搞明白的！
+*   [计算机的所有东西都是人做出来的，别人能想得出来的，我也一定能想得出来。在计算机里头，没有任何黑魔法。所有的东西，只不过是我现在不知道而已，总有一天，我会把所有的细节、所有的内部的东西全都搞明白的！](https://www.bilibili.com/video/av15267247?p=82&t=44)
 
 *   [骄傲在败坏以先，狂心在跌倒之前。](https://cnbible.com/proverbs/16-18.htm)
 
@@ -13,17 +13,19 @@ date: 2020-03-11 09:58:43
 
     ![所有的离别，都是我在练习失去你。](index/所有的离别，都是我在练习失去你。.jpg)
 
-*   已是悬崖百丈冰，犹有花枝俏。
+*   [已是悬崖百丈冰，犹有花枝俏。](https://baike.baidu.com/item/%E5%8D%9C%E7%AE%97%E5%AD%90%C2%B7%E5%92%8F%E6%A2%85/124232)
 
 *   Teaching sand to think was a mistake.
 
     [![Teaching sand to think was a mistake.](index/Teaching-sand-to-think-was-a-mistake.png)](https://www.bilibili.com/video/av87216714?t=949)
 
-*   一个健康的社会不应该只有一种声音。
+*   [一个健康的社会不应该只有一种声音。](https://weibo.com/1663937380/Is0UJchJW)
 
 *   警察只是按要求训诫，主播只是按稿子播报，后台只是按上面意思删帖撤热搜。大家都认为自己是好人，一切是生活所迫。只有当每一个人都敢说“我拒绝撒谎”，“我拒绝执行”的时候，我们才不会在某一天求助无门，走投无路，像狗一样地死去。但你敢吗。你不敢。所以请记得，无论这个世界最终烂成什么样子，都是在我们的默许之下完成的。
 
-*   那熔铸眼前世界的炉火，他们早已经忘记了。
+    ![陈生大王](index/陈生大王.jpg)
+
+*   [那熔铸眼前世界的炉火，他们早已经忘记了。](https://www.bilibili.com/video/av77327621?t=140)
 
 *   Everything will be fine in the end, Morty, And if it isn&apos;t, it&apos;s not the end yet.
 
@@ -31,17 +33,17 @@ date: 2020-03-11 09:58:43
 
 *   [「轻奢」这个词造得可谓精妙绝伦，是一种市场细分后的修辞手法。比如 100 块的衣服叫「屌丝」，1000 块的叫「奢侈品」，500 块的命名就很讲究了。不能叫「重屌」，而要叫「轻奢」，给人一种我在向社会上层流动的幻觉。](https://www.bilibili.com/video/av83908288#reply2270052215)
 
-*   She was still too young to know that life never gives anything for nothing, and that a price is always exacted for what fate bestows.
+*   [She was still too young to know that life never gives anything for nothing, and that a price is always exacted for what fate bestows.](https://book.douban.com/subject/1051524/)
 
 *   她那时候还太年轻，不知道所有命运馈赠的礼物，早已在暗中标好了价格。
 
 *   我们不能随便生气。生气的时候，你会使出真本领。这样，别人就会知道你的真本领很烂。
 
-*   便宜的东只有一个优点：就是便宜。
+*   便宜的东西只有一个优点：就是便宜。
 
 *   贵的东西只有一个缺点：就是贵。
 
-*   人的大脑直到25岁才发育完全，然而从15岁到18岁他们的大脑运用得如何，往往将决定他们的余生。
+*   人的大脑直到 25 岁才发育完全，然而从 15 岁到 18 岁他们的大脑运用得如何，往往将决定他们的余生。
 
 *   如果你非要等到新年才开始做出改变，说明这个改变对你也不太重要。
 
@@ -57,9 +59,9 @@ date: 2020-03-11 09:58:43
 
 *   其实，你觉得能觊觎也是错觉，你只是能大概理解对一些科学理论的通俗解释。
 
-*   我见着日落时，她也见着日落，虽相隔千里，但对于太阳来说我和她在一起。
+*   [我见着日落时，她也见着日落，虽相隔千里，但对于太阳来说我和她在一起。](https://weibo.com/2377356574/Ii8XQ8zjg)
 
-*   我们不能吹嘘自己设置的独特密码,真是太可惜了。
+*   我们不能吹嘘自己设置的独特密码，真是太可惜了。
 
 *   前路虽长，尤可期许。
 
@@ -75,11 +77,13 @@ date: 2020-03-11 09:58:43
 
 *   我永远喜欢你，不是说我会十年二十年一辈子都喜欢你，而是指，我这一刻喜欢你的程度，让我有勇气说出来我永远喜欢你。
 
-*   我把我的青春给你，不是因为想换取和你的婚礼。
+*   [我把我的青春给你，不是因为想换取和你的婚礼。](https://www.musixmatch.com/lyrics/%E5%A5%BD%E6%A8%82%E5%9C%98-2/%E6%88%91%E6%8A%8A%E6%88%91%E7%9A%84%E9%9D%92%E6%98%A5%E7%BB%99%E4%BD%A0)
 
 *   但愿我能给你带来快乐，同时，又反射到我身上。
 
 *   你无法控制其他人的脾气，但你可以保持一颗冷静的头脑。
+
+    ![你无法控制其他人的脾气，但你可以保持一颗冷静的头脑。](index/你无法控制其他人的脾气，但你可以保持一颗冷静的头脑。.jpg)
 
 *   没有你在床真的没什么好赖的。
 
@@ -89,7 +93,7 @@ date: 2020-03-11 09:58:43
 
 *   [不要前行！前面是无边的森林：古老的树现着野兽身上的斑纹，半生半死的藤蟒一样交缠着，密叶里漏不下一颗星星。你将怯怯地不敢放下第二步，当你听见了第一步空寥的回声。](https://baike.baidu.com/item/%E9%A2%84%E8%A8%80/2915721)
 
-*   机场比婚礼现场见证了更多真挚的接吻，医院的墙壁比教堂聆听了更多的祷告。
+*   事实上，机场比婚礼现场见证了更多真挚的接吻，医院的墙壁比教堂聆听了更多的祷告。
 
 *   [Night gathers, and now my watch begins. It shall not end until my death. I shall take no wife, hold no lands, father no children. I shall wear no crowns and win no glory. I shall live and die at my post. I am the sword in the darkness. I am the watcher on the walls. I am the fire that burns against the cold, the light that brings the dawn, the horn that wakes the sleepers, the shield that guards the realms of men. I pledge my life and honor to the Night&apos;s Watch, for this night and all the nights to come.](https://www.youtube.com/watch?v=_3BhOWpurdc)
 
@@ -101,7 +105,7 @@ date: 2020-03-11 09:58:43
 
 *   智商不如人没什么可耻的。只是要承认这一点有点困难。
 
-*   路虽弥，不行不至。
+*   [路虽弥，不行不至。](https://zh.wikisource.org/zh/%E8%8D%80%E5%AD%90/%E4%BF%AE%E8%BA%AB%E7%AF%87)
 
 *   道阻且长，行则将至。
 
@@ -113,11 +117,13 @@ date: 2020-03-11 09:58:43
 
 *   觉得自己能力不足无法战胜黑暗怎么办？
 
-*   没有实力到只能去靠诚意表真心。
+*   [没有实力到只能去靠诚意表真心。](https://www.zhihu.com/question/21905681/answer/92992501)
 
 *   目所能及又岂能是全部呢？
 
 *   怕什么真理无穷，进一寸有进一寸的欢喜。
+
+    ![胡适](index/胡适.jpg)
 
 *   梦境和死亡，都无定所，无处可去，终将被遗忘，我们身在此处，但没有人会记得，万物皆逝，仅剩夜晚，再见。
 
@@ -125,8 +131,12 @@ date: 2020-03-11 09:58:43
 
 *   口才不好的人，总是在夜晚床上躺着时，才想到当时应该怎样反驳别人的话。
 
+    ![口才不好的人，总是在夜晚床上躺着时，才想到当时应该怎样反驳别人的话。](index/口才不好的人，总是在夜晚床上躺着时，才想到当时应该怎样反驳别人的话。.jpg)
+
 *   遇到喜欢的东西，就把它买下来。钱并不是真的花掉了，只是换一种方式，陪伴在你的身边。
 
     ![遇到喜欢的东西，就把它买下来。钱并不是真的花掉了，只是换一种方式，陪伴在你的身边。](index/GPU.jpg)
 
 *   我不看星星，也不说想你。这样星星和你都蒙在鼓里。
+
+    ![我不看星星，也不说想你。这样星星和你都蒙在鼓里。](index/我不看星星，也不说想你。这样星星和你都蒙在鼓里。.jpg)
