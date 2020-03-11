@@ -15,7 +15,7 @@ date: 2020-03-11 09:58:43
 
 *   Teaching sand to think was a mistake.
 
-    ![Teaching sand to think was a mistake.](index/Teaching-sand-to-think-was-a-mistake.png)
+    [![Teaching sand to think was a mistake.](index/Teaching-sand-to-think-was-a-mistake.png)](https://www.bilibili.com/video/av87216714?t=949)
 
 *   一个健康的社会不应该只有一种声音。
 
