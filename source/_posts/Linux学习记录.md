@@ -40,6 +40,39 @@ tac abc.txt > cba.txt
 
 目前想到的用法可能是用在日志文件上，可以将日志文件 reverse，方便查看最新的日志。
 
+### w
+
+>   用于显示目前登入系统的用户信息。
+
+这个命令也不算是新学的，但是对输出的信息还只是一知半解，所以今天去查了一下，这边记录一下。
+
+```shell
+w
+```
+
+```
+ 22:33:11 up 4 days,  9:44,  1 user,  load average: 0.05, 0.03, 0.05
+USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
+root     pts/1    192.168.1.88     22:22    7.00s  0.03s  0.00s w
+```
+
+第一行显示以下信息：当前时间（`22:33:11`），系统运行时间（`up 4 days,  9:44`），当前一共有多少用户登录（`1 user`），以及过去 1 分钟，5 分钟，15 分钟的系统平均负载（`load average: 0.05, 0.03, 0.05`）。
+
+第二行开始是一张表，标头依次为登录名（`USER`），登录后系统分配的终端号（`TTY`），远程主机名（`FROM`），何时登录（`LOGIN@`），空闲时间（`IDLE`），与该 TTY 终端连接的所由进程占用的时间，不包括过去的后台作业时间（`JCPU`），当前进程所占用的时间（`PCPU`），当前进程（`WHAT`）。
+
+参考：
+
+*  
+    ```shell
+    man w
+    ```
+
+*  [w command in Linux with Examples](https://www.geeksforgeeks.org/w-command-in-linux-with-examples/)
+
+*  [图解Linux命令之--w命令](https://blog.csdn.net/Jerry_1126/article/details/52088987)
+
+*  [Linux的JCPU与PCPU](https://blog.csdn.net/zzxian/article/details/8070144)
+
 ##  Vim
 
 这里写一下 Vim 的学习历程，之前都是用 nano，但是不是所有的系统都预装的 nano。而且最近在使用 Vim 的时候，发现并没用想象中那么难用。更加下定了要学好 Vim 的决心。
