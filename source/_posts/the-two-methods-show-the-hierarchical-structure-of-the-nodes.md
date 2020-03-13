@@ -4,6 +4,7 @@ tags:
   - WEB前端
   - CSS
   - JavaScript
+  - 奇技淫巧
 url: 35.html
 id: 35
 categories:
