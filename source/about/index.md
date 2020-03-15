@@ -5,6 +5,12 @@ date: 2020-03-11 09:58:43
 
 关于我什么呢，我也不知道，放一些一直以来收集的骚话吧！
 
+*   [So if people are sufficiently worried, then there\'s a lot less to worry about. But if no one is worried, that\'s when you should worry!](https://www.bilibili.com/video/av95917816?t=506)
+
+*   所以说：如果人们都足够担心的话，那你就没什么可担心的；但如果没有人担心的话，那你就得好好担心一下了。
+
+*   [人的每一分钟都在变化，所以也要接受别人有变化。如果那个人跟你一日为友，就终身为友，你应该心里很紧张才对。就是：「怎么啦，我们两个都从此不变化了嘛？」所以如果有了变化，然后人际关系也跟着有了变化，他是你某一阶段最好的朋友，然后他当完了他该当的朋友，他就去当别人的朋友了。就接受人生的变化，是最好的态度。](https://www.bilibili.com/video/av80845403)
+
 *   [计算机的所有东西都是人做出来的，别人能想得出来的，我也一定能想得出来。在计算机里头，没有任何黑魔法。所有的东西，只不过是我现在不知道而已，总有一天，我会把所有的细节、所有的内部的东西全都搞明白的！](https://www.bilibili.com/video/av15267247?p=82&t=44)
 
 *   [骄傲在败坏以先，狂心在跌倒之前。](https://cnbible.com/proverbs/16-18.htm)
