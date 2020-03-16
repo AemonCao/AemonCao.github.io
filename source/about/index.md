@@ -5,15 +5,15 @@ date: 2020-03-11 09:58:43
 
 关于我什么呢，我也不知道，放一些一直以来收集的骚话吧！
 
-*   [人の命は、2万分の1でも8万分の1でもない。そうじゃなくて、そこには「1人が死んだ事件が2万件あった」ってことなんだよ。](https://bedtimepoem.com/?p=12276)
+*   >   [人の命は、2万分の1でも8万分の1でもない。そうじゃなくて、そこには「1人が死んだ事件が2万件あった」ってことなんだよ。](https://bedtimepoem.com/?p=12276)
 
-*   人的性命（死亡）不该说是2万分之一，或8万分之一，它的意思是，有一个人死了这件事，发生了2万次。
+    人的性命（死亡）不该说是2万分之一，或8万分之一，它的意思是，有一个人死了这件事，发生了2万次。
 
 *   你从小到大做了无数个大大小小的选择，都不能阻止你看到这句话。
 
-*   [So if people are sufficiently worried, then there\'s a lot less to worry about. But if no one is worried, that\'s when you should worry!](https://www.bilibili.com/video/av95917816?t=506)
+*   >   [So if people are sufficiently worried, then there\'s a lot less to worry about. But if no one is worried, that\'s when you should worry!](https://www.bilibili.com/video/av95917816?t=506)
 
-*   所以说：如果人们都足够担心的话，那你就没什么可担心的；但如果没有人担心的话，那你就得好好担心一下了。
+    所以说：如果人们都足够担心的话，那你就没什么可担心的；但如果没有人担心的话，那你就得好好担心一下了。
 
 *   [人的每一分钟都在变化，所以也要接受别人有变化。如果那个人跟你一日为友，就终身为友，你应该心里很紧张才对。就是：「怎么啦，我们两个都从此不变化了嘛？」所以如果有了变化，然后人际关系也跟着有了变化，他是你某一阶段最好的朋友，然后他当完了他该当的朋友，他就去当别人的朋友了。就接受人生的变化，是最好的态度。](https://www.bilibili.com/video/av80845403)
 
@@ -45,9 +45,9 @@ date: 2020-03-11 09:58:43
 
 *   [「轻奢」这个词造得可谓精妙绝伦，是一种市场细分后的修辞手法。比如 100 块的衣服叫「屌丝」，1000 块的叫「奢侈品」，500 块的命名就很讲究了。不能叫「重屌」，而要叫「轻奢」，给人一种我在向社会上层流动的幻觉。](https://www.bilibili.com/video/av83908288#reply2270052215)
 
-*   [She was still too young to know that life never gives anything for nothing, and that a price is always exacted for what fate bestows.](https://book.douban.com/subject/1051524/)
+*   >   [She was still too young to know that life never gives anything for nothing, and that a price is always exacted for what fate bestows.](https://book.douban.com/subject/1051524/)
 
-*   她那时候还太年轻，不知道所有命运馈赠的礼物，早已在暗中标好了价格。
+    她那时候还太年轻，不知道所有命运馈赠的礼物，早已在暗中标好了价格。
 
 *   我们不能随便生气。生气的时候，你会使出真本领。这样，别人就会知道你的真本领很烂。
 
@@ -107,9 +107,9 @@ date: 2020-03-11 09:58:43
 
 *   事实上，机场比婚礼现场见证了更多真挚的接吻，医院的墙壁比教堂聆听了更多的祷告。
 
-*   [Night gathers, and now my watch begins. It shall not end until my death. I shall take no wife, hold no lands, father no children. I shall wear no crowns and win no glory. I shall live and die at my post. I am the sword in the darkness. I am the watcher on the walls. I am the fire that burns against the cold, the light that brings the dawn, the horn that wakes the sleepers, the shield that guards the realms of men. I pledge my life and honor to the Night&apos;s Watch, for this night and all the nights to come.](https://www.youtube.com/watch?v=_3BhOWpurdc)
+*   >   [Night gathers, and now my watch begins. It shall not end until my death. I shall take no wife, hold no lands, father no children. I shall wear no crowns and win no glory. I shall live and die at my post. I am the sword in the darkness. I am the watcher on the walls. I am the fire that burns against the cold, the light that brings the dawn, the horn that wakes the sleepers, the shield that guards the realms of men. I pledge my life and honor to the Night&apos;s Watch, for this night and all the nights to come.](https://www.youtube.com/watch?v=_3BhOWpurdc)
 
-*   长夜将至，我从今开始守望，至死方休。我将不娶妻、不封地、不生子。我将不戴宝冠，不争荣宠。我将尽忠职守，生死於斯。我是黑暗中的利剑，长城上的守卫。我是抵御寒冷的烈焰，破晓时分的光线，唤醒眠者的号角，守护王国的坚盾。我将生命与荣耀献给守夜人，今夜如此，夜夜皆然。
+    长夜将至，我从今开始守望，至死方休。我将不娶妻、不封地、不生子。我将不戴宝冠，不争荣宠。我将尽忠职守，生死於斯。我是黑暗中的利剑，长城上的守卫。我是抵御寒冷的烈焰，破晓时分的光线，唤醒眠者的号角，守护王国的坚盾。我将生命与荣耀献给守夜人，今夜如此，夜夜皆然。
 
 *   年轻有年轻的代价。
 
