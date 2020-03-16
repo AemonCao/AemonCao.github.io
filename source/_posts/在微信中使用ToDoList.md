@@ -53,3 +53,5 @@ categories:
 
 ![提醒](https://i.loli.net/2020/03/13/hrTYKjQmvH3zxb4.jpg)
 <!-- ![提醒](提醒.jpg) -->
+
+微信真的是很封闭的软件，你甚至不能找到分享到其他 APP 的按钮。

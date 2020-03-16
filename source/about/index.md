@@ -5,6 +5,8 @@ date: 2020-03-11 09:58:43
 
 关于我什么呢，我也不知道，放一些一直以来收集的骚话吧！
 
+*   你从小到大做了无数个大大小小的选择，都不能阻止你看到这句话。
+
 *   [So if people are sufficiently worried, then there\'s a lot less to worry about. But if no one is worried, that\'s when you should worry!](https://www.bilibili.com/video/av95917816?t=506)
 
 *   所以说：如果人们都足够担心的话，那你就没什么可担心的；但如果没有人担心的话，那你就得好好担心一下了。
