@@ -33,7 +33,8 @@ categories:
 
 2.  安装完成后，你的左侧边栏就会多出一个「远程资源管理器（Remote Explorer）」的图标，如下图所示：
 
-    ![Remote Explorer](https://i.loli.net/2020/03/08/YXuTfDQxovHUkNm.png)
+    <!-- ![Remote Explorer](https://i.loli.net/2020/03/08/YXuTfDQxovHUkNm.png) -->
+    {% asset_img RemoteExplorer.png RemoteExplorer %}
 
 ##  开始使用
 
@@ -41,7 +42,8 @@ categories:
 
 点击远程资源管理器图标，在 SSH TARGETS 栏中点击加号，来新建一个 ssh 连接：
 
-![SSH TARGETS](https://i.loli.net/2020/03/08/mlqFf1N9nuxRaEp.png)
+<!-- ![SSH TARGETS](https://i.loli.net/2020/03/08/mlqFf1N9nuxRaEp.png) -->
+{% asset_img SSHTARGETS.png SSHTARGETS %}
 
 输入：
 
@@ -63,17 +65,20 @@ ssh -p 9588 user@host
 
 这时候在左侧 SSH TARGETS 下将会出现以你的 host 为名称的项目，右键选择在连接当前窗口或者在新窗口，进行连接。
 
-![password.png](https://i.loli.net/2020/03/08/jXhLQ2UgY5Gwl3f.png)
+<!-- ![password.png](https://i.loli.net/2020/03/08/jXhLQ2UgY5Gwl3f.png) -->
+{% asset_img password.png password %}
 
 输入当前用户名所对应的密码。
 
 这时你的窗口左下角将会将会显示正在连接：
 
-![Opening](https://i.loli.net/2020/03/08/Fa6xRzThrIsEYUN.png)
+<!-- ![Opening](https://i.loli.net/2020/03/08/Fa6xRzThrIsEYUN.png) -->
+{% asset_img Opening.png Opening %}
 
 等待一段时间后。如果变成以下样式，则为连接成功：
 
-![success.png](https://i.loli.net/2020/03/08/v6jDnFKbcJPWLRl.png)
+<!-- ![success.png](https://i.loli.net/2020/03/08/v6jDnFKbcJPWLRl.png) -->
+{% asset_img success.png success %}
 
 ### 选择文件夹
 
@@ -81,11 +86,13 @@ ssh -p 9588 user@host
 
 0.  点击左侧边栏的 Expoler（或者使用快捷键 Ctrl+Shift+E）打开资源管理器：
 
-    ![expoler.png](https://i.loli.net/2020/03/08/Tltvb9aLrmq67CI.png)
+    <!-- ![expoler.png](https://i.loli.net/2020/03/08/Tltvb9aLrmq67CI.png) -->
+    {% asset_img expoler.png expoler %}
 
 1.  点击 Open Folder 按钮来选择文件夹：
 
-    ![open-folder.png](https://i.loli.net/2020/03/08/2JU7CYA5i6T1Fzc.png)
+    <!-- ![open-folder.png](https://i.loli.net/2020/03/08/2JU7CYA5i6T1Fzc.png) -->
+    {% asset_img open-folder.png open-folder %}
 
 2.  点击 OK，这时可能需要你再次输入密码，之后你的资源管理器中就会有选择文件夹下的文件了。
 
@@ -93,7 +100,8 @@ ssh -p 9588 user@host
 
 这时候你已经可以点击任意一个文件来进行预览了，为什么说是预览呢，因为当你尝试编辑并保存时，系统会有如下警告：
 
-![error.png](https://i.loli.net/2020/03/08/BemOgUkIxCsjPrh.png)
+<!-- ![error.png](https://i.loli.net/2020/03/08/BemOgUkIxCsjPrh.png) -->
+{% asset_img error.png error %}
 
 提示权限不够。
 

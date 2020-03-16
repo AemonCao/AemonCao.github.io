@@ -28,11 +28,13 @@ date: 2017-06-15 15:09:19
 
 效果如下：
 
-![js](https://ooo.0o0.ooo/2017/06/15/594230a99e355.png)
+<!-- ![js](https://ooo.0o0.ooo/2017/06/15/594230a99e355.png) -->
+{% asset_img js.png js %}
 
 原网站：
 
-![原网站](https://ooo.0o0.ooo/2017/06/15/594230a9285a6.png)
+<!-- ![原网站](https://ooo.0o0.ooo/2017/06/15/594230a9285a6.png) -->
+{% asset_img 原网站.png 原网站 %}
 
 ##  CSS 方法
 
@@ -47,7 +49,8 @@ date: 2017-06-15 15:09:19
 
 只要在网站中使用这一段 _CSS_ 样式，就能看到如下效果：
 
-![css](https://ooo.0o0.ooo/2017/06/15/594230a9a0f03.png)
+<!-- ![css](https://ooo.0o0.ooo/2017/06/15/594230a9a0f03.png) -->
+{% asset_img css.png css %}
 
 ##  总结
 
