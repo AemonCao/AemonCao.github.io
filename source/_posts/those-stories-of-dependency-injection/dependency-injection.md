@@ -12,9 +12,7 @@ categories:
 date: 2017-09-15 19:37:09
 ---
 
-为方便以后查阅，特地转载一下，整理为 Markdown 格式。[点此下载]({% dependency-injection.txt dependency-injection %})
-
-{% dependency-injection.txt dependency-injection %}
+为方便以后查阅，特地转载一下，整理为 Markdown 格式。[点此下载](http://www.aemon.me/wp-content/uploads/2017/09/dependency-injection.txt)
 
 转载自：[依赖注入那些事儿 - T2噬菌体](http://www.cnblogs.com/leoo2sk/archive/2009/06/17/1504693.html)
 
