@@ -86,22 +86,22 @@ ifconfig
 所以我们要先设置 BIOS 打开「**网卡唤醒**」这一功能，由于各个品牌主板的 BIOS 各不相同，所以设置的方法也各式各样，大家可以自行搜索「**wake on lan 设置**」，来寻找正确的方式。不过大多是在 **电源管理**（Power Management Setup）中。 然后是系统上的设置，这里我以 _Windows 10 17134.165_ 版本为例。 首先右键「**网络**」-「**属性**」来打开「**网络和共享中心**」面板：
 
 <!-- ![4.png](https://i.loli.net/2018/07/19/5b507b129fdee.png) -->
-{% asset_img 4.webp 4 %}
+{% asset_img 4.webp 网络和共享中心 %}
 
 在左侧单击「**更改适配器设置**」-右键你现在正在使用的网卡-「**属性**」来打开「**属性**」面板：
 
 <!-- ![1.png](https://i.loli.net/2018/07/19/5b507b12983ac.png) -->
-{% asset_img 1.png 1 %}
+{% asset_img 1.png 更改适配器设置 %}
 
 单击上方的「**配置**」-选择「**高级**」选项卡-在属性类别中将「**关机 网络唤醒**」和「**魔术封包唤醒**」的值设置为「**开启**」：
 
 <!-- ![3.png](https://i.loli.net/2018/07/19/5b507b129f1e7.png) -->
-{% asset_img 3.webp 3 %}
+{% asset_img 3.webp 高级 %}
 
 选择「**电源管理**」选项卡-勾选「**允许计算机关闭此设备以节约电源**」和「**允许此设备唤醒计算机**」选项：
 
 <!-- ![2.png](https://i.loli.net/2018/07/19/5b507b1298186.png) -->
-{% asset_img 2.webp 2 %}
+{% asset_img 2.webp 电源管理 %}
 
 就此，PC 端的设置已经完成了。
 
@@ -347,7 +347,7 @@ python wol.py E0:D5:5E:88:88:88
 1.  事后，我用 _Wireshark_ 抓了包，找到了这个 _Magic Packet_：
 
     <!-- ![6.png](https://i.loli.net/2018/07/19/5b507b12b69cb.png) -->
-    {% asset_img 6.webp 6 %}
+    {% asset_img 6.webp MagicPacket %}
 
     发现和 _Wiki_ 上说的一样：以 `6` 个 `FF` 开始，并且重复 `16` 遍 MAC 地址。
 
