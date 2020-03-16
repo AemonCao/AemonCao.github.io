@@ -1,41 +1,39 @@
 ---
-title: ��ת�ء�����ע����Щ�¶�
+title: 【转载】依赖注入那些事儿
 tags:
   - 'C#'
-  - ����ע��
-  - ת��
+  - 依赖注入
+  - 转载
 url: 227.html
 id: 227
 categories:
   - 'C#'
-  - ת��
+  - 转载
 date: 2017-09-15 19:37:09
 ---
 
-Ϊ�����Ժ���ģ��ص�ת��һ�£�����Ϊ {% asset_link md.txt Markdown ��ʽ %}��
+为方便以后查阅，特地转载一下，整理为 {% asset_link md.txt Markdown格式 %}。
 
-ת���ԣ�[����ע����Щ�¶� - T2�ɾ���](http://www.cnblogs.com/leoo2sk/archive/2009/06/17/1504693.html)
-
-
+转载自：[依赖注入那些事儿 - T2噬菌体](http://www.cnblogs.com/leoo2sk/archive/2009/06/17/1504693.html)
 
 <!-- more -->
 
-##  IGame ��Ϸ��˾�Ĺ���
+##  IGame 游戏公司的故事
 
-### ���ۻ�
+### 讨论会
 
-��˵��һ���� IGame ����Ϸ��˾�����ڿ���һ�� ARPG ��Ϸ������&��ɫ��������Ϸ����ħ�����硢�λ�������һ�����Ϸ����һ��������Ϸ����һ�������Ĺ��ܣ����Ǵ�֣���ҹ��������˻�þ��顢������Һ�����װ���������Ҹ�����ҽ�ɫ��װ����������ͬ������Ч��Ҳ��ͬ�����죬IGame ��˾�Ŀ���С�����ڿ���Դ�ֹ����е�ĳһ�����ܵ����ʵ�ֽ������ۣ�������ǰ�Ĵ���Ļ��������һ������������ PPT��
+话说有一个叫 IGame 的游戏公司，正在开发一款 ARPG 游戏（动作&角色扮演类游戏，如魔兽世界、梦幻西游这一类的游戏）。一般这类游戏都有一个基本的功能，就是打怪（玩家攻击怪物，借此获得经验、虚拟货币和虚拟装备），并且根据玩家角色所装备的武器不同，攻击效果也不同。这天，IGame 公司的开发小组正在开会对打怪功能中的某一个功能点如何实现进行讨论，他们面前的大屏幕上是这样一份需求描述的 PPT：
 
 <!-- ![01_3.gif](https://i.loli.net/2017/09/15/59bb9d3e3a3c1.gif) -->
 {% asset_img 1.webp PPT %}
 
-**ͼ1.1 ��������ppt**
+**图1.1 需求描述ppt**
 
-����������Ա������������չ�������ҵ����ۣ��������ǿ������ۻ��϶�������ʲô��
+各个开发人员，面对这份需求，展开了热烈的讨论，下面我们看看讨论会上都发生了什么。
 
-### ʵϰ��С���ʵ�ַ�ʽ
+### 实习生小李的实现方式
 
-�ھ���һ�����ۺ���Ŀ�鳤 Peter �����б�Ҫ����һ�¸����������������ѯ��С��Ŀ�����С����ĳѧУ�����ϵ����ѧ��������Ϸ�����ر����Ȥ��Ŀǰ�� IGame ��˾��һ��ʵϰ���� �������ݵ�˼����С��������Լ�������� ������Ϊ��������������ôʵ�֡�HP��Ȼ�ǹ����һ�����Գ�Ա���������ǽ�ɫ��һ�����Գ�Ա�����Ϳ���ʹ�ַ�������������Ŀǰ��ɫ��װ������������ɫ����һ�������������Ա���������Ϊ��������ʵʩһ�ι���ʱ���������������ã���������������жϵ�ǰ��ɫװ����ʲô������Ȼ��ݴ˶Ա���������� `HP` ���в������Բ�����ͬЧ������ ���ڲ������С��Ҳ�ɿ�����Լ��ĵ�����д��һ�� Demo������ʾ�����뷨��Demo �������£�
+在经过一番讨论后，项目组长 Peter 觉得有必要整理一下各方的意见，他首先询问小李的看法。小李是某学校计算机系大三学生，对游戏开发特别感兴趣，目前是 IGame 公司的一名实习生。 经过短暂的思考，小李阐述了自己的意见： “我认为，这个需求可以这么实现。HP当然是怪物的一个属性成员，而武器是角色的一个属性成员，类型可以使字符串，用于描述目前角色所装备的武器。角色类有一个攻击方法，以被攻击怪物为参数，当实施一次攻击时，攻击方法被调用，而这个方法首先判断当前角色装备了什么武器，然后据此对被攻击怪物的 `HP` 进行操作，以产生不同效果。” 而在阐述完后，小李也飞快的在自己的电脑上写了一个 Demo，来演示他的想法，Demo 代码如下：
 
 ```csharp
 using System;
@@ -46,17 +44,17 @@ using System.Text;
 namespace IGameLi
 {
     /// <summary>
-    /// ����
+    /// 怪物
     /// </summary>
     internal sealed class Monster
     {
         /// <summary>
-        /// ���������
+        /// 怪物的名字
         /// </summary>
         public String Name { get; set; }
 
         /// <summary>
-        /// ���������ֵ
+        /// 怪物的生命值
         /// </summary>
         public Int32 HP { get; set; }
 
@@ -78,26 +76,26 @@ using System.Text;
 namespace IGameLi
 {
     /// <summary>
-    /// ��ɫ
+    /// 角色
     /// </summary>
     internal sealed class Role
     {
         private Random _random = new Random();
 
         /// <summary>
-        /// ��ʾ��ɫĿǰ�����������ַ���
+        /// 表示角色目前所持武器的字符串
         /// </summary>
         public String WeaponTag { get; set; }
 
         /// <summary>
-        /// ��������
+        /// 攻击怪物
         /// </summary>
-        /// <param name="monster">�������Ĺ���</param>
+        /// <param name="monster">被攻击的怪物</param>
         public void Attack(Monster monster)
         {
             if (monster.HP <= 0)
             {
-                Console.WriteLine("�˹�������");
+                Console.WriteLine("此怪物已死");
                 return;
             }
 
@@ -106,11 +104,11 @@ namespace IGameLi
                 monster.HP -= 20;
                 if (monster.HP <= 0)
                 {
-                    Console.WriteLine("�����ɹ�������" + monster.Name + "������");
+                    Console.WriteLine("攻击成功！怪物" + monster.Name + "已死亡");
                 }
                 else
                 {
-                    Console.WriteLine("�����ɹ�������" + monster.Name + "��ʧ20HP");
+                    Console.WriteLine("攻击成功！怪物" + monster.Name + "损失20HP");
                 }
             }
             else if ("IronSword" == this.WeaponTag)
@@ -118,11 +116,11 @@ namespace IGameLi
                 monster.HP -= 50;
                 if (monster.HP <= 0)
                 {
-                    Console.WriteLine("�����ɹ�������" + monster.Name + "������");
+                    Console.WriteLine("攻击成功！怪物" + monster.Name + "已死亡");
                 }
                 else
                 {
-                    Console.WriteLine("�����ɹ�������" + monster.Name + "��ʧ50HP");
+                    Console.WriteLine("攻击成功！怪物" + monster.Name + "损失50HP");
                 }
             }
             else if ("MagicSword" == this.WeaponTag)
@@ -131,21 +129,21 @@ namespace IGameLi
                 monster.HP -= loss;
                 if (200 == loss)
                 {
-                    Console.WriteLine("���ֱ���������");
+                    Console.WriteLine("出现暴击！！！");
                 }
 
                 if (monster.HP <= 0)
                 {
-                    Console.WriteLine("�����ɹ�������" + monster.Name + "������");
+                    Console.WriteLine("攻击成功！怪物" + monster.Name + "已死亡");
                 }
                 else
                 {
-                    Console.WriteLine("�����ɹ�������" + monster.Name + "��ʧ" + loss + "HP");
+                    Console.WriteLine("攻击成功！怪物" + monster.Name + "损失" + loss + "HP");
                 }
             }
             else
             {
-                Console.WriteLine("��ɫ����û���������޷�������");
+                Console.WriteLine("角色手里没有武器，无法攻击！");
             }
         }
     }
@@ -164,25 +162,25 @@ namespace IGameLi
     {
         static void Main(string[] args)
         {
-            //���ɹ���
-            Monster monster1 = new Monster("С��A", 50);
-            Monster monster2 = new Monster("С��B", 50);
-            Monster monster3 = new Monster("����", 200);
-            Monster monster4 = new Monster("����Boss", 1000);
+            //生成怪物
+            Monster monster1 = new Monster("小怪A", 50);
+            Monster monster2 = new Monster("小怪B", 50);
+            Monster monster3 = new Monster("关主", 200);
+            Monster monster4 = new Monster("最终Boss", 1000);
 
-            //���ɽ�ɫ
+            //生成角色
             Role role = new Role();
 
-            //ľ������
+            //木剑攻击
             role.WeaponTag = "WoodSword";
             role.Attack(monster1);
 
-            //��������
+            //铁剑攻击
             role.WeaponTag = "IronSword";
             role.Attack(monster2);
             role.Attack(monster3);
 
-            //ħ������
+            //魔剑攻击
             role.WeaponTag = "MagicSword";
             role.Attack(monster3);
             role.Attack(monster4);
@@ -197,27 +195,27 @@ namespace IGameLi
 }
 ```
 
-�������н�����£�
+程序运行结果如下：
 
 <!-- ![02_3.gif](https://i.loli.net/2017/09/15/59bbae64f08ba.gif) -->
-{% asset_img 2.webp ���023 %}
+{% asset_img 2.webp 结果023 %}
 
-**ͼ1.2 С���������н��**
+**图1.2 小李程序的运行结果**
 
-### �ܹ�ʦ�Ľ���
+### 架构师的建议
 
-С��������Լ����뷨����ʾ�� Demo ����Ŀ�鳤 Peter ���ȿ϶���С���˼����������������Լ���������������������Ƶ�˼�룬������С��ĳ�����ȷ����������еĹ��ܡ���ͬʱ��Peter Ҳָ��С�����ƴ���һЩ���⣬����С�ڽ�һ���Լ��Ŀ����� С����һ�������������ܹ�����ļܹ�ʦ���������ܹ������ģʽ���������˼���н��������ʶ������ Peter ���˵�ͷ���������Լ��Ŀ����� ��С���˼�������ǲ����ģ����Ż���������������������������ҳ�����ȷ���������Ҫ�Ĺ��ܡ���������������Ӽܹ��Ƕȣ���Ҫ˵һ������Ϊ�������д��ڵ����⡣ ���ȣ�С����Ƶ� `Role` ��� `Attack` �����ܳ������ҷ�������һ���߳��� `if��else` �ṹ����ÿ����֧�Ĵ����ҵ���߼������ƣ�ֻ�Ǻ��ٵĵط���ͬ�� ���ߣ�����Ϊ�����ƱȽϴ��һ�������ǣ�Υ���� OCP ԭ�����������У�����Ժ���������һ���µ������������콣��ÿ�ι�����ʧ 500HP����ô�����Ǿ�Ҫ�� `Role`���޸� `Attack` �����������ǵĴ���Ӧ���Ƕ��޸Ĺرյģ����������������ʱ��Ӧ��ʹ����չ��ɣ������޸����д��롣 һ����˵����һ��������������߳��� `if��else` �� `switch��case` �ṹ����ÿ����֧����ҵ������ʱ������Ԥʾ����Ӧ�������̬����������⡣���������Ѳ�ͬ������������һ�����ԣ���ô�������ģʽ�� _Strategy Pattern_ �������ǵ�ѡ�� ���˵һ��С�����⣬�������󣬼�HP�������жϵȶ��ǹ����ְ��������� `Role` ����Щ��������
+小李阐述完自己的想法并演示了 Demo 后，项目组长 Peter 首先肯定了小李的思考能力、编程能力以及初步的面向对象分析与设计的思想，并承认小李的程序正确完成了需求中的功能。但同时，Peter 也指出小李的设计存在一些问题，他请小于讲一下自己的看法。 小于是一名有五年软件架构经验的架构师，对软件架构、设计模式和面向对象思想有较深入的认识。他向 Peter 点了点头，发表了自己的看法： “小李的思考能力是不错的，有着基本的面向对象分析设计能力，并且程序正确完成了所需要的功能。不过，这里我想从架构角度，简要说一下我认为这个设计中存在的问题。 首先，小李设计的 `Role` 类的 `Attack` 方法很长，并且方法中有一个冗长的 `if…else` 结构，且每个分支的代码的业务逻辑很相似，只是很少的地方不同。 再者，我认为这个设计比较大的一个问题是，违反了 OCP 原则。在这个设计中，如果以后我们增加一个新的武器，如倚天剑，每次攻击损失 500HP，那么，我们就要打开 `Role`，修改 `Attack` 方法。而我们的代码应该是对修改关闭的，当有新武器加入的时候，应该使用扩展完成，避免修改已有代码。 一般来说，当一个方法里面出现冗长的 `if…else` 或 `switch…case` 结构，且每个分支代码业务相似时，往往预示这里应该引入多态性来解决问题。而这里，如果把不同武器攻击看成一个策略，那么引入策略模式（ _Strategy Pattern_ ）是明智的选择。 最后说一个小的问题，被攻击后，减HP、死亡判断等都是怪物的职责，这里放在 `Role` 中有些不当。”
 
-> Tip��OCP ԭ�򣬼����Źر�ԭ��ָ���Ӧ�ö���չ���ţ����޸Ĺرա� Tip������ģʽ��Ӣ���� _Strategy Pattern_ ��ָ�����㷨�壬�ֱ��װ������������֮������໥�滻����ģʽʹ���㷨�ı仯�����ڿͻ���
+> Tip：OCP 原则，即开放关闭原则，指设计应该对扩展开放，对修改关闭。 Tip：策略模式，英文名 _Strategy Pattern_ ，指定义算法族，分别封装起来，让他们之间可以相互替换，此模式使得算法的变化独立于客户。
 
-С�ڱ�˵���߻���һ�� UML ��ͼ������ֱ�۱�ʾ����˼�룺��
+小于边说，边画了一幅 UML 类图，用于直观表示他的思想：、
 
 <!-- ![03_3.jpg](https://i.loli.net/2017/09/15/59bbaf77f3db6.jpg) -->
-{% asset_img 3.webp uml��ͼ %}
+{% asset_img 3.webp uml类图 %}
 
-**ͼ1.3 С�ڵ����**
+**图1.3 小于的设计**
 
-Peter ��С���С�ڵ�����ع� Demo��С��˿�С�ڵ����ͼ���ܿ���ɡ���ش������£�
+Peter 让小李按照小于的设计重构 Demo，小李看了看小于的设计图，很快完成。相关代码如下：
 
 ```csharp
 using System;
@@ -287,7 +285,7 @@ namespace IGameLiAdv
             Int32 loss = (_random.NextDouble() < 0.5) ? 100 : 200;
             if (200 == loss)
             {
-                Console.WriteLine("���ֱ���������");
+                Console.WriteLine("出现暴击！！！");
             }
             monster.Notify(loss);
         }
@@ -304,17 +302,17 @@ using System.Text;
 namespace IGameLiAdv
 {
     /// <summary>
-    /// ����
+    /// 怪物
     /// </summary>
     internal sealed class Monster
     {
         /// <summary>
-        /// ���������
+        /// 怪物的名字
         /// </summary>
         public String Name { get; set; }
 
         /// <summary>
-        /// ���������ֵ
+        /// 怪物的生命值
         /// </summary>
         private Int32 HP { get; set; }
 
@@ -325,25 +323,25 @@ namespace IGameLiAdv
         }
 
         /// <summary>
-        /// ���ﱻ����ʱ�������õķ����������������������״̬����
+        /// 怪物被攻击时，被调用的方法，用来处理被攻击后的状态更改
         /// </summary>
-        /// <param name="loss">�˴ι�����ʧ��HP</param>
+        /// <param name="loss">此次攻击损失的HP</param>
         public void Notify(Int32 loss)
         {
             if (this.HP <= 0)
             {
-                Console.WriteLine("�˹�������");
+                Console.WriteLine("此怪物已死");
                 return;
             }
 
             this.HP -= loss;
             if (this.HP <= 0)
             {
-                Console.WriteLine("����" + this.Name + "������");
+                Console.WriteLine("怪物" + this.Name + "被打死");
             }
             else
             {
-                Console.WriteLine("����" + this.Name + "��ʧ" + loss + "HP");
+                Console.WriteLine("怪物" + this.Name + "损失" + loss + "HP");
             }
         }
     }
@@ -359,19 +357,19 @@ using System.Text;
 namespace IGameLiAdv
 {
     /// <summary>
-    /// ��ɫ
+    /// 角色
     /// </summary>
     internal sealed class Role
     {
         /// <summary>
-        /// ��ʾ��ɫĿǰ��������
+        /// 表示角色目前所持武器
         /// </summary>
         public IAttackStrategy Weapon { get; set; }
 
         /// <summary>
-        /// ��������
+        /// 攻击怪物
         /// </summary>
-        /// <param name="monster">�������Ĺ���</param>
+        /// <param name="monster">被攻击的怪物</param>
         public void Attack(Monster monster)
         {
             this.Weapon.AttackTarget(monster);
@@ -392,25 +390,25 @@ namespace IGameLiAdv
     {
         static void Main(string[] args)
         {
-            //���ɹ���
-            Monster monster1 = new Monster("С��A", 50);
-            Monster monster2 = new Monster("С��B", 50);
-            Monster monster3 = new Monster("����", 200);
-            Monster monster4 = new Monster("����Boss", 1000);
+            //生成怪物
+            Monster monster1 = new Monster("小怪A", 50);
+            Monster monster2 = new Monster("小怪B", 50);
+            Monster monster3 = new Monster("关主", 200);
+            Monster monster4 = new Monster("最终Boss", 1000);
 
-            //���ɽ�ɫ
+            //生成角色
             Role role = new Role();
 
-            //ľ������
+            //木剑攻击
             role.Weapon = new WoodSword();
             role.Attack(monster1);
 
-            //��������
+            //铁剑攻击
             role.Weapon = new IronSword();
             role.Attack(monster2);
             role.Attack(monster3);
 
-            //ħ������
+            //魔剑攻击
             role.Weapon = new MagicSword();
             role.Attack(monster3);
             role.Attack(monster4);
@@ -425,41 +423,41 @@ namespace IGameLiAdv
 }
 ```
 
-�����������ϴ��룬�õ������н������һ�汾�������һ�¡�
+编译运行以上代码，得到的运行结果与上一版本代码基本一致。
 
-### С���С��
+### 小李的小结
 
-Peter ��Ȼ�ԸĽ���Ĵ���Ƚ����⣬����С�����������ƺʹ��룬����һ��С�ᡣС�����˼����һ�£������С�ڶ�һ�����ָ���Ĳ��㣬˵���� ������Ϊ���Ľ���Ĵ����������ŵ㣺 ��һ����Ȼ������������ˣ�����ÿ�����з����Ĵ��붼�ǳ��̣�û������ǰ `Attack` �������ֺܳ��ķ�����Ҳû�����߳��� `if��else`������ṹ��ú������� �ڶ������ְ�����ȷ�ˡ��ڵ�һ������У�`Role` �������𹥻����������������� `HP` ���жϹ����Ƿ������������Բ�Ӧ���� `Role` ��ְ�𣬸Ľ���Ĵ��뽫������ְ������Monster�ڣ�ʹ��ְ����ȷ�����������ھ��ԡ� ���������� Strategy ģʽ�󣬲����������ظ��Դ��룬����Ҫ���ǣ�ʹ����Ʒ����� OCP������Ժ�Ҫ��һ����������ֻҪ�½�һ���࣬ʵ�� `IAttackStrategy` �ӿڣ�����ɫ��Ҫװ�����������ʱ���ͻ�����ֻҪʵ����һ���������࣬������ `Role` �� `Weapon` ��Ա�Ϳ����ˣ����е� `Role` �� `Monster` ���붼���øĶ���������ʵ���˶���չ���������޸Ĺرա��� Peter��С�����󶼺����⣬��ΪС���ܽ�ķǳ���ɫ�� IGame��˾�����ۻỹ�ڽ����ţ������Ƿǳ����ʣ��������������������Ϊ��������������Ҫ������ĳЩ�������һ��̽�֡������ˣ����ĵ������������ע�룬������ǻ�û�ǳ��أ������ǵ�̫�ÿɲ��á�
+Peter 显然对改进后的代码比较满意，他让小李对照两份设计和代码，进行一个小结。小李简略思考了一下，并结合小于对一次设计指出的不足，说道： “我认为，改进后的代码有如下优点： 第一，虽然类的数量增加了，但是每个类中方法的代码都非常短，没有了以前 `Attack` 方法那种很长的方法，也没有了冗长的 `if…else`，代码结构变得很清晰。 第二，类的职责更明确了。在第一个设计中，`Role` 不但负责攻击，还负责给怪物减少 `HP` 和判断怪物是否已死。这明显不应该是 `Role` 的职责，改进后的代码将这两个职责移入Monster内，使得职责明确，提高了类的内聚性。 第三，引入 Strategy 模式后，不但消除了重复性代码，更重要的是，使得设计符合了 OCP。如果以后要加一个新武器，只要新建一个类，实现 `IAttackStrategy` 接口，当角色需要装备这个新武器时，客户代码只要实例化一个新武器类，并赋给 `Role` 的 `Weapon` 成员就可以了，已有的 `Role` 和 `Monster` 代码都不用改动。这样就实现了对扩展开发，对修改关闭。” Peter和小于听后都很满意，认为小李总结的非常出色。 IGame公司的讨论会还在进行着，内容是非常精彩，不过我们先听到这里，因为，接下来，我们要对其中某些问题进行一点探讨。别忘了，本文的主题可是依赖注入，这个主角还没登场呢！让主角等太久可不好。
 
-##  ̽������ע��
+##  探究依赖注入
 
-### ���µ�����
+### 故事的启迪
 
-�������ھ����������ٻ�ζһ�¸ղŵĹ��¡���Ϊ�������������������**����ע��**�ĳ���ԭ����˵����ֻһ�Σ�����������һ���������ֻ��������ʲô��ʲô���ӣ�������Ӧ����Ū�����������ô���ģ���ʲô��������ͱ�����ʹ�����ĵ��������������������ʲô�õģ����� ��������Ĺ��¡��տ�ʼ����Ҫ������һ����ֵĹ��ܡ�С������һ����������������ƣ���ȡ���򳡾��е�ʵ�壨�����ɫ�ȣ�����װ���࣬��Ϊ�����ำ�������뷽�������ͨ����Ľ�����ɴ�ֹ��ܣ���Ӧ���������������Ƶĳ����׶Ρ� ��С�����ƻ����ϣ��ܹ�ʦС��ָ���˼��㲻�㣬�粻���� OCP��ְ�𻮷ֲ���ȷ�ȵȣ�����������������ģʽ�����Ǹ��߲�ε����������ơ���ʵ�ͺ�����˵��С��ֻ����һ���£����ö�̬�ԣ�����仯���������ʶ���������ֹ����У���Щҵ���߼��ǲ���ģ����ɫ�������������� HP������ 0 ����ͻ��������仯�Ľ����ǲ�ͬ�Ľ�ɫ���в�ͬ����ʱ��ÿ�ι�����Ч�ò�һ�����������ļܹ������ʾ��ǰѱ仯�Ĳ��ֺͲ���Ĳ��ָ��뿪��ʹ�ñ仯���ַ����仯ʱ�����䲿�ֲ���Ӱ�졣 ��������ϸ����С�ڵ����ͼ��������ƺ��и�������������Ҫ��������� `Role` ��������������������������һ�� `IAttackStrategy` �ӿڣ��ӿ��ǲ���ʵ�����ģ���Ȼ `Role` �� `Weapon` ��Ա���Ͷ���Ϊ `IAttackStrategy`�������ջ��ǻᱻ����һ��ʵ���� `IAttackStrategy` �ӿڵľ����������������ų����չ��һ����ɫ��װ����ͬ���������Ӷ�������ͬ��Ч�á�����������ְ���� Demo ���Ƿ����˲��Դ���� ������Դ���ʵ����һ������������������� `Role` �� `Weapon` ��Ա�Ĺ��̣�����**����ע��**������Ҫ�����**����ע��**��ʵ��һ�����̵ĳ�ν��
+我们现在静下心来，再回味一下刚才的故事。因为，这个故事里面隐藏着**依赖注入**的出现原因。我说过不只一次，想真正认清一个事物，不能只看“它是什么？什么样子？”，而应该先弄清楚“它是怎么来的？是什么样的需求和背景促使了它的诞生？它被创造出来是做什么用的？”。 回想上面的故事。刚开始，主要需求是一个打怪的功能。小李做了一个初步面向对象的设计：抽取领域场景中的实体（怪物、角色等），封装成类，并为各个类赋予属性与方法，最后通过类的交互完成打怪功能，这应该算是面向对象设计的初级阶段。 在小李的设计基础上，架构师小于指出了几点不足，如不符合 OCP，职责划分不明确等等，并根据情况引入策略模式。这是更高层次的面向对象设计。其实就核心来说，小于只做了一件事：利用多态性，隔离变化。它清楚认识到，这个打怪功能中，有些业务逻辑是不变的，如角色攻击怪物，怪物减少 HP，减到 0 怪物就会死；而变化的仅仅是不同的角色持有不同武器时，每次攻击的效用不一样。于是他的架构，本质就是把变化的部分和不变的部分隔离开，使得变化部分发生变化时，不变部分不受影响。 我们再仔细看看小于的设计图，这样设计后，有个基本的问题需要解决：现在 `Role` 不依赖具体武器，而仅仅依赖一个 `IAttackStrategy` 接口，接口是不能实例化的，虽然 `Role` 的 `Weapon` 成员类型定义为 `IAttackStrategy`，但最终还是会被赋予一个实现了 `IAttackStrategy` 接口的具体武器，并且随着程序进展，一个角色会装备不同的武器，从而产生不同的效用。赋予武器的职责，在 Demo 中是放在了测试代码里。 这里，测试代码实例化一个具体的武器，并赋给 `Role` 的 `Weapon` 成员的过程，就是**依赖注入**！这里要清楚，**依赖注入**其实是一个过程的称谓！
 
-### ��ʽ��������ע��
+### 正式定义依赖注入
 
-���棬����΢��ʽһ������ԣ���������ע������ı���Ե�ɺ�����ע��ĺ��塣�ڶ��Ĺ����У����߿��Խ����������ӽ������⡣ ����ע������ı����� ������������������Ƶķ�չ��һ�����õ���ƣ�����ԭ��֮һ���ǽ��仯���룬ʹ�ñ仯���ַ����仯ʱ�����䲿�ֲ���Ӱ�죨��Ҳ�� OCP ��Ŀ�ģ���Ϊ��������һ�㣬Ҫ������������еĶ�̬�ԣ�ʹ�ö�̬�Ժ󣬿ͻ��಻��ֱ�����������࣬����������һ������Ľӿڣ��������ͻ���Ͳ������ڲ�ֱ��ʵ��������ķ����ࡣ���ǣ��ͻ������������ֿ͹���Ҫ����ķ������ṩ������Ϊ�ӿ��ǲ���ʵ����ȥ�ṩ����ġ��Ͳ����ˡ��ͻ��಻׼ʵ������������ࡱ�͡��ͻ�����Ҫ��������ࡱ����һ��ì�ܡ�Ϊ�˽�����ì�ܣ�������Ա�����һ��ģʽ���ͻ��ࣨ�������е� `Role`������һ��ע��㣨`Public` ��Ա `Weapon`�������ڷ����ࣨʵ�� `IAttackStrategy` �ľ����࣬�� `WoodSword`��`IronSword` �� `MagicSword`��Ҳ�����Ժ�ӽ���������ʵ�� `IAttackStrategy` �����ࣩ��ע�룬���ͻ���Ŀͻ��ࣨ`Program`�������Դ��룩������������ʵ���������࣬ע�뵽�ͻ����У��Ӷ���������ì�ܡ� ����ע�����ʽ���壺 ����ע�루 _Dependency Injection_ ����������һ�����̣�����ĳ�ͻ���ֻ�����ڷ������һ���ӿڣ����������ھ�������࣬���Կͻ���ֻ����һ��ע��㡣�ڳ������й����У��ͻ��಻ֱ��ʵ�������������ʵ�������ǿͻ�������������Ļ�����ר���������ʵ���������࣬Ȼ����ע�뵽�ͻ����У���֤�ͻ�����������С�
+下面，用稍微正式一点的语言，定义依赖注入产生的背景缘由和依赖注入的含义。在读的过程中，读者可以结合上面的例子进行理解。 依赖注入产生的背景： 随着面向对象分析与设计的发展，一个良好的设计，核心原则之一就是将变化隔离，使得变化部分发生变化时，不变部分不受影响（这也是 OCP 的目的）。为了做到这一点，要利用面向对象中的多态性，使用多态性后，客户类不再直接依赖服务类，而是依赖于一个抽象的接口，这样，客户类就不能在内部直接实例化具体的服务类。但是，客户类在运作中又客观需要具体的服务类提供服务，因为接口是不能实例化去提供服务的。就产生了“客户类不准实例化具体服务类”和“客户类需要具体服务类”这样一对矛盾。为了解决这个矛盾，开发人员提出了一种模式：客户类（如上例中的 `Role`）定义一个注入点（`Public` 成员 `Weapon`），用于服务类（实现 `IAttackStrategy` 的具体类，如 `WoodSword`、`IronSword` 和 `MagicSword`，也包括以后加进来的所有实现 `IAttackStrategy` 的新类）的注入，而客户类的客户类（`Program`，即测试代码）负责根据情况，实例化服务类，注入到客户类中，从而解决了这个矛盾。 依赖注入的正式定义： 依赖注入（ _Dependency Injection_ ），是这样一个过程：由于某客户类只依赖于服务类的一个接口，而不依赖于具体服务类，所以客户类只定义一个注入点。在程序运行过程中，客户类不直接实例化具体服务类实例，而是客户类的运行上下文环境或专门组件负责实例化服务类，然后将其注入到客户类中，保证客户类的正常运行。
 
 
-## ����ע����Щ�¶�
+## 依赖注入那些事儿
 
-�������Ǵ����󱳾��ĽǶȣ�����������ע�����Դ�Ͷ��塣���ǣ��������ע�������ֻ����ô�㶫������Ҳû��ʲôֵ�����۵��ˡ����ǣ��������۵Ľ���������ע����ں��������ӻ��Ƿǳ��㷺�ģ�������ע���������˺ܶ���صĸ����뼼����������������һ������ע��ġ���Щ�¶�����
+上面我们从需求背景的角度，讲述了依赖注入的来源和定义。但是，如果依赖注入仅仅就只有这么点东西，那也没有什么值得讨论的了。但是，上面讨论的仅仅是依赖注入的内涵，其外延还是非常广泛的，从依赖注入衍生出了很多相关的概念与技术，下面我们讨论一下依赖注入的“那些事儿”。
 
-### ����ע������
+### 依赖注入的类别
 
-����ע���кܶ��ַ��������濴���������У�ֻ�����е�һ�֣�����ֱ����۲�ͬ������ע�����͡�
+依赖注入有很多种方法，上面看到的例子中，只是其中的一种，下面分别讨论不同的依赖注入类型。
 
-####    Setter ע��
+####    Setter 注入
 
-��һ������ע��ķ�ʽ������ Setter ע�룬����������У�������ע�� `Role` ���� Setter ע�롣��ʽ��˵�� Setter ע�루 _Setter Injection_ ����ָ�ڿͻ����У�����һ��������ӿ����͵����ݳ�Ա��������һ�� `Set` ������Ϊע��㣬��� `Set` ��������һ������ķ�����ʵ��Ϊ����������������������ӿ����͵����ݳ�Ա��
+第一种依赖注入的方式，就是 Setter 注入，上面的例子中，将武器注入 `Role` 就是 Setter 注入。正式点说： Setter 注入（ _Setter Injection_ ）是指在客户类中，设置一个服务类接口类型的数据成员，并设置一个 `Set` 方法作为注入点，这个 `Set` 方法接受一个具体的服务类实例为参数，并将它赋给服务类接口类型的数据成员。
 
 <!-- ![04_6.jpg](https://i.loli.net/2017/09/15/59bbb21e689a0.jpg) -->
 {% asset_img 4.webp img046 %}
 
-**ͼ3.1 Setterע��ʾ��**
+**图3.1 Setter注入示意**
 
-��ͼչʾ��Setterע��Ľṹʾ��ͼ���ͻ��� `ClientClass` ���� `IServiceClass` ���ͳ�Ա `_serviceImpl`�������� `Set_ServiceImpl` ������Ϊע��㡣`Context` �Ḻ��ʵ����һ������� `ServiceClass`��Ȼ��ע�뵽 `ClientClass` � ������� Setter ע���ʾ�����룺
+上图展示了Setter注入的结构示意图，客户类 `ClientClass` 设置 `IServiceClass` 类型成员 `_serviceImpl`，并设置 `Set_ServiceImpl` 方法作为注入点。`Context` 会负责实例化一个具体的 `ServiceClass`，然后注入到 `ClientClass` 里。 下面给出 Setter 注入的示例代码：
 
 ```csharp
 using System;
@@ -488,7 +486,7 @@ namespace SetterInjection
     {
         public String ServiceInfo()
         {
-            return "����ServceClassA";
+            return "我是ServceClassA";
         }
     }
 }
@@ -506,7 +504,7 @@ namespace SetterInjection
     {
         public String ServiceInfo()
         {
-            return "����ServceClassB";
+            return "我是ServceClassB";
         }
     }
 }
@@ -562,23 +560,23 @@ namespace SetterInjection
 }
 ```
 
-���н�����£�
+运行结果如下：
 
 <!-- ![05_3.jpg](https://i.loli.net/2017/09/15/59bbb2c0e0be7.jpg) -->
-{% asset_img 5.jpg ���053 %}
+{% asset_img 5.jpg 结果053 %}
 
-**ͼ3.2 Setterע�����н��**
+**图3.2 Setter注入运行结果**
 
-####    ����ע��
+####    构造注入
 
-����һ������ע�뷽ʽ����ͨ���ͻ���Ĺ��캯������ͻ���ע�������ʵ���� ����ע�루 _Constructor Injection_ ����ָ�ڿͻ����У�����һ��������ӿ����͵����ݳ�Ա�����Թ��캯��Ϊע��㣬������캯������һ������ķ�����ʵ��Ϊ����������������������ӿ����͵����ݳ�Ա��
+另外一种依赖注入方式，是通过客户类的构造函数，向客户类注入服务类实例。 构造注入（ _Constructor Injection_ ）是指在客户类中，设置一个服务类接口类型的数据成员，并以构造函数为注入点，这个构造函数接受一个具体的服务类实例为参数，并将它赋给服务类接口类型的数据成员。
 
 <!-- ![06_3.jpg](https://i.loli.net/2017/09/15/59bbb3267fef0.jpg) -->
 {% asset_img 6.webp img063 %}
 
-**ͼ3.3 ����ע��ʾ��**
+**图3.3 构造注入示意**
 
-ͼ3.3�ǹ���ע���ʾ��ͼ�����Կ������� Setter ע������ƣ�ֻ��ע����� Setter ��������˹��췽��������Ҫע�⣬���ڹ���ע��ֻ����ʵ�����ͻ���ʱע��һ�Σ�����һ��ע�룬���������ڼ���û���ı�һ���ͻ�������ڵķ�����ʵ���ġ� ���ڹ���ע��� Setter ע��� `IServiceClass`��`ServiceClassA` �� `ServiceClassB` ��һ���ģ���������������� `ClientClass` ���ʾ�����룺
+图3.3是构造注入的示意图，可以看出，与 Setter 注入很类似，只是注入点由 Setter 方法变成了构造方法。这里要注意，由于构造注入只能在实例化客户类时注入一次，所以一点注入，程序运行期间是没法改变一个客户类对象内的服务类实例的。 由于构造注入和 Setter 注入的 `IServiceClass`，`ServiceClassA` 和 `ServiceClassB` 是一样的，所以这里给出另外 `ClientClass` 类的示例代码：
 
 ```csharp
 using System;
@@ -605,18 +603,18 @@ namespace ConstructorInjection
 }
 ```
 
-���Կ�����Ψһ�ı仯���ǹ��캯��ȡ���� `Set_ServiceImpl` ��������Ϊ��ע��㡣
+可以看到，唯一的变化就是构造函数取代了 `Set_ServiceImpl` 方法，成为了注入点。
 
-####    ������ȡ
+####    依赖获取
 
-�����ᵽ��ע�뷽ʽ�����ǿͻ��౻�������������ķ����࣬��Ҳ���ϡ�ע�롱����ʡ���������һ�ַ��������Ժ�����ע��ﵽ��ͬ��Ŀ�ģ�����������ȡ�� ������ȡ�� _Dependency Locate_ ����ָ��ϵͳ���ṩһ����ȡ�㣬�ͻ�����Ȼ����������Ľӿڡ����ͻ�����Ҫ������ʱ���ӻ�ȡ������ȡ��ָ���ķ����࣬����ķ����������ɻ�ȡ������þ����� ���Կ��������ַ����䱻��Ϊ������ʹ�ÿͻ�������Ҫʱ������ȡ�����࣬������̬�Ե�ʵ�ַ�װ����ȡ�����档��ȡ������кܶ���ʵ�֣�Ҳ���������뵽�ľ��ǽ���һ��Simple Factory��Ϊ��ȡ�㣬�ͻ��ഫ��һ��ָ���ַ������Ի�ȡ��Ӧ������ʵ��������������ķ�������һϵ���࣬��ô������ȡһ������ Abstract Factory ģʽ������ȡ�㣬Ȼ�󣬽��������̬��ת�Ƶ������Ķ�̬���ϣ�����������������һ���ⲿ���ã���XML�ļ��� ����������ʹ�� Simple Factory ���� Abstract Factory�������ⲻ���жϷ��������ͻ򹤳����ͣ�����ϵͳ����Ҫ��һ���ط����ڲ����� OCP �� `if��else` �� `switch��case` �ṹ������ȱ���� Simple Factory �� Abstract Factory �Լ�������ȡ�����޷������ģ�����ĳЩ֧�ַ���������У��� C#����ͨ����������Ƶ����볹�׽����������⣨�������ۣ��� �����һ����������ӣ��������Ǽ����и����򣬼ȿ���ʹ�� Windows �����ۣ��ֿ���ʹ�� Mac �����ۣ����ڲ�ҵ����һ���ġ�
+上面提到的注入方式，都是客户类被动接受所依赖的服务类，这也符合“注入”这个词。不过还有一种方法，可以和依赖注入达到相同的目的，就是依赖获取。 依赖获取（ _Dependency Locate_ ）是指在系统中提供一个获取点，客户类仍然依赖服务类的接口。当客户类需要服务类时，从获取点主动取得指定的服务类，具体的服务类类型由获取点的配置决定。 可以看到，这种方法变被动为主动，使得客户类在需要时主动获取服务类，而将多态性的实现封装到获取点里面。获取点可以有很多种实现，也许最容易想到的就是建立一个Simple Factory作为获取点，客户类传入一个指定字符串，以获取相应服务类实例。如果所依赖的服务类是一系列类，那么依赖获取一般利用 Abstract Factory 模式构建获取点，然后，将服务类多态性转移到工厂的多态性上，而工厂的类型依赖一个外部配置，如XML文件。 不过，不论使用 Simple Factory 还是 Abstract Factory，都避免不了判断服务类类型或工厂类型，这样系统中总要有一个地方存在不符合 OCP 的 `if…else` 或 `switch…case` 结构，这种缺陷是 Simple Factory 和 Abstract Factory 以及依赖获取本身无法消除的，而在某些支持反射的语言中（如 C#），通过将反射机制的引入彻底解决了这个问题（后面讨论）。 下面给一个具体的例子，现在我们假设有个程序，既可以使用 Windows 风格外观，又可以使用 Mac 风格外观，而内部业务是一样的。
 
 <!-- ![07_3.jpg](https://i.loli.net/2017/09/15/59bbb3d9a6b9f.jpg) -->
 {% asset_img 7.webp img073 %}
 
-**ͼ3.4 ������ȡʾ��**
+**图3.4 依赖获取示意**
 
-��ͼէ���е㸴�ӣ��������������Ϥ Abstract Factory ģʽ��Ӧ���ܺ����׿���������� Abstract Factory ��ʵ���е�һ��Ӧ�á������ Factory Container ��Ϊ��ȡ�㣬��һ����̬�࣬���ġ�**Type ���캯��**�������ⲿ��XML�����ļ�������ʵ�����ĸ����������滹������ʾ�����롣���ڲ�ͬ����Ĵ��������Ƶģ�����ֻ���� Button �����ʾ�����룬����������ο���ĩ���ϵ�����Դ����
+上图乍看有点复杂，不过如果读者熟悉 Abstract Factory 模式，应该能很容易看懂，这就是 Abstract Factory 在实际中的一个应用。这里的 Factory Container 作为获取点，是一个静态类，它的“**Type 构造函数**”依据外部的XML配置文件，决定实例化哪个工厂。下面还是来看示例代码。由于不同组件的代码是相似的，这里只给出 Button 组件的示例代码，完整代码请参考文末附上的完整源程序。
 
 ```csharp
 using System;
@@ -647,7 +645,7 @@ namespace DependencyLocate
 
         public WindowsButton()
         {
-            this.Description = "Windows���ť";
+            this.Description = "Windows风格按钮";
         }
 
         public String ShowInfo()
@@ -672,7 +670,7 @@ namespace DependencyLocate
 
         public MacButton()
         {
-            this.Description = " Mac���ť";
+            this.Description = " Mac风格按钮";
         }
 
         public String ShowInfo()
@@ -808,11 +806,11 @@ namespace DependencyLocate
         {
             IFactory factory = FactoryContainer.factory;
             IWindow window = factory.MakeWindow();
-            Console.WriteLine("���� " + window.ShowInfo());
+            Console.WriteLine("创建 " + window.ShowInfo());
             IButton button = factory.MakeButton();
-            Console.WriteLine("���� " + button.ShowInfo());
+            Console.WriteLine("创建 " + button.ShowInfo());
             ITextBox textBox = factory.MakeTextBox();
-            Console.WriteLine("���� " + textBox.ShowInfo());
+            Console.WriteLine("创建 " + textBox.ShowInfo());
 
             Console.ReadLine();
         }
@@ -820,7 +818,7 @@ namespace DependencyLocate
 }
 ```
 
-����������XML��Ϊ�����ļ��������ļ� `Config.xml` ���£�
+这里我们用XML作为配置文件。配置文件 `Config.xml` 如下：
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -829,32 +827,32 @@ namespace DependencyLocate
 </config>
 ```
 
-���Կ������������ǽ���������Ϊ Mac ��񣬱��������������룬���н�����£�
+可以看到，这里我们将配置设置为 Mac 风格，编译运行上述代码，运行结果如下：
 
 <!-- ![08_3.jpg](https://i.loli.net/2017/09/15/59bbb4ede424d.jpg) -->
-{% asset_img 8.jpg ���083 %}
+{% asset_img 8.jpg 结果083 %}
 
-**ͼ3.5 ����Mac��������н��**
+**图3.5 配置Mac风格后的运行结果**
 
-���ڣ����ǲ������򣬽����������ļ��еġ�Mac����Ϊ Windows�����к������£�
+现在，我们不动程序，仅仅将配置文件中的“Mac”改为 Windows，运行后结果如下：
 
 <!-- ![09_3.jpg](https://i.loli.net/2017/09/15/59bbb4d5af22b.jpg) -->
-{% asset_img 9.jpg ���093 %}
+{% asset_img 9.jpg 结果093 %}
 
-**ͼ3.6 ����ΪWindows��������н��**
+**图3.6 配置为Windows风格后的运行结果**
 
-�����н�����������ǽ���ͨ���޸������ļ����͸ı��������������Ϊ����������û�����±�����򣩣�����Ƕ�̬�Ե�������Ҳ������ע��Ч���� ���ڹ����������ֻ���������ע������йظ�������ע�����Ͳ�ͬ���Աȵ�֪ʶ�����Բο� Martin Fowler �ġ�[_Inversion of Control Containers and the Dependency Injection pattern_](https://www.martinfowler.com/articles/injection.html)����
+从运行结果看出，我们仅仅通过修改配置文件，就改变了整个程序的行为（我们甚至没有重新编译程序），这就是多态性的威力，也是依赖注入效果。 本节共讨论了三种基本的依赖注入类别，有关更多依赖注入类别和不同类别对比的知识，可以参考 Martin Fowler 的《[_Inversion of Control Containers and the Dependency Injection pattern_](https://www.martinfowler.com/articles/injection.html)》。
 
-### ����������ע��
+### 反射与依赖注入
 
-�������� _Dependency Locate_ �����ӣ�������Ȼʹ���˶�̬�Ժ� _Abstract Factory_ ������ OCP �᳹�Ĳ������ס����������ǰ��������һ��Ҫע��Ǳ����չ�����Ǳ�ڻ������չ�ĵط��ǡ��µ����ϵ�С������ǡ�������ࡱ��Ҳ����˵���������Ǽ�����������֣����������µ�����������ܳ����µ����ϵ�У�����Ҫ��һ�� _Ubuntu_ ������������ǿ������� _UbuntuWindow_ �� _UbuntuButton_ �� _UbuntuTextBox_ �� _UbuntuFactory_ �����ֱ�ʵ����Ӧ�ӿڣ����Ƿ��� OCP �ģ���Ϊ������չ�������ǳ����޸������ļ�����Ҫ�޿ɱ�����޸� _FactoryContainer_ ����Ҫ��һ����֧����������ط��ƻ��� OCP������ע�뱾����û����������������ģ����������֧�ַ�����ƣ� _Reflection_ ��������������ӭ�ж��⡣ �������룬���ڵ��ѵ��ǳ�������������ջ���Ҫͨ����new����ʵ����������`new`��ֻ��ʵ������ǰ���е��࣬���δ�����������ӽ����������޸Ĵ��롣�������������һ�ַ���������ͨ����`new`��������ͨ�����������ʵ����������ô����ֻҪ�����������Ϊ������Ϳ���ʵ���ڲ��޸Ĵ��������£�����δ���ų��ֵ��ࡣ���ԣ�����������ԡ�Ԥ��δ������������ʹ�ö�̬�Ժ�����ע������������� ���������뷴����ƺ󣬶��������ӵĸĽ���
+回想上面 _Dependency Locate_ 的例子，我们虽然使用了多态性和 _Abstract Factory_ ，但对 OCP 贯彻的不够彻底。在理解这点前，朋友们一定要注意潜在扩展在哪里，潜在会出现扩展的地方是“新的组件系列”而不是“组件种类”，也就是说，这里我们假设组件就三种，不会增加新的组件，但可能出现新的外观系列，如需要加一套 _Ubuntu_ 风格的组件，我们可以新增 _UbuntuWindow_ 、 _UbuntuButton_ 、 _UbuntuTextBox_ 和 _UbuntuFactory_ ，并分别实现相应接口，这是符合 OCP 的，因为这是扩展。但我们除了修改配置文件，还要无可避免的修改 _FactoryContainer_ ，需要加一个分支条件，这个地方破坏了 OCP。依赖注入本身是没有能力解决这个问题的，但如果语言支持反射机制（ _Reflection_ ），则这个问题就迎刃而解。 我们想想，现在的难点是出在这里：对象最终还是要通过“new”来实例化，而“`new`”只能实例化当前已有的类，如果未来有新类添加进来，必须修改代码。如果，我们能有一种方法，不是通过“`new`”，而是通过类的名字来实例化对象，那么我们只要将类的名字作为配置项，就可以实现在不修改代码的情况下，加载未来才出现的类。所以，反射给了语言“预见未来”的能力，使得多态性和依赖注入的威力大增。 下面是引入反射机制后，对上面例子的改进：
 
 <!-- ![10_3.jpg](https://i.loli.net/2017/09/15/59bbb60a2b744.jpg) -->
 {% asset_img 10.webp img103 %}
 
-**ͼ3.7 ���뷴����Ƶ�Dependency Locate**
+**图3.7 引入反射机制的Dependency Locate**
 
-���Կ��������뷴����ƺ󣬽ṹ���˺ܶ࣬һ�����乤����������ǰ��һ�ѹ�����`Factory Container` Ҳ����Ҫ�ˡ������Ժ��������ϵ�м���ʱ�����乤���ǲ��øı�ģ�ֻ��ı������ļ��Ϳ�����ɡ�����������乤���������ļ��Ĵ��롣
+可以看出，引入反射机制后，结构简单了很多，一个反射工厂代替了以前的一堆工厂，`Factory Container` 也不需要了。而且以后有新组件系列加入时，反射工厂是不用改变的，只需改变配置文件就可以完成。下面给出反射工厂和配置文件的代码。
 
 ```csharp
 using System;
@@ -901,7 +899,7 @@ namespace DependencyLocate
 }
 ```
 
-�����ļ����£�
+配置文件如下：
 
 ```xml
 <?xml version="1.0" encoding="utf-8" ?>
@@ -912,67 +910,67 @@ namespace DependencyLocate
 </config>
 ```
 
-���䲻�������� _Dependency Locate_ ��ϣ�Ҳ������ _Setter Injection_ �� _Construtor Injection_ ��ϡ�������Ƶ����룬����������ע��ṹ�ĸ��Ӷȣ�ʹ������ע�볹�׷��� OCP����Ϊͨ������ע���ܣ��� Spring.NET �е� IoC ���֡�Unity �ȣ�������ṩ�˿����ԡ�
+反射不仅可以与 _Dependency Locate_ 结合，也可以与 _Setter Injection_ 与 _Construtor Injection_ 结合。反射机制的引入，降低了依赖注入结构的复杂度，使得依赖注入彻底符合 OCP，并为通用依赖注入框架（如 Spring.NET 中的 IoC 部分、Unity 等）的设计提供了可能性。
 
-### ��̬�Ļ���������ע��
+### 多态的活性与依赖注入
 
-####    ��̬�ԵĻ���
+####    多态性的活性
 
-��һ���������۶�̬�Ļ��Լ���������ע������ѡ������еĹ�ϵ�� ����˵��������̬�Ļ��ԡ�����������Ҹ��˶���ģ���Ϊ��û���ҵ����еĸ������ʿ��Ա����ҵ���˼�����Ծ��Լ�����һ���ʡ����ĳ��̬�Ļ�����ָ���˶�̬����ı仯�������仯��Ƶ���̶ȣ�Ƶ���̶�Խ�ߣ������Խǿ����֮��Ȼ�� ����˵������̬�Կ��Ը���仯�����ǣ���ͬ�ı仯��������Ƶ���ǲ�һ���ģ����ʹ�ö�̬�Ļ�������������ֲ��Ӱ��������ע�������ѡ�� ������˵�������ʼ�ᵽ��������̬�ԣ�����Էǳ��ߣ���Ϊ���Ǹ������У�_Role_ ��һ�������п��ܸ���������������������Ǽ��� _Role_ Ҳʵ���˶�̬�ԣ����Ǻܿ��ܵģ���Ϊ����Ϸ�У���ͬ���͵Ľ�ɫ���簵ҹ�� �顢ţͷ�ˡ����˵ȣ��ܶ����Ժ�ҵ������ͨ�ģ����Ժܿ���ͨ��һ�� _IRole_ �� _AbstractRole_ ������ʵ�ֶ�̬�ԣ�������_Role_ ��ʵ������һ�����û���¼�ɹ��󣩣��ǲ���仯�ģ���������Ϸ����ͬһ������������б任 _Role_ ���ͣ����� _Role_ Ӧ����һ��ʵ�������Ͳ���仯���������ʵ����һ��������һ����ҵ�¼��������ܾͱ仯�ˡ���󣬻���һ�ֶ�̬���ǻ��Էǳ��͵ģ���������Ϥ�����ݷ��ʲ��̬�ԣ���ʹ����ʵ���� SQL Server��Oracle �� Access �ȶ������ݿ�ķ��ʲ㣬��ʵ��������ע�룬���������������������ž͸����ݿ����������ݿ�Ƶ���䶯������� ���ϲ�ͬ�Ķ�̬�ԣ�����������ͬ����Ŀ��һ��Ҳ��ͬ���ܽ����£� �߻��̬�ԡ���ָ�ڿͻ���ʵ�������ڼ䣬��������ܻ�ı�Ķ�̬�ԡ� �л��̬�ԡ���ָ�ڿͻ���ʵ�����󣬷����಻��ı䣬��ͬһʱ���ڴ��ڵĲ�ͬʵ������ӵ�в�ͬ���͵ķ����ࡣ �ͻ��̬�ԡ���ָ�ڿͻ���ʵ�����󣬷����಻��ı䣬��ͬһʱ�������пͻ��඼ӵ����ͬ���͵ķ����ࡣ �������ֶ�̬�ԣ��ȽϺõ����Ӿ��������ᵽ��������̬�ԣ��߻����ɫ��̬�ԣ��л�����ݷ��ʲ��̬�ԣ��ͻ�����⣬����˵һ�ֶ�̬���ǿռ��ȶ��ģ����ͬһ�ͻ�����ͬһʱ���ڵ�����ʵ����������ͬ���͵ķ����࣬��֮������ռ䲻�ȶ���̬�ԡ�����˵һ�ֶ�̬����ʱ���ȶ��ģ����һ���ͻ�����ʵ�������������ķ����಻���ٴθ��ģ���֮�����ʱ�䲻�ȶ���̬�ԡ���Ȼ���߻��̬��ʱ��Ϳռ�����ȶ����л��̬����ʱ���ȶ��ģ����ռ䲻�ȶ����ͻ��̬��ʱ��ռ���ȶ���
+这一节我们讨论多态的活性及其与依赖注入类型选择间密切的关系。 首先说明，“多态的活性”这个术语是我个人定义的，因为我没有找到既有的概念名词可以表达我的意思，所以就自己造了一个词。这里，某多态的活性是指被此多态隔离的变化所发生变化的频繁程度，频繁程度越高，则活性越强，反之亦然。 上文说过，多态性可以隔离变化，但是，不同的变化，发生的频率是不一样的，这就使得多态的活性有所差别，这种差别影响了依赖注入的类型选择。 举例来说，本文最开始提到的武器多态性，其活性非常高，因为在那个程序中，_Role_ 在一次运行中可能更换多次武器。而现在我们假设 _Role_ 也实现了多态性，这是很可能的，因为在游戏中，不同类型的角色（如暗夜精 灵、牛头人、矮人等）很多属性和业务是想通的，所以很可能通过一个 _IRole_ 或 _AbstractRole_ 抽象类实现多态性，不过，_Role_ 在实例化后（一般在用户登录成功后），是不会变化的，很少有游戏允许同一个玩家在运行中变换 _Role_ 类型，所以 _Role_ 应该是一但实例化，就不会变化，但如果再实例化一个（如另一个玩家登录），则可能就变化了。最后，还有一种多态性是活性非常低的，如我们熟悉的数据访问层多态性，即使我们实现了 SQL Server、Oracle 和 Access 等多种数据库的访问层，并实现了依赖注入，但几乎遇不到程序运行着就改数据库或短期内数据库频繁变动的情况。 以上不同的多态性，不但特征不同，其目的一般也不同，总结如下： 高活多态性——指在客户类实例运行期间，服务类可能会改变的多态性。 中活多态性——指在客户类实例化后，服务类不会改变，但同一时间内存在的不同实例可能拥有不同类型的服务类。 低活多态性——指在客户类实例化后，服务类不会改变，且同一时间内所有客户类都拥有相同类型的服务类。 以上三种多态性，比较好的例子就是上文提到的武器多态性（高活）、角色多态性（中活）和数据访问层多态性（低活）。另外，我们说一种多态性是空间稳定的，如果同一客户类在同一时间内的所有实例都依赖相同类型的服务类，反之则叫做空间不稳定多态性。我们说一种多态性是时间稳定的，如果一个客户类在实例化后，所以来的服务类不能再次更改，反之则叫做时间不稳定多态性。显然，高活多态性时间和空间均不稳定；中活多态性是时间稳定的，但空间不稳定；低活多态性时间空间均稳定。
 
-####    ��ͬ���Զ�̬������ע��ѡ��
+####    不同活性多态的依赖注入选择
 
-һ����˵���߻��̬���ʺ�ʹ�� Setter ע�롣��Ϊ Setter ע������Ҳ��Ψһ������ͬһ�ͻ���ʵ�������ڼ���ķ������ע�뷽ʽ����������ע��һ���������Ļ���ͨ�� Setter �Ĳ���ָ�����������ͣ��������ʺ�Ƶ���仯�ĸ߻��̬�ԡ� �����л��̬�ԣ����ʺ�ʹ�� Constructor ע�롣��Ϊ Constructor ע��Ҳ���������Ļ���ͨ�� Construtor �Ĳ���ָ�����������ͣ���һ��ͻ���ʵ�����󣬾Ͳ��ܽ����ٴ�ע�룬��֤����ʱ���ȶ��ԡ� �����ڵͻ��̬�ԣ����ʺ�ʹ�� _Dependency Locate_ ������ļ����ý�������ע�룬�� Setter��Constructor ��������ļ�ע�룬��Ϊ����Դ�����ļ������Ҫ���ķ����࣬����Ҫ���������ļ���һ��ȷ���˵ͻ��̬�Ե�ʱ��Ϳռ��ȶ��ԣ����Ǹ��������ļ��ķ�ʽ�����ڴ��ģ�������滻������Ϊ�ͻ��̬��һ���ı���Ϊ��������ģ�ܴ����滻�������ݷ��ʲ㣬���ʹ�� Setter �� Construtor ���Σ���������Ҫ�ı�ĵط����������� �����ϣ�����ѡ������Ϊ��ͬ������ע���������Ų�ͬ���ȶ��ԣ���ҿ���ϸϸ��ᡰ���ԡ������ȶ��ԡ��͡�����ע�����͡�֮�����еĹ�ϵ��
+一般来说，高活多态性适合使用 Setter 注入。因为 Setter 注入最灵活，也是唯一允许在同一客户类实例运行期间更改服务类的注入方式。并且这种注入一般由上下文环境通过 Setter 的参数指定服务类类型，方便灵活，适合频繁变化的高活多态性。 对于中活多态性，则适合使用 Constructor 注入。因为 Constructor 注入也是由上下文环境通过 Construtor 的参数指定服务类类型，但一点客户类实例化后，就不能进行再次注入，保证了其时间稳定性。 而对于低活多态性，则适合使用 _Dependency Locate_ 并配合文件配置进行依赖注入，或 Setter、Constructor 配合配置文件注入，因为依赖源来自文件，如果要更改服务类，则需要更改配置文件，一则确保了低活多态性的时间和空间稳定性，二是更改配置文件的方式方便于大规模服务类替换。（因为低活多态性一旦改变行为，往往规模很大，如替换整个数据访问层，如果使用 Setter 和 Construtor 传参，程序中需要改变的地方不计其数） 本质上，这种选择是因为不同的依赖注入类型有着不同的稳定性，大家可以细细体会“活性”、“稳定性”和“依赖注入类型”之间密切的关系。
 
 
 ## IoC Container
 
-### IoC Container ���ֵı�Ȼ��
+### IoC Container 出现的必然性
 
-�����������������ע��Ļ��⡣˵������ע�룬�Ͳ��ܲ�˵ _IoC Container_ ��IoC ����������ô����ʲô�� _IoC_ ���������ǻ��������������ĳ��ֱ����� ����֪�����������������о��������۶ϣ���Ҫ�ظ��������ӣ���Ϊ�������������ã����ԣ�����Ӧ��Ƶ������������������Ƹ���ͨ�ÿ�ܺ�����Լ������ǵĿ������������磬���ݳ־û��Ƿǳ�Ƶ�����������Ǹ��� _ORM_ ���Ӧ�˶��������磬�� _MVC_ ����������� _Struts_ ��һ������ʵ�� _MVC_ �Ŀ�ܡ� ������������������Ƶķ�չ�ͳ��죬_OOA&D_ ��Խ��Խ�㷺Ӧ���ڸ�����Ŀ�У�Ȼ��������֪������ _OO_ �Ͳ����ܲ��ö�̬�ԣ��ö�̬�ԾͲ����ܲ�������ע�룬���ԣ�����ע�����˷ǳ�Ƶ�������󣬶����ȫ���ֹ���ɣ���������̫�أ����һ����׳������ټ��Ϸ�����Ƶķ��������ǣ���Ȼ���˿�ʼ��ƿ���������������ע���ר�ÿ�ܡ���Щר������ʵ������ע�빦�ܵ�������ܣ����� _IoC Container_ �� ����㿴��_IoC Container_ �ĳ���������ʷ��Ȼ�ԡ�Ŀǰ���������� _IoC_ Ҳ������ _Java_ ƽ̨�ϵ� _Spring_ ��ܵ� _IoC_ ������� _.NET_ ƽ̨��Ҳ�� _Spring.NET_ �� _Unity_ �ȡ�
+上面讨论了诸多依赖注入的话题。说道依赖注入，就不能不说 _IoC Container_ （IoC 容器），那么到底什么是 _IoC_ 容器？我们还是先来看看它的出现背景。 我们知道，软件开发领域有句著名的论断：不要重复发明轮子！因为软件开发讲求复用，所以，对于应用频繁的需求，总是有人设计各种通用框架和类库以减轻人们的开发负担。例如，数据持久化是非常频繁的需求，于是各种 _ORM_ 框架应运而生；再如，对 _MVC_ 的需求催生了 _Struts_ 等一批用来实现 _MVC_ 的框架。 随着面向对象分析与设计的发展和成熟，_OOA&D_ 被越来越广泛应用于各种项目中，然而，我们知道，用 _OO_ 就不可能不用多态性，用多态性就不可能不用依赖注入，所以，依赖注入变成了非常频繁的需求，而如果全部手工完成，不但负担太重，而且还容易出错。再加上反射机制的发明，于是，自然有人开始设计开发各种用于依赖注入的专用框架。这些专门用于实现依赖注入功能的组件或框架，就是 _IoC Container_ 。 从这点看，_IoC Container_ 的出现有其历史必然性。目前，最著名的 _IoC_ 也许就是 _Java_ 平台上的 _Spring_ 框架的 _IoC_ 组件，而 _.NET_ 平台上也有 _Spring.NET_ 和 _Unity_ 等。
 
-### IoC Container �ķ���
+### IoC Container 的分类
 
-ǰ��������������������ע�뷽ʽ�����ǣ���ͨ����ʽ�� _IoC Container_ ���з�������ѣ���Ϊ���� _IoC Container_ ����ƺ����ƣ�����֧����������ע�뷽ʽ�����������ݲ�ͬ��ܵ����Ժ͹��÷������ǿ��Խ� _IoC Container_ ��Ϊ�������ࡣ
+前面曾经讨论了三种依赖注入方式，但是，想通过方式对 _IoC Container_ 进行分类很困难，因为现在 _IoC Container_ 都设计很完善，几乎支持所有依赖注入方式。不过，根据不同框架的特性和惯用法，还是可以讲 _IoC Container_ 分为两个大类。
 
-####    ������ IoC Container
+####    重量级 IoC Container
 
-��ν������ _IoC Container_ ����ָһ�����ⲿ�����ļ���һ���� _XML_ ����Ϊ����Դ�����й�����ϵͳ�������ʵ������ _IoC Container_ ������ _IoC Container_ ��һ���ǳн�������ϵͳ�������ж�̬�Ե�����ע�빤�������н������з������ʵ����������������Щʵ����������һ���ⲿ�����ļ������� _IoC Container_ ������ͨ��һ���ļ�����������ϵͳ��̬�ṹ����Ұ�����Ҫ�ܺü�Ԧ���� _IoC Container_ ����Ҫһ���ļܹ���������ͷḻ��ʵ�����顣 _Spring_ �� _Spring.NET_ �������� _IoC Container_ �����ӡ�һ����˵������ _IoC Container_ �ȶ�����������Բ��㣬�ʺϽ��еͻ��̬�Ե�����ע�롣
+所谓重量级 _IoC Container_ ，是指一般用外部配置文件（一般是 _XML_ ）作为依赖源，并托管整个系统各个类的实例化的 _IoC Container_ 。这种 _IoC Container_ ，一般是承接了整个系统几乎所有多态性的依赖注入工作，并承接了所有服务类的实例化工作，而且这些实例化依赖于一个外部配置文件，这种 _IoC Container_ ，很像通过一个文件，定义整个系统多态结构，视野宏大，想要很好驾驭这种 _IoC Container_ ，需要一定的架构设计能力和丰富的实践经验。 _Spring_ 和 _Spring.NET_ 是重量级 _IoC Container_ 的例子。一般来说，这种 _IoC Container_ 稳定性有余而活性不足，适合进行低活多态性的依赖注入。
 
-####    ������ IoC Container
+####    轻量级 IoC Container
 
-����һ�� _IoC Container_ ��һ�㲻�����ⲿ�����ļ�������Ҫʹ�ô��ε� Setter �� Construtor ע�룬����IoC Container���������� _IoC Container_ �����ֿ�ܺ���ʹ�÷��㣬���������ȶ������������㶼�ǳ����е��ַ������������ԣ����ʺ���Ҫ���ģ�滻������ȶ��ĵͻ��̬�ԣ������ڸ߻��̬�ԣ��кܺõ�Ч���� _Unity_ ��һ�����͵������� _IoC Container_ ��
+还有一种 _IoC Container_ ，一般不依赖外部配置文件，而主要使用传参的 Setter 或 Construtor 注入，这种IoC Container叫做轻量级 _IoC Container_ 。这种框架很灵活，使用方便，但往往不稳定，而且依赖点都是程序中的字符串参数，所以，不适合需要大规模替换和相对稳定的低活多态性，而对于高活多态性，有很好的效果。 _Unity_ 是一个典型的轻量级 _IoC Container_ 。
 
-### .NETƽ̨�ϵ��� IoC Container �ƽ�
+### .NET平台上典型 IoC Container 推介
 
 ####    Spring.NET
 
 <!-- ![11_3.png](https://i.loli.net/2017/09/15/59bbb86a93913.png) -->
 {% asset_img 11.png img113 %}
 
-_Spring.NET_ �� _Java_ ƽ̨�� _Spring_ �� _.NET_ ƽ̨����ֲ��ʹ�÷����� _Spring_ ���񣬲��ҹ���ǿ���� _.NET_ ƽ̨�ϴ����Ϳ��� _IoC Container_ ����ѡ֮һ������ _DI_ �⣬_Spring.NET_ Ҳ���� _AOP_ ����๦�ܡ� _Spring.NET_ �Ĺٷ���վ�ǣ�http://www.springframework.net/
+_Spring.NET_ 是 _Java_ 平台上 _Spring_ 对 _.NET_ 平台的移植，使用方法和 _Spring_ 很像，并且功能强大，是 _.NET_ 平台上大中型开发 _IoC Container_ 的首选之一。除了 _DI_ 外，_Spring.NET_ 也包括 _AOP_ 等诸多功能。 _Spring.NET_ 的官方网站是：http://www.springframework.net/
 
 ####    Unity
 
 <!-- ![12_3.gif](https://i.loli.net/2017/09/15/59bbb8f4a6954.gif) -->
 {% asset_img 12.webp img123 %}
 
-����С����Ŀ�ͽ������ݵ��Ŷӣ�_Spring.NET_ �����е�̫����������ô����ѡ���������� _Unity_ ��_Unity_ ��΢�� _patterns & practices_ �Ŷ��Ƴ�����������ܣ��ǳ����ã�Ŀǰ���°汾�� 1.2��
+对于小型项目和讲求敏捷的团队，_Spring.NET_ 可能有点太重量级，那么可以选择轻量级的 _Unity_ 。_Unity_ 是微软 _patterns & practices_ 团队推出的轻量级框架，非常好用，目前最新版本是 1.2。
 
-_Unity_ �Ĺٷ���վ�ǣ�http://unity.codeplex.com/
+_Unity_ 的官方网站是：http://unity.codeplex.com/
 
-##  �ο�����
+##  参考文献
 
-1.  [Shivprasad koirala, Design pattern �C Inversion of control and Dependency injection](http://www.codeproject.com/KB/aspnet/IOCDI.aspx)
+1.  [Shivprasad koirala, Design pattern – Inversion of control and Dependency injection](http://www.codeproject.com/KB/aspnet/IOCDI.aspx)
 
 2.  [Martin Fowler, Inversion of Control Containers and the Dependency Injection pattern](http://www.martinfowler.com/articles/injection.html)
 
 3.  [Paul, IoC Types](http://docs.codehaus.org/display/PICO/IoC+Types)
 
-4.  Eric Freeman, Elisabeth Freeman. Head First Design Patterns. O��Reilly Media, 2004. ISBN 0596007142
+4.  Eric Freeman, Elisabeth Freeman. Head First Design Patterns. O’Reilly Media, 2004. ISBN 0596007142
 
 5.  Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley, 1995. ISBN 0201633612
 
-6.  Patrick Smacchia ����ʩ���� �룬C#��.NET2.0 ƽ̨���������ܡ�2008.1�������ʵ����
+6.  Patrick Smacchia 著，施凡等 译，C#和.NET2.0 平台、语言与框架。2008.1，人民邮电出版
 
-7.  Jeffrey Rechter ����CLR via C#��Ӱӡ�棩��2008.8�������ʵ����
+7.  Jeffrey Rechter 著，CLR via C#（影印版）。2008.8，人民邮电出版
