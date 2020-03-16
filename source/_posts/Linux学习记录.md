@@ -103,3 +103,29 @@ root     pts/1    192.168.1.88     22:22    7.00s  0.03s  0.00s w
 ### 查找
 
 在命令模式按下 <kbd>/</kbd>，之后跟上你需要搜索的字符串然后回车就可以进行搜索，如果要查找下一个只需要按下 <kbd>n</kbd>，上一个的话则是 <kbd>N</kbd>。
+
+##  Git
+
+### 保存GitHub的用户名和密码
+
+通过 ssh 远程服务器进行开发后，如果需要 `git push` 到 GitHub 的话，每次都需要重新输入用户名和密码，比较繁琐。
+
+可以使用以下命令来设置：
+
+```shell
+git config --global credential.helper cache
+```
+
+或者：
+
+```shell
+git config --global credential.helper store
+```
+
+使用 `cache` 选项的话，会将用户名密码保存在内存中，平且在15分钟后从内存中消失，使用 `store` 选项的话，则会将用户名密码保存在磁盘中，永远都不会消失，除非你更改了 GitHub 的密码，否则是永远都不用输入密码的。但是密码会以明文的方式存储在当前用户的根目录下的 *.git-credentials* 文件中，比较不安全。
+
+如果你是 Mac 系统，则可以使用第三个选项 `osxkeychain`，可以将凭证存储都[钥匙串](https://support.apple.com/zh-cn/HT204085)中。这样你的凭证虽然还是存储在磁盘中，但是它是被加密的，并且也是可以永久使用。
+
+参考：
+
+*   [Git 工具 - 凭证存储](https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E5%87%AD%E8%AF%81%E5%AD%98%E5%82%A8)
