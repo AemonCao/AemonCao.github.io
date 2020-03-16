@@ -22,8 +22,7 @@ date: 2017-09-15 19:37:09
 
 话说有一个叫 IGame 的游戏公司，正在开发一款 ARPG 游戏（动作&角色扮演类游戏，如魔兽世界、梦幻西游这一类的游戏）。一般这类游戏都有一个基本的功能，就是打怪（玩家攻击怪物，借此获得经验、虚拟货币和虚拟装备），并且根据玩家角色所装备的武器不同，攻击效果也不同。这天，IGame 公司的开发小组正在开会对打怪功能中的某一个功能点如何实现进行讨论，他们面前的大屏幕上是这样一份需求描述的 PPT：
 
-<!-- ![01_3.gif](https://i.loli.net/2017/09/15/59bb9d3e3a3c1.gif) -->
-{% asset_img 1.webp PPT %}
+![01_3.gif](https://i.loli.net/2017/09/15/59bb9d3e3a3c1.gif)
 
 **图1.1 需求描述ppt**
 
@@ -195,8 +194,7 @@ namespace IGameLi
 
 程序运行结果如下：
 
-<!-- ![02_3.gif](https://i.loli.net/2017/09/15/59bbae64f08ba.gif) -->
-{% asset_img 2.webp 结果023 %}
+![02_3.gif](https://i.loli.net/2017/09/15/59bbae64f08ba.gif)
 
 **图1.2 小李程序的运行结果**
 
@@ -208,8 +206,7 @@ namespace IGameLi
 
 小于边说，边画了一幅 UML 类图，用于直观表示他的思想：、
 
-<!-- ![03_3.jpg](https://i.loli.net/2017/09/15/59bbaf77f3db6.jpg) -->
-{% asset_img 3.webp uml类图 %}
+![03_3.jpg](https://i.loli.net/2017/09/15/59bbaf77f3db6.jpg)
 
 **图1.3 小于的设计**
 
@@ -450,8 +447,7 @@ Peter 显然对改进后的代码比较满意，他让小李对照两份设计�
 
 第一种依赖注入的方式，就是 Setter 注入，上面的例子中，将武器注入 `Role` 就是 Setter 注入。正式点说： Setter 注入（ _Setter Injection_ ）是指在客户类中，设置一个服务类接口类型的数据成员，并设置一个 `Set` 方法作为注入点，这个 `Set` 方法接受一个具体的服务类实例为参数，并将它赋给服务类接口类型的数据成员。
 
-<!-- ![04_6.jpg](https://i.loli.net/2017/09/15/59bbb21e689a0.jpg) -->
-{% asset_img 4.webp img046 %}
+![04_6.jpg](https://i.loli.net/2017/09/15/59bbb21e689a0.jpg)
 
 **图3.1 Setter注入示意**
 
@@ -560,8 +556,7 @@ namespace SetterInjection
 
 运行结果如下：
 
-<!-- ![05_3.jpg](https://i.loli.net/2017/09/15/59bbb2c0e0be7.jpg) -->
-{% asset_img 5.jpg 结果053 %}
+![05_3.jpg](https://i.loli.net/2017/09/15/59bbb2c0e0be7.jpg)
 
 **图3.2 Setter注入运行结果**
 
@@ -569,8 +564,7 @@ namespace SetterInjection
 
 另外一种依赖注入方式，是通过客户类的构造函数，向客户类注入服务类实例。 构造注入（ _Constructor Injection_ ）是指在客户类中，设置一个服务类接口类型的数据成员，并以构造函数为注入点，这个构造函数接受一个具体的服务类实例为参数，并将它赋给服务类接口类型的数据成员。
 
-<!-- ![06_3.jpg](https://i.loli.net/2017/09/15/59bbb3267fef0.jpg) -->
-{% asset_img 6.webp img063 %}
+![06_3.jpg](https://i.loli.net/2017/09/15/59bbb3267fef0.jpg)
 
 **图3.3 构造注入示意**
 
@@ -607,8 +601,7 @@ namespace ConstructorInjection
 
 上面提到的注入方式，都是客户类被动接受所依赖的服务类，这也符合“注入”这个词。不过还有一种方法，可以和依赖注入达到相同的目的，就是依赖获取。 依赖获取（ _Dependency Locate_ ）是指在系统中提供一个获取点，客户类仍然依赖服务类的接口。当客户类需要服务类时，从获取点主动取得指定的服务类，具体的服务类类型由获取点的配置决定。 可以看到，这种方法变被动为主动，使得客户类在需要时主动获取服务类，而将多态性的实现封装到获取点里面。获取点可以有很多种实现，也许最容易想到的就是建立一个Simple Factory作为获取点，客户类传入一个指定字符串，以获取相应服务类实例。如果所依赖的服务类是一系列类，那么依赖获取一般利用 Abstract Factory 模式构建获取点，然后，将服务类多态性转移到工厂的多态性上，而工厂的类型依赖一个外部配置，如XML文件。 不过，不论使用 Simple Factory 还是 Abstract Factory，都避免不了判断服务类类型或工厂类型，这样系统中总要有一个地方存在不符合 OCP 的 `if…else` 或 `switch…case` 结构，这种缺陷是 Simple Factory 和 Abstract Factory 以及依赖获取本身无法消除的，而在某些支持反射的语言中（如 C#），通过将反射机制的引入彻底解决了这个问题（后面讨论）。 下面给一个具体的例子，现在我们假设有个程序，既可以使用 Windows 风格外观，又可以使用 Mac 风格外观，而内部业务是一样的。
 
-<!-- ![07_3.jpg](https://i.loli.net/2017/09/15/59bbb3d9a6b9f.jpg) -->
-{% asset_img 7.webp img073 %}
+![07_3.jpg](https://i.loli.net/2017/09/15/59bbb3d9a6b9f.jpg)
 
 **图3.4 依赖获取示意**
 
@@ -827,15 +820,13 @@ namespace DependencyLocate
 
 可以看到，这里我们将配置设置为 Mac 风格，编译运行上述代码，运行结果如下：
 
-<!-- ![08_3.jpg](https://i.loli.net/2017/09/15/59bbb4ede424d.jpg) -->
-{% asset_img 8.jpg 结果083 %}
+![08_3.jpg](https://i.loli.net/2017/09/15/59bbb4ede424d.jpg)
 
 **图3.5 配置Mac风格后的运行结果**
 
 现在，我们不动程序，仅仅将配置文件中的“Mac”改为 Windows，运行后结果如下：
 
-<!-- ![09_3.jpg](https://i.loli.net/2017/09/15/59bbb4d5af22b.jpg) -->
-{% asset_img 9.jpg 结果093 %}
+![09_3.jpg](https://i.loli.net/2017/09/15/59bbb4d5af22b.jpg)
 
 **图3.6 配置为Windows风格后的运行结果**
 
@@ -845,8 +836,7 @@ namespace DependencyLocate
 
 回想上面 _Dependency Locate_ 的例子，我们虽然使用了多态性和 _Abstract Factory_ ，但对 OCP 贯彻的不够彻底。在理解这点前，朋友们一定要注意潜在扩展在哪里，潜在会出现扩展的地方是“新的组件系列”而不是“组件种类”，也就是说，这里我们假设组件就三种，不会增加新的组件，但可能出现新的外观系列，如需要加一套 _Ubuntu_ 风格的组件，我们可以新增 _UbuntuWindow_ 、 _UbuntuButton_ 、 _UbuntuTextBox_ 和 _UbuntuFactory_ ，并分别实现相应接口，这是符合 OCP 的，因为这是扩展。但我们除了修改配置文件，还要无可避免的修改 _FactoryContainer_ ，需要加一个分支条件，这个地方破坏了 OCP。依赖注入本身是没有能力解决这个问题的，但如果语言支持反射机制（ _Reflection_ ），则这个问题就迎刃而解。 我们想想，现在的难点是出在这里：对象最终还是要通过“new”来实例化，而“`new`”只能实例化当前已有的类，如果未来有新类添加进来，必须修改代码。如果，我们能有一种方法，不是通过“`new`”，而是通过类的名字来实例化对象，那么我们只要将类的名字作为配置项，就可以实现在不修改代码的情况下，加载未来才出现的类。所以，反射给了语言“预见未来”的能力，使得多态性和依赖注入的威力大增。 下面是引入反射机制后，对上面例子的改进：
 
-<!-- ![10_3.jpg](https://i.loli.net/2017/09/15/59bbb60a2b744.jpg) -->
-{% asset_img 10.webp img103 %}
+![10_3.jpg](https://i.loli.net/2017/09/15/59bbb60a2b744.jpg)
 
 **图3.7 引入反射机制的Dependency Locate**
 
@@ -943,15 +933,13 @@ namespace DependencyLocate
 
 ####    Spring.NET
 
-<!-- ![11_3.png](https://i.loli.net/2017/09/15/59bbb86a93913.png) -->
-{% asset_img 11.png img113 %}
+![11_3.png](https://i.loli.net/2017/09/15/59bbb86a93913.png)
 
 _Spring.NET_ 是 _Java_ 平台上 _Spring_ 对 _.NET_ 平台的移植，使用方法和 _Spring_ 很像，并且功能强大，是 _.NET_ 平台上大中型开发 _IoC Container_ 的首选之一。除了 _DI_ 外，_Spring.NET_ 也包括 _AOP_ 等诸多功能。 _Spring.NET_ 的官方网站是：http://www.springframework.net/
 
 ####    Unity
 
-<!-- ![12_3.gif](https://i.loli.net/2017/09/15/59bbb8f4a6954.gif) -->
-{% asset_img 12.webp img123 %}
+![12_3.gif](https://i.loli.net/2017/09/15/59bbb8f4a6954.gif)
 
 对于小型项目和讲求敏捷的团队，_Spring.NET_ 可能有点太重量级，那么可以选择轻量级的 _Unity_ 。_Unity_ 是微软 _patterns & practices_ 团队推出的轻量级框架，非常好用，目前最新版本是 1.2。
 
