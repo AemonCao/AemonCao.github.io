@@ -5,6 +5,10 @@ date: 2020-03-11 09:58:43
 
 关于我什么呢，我也不知道，放一些一直以来收集的骚话吧！
 
+*   [人の命は、2万分の1でも8万分の1でもない。そうじゃなくて、そこには「1人が死んだ事件が2万件あった」ってことなんだよ。](https://bedtimepoem.com/?p=12276)
+
+*   人的性命（死亡）不该说是2万分之一，或8万分之一，它的意思是，有一个人死了这件事，发生了2万次。
+
 *   你从小到大做了无数个大大小小的选择，都不能阻止你看到这句话。
 
 *   [So if people are sufficiently worried, then there\'s a lot less to worry about. But if no one is worried, that\'s when you should worry!](https://www.bilibili.com/video/av95917816?t=506)
