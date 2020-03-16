@@ -44,7 +44,12 @@ date: 2018-07-19 22:56:39
 
 ### 局域网设备配置
 
-首先是家中局域网的配置，PC 和 树莓派要位于同一局域网，然后在路由器中把两者的 MAC 和 IP 进行绑定。这里需要注意的是 MAC 不是代表一台设备而是一个网卡，所以在设置树莓派的 MAC 地址的时候需要根据当前树莓派连接路由器的方式来设置。我使用的路由器可以直接查看设备的 MAC 地址。如下： ![Routerlist.png](https://i.loli.net/2018/07/19/5b507b1a3f9aa.png) 如果路由器无法查看 MAC 地址或者设备太多无法区分，那么在 **Windows** 系统下可以使用
+首先是家中局域网的配置，PC 和 树莓派要位于同一局域网，然后在路由器中把两者的 MAC 和 IP 进行绑定。这里需要注意的是 MAC 不是代表一台设备而是一个网卡，所以在设置树莓派的 MAC 地址的时候需要根据当前树莓派连接路由器的方式来设置。我使用的路由器可以直接查看设备的 MAC 地址。如下：
+
+<!-- ![Routerlist.png](https://i.loli.net/2018/07/19/5b507b1a3f9aa.png) -->
+{% asset_img Routerlist.webp Routerlist %}
+
+如果路由器无法查看 MAC 地址或者设备太多无法区分，那么在 **Windows** 系统下可以使用
 
 ```bat
 ipconfig -all
@@ -52,7 +57,8 @@ ipconfig -all
 
 来查看
 
-![MACWindows.png](https://i.loli.net/2018/07/19/5b507b1a4128f.png)
+<!-- ![MACWindows.png](https://i.loli.net/2018/07/19/5b507b1a4128f.png) -->
+{% asset_img MACWindows.webp MACWindows %}
 
 在 **raspberry** 下可以使用
 
@@ -63,6 +69,7 @@ ifconfig
 来查看
 
 ![MACraspberry.png](https://i.loli.net/2018/07/19/5b507b1a4292a.png)
+{% asset_img MACraspberry.webp MACraspberry %}
 
 可以看到树莓派有两个 MAC 地址，由于我是使用无线连接所以我选择的是第二个 _wlan0_。 然后使用 **IP/MAC绑定** 功能将两台设备与 IP 进行绑定，绑定的时候建议就选择当前使用的 IP 以免用了其他设备正在使用的 IP，造成 IP 冲突。 如果绑定了其他的 IP，请在绑定成功后重启设备。
 
@@ -78,19 +85,23 @@ ifconfig
 
 所以我们要先设置 BIOS 打开「**网卡唤醒**」这一功能，由于各个品牌主板的 BIOS 各不相同，所以设置的方法也各式各样，大家可以自行搜索「**wake on lan 设置**」，来寻找正确的方式。不过大多是在 **电源管理**（Power Management Setup）中。 然后是系统上的设置，这里我以 _Windows 10 17134.165_ 版本为例。 首先右键「**网络**」-「**属性**」来打开「**网络和共享中心**」面板：
 
-![4.png](https://i.loli.net/2018/07/19/5b507b129fdee.png)
+<!-- ![4.png](https://i.loli.net/2018/07/19/5b507b129fdee.png) -->
+{% asset_img 4.webp 4 %}
 
 在左侧单击「**更改适配器设置**」-右键你现在正在使用的网卡-「**属性**」来打开「**属性**」面板：
 
-![1.png](https://i.loli.net/2018/07/19/5b507b12983ac.png)
+<!-- ![1.png](https://i.loli.net/2018/07/19/5b507b12983ac.png) -->
+{% asset_img 1.png 1 %}
 
 单击上方的「**配置**」-选择「**高级**」选项卡-在属性类别中将「**关机 网络唤醒**」和「**魔术封包唤醒**」的值设置为「**开启**」：
 
-![3.png](https://i.loli.net/2018/07/19/5b507b129f1e7.png)
+<!-- ![3.png](https://i.loli.net/2018/07/19/5b507b129f1e7.png) -->
+{% asset_img 3.webp 3 %}
 
 选择「**电源管理**」选项卡-勾选「**允许计算机关闭此设备以节约电源**」和「**允许此设备唤醒计算机**」选项：
 
-![2.png](https://i.loli.net/2018/07/19/5b507b1298186.png)
+<!-- ![2.png](https://i.loli.net/2018/07/19/5b507b1298186.png) -->
+{% asset_img 2.webp 2 %}
 
 就此，PC 端的设置已经完成了。
 
@@ -167,7 +178,8 @@ nohup ./frps -c ./frps.ini &
 
 我现在使用的是 _Raspberry 3B_，当时是在淘宝 _￥195_ 的价格买的，如果配上电源以及 _SD_ 卡的等配件一共是 _￥278.9_。清单如下：
 
-![list.png](https://i.loli.net/2018/07/19/5b507b12b3fed.png)
+<!-- ![list.png](https://i.loli.net/2018/07/19/5b507b12b3fed.png) -->
+{% asset_img list.webp list %}
 
 之后的系统安装我就不在这详细说明了，网上有很多详细的教程。 树莓派的配置和服务器配置其实是差不多的，不同的是服务器上的部署的是 _frp_ 的服务端，而树莓派上的部署的是客户端。 从下载到解压的步骤和服务器端是一模一样的，只要照着之前的步骤做就可以了。 从第三步删除文件开始有所不同：
 
@@ -230,11 +242,13 @@ ssh -p 6022 118.126.***.***
 
 然后键入树莓派的密码就可以了：
 
-![SSHraspberryPC.png](https://i.loli.net/2018/07/19/5b507b1a44208.png)
+<!-- ![SSHraspberryPC.png](https://i.loli.net/2018/07/19/5b507b1a44208.png) -->
+{% asset_img SSHraspberryPC.png SSHraspberryPC %}
 
 当然也可以用手机的移动网络来访问：
 
-![SSHPhone.png](https://i.loli.net/2018/07/19/5b507b1a5450c.png)
+<!-- ![SSHPhone.png](https://i.loli.net/2018/07/19/5b507b1a5450c.png) -->
+{% asset_img SSHPhone.webp SSHPhone %}
 
 至此我们已经成功的内网内网穿透了，即可以从外网访问内网设备了，接下来我们就要通过树莓派来使家中的 PC 开机了。
 
@@ -332,7 +346,8 @@ python wol.py E0:D5:5E:88:88:88
 
 1.  事后，我用 _Wireshark_ 抓了包，找到了这个 _Magic Packet_：
 
-    ![6.png](https://i.loli.net/2018/07/19/5b507b12b69cb.png)
+    <!-- ![6.png](https://i.loli.net/2018/07/19/5b507b12b69cb.png) -->
+    {% asset_img 6.webp 6 %}
 
     发现和 _Wiki_ 上说的一样：以 `6` 个 `FF` 开始，并且重复 `16` 遍 MAC 地址。
 
