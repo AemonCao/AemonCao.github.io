@@ -16,8 +16,6 @@ date: 2017-09-15 19:37:09
 
 转载自：[依赖注入那些事儿 - T2噬菌体](http://www.cnblogs.com/leoo2sk/archive/2009/06/17/1504693.html)
 
-
-
 <!-- more -->
 
 ##  IGame 游戏公司的故事
