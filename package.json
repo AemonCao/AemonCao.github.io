@@ -24,6 +24,9 @@
     "hexo-renderer-marked": "^2.0.0",
     "hexo-renderer-stylus": "^1.1.0",
     "hexo-server": "^1.0.0",
-    "hexo-symbols-count-time": "^0.7.1"
+    "hexo-symbols-count-time": "^0.7.1",
+    "lozad": "^1.14.0",
+    "pangu": "^4.0.7",
+    "quicklink": "^2.0.0-alpha"
   }
 }
