@@ -5,6 +5,8 @@ date: 2020-03-11 09:58:43
 
 关于我什么呢，我也不知道，放一些一直以来收集的骚话吧！
 
+*   [海記憶體知己，天涯若比鄰。](https://www.v2ex.com/t/653386#reply7)
+
 *   World is powered by solitude.
 
 *   Do have faith in what you're doing.
