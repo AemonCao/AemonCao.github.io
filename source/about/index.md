@@ -5,6 +5,10 @@ date: 2020-03-11 09:58:43
 
 关于我什么呢，我也不知道，放一些一直以来收集的骚话吧！
 
+*   >   [Embrace, extend, and extinguish.](https://en.wikipedia.org/wiki/Embrace,_extend,_and_extinguish)
+
+    [拥抱，扩展再消灭。](https://zh.wikipedia.org/wiki/%E6%8B%A5%E6%8A%B1%E3%80%81%E6%89%A9%E5%B1%95%E5%86%8D%E6%B6%88%E7%81%AD)
+
 *   [海記憶體知己，天涯若比鄰。](https://www.v2ex.com/t/653386#reply7)
 
 *   World is powered by solitude.
