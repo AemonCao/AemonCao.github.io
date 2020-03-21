@@ -38,15 +38,15 @@ date: 2017-09-23 10:58:54
 可以使用如下命令来进行下载：
 
 ```shell
-wget http://ports.ubuntu.com/pool/universe/c/chromium-browser/chromium-codecs-ffmpeg-extra_48.0.2564.82-0ubuntu0.15.04.1.1193_armhf.deb
+$ wget http://ports.ubuntu.com/pool/universe/c/chromium-browser/chromium-codecs-ffmpeg-extra_48.0.2564.82-0ubuntu0.15.04.1.1193_armhf.deb
 ```
 
 ```shell
-wget http://ports.ubuntu.com/pool/universe/c/chromium-browser/chromium-browser_48.0.2564.82-0ubuntu0.15.04.1.1193_armhf.deb
+$ wget http://ports.ubuntu.com/pool/universe/c/chromium-browser/chromium-browser_48.0.2564.82-0ubuntu0.15.04.1.1193_armhf.deb
 ```
 
 ```shell
-wget http://ports.ubuntu.com/pool/universe/c/chromium-browser/chromium-browser-l10n_48.0.2564.82-0ubuntu0.15.04.1.1193_all.deb
+$ wget http://ports.ubuntu.com/pool/universe/c/chromium-browser/chromium-browser-l10n_48.0.2564.82-0ubuntu0.15.04.1.1193_all.deb
 ```
 
 顺序可以调换，没有关系。
@@ -58,7 +58,7 @@ wget http://ports.ubuntu.com/pool/universe/c/chromium-browser/chromium-browser-l
 下载完成后使用命令：
 
 ```shell
-ls
+$ ls
 ```
 
 来查看是否下载成功。
@@ -68,13 +68,13 @@ ls
 输入：
 
 ```shell
-sudo dpkg -i chromium-codecs-ffmpeg-extra_48.0.2564.82-0ubuntu0.15.04.1.1193_armhf.deb
+$ sudo dpkg -i chromium-codecs-ffmpeg-extra_48.0.2564.82-0ubuntu0.15.04.1.1193_armhf.deb
 ```
 
 等待安装完成后，再输入：
 
 ```shell
-sudo dpkg -i  chromium-browser_48.0.2564.82-0ubuntu0.15.04.1.1193_armhf.deb chromium-browser-l10n_48.0.2564.82-0ubuntu0.15.04.1.1193_all.deb
+$ sudo dpkg -i  chromium-browser_48.0.2564.82-0ubuntu0.15.04.1.1193_armhf.deb chromium-browser-l10n_48.0.2564.82-0ubuntu0.15.04.1.1193_all.deb
 ```
 
 耐心等待安装完成。

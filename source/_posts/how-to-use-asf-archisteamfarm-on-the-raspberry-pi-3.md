@@ -48,27 +48,27 @@ date: 2017-07-07 13:44:41
 在终端依次输入：
 
 ```shell
-sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+$ sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
 ```
 
 ```shell
-echo "deb http://download.mono-project.com/repo/debian raspbianjessie main" | sudo tee /etc/apt/sources.list.d/mono-official.list
+$ echo "deb http://download.mono-project.com/repo/debian raspbianjessie main" | sudo tee /etc/apt/sources.list.d/mono-official.list
 ```
 
 ```shell
-sudo apt-get update
+$ sudo apt-get update
 ```
 
 耐心等待后，再输入：
 
 ```shell
-sudo apt-get install mono-devel
+$ sudo apt-get install mono-devel
 ```
 
 这时候 _mono_ 就开始下载并安装了。由于下载速度的原因，时间可以会比较长。请耐心等待，并且不要关闭终端或切断电源。 安装完成后输入：
 
 ```shell
-mono -V
+$ mono -V
 ```
 
 （注意 `V` 要大写）查看 _mono_ 版本。好像最新版的 _ASF_ 需要 _mono 4.8_ 及以上版本才可以正常运行，通过上述方法安装的 _mono_ 是 _5.0.1 Stable (5.0.1.1)_ ，符合 _ASF_ 的要求。
@@ -78,11 +78,11 @@ mono -V
 由于 _ASF_ 需要全天启动，但是我们又不能一直开着 _ssh_ 连接，所以我们就需要安装 _Screen_ 来使 _ASF_ 可以后台运行。 在终端分别输入：
 
 ```shell
-sudo apt-get update
+$ sudo apt-get update
 ```
 
 ```shell
-sudo apt-get install screen
+$ sudo apt-get install screen
 ```
 
 稍等片刻，`Screen` 就安装完成了。
@@ -92,19 +92,19 @@ sudo apt-get install screen
 进入刚才复制到树莓派中的 _ASF_ 目录，输入：
 
 ```shell
-screen -S asf
+$ screen -S asf
 ```
 
 _ASF_ 可以为任意名称。
 
 ```shell
-sudo mono ASF.exe
+$ sudo mono ASF.exe
 ```
 
 之后就是熟悉的 _ASF_ 界面了，观察是否运行成功，如果成功了的话就按 Ctrl+a 和 Ctrl+d 就可以将 _ASF_ 挂到后台啦，然后就可以关闭终端或切断 `ssh` 连接了。 如果想重新打开 _ASF_ ，则可以通过：
 
 ```shell
-screen -r asf
+$ screen -r asf
 ```
 
 来重新进入。

@@ -29,13 +29,13 @@ tac 其实就是 cat 的 reverse，包含于 [coreutils](https://zh.wikipedia.or
 用法和 cat 类似，预览：
 
 ```shell
-tac abc.txt
+$ tac abc.txt
 ```
 
 输出到文件：
 
 ```shell
-tac abc.txt > cba.txt
+$ tac abc.txt > cba.txt
 ```
 
 目前想到的用法可能是用在日志文件上，可以将日志文件 reverse，方便查看最新的日志。
@@ -47,7 +47,7 @@ tac abc.txt > cba.txt
 这个命令也不算是新学的，但是对输出的信息还只是一知半解，所以今天去查了一下，这边记录一下。
 
 ```shell
-w
+$ w
 ```
 
 ```
@@ -64,7 +64,7 @@ root     pts/1    192.168.1.88     22:22    7.00s  0.03s  0.00s w
 
 *  
     ```shell
-    man w
+    $ man w
     ```
 
 *  [w command in Linux with Examples](https://www.geeksforgeeks.org/w-command-in-linux-with-examples/)
@@ -113,13 +113,13 @@ root     pts/1    192.168.1.88     22:22    7.00s  0.03s  0.00s w
 可以使用以下命令来设置：
 
 ```shell
-git config --global credential.helper cache
+$ git config --global credential.helper cache
 ```
 
 或者：
 
 ```shell
-git config --global credential.helper store
+$ git config --global credential.helper store
 ```
 
 使用 `cache` 选项的话，会将用户名密码保存在内存中，平且在15分钟后从内存中消失，使用 `store` 选项的话，则会将用户名密码保存在磁盘中，永远都不会消失，除非你更改了 GitHub 的密码，否则是永远都不用输入密码的。但是密码会以明文的方式存储在当前用户的根目录下的 *.git-credentials* 文件中，比较不安全。
@@ -129,3 +129,41 @@ git config --global credential.helper store
 参考：
 
 *   [Git 工具 - 凭证存储](https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E5%87%AD%E8%AF%81%E5%AD%98%E5%82%A8)
+
+### Submodules
+
+在搭建 hexo 博客的时候，当使用了 next 的 themes 时，修改配置后，发现 commit 总是报错。总觉得哪里不对劲，在 GitHub 上查看项目的时候，next 文件夹只有一个名称，无法点击进入。
+
+如果一个项目中包含了另一个项目，我们就要使用 Git 的 Submodules 来进行管理。
+
+首先要在当前主项目上使用 `git submodule` 命令来添加一个子项目：
+
+```shell
+$ git submodule add https://github.com/AemonCao/hexo-theme-next.git themes/next
+```
+
+默认情况下，子项目会放在一个与仓库名同名的目录中，如果想放到其他地方，可以在命令最后添加一个路径。
+
+这时候，主项目的目录下会有一个新的 *.gitmodules* 的文件。
+
+这是用来保存项子项目的 URL 以及已经拉取的本地目录之间的映射：
+
+```git
+[submodule "themes/next"]
+        path = themes/next
+        url = https://github.com/AemonCao/hexo-theme-next.git
+```
+
+当前只有一条记录，如果添加了多个子项目，则会有多条记录。
+
+之后在 Visual Studio Code 的「源代码管理页面」的「源代码管理提供程序」中就会出现两个项目，一个是主项目，一个就是刚刚添加的子项目。
+
+{% asset_img 源代码管理提供程序.png 源代码管理提供程序 %}
+
+现在你就可以更好得管理这两个项目了。
+
+此时在 GitHub 上，你的主项目中相应的[子项目文件夹](https://github.com/AemonCao/AemonCao.github.io/tree/source/themes)也会有一个指向原仓库的某一次提交的一个链接。
+
+参考：
+
+*   [Git 工具 - 子模块](https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E5%AD%90%E6%A8%A1%E5%9D%97)

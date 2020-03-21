@@ -52,7 +52,7 @@ date: 2018-07-19 22:56:39
 如果路由器无法查看 MAC 地址或者设备太多无法区分，那么在 **Windows** 系统下可以使用
 
 ```bat
-ipconfig -all
+$ ipconfig -all
 ```
 
 来查看
@@ -63,7 +63,7 @@ ipconfig -all
 在 **raspberry** 下可以使用
 
 ```shell
-ifconfig
+$ ifconfig
 ```
 
 来查看
@@ -112,7 +112,7 @@ ifconfig
 我们可以在 [https://github.com/fatedier/frp/releases](https://github.com/fatedier/frp/releases) 下载指定架构下的版本，我在腾讯云服务器上使用的 _Ubuntu_ 系统，所以选择的是 `frp_0.20.0_linux_amd64.tar.gz` 这个版本。可以下载下来使用 _FTP_ 来放到服务器上，也可以在服务器上使用：
 
 ```shell
-wget https://github.com/fatedier/frp/releases/download/v0.20.0/frp_0.20.0_linux_amd64.tar.gz
+$ wget https://github.com/fatedier/frp/releases/download/v0.20.0/frp_0.20.0_linux_amd64.tar.gz
 ```
 
 来直接下载到服务器上。
@@ -122,26 +122,26 @@ wget https://github.com/fatedier/frp/releases/download/v0.20.0/frp_0.20.0_linux_
 下载完成后使用：
 
 ```shell
-tar -zxvf frp_0.20.0_linux_amd64.tar.gz
+$ tar -zxvf frp_0.20.0_linux_amd64.tar.gz
 ```
 解压文件。
 
 ####    进入目录
 
 ```shell
-cd frp_2.20.0_linux_amd64
+$ cd frp_2.20.0_linux_amd64
 ```
 
 ####    通过 `rm` 命令来删除 `frpc` 和 `frpc.ini` 两个文件
 
 ```shell
-rm frpc frpc.ini
+$ rm frpc frpc.ini
 ```
 
 ####    打开配置文件 `frps.ini`
 
 ```shell
-vim frps.ini
+$ vim frps.ini
 ```
 
 ####    更改配置
@@ -163,13 +163,13 @@ vhost_http_port = 6081     #访问客户端web服务自定义的端口号
 ####    启动服务
 
 ```shell
-./frps -c ./frps.ini
+$ ./frps -c ./frps.ini
 ```
 
 这个是前台启动服务，会输出日志信息，是用来调试的用的，到时调试成功了就可以使用后台服务启动：
 
 ```shell
-nohup ./frps -c ./frps.ini &
+$ nohup ./frps -c ./frps.ini &
 ```
 
 至此，服务器也设置完成。
@@ -188,13 +188,13 @@ nohup ./frps -c ./frps.ini &
 在服务器上我们删除的是 `frpc` 和 `frpc.ini`，这两个是 _frp_ 的客户端程序和客户端配置文件，同理我们在树莓派也就是服务器端上就要删除 `frps` 和 `frps.ini` 这两个文件：
 
 ```shell
-rm frps frps.ini
+$ rm frps frps.ini
 ```
 
 ####    打开配置文件 `frpc.ini`
 
 ```shell
-vim frpc.ini
+$ vim frpc.ini
 ```
 
 ####    更改配置
@@ -223,13 +223,13 @@ remote_port = 3306
 ####    启动服务
 
 ```shell
-./frpc -c ./frpc.ini
+$ ./frpc -c ./frpc.ini
 ```
 
 同样的，后台服务启动是：
 
 ```shell
-nohup ./frpc -c ./frpc.ini &
+$ nohup ./frpc -c ./frpc.ini &
 ```
 
 ### 测试 frp
@@ -337,7 +337,7 @@ if __name__ == '__main__':  # pragma: nocover
 我们把上面的代码保存为 `*.py` 格式，例如 `wol.py` 然后通过 _ftp_ 传输到树莓派上去。 然后在存有这个 `wol.py` 的文件夹下使用：
 
 ```shell
-python wol.py E0:D5:5E:88:88:88
+$ python wol.py E0:D5:5E:88:88:88
 ```
 
 `E0:D5:5E:88:88:88` 就是你需要启动的 PC 的 MAC 地址了。 回车后发现没有任何提示，这是正常了，因为在 _Linux_ 中，_没有消息就是好消息_。 如果你只需要启动一台 PC，而且你不想记录这么长的 MAC 地址（通常也不需要你记录，因为你可以在终端通过上下键来显示历史使用过的命令），你可以将你的 MAC 地址写入到代码中去，这样就可以一劳永逸了。 至此，你已经可以通过树莓派来启动你的 PC 了，快关闭你的电脑试一试吧。

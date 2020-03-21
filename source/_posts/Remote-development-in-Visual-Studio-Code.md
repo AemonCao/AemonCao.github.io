@@ -48,7 +48,7 @@ categories:
 输入：
 
 ```shell
-ssh user@host
+$ ssh user@host
 ```
 
 `user` 是用来登录的用户名，`host` 则是你需要远程的服务器的地址。
@@ -56,7 +56,7 @@ ssh user@host
 ssh 的默认端口是 22，如果你修改过该端口，则需要使用 p 参数：
 
 ```shell
-ssh -p 9588 user@host
+$ ssh -p 9588 user@host
 ```
 
 9588 则是新的 ssh 端口。
@@ -108,7 +108,7 @@ ssh -p 9588 user@host
 最简单的方法是执行以下命令：
 
 ```shell
-sudo chmod 777 /path
+$ sudo chmod 777 /path
 ```
 
 之后再保存的话就可以顺利保存成功了。
