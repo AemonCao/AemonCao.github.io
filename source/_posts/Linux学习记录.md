@@ -106,6 +106,18 @@ root     pts/1    192.168.1.88     22:22    7.00s  0.03s  0.00s w
 
 在命令模式按下 <kbd>/</kbd>，之后跟上你需要搜索的字符串然后回车就可以进行搜索，如果要查找下一个只需要按下 <kbd>n</kbd>，上一个的话则是 <kbd>N</kbd>。
 
+### 上下移动一行代码
+
+在 Visual Studio Code 中，上下移动代码比较简单，只要使用 <kbd>alt</kbd> + <kbd>↑</kbd> 或者 <kbd>alt</kbd> + <kbd>↓</kbd> 就可以移动了。
+
+而在 vim 中，首先你需要将光标移动到你想要操作的行，按下两次 <kbd>d</kbd>（剪切当前行），然后移动你的光标到你想要的位置，按下 <kbd>p</kbd>（在光标之后粘贴） 或 <kbd>P</kbd>（在光标之前粘贴），即可将一行代码移动过来了。
+
+参考：
+
+*   [请问vim如何移动当前行向上或向下？不用选中](https://www.v2ex.com/t/49043)
+
+*   [最全的vim快捷键](https://blog.csdn.net/donahue_ldz/article/details/17139361)
+
 ##  Git
 
 ### 保存 GitHub 的用户名和密码
