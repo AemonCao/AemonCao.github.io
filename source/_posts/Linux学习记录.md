@@ -75,6 +75,47 @@ root     pts/1    192.168.1.88     22:22    7.00s  0.03s  0.00s w
 
 *  [Linux的JCPU与PCPU](https://blog.csdn.net/zzxian/article/details/8070144)
 
+### grep
+
+>   在给定的文件中搜寻指定的字符串。
+
+这是一个很实用的命令，它可以在使文件搜索跟上一层楼，往常的文件搜索关键字只能到文件名。而 `grep` 则可以~~深入~~到文件内部。
+
+用法是：
+
+```shell
+$ grep 'The quick brown fox jumps over a lazy dog.' a.txt
+```
+
+意思就是在 *a.txt* 文件中搜索 `The quick brown fox jumps over a lazy dog.` 字符串。
+
+它有几个常用的参数：
+
+*   -i
+    
+    忽略字符串大小写。
+
+*   -r
+
+    在当前文件夹下递归查询。
+
+*   -n
+
+    搜索结果显示行号。
+
+参考：
+
+*  
+    ```shell
+    $ man grep
+    ```
+
+*   [grep命令-文件过滤分割与合并](https://man.linuxde.net/grep)
+
+*   [grep查找字符串所在文件和行号，find查找文件所在目录即路径](https://blog.csdn.net/devwang_com/article/details/52587884)
+
+*   [27个常用的 Linux 命令](https://www.jianshu.com/p/0056d671ea6d)
+
 ##  Vim
 
 这里写一下 Vim 的学习历程，之前都是用 nano，但是不是所有的系统都预装的 nano。而且最近在使用 Vim 的时候，发现并没用想象中那么难用。更加下定了要学好 Vim 的决心。
@@ -117,6 +158,81 @@ root     pts/1    192.168.1.88     22:22    7.00s  0.03s  0.00s w
 *   [请问vim如何移动当前行向上或向下？不用选中](https://www.v2ex.com/t/49043)
 
 *   [最全的vim快捷键](https://blog.csdn.net/donahue_ldz/article/details/17139361)
+
+### Vim 配置
+
+Vim 不仅功能强大，而且它的可配置性也非常强，所以如果想要更好的使用这个工具，适合自己的配置是必不可少的。
+
+这边就把我目前的配置放在下面，大家可以进行参考（其实大多数都是从[阮老师](https://www.ruanyifeng.com/blog/2018/09/vimrc.html)这里抄来哒）：
+
+```vim
+" 显示行号
+set number
+
+" 显示相对行号
+set relativenumber
+
+" 当前行高亮
+set cursorline
+
+" 不与 Vi 兼容（采用 Vim 自己的操作命令）。
+set nocompatible
+
+" 语法高亮
+syntax on
+
+" 显示当前是什么模式
+set showmode
+
+" 使用utf-8编码
+set encoding=utf-8
+
+" 使用 256 色
+set t_Co=256
+
+" 垂直滚动时，光标距离底部的位置
+set scrolloff=5
+
+" 是否显示状态栏。0 表示不显示，1 表示只在多窗口时显示，2 表示显示。
+set laststatus=2
+
+" 在状态栏显示光标的当前位置（位于哪一行哪一列）。
+set  ruler
+
+" 光标遇到圆括号、方括号、大括号时，自动高亮对应的另一个圆括号、方括号和大括号。
+set showmatch
+
+" 打开英语单词的拼写检查。
+" set spell spelllang=en_us
+
+" 保留撤销历史。
+set undofile
+
+" 出错时不要发出声音
+set noerrorbells
+
+" 出错时，发出视觉提示
+set visualbell
+
+" Vim 需要记住多少次历史操作。
+set history=1000
+
+" 打开文件监视。如果在编辑过程中文件发生外部改变（比如被别的编辑器编辑了），就会发出提示。
+set autoread
+
+" 如果行尾有多余的空格（包括 Tab 键），该配置将让这些空格显示成可见的小方块。
+set listchars=tab:»■,trail:■
+set list
+
+" 命令模式下，底部操作指令按下 Tab 键自动补全。第一次按下 Tab，会显示所有匹配的操作指令的清单；第二次按下 Tab，会依次选择各个指令。
+set wildmenu
+set wildmode=longest:list,full
+
+" 一直显示标签页
+set showtabline=2
+```
+
+我将自己常用的几款软件的配置都放到了 [GitHub](https://github.com/AemonCao/mySettings) 上，如果有需要可以看看。
 
 ##  Git
 
