@@ -5,6 +5,10 @@ date: 2020-03-11 09:58:43
 
 关于我什么呢，我也不知道，放一些一直以来收集的骚话吧！
 
+*   路上没有灯火的时候，就点亮自己的头颅。
+
+    ![路上没有灯火的时候，就点亮自己的头颅。](index/路上没有灯火的时候，就点亮自己的头颅.JPG)
+
 *   有一只小鸭子在排队，想和前面的鸭鸭对齐，可是怎么样都对不齐，它就嘀咕着说：「对不齐鸭对不齐鸭。」
 
 *   >   [Embrace, extend, and extinguish.](https://en.wikipedia.org/wiki/Embrace,_extend,_and_extinguish)
