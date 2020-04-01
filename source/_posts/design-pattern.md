@@ -29,3 +29,5 @@ date: 2020-03-26 22:10:27
 * {% post_link Singleton-Pattern '单例模式（Singleton Pattern）' %}
 
 * {% post_link Simple-Factory-Pattern '简单工厂模式（Simple Factory Pattern）' %}
+
+* {% post_link Factory-Method-Pattern '工厂方法模式（Factory Method Pattern）' %}
