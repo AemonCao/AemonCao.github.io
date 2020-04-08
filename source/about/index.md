@@ -5,6 +5,10 @@ date: 2020-03-11 09:58:43
 
 关于我什么呢，我也不知道，放一些一直以来收集的骚话吧！
 
+*   ![R&M](index/R&M.jpg)
+
+*   纸上得来终觉浅，绝知此事要躬行。
+
 *   [![s](index/Robert-Landsburg-Mt.-St.-Helens.jpg)](https://en.wikipedia.org/wiki/Robert_Landsburg)
 
 *   [为什么看见你弟兄眼中有刺，却不想自己眼中有梁木呢？](https://cnbible.com/matthew/7-3.htm)
