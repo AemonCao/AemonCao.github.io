@@ -65,22 +65,22 @@ namespace DesignPattern.SimpleFactoryPattern
 
         public override void Prepare()
         {
-            Console.WriteLine("准备芝士 Pizza!");
+            Console.WriteLine("准备芝士披萨!");
         }
 
         public override void Bake()
         {
-            Console.WriteLine("烘焙芝士 Pizza!");
+            Console.WriteLine("烘焙芝士披萨!");
         }
 
         public override void Cut()
         {
-            Console.WriteLine("切芝士 Pizza!");
+            Console.WriteLine("切芝士披萨!");
         }
 
         public override void Box()
         {
-            Console.WriteLine("装箱芝士 Pizza!");
+            Console.WriteLine("装箱芝士披萨!");
         }
     }
 
@@ -96,22 +96,22 @@ namespace DesignPattern.SimpleFactoryPattern
 
         public override void Prepare()
         {
-            Console.WriteLine("准备蛤 Pizza!");
+            Console.WriteLine("准备蛤披萨!");
         }
 
         public override void Bake()
         {
-            Console.WriteLine("烘焙蛤 Pizza!");
+            Console.WriteLine("烘焙蛤披萨!");
         }
 
         public override void Cut()
         {
-            Console.WriteLine("切蛤 Pizza!");
+            Console.WriteLine("切蛤披萨!");
         }
 
         public override void Box()
         {
-            Console.WriteLine("装箱蛤 Pizza!");
+            Console.WriteLine("装箱蛤披萨!");
         }
     }
 
@@ -126,22 +126,22 @@ namespace DesignPattern.SimpleFactoryPattern
         }
         public override void Prepare()
         {
-            Console.WriteLine("准备意大利辣香肠 Pizza!");
+            Console.WriteLine("准备意大利辣香肠披萨!");
         }
 
         public override void Bake()
         {
-            Console.WriteLine("烘焙意大利辣香肠 Pizza!");
+            Console.WriteLine("烘焙意大利辣香肠披萨!");
         }
 
         public override void Cut()
         {
-            Console.WriteLine("切意大利辣香肠 Pizza!");
+            Console.WriteLine("切意大利辣香肠披萨!");
         }
 
         public override void Box()
         {
-            Console.WriteLine("装箱意大利辣香肠 Pizza!");
+            Console.WriteLine("装箱意大利辣香肠披萨!");
         }
     }
 
@@ -157,22 +157,22 @@ namespace DesignPattern.SimpleFactoryPattern
 
         public override void Prepare()
         {
-            Console.WriteLine("准备素食披萨 Pizza!");
+            Console.WriteLine("准备素食披萨!");
         }
 
         public override void Bake()
         {
-            Console.WriteLine("烘焙素食披萨 Pizza!");
+            Console.WriteLine("烘焙素食披萨!");
         }
 
         public override void Cut()
         {
-            Console.WriteLine("切素食披萨 Pizza!");
+            Console.WriteLine("切素食披萨!");
         }
 
         public override void Box()
         {
-            Console.WriteLine("装箱素食披萨 Pizza!");
+            Console.WriteLine("装箱素食披萨!");
         }
     }
 }

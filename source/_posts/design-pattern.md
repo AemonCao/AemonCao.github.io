@@ -22,7 +22,7 @@ date: 2020-03-26 22:10:27
 
 本来是想放到一篇文章里的，但是这样篇幅好像太长了。虽说有目录，但是不太方便手机端的用户，所以还是拆分开来吧。
 
-这里呢，之后会把设计模式的几大原创写一下，然后放个目录就好啦。
+这里呢，之后会把设计模式的七大原则写一下，然后放个目录就好啦。
 
 ##  目录
 
@@ -31,3 +31,5 @@ date: 2020-03-26 22:10:27
 * {% post_link Simple-Factory-Pattern '简单工厂模式（Simple Factory Pattern）' %}
 
 * {% post_link Factory-Method-Pattern '工厂方法模式（Factory Method Pattern）' %}
+
+* {% post_link Abstract-Factory-Pattern '抽象工厂模式（Abstract Factory Pattern）' %}
