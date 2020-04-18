@@ -5,6 +5,8 @@ date: 2020-03-11 09:58:43
 
 关于我什么呢，我也不知道，放一些一直以来收集的骚话吧！
 
+*   ![电学三兄弟](index/电学三兄弟.jpg)
+
 *   Let's show them who we are.
 
 *   ![R&M](index/R&M.jpg)
