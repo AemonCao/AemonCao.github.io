@@ -5,6 +5,10 @@ date: 2020-03-11 09:58:43
 
 关于我什么呢，我也不知道，放一些一直以来收集的骚话吧！
 
+*   [Look within yourself, What do you see? Is your soul a fading light? Strengthened by fury? Hardened by heat? Search deeper now,What do you see? Whatever you find, you must keep. You cannot fear, what lies beneath. Look within yourself,What do you see?](https://www.bilibili.com/video/BV1Ms411s7kB)
+
+    凝视自己的内心，你看到了什么？你的灵魂或许是渐暗的光，怒极而盛，百炼成钢。于更深处，你看到了什么？无论寻获什么，你都必须把持。莫可畏惧，你的本心。凝视自己的内心，你看到了什么？
+
 *   你说咱长这么大容易吗。
 
     说别人我不敢说，反正我是真不容易。
