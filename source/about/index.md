@@ -5,6 +5,10 @@ date: 2020-03-11 09:58:43
 
 关于我什么呢，我也不知道，放一些一直以来收集的骚话吧！
 
+*   流星从天上飞过，让我们许下美好的心愿，它不像星星那样闪烁，也不像钻石那样珍贵。但是它像火苗一样燃烧着我们那颗与世界和谐共处的心。
+
+    ![王康](index/王康.jpg)
+
 *   >   I held up a fistful of sand and showed it to him, asking for as many years as grains in that pile. Foolish me! I forgot to ask they be years of youth.
 
     我抓起一把沙尘，高高举起，天真地祷告拥有如沙粒般多的年岁，却忘记说，只要青春岁月。
