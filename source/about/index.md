@@ -13,7 +13,7 @@ date: 2020-03-11 09:58:43
 
     我抓起一把沙尘，高高举起，天真地祷告拥有如沙粒般多的年岁，却忘记说，只要青春岁月。
 
-    ![沙子](index/沙子.webp)
+    ![沙子](index/沙子.gif)
 
 * [Look within yourself, What do you see? Is your soul a fading light? Strengthened by fury? Hardened by heat? Search deeper now, What do you see? Whatever you find, you must keep. You cannot fear, what lies beneath. Look within yourself, What do you see?](https://www.bilibili.com/video/BV1Ms411s7kB)
 
