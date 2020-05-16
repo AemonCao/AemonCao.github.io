@@ -16,7 +16,7 @@ date: 2017-06-15 15:09:19
 
 <!-- more -->
 
-##  JavaScript 方法
+## JavaScript 方法
 
 ```javascript
 [].forEach.call($$("*"), function(a) {
@@ -36,7 +36,7 @@ date: 2017-06-15 15:09:19
 <!-- ![原网站](https://ooo.0o0.ooo/2017/06/15/594230a9285a6.png) -->
 {% asset_img 原网站.png 原网站 %}
 
-##  CSS 方法
+## CSS 方法
 
 ```css
 * {background-color: rgba(255, 0, 0, .2);}
@@ -52,12 +52,12 @@ date: 2017-06-15 15:09:19
 <!-- ![css](https://ooo.0o0.ooo/2017/06/15/594230a9a0f03.png) -->
 {% asset_img css.png css %}
 
-##  总结
+## 总结
 
 两种方法都有自己的优缺点，_JavaScript_ 的使用方便，但是只能适用于单个网站；而 _CSS_ 样式适用于数量多的网站（只需要在公共 _CSS_ 文件中加入这些代码就可以了）。
 
-##  来源
+## 来源
 
-> [代码来源-知乎](https://www.zhihu.com/question/27432017/answer/40621923)
+1. [代码来源-知乎](https://www.zhihu.com/question/27432017/answer/40621923)
 
-> [代码来源-Quora](https://www.quora.com/What-are-the-most-interesting-HTML-JS-DOM-CSS-hacks-that-most-web-developers-dont-know-about/answer/Gajus-Kuizinas)
+2. [代码来源-Quora](https://www.quora.com/What-are-the-most-interesting-HTML-JS-DOM-CSS-hacks-that-most-web-developers-dont-know-about/answer/Gajus-Kuizinas)

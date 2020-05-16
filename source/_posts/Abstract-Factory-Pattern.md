@@ -17,7 +17,7 @@ date: 2020-04-18 18:22:47
 
 <!-- more -->
 
-##  实现
+## 实现
 
 上一篇{% post_link Factory Method Pattern '工厂方法模式（Factory Method Pattern）' %}中，我们已经能生产不同区域的不同披萨了，但是每家店使用的原料都是不一致的，做为一个好的连锁店，我们需要确保原料的高质量。这里需要注意的是，即使是同一种披萨，在不同的区域使用的原料也是会有区别的，会根据当地人的口味进行调整，那么为了保证以上两点，我们需要建立原料的工厂。
 
@@ -705,7 +705,7 @@ public class ChicagoPizzaStore : PizzaStore
 
 这两家披萨店就是抽象工厂的客户，如果想生产纽约风格的披萨，只需要使用纽约披萨原料工厂提供的原料。
 
-##  注意的点
+## 注意的点
 
 * 抽象工厂定义了一个接口，所有的具体工厂都必须实现此接口。
 
@@ -713,11 +713,11 @@ public class ChicagoPizzaStore : PizzaStore
 
 * 当需要创建产品家族和想让制造的相关产品集合起来时，可以使用抽象工厂，而当目前还不知道将来需要实例化哪些具体类时，就可以使用工厂方法。
 
-##  代码
+## 代码
 
 [AbstractFactoryPattern](https://github.com/AemonCao/DesignPattern/tree/master/DesignPattern/AbstractFactoryPattern)
 
-##  最后
+## 最后
 
 最后让我们点个披萨吃吧：
 
@@ -725,4 +725,3 @@ public class ChicagoPizzaStore : PizzaStore
 PizzaStore nyStore = new NYPizzaStore();
 Pizza pizza = nyStore.orderPizza("cheese");
 ```
-

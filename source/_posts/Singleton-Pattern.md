@@ -16,7 +16,7 @@ categories:
 
 <!-- more -->
 
-##  实现
+## 实现
 
 首先是最简单的单例模式的代码：
 
@@ -58,7 +58,7 @@ namespace DesignPattern.SingletonPattern
 
 这样，只要在 `getInstance` 方法中进行简单的判断，就可以实现从始至终只有一个 `Singleton` 类的实例。
 
-##  多线程
+## 多线程
 
 然而，在多线程时就会出现问题：两个线程在运行时，可能会同时出现 `(uniqueInstance == null)` 返回为真的情况，这就导致会实例化一个以上的 `Singleton` 类的情况出现。
 
@@ -179,12 +179,12 @@ namespace DesignPattern.SingletonPattern
 
 这样在程序开始的时候这个唯一实例就已经存在了。避免了同步方法，也就解决了多线程的问题。
 
-##  注意的点
+## 注意的点
 
 * 在多线程问题的解决上，需要选择适合的方案来实现单例模式，如果单例实例在程序中并不是经常使用，而且实例化的时候开销很大的话，可以使用同步 `getInstance` 方法来解决多线程问题，如果单例实例需要在程序中频繁使用，那就可以在声明 `uniqueInstance` 变量的时间就进行实例化，这样就可以解决同步 `getInstance` 方法时带来的性能下降的问题。
 
 * 如果你有多个构造函数（重载），就需要注意会产生多个实例导致单例失效。
 
-##  代码
+## 代码
 
 [SingletonPattern](https://github.com/AemonCao/DesignPattern/tree/master/DesignPattern/SingletonPattern)

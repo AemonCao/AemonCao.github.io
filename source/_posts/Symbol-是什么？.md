@@ -13,11 +13,11 @@ date: 2020-04-25 20:21:04
 
 <!-- more -->
 
-##  Symbol 是什么？
+## Symbol 是什么
 
 symbol 是一种基本数据类型（primitive data type），它是在 ECMAScript 6 引入的一种新的基本数据类型，将 JavaScript 的基本数据类型扩展到了 7 种（分别是 string，number，bigint，boolean，null，undefined 和 symbol）。
 
-##  Symbol 有什么用？
+## Symbol 有什么用
 
 我们来看一个例子，现在要开发一个学校管理系统简单的权限功能，一共有三种权限：学生、老师和管理员：
 
@@ -94,7 +94,7 @@ var permissions = {
 
 这样就不用再定义一些无意义的字符串来作为判断的值了，代码中就会少很多魔术字符串。
 
-##  Symbol 还有什么用？
+## Symbol 还有什么用
 
 Symbol 还可以做为属性的键名：
 
@@ -178,7 +178,7 @@ Reflect.ownKeys(obj)
 // ["strKey", Symbol(Number), Symbol(Funtion)]
 ```
 
-##  Symbol 怎么用？
+## Symbol 怎么用
 
 基本的用法之前已经说了，使用 `Symbol()` 就可以生成一个独一无二的 symbol。
 
@@ -234,7 +234,7 @@ Symbol.keyFor(s2) // undefined
 
 需要注意的是，`Symbol.keyFor()` 只对通过 `Symbol.for()` 生成的 Symbol 实例有效。
 
-##  参考
+## 参考
 
 [Symbol - JavaScript | MDN](https://developer.mozilla.org/zh-CN/docs/Web/JavaScript/Reference/Global_Objects/Symbol)
 

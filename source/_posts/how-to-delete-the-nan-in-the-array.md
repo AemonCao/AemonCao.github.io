@@ -14,7 +14,7 @@ date: 2017-06-28 10:34:28
 
 <!-- more -->
 
-##  Falsy Bouncer（真假美猴王）
+## Falsy Bouncer（真假美猴王）
 
 过滤数组假值 删除数组中的所有假值。 在 `JavaScript` 中，假值有 `false`、`null`、`0`、`""`、`undefined` 和 `NaN`。
 
@@ -27,7 +27,7 @@ function bouncer(arr) {
 bouncer([7, "ate", "", false, 9, 0]);
 ```
 
-##  解
+## 解
 
 `false`、`null`、`0`、`""`、`undefined` 这几个都很好处理，只要判断是不是等于这些值就好了。就像这样：
 
@@ -49,7 +49,7 @@ function bouncer(arr) {
 bouncer([7, "ate", "", false, 9, 0]);
 ```
 
-##  特别的
+## 特别的
 
 但是 `NaN` 则不能这么判断，因为 `NaN` 有个不同的地方，就是 `NaN` 不和任何值相等，包括他自己 [3](http://(http://www.shaoqun.com/a/249082.aspx) "[Java教程]js删除数组中的NaN")，也就是说：
 

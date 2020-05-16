@@ -18,7 +18,7 @@ date: 2017-09-15 19:37:09
 
 <!-- more -->
 
-##  IGame 游戏公司的故事
+## IGame 游戏公司的故事
 
 ### 讨论会
 
@@ -27,7 +27,7 @@ date: 2017-09-15 19:37:09
 <!-- ![01_3.gif](https://i.loli.net/2017/09/15/59bb9d3e3a3c1.gif) -->
 {% asset_img 1.webp PPT %}
 
-**图1.1 需求描述ppt**
+图1.1 需求描述ppt
 
 各个开发人员，面对这份需求，展开了热烈的讨论，下面我们看看讨论会上都发生了什么。
 
@@ -200,7 +200,7 @@ namespace IGameLi
 <!-- ![02_3.gif](https://i.loli.net/2017/09/15/59bbae64f08ba.gif) -->
 {% asset_img 2.webp 结果023 %}
 
-**图1.2 小李程序的运行结果**
+图1.2 小李程序的运行结果
 
 ### 架构师的建议
 
@@ -213,7 +213,7 @@ namespace IGameLi
 <!-- ![03_3.jpg](https://i.loli.net/2017/09/15/59bbaf77f3db6.jpg) -->
 {% asset_img 3.webp uml类图 %}
 
-**图1.3 小于的设计**
+图1.3 小于的设计
 
 Peter 让小李按照小于的设计重构 Demo，小李看了看小于的设计图，很快完成。相关代码如下：
 
@@ -429,7 +429,7 @@ namespace IGameLiAdv
 
 Peter 显然对改进后的代码比较满意，他让小李对照两份设计和代码，进行一个小结。小李简略思考了一下，并结合小于对一次设计指出的不足，说道： “我认为，改进后的代码有如下优点： 第一，虽然类的数量增加了，但是每个类中方法的代码都非常短，没有了以前 `Attack` 方法那种很长的方法，也没有了冗长的 `if…else`，代码结构变得很清晰。 第二，类的职责更明确了。在第一个设计中，`Role` 不但负责攻击，还负责给怪物减少 `HP` 和判断怪物是否已死。这明显不应该是 `Role` 的职责，改进后的代码将这两个职责移入Monster内，使得职责明确，提高了类的内聚性。 第三，引入 Strategy 模式后，不但消除了重复性代码，更重要的是，使得设计符合了 OCP。如果以后要加一个新武器，只要新建一个类，实现 `IAttackStrategy` 接口，当角色需要装备这个新武器时，客户代码只要实例化一个新武器类，并赋给 `Role` 的 `Weapon` 成员就可以了，已有的 `Role` 和 `Monster` 代码都不用改动。这样就实现了对扩展开发，对修改关闭。” Peter和小于听后都很满意，认为小李总结的非常出色。 IGame公司的讨论会还在进行着，内容是非常精彩，不过我们先听到这里，因为，接下来，我们要对其中某些问题进行一点探讨。别忘了，本文的主题可是依赖注入，这个主角还没登场呢！让主角等太久可不好。
 
-##  探究依赖注入
+## 探究依赖注入
 
 ### 故事的启迪
 
@@ -439,7 +439,6 @@ Peter 显然对改进后的代码比较满意，他让小李对照两份设计�
 
 下面，用稍微正式一点的语言，定义依赖注入产生的背景缘由和依赖注入的含义。在读的过程中，读者可以结合上面的例子进行理解。 依赖注入产生的背景： 随着面向对象分析与设计的发展，一个良好的设计，核心原则之一就是将变化隔离，使得变化部分发生变化时，不变部分不受影响（这也是 OCP 的目的）。为了做到这一点，要利用面向对象中的多态性，使用多态性后，客户类不再直接依赖服务类，而是依赖于一个抽象的接口，这样，客户类就不能在内部直接实例化具体的服务类。但是，客户类在运作中又客观需要具体的服务类提供服务，因为接口是不能实例化去提供服务的。就产生了“客户类不准实例化具体服务类”和“客户类需要具体服务类”这样一对矛盾。为了解决这个矛盾，开发人员提出了一种模式：客户类（如上例中的 `Role`）定义一个注入点（`Public` 成员 `Weapon`），用于服务类（实现 `IAttackStrategy` 的具体类，如 `WoodSword`、`IronSword` 和 `MagicSword`，也包括以后加进来的所有实现 `IAttackStrategy` 的新类）的注入，而客户类的客户类（`Program`，即测试代码）负责根据情况，实例化服务类，注入到客户类中，从而解决了这个矛盾。 依赖注入的正式定义： 依赖注入（ _Dependency Injection_ ），是这样一个过程：由于某客户类只依赖于服务类的一个接口，而不依赖于具体服务类，所以客户类只定义一个注入点。在程序运行过程中，客户类不直接实例化具体服务类实例，而是客户类的运行上下文环境或专门组件负责实例化服务类，然后将其注入到客户类中，保证客户类的正常运行。
 
-
 ## 依赖注入那些事儿
 
 上面我们从需求背景的角度，讲述了依赖注入的来源和定义。但是，如果依赖注入仅仅就只有这么点东西，那也没有什么值得讨论的了。但是，上面讨论的仅仅是依赖注入的内涵，其外延还是非常广泛的，从依赖注入衍生出了很多相关的概念与技术，下面我们讨论一下依赖注入的“那些事儿”。
@@ -448,14 +447,14 @@ Peter 显然对改进后的代码比较满意，他让小李对照两份设计�
 
 依赖注入有很多种方法，上面看到的例子中，只是其中的一种，下面分别讨论不同的依赖注入类型。
 
-####    Setter 注入
+#### Setter 注入
 
 第一种依赖注入的方式，就是 Setter 注入，上面的例子中，将武器注入 `Role` 就是 Setter 注入。正式点说： Setter 注入（ _Setter Injection_ ）是指在客户类中，设置一个服务类接口类型的数据成员，并设置一个 `Set` 方法作为注入点，这个 `Set` 方法接受一个具体的服务类实例为参数，并将它赋给服务类接口类型的数据成员。
 
 <!-- ![04_6.jpg](https://i.loli.net/2017/09/15/59bbb21e689a0.jpg) -->
 {% asset_img 4.webp img046 %}
 
-**图3.1 Setter注入示意**
+图3.1 Setter注入示意
 
 上图展示了Setter注入的结构示意图，客户类 `ClientClass` 设置 `IServiceClass` 类型成员 `_serviceImpl`，并设置 `Set_ServiceImpl` 方法作为注入点。`Context` 会负责实例化一个具体的 `ServiceClass`，然后注入到 `ClientClass` 里。 下面给出 Setter 注入的示例代码：
 
@@ -565,16 +564,16 @@ namespace SetterInjection
 <!-- ![05_3.jpg](https://i.loli.net/2017/09/15/59bbb2c0e0be7.jpg) -->
 {% asset_img 5.jpg 结果053 %}
 
-**图3.2 Setter注入运行结果**
+图3.2 Setter注入运行结果
 
-####    构造注入
+#### 构造注入
 
 另外一种依赖注入方式，是通过客户类的构造函数，向客户类注入服务类实例。 构造注入（ _Constructor Injection_ ）是指在客户类中，设置一个服务类接口类型的数据成员，并以构造函数为注入点，这个构造函数接受一个具体的服务类实例为参数，并将它赋给服务类接口类型的数据成员。
 
 <!-- ![06_3.jpg](https://i.loli.net/2017/09/15/59bbb3267fef0.jpg) -->
 {% asset_img 6.webp img063 %}
 
-**图3.3 构造注入示意**
+图3.3 构造注入示意
 
 图3.3是构造注入的示意图，可以看出，与 Setter 注入很类似，只是注入点由 Setter 方法变成了构造方法。这里要注意，由于构造注入只能在实例化客户类时注入一次，所以一点注入，程序运行期间是没法改变一个客户类对象内的服务类实例的。 由于构造注入和 Setter 注入的 `IServiceClass`，`ServiceClassA` 和 `ServiceClassB` 是一样的，所以这里给出另外 `ClientClass` 类的示例代码：
 
@@ -605,14 +604,14 @@ namespace ConstructorInjection
 
 可以看到，唯一的变化就是构造函数取代了 `Set_ServiceImpl` 方法，成为了注入点。
 
-####    依赖获取
+#### 依赖获取
 
 上面提到的注入方式，都是客户类被动接受所依赖的服务类，这也符合“注入”这个词。不过还有一种方法，可以和依赖注入达到相同的目的，就是依赖获取。 依赖获取（ _Dependency Locate_ ）是指在系统中提供一个获取点，客户类仍然依赖服务类的接口。当客户类需要服务类时，从获取点主动取得指定的服务类，具体的服务类类型由获取点的配置决定。 可以看到，这种方法变被动为主动，使得客户类在需要时主动获取服务类，而将多态性的实现封装到获取点里面。获取点可以有很多种实现，也许最容易想到的就是建立一个Simple Factory作为获取点，客户类传入一个指定字符串，以获取相应服务类实例。如果所依赖的服务类是一系列类，那么依赖获取一般利用 Abstract Factory 模式构建获取点，然后，将服务类多态性转移到工厂的多态性上，而工厂的类型依赖一个外部配置，如XML文件。 不过，不论使用 Simple Factory 还是 Abstract Factory，都避免不了判断服务类类型或工厂类型，这样系统中总要有一个地方存在不符合 OCP 的 `if…else` 或 `switch…case` 结构，这种缺陷是 Simple Factory 和 Abstract Factory 以及依赖获取本身无法消除的，而在某些支持反射的语言中（如 C#），通过将反射机制的引入彻底解决了这个问题（后面讨论）。 下面给一个具体的例子，现在我们假设有个程序，既可以使用 Windows 风格外观，又可以使用 Mac 风格外观，而内部业务是一样的。
 
 <!-- ![07_3.jpg](https://i.loli.net/2017/09/15/59bbb3d9a6b9f.jpg) -->
 {% asset_img 7.webp img073 %}
 
-**图3.4 依赖获取示意**
+图3.4 依赖获取示意
 
 上图乍看有点复杂，不过如果读者熟悉 Abstract Factory 模式，应该能很容易看懂，这就是 Abstract Factory 在实际中的一个应用。这里的 Factory Container 作为获取点，是一个静态类，它的“**Type 构造函数**”依据外部的XML配置文件，决定实例化哪个工厂。下面还是来看示例代码。由于不同组件的代码是相似的，这里只给出 Button 组件的示例代码，完整代码请参考文末附上的完整源程序。
 
@@ -832,14 +831,14 @@ namespace DependencyLocate
 <!-- ![08_3.jpg](https://i.loli.net/2017/09/15/59bbb4ede424d.jpg) -->
 {% asset_img 8.jpg 结果083 %}
 
-**图3.5 配置Mac风格后的运行结果**
+图3.5 配置Mac风格后的运行结果
 
 现在，我们不动程序，仅仅将配置文件中的“Mac”改为 Windows，运行后结果如下：
 
 <!-- ![09_3.jpg](https://i.loli.net/2017/09/15/59bbb4d5af22b.jpg) -->
 {% asset_img 9.jpg 结果093 %}
 
-**图3.6 配置为Windows风格后的运行结果**
+图3.6 配置为Windows风格后的运行结果
 
 从运行结果看出，我们仅仅通过修改配置文件，就改变了整个程序的行为（我们甚至没有重新编译程序），这就是多态性的威力，也是依赖注入效果。 本节共讨论了三种基本的依赖注入类别，有关更多依赖注入类别和不同类别对比的知识，可以参考 Martin Fowler 的《[_Inversion of Control Containers and the Dependency Injection pattern_](https://www.martinfowler.com/articles/injection.html)》。
 
@@ -850,7 +849,7 @@ namespace DependencyLocate
 <!-- ![10_3.jpg](https://i.loli.net/2017/09/15/59bbb60a2b744.jpg) -->
 {% asset_img 10.webp img103 %}
 
-**图3.7 引入反射机制的Dependency Locate**
+图3.7 引入反射机制的Dependency Locate
 
 可以看出，引入反射机制后，结构简单了很多，一个反射工厂代替了以前的一堆工厂，`Factory Container` 也不需要了。而且以后有新组件系列加入时，反射工厂是不用改变的，只需改变配置文件就可以完成。下面给出反射工厂和配置文件的代码。
 
@@ -914,14 +913,13 @@ namespace DependencyLocate
 
 ### 多态的活性与依赖注入
 
-####    多态性的活性
+#### 多态性的活性
 
 这一节我们讨论多态的活性及其与依赖注入类型选择间密切的关系。 首先说明，“多态的活性”这个术语是我个人定义的，因为我没有找到既有的概念名词可以表达我的意思，所以就自己造了一个词。这里，某多态的活性是指被此多态隔离的变化所发生变化的频繁程度，频繁程度越高，则活性越强，反之亦然。 上文说过，多态性可以隔离变化，但是，不同的变化，发生的频率是不一样的，这就使得多态的活性有所差别，这种差别影响了依赖注入的类型选择。 举例来说，本文最开始提到的武器多态性，其活性非常高，因为在那个程序中，_Role_ 在一次运行中可能更换多次武器。而现在我们假设 _Role_ 也实现了多态性，这是很可能的，因为在游戏中，不同类型的角色（如暗夜精 灵、牛头人、矮人等）很多属性和业务是想通的，所以很可能通过一个 _IRole_ 或 _AbstractRole_ 抽象类实现多态性，不过，_Role_ 在实例化后（一般在用户登录成功后），是不会变化的，很少有游戏允许同一个玩家在运行中变换 _Role_ 类型，所以 _Role_ 应该是一但实例化，就不会变化，但如果再实例化一个（如另一个玩家登录），则可能就变化了。最后，还有一种多态性是活性非常低的，如我们熟悉的数据访问层多态性，即使我们实现了 SQL Server、Oracle 和 Access 等多种数据库的访问层，并实现了依赖注入，但几乎遇不到程序运行着就改数据库或短期内数据库频繁变动的情况。 以上不同的多态性，不但特征不同，其目的一般也不同，总结如下： 高活多态性——指在客户类实例运行期间，服务类可能会改变的多态性。 中活多态性——指在客户类实例化后，服务类不会改变，但同一时间内存在的不同实例可能拥有不同类型的服务类。 低活多态性——指在客户类实例化后，服务类不会改变，且同一时间内所有客户类都拥有相同类型的服务类。 以上三种多态性，比较好的例子就是上文提到的武器多态性（高活）、角色多态性（中活）和数据访问层多态性（低活）。另外，我们说一种多态性是空间稳定的，如果同一客户类在同一时间内的所有实例都依赖相同类型的服务类，反之则叫做空间不稳定多态性。我们说一种多态性是时间稳定的，如果一个客户类在实例化后，所以来的服务类不能再次更改，反之则叫做时间不稳定多态性。显然，高活多态性时间和空间均不稳定；中活多态性是时间稳定的，但空间不稳定；低活多态性时间空间均稳定。
 
-####    不同活性多态的依赖注入选择
+#### 不同活性多态的依赖注入选择
 
 一般来说，高活多态性适合使用 Setter 注入。因为 Setter 注入最灵活，也是唯一允许在同一客户类实例运行期间更改服务类的注入方式。并且这种注入一般由上下文环境通过 Setter 的参数指定服务类类型，方便灵活，适合频繁变化的高活多态性。 对于中活多态性，则适合使用 Constructor 注入。因为 Constructor 注入也是由上下文环境通过 Construtor 的参数指定服务类类型，但一点客户类实例化后，就不能进行再次注入，保证了其时间稳定性。 而对于低活多态性，则适合使用 _Dependency Locate_ 并配合文件配置进行依赖注入，或 Setter、Constructor 配合配置文件注入，因为依赖源来自文件，如果要更改服务类，则需要更改配置文件，一则确保了低活多态性的时间和空间稳定性，二是更改配置文件的方式方便于大规模服务类替换。（因为低活多态性一旦改变行为，往往规模很大，如替换整个数据访问层，如果使用 Setter 和 Construtor 传参，程序中需要改变的地方不计其数） 本质上，这种选择是因为不同的依赖注入类型有着不同的稳定性，大家可以细细体会“活性”、“稳定性”和“依赖注入类型”之间密切的关系。
-
 
 ## IoC Container
 
@@ -933,44 +931,44 @@ namespace DependencyLocate
 
 前面曾经讨论了三种依赖注入方式，但是，想通过方式对 _IoC Container_ 进行分类很困难，因为现在 _IoC Container_ 都设计很完善，几乎支持所有依赖注入方式。不过，根据不同框架的特性和惯用法，还是可以讲 _IoC Container_ 分为两个大类。
 
-####    重量级 IoC Container
+#### 重量级 IoC Container
 
 所谓重量级 _IoC Container_ ，是指一般用外部配置文件（一般是 _XML_ ）作为依赖源，并托管整个系统各个类的实例化的 _IoC Container_ 。这种 _IoC Container_ ，一般是承接了整个系统几乎所有多态性的依赖注入工作，并承接了所有服务类的实例化工作，而且这些实例化依赖于一个外部配置文件，这种 _IoC Container_ ，很像通过一个文件，定义整个系统多态结构，视野宏大，想要很好驾驭这种 _IoC Container_ ，需要一定的架构设计能力和丰富的实践经验。 _Spring_ 和 _Spring.NET_ 是重量级 _IoC Container_ 的例子。一般来说，这种 _IoC Container_ 稳定性有余而活性不足，适合进行低活多态性的依赖注入。
 
-####    轻量级 IoC Container
+#### 轻量级 IoC Container
 
 还有一种 _IoC Container_ ，一般不依赖外部配置文件，而主要使用传参的 Setter 或 Construtor 注入，这种IoC Container叫做轻量级 _IoC Container_ 。这种框架很灵活，使用方便，但往往不稳定，而且依赖点都是程序中的字符串参数，所以，不适合需要大规模替换和相对稳定的低活多态性，而对于高活多态性，有很好的效果。 _Unity_ 是一个典型的轻量级 _IoC Container_ 。
 
 ### .NET平台上典型 IoC Container 推介
 
-####    Spring.NET
+#### Spring.NET
 
 <!-- ![11_3.png](https://i.loli.net/2017/09/15/59bbb86a93913.png) -->
 {% asset_img 11.png img113 %}
 
-_Spring.NET_ 是 _Java_ 平台上 _Spring_ 对 _.NET_ 平台的移植，使用方法和 _Spring_ 很像，并且功能强大，是 _.NET_ 平台上大中型开发 _IoC Container_ 的首选之一。除了 _DI_ 外，_Spring.NET_ 也包括 _AOP_ 等诸多功能。 _Spring.NET_ 的官方网站是：http://www.springframework.net/
+_Spring.NET_ 是 _Java_ 平台上 _Spring_ 对 _.NET_ 平台的移植，使用方法和 _Spring_ 很像，并且功能强大，是 _.NET_ 平台上大中型开发 _IoC Container_ 的首选之一。除了 _DI_ 外，_Spring.NET_ 也包括 _AOP_ 等诸多功能。 _Spring.NET_ 的官方网站是：<http://www.springframework.net/>
 
-####    Unity
+#### Unity
 
 <!-- ![12_3.gif](https://i.loli.net/2017/09/15/59bbb8f4a6954.gif) -->
 {% asset_img 12.webp img123 %}
 
 对于小型项目和讲求敏捷的团队，_Spring.NET_ 可能有点太重量级，那么可以选择轻量级的 _Unity_ 。_Unity_ 是微软 _patterns & practices_ 团队推出的轻量级框架，非常好用，目前最新版本是 1.2。
 
-_Unity_ 的官方网站是：http://unity.codeplex.com/
+_Unity_ 的官方网站是：<http://unity.codeplex.com/>
 
-##  参考文献
+## 参考文献
 
-1.  [Shivprasad koirala, Design pattern – Inversion of control and Dependency injection](http://www.codeproject.com/KB/aspnet/IOCDI.aspx)
+1. [Shivprasad koirala, Design pattern – Inversion of control and Dependency injection](http://www.codeproject.com/KB/aspnet/IOCDI.aspx)
 
-2.  [Martin Fowler, Inversion of Control Containers and the Dependency Injection pattern](http://www.martinfowler.com/articles/injection.html)
+2. [Martin Fowler, Inversion of Control Containers and the Dependency Injection pattern](http://www.martinfowler.com/articles/injection.html)
 
-3.  [Paul, IoC Types](http://docs.codehaus.org/display/PICO/IoC+Types)
+3. [Paul, IoC Types](http://docs.codehaus.org/display/PICO/IoC+Types)
 
-4.  Eric Freeman, Elisabeth Freeman. Head First Design Patterns. O’Reilly Media, 2004. ISBN 0596007142
+4. Eric Freeman, Elisabeth Freeman. Head First Design Patterns. O’Reilly Media, 2004. ISBN 0596007142
 
-5.  Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley, 1995. ISBN 0201633612
+5. Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley, 1995. ISBN 0201633612
 
-6.  Patrick Smacchia 著，施凡等 译，C#和.NET2.0 平台、语言与框架。2008.1，人民邮电出版
+6. Patrick Smacchia 著，施凡等 译，C#和.NET2.0 平台、语言与框架。2008.1，人民邮电出版
 
-7.  Jeffrey Rechter 著，CLR via C#（影印版）。2008.8，人民邮电出版
+7. Jeffrey Rechter 著，CLR via C#（影印版）。2008.8，人民邮电出版

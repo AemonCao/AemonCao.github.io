@@ -16,7 +16,7 @@ date: 2020-03-31 22:55:39
 
 <!-- more -->
 
-##  实现
+## 实现
 
 我们还是继续{% post_link Simple-Factory-Pattern '简单工厂模式（Simple Factory Pattern）' %}中的披萨店。
 
@@ -212,10 +212,10 @@ public class ChicagoStylePizzaStore : PizzaStore
 
 我们把实例化的工作都交给了子类，或者说是交给了子类中的一个方法，这个方法就是一个工厂。
 
-##  注意的点
+## 注意的点
 
 * 简单工厂和工厂方法之间的差异：简单方法把全部的事情都在一个地方做完了，而工厂方法则是定义了一个框架，通过继承抽象类来创造实际的产品。
 
-##  代码
+## 代码
 
 [FactoryMethodPattern](https://github.com/AemonCao/DesignPattern/tree/master/DesignPattern/FactoryMethodPattern)

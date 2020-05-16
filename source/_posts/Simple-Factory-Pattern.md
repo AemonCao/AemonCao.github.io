@@ -244,15 +244,15 @@ namespace DesignPattern.SimpleFactoryPattern
 
 在这个例子里，我们只有一个 `PizzaStore` 使用了工厂来创建披萨。但是披萨店可不止有一家，当我们做大做强，拥有了更多的连锁店的时候，我们就能体会到 `SimplePizzaFactory` 的好处了，如果我们需要升级一下披萨的制作工艺，我们不必对每个门店进行改造，而是只对工厂进行升级，这样所有使用 `SimplePizzaFactory` 的披萨店都可以享受到最新的工艺做出来的披萨啦。
 
-##  注意的点
+## 注意的点
 
 * 如果将工厂定义为静态方法，这么做的好处是不必再创建对象的方法来实例化对象，但是缺点是无法通过继承来改变创建方法的行为。
 
-##  代码
+## 代码
 
 [SimpleFactoryPattern](https://github.com/AemonCao/DesignPattern/tree/master/DesignPattern/SimpleFactoryPattern)
 
-##  P.S.
+## PS
 
 这部分的代码来自《Head First 设计模式》。
 

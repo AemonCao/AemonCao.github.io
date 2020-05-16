@@ -11,32 +11,32 @@ categories:
 
 <!-- more -->
 
-##  准备
+## 准备
 
-0.  一台可以通过 ssh 来进行连接的服务器（云服务器或者公司的服务器）；
+0. 一台可以通过 ssh 来进行连接的服务器（云服务器或者公司的服务器）；
 
-1.  一台用于可以连接 `0` 中的服务器的 PC。
+1. 一台用于可以连接 `0` 中的服务器的 PC。
 
-##  安装 Visual Studio Code
+## 安装 Visual Studio Code
 
 点击这里下载「[Visual Studio Code](https://code.visualstudio.com/)」，然后安装。
 
-##  安装远程插件
+## 安装远程插件
 
 新安装的 Visual Studio Code 并不能直接进行远程工作，需要下载相应的插件。
 
-0.  在左侧边栏点击 Extensions（或者使用快捷键 Ctrl+Shift+X）调出插件管理页面；
+0. 在左侧边栏点击 Extensions（或者使用快捷键 Ctrl+Shift+X）调出插件管理页面；
 
-1.  在顶部搜索栏搜索「Remote」,在搜索结果中选择 「Remote - SSH」 进行安装；
+1. 在顶部搜索栏搜索「Remote」,在搜索结果中选择 「Remote - SSH」 进行安装；
 
     在安装的时候会自动为你安装 「Remote - SSH: Editing Configuration Files」。
 
-2.  安装完成后，你的左侧边栏就会多出一个「远程资源管理器（Remote Explorer）」的图标，如下图所示：
+2. 安装完成后，你的左侧边栏就会多出一个「远程资源管理器（Remote Explorer）」的图标，如下图所示：
 
     <!-- ![Remote Explorer](https://i.loli.net/2020/03/08/YXuTfDQxovHUkNm.png) -->
     {% asset_img RemoteExplorer.png RemoteExplorer %}
 
-##  开始使用
+## 开始使用
 
 ### 进行连接
 
@@ -48,7 +48,7 @@ categories:
 输入：
 
 ```shell
-$ ssh user@host
+ssh user@host
 ```
 
 `user` 是用来登录的用户名，`host` 则是你需要远程的服务器的地址。
@@ -56,7 +56,7 @@ $ ssh user@host
 ssh 的默认端口是 22，如果你修改过该端口，则需要使用 p 参数：
 
 ```shell
-$ ssh -p 9588 user@host
+ssh -p 9588 user@host
 ```
 
 9588 则是新的 ssh 端口。
@@ -84,17 +84,17 @@ $ ssh -p 9588 user@host
 
 连接成功后，你要选择需要进行工作的文件夹，基本上是一个项目的根目录。
 
-0.  点击左侧边栏的 Expoler（或者使用快捷键 Ctrl+Shift+E）打开资源管理器：
+0. 点击左侧边栏的 Expoler（或者使用快捷键 Ctrl+Shift+E）打开资源管理器：
 
     <!-- ![expoler.png](https://i.loli.net/2020/03/08/Tltvb9aLrmq67CI.png) -->
     {% asset_img expoler.png expoler %}
 
-1.  点击 Open Folder 按钮来选择文件夹：
+1. 点击 Open Folder 按钮来选择文件夹：
 
     <!-- ![open-folder.png](https://i.loli.net/2020/03/08/2JU7CYA5i6T1Fzc.png) -->
     {% asset_img open-folder.png open-folder %}
 
-2.  点击 OK，这时可能需要你再次输入密码，之后你的资源管理器中就会有选择文件夹下的文件了。
+2. 点击 OK，这时可能需要你再次输入密码，之后你的资源管理器中就会有选择文件夹下的文件了。
 
 ### 权限修改
 
@@ -108,7 +108,7 @@ $ ssh -p 9588 user@host
 最简单的方法是执行以下命令：
 
 ```shell
-$ sudo chmod 777 /path
+sudo chmod 777 /path
 ```
 
 之后再保存的话就可以顺利保存成功了。

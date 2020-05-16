@@ -18,27 +18,27 @@ date: 2018-09-20 17:26:59
 
 <!-- more -->
 
-##  准备
+## 准备
 
-0.  最新版本的 _ArchiSteamFarm_ ，具体可以去[这里](https://github.com/JustArchi/ArchiSteamFarm/releases)下载，我用的是 **3.3.6.0** 版本（这个作者更新得很勤快）；
+0. 最新版本的 _ArchiSteamFarm_ ，具体可以去[这里](https://github.com/JustArchi/ArchiSteamFarm/releases)下载，我用的是 **3.3.6.0** 版本（这个作者更新得很勤快）；
 
-1.  _Google Cloud_ 的云服务器一台，这个的话只要你有国际信用卡，就能免费领取一台一年的云服务器，从开始到现在只装了一个梯子，其他什么都没用，现在终于可以发挥一下余热了。
+1. _Google Cloud_ 的云服务器一台，这个的话只要你有国际信用卡，就能免费领取一台一年的云服务器，从开始到现在只装了一个梯子，其他什么都没用，现在终于可以发挥一下余热了。
 
-##  下载以及配置
+## 下载以及配置
 
-0.  在最近的更新中，_ArchiSteamFarm_ 开始支持多平台，所以我们不用像以前那样麻烦得再安装 _Mono_ 了。首先先去下载对应的版本，可以去上面提到的[地址](https://github.com/JustArchi/ArchiSteamFarm/releases)，然后通过 _FTP_ 等方式放入云主机，也可以直接通过如下命令下载：
-
-    ```shell
-    $ wget https://github.com/JustArchi/ArchiSteamFarm/releases/download/3.3.0.6/ASF-linux-x64.zip
-    ```
-
-1.  然后解压文件：
+0. 在最近的更新中，_ArchiSteamFarm_ 开始支持多平台，所以我们不用像以前那样麻烦得再安装 _Mono_ 了。首先先去下载对应的版本，可以去上面提到的[地址](https://github.com/JustArchi/ArchiSteamFarm/releases)，然后通过 _FTP_ 等方式放入云主机，也可以直接通过如下命令下载：
 
     ```shell
-    $ unzip ASF-linux-x64.zip
+    wget https://github.com/JustArchi/ArchiSteamFarm/releases/download/3.3.0.6/ASF-linux-x64.zip
     ```
 
-2.  之后需要开始调整配置文件，总共需要调整的配置文件一共有三个，第一个是位于根目录下的 `ArchiSteamFarm.runtimeconfig.json`，默认值是这样的：
+1. 然后解压文件：
+
+    ```shell
+    unzip ASF-linux-x64.zip
+    ```
+
+2. 之后需要开始调整配置文件，总共需要调整的配置文件一共有三个，第一个是位于根目录下的 `ArchiSteamFarm.runtimeconfig.json`，默认值是这样的：
 
     ```json
     {
@@ -130,34 +130,34 @@ date: 2018-09-20 17:26:59
 
     就可以了。 如果你嫌这样麻烦，并且怕自己粗心的话，可以去这个官方提供的[配置文件生成网站](https://justarchi.github.io/ArchiSteamFarm/#/)，来生成自己的配置文件。 如果想配置更多的功能，但又看不懂属性名称的话，你可以对着这份[配置说明](https://www.jianshu.com/p/a1459d1ca639)，来进行配置。 当然，如果你英语足够好，也可以参阅[官方的文档](https://github.com/JustArchiNET/ArchiSteamFarm/wiki/Configuration)。
 
-##  运行
+## 运行
 
-0.  在运行之前呢还需要一步，就是为 _ArchiSteamFarm_ 增加可执行权限，只要执行一下命令即可：
+0. 在运行之前呢还需要一步，就是为 _ArchiSteamFarm_ 增加可执行权限，只要执行一下命令即可：
 
     ```shell
-    $ chmod +x ArchiSteamFarm
+    chmod +x ArchiSteamFarm
     ```
 
-1.  由于我们需要长时间挂机，需要 _ArchiSteamFarm_ 能在后台运行，所以我就开一个名为 _asf_ 的 _screen_ ：
+1. 由于我们需要长时间挂机，需要 _ArchiSteamFarm_ 能在后台运行，所以我就开一个名为 _asf_ 的 _screen_ ：
 
     ```shell
-    $ screen -S asf
+    screen -S asf
     ```
 
     进入这个 _screen_ ：
 
     ```shell
-    $ screen -r asf
+    screen -r asf
     ```
 
-2.  然后我们运行 _ArchiSteamFarm_ 即可：
+2. 然后我们运行 _ArchiSteamFarm_ 即可：
 
     ```shell
-    $ sudo ./ArchiSteamFarm
+    sudo ./ArchiSteamFarm
     ```
 
     根据你的设置不同，可能会提示你输入 _Steam 令牌_ 的五位代码，检查一下你绑定的邮箱或者是手机 _APP_ ，然后输入即可（不区分大小写）。 好了，现在就已经开始挂卡了，你可以按 `Ctrl` \+ `A` 和 `Ctrl` \+ `D` 来退出这个 _screen_ ，并退出终端，程序会一直运行的。
 
-##  最后
+## 最后
 
 最后祝大家挂卡顺利，早日回本。

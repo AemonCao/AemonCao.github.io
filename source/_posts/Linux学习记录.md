@@ -14,11 +14,11 @@ categories:
 
 <!-- more -->
 
-##  命令
+## 命令
 
 ### tac
 
->   用于将文件已行为单位的反序输出，即第一行最后显示，最后一行先显示。
+> 用于将文件已行为单位的反序输出，即第一行最后显示，最后一行先显示。
 
 今天在写博客的[关于页](/about)时，把原本记在微信收藏中的一些「骚话」贴过来了，原本记录的时候是按时间从旧到新，如果有新的，就往底部添加。
 
@@ -31,28 +31,28 @@ tac 其实就是 cat 的 reverse，包含于 [coreutils](https://zh.wikipedia.or
 用法和 cat 类似，预览：
 
 ```shell
-$ tac abc.txt
+tac abc.txt
 ```
 
 输出到文件：
 
 ```shell
-$ tac abc.txt > cba.txt
+tac abc.txt > cba.txt
 ```
 
 目前想到的用法可能是用在日志文件上，可以将日志文件 reverse，方便查看最新的日志。
 
 ### w
 
->   用于显示目前登入系统的用户信息。
+> 用于显示目前登入系统的用户信息。
 
 这个命令也不算是新学的，但是对输出的信息还只是一知半解，所以今天去查了一下，这边记录一下。
 
 ```shell
-$ w
+w
 ```
 
-```
+```text
  22:33:11 up 4 days,  9:44,  1 user,  load average: 0.05, 0.03, 0.05
 USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT
 root     pts/1    192.168.1.88     22:22    7.00s  0.03s  0.00s w
@@ -64,59 +64,57 @@ root     pts/1    192.168.1.88     22:22    7.00s  0.03s  0.00s w
 
 参考：
 
-*  
-    ```shell
-    $ man w
-    ```
+* ```shell
+  man w
+  ```
 
-*  [w command in Linux with Examples](https://www.geeksforgeeks.org/w-command-in-linux-with-examples/)
+* [w command in Linux with Examples](https://www.geeksforgeeks.org/w-command-in-linux-with-examples/)
 
-*  [图解Linux命令之--w命令](https://blog.csdn.net/Jerry_1126/article/details/52088987)
+* [图解Linux命令之--w命令](https://blog.csdn.net/Jerry_1126/article/details/52088987)
 
-*  [Linux的JCPU与PCPU](https://blog.csdn.net/zzxian/article/details/8070144)
+* [Linux的JCPU与PCPU](https://blog.csdn.net/zzxian/article/details/8070144)
 
 ### grep
 
->   在给定的文件中搜寻指定的字符串。
+> 在给定的文件中搜寻指定的字符串。
 
 这是一个很实用的命令，它可以在使文件搜索更上一层楼，往常的文件搜索关键字只能到文件名。而 `grep` 则可以~~深入~~到文件内部。
 
 用法是：
 
 ```shell
-$ grep 'The quick brown fox jumps over a lazy dog.' a.txt
+grep 'The quick brown fox jumps over a lazy dog.' a.txt
 ```
 
 意思就是在 *a.txt* 文件中搜索 `The quick brown fox jumps over a lazy dog.` 字符串。
 
 它有几个常用的参数：
 
-*   -i
-    
-    忽略字符串大小写。
+* -i
 
-*   -r
+  忽略字符串大小写。
 
-    在当前文件夹下递归查询。
+* -r
 
-*   -n
+  在当前文件夹下递归查询。
 
-    搜索结果显示行号。
+* -n
+
+  搜索结果显示行号。
 
 参考：
 
-*  
-    ```shell
-    $ man grep
-    ```
+* ```shell
+  man grep
+  ```
 
-*   [grep命令-文件过滤分割与合并](https://man.linuxde.net/grep)
+* [grep命令-文件过滤分割与合并](https://man.linuxde.net/grep)
 
-*   [grep查找字符串所在文件和行号，find查找文件所在目录即路径](https://blog.csdn.net/devwang_com/article/details/52587884)
+* [grep查找字符串所在文件和行号，find查找文件所在目录即路径](https://blog.csdn.net/devwang_com/article/details/52587884)
 
-*   [27个常用的 Linux 命令](https://www.jianshu.com/p/0056d671ea6d)
+* [27个常用的 Linux 命令](https://www.jianshu.com/p/0056d671ea6d)
 
-##  Vim
+## Vim
 
 这里写一下 Vim 的学习历程，之前都是用 nano，但是不是所有的系统都预装的 nano。而且最近在使用 Vim 的时候，发现并没用想象中那么难用。更加下定了要学好 Vim 的决心。
 
@@ -124,7 +122,7 @@ $ grep 'The quick brown fox jumps over a lazy dog.' a.txt
 
 在学习 Vim 前，首先要先学会如何退出 Vim，毕竟很多人直到老死也没有退出 Vim。
 
->   How to exit the Vim editor?
+> How to exit the Vim editor?
 
 这个问题在 [Stack Overflow](https://stackoverflow.com/questions/11828270/how-do-i-exit-the-vim-editor) 得到了 200多万次的查看（截至 2020-3-12 13:55:28）。
 
@@ -132,14 +130,14 @@ $ grep 'The quick brown fox jumps over a lazy dog.' a.txt
 
 点击 <kbd>ESC</kbd> 进入「正常模式」，然后输入 <kbd>:</kbd>，进入「命令模式」。此时屏幕的下方会出现一个冒号，你可以输入以下命令，并按 <kbd>ENTER</kbd> 执行：
 
-*   `:q`：退出（`:quit` 的缩写）；
-*   `:q!`：退出且不保存（`:quit!` 的缩写）；
-*   `:wq`：保存并退出；
-*   `:wq!`：保存并退出即使文件没有写入权限（强制保存退出）；
-*   `:x`：保存并退出（类似 `:wq`，但是只有在有更改的情况下才保存）；
-*   `:exit`：保存并退出（和 `:x` 相同）；
-*   `:qa`：退出所有（`:quitall` 的缩写）；
-*   `:cq`：退出且不保存（即便有错误）。
+* `:q`：退出（`:quit` 的缩写）；
+* `:q!`：退出且不保存（`:quit!` 的缩写）；
+* `:wq`：保存并退出；
+* `:wq!`：保存并退出即使文件没有写入权限（强制保存退出）；
+* `:x`：保存并退出（类似 `:wq`，但是只有在有更改的情况下才保存）；
+* `:exit`：保存并退出（和 `:x` 相同）；
+* `:qa`：退出所有（`:quitall` 的缩写）；
+* `:cq`：退出且不保存（即便有错误）。
 
 你也可以直接在「正常模式」下输入 `ZZ` 来保存并退出 Vim（和 `:x` 相同），或者 `ZQ` 不保存并退出（和 `:q!` 相同），注意此处 `ZZ` 大写和小写是完全不同的。
 
@@ -155,9 +153,9 @@ $ grep 'The quick brown fox jumps over a lazy dog.' a.txt
 
 参考：
 
-*   [请问vim如何移动当前行向上或向下？不用选中](https://www.v2ex.com/t/49043)
+* [请问vim如何移动当前行向上或向下？不用选中](https://www.v2ex.com/t/49043)
 
-*   [最全的vim快捷键](https://blog.csdn.net/donahue_ldz/article/details/17139361)
+* [最全的vim快捷键](https://blog.csdn.net/donahue_ldz/article/details/17139361)
 
 ### Vim 配置
 
@@ -234,7 +232,7 @@ set showtabline=2
 
 我将自己常用的几款软件的配置都放到了 [GitHub](https://github.com/AemonCao/mySettings) 上，如果有需要可以看看。
 
-##  Git
+## Git
 
 ### 保存 GitHub 的用户名和密码
 
@@ -243,13 +241,13 @@ set showtabline=2
 可以使用以下命令来设置：
 
 ```shell
-$ git config --global credential.helper cache
+git config --global credential.helper cache
 ```
 
 或者：
 
 ```shell
-$ git config --global credential.helper store
+git config --global credential.helper store
 ```
 
 使用 `cache` 选项的话，会将用户名密码保存在内存中，平且在15分钟后从内存中消失，使用 `store` 选项的话，则会将用户名密码保存在磁盘中，永远都不会消失，除非你更改了 GitHub 的密码，否则是永远都不用输入密码的。但是密码会以明文的方式存储在当前用户的根目录下的 *.git-credentials* 文件中，比较不安全。
@@ -258,7 +256,7 @@ $ git config --global credential.helper store
 
 参考：
 
-*   [Git 工具 - 凭证存储](https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E5%87%AD%E8%AF%81%E5%AD%98%E5%82%A8)
+* [Git 工具 - 凭证存储](https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E5%87%AD%E8%AF%81%E5%AD%98%E5%82%A8)
 
 ### Submodules
 
@@ -269,7 +267,7 @@ $ git config --global credential.helper store
 首先要在当前主项目上使用 `git submodule` 命令来添加一个子项目：
 
 ```shell
-$ git submodule add https://github.com/AemonCao/hexo-theme-next.git themes/next
+git submodule add https://github.com/AemonCao/hexo-theme-next.git themes/next
 ```
 
 默认情况下，子项目会放在一个与仓库名同名的目录中，如果想放到其他地方，可以在命令最后添加一个路径。
@@ -296,4 +294,4 @@ $ git submodule add https://github.com/AemonCao/hexo-theme-next.git themes/next
 
 参考：
 
-*   [Git 工具 - 子模块](https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E5%AD%90%E6%A8%A1%E5%9D%97)
+* [Git 工具 - 子模块](https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E5%AD%90%E6%A8%A1%E5%9D%97)
