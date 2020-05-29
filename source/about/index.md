@@ -5,6 +5,8 @@ date: 2020-03-11 09:58:43
 
 关于我什么呢，我也不知道，放一些一直以来收集的骚话吧！
 
+* 收藏从未停止，学习从未开始。
+
 * Life is lived on a stage, against a backdrop and props, and amidst a script and a cast not of our own choosing.
 
     我们登上并非我们所选择的舞台，演绎并非我们选择的剧本。
