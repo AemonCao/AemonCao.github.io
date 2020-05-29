@@ -5,6 +5,8 @@ date: 2020-03-11 09:58:43
 
 关于我什么呢，我也不知道，放一些一直以来收集的骚话吧！
 
+* 买书如山倒，看书如抽丝。
+
 * 收藏从未停止，学习从未开始。
 
 * Life is lived on a stage, against a backdrop and props, and amidst a script and a cast not of our own choosing.
