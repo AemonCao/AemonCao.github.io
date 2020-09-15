@@ -44,7 +44,7 @@ categories:
 
 > A: "Seems to be a pendant head from the Caddo tribe. Looks legit and definitely pre-columbian. There's an oak hill Caddo site near there. Could be an import as well but unlikely." -My Archeologist Father
 
-我的考古学家老爹说：“似乎是是来自卡多部落的吊坠，看起来是真是并且是前哥伦布时期。橡树山附近有卡多遗址，也可能是进口，但是可能性不大。”
+我的考古学家老爹说：“似乎是是来自卡多部落的吊坠，看起来是真的并且是前哥伦布时期。橡树山附近有卡多遗址，也可能是进口，但是可能性不大。”
 
 [Source](https://www.reddit.com/r/whatisthisthing/comments/isa0vn/found_in_a_creek_bed_in_oak_hill_texas_has_a/)
 
