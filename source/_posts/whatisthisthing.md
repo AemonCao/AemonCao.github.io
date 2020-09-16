@@ -1,5 +1,5 @@
 ---
-title: What is this thing?
+title: What is this thing
 date: 2020-09-15 19:38:35
 tags:  
   - What is this thing?
@@ -20,6 +20,10 @@ categories:
 
 我的爷爷前不久去世了，我们在一个杂乱的公文包里发现了这些奇怪的笔记，有非常多页而且看起来都差不多，有人能告诉我这是什么么？
 
+<!-- ![weird-notes-1.jpg](./whatisthisthing/weird-notes-1.jpg) -->
+
+<!-- ![weird-notes-2.jpg](./whatisthisthing/weird-notes-2.jpg) -->
+
 {% asset_img weird-notes-1 weird-notes-1.jpg %}
 
 {% asset_img weird-notes-2 weird-notes-2.jpg %}
@@ -35,6 +39,12 @@ categories:
 > Q: Found in a creek bed in Oak Hill, Texas. Has a small hole on top of the head that goes all the way through.
 
 在德克萨斯州橡树山的一个河床中找到的，头顶有一个贯穿的小孔。
+
+<!-- ![caddo-1.jpg](./whatisthisthing/caddo-1.jpg) -->
+
+<!-- ![caddo-2.jpg](./whatisthisthing/caddo-2.jpg) -->
+
+<!-- ![caddo-3.jpg](./whatisthisthing/caddo-3.jpg) -->
 
 {% asset_img caddo-1 caddo-1.jpg %}
 
@@ -53,6 +63,14 @@ categories:
 > Q: Found in Freiburg, Germany. False bottom with this chip and sensor inside. Balls’ in your court...
 
 在德国弗莱堡发现的，假的杯底里面有着芯片和传感器，看你的了。
+
+<!-- ![mug-1.jpg](./whatisthisthing/mug-1.jpg) -->
+
+<!-- ![mug-2.jpg](./whatisthisthing/mug-2.jpg) -->
+
+<!-- ![mug-3.jpg](./whatisthisthing/mug-3.jpg) -->
+
+<!-- ![mug-4.jpg](./whatisthisthing/mug-4.jpg) -->
 
 {% asset_img mug-1 mug-1.jpg %}
 
@@ -74,6 +92,8 @@ categories:
 
 上面唯一能看到的字是「声波技术」。
 
+<!-- ![onic-technology.jpg](./whatisthisthing/onic-technology.jpg) -->
+
 {% asset_img sonic-technology sonic-technology.jpg %}
 
 > A: Bug repeller.</br>Edit- scratch that. It’s a Sonic Technologies ultrasonic rodent repeller. Just an old one.
@@ -87,6 +107,8 @@ categories:
 > Q: Found at an antique store. WITT?
 
 在一个古董店里找到的，这是个嘛？
+
+<!-- ![NCR.jpg](./whatisthisthing/NCR.jpg) -->
 
 {% asset_img NCR NCR.jpg %}
 
@@ -102,6 +124,8 @@ categories:
 
 拆弹小组被叫来检查这个在路边某个建筑工地上发现的「古董炸弹」,这是真的吗？
 
+<!-- ![bomb.jpg](./whatisthisthing/bomb.jpg) -->
+
 {% asset_img bomb bomb.jpg %}
 
 > A: 105mm tank round, no Fuze on it.
@@ -115,6 +139,8 @@ categories:
 > Q: Found next to a cliff in the UK, has chains in it. Any ideas what this thing is?
 
 在英国的一个悬崖边发现的，上面有铁链，知道这是什么吗？
+
+<!-- ![huts.jpg](./whatisthisthing/huts.jpg) -->
 
 {% asset_img huts huts.jpg %}
 
