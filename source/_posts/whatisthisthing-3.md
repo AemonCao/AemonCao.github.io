@@ -33,7 +33,7 @@ categories:
 
 > Q: WITT My dad passed away early Monday morning and my siblings and I are in the process of cleaning out his things from his room. We found these items in a jewelry box with his US Air Force dog tag from Vietnam. Quite obviously they’re pins, but I’m looking for some help identifying them- if they are from his service and if not, what they might be from. He didn’t much like to talk about his time in the military.
 
-这是什么？我爸爸在星期一清晨去死了，我和我的兄弟姐妹们在清理他房间里的东西，我们在一个装有他越南的美国空军狗牌的首饰盒里发现了这些东西，很明显这些是别针。我们在寻找能够帮我们鉴别它们的信息，如果它们是他服役期间的，如果不是的话，那这些又是什么呢？他不太愿意谈论他在军队时候的日子。
+这是什么？我爸爸在星期一清晨去世了，我和我的兄弟姐妹们在清理他房间里的东西，我们在一个装有他越南的美国空军狗牌的首饰盒里发现了这些东西，很明显这些是别针。我们在寻找能够帮我们鉴别它们的信息，如果它们是他服役期间的，如果不是的话，那这些又是什么呢？他不太愿意谈论他在军队时候的日子。
 
 <!-- ![DogTag.jpg](./whatisthisthing-3/DogTag.jpg) -->
 

@@ -25,7 +25,7 @@ categories:
 
 > A: Tiles of this type were reportedly made and used by slaves in Georgia as grave markers and garden tiles.
 
-据说，这种类型的瓦片是格鲁吉亚的奴隶制造的，被用于墓碑和花园的瓦片。
+据说，这种类型的瓦片是乔治亚州的奴隶制造的，被用于墓碑和花园的瓦片。
 
 [https://www.reddit.com/r/whatisthisthing/comments/it9uvo/slave_tile_found_at_an_antique_store_in_orlando/](https://www.reddit.com/r/whatisthisthing/comments/it9uvo/slave_tile_found_at_an_antique_store_in_orlando/)
 
