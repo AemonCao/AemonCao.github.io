@@ -3,9 +3,8 @@ title: What is this thing
 date: 2020-09-15 19:38:35
 tags:  
   - What is this thing?
-  - 趣闻
 categories:
-  - 趣闻
+  - What is this thing?
 ---
 
 [What is this thing](https://www.reddit.com/r/whatisthisthing/) 是 reddit 上的一个社区（community），上面时不时会有人发一些没见过的玩意来提问。
