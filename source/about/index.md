@@ -5,6 +5,12 @@ date: 2020-03-11 09:58:43
 
 关于我什么呢，我也不知道，放一些一直以来收集的骚话吧！
 
+* 把你们绝望的人，你们迷茫的人，把你们渴望看到胜利之光的畏惧徘徊的人都给我，把那些精神失落、灵魂在流浪的人都送来：在这金色的信念旁，我要为他们把灯举起。
+
+* The New Colossus
+  
+  > Not like the brazen giant of Greek fame,<br>With conquering limbs astride from land to land;<br>Here at our sea-washed, sunset gates shall stand<br>A mighty woman with a torch, whose flame<br>Is the imprisoned lightning, and her name<br>Mother of Exiles. From her beacon-hand<br>Glows world-wide welcome; her mild eyes command<br>The air-bridged harbor that twin cities frame.<br><br>"Keep, ancient lands, your storied pomp!" cries she<br>With silent lips. "Give me your tired, your poor,<br>Your huddled masses yearning to breathe free,<br>The wretched refuse of your teeming shore.<br>Send these, the homeless, tempest-tost to me,<br>I lift my lamp beside the golden door!"
+
 * 有志者立长志，无志者常立志。
 
 * [信就是所望之事的实底，是未见之事的确据。](https://cnbible.com/hebrews/11-1.htm)
