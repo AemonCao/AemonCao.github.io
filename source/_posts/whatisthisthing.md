@@ -1,8 +1,9 @@
 ---
 title: What is this thing
 date: 2020-09-15 19:38:35
-tags:  
+tags:
   - What is this thing?
+  - 翻译
 categories:
   - What is this thing?
 ---

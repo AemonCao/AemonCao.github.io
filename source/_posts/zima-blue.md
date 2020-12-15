@@ -1,9 +1,10 @@
 ---
-title: 【转载】《齐玛蓝》——阿拉斯泰尔·雷诺兹
+title: 《齐玛蓝》——阿拉斯泰尔·雷诺兹
 tags:
   - Love Death &amp; Robots
   - Zima Blue
   - 爱，死亡和机器人
+  - 转载
 url: 316.html
 id: 316
 categories:
