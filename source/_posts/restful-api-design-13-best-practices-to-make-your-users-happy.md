@@ -337,7 +337,7 @@ Python 开发人员将使用 Flask，JS 开发人员将使用 Express，他们�
 
 <!-- ![Falcon: Unburdening APIs for over 0.0564 centuries.](restful-api-design-13-best-practices-to-make-your-users-happy/Falcon.png) -->
 
-{% asset_img restapi-json.png Falcon: Unburdening APIs for over 0.0564 centuries. %}
+{% asset_img Falcon.png Falcon: Unburdening APIs for over 0.0564 centuries. %}
 
 如果你使用的是 Django，那么转到 [Django REST Framework](http://www.django-rest-framework.org) 即可。它不是那么直观，但是功能强大。
 

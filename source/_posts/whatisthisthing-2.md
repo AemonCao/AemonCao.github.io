@@ -1,6 +1,7 @@
 ---
 title: What is this thing 2
 date: 2020-09-16 12:12:21
+description: For the identification of mysterious objects
 tags:
   - What is this thing?
   - 翻译
