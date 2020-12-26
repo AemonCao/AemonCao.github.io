@@ -112,11 +112,11 @@ categories:
 
 在一个旧珠宝里发现了一些奇怪的东西。
 
-![书](./whatisthisthing-6/书.jpg)
+![酒](./whatisthisthing-6/酒.jpg)
 
-![书](./whatisthisthing-6/书2.jpg)
+![酒](./whatisthisthing-6/酒2.jpg)
 
-![书](./whatisthisthing-6/书3.jpg)
+![酒](./whatisthisthing-6/酒3.jpg)
 
 > A: The art technique is called Cloisonne. The bottles could be snuff bottles sold as souvenirs.
 
