@@ -65,7 +65,7 @@ categories:
 
 {% asset_img Ironsand Ironsand.jpg %}
 
-> A: Probably a bunch of iron Like here: https://en.m.wikipedia.org/wiki/Ironsand
+> A: Probably a bunch of iron Like here: [https://en.m.wikipedia.org/wiki/Ironsand](https://en.m.wikipedia.org/wiki/Ironsand)
 
 可能是一堆铁，就像维基百科说的一样：[https://en.m.wikipedia.org/wiki/Ironsand](https://en.m.wikipedia.org/wiki/Ironsand)
 
@@ -83,7 +83,7 @@ categories:
 
 {% asset_img Pringle Pringle.jpg %}
 
-> A: The previous Pringle that didn't completely make it out of the rolling mold. Pringles aren't sliced potatoes, they are mashed potatoes pressed flat and cut like cookies. That's a stuck previous Pringle. https://youtu.be/YDUTOo2tq3k
+> A: The previous Pringle that didn't completely make it out of the rolling mold. Pringles aren't sliced potatoes, they are mashed potatoes pressed flat and cut like cookies. That's a stuck previous Pringle. [https://youtu.be/YDUTOo2tq3k](https://youtu.be/YDUTOo2tq3k)
 
 之前的品客薯片并没有完全成型。品客薯片不是切成片的土豆，它们是压扁并切得像饼干一样的土豆泥。
 
@@ -142,7 +142,6 @@ categories:
 不管是否失效，它仍然不是你想在家里拥有的东西，而且拥有它很可能是非法的，这取决于你住在哪里。
 
 [https://www.reddit.com/r/whatisthisthing/comments/kgum9e/what_explosive_is_this_found_in_an_attic_today/](https://www.reddit.com/r/whatisthisthing/comments/kgum9e/what_explosive_is_this_found_in_an_attic_today/)
-
 
 ### Cybertruck
 
