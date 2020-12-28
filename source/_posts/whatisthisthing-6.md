@@ -34,6 +34,7 @@ categories:
 {% asset_img 砚 砚3.jpg %}
 
 > A: Chinese or Japanese ink, in block form. You use the dish, with a little water, to grind it into a usable liquid.</br>[https://www.bitsandpiecesuk.co.uk/product/sumi-e-ink-set](https://www.bitsandpiecesuk.co.uk/product/sumi-e-ink-set)
+
 中国或日本的墨。成块状的，你可以用少许水将碟子研磨成可用的液体。
 
 [https://www.reddit.com/r/whatisthisthing/comments/ki8bsy/does_anyone_know_what_this_box_is/](https://www.reddit.com/r/whatisthisthing/comments/ki8bsy/does_anyone_know_what_this_box_is/)
