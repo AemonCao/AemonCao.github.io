@@ -305,7 +305,7 @@ GET: /articles/?published=true&page=2&page_size=20
 
 ## 充分利用 `202 Accepted`
 
-我发现 `202 Accepted` 被用来代替 `201 202 Accepted` 是非常方便的。它的意思是：
+我发现 `202 Accepted` 被用来代替 `201 Created` 是非常方便的。它的意思是：
 
 > 我，服务器，已经理解了你的请求。我还没有创建资源，但这很好（指这不是一个错误）。
 
