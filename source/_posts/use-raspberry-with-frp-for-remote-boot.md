@@ -10,65 +10,77 @@ categories:
 date: 2018-07-19 22:56:39
 ---
 
-##  起因
+## 起因
 
 一直有在外操作家里电脑的需求，远程控制这一步好解决，一般是通过 _TeamViewer_ 来进行。但是前提之一是需要家中电脑时刻处于开机状态，但是由于电脑是台式即使待机也比平常笔记本的功率要高不少（可以看一下半个月的电费），而且如果 24 小时开机的话，散热器风扇一直处于运行状态，会使机箱的灰尘增多，这样的话清灰频率又要大大增加了。
 
 <!-- more -->
 
 <!-- ![5.png](https://i.loli.net/2018/07/19/5b507b12be317.png) -->
-{% asset_img 电费.webp 电费 %}
+
+![电费](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/use-raspberry-with-frp-for-remote-boot/电费.webp)
+
+<!-- {% asset_img 电费.webp 电费 %} -->
 
 所以需要一种可以远程开机的办法。
 
-##  思路
+## 思路
 
 之前的方法是使用即时通讯软件让家中的室友帮忙开机，但是也只限于家中有室友的情况，如果室友去上班了，那就没办法了。 也想过训练猫来帮助我开机，但是奈何这猫实在太蠢，朽木不可雕也。而且就算是训练成功了，那当我需要开机时，我该怎么通知到猫呢？这也是一个问题。 在试验过各种方法后，最后我使用了树莓派（raspberry）结合 frp 的方式来完成我的需求。
 
-##  事先准备
+## 事先准备
 
 需要用到的设备有：
 
-0.  用来进行远程开机以及远程控制的设备一台；
+0. 用来进行远程开机以及远程控制的设备一台；
 
-1.  具有 **IP/MAC绑定** 功能的路由器一台；
+1. 具有 **IP/MAC绑定** 功能的路由器一台；
 
-2.  树莓派一台；
+2. 树莓派一台；
 
-3.  支持 WOL 的 PC 一台；
+3. 支持 WOL 的 PC 一台；
 
-4.  带有公网 IP 的服务器一台。
+4. 带有公网 IP 的服务器一台。
 
-##  具体操作
+## 具体操作
 
 ### 局域网设备配置
 
 首先是家中局域网的配置，PC 和 树莓派要位于同一局域网，然后在路由器中把两者的 MAC 和 IP 进行绑定。这里需要注意的是 MAC 不是代表一台设备而是一个网卡，所以在设置树莓派的 MAC 地址的时候需要根据当前树莓派连接路由器的方式来设置。我使用的路由器可以直接查看设备的 MAC 地址。如下：
 
 <!-- ![Routerlist.png](https://i.loli.net/2018/07/19/5b507b1a3f9aa.png) -->
-{% asset_img Routerlist.webp Routerlist %}
+
+![Routerlist](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/use-raspberry-with-frp-for-remote-boot/Routerlist.webp)
+
+<!-- {% asset_img Routerlist.webp Routerlist %} -->
 
 如果路由器无法查看 MAC 地址或者设备太多无法区分，那么在 **Windows** 系统下可以使用
 
 ```bat
-$ ipconfig -all
+ipconfig -all
 ```
 
 来查看
 
 <!-- ![MACWindows.png](https://i.loli.net/2018/07/19/5b507b1a4128f.png) -->
-{% asset_img MACWindows.webp MACWindows %}
+
+![MACWindows](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/use-raspberry-with-frp-for-remote-boot/MACWindows.webp)
+
+<!-- {% asset_img MACWindows.webp MACWindows %} -->
 
 在 **raspberry** 下可以使用
 
 ```shell
-$ ifconfig
+ifconfig
 ```
 
 来查看
 
-![MACraspberry.png](https://i.loli.net/2018/07/19/5b507b1a4292a.png)
-{% asset_img MACraspberry.webp MACraspberry %}
+<!-- ![MACraspberry.png](https://i.loli.net/2018/07/19/5b507b1a4292a.png) -->
+
+![MACraspberry](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/use-raspberry-with-frp-for-remote-boot/MACraspberry.webp)
+
+<!-- {% asset_img MACraspberry.webp MACraspberry %} -->
 
 可以看到树莓派有两个 MAC 地址，由于我是使用无线连接所以我选择的是第二个 _wlan0_。 然后使用 **IP/MAC绑定** 功能将两台设备与 IP 进行绑定，绑定的时候建议就选择当前使用的 IP 以免用了其他设备正在使用的 IP，造成 IP 冲突。 如果绑定了其他的 IP，请在绑定成功后重启设备。
 
@@ -85,22 +97,34 @@ $ ifconfig
 所以我们要先设置 BIOS 打开「**网卡唤醒**」这一功能，由于各个品牌主板的 BIOS 各不相同，所以设置的方法也各式各样，大家可以自行搜索「**wake on lan 设置**」，来寻找正确的方式。不过大多是在 **电源管理**（Power Management Setup）中。 然后是系统上的设置，这里我以 _Windows 10 17134.165_ 版本为例。 首先右键「**网络**」-「**属性**」来打开「**网络和共享中心**」面板：
 
 <!-- ![4.png](https://i.loli.net/2018/07/19/5b507b129fdee.png) -->
-{% asset_img 4.webp 网络和共享中心 %}
+
+![网络和共享中心](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/use-raspberry-with-frp-for-remote-boot/4.webp)
+
+<!-- {% asset_img 4.webp 网络和共享中心 %} -->
 
 在左侧单击「**更改适配器设置**」-右键你现在正在使用的网卡-「**属性**」来打开「**属性**」面板：
 
 <!-- ![1.png](https://i.loli.net/2018/07/19/5b507b12983ac.png) -->
-{% asset_img 1.png 更改适配器设置 %}
+
+![更改适配器设置](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/use-raspberry-with-frp-for-remote-boot/1.png)
+
+<!-- {% asset_img 1.png 更改适配器设置 %} -->
 
 单击上方的「**配置**」-选择「**高级**」选项卡-在属性类别中将「**关机 网络唤醒**」和「**魔术封包唤醒**」的值设置为「**开启**」：
 
 <!-- ![3.png](https://i.loli.net/2018/07/19/5b507b129f1e7.png) -->
-{% asset_img 3.webp 高级 %}
+
+![高级](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/use-raspberry-with-frp-for-remote-boot/3.webp)
+
+<!-- {% asset_img 3.webp 高级 %} -->
 
 选择「**电源管理**」选项卡-勾选「**允许计算机关闭此设备以节约电源**」和「**允许此设备唤醒计算机**」选项：
 
 <!-- ![2.png](https://i.loli.net/2018/07/19/5b507b1298186.png) -->
-{% asset_img 2.webp 电源管理 %}
+
+![电源管理](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/use-raspberry-with-frp-for-remote-boot/2.webp)
+
+<!-- {% asset_img 2.webp 电源管理 %} -->
 
 就此，PC 端的设置已经完成了。
 
@@ -111,39 +135,40 @@ $ ifconfig
 我们可以在 [https://github.com/fatedier/frp/releases](https://github.com/fatedier/frp/releases) 下载指定架构下的版本，我在腾讯云服务器上使用的 _Ubuntu_ 系统，所以选择的是 `frp_0.20.0_linux_amd64.tar.gz` 这个版本。可以下载下来使用 _FTP_ 来放到服务器上，也可以在服务器上使用：
 
 ```shell
-$ wget https://github.com/fatedier/frp/releases/download/v0.20.0/frp_0.20.0_linux_amd64.tar.gz
+wget https://github.com/fatedier/frp/releases/download/v0.20.0/frp_0.20.0_linux_amd64.tar.gz
 ```
 
 来直接下载到服务器上。
 
-####    解压
+#### 解压
 
 下载完成后使用：
 
 ```shell
-$ tar -zxvf frp_0.20.0_linux_amd64.tar.gz
+tar -zxvf frp_0.20.0_linux_amd64.tar.gz
 ```
+
 解压文件。
 
-####    进入目录
+#### 进入目录
 
 ```shell
-$ cd frp_2.20.0_linux_amd64
+cd frp_2.20.0_linux_amd64
 ```
 
-####    通过 `rm` 命令来删除 `frpc` 和 `frpc.ini` 两个文件
+#### 通过 `rm` 命令来删除 `frpc` 和 `frpc.ini` 两个文件
 
 ```shell
-$ rm frpc frpc.ini
+rm frpc frpc.ini
 ```
 
-####    打开配置文件 `frps.ini`
+#### 打开配置文件 `frps.ini`
 
 ```shell
-$ vim frps.ini
+vim frps.ini
 ```
 
-####    更改配置
+#### 更改服务端配置
 
 更改配置如下：
 
@@ -155,20 +180,20 @@ vhost_http_port = 6081     #访问客户端web服务自定义的端口号
 
 注：
 
-1.  「#」 后面的是注释，可以不写；
+1. 「#」 后面的是注释，可以不写；
 
-2.  这边 _Vim_ 的用法可以上搜索引擎查一下，这里不多赘述。
+2. 这边 _Vim_ 的用法可以上搜索引擎查一下，这里不多赘述。
 
-####    启动服务
+#### 启动服务端服务
 
 ```shell
-$ ./frps -c ./frps.ini
+./frps -c ./frps.ini
 ```
 
 这个是前台启动服务，会输出日志信息，是用来调试的用的，到时调试成功了就可以使用后台服务启动：
 
 ```shell
-$ nohup ./frps -c ./frps.ini &
+nohup ./frps -c ./frps.ini &
 ```
 
 至此，服务器也设置完成。
@@ -178,25 +203,28 @@ $ nohup ./frps -c ./frps.ini &
 我现在使用的是 _Raspberry 3B_，当时是在淘宝 _￥195_ 的价格买的，如果配上电源以及 _SD_ 卡的等配件一共是 _￥278.9_。清单如下：
 
 <!-- ![list.png](https://i.loli.net/2018/07/19/5b507b12b3fed.png) -->
-{% asset_img list.webp list %}
+
+![list](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/use-raspberry-with-frp-for-remote-boot/list.webp)
+
+<!-- {% asset_img list.webp list %} -->
 
 之后的系统安装我就不在这详细说明了，网上有很多详细的教程。 树莓派的配置和服务器配置其实是差不多的，不同的是服务器上的部署的是 _frp_ 的服务端，而树莓派上的部署的是客户端。 从下载到解压的步骤和服务器端是一模一样的，只要照着之前的步骤做就可以了。 从第三步删除文件开始有所不同：
 
-####    删除不必要的文件
+#### 删除不必要的文件
 
 在服务器上我们删除的是 `frpc` 和 `frpc.ini`，这两个是 _frp_ 的客户端程序和客户端配置文件，同理我们在树莓派也就是服务器端上就要删除 `frps` 和 `frps.ini` 这两个文件：
 
 ```shell
-$ rm frps frps.ini
+rm frps frps.ini
 ```
 
-####    打开配置文件 `frpc.ini`
+#### 打开配置文件 `frpc.ini`
 
 ```shell
-$ vim frpc.ini
+vim frpc.ini
 ```
 
-####    更改配置
+#### 更改客户端配置
 
 更改配置如下：
 
@@ -219,16 +247,16 @@ remote_port = 3306
 
 `server_addr` 即为服务器的公网 IP 的地址，`server_port` 为之前在服务端配置时的 `bind_port`，这里我用的是 `7000`。 然后是需要内网穿透的服务的配置，我这里写了两个，一个是 _SSH_，一个是 _MySQL_。如果只要能进行远程连接的话我们只需要 _SSH_ 的配置就好了，这里要注意的就是 `remote_port`，自定义的端口号，不要填 `22`，因为在服务器上已经被占用了（被用于服务器的 _SSH_），所以你要选一个没被占用的端口来使用，这里我用的是 `6022`。
 
-####    启动服务
+#### 启动客户端服务
 
 ```shell
-$ ./frpc -c ./frpc.ini
+./frpc -c ./frpc.ini
 ```
 
 同样的，后台服务启动是：
 
 ```shell
-$ nohup ./frpc -c ./frpc.ini &
+nohup ./frpc -c ./frpc.ini &
 ```
 
 ### 测试 frp
@@ -242,12 +270,18 @@ ssh -p 6022 118.126.***.***
 然后键入树莓派的密码就可以了：
 
 <!-- ![SSHraspberryPC.png](https://i.loli.net/2018/07/19/5b507b1a44208.png) -->
-{% asset_img SSHraspberryPC.png SSHraspberryPC %}
+
+![SSHraspberryPC](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/use-raspberry-with-frp-for-remote-boot/SSHraspberryPC.png)
+
+<!-- {% asset_img SSHraspberryPC.png SSHraspberryPC %} -->
 
 当然也可以用手机的移动网络来访问：
 
 <!-- ![SSHPhone.png](https://i.loli.net/2018/07/19/5b507b1a5450c.png) -->
-{% asset_img SSHPhone.webp SSHPhone %}
+
+![SSHPhone](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/use-raspberry-with-frp-for-remote-boot/SSHPhone.webp)
+
+<!-- {% asset_img SSHPhone.webp SSHPhone %} -->
 
 至此我们已经成功的内网内网穿透了，即可以从外网访问内网设备了，接下来我们就要通过树莓派来使家中的 PC 开机了。
 
@@ -336,21 +370,24 @@ if __name__ == '__main__':  # pragma: nocover
 我们把上面的代码保存为 `*.py` 格式，例如 `wol.py` 然后通过 _ftp_ 传输到树莓派上去。 然后在存有这个 `wol.py` 的文件夹下使用：
 
 ```shell
-$ python wol.py E0:D5:5E:88:88:88
+python wol.py E0:D5:5E:88:88:88
 ```
 
 `E0:D5:5E:88:88:88` 就是你需要启动的 PC 的 MAC 地址了。 回车后发现没有任何提示，这是正常了，因为在 _Linux_ 中，_没有消息就是好消息_。 如果你只需要启动一台 PC，而且你不想记录这么长的 MAC 地址（通常也不需要你记录，因为你可以在终端通过上下键来显示历史使用过的命令），你可以将你的 MAC 地址写入到代码中去，这样就可以一劳永逸了。 至此，你已经可以通过树莓派来启动你的 PC 了，快关闭你的电脑试一试吧。
 
-##  其他
+## 其他
 
-1.  事后，我用 _Wireshark_ 抓了包，找到了这个 _Magic Packet_：
+1. 事后，我用 _Wireshark_ 抓了包，找到了这个 _Magic Packet_：
 
     <!-- ![6.png](https://i.loli.net/2018/07/19/5b507b12b69cb.png) -->
-    {% asset_img 6.webp MagicPacket %}
+
+    ![MagicPacket](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/use-raspberry-with-frp-for-remote-boot/6.webp)
+
+    <!-- {% asset_img 6.webp MagicPacket %} -->
 
     发现和 _Wiki_ 上说的一样：以 `6` 个 `FF` 开始，并且重复 `16` 遍 MAC 地址。
 
-2.  可以看到，我在树莓派上的 _frp_ 配置文件中有一个 _MySQL_ 的条目：
+2. 可以看到，我在树莓派上的 _frp_ 配置文件中有一个 _MySQL_ 的条目：
 
     ```ini
     [mysql]
@@ -361,6 +398,6 @@ $ python wol.py E0:D5:5E:88:88:88
 
     当如此设置后，并且在树莓派上安装 _MySQL_，就可以在外网用类似的方法来访问内网的数据库了。 同样的，我们知道，网站（HTTP）是通过 `80` 端口来传输的，由此如果我们在树莓派上有部署网站的话，那么就可以通过 _frp_ 进行类似的配置（这部分可能会有一些不同），我们就可以在外网访问该网站了。
 
-##  总结
+## 总结
 
 没有总结。

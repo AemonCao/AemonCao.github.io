@@ -535,4 +535,6 @@ date: 2019-03-22 15:59:27
 
 而这就是艺术。
 
-{% asset_img Zima-Blue.jpg Zima-Blue.jpg %}
+![Zima-Blue.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/zima-blue/Zima-Blue.jpg)
+
+<!-- {% asset_img Zima-Blue.jpg Zima-Blue.jpg %} -->

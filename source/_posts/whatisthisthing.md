@@ -21,13 +21,13 @@ categories:
 
 我的爷爷前不久去世了，我们在一个杂乱的公文包里发现了这些奇怪的笔记，有非常多页而且看起来都差不多，有人能告诉我这是什么么？
 
-<!-- ![weird-notes-1.jpg](./whatisthisthing/weird-notes-1.jpg) -->
+![weird-notes-1.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing/weird-notes-1.jpg)
 
-<!-- ![weird-notes-2.jpg](./whatisthisthing/weird-notes-2.jpg) -->
+![weird-notes-2.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing/weird-notes-2.jpg)
 
-{% asset_img weird-notes-1 weird-notes-1.jpg %}
+<!-- {% asset_img weird-notes-1 weird-notes-1.jpg %} -->
 
-{% asset_img weird-notes-2 weird-notes-2.jpg %}
+<!-- {% asset_img weird-notes-2 weird-notes-2.jpg %} -->
 
 > A: It definitely looks like he’s keeping score for 2 players. And the goal of the game is to stay under 100. Which player 1 does 17 times, and player 2 does 14 times.
 
@@ -41,17 +41,17 @@ categories:
 
 在德克萨斯州橡树山的一个河床中找到的，头顶有一个贯穿的小孔。
 
-<!-- ![caddo-1.jpg](./whatisthisthing/caddo-1.jpg) -->
+![caddo-1.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing/caddo-1.jpg)
 
-<!-- ![caddo-2.jpg](./whatisthisthing/caddo-2.jpg) -->
+![caddo-2.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing/caddo-2.jpg)
 
-<!-- ![caddo-3.jpg](./whatisthisthing/caddo-3.jpg) -->
+![caddo-3.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing/caddo-3.jpg)
 
-{% asset_img caddo-1 caddo-1.jpg %}
+<!-- {% asset_img caddo-1 caddo-1.jpg %} -->
 
-{% asset_img caddo-2 caddo-2.jpg %}
+<!-- {% asset_img caddo-2 caddo-2.jpg %} -->
 
-{% asset_img caddo-3 caddo-3.jpg %}
+<!-- {% asset_img caddo-3 caddo-3.jpg %} -->
 
 > A: "Seems to be a pendant head from the Caddo tribe. Looks legit and definitely pre-columbian. There's an oak hill Caddo site near there. Could be an import as well but unlikely." -My Archeologist Father
 
@@ -65,21 +65,21 @@ categories:
 
 在德国弗莱堡发现的，假的杯底里面有着芯片和传感器，看你的了。
 
-<!-- ![mug-1.jpg](./whatisthisthing/mug-1.jpg) -->
+![mug-1.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing/mug-1.jpg)
 
-<!-- ![mug-2.jpg](./whatisthisthing/mug-2.jpg) -->
+![mug-2.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing/mug-2.jpg)
 
-<!-- ![mug-3.jpg](./whatisthisthing/mug-3.jpg) -->
+![mug-3.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing/mug-3.jpg)
 
-<!-- ![mug-4.jpg](./whatisthisthing/mug-4.jpg) -->
+![mug-4.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing/mug-4.jpg)
 
-{% asset_img mug-1 mug-1.jpg %}
+<!-- {% asset_img mug-1 mug-1.jpg %} -->
 
-{% asset_img mug-2 mug-2.jpg %}
+<!-- {% asset_img mug-2 mug-2.jpg %} -->
 
-{% asset_img mug-3 mug-3.jpg %}
+<!-- {% asset_img mug-3 mug-3.jpg %} -->
 
-{% asset_img mug-4 mug-4.jpg %}
+<!-- {% asset_img mug-4 mug-4.jpg %} -->
 
 > A: it is probably a mug that made sounds when filled with liquid, I only assume so due to a kid friendly design on the side of the mug.
 
@@ -93,9 +93,9 @@ categories:
 
 上面唯一能看到的字是「声波技术」。
 
-<!-- ![onic-technology.jpg](./whatisthisthing/onic-technology.jpg) -->
+![sonic-technology.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing/sonic-technology.jpg)
 
-{% asset_img sonic-technology sonic-technology.jpg %}
+<!-- {% asset_img sonic-technology sonic-technology.jpg %} -->
 
 > A: Bug repeller.</br>Edit- scratch that. It’s a Sonic Technologies ultrasonic rodent repeller. Just an old one.
 
@@ -109,9 +109,9 @@ categories:
 
 在一个古董店里找到的，这是个嘛？
 
-<!-- ![NCR.jpg](./whatisthisthing/NCR.jpg) -->
+![NCR.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing/NCR.jpg)
 
-{% asset_img NCR NCR.jpg %}
+<!-- {% asset_img NCR NCR.jpg %} -->
 
 > A: It's an NCR stamping phone / charge phone. Was used for automated credit approval in department stores.
 
@@ -125,9 +125,9 @@ categories:
 
 拆弹小组被叫来检查这个在路边某个建筑工地上发现的「古董炸弹」,这是真的吗？
 
-<!-- ![bomb.jpg](./whatisthisthing/bomb.jpg) -->
+![bomb.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing/bomb.jpg)
 
-{% asset_img bomb bomb.jpg %}
+<!-- {% asset_img bomb bomb.jpg %} -->
 
 > A: 105mm tank round, no Fuze on it.
 
@@ -141,9 +141,9 @@ categories:
 
 在英国的一个悬崖边发现的，上面有铁链，知道这是什么吗？
 
-<!-- ![huts.jpg](./whatisthisthing/huts.jpg) -->
+![huts.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing/huts.jpg)
 
-{% asset_img huts huts.jpg %}
+<!-- {% asset_img huts huts.jpg %} -->
 
 > A: Is this near the railway line? then it could be a line workers hut, used to store equipment and bits and pieces. With the casualisation of the workforce these huts have gone out of use.
 

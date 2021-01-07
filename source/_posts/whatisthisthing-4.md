@@ -21,17 +21,17 @@ categories:
 
 宾夕法尼亚州排屋的地窖中的隧道。
 
-<!-- ![Tunnel-1.jpg](./whatisthisthing-4/Tunnel-1.jpg) -->
+![Tunnel-1.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-4/Tunnel-1.jpg)
 
-<!-- ![Tunnel-2.jpg](./whatisthisthing-4/Tunnel-2.jpg) -->
+![Tunnel-2.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-4/Tunnel-2.jpg)
 
-<!-- ![Tunnel-3.jpg](./whatisthisthing-4/Tunnel-3.jpg) -->
+![Tunnel-3.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-4/Tunnel-3.jpg)
 
-{% asset_img Tunnel-1 Tunnel-1.jpg %}
+<!-- {% asset_img Tunnel-1 Tunnel-1.jpg %} -->
 
-{% asset_img Tunnel-2 Tunnel-2.jpg %}
+<!-- {% asset_img Tunnel-2 Tunnel-2.jpg %} -->
 
-{% asset_img Tunnel-3 Tunnel-3.jpg %}
+<!-- {% asset_img Tunnel-3 Tunnel-3.jpg %} -->
 
 > A: Coal delivery, perhaps.
 
@@ -45,9 +45,9 @@ categories:
 
 这个附着物是什么？为什么它是圆的？
 
-<!-- ![Ball.jpg](./whatisthisthing-4/Ball.jpg) -->
+![Ball.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-4/Ball.jpg)
 
-{% asset_img Ball Ball.jpg %}
+<!-- {% asset_img Ball Ball.jpg %} -->
 
 > A: I doubt it is, but it looks like an anchor buoy to me.
 
@@ -61,9 +61,9 @@ categories:
 
 这是个啥？厄瓜多尔的沙滩看起来是有磁性的。
 
-<!-- ![Ironsand.jpg](./whatisthisthing-4/Ironsand.jpg) -->
+![Ironsand.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-4/Ironsand.jpg)
 
-{% asset_img Ironsand Ironsand.jpg %}
+<!-- {% asset_img Ironsand Ironsand.jpg %} -->
 
 > A: Probably a bunch of iron Like here: [https://en.m.wikipedia.org/wiki/Ironsand](https://en.m.wikipedia.org/wiki/Ironsand)
 
@@ -79,9 +79,9 @@ categories:
 
 我的品客薯片上的这些个棕色小东西是什么？？
 
-<!-- ![Pringle.jpg](./whatisthisthing-4/Pringle.jpg) -->
+![Pringle.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-4/Pringle.jpg)
 
-{% asset_img Pringle Pringle.jpg %}
+<!-- {% asset_img Pringle Pringle.jpg %} -->
 
 > A: The previous Pringle that didn't completely make it out of the rolling mold. Pringles aren't sliced potatoes, they are mashed potatoes pressed flat and cut like cookies. That's a stuck previous Pringle. [https://youtu.be/YDUTOo2tq3k](https://youtu.be/YDUTOo2tq3k)
 
@@ -97,17 +97,17 @@ categories:
 
 我在我奶奶的房子（德国）里发现了这些，它们是用薄玻璃做的。不幸的是，没有盒子盖解释它们是什么。
 
-<!-- ![Glass.jpg](./whatisthisthing-4/Glass.jpg) -->
+![Glass.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-4/Glass.jpg)
 
-{% asset_img Glass Glass.jpg %}
+<!-- {% asset_img Glass Glass.jpg %} -->
 
 > A: They are for flower decoration. One singular flower goes in the tube. There is probably a stand for them somewhere around, but some people like to stick them in foam together with other decorations, or in pieces of driftwood with holes drilled into them, or even into other flowerpots.I saw very similar ones in the Bodenmais Glasmanufaktur
 
 它们是用来装饰花卉的。一朵奇异的花在花筒里。也许在附近的什么地方有一个供它们用的架子，但有些人喜欢把它们和其他装饰品一起用泡沫塑料粘在一起，或者用钻了洞的浮木碎片粘在一起，甚至把它们粘在别的花盆里。我在博登迈斯（德国）的玻璃制造厂见过。
 
-<!-- ![Glass2.jpg](./whatisthisthing-4/Glass2.jpg) -->
+![Glass2.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-4/Glass2.jpg)
 
-{% asset_img Glass2 Glass2.jpg %}
+<!-- {% asset_img Glass2 Glass2.jpg %} -->
 
 [https://www.reddit.com/r/whatisthisthing/comments/k8fzsw/i_found_these_in_my_grandmothers_house_germany/](https://www.reddit.com/r/whatisthisthing/comments/k8fzsw/i_found_these_in_my_grandmothers_house_germany/)
 
@@ -117,9 +117,9 @@ categories:
 
 我在德国的公交车站台上方看到的是什么？
 
-<!-- ![Bus.jpg](./whatisthisthing-4/Bus.jpg) -->
+![Bus.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-4/Bus.jpg)
 
-{% asset_img Bus Bus.jpg %}
+<!-- {% asset_img Bus Bus.jpg %} -->
 
 > A: It's a charging station for electric/hybrid busses. They usually put these at the station where the line terminates, so the bus can sit and charge for the 10-15 minutes before it starts its next route. At least that's how they work in Sweden.
 
@@ -133,9 +133,9 @@ categories:
 
 这是什么炸药，今天在阁楼上发现的，直径大概十厘米。
 
-<!-- ![Explosive.jpg](./whatisthisthing-4/Explosive.jpg) -->
+![Explosive.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-4/Explosive.jpg)
 
-{% asset_img Explosive Explosive.jpg %}
+<!-- {% asset_img Explosive Explosive.jpg %} -->
 
 > A: Deactivated or not, it's still nothing you want to have in your home, and might quite possibly be illegal to possess, depending on where you live.
 
@@ -149,9 +149,9 @@ categories:
 
 我见过蛮多辆这样子的卡车了，但是我不知道它的用途是什么。
 
-<!-- ![Cybertruck.jpg](./whatisthisthing-4/Cybertruck.jpg) -->
+![Cybertruck.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-4/Cybertruck.jpg)
 
-{% asset_img Cybertruck Cybertruck.jpg %}
+<!-- {% asset_img Cybertruck Cybertruck.jpg %} -->
 
 > A: Its a tent. For camping
 
@@ -165,13 +165,13 @@ categories:
 
 发现了我曾祖父的一些古老的东方丝绸服装。
 
-<!-- ![Garments.jpg](./whatisthisthing-4/Garments.jpg) -->
+![Garments.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-4/Garments.jpg)
 
-<!-- ![Garments2.jpg](./whatisthisthing-4/Garments2.jpg) -->
+![Garments2.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-4/Garments2.jpg)
 
-{% asset_img Garments Garments.jpg %}
+<!-- {% asset_img Garments Garments.jpg %} -->
 
-{% asset_img Garments2 Garments2.jpg %}
+<!-- {% asset_img Garments2 Garments2.jpg %} -->
 
 > A: Dressing in robes like these to play mah jong was quite in vogue in the 1920s-30s.
 

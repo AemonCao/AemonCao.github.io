@@ -21,9 +21,9 @@ categories:
 
 奴隶瓦片？在一家奥兰多的古董店里找到的。这是个嘛？
 
-<!-- ![weird-notes-2.jpg](./whatisthisthing-2/slave-tile.jpg) -->
+![weird-notes-2.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-2/slave-tile.jpg)
 
-{% asset_img slave-tile slave-tile.jpg %}
+<!-- {% asset_img slave-tile slave-tile.jpg %} -->
 
 > A: Tiles of this type were reportedly made and used by slaves in Georgia as grave markers and garden tiles.
 
@@ -37,13 +37,13 @@ categories:
 
 被装裱起来的旧电路板，属于我的叔公，我很想知道它是做什么的，为什么要被裱起来。
 
-<!-- ![circuit-board-1.jpg](./whatisthisthing-2/circuit-board-1.jpg) -->
+![circuit-board-1.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-2/circuit-board-1.jpg)
 
-<!-- ![circuit-board-2.jpg](./whatisthisthing-2/circuit-board-2.jpg) -->
+![circuit-board-2.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-2/circuit-board-2.jpg)
 
-{% asset_img circuit-board-1 circuit-board-1.jpg %}
+<!-- {% asset_img circuit-board-1 circuit-board-1.jpg %} -->
 
-{% asset_img circuit-board-2 circuit-board-2.jpg %}
+<!-- {% asset_img circuit-board-2 circuit-board-2.jpg %} -->
 
 > A: ml747m seems to be an op amp. date code is 1973. so it is some sort of analog circuit. maybe your great uncle designed it. i have many of the boards i have designed mounted in frames and hanging on the wall.
 
@@ -57,13 +57,13 @@ ML747M 看起来像一个运算放大器，日期代码是 1973。所以这应�
 
 早上在「Pop-Tart」上发现的组装带，在包装袋的内部也有。
 
-<!-- ![assembly-tape-1.jpg](./whatisthisthing-2/assembly-tape-1.jpg) -->
+![assembly-tape-1.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-2/assembly-tape-1.jpg)
 
-<!-- ![assembly-tape-2.jpg](./whatisthisthing-2/assembly-tape-2.jpg) -->
+![assembly-tape-2.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-2/assembly-tape-2.jpg)
 
-{% asset_img assembly-tape-1 assembly-tape-1.jpg %}
+<!-- {% asset_img assembly-tape-1 assembly-tape-1.jpg %} -->
 
-{% asset_img assembly-tape-2 assembly-tape-2.jpg %}
+<!-- {% asset_img assembly-tape-2 assembly-tape-2.jpg %} -->
 
 > A: Splice from film change on flow wrapper during processing. When one roll of "wrapper" is exhausted the next roll is taped to the tag end to run it through the equipment. High visibility tape typically ensures it is removed downstream in the production process.
 
@@ -77,9 +77,9 @@ ML747M 看起来像一个运算放大器，日期代码是 1973。所以这应�
 
 在一座老教堂外边发现的铁片。
 
-<!-- ![metal.jpg](./whatisthisthing-2/metal.jpg) -->
+![metal.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-2/metal.jpg)
 
-{% asset_img metal metal.jpg %}
+<!-- {% asset_img metal metal.jpg %} -->
 
 > A: It looks like a Ferrotype photograph. They started being used in the 1850s's.
 
@@ -93,9 +93,9 @@ ML747M 看起来像一个运算放大器，日期代码是 1973。所以这应�
 
 学校天花板上的钥匙。
 
-<!-- ![key.jpg](./whatisthisthing-2/key.jpg) -->
+![key.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-2/key.jpg)
 
-{% asset_img key key.jpg %}
+<!-- {% asset_img key key.jpg %} -->
 
 > A: This could be to test duct detectors in a fire alarm system. Duct detectors will shut off the air conditioning unit if it senses smoke to prevent it from circulating the air.
 
@@ -109,9 +109,9 @@ ML747M 看起来像一个运算放大器，日期代码是 1973。所以这应�
 
 使用谷歌地图在阿拉斯加州的育空三角洲地区的找到的，截图下来继续查找，没有任何发现，这个是什么？
 
-<!-- ![LORAN.jpg](./whatisthisthing-2/LORAN.jpg) -->
+![LORAN.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-2/LORAN.jpg)
 
-{% asset_img LORAN LORAN.jpg %}
+<!-- {% asset_img LORAN LORAN.jpg %} -->
 
 > A: [Here it is](https://goo.gl/maps/Te4nCUtFCKzBckfJ8)</br>[Here's some information on it.](https://www.loran-history.info/tok/tok.htm) Decommissioned LORAN array.
 
@@ -127,9 +127,9 @@ ML747M 看起来像一个运算放大器，日期代码是 1973。所以这应�
 
 哈德逊河谷发现的怪异的古钟。
 
-<!-- ![bell.jpg](./whatisthisthing-2/bell.jpg) -->
+![bell.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-2/bell.jpg)
 
-{% asset_img bell bell.jpg %}
+<!-- {% asset_img bell bell.jpg %} -->
 
 > A: Dutch East Indian Nautical bell?
 
