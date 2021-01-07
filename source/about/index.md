@@ -5,6 +5,8 @@ date: 2020-03-11 09:58:43
 
 关于我什么呢，我也不知道，放一些一直以来收集的骚话吧！
 
+* ![positive](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io/about/index/positive.jpg)
+
 * ![Dementors_Black_Lake](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io/about/index/Dementors_Black_Lake.jpg)
 
 * [如果一个玩笑呢，你不会说给你妈妈和女儿听，那其实你也不应该说给你的女同事和女同学听。](https://www.bilibili.com/video/BV1iX4y1u7Rx?t=107)
