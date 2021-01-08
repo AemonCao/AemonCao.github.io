@@ -5,6 +5,8 @@ date: 2020-03-11 09:58:43
 
 关于我什么呢，我也不知道，放一些一直以来收集的骚话吧！
 
+* [人生唯一确定的就是不确定的人生。](https://www.bilibili.com/video/BV1co4y1o7Xg?t=36)
+
 * ![positive](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io/about/index/positive.jpg)
 
 * ![Dementors_Black_Lake](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io/about/index/Dementors_Black_Lake.jpg)
