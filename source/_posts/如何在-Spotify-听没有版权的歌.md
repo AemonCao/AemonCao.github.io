@@ -49,7 +49,9 @@ date: 2020-04-10 21:57:42
 
 这时候你只要右键需要同步的歌曲，选择添加到播放列表（Add to Playlist），然后选择一个播放列表（Playlist）就可以了。之后你就能在各个终端听了。
 
-{% asset_img 2020-04-10.png 2020-04-10.png %}
+![2020-04-10](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/如何在-Spotify-听没有版权的歌/2020-04-10.png)
+
+<!-- {% asset_img 2020-04-10.png 2020-04-10.png %} -->
 
 但是，如果这时候你想要给这首歌打上赞（Like），加入到已按赞的歌曲（Liked Songs）却是不行。
 
@@ -63,17 +65,23 @@ date: 2020-04-10 21:57:42
 
 因为 Spotify 只允许一个终端播放，所以你的 APP 会跳出这个提示：
 
-{% asset_img APP-PLAY.png APP-PLAY.png %}
+![APP-PLAY.png](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/如何在-Spotify-听没有版权的歌/APP-PLAY.png)
+
+<!-- {% asset_img APP-PLAY.png APP-PLAY.png %} -->
 
 点击继续，然后打开播放页：
 
-{% asset_img PLAY.png PLAY.png %}
+![PLAY.png](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/如何在-Spotify-听没有版权的歌/PLAY.png)
+
+<!-- {% asset_img PLAY.png PLAY.png %} -->
 
 这时你会发现在手机 APP 上是有心形按钮的，你只需要点击一下，虽然点击之后，在当前界面没有显示标记为赞。
 
 但是，当你去到已按赞的歌曲（Liked Songs），就能看到这首歌了。
 
-{% asset_img Liked-Songs.png Liked-Songs.png %}
+![Liked-Songs.png](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/如何在-Spotify-听没有版权的歌/Liked-Songs.png)
+
+<!-- {% asset_img Liked-Songs.png Liked-Songs.png %} -->
 
 一般我都是将所有的歌曲下载的。
 
