@@ -60,11 +60,15 @@ Web 服务在 HTTP 协议存在的时候就已经存在了。但是，特别是�
 
 <!-- ![在Firefox中，“内容类型：文本/纯文本”看起来很普通。](restful-api-design-13-best-practices-to-make-your-users-happy/restapi-plain.png) -->
 
-{% asset_img restapi-plain.png 在Firefox中，“内容类型：文本/纯文本”看起来很普通。 %}
+![在Firefox中，“内容类型：文本/纯文本”看起来很普通。](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/restful-api-design-13-best-practices-to-make-your-users-happy/restapi-plain.png)
+
+<!-- {% asset_img restapi-plain.png 在Firefox中，“内容类型：文本/纯文本”看起来很普通。 %} -->
 
 <!-- ![检测到“内容类型：application / json”！看这是多么的漂亮和实用。🕺](restful-api-design-13-best-practices-to-make-your-users-happy/restapi-json.png) -->
 
-{% asset_img restapi-json.png 检测到“内容类型：application / json”！看这是多么的漂亮和实用。🕺 %}
+![检测到“内容类型：application / json”！看这是多么的漂亮和实用。🕺](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/restful-api-design-13-best-practices-to-make-your-users-happy/restapi-json.png)
+
+<!-- {% asset_img restapi-json.png 检测到“内容类型：application / json”！看这是多么的漂亮和实用。🕺 %} -->
 
 ## 避免在 URI 中使用动词
 
@@ -314,7 +318,6 @@ GET: /articles/?published=true&page=2&page_size=20
 - 资源是否会用于将来的处理而创建——例如，在一个工作完成后。
 - 如果资源已经以某种方式存在，但是不应将其解释为错误。
 
-
 ## 使用专门用于 REST API 的 web 框架
 
 作为最后一个最佳实践，我们将讨论这个问题：**你如何实际在 API 中实现最佳实践？**
@@ -337,7 +340,9 @@ Python 开发人员将使用 Flask，JS 开发人员将使用 Express，他们�
 
 <!-- ![Falcon: Unburdening APIs for over 0.0564 centuries.](restful-api-design-13-best-practices-to-make-your-users-happy/Falcon.png) -->
 
-{% asset_img Falcon.png Falcon: Unburdening APIs for over 0.0564 centuries. %}
+![Falcon: Unburdening APIs for over 0.0564 centuries.](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/restful-api-design-13-best-practices-to-make-your-users-happy/Falcon.png)
+
+<!-- {% asset_img Falcon.png Falcon: Unburdening APIs for over 0.0564 centuries. %} -->
 
 如果你使用的是 Django，那么转到 [Django REST Framework](http://www.django-rest-framework.org) 即可。它不是那么直观，但是功能强大。
 
@@ -345,7 +350,7 @@ Python 开发人员将使用 Flask，JS 开发人员将使用 Express，他们�
 
 我强烈建议你尝试一下这些框架！它们将帮助你构建美观，优雅且设计良好的 REST API。
 
-## 让我们给 REST 一个好名声！
+## 让我们给 REST 一个好名声
 
 我们都应该努力使 API 成为一种使用乐趣。希望本文能够帮助你学习一些技巧和技术，以构建**更好的 REST API**。对我而言，它归结为**良好的语义**，**简单性**和常识。
 

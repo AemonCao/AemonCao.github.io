@@ -101,9 +101,9 @@ categories:
 
 他们在我公寓的天花板上安装了这个。绿灯每闪一次就发出嗡嗡声。
 
-<!-- ![杀虫](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-5/杀虫.jpg) -->
+![杀虫](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-5/杀虫.jpg)
 
-{% asset_img 杀虫 杀虫.jpg %}
+<!-- {% asset_img 杀虫 杀虫.jpg %} -->
 
 > A: It's called the Pestinator 360. It repels insects and rodents. A rather janky install for a ceiling though. [https://www.amazon.com/gp/aw/d/B06ZY79XLC/ref=cm_cr_arp_mb_bdcrb_top?ie=UTF8](https://www.amazon.com/gp/aw/d/B06ZY79XLC/ref=cm_cr_arp_mb_bdcrb_top?ie=UTF8)
 
