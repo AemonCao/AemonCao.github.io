@@ -5,7 +5,13 @@ date: 2020-03-11 09:58:43
 
 关于我什么呢，我也不知道，放一些一直以来收集的骚话吧！
 
-* ![don't worry this is not goodbey forever.](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io/about/index/don't_worry_this_is_not_goodbey_forever.jpg)
+* We were both sensations to each other-eyes, ears, nose, hands, mouth. So, as long as I can tickle a few of those, I'm only gone from myself. Not from you.
+
+    我们之于彼此，本就是一些知觉——眼、耳、口、鼻、手的感觉。因此，只要我还能微微触动你的感官，我就只是离开了我自己，而未曾离开你。
+
+    ![win-win](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io/about/index/win-win.png)
+
+* ![don't worry this is not goodbey forever.](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io/about/index/dont_worry_this_is_not_goodbey_forever.jpg)
 
 * Those who can, put something in; those who can't, help yourself.
 
