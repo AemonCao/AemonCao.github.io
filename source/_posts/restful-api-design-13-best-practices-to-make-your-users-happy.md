@@ -21,7 +21,7 @@ Web 服务在 HTTP 协议存在的时候就已经存在了。但是，特别是�
 
 <iframe src="//player.bilibili.com/player.html?aid=44368211&bvid=BV1zb411h7GM&cid=77689275&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
-错误的使用状态码，纯文本的响应，模式（schemas）不一致……**这些我都见过**（或者说至少见过很多**）。所以我决定写一些我认为在设计 REST API 时的一些好的实践。
+错误的使用状态码，纯文本的响应，模式（schemas）不一致……**这些我都见过**（或者说至少见过很多）。所以我决定写一些我认为在设计 REST API 时的一些好的实践。
 
 ## 免责声明
 
@@ -333,6 +333,8 @@ Python 开发人员将使用 Flask，JS 开发人员将使用 Express，他们�
 因此，你必须采取**额外的步骤**在你的 API 中实现最佳实践。大多数时候，「懒惰」或「缺乏时间」意味着你不会付出努力，从而留给你的用户一个古怪的 API。
 
 解决方案很简单：**使用合适的工具**。
+
+![Holy sayings from good lad Scotty.](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/restful-api-design-13-best-practices-to-make-your-users-happy/rest-apis-right-tool-for-job.jpg)
 
 各种语言中出现了专门用于构建 REST API 的新框架。**他们帮助你遵循最佳实现，不会很麻烦，也不牺牲生产力。**
 
