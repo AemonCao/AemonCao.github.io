@@ -5,6 +5,8 @@ date: 2020-03-11 09:58:43
 
 关于我什么呢，我也不知道，放一些一直以来收集的骚话吧！
 
+* [愿你来世做一只蝉，生于夏初，死于夏末，一生只有烈日当空，不必见那三九寒冬，你会看到那赤脚玩闹的孩童，眼里满是懵懂，也会看到他独饮于漫天星空，藏着一点不舍在眼眸。](https://www.v2ex.com/t/746505#r_10089818)
+
 * We were both sensations to each other-eyes, ears, nose, hands, mouth. So, as long as I can tickle a few of those, I'm only gone from myself. Not from you.
 
     我们之于彼此，本就是一些知觉——眼、耳、口、鼻、手的感觉。因此，只要我还能微微触动你的感官，我就只是离开了我自己，而未曾离开你。
