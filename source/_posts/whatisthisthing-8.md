@@ -140,3 +140,5 @@ categories:
 ![异形舱](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-8/异形舱3.png)
 
 ![异形舱](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-8/异形舱4.png)
+
+<https://www.reddit.com/r/whatisthisthing/comments/led04h/what_is_this_thing_that_looks_like_supermans_pod/>
