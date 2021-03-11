@@ -1,15 +1,13 @@
 ---
 title: 《编码：隐匿在计算机软硬件背后的语言》
 tags:
-  - 读书
-url: 38.html
-id: 38
+  - 阅读
 categories:
   - 书摘
 date: 2017-05-25 11:10:28
 ---
 
-《编码：隐匿在计算机软硬件背后的语言》（Code:The Hidden Language of Computer Hardware and Software）
+《[编码：隐匿在计算机软硬件背后的语言](https://book.douban.com/subject/4822685/)》（Code:The Hidden Language of Computer Hardware and Software）
 
 <!-- more -->
 
