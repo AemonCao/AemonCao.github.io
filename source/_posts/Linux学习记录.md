@@ -64,9 +64,7 @@ root     pts/1    192.168.1.88     22:22    7.00s  0.03s  0.00s w
 
 参考：
 
-* ```shell
-  man w
-  ```
+* `man w`
 
 * [w command in Linux with Examples](https://www.geeksforgeeks.org/w-command-in-linux-with-examples/)
 
@@ -104,15 +102,31 @@ grep 'The quick brown fox jumps over a lazy dog.' a.txt
 
 参考：
 
-* ```shell
-  man grep
-  ```
+* `man grep`
 
 * [grep命令-文件过滤分割与合并](https://man.linuxde.net/grep)
 
 * [grep查找字符串所在文件和行号，find查找文件所在目录即路径](https://blog.csdn.net/devwang_com/article/details/52587884)
 
 * [27个常用的 Linux 命令](https://www.jianshu.com/p/0056d671ea6d)
+
+### mount
+
+> mount命令用于加载文件系统到指定的加载点。
+
+在 Linux 中，外置的存储设备并不会自动挂载，所以需要 `mount` 命令来进行挂载。
+
+用法是：
+
+```shell
+mount /dev/mmcblk0p1 /home/pi/Mount/3TB
+```
+
+意思是将设备 `/dev/mmcblk0p1` 挂载到挂载点 `/home/pi/Mount/3TB`。这里要注意的是，如果挂载点不存在将会报错 `mount: mount point /home/pi/Mount/3TB does not exist`，所以要先手动创建挂载点目录；
+
+参考：
+
+* [mount命令-用于加载文件系统到指定的加载点](https://man.linuxde.net/mount)
 
 ## Vim
 
