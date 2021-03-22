@@ -5,6 +5,8 @@ date: 2020-03-11 09:58:43
 
 关于我什么呢，我也不知道，放一些一直以来收集的骚话吧！
 
+* 混杂部分真相的谎言比直接说谎更有效。
+
 * ![舔.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io/about/index/舔.jpg)
 
 * ![青春这场雨.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io/about/index/青春这场雨.jpg)
@@ -88,7 +90,7 @@ date: 2020-03-11 09:58:43
 * 把你们绝望的人，你们迷茫的人，把你们渴望看到胜利之光的畏惧徘徊的人都给我，把那些精神失落、灵魂在流浪的人都送来：在这金色的信念旁，我要为他们把灯举起。
 
 * The New Colossus
-  
+
   > Not like the brazen giant of Greek fame,
   > With conquering limbs astride from land to land;
   > Here at our sea-washed, sunset gates shall stand
@@ -97,7 +99,7 @@ date: 2020-03-11 09:58:43
   > Mother of Exiles. From her beacon-hand
   > Glows world-wide welcome; her mild eyes command
   > The air-bridged harbor that twin cities frame.
-  > 
+  >
   > "Keep, ancient lands, your storied pomp!" cries she
   > With silent lips. "Give me your tired, your poor,
   > Your huddled masses yearning to breathe free,
