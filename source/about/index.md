@@ -5,6 +5,8 @@ date: 2020-03-11 09:58:43
 
 关于我什么呢，我也不知道，放一些一直以来收集的骚话吧！
 
+* 心存美好，则无可恼之事；心存善良，则无可恨之人。
+
 * 混杂部分真相的谎言比直接说谎更有效。
 
 * ![舔.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io/about/index/舔.jpg)
