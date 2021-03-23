@@ -17,7 +17,7 @@ categories:
 
 ### 好时 Kisses
 
-> Q: Solid metal “kiss” that was in our bag of candy cane kisses. Is it part of the machinery?
+> Q: Solid metal "kiss" that was in our bag of candy cane kisses. Is it part of the machinery?
 
 在我的拐棍糖 Kisses里面发现了固体金属的「kiss」，这是机器的一部分吗？
 

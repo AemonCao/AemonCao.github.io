@@ -57,7 +57,9 @@ categories:
 
 <!-- {% asset_img insignia insignia.jpg %} -->
 
-> A: The six pointed star is significant of the number “six” and the red letter “A” signifies “Army.” The red and white colors are the colors of the design approved for distinguishing flags for the numbered Armies.</br>The shoulder sleeve insignia was originally approved for the Sixth Army on 26 January 1927. The original design was cancelled and a new design approved on 10 January 1945. It was amended to change the background color from olive drab to Army Green on 6 December 1960.</br>[From here:](http://www.milbadges.com/corps/USA/field)
+> A: The six pointed star is significant of the number "six" and the red letter "A" signifies "Army." The red and white colors are the colors of the design approved for distinguishing flags for the numbered Armies.
+> The shoulder sleeve insignia was originally approved for the Sixth Army on 26 January 1927. The original design was cancelled and a new design approved on 10 January 1945. It was amended to change the background color from olive drab to Army Green on 6 December 1960.
+> [From here:](http://www.milbadges.com/corps/USA/field)
 
 美国第六陆军，肩袖徽章。
 

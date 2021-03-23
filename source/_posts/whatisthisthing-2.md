@@ -113,11 +113,12 @@ ML747M 看起来像一个运算放大器，日期代码是 1973。所以这应�
 
 <!-- {% asset_img LORAN LORAN.jpg %} -->
 
-> A: [Here it is](https://goo.gl/maps/Te4nCUtFCKzBckfJ8)</br>[Here's some information on it.](https://www.loran-history.info/tok/tok.htm) Decommissioned LORAN array.
+> A: [Here it is](https://goo.gl/maps/Te4nCUtFCKzBckfJ8)
+> [Here's some information on it.](https://www.loran-history.info/tok/tok.htm) Decommissioned LORAN array.
 
 一个正式停用的远距离无线电导航系统阵列。
 
-（译者注：英文缩写 LORAN，为“Long Range Navigation”（远程导航）的缩写，中文音译为“罗兰”或“劳兰”，是在二战期间由美国开发的一种无线电导航及授时系统。目前已衍生了多个版本。）
+（译者注：英文缩写 LORAN，为「Long Range Navigation」（远程导航）的缩写，中文音译为「罗兰」或「劳兰」，是在二战期间由美国开发的一种无线电导航及授时系统。目前已衍生了多个版本。）
 
 [https://www.reddit.com/r/whatisthisthing/comments/ip68ur/found_on_google_maps_in_the_yukondelta_region_in/](https://www.reddit.com/r/whatisthisthing/comments/ip68ur/found_on_google_maps_in_the_yukondelta_region_in/)
 

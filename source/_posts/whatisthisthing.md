@@ -55,7 +55,7 @@ categories:
 
 > A: "Seems to be a pendant head from the Caddo tribe. Looks legit and definitely pre-columbian. There's an oak hill Caddo site near there. Could be an import as well but unlikely." -My Archeologist Father
 
-我的考古学家老爹说：“似乎是是来自卡多部落的吊坠，看起来是真的并且是前哥伦布时期。橡树山附近有卡多遗址，也可能是进口，但是可能性不大。”
+我的考古学家老爹说：「似乎是是来自卡多部落的吊坠，看起来是真的并且是前哥伦布时期。橡树山附近有卡多遗址，也可能是进口，但是可能性不大。」
 
 [Source](https://www.reddit.com/r/whatisthisthing/comments/isa0vn/found_in_a_creek_bed_in_oak_hill_texas_has_a/)
 
@@ -89,7 +89,7 @@ categories:
 
 ### 声波技术
 
-> Q: The only words on the case are “sonic technology”
+> Q: The only words on the case are 「sonic technology」
 
 上面唯一能看到的字是「声波技术」。
 
@@ -97,7 +97,8 @@ categories:
 
 <!-- {% asset_img sonic-technology sonic-technology.jpg %} -->
 
-> A: Bug repeller.</br>Edit- scratch that. It’s a Sonic Technologies ultrasonic rodent repeller. Just an old one.
+> A: Bug repeller.
+> Edit- scratch that. It’s a Sonic Technologies ultrasonic rodent repeller. Just an old one.
 
 驱虫器，一种使用超声波技术的驱鼠器，只是很旧了。
 
@@ -121,7 +122,7 @@ categories:
 
 ### 拆弹小组
 
-> Q: Bomb squad called in to examine a possible “antique missile” found at a construction site down the road. Any chance that’s really what this is?
+> Q: Bomb squad called in to examine a possible "antique missile" found at a construction site down the road. Any chance that’s really what this is?
 
 拆弹小组被叫来检查这个在路边某个建筑工地上发现的「古董炸弹」,这是真的吗？
 

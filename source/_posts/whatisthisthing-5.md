@@ -25,9 +25,11 @@ categories:
 
 <!-- {% asset_img 桶 桶.jpg %} -->
 
-> A: It’s an “upright” tank for fluid storage. Normally 12’ diameter and 20’ tall, they hold 400 barrels of fluid. This one is laid on its side, which is how most are transported.</br>Used in oilfield applications, this one was probably ditched illegally because it has been exposed to or contains excessive amounts of NORM or naturally occurring radioactive material. NORM is present in small amounts in produced fluids, builds up in storage tanks over time and is very expensive to get rid of.</br>See this for some examples of modern versions.
+> A: It’s an "upright" tank for fluid storage. Normally 12’ diameter and 20’ tall, they hold 400 barrels of fluid. This one is laid on its side, which is how most are transported.
+> Used in oilfield applications, this one was probably ditched illegally because it has been exposed to or contains excessive amounts of NORM or naturally occurring radioactive material. NORM is present in small amounts in produced fluids, builds up in storage tanks over time and is very expensive to get rid of.
+> See this for some examples of modern versions.
 
-这是一个用来储存液体的“立式”容器。它们通常直径 12 英尺，高 20 英尺，可容纳 400 桶（47600 升）液体。这个桶是侧卧的，大多数都是这样运输的。
+这是一个用来储存液体的「立式」容器。它们通常直径 12 英尺，高 20 英尺，可容纳 400 桶（47600 升）液体。这个桶是侧卧的，大多数都是这样运输的。
 
 在油田应用中，使用的这一种可能是非法丢弃的，因为它暴露于或含有过量的标准或自然产生的放射性物质。天然放射物质以少量的形式存在于生产流体中，随着时间的推移在储存罐中积累，并且去除它非常昂贵。
 
@@ -81,7 +83,8 @@ categories:
 
 <!-- {% asset_img 新生儿 新生儿1.jpg %} -->
 
-> A: It is a door silencer. It wraps around and covers the latch on a door so that it doesn't latch and the rubber also makes the door open and close silently. The straps go around the doorknob on each side.</br>EDIT: I could only find a foreign language site with this version, but here's a picture from there: [http://ae01.alicdn.com/kf/H8c7289b680bc4ef59fd8915e0eeafd8bP/-.jpg](http://ae01.alicdn.com/kf/H8c7289b680bc4ef59fd8915e0eeafd8bP/-.jpg)
+> A: It is a door silencer. It wraps around and covers the latch on a door so that it doesn't latch and the rubber also makes the door open and close silently. The straps go around the doorknob on each side.
+> EDIT: I could only find a foreign language site with this version, but here's a picture from there: [http://ae01.alicdn.com/kf/H8c7289b680bc4ef59fd8915e0eeafd8bP/-.jpg](http://ae01.alicdn.com/kf/H8c7289b680bc4ef59fd8915e0eeafd8bP/-.jpg)
 
 这是一个门消音器。它可以包裹并覆盖门上的闩锁，从而不会使门关上，并且橡胶还可以使门安静地打开和关闭。带子绕在门把手的每一侧。
 

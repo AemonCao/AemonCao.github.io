@@ -127,7 +127,7 @@ categories:
 
 > A: An old prop from the show Colony?
 > [https://colony.fandom.com/wiki/Outlier](https://colony.fandom.com/wiki/Outlier)
-> This looks a lot like the pods that “outliers” (highly skilled humans) were scooped up by the aliens to go fight other aliens.
+> This looks a lot like the pods that "outliers" (highly skilled humans) were scooped up by the aliens to go fight other aliens.
 
 一个马戏团的旧道具吗？
 

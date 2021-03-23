@@ -33,7 +33,8 @@ categories:
 
 <!-- {% asset_img 砚 砚3.jpg %} -->
 
-> A: Chinese or Japanese ink, in block form. You use the dish, with a little water, to grind it into a usable liquid.</br>[https://www.bitsandpiecesuk.co.uk/product/sumi-e-ink-set](https://www.bitsandpiecesuk.co.uk/product/sumi-e-ink-set)
+> A: Chinese or Japanese ink, in block form. You use the dish, with a little water, to grind it into a usable liquid.
+> [https://www.bitsandpiecesuk.co.uk/product/sumi-e-ink-set](https://www.bitsandpiecesuk.co.uk/product/sumi-e-ink-set)
 
 中国或日本的墨。成块状的，你可以用少许水将碟子研磨成可用的液体。
 
@@ -49,7 +50,8 @@ categories:
 
 <!-- {% asset_img 板子 板子.jpg %} -->
 
-> A: It almost looks like sales samples for plastic parts that might be button actuators or something.</br>The numbers might be the model/part numbers. I know this has nothing to do with rail controls.
+> A: It almost looks like sales samples for plastic parts that might be button actuators or something.
+> The numbers might be the model/part numbers. I know this has nothing to do with rail controls.
 
 它看起来就像塑料部件的销售样品，可能是按钮驱动器之类的。
 
@@ -79,7 +81,8 @@ categories:
 
 <!-- {% asset_img 蹄子 蹄子4.jpg %} -->
 
-> A: I shoe horses for a living. I use a pour in pad that sets up and sort of looks like that. It is made to provide some cushion for a horses foot. When it comes off it looks a lot like that.</br>You can see the edge around it. That is where some of the material was under a horse shoe.
+> A: I shoe horses for a living. I use a pour in pad that sets up and sort of looks like that. It is made to provide some cushion for a horses foot. When it comes off it looks a lot like that.
+> You can see the edge around it. That is where some of the material was under a horse shoe.
 
 我以给马钉蹄铁为生。我用了一个像这样的倒料垫。它是用来给马蹄提供垫子的。当它脱落的时候，看起来很像这样。
 
@@ -245,7 +248,11 @@ categories:
 
 <!-- {% asset_img 激光元件 激光元件4.jpg %} -->
 
-> A: It looks a lot like the optical element of a ring laser gyroscope.</br>[https://en.wikipedia.org/wiki/Ring_laser_gyroscope](https://en.wikipedia.org/wiki/Ring_laser_gyroscope)</br>Take a look at the first picture on Wikipedia.</br>And here are some optical elements by themself:</br>[https://www.alibaba.com/product-detail/50-Optics-Cavity-Of-Laser-Gyro_60784225297.html](https://www.alibaba.com/product-detail/50-Optics-Cavity-Of-Laser-Gyro_60784225297.html)
+> A: It looks a lot like the optical element of a ring laser gyroscope.
+> [https://en.wikipedia.org/wiki/Ring_laser_gyroscope](https://en.wikipedia.org/wiki/Ring_laser_gyroscope)
+> Take a look at the first picture on Wikipedia.
+> And here are some optical elements by themself:
+> [https://www.alibaba.com/product-detail/50-Optics-Cavity-Of-Laser-Gyro_60784225297.html](https://www.alibaba.com/product-detail/50-Optics-Cavity-Of-Laser-Gyro_60784225297.html)
 
 它看起来很像环形激光陀螺仪的光学元件。
 

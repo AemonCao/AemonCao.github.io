@@ -58,17 +58,17 @@ Web 服务在 HTTP 协议存在的时候就已经存在了。但是，特别是�
 
 **重要提示**：你可以用 Firefox 很容易的验证一个响应（reponse）的 `Content-Type`。它为响应内置了 `Content-Type: application/json` 的漂亮提示。🔥
 
-<!-- ![在Firefox中，“内容类型：文本/纯文本”看起来很普通。](restful-api-design-13-best-practices-to-make-your-users-happy/restapi-plain.png) -->
+<!-- ![在Firefox中，「内容类型：文本/纯文本」看起来很普通。](restful-api-design-13-best-practices-to-make-your-users-happy/restapi-plain.png) -->
 
-![在Firefox中，“内容类型：文本/纯文本”看起来很普通。](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/restful-api-design-13-best-practices-to-make-your-users-happy/restapi-plain.png)
+![在Firefox中，「内容类型：文本/纯文本」看起来很普通。](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/restful-api-design-13-best-practices-to-make-your-users-happy/restapi-plain.png)
 
-<!-- {% asset_img restapi-plain.png 在Firefox中，“内容类型：文本/纯文本”看起来很普通。 %} -->
+<!-- {% asset_img restapi-plain.png 在Firefox中，「内容类型：文本/纯文本」看起来很普通。 %} -->
 
-<!-- ![检测到“内容类型：application / json”！看这是多么的漂亮和实用。🕺](restful-api-design-13-best-practices-to-make-your-users-happy/restapi-json.png) -->
+<!-- ![检测到「内容类型：application / json」！看这是多么的漂亮和实用。🕺](restful-api-design-13-best-practices-to-make-your-users-happy/restapi-json.png) -->
 
-![检测到“内容类型：application / json”！看这是多么的漂亮和实用。🕺](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/restful-api-design-13-best-practices-to-make-your-users-happy/restapi-json.png)
+![检测到「内容类型：application / json」！看这是多么的漂亮和实用。🕺](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/restful-api-design-13-best-practices-to-make-your-users-happy/restapi-json.png)
 
-<!-- {% asset_img restapi-json.png 检测到“内容类型：application / json”！看这是多么的漂亮和实用。🕺 %} -->
+<!-- {% asset_img restapi-json.png 检测到「内容类型：application / json」！看这是多么的漂亮和实用。🕺 %} -->
 
 ## 避免在 URI 中使用动词
 
