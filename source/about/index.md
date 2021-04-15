@@ -5,6 +5,8 @@ date: 2020-03-11 09:58:43
 
 关于我什么呢，我也不知道，放一些一直以来收集的骚话吧！
 
+* [心无罣碍，无罣碍故，无有恐怖，远离颠倒梦想，究竟涅槃。](https://zh.wikipedia.org/wiki/%E8%88%AC%E8%8B%A5%E6%B3%A2%E7%BE%85%E8%9C%9C%E5%A4%9A%E5%BF%83%E7%B6%93)
+
 * [让我们觉得开心的，都是一些没用的事。](http://jandan.net/t/4872991)
 
 * [我必须考虑这会不会是我此生仅有的机会。](https://www.bilibili.com/video/BV1fa4y1W7Vz?t=150)
