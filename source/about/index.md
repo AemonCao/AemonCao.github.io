@@ -5,7 +5,7 @@ date: 2020-03-11 09:58:43
 
 关于我什么呢，我也不知道，放一些一直以来收集的骚话吧！
 
-[![place-indexed.png](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io/about/index/place-indexed.png)](https://draemm.li/various/place-atlas/)
+* [![place-indexed.png](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io/about/index/place-indexed.png)](https://draemm.li/various/place-atlas/)
 
 * [心无罣碍，无罣碍故，无有恐怖，远离颠倒梦想，究竟涅槃。](https://zh.wikipedia.org/wiki/%E8%88%AC%E8%8B%A5%E6%B3%A2%E7%BE%85%E8%9C%9C%E5%A4%9A%E5%BF%83%E7%B6%93)
 
