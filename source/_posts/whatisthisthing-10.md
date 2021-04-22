@@ -149,9 +149,11 @@ categories:
 
 > A: Googling some of the names seems to point to a collection of homeopathic garbage.
 
-谷歌了一些名字之后似乎指向了顺势疗法废料的合集。
+谷歌了一些名字之后似乎指向了一堆号称顺势疗法的垃圾。
 
 （译者注：这一块专业知识不太懂，如果有大佬麻烦科普一下！）
+
+（译者再注：多谢 **[淡乱君](http://jandan.net/t/4892172#tucao-8596808)** 、 **[ooooo](http://jandan.net/t/4892172#tucao-8596767)** 、 **[大海里的一粒阿莫西林](http://jandan.net/t/4892172#tucao-8596759)** 科普！）
 
 <https://www.reddit.com/r/whatisthisthing/comments/mn9aqi/old_school_chem_set_maybe_found_in_abandoned/>
 
