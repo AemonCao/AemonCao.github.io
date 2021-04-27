@@ -5,6 +5,8 @@ date: 2020-03-11 09:58:43
 
 关于我什么呢，我也不知道，放一些一直以来收集的骚话吧！
 
+* Roses are Red, Violets are Blue, Unexpected '{' on line 32.
+
 * [往前看](https://www.bilibili.com/video/BV11r4y1T7aX/?t=189)|[往前看](https://www.bilibili.com/video/BV1Qy4y1W77p?t=591)
 
 * [![place-indexed.png](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io/about/index/place-indexed.png)](https://draemm.li/various/place-atlas/)
