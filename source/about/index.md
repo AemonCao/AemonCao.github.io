@@ -5,6 +5,8 @@ date: 2020-03-11 09:58:43
 
 关于我什么呢，我也不知道，放一些一直以来收集的骚话吧！
 
+* [No Silver Bullet.](https://zh.wikipedia.org/wiki/%E6%B2%A1%E6%9C%89%E9%93%B6%E5%BC%B9)
+
 * Roses are Red, Violets are Blue, Unexpected '{' on line 32.
 
 * [往前看](https://www.bilibili.com/video/BV11r4y1T7aX/?t=189)|[往前看](https://www.bilibili.com/video/BV1Qy4y1W77p?t=591)
