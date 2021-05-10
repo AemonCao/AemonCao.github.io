@@ -5,6 +5,8 @@ date: 2020-03-11 09:58:43
 
 关于我什么呢，我也不知道，放一些一直以来收集的骚话吧！
 
+* 一代人终将老去，但总有人正年轻。
+
 * [No Silver Bullet.](https://zh.wikipedia.org/wiki/%E6%B2%A1%E6%9C%89%E9%93%B6%E5%BC%B9)
 
 * Roses are Red, Violets are Blue, Unexpected '{' on line 32.
