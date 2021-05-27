@@ -95,3 +95,69 @@ var sum = total(numbers); //=> 15
 ```JavaScript
 var sum = R.reduce(add, 0, numbers); //=> 15
 ```
+
+但是因为 `reduce` 是一个柯里化函数，当你跳过最后一个参数时，就和 `total` 的定义差不多了：
+
+```JavaScript
+// In Ramda:
+var total = R.reduce(add, 0);  // 返回一个函数
+```
+
+你只需要返回一个可以调用的函数：
+
+```JavaScript
+var sum = total(numbers); //=> 15
+```
+
+再次注意：函数的定义和函数在数据上的应用是多么相似：
+
+```JavaScript
+var total = R.reduce(add, 0); //=> function:: [Number] -> Number
+var sum =   R.reduce(add, 0, numbers); //=> 15
+```
+
+## 我不关心这些，我又不是「数学家」
+
+所以你是个切图仔，对吧？你使用AJAX来请求服务器？我希望你用的是 [Promoses](https://promisesaplus.com/)？你必须对返回的数据进行操作、筛选、子集化吗？或者你是做服务端开发的？你异步查询一个非关系型数据库的，并操作这些结果？
+
+我能给你的最好的建议就是去看看 Hugh FD Jackson 的优秀文章《[为什么柯里化会有帮助](http://hughfdjackson.com/javascript/why-curry-helps/)》。这是我在这方面看到的最好的读物。如果你要通过视频来学习，那可以花上半个小时去看看 Boolean 博士的视频《[Hey Underscore，你做错了](http://www.youtube.com/watch?v=m3svKOdZijA)》。（别太在意这个标题，他并没有花太多时间去批评这个库。）
+
+真的，真的去看这些吧，他们可以比我解释得更好；你已经可以看到我个啰嗦、夸夸其谈、空洞无物、冗长的一个喋喋不休的十足的傻瓜，如果你已经看过这些，你可以跳过本节的其余部分，他们已经说得比我好了。
+
+我已经警告过你了！
+
+---
+
+假设我们希望得到一些像这样的数据：
+
+```JavaScript
+var data = {
+    result: "SUCCESS",
+    interfaceVersion: "1.0.3",
+    requested: "10/17/2013 15:31:20",
+    lastUpdated: "10/16/2013 10:52:39",
+    tasks: [
+        {id: 104, complete: false,            priority: "high",
+                  dueDate: "2013-11-29",      username: "Scott",
+                  title: "Do something",      created: "9/22/2013"},
+        {id: 105, complete: false,            priority: "medium",
+                  dueDate: "2013-11-22",      username: "Lena",
+                  title: "Do something else", created: "9/22/2013"},
+        {id: 107, complete: true,             priority: "high",
+                  dueDate: "2013-11-22",      username: "Mike",
+                  title: "Fix the foo",       created: "9/22/2013"},
+        {id: 108, complete: false,            priority: "low",
+                  dueDate: "2013-11-15",      username: "Punam",
+                  title: "Adjust the bar",    created: "9/25/2013"},
+        {id: 110, complete: false,            priority: "medium",
+                  dueDate: "2013-11-15",      username: "Scott",
+                  title: "Rename everything", created: "10/2/2013"},
+        {id: 112, complete: true,             priority: "high",
+                  dueDate: "2013-11-27",      username: "Lena",
+                  title: "Alter all quuxes",  created: "10/5/2013"}
+        // , ...
+    ]
+};
+```
+
+然后我们需要以个名为 ``

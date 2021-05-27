@@ -5,6 +5,10 @@ date: 2020-03-11 09:58:43
 
 关于我什么呢，我也不知道，放一些一直以来收集的骚话吧！
 
+* 百善孝为先，论心不论迹，论迹寒门无孝子；
+
+  万恶淫为首，论迹不论心，论心世上无圣人。
+
 * [To be the best, you gotta to beat the best!](https://www.youtube.com/watch?v=iLh5u7b9cBA&t=19845s)
 
 * 葬礼是为你们这些还活着的笨蛋们举办的。
