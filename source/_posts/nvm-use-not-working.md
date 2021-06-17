@@ -11,6 +11,8 @@ categories:
 description: 解决问题是令人开心的。
 ---
 
+## 问题
+
 今天启动项目的时候发现报错了，提示说 **node-sass** 的版本不适用当前版本的 **node**。**node-sass** 官网有一张表格，记录着 **node-sass** 和 **node** 的对应版本：
 
 NodeJS  | Supported node-sass version | Node Module
@@ -33,6 +35,8 @@ Node <8 | <5.0                        | <57
 
 我记得我的 **node** 版本应该是 `v14.16.0`，应该不会有问题啊。
 
+## 解决？
+
 但是试了几次 `npm run serve`，都是报错，于是我只好查看了一下我的 **node** 版本：
 
 ```bash
@@ -48,6 +52,8 @@ v16.3.0
 > nvm use v14.16.0
 Now using node v14.16.0 (npm v7.15.1)
 ```
+
+## 大问题
 
 ok！easy，于是我愉快的 `npm run serve`，靠！怎么还是报错？
 
@@ -89,6 +95,8 @@ brew uninstall node
 
 **yarn**？原来是你！我终于想到昨天下午为了搭建一个新项目的环境，我安装了 **yarn**，由于它是依赖于 **node** 的，所以 **homebrew** 顺便帮我安装了 **node**。知道了原因，接下来就好办了。
 
+## 解决！
+
 首先卸载 **yarn**：
 
 ```bash
@@ -108,3 +116,17 @@ brew install yarn --ignore-dependencies
 ```
 
 至此，**nvm** 和 **yarn** 终于能和谐共处啦🎉！
+
+## 参考
+
+* <https://stackoverflow.com/questions/52174381/yarn-not-installing-in-nvm-version-node-version>
+
+* <https://classic.yarnpkg.com/en/docs/install#debian-stable>
+
+* <https://github.com/sass/node-sass/releases/tag/v4.14.1>
+
+* <https://stackoverflow.com/questions/52676244/node-version-not-updating-after-nvm-use-on-mac>
+
+* <https://stackoverflow.com/questions/37415134/error-node-sass-does-not-yet-support-your-current-environment-windows-64-bit-w>
+
+* <https://github.com/sass/node-sass#node-version-support-policy>
