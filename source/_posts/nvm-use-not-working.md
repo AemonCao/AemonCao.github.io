@@ -11,7 +11,7 @@ categories:
 description: 解决问题是令人开心的。
 ---
 
-今天启动项目的时候发现报错了，提示说 node-sass 的版本不适用当前版本的 node。node-sass官网有一张表格，记录着 node-sass 和 node 的对应版本：
+今天启动项目的时候发现报错了，提示说 **node-sass** 的版本不适用当前版本的 **node**。**node-sass** 官网有一张表格，记录着 **node-sass** 和 **node** 的对应版本：
 
 NodeJS  | Supported node-sass version | Node Module
 --------|-----------------------------|------------
