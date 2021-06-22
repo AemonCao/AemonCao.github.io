@@ -52,7 +52,7 @@ categories:
 
 > Q: Full tub with deep front half. USA. Listing calls it a mailman tub. Google results in Rule 34.
 
-一个前半部分很深的浴缸，位置是在美国。听说叫做邮递员浴缸，谷歌搜索结果在 34 条。
+一个前半部分很深的浴缸，位置是在美国。听说叫做邮递员浴缸，谷歌搜索结果会有色情内容。
 
 ![浴缸](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-12/浴缸.jpg)
 
@@ -136,9 +136,7 @@ categories:
 
 P.S. 我有地质学学位。
 
-再一次 P.S. 当我睡觉的时候有 7 个赞，谢谢你们的支持，我非常喜欢这种地质学的絮凝。
-
-（译者注：有没有地质学大佬解释一下。）
+再一次 P.S. 当我睡觉的时候有 7 个赞，谢谢你们的支持，我很高兴出来那么多地质学家作答。
 
 P.P.S. 第一次 Reddit 金奖！！！谢谢大兄弟们！
 
