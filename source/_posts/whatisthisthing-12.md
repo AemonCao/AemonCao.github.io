@@ -130,14 +130,12 @@ categories:
 
 看起来像铁结核。天然聚合的铁。
 
-（译者注：又到了不会翻译请教大家的时候了，这后半句有点弄不懂。）
-
 可以看这里：<https://sites.wustl.edu/meteoritesite/items/concretions/#:~:text=Hematite%20nodules%20are%20often%20formed,a%20wide%20variety%20of%20shapes>。
 
 P.S. 我有地质学学位。
 
 再一次 P.S. 当我睡觉的时候有 7 个赞，谢谢你们的支持，我很高兴出来那么多地质学家作答。
 
-P.P.S. 第一次 Reddit 金奖！！！谢谢大兄弟们！
+P.P.S. 第一次收到 Reddit gold！！！谢谢陌生人！
 
 <https://www.reddit.com/r/whatisthisthing/comments/nnesqq/6_tall_4_wide_feels_metalish_found_in_the/>
