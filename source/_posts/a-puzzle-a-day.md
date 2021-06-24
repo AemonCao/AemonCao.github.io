@@ -18,3 +18,4 @@ description: An apple a day keeps the doctor away
 | 21th June | ![21th June](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/a-puzzle-a-day/0621.jpeg) |
 | 22th June | ![22th June](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/a-puzzle-a-day/0622.jpeg) |
 | 23th June | ![23th June](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/a-puzzle-a-day/0623.jpeg) |
+| 24th June | ![24th June](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/a-puzzle-a-day/0624.jpeg) |
