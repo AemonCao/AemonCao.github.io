@@ -47,3 +47,11 @@ description: 🌕🌖🌗🌘🌑🌒🌓🌔🌕
 ![🔰](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/emoji-背后的故事/Wakaba_mark.svg)
 
 ![🔰](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/emoji-背后的故事/SUZUKI_ALTO_LAPIN_Chocolat_HE22S_rear.jpeg)
+
+### 🕴
+
+「浮在地面上的西装男」，一个西装革履，戴着帽子和墨镜，但是却浮在半空，在地面投射阴影，看似飘浮在空中的男士。他是谁？鬼怪？外星人？神秘来客？这其实是参考 The Specials 乐队 2014 年的歌曲 Ghost Town 封面上的人形惊叹号，一般用于表示人形幽灵或有特异功能的人。
+
+![🕴](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/emoji-背后的故事/浮在地面上的西装男.png)
+
+![🕴](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/emoji-背后的故事/Ghost_Town.jpeg)
