@@ -70,4 +70,4 @@ description: 🌕🌖🌗🌘🌑🌒🌓🌔🌕
 
 浪，这也是一个比较常见 emoji。它的来源就是日本浮世绘画家葛饰北斋的著名木刻版画——《神奈川冲浪里》。
 
-![👨‍🎤](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/emoji-背后的故事/神奈川冲浪里.jpg)
+![🌊](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/emoji-背后的故事/神奈川冲浪里.jpg)
