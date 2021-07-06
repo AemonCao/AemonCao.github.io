@@ -55,3 +55,19 @@ description: 🌕🌖🌗🌘🌑🌒🌓🌔🌕
 ![🕴](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/emoji-背后的故事/浮在地面上的西装男.png)
 
 ![🕴](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/emoji-背后的故事/Ghost_Town.jpeg)
+
+### 👨‍🎤
+
+男歌手，在设计的 emoji 中，👨‍🎤的原型是「史上最伟大摇滚艺人」——英国 歌手大卫·鲍伊（David Bowie）。
+
+这富有个性的面部彩绘造型来源于他的第六张专辑 《Aladdin Sane》。
+
+![👨‍🎤](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/emoji-背后的故事/歌手男.png)
+
+![👨‍🎤](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/emoji-背后的故事/歌手男.jpg)
+
+### 🌊
+
+浪，这也是一个比较常见 emoji。它的来源就是日本浮世绘画家葛饰北斋的著名木刻版画——《神奈川冲浪里》。
+
+![👨‍🎤](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/emoji-背后的故事/神奈川冲浪里.jpg)
