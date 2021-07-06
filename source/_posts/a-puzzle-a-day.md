@@ -26,17 +26,17 @@ description: An apple a day keeps the doctor away
 
 ![20th June](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/a-puzzle-a-day/0620.jpg)
 
-#### 21th June
+#### 21st June
 
-![21th June](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/a-puzzle-a-day/0621.jpeg)
+![21st June](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/a-puzzle-a-day/0621.jpeg)
 
-#### 22th June
+#### 22nd June
 
-![22th June](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/a-puzzle-a-day/0622.jpeg)
+![22nd June](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/a-puzzle-a-day/0622.jpeg)
 
-#### 23th June
+#### 23rd June
 
-![23th June](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/a-puzzle-a-day/0623.jpeg)
+![23rd June](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/a-puzzle-a-day/0623.jpeg)
 
 #### 24th June
 
@@ -75,3 +75,19 @@ description: An apple a day keeps the doctor away
 #### 2nd July
 
 ![2nd July](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/a-puzzle-a-day/0702.jpeg)
+
+#### 3rd July
+
+![3rd July](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/a-puzzle-a-day/0703.jpeg)
+
+#### 4th July
+
+![4th July](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/a-puzzle-a-day/0704.jpeg)
+
+#### 5th July
+
+![5th July](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/a-puzzle-a-day/0705.jpeg)
+
+#### 6th July
+
+![6th July](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/a-puzzle-a-day/0706.jpeg)
