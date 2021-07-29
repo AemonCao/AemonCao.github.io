@@ -7,7 +7,7 @@ date: 2020-03-11 09:58:43
 
 * 结婚不等于幸福，单身也不意味着不幸福，我们出生就一个人，最后也不可能同时离去，爱情是精神的奢侈品，没有也行。
 
-  ![结婚不等于幸福，单身也不意味着不幸福，我们出生就一个人，最后也不可能同时离去，爱情是精神的奢侈品，没有也行。](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io/about/index/爱情是精神的奢侈品.jpg)
+  ![结婚不等于幸福，单身也不意味着不幸福，我们出生就一个人，最后也不可能同时离去，爱情是精神的奢侈品，没有也行。](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io/about/index/爱情是精神的奢侈品.gif)
 
 * ![贫富差距](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io/about/index/贫富差距.jpg)
 
