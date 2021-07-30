@@ -183,3 +183,7 @@ description: An apple a day keeps the doctor away
 #### 29th July
 
 ![29th July](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/a-puzzle-a-day/0729.jpeg)
+
+#### 30th July
+
+![30th July](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/a-puzzle-a-day/0730.jpeg)
