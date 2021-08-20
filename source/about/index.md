@@ -5,6 +5,8 @@ date: 2020-03-11 09:58:43
 
 关于我什么呢，我也不知道，放一些一直以来收集的骚话吧！
 
+* I have noticed even people who claim everything is predestined, and that we can do nothing to change it, look before they cross the road.
+
 * 人的一生中，最光辉的一天并非是功成名就那天，而是从悲叹与绝望中产生对人生的挑战，以勇敢迈向意志那天。
 
 * 把时间用在你最终不会引以为豪的东西上面，是一件可怕的事情，浪费了你在地球上的短暂旅程。
