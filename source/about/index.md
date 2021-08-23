@@ -7,6 +7,8 @@ date: 2020-03-11 09:58:43
 
 * I have noticed even people who claim everything is predestined, and that we can do nothing to change it, look before they cross the road.
 
+  我注意过，即便是那些声称一切都是命中注定的而且我们无力改变的人，在过马路之前都会左右看。
+
 * 人的一生中，最光辉的一天并非是功成名就那天，而是从悲叹与绝望中产生对人生的挑战，以勇敢迈向意志那天。
 
 * 把时间用在你最终不会引以为豪的东西上面，是一件可怕的事情，浪费了你在地球上的短暂旅程。
