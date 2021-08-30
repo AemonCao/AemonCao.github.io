@@ -5,6 +5,8 @@ date: 2020-03-11 09:58:43
 
 关于我什么呢，我也不知道，放一些一直以来收集的骚话吧！
 
+* 斧头的刀刃换了 3 次，刀柄也换了 4 次，可是还是同一把旧斧头。
+
 * I have noticed even people who claim everything is predestined, and that we can do nothing to change it, look before they cross the road.
 
   我注意过，即便是那些声称一切都是命中注定的而且我们无力改变的人，在过马路之前都会左右看。
