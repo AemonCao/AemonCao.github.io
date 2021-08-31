@@ -5,6 +5,8 @@ date: 2020-03-11 09:58:43
 
 关于我什么呢，我也不知道，放一些一直以来收集的骚话吧！
 
+* 胜利的曙光和前进的希望来自于再努力使把劲的坚持之中。
+
 * 斧头的刀刃换了 3 次，刀柄也换了 4 次，可是还是同一把旧斧头。
 
 * I have noticed even people who claim everything is predestined, and that we can do nothing to change it, look before they cross the road.
