@@ -321,3 +321,11 @@ description: An apple a day keeps the doctor away
 #### 1st September
 
 ![1st September](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/a-puzzle-a-day/0901.jpeg)
+
+#### 2nd September
+
+![2nd September](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/a-puzzle-a-day/0902.jpeg)
+
+#### 3rd September
+
+![3rd September](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/a-puzzle-a-day/0903.jpeg)
