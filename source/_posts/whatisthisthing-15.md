@@ -20,7 +20,7 @@ categories:
 
 这些奇怪的灰尘图案不断出现在我公寓窗户的窗纱上。
 
-![怪圈](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-13/怪圈.jpg)
+![怪圈](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-15/怪圈.jpg)
 
 > A: Previous tenant smoked w a fan in the window. I’ve seen this so many times turning over apartments for work.
 > That mark is going to keep coming back until you wash the entire window screen.
@@ -40,7 +40,7 @@ categories:
 
 这是在我的创可贴包装中发现的，而不是创可贴。几乎像橡胶一样。结构牢固，没有粘性，反面也一样。
 
-![OK绷](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-13/OK绷.jpeg)
+![OK绷](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-15/OK绷.jpeg)
 
 > A: Looks like a manufacturing error where that may be the start, or end, of a production run. Either that or a golden ticket to see Billy Blanca at the band aid factory.
 
@@ -54,7 +54,7 @@ categories:
 
 我在剧院里看到这个，这块金属是什么？（一个困扰我 8 年的问题，请帮帮我）
 
-![圆柱体金属](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-13/圆柱体金属.jpg)
+![圆柱体金属](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-15/圆柱体金属.jpg)
 
 > A: Solved ! It seems it's a light but school didn't pay for this option.
 
@@ -68,7 +68,7 @@ categories:
 
 这个厕所的用途是什么？没有其他细节。
 
-![小便池](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-13/小便池.jpg)
+![小便池](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-15/小便池.jpg)
 
 > A urinal for women: <https://deabath.com/product/1950s-vintage-standard-female-urinal-prop-rental/>
 >
@@ -78,11 +78,11 @@ categories:
 
 > 我们这里有一个1950年代的标准「Sanistand」女式小便池。奇怪的是，这些小便池并不十分流行，但标准公司在 20 世纪 50 年代中期至 60 年代初期间确实生产了这些小便池。
 
-![小便池](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-13/小便池2.jpg)
+![小便池](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-15/小便池2.jpg)
 
-![小便池](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-13/小便池3.jpg)
+![小便池](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-15/小便池3.jpg)
 
-![小便池](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-13/小便池4.jpg)
+![小便池](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-15/小便池4.jpg)
 
 ### 紧急
 
@@ -90,7 +90,7 @@ categories:
 
 在美国中西部高速公路的平板车上发现的大型白色集装箱，标签上写着「紧急」。
 
-![集装箱](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-13/集装箱.jpg)
+![集装箱](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-15/集装箱.jpg)
 
 > A: It's a shipping container for a General Electric CF34 Turbofan Engine, commonly fitted to Embraer and Bombardier Jets.
 > It'll be urgent because there will be an Aircraft sat on the ground waiting for it (AOG).
@@ -109,11 +109,11 @@ categories:
 
 大型混凝土容器，带板状盖子。完全封闭的。被埋在一起。数以百计。
 
-![混凝土箱](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-13/混凝土箱.jpg)
+![混凝土箱](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-15/混凝土箱.jpg)
 
-![混凝土箱](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-13/混凝土箱2.jpg)
+![混凝土箱](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-15/混凝土箱2.jpg)
 
-![混凝土箱](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-13/混凝土箱3.jpg)
+![混凝土箱](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-15/混凝土箱3.jpg)
 
 > A: Spread out along a roadway makes me think they’re used for storm water retention and they will be drilled for pipe connections once they are buried
 
@@ -127,7 +127,7 @@ categories:
 
 瓶装维生素水中的白色团块。
 
-![白色团块](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-13/白色团块.jpg)
+![白色团块](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-15/白色团块.jpg)
 
 > A: Looks like a fungal colony to me. Source: microbiologist.
 
