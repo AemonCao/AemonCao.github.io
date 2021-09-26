@@ -71,7 +71,6 @@ categories:
 ![小便池](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-15/小便池.jpg)
 
 > A urinal for women: <https://deabath.com/product/1950s-vintage-standard-female-urinal-prop-rental/>
->
 > > Here we have a 1950’s Standard “Sanistand” Female urinal. Strangely enough, these weren’t terribly popular, but Standard did make them between the mid-1950’s up through the early 1960’s.
 
 女用小便池：<https://deabath.com/product/1950s-vintage-standard-female-urinal-prop-rental/>

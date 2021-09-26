@@ -10,6 +10,10 @@ description: An apple a day keeps the doctor away
 
 在[煎蛋](http://jandan.net/)上看到了这个 puzzle，立马上淘宝买了一份。有点难度，希望可以坚持打卡一年！
 
+正文内容通过以下代码生成：
+
+<script src="https://gist.github.com/AemonCao/1ff95182473cd262e20c91c8d39536d8.js"></script>
+
 ### May
 
 #### 18th May
@@ -387,3 +391,55 @@ description: An apple a day keeps the doctor away
 #### 17th September
 
 ![17th September](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/a-puzzle-a-day/0917.jpeg)
+
+#### 18th September
+
+![18th September](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/a-puzzle-a-day/0918.jpeg)
+
+#### 19th September
+
+![19th September](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/a-puzzle-a-day/0919.jpeg)
+
+#### 20th September
+
+![20th September](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/a-puzzle-a-day/0920.jpeg)
+
+#### 21st September
+
+![21st September](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/a-puzzle-a-day/0921.jpeg)
+
+#### 22nd September
+
+![22nd September](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/a-puzzle-a-day/0922.jpeg)
+
+#### 23rd September
+
+![23rd September](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/a-puzzle-a-day/0923.jpeg)
+
+#### 24th September
+
+![24th September](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/a-puzzle-a-day/0924.jpeg)
+
+#### 25th September
+
+![25th September](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/a-puzzle-a-day/0925.jpeg)
+
+#### 26th September
+
+![26th September](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/a-puzzle-a-day/0926.jpeg)
+
+#### 27th September
+
+![27th September](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/a-puzzle-a-day/0927.jpeg)
+
+#### 28th September
+
+![28th September](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/a-puzzle-a-day/0928.jpeg)
+
+#### 29th September
+
+![29th September](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/a-puzzle-a-day/0929.jpeg)
+
+#### 30th September
+
+![30th September](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/a-puzzle-a-day/0930.jpeg)
