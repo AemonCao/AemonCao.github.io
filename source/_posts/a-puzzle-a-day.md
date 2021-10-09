@@ -443,3 +443,45 @@ description: An apple a day keeps the doctor away
 #### 30th September
 
 ![30th September](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/a-puzzle-a-day/0930.jpeg)
+
+### October
+
+#### 1st October
+
+![1st October](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/a-puzzle-a-day/1001.jpeg)
+
+#### 2nd October
+
+![2nd October](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/a-puzzle-a-day/1002.jpeg)
+
+#### 3rd October
+
+![3rd October](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/a-puzzle-a-day/1003.jpeg)
+
+#### 4th October
+
+![4th October](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/a-puzzle-a-day/1004.jpeg)
+
+#### 5th October
+
+![5th October](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/a-puzzle-a-day/1005.jpeg)
+
+#### 6th October
+
+![6th October](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/a-puzzle-a-day/1006.jpeg)
+
+#### 7th October
+
+![7th October](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/a-puzzle-a-day/1007.jpeg)
+
+#### 8th October
+
+![8th October](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/a-puzzle-a-day/1008.jpeg)
+
+#### 9th October
+
+![9th October](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/a-puzzle-a-day/1009.jpeg)
+
+#### 10th October
+
+![10th October](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/a-puzzle-a-day/1010.jpeg)
