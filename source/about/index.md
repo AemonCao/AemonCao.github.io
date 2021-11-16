@@ -5,6 +5,8 @@ date: 2020-03-11 09:58:43
 
 关于我什么呢，我也不知道，放一些一直以来收集的骚话吧！
 
+* [你的獨立審美，才是這氾濫流行中最珍貴的東西。](https://www.youtube.com/watch?v=fVTX8f7XVUs&t=397s)
+
 * [任意的践踏自由，这算什么正义？](https://www.bilibili.com/video/BV1KJ411R7YY?t=156)
 
 * 未来不迎，过往不恋，当事不杂。
