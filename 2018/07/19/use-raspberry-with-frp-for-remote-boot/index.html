@@ -1,0 +1,751 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.0.0-rc1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-256x256-next.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.ico">
+  <link rel="mask-icon" href="/images/favicon-256x256-next.ico" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|Monaco:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.css">
+  <script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.aemon.top","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#ff69b4","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="起因一直有在外操作家里电脑的需求，远程控制这一步好解决，一般是通过 TeamViewer 来进行。但是前提之一是需要家中电脑时刻处于开机状态，但是由于电脑是台式即使待机也比平常笔记本的功率要高不少（可以看一下半个月的电费），而且如果 24 小时开机的话，散热器风扇一直处于运行状态，会使机箱的灰尘增多，这样的话清灰频率又要大大增加了。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="使用 raspberry 配合 frp 来进行远程开机">
+<meta property="og:url" content="https://www.aemon.top/2018/07/19/use-raspberry-with-frp-for-remote-boot/index.html">
+<meta property="og:site_name" content="Aemon&#39;s Blog">
+<meta property="og:description" content="起因一直有在外操作家里电脑的需求，远程控制这一步好解决，一般是通过 TeamViewer 来进行。但是前提之一是需要家中电脑时刻处于开机状态，但是由于电脑是台式即使待机也比平常笔记本的功率要高不少（可以看一下半个月的电费），而且如果 24 小时开机的话，散热器风扇一直处于运行状态，会使机箱的灰尘增多，这样的话清灰频率又要大大增加了。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/use-raspberry-with-frp-for-remote-boot/%E7%94%B5%E8%B4%B9.webp">
+<meta property="og:image" content="https://www.aemon.top/2018/07/19/use-raspberry-with-frp-for-remote-boot/%E7%94%B5%E8%B4%B9.webp">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/use-raspberry-with-frp-for-remote-boot/Routerlist.webp">
+<meta property="og:image" content="https://www.aemon.top/2018/07/19/use-raspberry-with-frp-for-remote-boot/Routerlist.webp">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/use-raspberry-with-frp-for-remote-boot/MACWindows.webp">
+<meta property="og:image" content="https://www.aemon.top/2018/07/19/use-raspberry-with-frp-for-remote-boot/MACWindows.webp">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/use-raspberry-with-frp-for-remote-boot/MACraspberry.webp">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/use-raspberry-with-frp-for-remote-boot/4.webp">
+<meta property="og:image" content="https://www.aemon.top/2018/07/19/use-raspberry-with-frp-for-remote-boot/4.webp">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/use-raspberry-with-frp-for-remote-boot/1.png">
+<meta property="og:image" content="https://www.aemon.top/2018/07/19/use-raspberry-with-frp-for-remote-boot/1.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/use-raspberry-with-frp-for-remote-boot/3.webp">
+<meta property="og:image" content="https://www.aemon.top/2018/07/19/use-raspberry-with-frp-for-remote-boot/3.webp">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/use-raspberry-with-frp-for-remote-boot/2.webp">
+<meta property="og:image" content="https://www.aemon.top/2018/07/19/use-raspberry-with-frp-for-remote-boot/2.webp">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/use-raspberry-with-frp-for-remote-boot/list.webp">
+<meta property="og:image" content="https://www.aemon.top/2018/07/19/use-raspberry-with-frp-for-remote-boot/list.webp">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/use-raspberry-with-frp-for-remote-boot/SSHraspberryPC.png">
+<meta property="og:image" content="https://www.aemon.top/2018/07/19/use-raspberry-with-frp-for-remote-boot/SSHraspberryPC.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/use-raspberry-with-frp-for-remote-boot/SSHPhone.webp">
+<meta property="og:image" content="https://www.aemon.top/2018/07/19/use-raspberry-with-frp-for-remote-boot/SSHPhone.webp">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/use-raspberry-with-frp-for-remote-boot/6.webp">
+<meta property="og:image" content="https://www.aemon.top/2018/07/19/use-raspberry-with-frp-for-remote-boot/6.webp">
+<meta property="article:published_time" content="2018-07-19T14:56:39.000Z">
+<meta property="article:modified_time" content="2023-06-29T07:04:53.674Z">
+<meta property="article:author" content="Aemon">
+<meta property="article:tag" content="树莓派">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/use-raspberry-with-frp-for-remote-boot/%E7%94%B5%E8%B4%B9.webp">
+
+<link rel="canonical" href="https://www.aemon.top/2018/07/19/use-raspberry-with-frp-for-remote-boot/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>使用 raspberry 配合 frp 来进行远程开机 | Aemon's Blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-160072313-1"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-160072313-1');
+      }
+    </script>
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?bba62503a88ce6563ac3ec7e0c6e491c";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Aemon's Blog" type="application/atom+xml">
+<link rel="alternate" href="/rss2.xml" title="Aemon's Blog" type="application/rss+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Aemon's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">切勿浅尝辄止</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fas fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="far fa-hand-spock fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fab fa-accessible-icon fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/AemonCao" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.aemon.top/2018/07/19/use-raspberry-with-frp-for-remote-boot/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Aemon">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Aemon's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          使用 raspberry 配合 frp 来进行远程开机
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2018-07-19 22:56:39" itemprop="dateCreated datePublished" datetime="2018-07-19T22:56:39+08:00">2018-07-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-06-29 15:04:53" itemprop="dateModified" datetime="2023-06-29T15:04:53+08:00">2023-06-29</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/%E6%A0%91%E8%8E%93%E6%B4%BE/" itemprop="url" rel="index"><span itemprop="name">树莓派</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2018/07/19/use-raspberry-with-frp-for-remote-boot/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2018/07/19/use-raspberry-with-frp-for-remote-boot/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3.5k</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>一直有在外操作家里电脑的需求，远程控制这一步好解决，一般是通过 <em>TeamViewer</em> 来进行。但是前提之一是需要家中电脑时刻处于开机状态，但是由于电脑是台式即使待机也比平常笔记本的功率要高不少（可以看一下半个月的电费），而且如果 24 小时开机的话，散热器风扇一直处于运行状态，会使机箱的灰尘增多，这样的话清灰频率又要大大增加了。</p>
+<span id="more"></span>
+<!-- ![5.png](https://i.loli.net/2018/07/19/5b507b12be317.png) -->
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/use-raspberry-with-frp-for-remote-boot/电费.webp" alt="电费"></p>
+<!-- <img data-src="/2018/07/19/use-raspberry-with-frp-for-remote-boot/%E7%94%B5%E8%B4%B9.webp" class="" title="电费"> -->
+<p>所以需要一种可以远程开机的办法。</p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>之前的方法是使用即时通讯软件让家中的室友帮忙开机，但是也只限于家中有室友的情况，如果室友去上班了，那就没办法了。 也想过训练猫来帮助我开机，但是奈何这猫实在太蠢，朽木不可雕也。而且就算是训练成功了，那当我需要开机时，我该怎么通知到猫呢？这也是一个问题。 在试验过各种方法后，最后我使用了树莓派（raspberry）结合 frp 的方式来完成我的需求。</p>
+<h2 id="事先准备"><a href="#事先准备" class="headerlink" title="事先准备"></a>事先准备</h2><p>需要用到的设备有：</p>
+<ol>
+<li><p>用来进行远程开机以及远程控制的设备一台；</p>
+</li>
+<li><p>具有 <strong>IP/MAC绑定</strong> 功能的路由器一台；</p>
+</li>
+<li><p>树莓派一台；</p>
+</li>
+<li><p>支持 WOL 的 PC 一台；</p>
+</li>
+<li><p>带有公网 IP 的服务器一台。</p>
+</li>
+</ol>
+<h2 id="具体操作"><a href="#具体操作" class="headerlink" title="具体操作"></a>具体操作</h2><h3 id="局域网设备配置"><a href="#局域网设备配置" class="headerlink" title="局域网设备配置"></a>局域网设备配置</h3><p>首先是家中局域网的配置，PC 和 树莓派要位于同一局域网，然后在路由器中把两者的 MAC 和 IP 进行绑定。这里需要注意的是 MAC 不是代表一台设备而是一个网卡，所以在设置树莓派的 MAC 地址的时候需要根据当前树莓派连接路由器的方式来设置。我使用的路由器可以直接查看设备的 MAC 地址。如下：</p>
+<!-- ![Routerlist.png](https://i.loli.net/2018/07/19/5b507b1a3f9aa.png) -->
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/use-raspberry-with-frp-for-remote-boot/Routerlist.webp" alt="Routerlist"></p>
+<!-- <img data-src="/2018/07/19/use-raspberry-with-frp-for-remote-boot/Routerlist.webp" class="" title="Routerlist"> -->
+<p>如果路由器无法查看 MAC 地址或者设备太多无法区分，那么在 <strong>Windows</strong> 系统下可以使用</p>
+<figure class="highlight bat"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ipconfig</span> -all</span><br></pre></td></tr></table></figure>
+<p>来查看</p>
+<!-- ![MACWindows.png](https://i.loli.net/2018/07/19/5b507b1a4128f.png) -->
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/use-raspberry-with-frp-for-remote-boot/MACWindows.webp" alt="MACWindows"></p>
+<!-- <img data-src="/2018/07/19/use-raspberry-with-frp-for-remote-boot/MACWindows.webp" class="" title="MACWindows"> -->
+<p>在 <strong>raspberry</strong> 下可以使用</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ifconfig</span><br></pre></td></tr></table></figure>
+<p>来查看</p>
+<!-- ![MACraspberry.png](https://i.loli.net/2018/07/19/5b507b1a4292a.png) -->
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/use-raspberry-with-frp-for-remote-boot/MACraspberry.webp" alt="MACraspberry"></p>
+<!--  -->
+<p>可以看到树莓派有两个 MAC 地址，由于我是使用无线连接所以我选择的是第二个 <em>wlan0</em>。 然后使用 <strong>IP/MAC绑定</strong> 功能将两台设备与 IP 进行绑定，绑定的时候建议就选择当前使用的 IP 以免用了其他设备正在使用的 IP，造成 IP 冲突。 如果绑定了其他的 IP，请在绑定成功后重启设备。</p>
+<h3 id="PC-WOL-配置"><a href="#PC-WOL-配置" class="headerlink" title="PC WOL 配置"></a>PC WOL 配置</h3><p>然后是要配置 PC 使其可以支持 WOL（wake-on-LAN）开机。WOL 是一种电源管理功能，中文译为 <strong>网络唤醒</strong>，以下是 Wiki 对其作出的解释：</p>
+<blockquote>
+<p>Wake-on-LAN 简称 WOL 或 WoL，中文多译为「网络唤醒」、「远程唤醒」技术。WOL是一种技术，同时也是该技术的规范标准，它的功效在于让已经进入休眠状态或关机状态的电脑，透过局域网（多半为以太网）的另一端对其发令，使其从休眠状态唤醒、恢复成运作状态，或从关机状态转成引导状态。此外，与WOL相关的技术也包括远程下令关机、远程下令重启等相关的遥控机制。</p>
+</blockquote>
+<p>它的具体方法就是向要启动的设备发送一个魔法数据包（Magic Packet）：</p>
+<blockquote>
+<p>魔法数据包（Magic Packet）是一个广播性的帧（frame），透过端口7或端口9进行发送，且可以用无连接（Connectionless protocol）的通信协议（如UDP、IPX）来传递，不过一般而言多是用UDP，原因是Novell公司的Netware网络操作系统的IPX协议已经愈来愈少机会被使用。 在魔法数据包内，每次都会先有连续6个”FF”（十六进制，换算成二进制即：11111111）的数据，即：FF FF FF FF FF FF，在连续6个”FF”后则开始带出MAC地址信息，有时还会带出4字节或6字节的密码，一旦经由网卡侦测、解读、研判（广播）魔法数据包的内容，内容中的MAC地址、密码若与电脑自身的地址、密码吻合，就会启动唤醒、引导的程序。</p>
+</blockquote>
+<p>所以我们要先设置 BIOS 打开「<strong>网卡唤醒</strong>」这一功能，由于各个品牌主板的 BIOS 各不相同，所以设置的方法也各式各样，大家可以自行搜索「<strong>wake on lan 设置</strong>」，来寻找正确的方式。不过大多是在 <strong>电源管理</strong>（Power Management Setup）中。 然后是系统上的设置，这里我以 <em>Windows 10 17134.165</em> 版本为例。 首先右键「<strong>网络</strong>」-「<strong>属性</strong>」来打开「<strong>网络和共享中心</strong>」面板：</p>
+<!-- ![4.png](https://i.loli.net/2018/07/19/5b507b129fdee.png) -->
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/use-raspberry-with-frp-for-remote-boot/4.webp" alt="网络和共享中心"></p>
+<!-- <img data-src="/2018/07/19/use-raspberry-with-frp-for-remote-boot/4.webp" class="" title="网络和共享中心"> -->
+<p>在左侧单击「<strong>更改适配器设置</strong>」-右键你现在正在使用的网卡-「<strong>属性</strong>」来打开「<strong>属性</strong>」面板：</p>
+<!-- ![1.png](https://i.loli.net/2018/07/19/5b507b12983ac.png) -->
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/use-raspberry-with-frp-for-remote-boot/1.png" alt="更改适配器设置"></p>
+<!-- <img data-src="/2018/07/19/use-raspberry-with-frp-for-remote-boot/1.png" class="" title="更改适配器设置"> -->
+<p>单击上方的「<strong>配置</strong>」-选择「<strong>高级</strong>」选项卡-在属性类别中将「<strong>关机 网络唤醒</strong>」和「<strong>魔术封包唤醒</strong>」的值设置为「<strong>开启</strong>」：</p>
+<!-- ![3.png](https://i.loli.net/2018/07/19/5b507b129f1e7.png) -->
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/use-raspberry-with-frp-for-remote-boot/3.webp" alt="高级"></p>
+<!-- <img data-src="/2018/07/19/use-raspberry-with-frp-for-remote-boot/3.webp" class="" title="高级"> -->
+<p>选择「<strong>电源管理</strong>」选项卡-勾选「<strong>允许计算机关闭此设备以节约电源</strong>」和「<strong>允许此设备唤醒计算机</strong>」选项：</p>
+<!-- ![2.png](https://i.loli.net/2018/07/19/5b507b1298186.png) -->
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/use-raspberry-with-frp-for-remote-boot/2.webp" alt="电源管理"></p>
+<!-- <img data-src="/2018/07/19/use-raspberry-with-frp-for-remote-boot/2.webp" class="" title="电源管理"> -->
+<p>就此，PC 端的设置已经完成了。</p>
+<h3 id="带公网-IP-的服务器配置"><a href="#带公网-IP-的服务器配置" class="headerlink" title="带公网 IP 的服务器配置"></a>带公网 IP 的服务器配置</h3><p>带公网 IP 的服务器，大家可以去阿里云或者腾讯云买一台最低配的就可以了，我的这台是之前在腾讯云薅羊毛薅的。 这个服务器的作用主要是运行 <em>frp</em> 的服务端来使局域网内的树莓派可以内网穿透。 <em>frp</em> 是一个免费的开源的内网穿透软件，而且部署简单方便。具体方式如下：</p>
+<p>我们可以在 <a target="_blank" rel="noopener" href="https://github.com/fatedier/frp/releases">https://github.com/fatedier/frp/releases</a> 下载指定架构下的版本，我在腾讯云服务器上使用的 <em>Ubuntu</em> 系统，所以选择的是 <code>frp_0.20.0_linux_amd64.tar.gz</code> 这个版本。可以下载下来使用 <em>FTP</em> 来放到服务器上，也可以在服务器上使用：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/fatedier/frp/releases/download/v0.20.0/frp_0.20.0_linux_amd64.tar.gz</span><br></pre></td></tr></table></figure>
+<p>来直接下载到服务器上。</p>
+<h4 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h4><p>下载完成后使用：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf frp_0.20.0_linux_amd64.tar.gz</span><br></pre></td></tr></table></figure>
+<p>解压文件。</p>
+<h4 id="进入目录"><a href="#进入目录" class="headerlink" title="进入目录"></a>进入目录</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd frp_2.20.0_linux_amd64</span><br></pre></td></tr></table></figure>
+<h4 id="通过-rm-命令来删除-frpc-和-frpc-ini-两个文件"><a href="#通过-rm-命令来删除-frpc-和-frpc-ini-两个文件" class="headerlink" title="通过 rm 命令来删除 frpc 和 frpc.ini 两个文件"></a>通过 <code>rm</code> 命令来删除 <code>frpc</code> 和 <code>frpc.ini</code> 两个文件</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm frpc frpc.ini</span><br></pre></td></tr></table></figure>
+<h4 id="打开配置文件-frps-ini"><a href="#打开配置文件-frps-ini" class="headerlink" title="打开配置文件 frps.ini"></a>打开配置文件 <code>frps.ini</code></h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim frps.ini</span><br></pre></td></tr></table></figure>
+<h4 id="更改服务端配置"><a href="#更改服务端配置" class="headerlink" title="更改服务端配置"></a>更改服务端配置</h4><p>更改配置如下：</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[common]</span></span><br><span class="line"><span class="attr">bind_port</span> = <span class="number">7000</span>           <span class="comment">#与客户端绑定的进行通信的端口</span></span><br><span class="line"><span class="attr">vhost_http_port</span> = <span class="number">6081</span>     <span class="comment">#访问客户端web服务自定义的端口号</span></span><br></pre></td></tr></table></figure>
+<p>注：</p>
+<ol>
+<li><p>「#」 后面的是注释，可以不写；</p>
+</li>
+<li><p>这边 <em>Vim</em> 的用法可以上搜索引擎查一下，这里不多赘述。</p>
+</li>
+</ol>
+<h4 id="启动服务端服务"><a href="#启动服务端服务" class="headerlink" title="启动服务端服务"></a>启动服务端服务</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./frps -c ./frps.ini</span><br></pre></td></tr></table></figure>
+<p>这个是前台启动服务，会输出日志信息，是用来调试的用的，到时调试成功了就可以使用后台服务启动：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup ./frps -c ./frps.ini &amp;</span><br></pre></td></tr></table></figure>
+<p>至此，服务器也设置完成。</p>
+<h3 id="树莓派配置"><a href="#树莓派配置" class="headerlink" title="树莓派配置"></a>树莓派配置</h3><p>我现在使用的是 <em>Raspberry 3B</em>，当时是在淘宝 <em>￥195</em> 的价格买的，如果配上电源以及 <em>SD</em> 卡的等配件一共是 <em>￥278.9</em>。清单如下：</p>
+<!-- ![list.png](https://i.loli.net/2018/07/19/5b507b12b3fed.png) -->
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/use-raspberry-with-frp-for-remote-boot/list.webp" alt="list"></p>
+<!-- <img data-src="/2018/07/19/use-raspberry-with-frp-for-remote-boot/list.webp" class="" title="list"> -->
+<p>之后的系统安装我就不在这详细说明了，网上有很多详细的教程。 树莓派的配置和服务器配置其实是差不多的，不同的是服务器上的部署的是 <em>frp</em> 的服务端，而树莓派上的部署的是客户端。 从下载到解压的步骤和服务器端是一模一样的，只要照着之前的步骤做就可以了。 从第三步删除文件开始有所不同：</p>
+<h4 id="删除不必要的文件"><a href="#删除不必要的文件" class="headerlink" title="删除不必要的文件"></a>删除不必要的文件</h4><p>在服务器上我们删除的是 <code>frpc</code> 和 <code>frpc.ini</code>，这两个是 <em>frp</em> 的客户端程序和客户端配置文件，同理我们在树莓派也就是服务器端上就要删除 <code>frps</code> 和 <code>frps.ini</code> 这两个文件：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm frps frps.ini</span><br></pre></td></tr></table></figure>
+<h4 id="打开配置文件-frpc-ini"><a href="#打开配置文件-frpc-ini" class="headerlink" title="打开配置文件 frpc.ini"></a>打开配置文件 <code>frpc.ini</code></h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim frpc.ini</span><br></pre></td></tr></table></figure>
+<h4 id="更改客户端配置"><a href="#更改客户端配置" class="headerlink" title="更改客户端配置"></a>更改客户端配置</h4><p>更改配置如下：</p>
+<figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[common]</span></span><br><span class="line"><span class="attr">server_addr</span> = <span class="number">118.126</span>.***.***</span><br><span class="line"><span class="attr">server_port</span> = <span class="number">7000</span></span><br><span class="line"></span><br><span class="line"><span class="section">[ssh]</span></span><br><span class="line"><span class="attr">type</span> = tcp</span><br><span class="line"><span class="attr">local_ip</span> = <span class="number">192.168</span>.<span class="number">1.100</span></span><br><span class="line"><span class="attr">local_port</span> = <span class="number">22</span></span><br><span class="line"><span class="attr">remote_port</span> = <span class="number">6022</span></span><br><span class="line"></span><br><span class="line"><span class="section">[mysql]</span></span><br><span class="line"><span class="attr">type</span> = tcp</span><br><span class="line"><span class="attr">local_port</span> = <span class="number">3306</span></span><br><span class="line"><span class="attr">remote_port</span> = <span class="number">3306</span></span><br></pre></td></tr></table></figure>
+<p><code>server_addr</code> 即为服务器的公网 IP 的地址，<code>server_port</code> 为之前在服务端配置时的 <code>bind_port</code>，这里我用的是 <code>7000</code>。 然后是需要内网穿透的服务的配置，我这里写了两个，一个是 <em>SSH</em>，一个是 <em>MySQL</em>。如果只要能进行远程连接的话我们只需要 <em>SSH</em> 的配置就好了，这里要注意的就是 <code>remote_port</code>，自定义的端口号，不要填 <code>22</code>，因为在服务器上已经被占用了（被用于服务器的 <em>SSH</em>），所以你要选一个没被占用的端口来使用，这里我用的是 <code>6022</code>。</p>
+<h4 id="启动客户端服务"><a href="#启动客户端服务" class="headerlink" title="启动客户端服务"></a>启动客户端服务</h4><figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">./frpc -c ./frpc.ini</span><br></pre></td></tr></table></figure>
+<p>同样的，后台服务启动是：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup ./frpc -c ./frpc.ini &amp;</span><br></pre></td></tr></table></figure>
+<h3 id="测试-frp"><a href="#测试-frp" class="headerlink" title="测试 frp"></a>测试 frp</h3><p>现在我们可以在自己的 PC 上使用以下命令来访问树莓派了：</p>
+<figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh <span class="literal">-p</span> <span class="number">6022</span> <span class="number">118.126</span>.***.***</span><br></pre></td></tr></table></figure>
+<p>然后键入树莓派的密码就可以了：</p>
+<!-- ![SSHraspberryPC.png](https://i.loli.net/2018/07/19/5b507b1a44208.png) -->
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/use-raspberry-with-frp-for-remote-boot/SSHraspberryPC.png" alt="SSHraspberryPC"></p>
+<!-- <img data-src="/2018/07/19/use-raspberry-with-frp-for-remote-boot/SSHraspberryPC.png" class="" title="SSHraspberryPC"> -->
+<p>当然也可以用手机的移动网络来访问：</p>
+<!-- ![SSHPhone.png](https://i.loli.net/2018/07/19/5b507b1a5450c.png) -->
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/use-raspberry-with-frp-for-remote-boot/SSHPhone.webp" alt="SSHPhone"></p>
+<!-- <img data-src="/2018/07/19/use-raspberry-with-frp-for-remote-boot/SSHPhone.webp" class="" title="SSHPhone"> -->
+<p>至此我们已经成功的内网内网穿透了，即可以从外网访问内网设备了，接下来我们就要通过树莓派来使家中的 PC 开机了。</p>
+<h3 id="在树莓派上使用-WOL-控制-PC-开机"><a href="#在树莓派上使用-WOL-控制-PC-开机" class="headerlink" title="在树莓派上使用 WOL 控制 PC 开机"></a>在树莓派上使用 <em>WOL</em> 控制 PC 开机</h3><p>这里我找了好多软件，测试了好久，不是没有 <em>Linux</em> 平台的，就是不能用。所以最后还是用 <em>Python</em> 了，具体代码如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- encoding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">from</span> __future__ <span class="keyword">import</span> absolute_import</span><br><span class="line"><span class="keyword">from</span> __future__ <span class="keyword">import</span> unicode_literals</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> argparse</span><br><span class="line"><span class="keyword">import</span> socket</span><br><span class="line"><span class="keyword">import</span> struct</span><br><span class="line"></span><br><span class="line">BROADCAST_IP = <span class="string">&#x27;255.255.255.255&#x27;</span></span><br><span class="line">DEFAULT_PORT = <span class="number">9</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">create_magic_packet</span>(<span class="params">macaddress</span>):</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(macaddress) == <span class="number">12</span>:</span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">    <span class="keyword">elif</span> <span class="built_in">len</span>(macaddress) == <span class="number">17</span>:</span><br><span class="line">        sep = macaddress[<span class="number">2</span>]</span><br><span class="line">        macaddress = macaddress.replace(sep, <span class="string">&#x27;&#x27;</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">raise</span> ValueError(<span class="string">&#x27;Incorrect MAC address format&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Pad the synchronization stream</span></span><br><span class="line">    data = <span class="string">b&#x27;FFFFFFFFFFFF&#x27;</span> + (macaddress * <span class="number">16</span>).encode()</span><br><span class="line">    send_data = <span class="string">b&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Split up the hex values in pack</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="built_in">len</span>(data), <span class="number">2</span>):</span><br><span class="line">        send_data += struct.pack(<span class="string">b&#x27;B&#x27;</span>, <span class="built_in">int</span>(data[i: i + <span class="number">2</span>], <span class="number">16</span>))</span><br><span class="line">    <span class="keyword">return</span> send_data</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">send_magic_packet</span>(<span class="params">*macs, **kwargs</span>):</span><br><span class="line">    packets = []</span><br><span class="line">    ip = kwargs.pop(<span class="string">&#x27;ip_address&#x27;</span>, BROADCAST_IP)</span><br><span class="line">    port = kwargs.pop(<span class="string">&#x27;port&#x27;</span>, DEFAULT_PORT)</span><br><span class="line">    <span class="keyword">for</span> k <span class="keyword">in</span> kwargs:</span><br><span class="line">        <span class="keyword">raise</span> TypeError(<span class="string">&#x27;send_magic_packet() got an unexpected keyword &#x27;</span></span><br><span class="line">                        <span class="string">&#x27;argument &#123;!r&#125;&#x27;</span>.<span class="built_in">format</span>(k))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> mac <span class="keyword">in</span> macs:</span><br><span class="line">        packet = create_magic_packet(mac)</span><br><span class="line">        packets.append(packet)</span><br><span class="line"></span><br><span class="line">    sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)</span><br><span class="line">    sock.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, <span class="number">1</span>)</span><br><span class="line">    sock.connect((ip, port))</span><br><span class="line">    <span class="keyword">for</span> packet <span class="keyword">in</span> packets:</span><br><span class="line">        sock.send(packet)</span><br><span class="line">    sock.close()</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>(<span class="params">argv=<span class="literal">None</span></span>):</span><br><span class="line">    parser = argparse.ArgumentParser(</span><br><span class="line">        description=<span class="string">&#x27;Wake one or more computers using the wake on lan&#x27;</span></span><br><span class="line">                    <span class="string">&#x27; protocol.&#x27;</span>)</span><br><span class="line">    parser.add_argument(</span><br><span class="line">        <span class="string">&#x27;macs&#x27;</span>,</span><br><span class="line">        metavar=<span class="string">&#x27;mac address&#x27;</span>,</span><br><span class="line">        nargs=<span class="string">&#x27;+&#x27;</span>,</span><br><span class="line">        <span class="built_in">help</span>=<span class="string">&#x27;The mac addresses or of the computers you are trying to wake.&#x27;</span>)</span><br><span class="line">    parser.add_argument(</span><br><span class="line">        <span class="string">&#x27;-i&#x27;</span>,</span><br><span class="line">        metavar=<span class="string">&#x27;ip&#x27;</span>,</span><br><span class="line">        default=BROADCAST_IP,</span><br><span class="line">        <span class="built_in">help</span>=<span class="string">&#x27;The ip address of the host to send the magic packet to.&#x27;</span></span><br><span class="line">                <span class="string">&#x27; (default &#123;&#125;)&#x27;</span>.<span class="built_in">format</span>(BROADCAST_IP))</span><br><span class="line">    parser.add_argument(</span><br><span class="line">        <span class="string">&#x27;-p&#x27;</span>,</span><br><span class="line">        metavar=<span class="string">&#x27;port&#x27;</span>,</span><br><span class="line">        <span class="built_in">type</span>=<span class="built_in">int</span>,</span><br><span class="line">        default=DEFAULT_PORT,</span><br><span class="line">        <span class="built_in">help</span>=<span class="string">&#x27;The port of the host to send the magic packet to (default 9)&#x27;</span>)</span><br><span class="line">    args = parser.parse_args(argv)</span><br><span class="line">    send_magic_packet(*args.macs, ip_address=args.i, port=args.p)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:  <span class="comment"># pragma: nocover</span></span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<p>我们把上面的代码保存为 <code>*.py</code> 格式，例如 <code>wol.py</code> 然后通过 <em>ftp</em> 传输到树莓派上去。 然后在存有这个 <code>wol.py</code> 的文件夹下使用：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">python wol.py E0:D5:5E:88:88:88</span><br></pre></td></tr></table></figure>
+<p><code>E0:D5:5E:88:88:88</code> 就是你需要启动的 PC 的 MAC 地址了。 回车后发现没有任何提示，这是正常了，因为在 <em>Linux</em> 中，<em>没有消息就是好消息</em>。 如果你只需要启动一台 PC，而且你不想记录这么长的 MAC 地址（通常也不需要你记录，因为你可以在终端通过上下键来显示历史使用过的命令），你可以将你的 MAC 地址写入到代码中去，这样就可以一劳永逸了。 至此，你已经可以通过树莓派来启动你的 PC 了，快关闭你的电脑试一试吧。</p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ol>
+<li><p>事后，我用 <em>Wireshark</em> 抓了包，找到了这个 <em>Magic Packet</em>：</p>
+ <!-- ![6.png](https://i.loli.net/2018/07/19/5b507b12b69cb.png) -->
+<p> <img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/use-raspberry-with-frp-for-remote-boot/6.webp" alt="MagicPacket"></p>
+ <!-- <img data-src="/2018/07/19/use-raspberry-with-frp-for-remote-boot/6.webp" class="" title="MagicPacket"> -->
+<p> 发现和 <em>Wiki</em> 上说的一样：以 <code>6</code> 个 <code>FF</code> 开始，并且重复 <code>16</code> 遍 MAC 地址。</p>
+</li>
+<li><p>可以看到，我在树莓派上的 <em>frp</em> 配置文件中有一个 <em>MySQL</em> 的条目：</p>
+ <figure class="highlight ini"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="section">[mysql]</span></span><br><span class="line"><span class="attr">type</span> = tcp</span><br><span class="line"><span class="attr">local_port</span> = <span class="number">3306</span></span><br><span class="line"><span class="attr">remote_port</span> = <span class="number">3306</span></span><br></pre></td></tr></table></figure>
+<p> 当如此设置后，并且在树莓派上安装 <em>MySQL</em>，就可以在外网用类似的方法来访问内网的数据库了。 同样的，我们知道，网站（HTTP）是通过 <code>80</code> 端口来传输的，由此如果我们在树莓派上有部署网站的话，那么就可以通过 <em>frp</em> 进行类似的配置（这部分可能会有一些不同），我们就可以在外网访问该网站了。</p>
+</li>
+</ol>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>没有总结。</p>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div></div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="https://cdn.jsdelivr.net/gh/AemonCao/hexo-theme-next@master/source/images/wechatpay.jpg" alt="Aemon 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="https://cdn.jsdelivr.net/gh/AemonCao/hexo-theme-next@master/source/images/alipay.jpg" alt="Aemon 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/" rel="tag"><i class="fa fa-tag"></i> 树莓派</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2017/09/23/install-chrome-chromium-browser-on-raspberry/" rel="prev" title="在树莓派上安装 Chrome（Chromium） 浏览器">
+      <i class="fa fa-chevron-left"></i> 在树莓派上安装 Chrome（Chromium） 浏览器
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2018/09/20/archisteamfarm-guide-getting-started/" rel="next" title="ASF（ArchiSteamFarm） 挂卡指南-入门篇">
+      ASF（ArchiSteamFarm） 挂卡指南-入门篇 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B5%B7%E5%9B%A0"><span class="nav-number">1.</span> <span class="nav-text">起因</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%9D%E8%B7%AF"><span class="nav-number">2.</span> <span class="nav-text">思路</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BA%8B%E5%85%88%E5%87%86%E5%A4%87"><span class="nav-number">3.</span> <span class="nav-text">事先准备</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B7%E4%BD%93%E6%93%8D%E4%BD%9C"><span class="nav-number">4.</span> <span class="nav-text">具体操作</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B1%80%E5%9F%9F%E7%BD%91%E8%AE%BE%E5%A4%87%E9%85%8D%E7%BD%AE"><span class="nav-number">4.1.</span> <span class="nav-text">局域网设备配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PC-WOL-%E9%85%8D%E7%BD%AE"><span class="nav-number">4.2.</span> <span class="nav-text">PC WOL 配置</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%A6%E5%85%AC%E7%BD%91-IP-%E7%9A%84%E6%9C%8D%E5%8A%A1%E5%99%A8%E9%85%8D%E7%BD%AE"><span class="nav-number">4.3.</span> <span class="nav-text">带公网 IP 的服务器配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%A7%A3%E5%8E%8B"><span class="nav-number">4.3.1.</span> <span class="nav-text">解压</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BF%9B%E5%85%A5%E7%9B%AE%E5%BD%95"><span class="nav-number">4.3.2.</span> <span class="nav-text">进入目录</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%80%9A%E8%BF%87-rm-%E5%91%BD%E4%BB%A4%E6%9D%A5%E5%88%A0%E9%99%A4-frpc-%E5%92%8C-frpc-ini-%E4%B8%A4%E4%B8%AA%E6%96%87%E4%BB%B6"><span class="nav-number">4.3.3.</span> <span class="nav-text">通过 rm 命令来删除 frpc 和 frpc.ini 两个文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%89%93%E5%BC%80%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6-frps-ini"><span class="nav-number">4.3.4.</span> <span class="nav-text">打开配置文件 frps.ini</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9B%B4%E6%94%B9%E6%9C%8D%E5%8A%A1%E7%AB%AF%E9%85%8D%E7%BD%AE"><span class="nav-number">4.3.5.</span> <span class="nav-text">更改服务端配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8%E6%9C%8D%E5%8A%A1%E7%AB%AF%E6%9C%8D%E5%8A%A1"><span class="nav-number">4.3.6.</span> <span class="nav-text">启动服务端服务</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%A0%91%E8%8E%93%E6%B4%BE%E9%85%8D%E7%BD%AE"><span class="nav-number">4.4.</span> <span class="nav-text">树莓派配置</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%A0%E9%99%A4%E4%B8%8D%E5%BF%85%E8%A6%81%E7%9A%84%E6%96%87%E4%BB%B6"><span class="nav-number">4.4.1.</span> <span class="nav-text">删除不必要的文件</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%89%93%E5%BC%80%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6-frpc-ini"><span class="nav-number">4.4.2.</span> <span class="nav-text">打开配置文件 frpc.ini</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9B%B4%E6%94%B9%E5%AE%A2%E6%88%B7%E7%AB%AF%E9%85%8D%E7%BD%AE"><span class="nav-number">4.4.3.</span> <span class="nav-text">更改客户端配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%AF%E5%8A%A8%E5%AE%A2%E6%88%B7%E7%AB%AF%E6%9C%8D%E5%8A%A1"><span class="nav-number">4.4.4.</span> <span class="nav-text">启动客户端服务</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%B5%8B%E8%AF%95-frp"><span class="nav-number">4.5.</span> <span class="nav-text">测试 frp</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%9C%A8%E6%A0%91%E8%8E%93%E6%B4%BE%E4%B8%8A%E4%BD%BF%E7%94%A8-WOL-%E6%8E%A7%E5%88%B6-PC-%E5%BC%80%E6%9C%BA"><span class="nav-number">4.6.</span> <span class="nav-text">在树莓派上使用 WOL 控制 PC 开机</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%B6%E4%BB%96"><span class="nav-number">5.</span> <span class="nav-text">其他</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%80%BB%E7%BB%93"><span class="nav-number">6.</span> <span class="nav-text">总结</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Aemon"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Aemon</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">60</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">63</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/AemonCao" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;AemonCao" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:bot960528@gmail.com" title="E-Mail → mailto:bot960528@gmail.com" rel="noopener" target="_blank"><i class="far fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://t.me/Aemon_Cao" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;Aemon_Cao" rel="noopener" target="_blank"><i class="fab fa-telegram fa-fw"></i>Telegram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/rss2.xml" title="RSS → &#x2F;rss2.xml"><i class="fas fa-rss-square fa-fw"></i>RSS</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="Atom → &#x2F;atom.xml"><i class="fas fa-rss-square fa-fw"></i>Atom</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">浙ICP备20007726号-1 </a>
+  </div>
+
+<div class="copyright">
+  
+  &copy; 2017 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Aemon</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/velocity-animate@1/velocity.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/velocity-animate@1/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://www.aemon.top/2018/07/19/use-raspberry-with-frp-for-remote-boot/',]
+      });
+      });
+  </script>
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'dXrGvgAadbIcmIt5BIuqak9X-gzGzoHsz',
+      appKey     : 'BvQ660cw9YNVNjakRNfdsq1L',
+      placeholder: "评论支持 Markdown 样式。",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,737 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.0.0-rc1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-256x256-next.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.ico">
+  <link rel="mask-icon" href="/images/favicon-256x256-next.ico" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|Monaco:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.css">
+  <script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.aemon.top","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#ff69b4","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="这是一篇偏向流水账的文章，主要记一下平时使用 Linux 过程中的一些小技巧，或者某些命令的使用方法。 本文不定期更新，可以点击目录来跳转观看。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Linux 学习记录">
+<meta property="og:url" content="https://www.aemon.top/2020/03/11/Linux%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/index.html">
+<meta property="og:site_name" content="Aemon&#39;s Blog">
+<meta property="og:description" content="这是一篇偏向流水账的文章，主要记一下平时使用 Linux 过程中的一些小技巧，或者某些命令的使用方法。 本文不定期更新，可以点击目录来跳转观看。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/Linux%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E6%BA%90%E4%BB%A3%E7%A0%81%E7%AE%A1%E7%90%86%E6%8F%90%E4%BE%9B%E7%A8%8B%E5%BA%8F.png">
+<meta property="og:image" content="https://www.aemon.top/2020/03/11/Linux%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E6%BA%90%E4%BB%A3%E7%A0%81%E7%AE%A1%E7%90%86%E6%8F%90%E4%BE%9B%E7%A8%8B%E5%BA%8F.png">
+<meta property="article:published_time" content="2020-03-11T11:52:38.000Z">
+<meta property="article:modified_time" content="2023-06-29T07:04:53.458Z">
+<meta property="article:author" content="Aemon">
+<meta property="article:tag" content="Linux">
+<meta property="article:tag" content="Vim">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/Linux%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E6%BA%90%E4%BB%A3%E7%A0%81%E7%AE%A1%E7%90%86%E6%8F%90%E4%BE%9B%E7%A8%8B%E5%BA%8F.png">
+
+<link rel="canonical" href="https://www.aemon.top/2020/03/11/Linux%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>Linux 学习记录 | Aemon's Blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-160072313-1"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-160072313-1');
+      }
+    </script>
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?bba62503a88ce6563ac3ec7e0c6e491c";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Aemon's Blog" type="application/atom+xml">
+<link rel="alternate" href="/rss2.xml" title="Aemon's Blog" type="application/rss+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Aemon's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">切勿浅尝辄止</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fas fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="far fa-hand-spock fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fab fa-accessible-icon fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/AemonCao" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.aemon.top/2020/03/11/Linux%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Aemon">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Aemon's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Linux 学习记录
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2020-03-11 19:52:38" itemprop="dateCreated datePublished" datetime="2020-03-11T19:52:38+08:00">2020-03-11</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-06-29 15:04:53" itemprop="dateModified" datetime="2023-06-29T15:04:53+08:00">2023-06-29</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Linux/" itemprop="url" rel="index"><span itemprop="name">Linux</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2020/03/11/Linux%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2020/03/11/Linux%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>3k</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>这是一篇偏向流水账的文章，主要记一下平时使用 Linux 过程中的一些小技巧，或者某些命令的使用方法。</p>
+<p>本文不定期更新，可以点击目录来跳转观看。</p>
+<span id="more"></span>
+<h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><h3 id="tac"><a href="#tac" class="headerlink" title="tac"></a>tac</h3><blockquote>
+<p>用于将文件已行为单位的反序输出，即第一行最后显示，最后一行先显示。</p>
+</blockquote>
+<p>今天在写博客的<a href="/about">关于页</a>时，把原本记在微信收藏中的一些「骚话」贴过来了，原本记录的时候是按时间从旧到新，如果有新的，就往底部添加。</p>
+<p>但是觉得这样不太好，我希望比较新的「骚话」可以放在前面。</p>
+<p>第一时间是想用 <em>python</em> 或者 <em>JavaScript</em> 写个小脚本跑一下，但是有点懒，就去网上找了一下资料，被我找到了<a target="_blank" rel="noopener" href="https://www.itranslater.com/qa/details/2106725530790790144">这个</a>，排在第一的就是 <a target="_blank" rel="noopener" href="https://man.linuxde.net/tac">tac</a> 命令。</p>
+<p>tac 其实就是 cat 的 reverse，包含于 <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/zh-hans/GNU%E6%A0%B8%E5%BF%83%E5%B7%A5%E5%85%B7%E7%BB%84">coreutils</a>。</p>
+<p>用法和 cat 类似，预览：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tac abc.txt</span><br></pre></td></tr></table></figure>
+<p>输出到文件：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tac abc.txt &gt; cba.txt</span><br></pre></td></tr></table></figure>
+<p>目前想到的用法可能是用在日志文件上，可以将日志文件 reverse，方便查看最新的日志。</p>
+<h3 id="w"><a href="#w" class="headerlink" title="w"></a>w</h3><blockquote>
+<p>用于显示目前登入系统的用户信息。</p>
+</blockquote>
+<p>这个命令也不算是新学的，但是对输出的信息还只是一知半解，所以今天去查了一下，这边记录一下。</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">w</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> 22:33:11 up 4 days,  9:44,  1 user,  load average: 0.05, 0.03, 0.05</span><br><span class="line">USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT</span><br><span class="line">root     pts/1    192.168.1.88     22:22    7.00s  0.03s  0.00s w</span><br></pre></td></tr></table></figure>
+<p>第一行显示以下信息：当前时间（<code>22:33:11</code>），系统运行时间（<code>up 4 days,  9:44</code>），当前一共有多少用户登录（<code>1 user</code>），以及过去 1 分钟，5 分钟，15 分钟的系统平均负载（<code>load average: 0.05, 0.03, 0.05</code>）。</p>
+<p>第二行开始是一张表，标头依次为登录名（<code>USER</code>），登录后系统分配的终端号（<code>TTY</code>），远程主机名（<code>FROM</code>），何时登录（<code>LOGIN@</code>），空闲时间（<code>IDLE</code>），与该 TTY 终端连接的所由进程占用的时间，不包括过去的后台作业时间（<code>JCPU</code>），当前进程所占用的时间（<code>PCPU</code>），当前进程（<code>WHAT</code>）。</p>
+<p>参考：</p>
+<ul>
+<li><p><code>man w</code></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/w-command-in-linux-with-examples/">w command in Linux with Examples</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Jerry_1126/article/details/52088987">图解Linux命令之—w命令</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/zzxian/article/details/8070144">Linux的JCPU与PCPU</a></p>
+</li>
+</ul>
+<h3 id="grep"><a href="#grep" class="headerlink" title="grep"></a>grep</h3><blockquote>
+<p>在给定的文件中搜寻指定的字符串。</p>
+</blockquote>
+<p>这是一个很实用的命令，它可以在使文件搜索更上一层楼，往常的文件搜索关键字只能到文件名。而 <code>grep</code> 则可以<del>深入</del>到文件内部。</p>
+<p>用法是：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep &#x27;The quick brown fox jumps over a lazy dog.&#x27; a.txt</span><br></pre></td></tr></table></figure>
+<p>意思就是在 <em>a.txt</em> 文件中搜索 <code>The quick brown fox jumps over a lazy dog.</code> 字符串。</p>
+<p>它有几个常用的参数：</p>
+<ul>
+<li><p>-i</p>
+<p>忽略字符串大小写。</p>
+</li>
+<li><p>-r</p>
+<p>在当前文件夹下递归查询。</p>
+</li>
+<li><p>-n</p>
+<p>搜索结果显示行号。</p>
+</li>
+</ul>
+<p>参考：</p>
+<ul>
+<li><p><code>man grep</code></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://man.linuxde.net/grep">grep命令-文件过滤分割与合并</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/devwang_com/article/details/52587884">grep查找字符串所在文件和行号，find查找文件所在目录即路径</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/0056d671ea6d">27个常用的 Linux 命令</a></p>
+</li>
+</ul>
+<h3 id="mount"><a href="#mount" class="headerlink" title="mount"></a>mount</h3><blockquote>
+<p>mount命令用于加载文件系统到指定的加载点。</p>
+</blockquote>
+<p>在 Linux 中，外置的存储设备并不会自动挂载，所以需要 <code>mount</code> 命令来进行挂载。</p>
+<p>用法是：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mount /dev/mmcblk0p1 /home/pi/Mount/3TB</span><br></pre></td></tr></table></figure>
+<p>意思是将设备 <code>/dev/mmcblk0p1</code> 挂载到挂载点 <code>/home/pi/Mount/3TB</code>。这里要注意的是，如果挂载点不存在将会报错 <code>mount: mount point /home/pi/Mount/3TB does not exist</code>，所以要先手动创建挂载点目录；</p>
+<p>参考：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://man.linuxde.net/mount">mount命令-用于加载文件系统到指定的加载点</a></li>
+</ul>
+<h2 id="Vim"><a href="#Vim" class="headerlink" title="Vim"></a>Vim</h2><p>这里写一下 Vim 的学习历程，之前都是用 nano，但是不是所有的系统都预装的 nano。而且最近在使用 Vim 的时候，发现并没用想象中那么难用。更加下定了要学好 Vim 的决心。</p>
+<h3 id="退出-Vim"><a href="#退出-Vim" class="headerlink" title="退出 Vim"></a>退出 Vim</h3><p>在学习 Vim 前，首先要先学会如何退出 Vim，毕竟很多人直到老死也没有退出 Vim。</p>
+<blockquote>
+<p>How to exit the Vim editor?</p>
+</blockquote>
+<p>这个问题在 <a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/11828270/how-do-i-exit-the-vim-editor">Stack Overflow</a> 得到了 200多万次的查看（截至 2020-3-12 13:55:28）。</p>
+<p>其实排名第一的答案已经讲得很清楚了，这边就把答案拿过来放在这里了：</p>
+<p>点击 <kbd>ESC</kbd> 进入「正常模式」，然后输入 <kbd>:</kbd>，进入「命令模式」。此时屏幕的下方会出现一个冒号，你可以输入以下命令，并按 <kbd>ENTER</kbd> 执行：</p>
+<ul>
+<li><code>:q</code>：退出（<code>:quit</code> 的缩写）；</li>
+<li><code>:q!</code>：退出且不保存（<code>:quit!</code> 的缩写）；</li>
+<li><code>:wq</code>：保存并退出；</li>
+<li><code>:wq!</code>：保存并退出即使文件没有写入权限（强制保存退出）；</li>
+<li><code>:x</code>：保存并退出（类似 <code>:wq</code>，但是只有在有更改的情况下才保存）；</li>
+<li><code>:exit</code>：保存并退出（和 <code>:x</code> 相同）；</li>
+<li><code>:qa</code>：退出所有（<code>:quitall</code> 的缩写）；</li>
+<li><code>:cq</code>：退出且不保存（即便有错误）。</li>
+</ul>
+<p>你也可以直接在「正常模式」下输入 <code>ZZ</code> 来保存并退出 Vim（和 <code>:x</code> 相同），或者 <code>ZQ</code> 不保存并退出（和 <code>:q!</code> 相同），注意此处 <code>ZZ</code> 大写和小写是完全不同的。</p>
+<h3 id="查找"><a href="#查找" class="headerlink" title="查找"></a>查找</h3><p>在命令模式按下 <kbd>/</kbd>，之后跟上你需要搜索的字符串然后回车就可以进行搜索，如果要查找下一个只需要按下 <kbd>n</kbd>，上一个的话则是 <kbd>N</kbd>。</p>
+<h3 id="上下移动一行代码"><a href="#上下移动一行代码" class="headerlink" title="上下移动一行代码"></a>上下移动一行代码</h3><p>在 Visual Studio Code 中，上下移动代码比较简单，只要使用 <kbd>alt</kbd> + <kbd>↑</kbd> 或者 <kbd>alt</kbd> + <kbd>↓</kbd> 就可以移动了。</p>
+<p>而在 vim 中，首先你需要将光标移动到你想要操作的行，按下两次 <kbd>d</kbd>（剪切当前行），然后移动你的光标到你想要的位置，按下 <kbd>p</kbd>（在光标之后粘贴） 或 <kbd>P</kbd>（在光标之前粘贴），即可将一行代码移动过来了。</p>
+<p>参考：</p>
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://www.v2ex.com/t/49043">请问vim如何移动当前行向上或向下？不用选中</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/donahue_ldz/article/details/17139361">最全的vim快捷键</a></p>
+</li>
+</ul>
+<h3 id="Vim-配置"><a href="#Vim-配置" class="headerlink" title="Vim 配置"></a>Vim 配置</h3><p>Vim 不仅功能强大，而且它的可配置性也非常强，所以如果想要更好的使用这个工具，适合自己的配置是必不可少的。</p>
+<p>这边就把我目前的配置放在下面，大家可以进行参考（其实大多数都是从<a target="_blank" rel="noopener" href="https://www.ruanyifeng.com/blog/2018/09/vimrc.html">阮老师</a>这里抄来哒）：</p>
+<figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&quot; 显示行号</span></span><br><span class="line"><span class="keyword">set</span> <span class="keyword">number</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&quot; 显示相对行号</span></span><br><span class="line"><span class="keyword">set</span> relativenumber</span><br><span class="line"></span><br><span class="line"><span class="comment">&quot; 当前行高亮</span></span><br><span class="line"><span class="keyword">set</span> cursorline</span><br><span class="line"></span><br><span class="line"><span class="comment">&quot; 不与 Vi 兼容（采用 Vim 自己的操作命令）。</span></span><br><span class="line"><span class="keyword">set</span> nocompatible</span><br><span class="line"></span><br><span class="line"><span class="comment">&quot; 语法高亮</span></span><br><span class="line"><span class="keyword">syntax</span> <span class="keyword">on</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&quot; 显示当前是什么模式</span></span><br><span class="line"><span class="keyword">set</span> showmode</span><br><span class="line"></span><br><span class="line"><span class="comment">&quot; 使用utf-8编码</span></span><br><span class="line"><span class="keyword">set</span> encoding=utf-<span class="number">8</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&quot; 使用 256 色</span></span><br><span class="line"><span class="keyword">set</span> t_Co=<span class="number">256</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&quot; 垂直滚动时，光标距离底部的位置</span></span><br><span class="line"><span class="keyword">set</span> scrolloff=<span class="number">5</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&quot; 是否显示状态栏。0 表示不显示，1 表示只在多窗口时显示，2 表示显示。</span></span><br><span class="line"><span class="keyword">set</span> laststatus=<span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&quot; 在状态栏显示光标的当前位置（位于哪一行哪一列）。</span></span><br><span class="line"><span class="keyword">set</span>  ruler</span><br><span class="line"></span><br><span class="line"><span class="comment">&quot; 光标遇到圆括号、方括号、大括号时，自动高亮对应的另一个圆括号、方括号和大括号。</span></span><br><span class="line"><span class="keyword">set</span> showmatch</span><br><span class="line"></span><br><span class="line"><span class="comment">&quot; 打开英语单词的拼写检查。</span></span><br><span class="line"><span class="comment">&quot; set spell spelllang=en_us</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&quot; 保留撤销历史。</span></span><br><span class="line"><span class="keyword">set</span> <span class="built_in">undofile</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&quot; 出错时不要发出声音</span></span><br><span class="line"><span class="keyword">set</span> noerrorbells</span><br><span class="line"></span><br><span class="line"><span class="comment">&quot; 出错时，发出视觉提示</span></span><br><span class="line"><span class="keyword">set</span> visualbell</span><br><span class="line"></span><br><span class="line"><span class="comment">&quot; Vim 需要记住多少次历史操作。</span></span><br><span class="line"><span class="keyword">set</span> <span class="keyword">history</span>=<span class="number">1000</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&quot; 打开文件监视。如果在编辑过程中文件发生外部改变（比如被别的编辑器编辑了），就会发出提示。</span></span><br><span class="line"><span class="keyword">set</span> autoread</span><br><span class="line"></span><br><span class="line"><span class="comment">&quot; 如果行尾有多余的空格（包括 Tab 键），该配置将让这些空格显示成可见的小方块。</span></span><br><span class="line"><span class="keyword">set</span> listchars=<span class="keyword">tab</span>:»■,trail:■</span><br><span class="line"><span class="keyword">set</span> <span class="keyword">list</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&quot; 命令模式下，底部操作指令按下 Tab 键自动补全。第一次按下 Tab，会显示所有匹配的操作指令的清单；第二次按下 Tab，会依次选择各个指令。</span></span><br><span class="line"><span class="keyword">set</span> wildmenu</span><br><span class="line"><span class="keyword">set</span> wildmode=longes<span class="variable">t:list</span>,full</span><br><span class="line"></span><br><span class="line"><span class="comment">&quot; 一直显示标签页</span></span><br><span class="line"><span class="keyword">set</span> showtabline=<span class="number">2</span></span><br></pre></td></tr></table></figure>
+<p>我将自己常用的几款软件的配置都放到了 <a target="_blank" rel="noopener" href="https://github.com/AemonCao/mySettings">GitHub</a> 上，如果有需要可以看看。</p>
+<h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><h3 id="保存-GitHub-的用户名和密码"><a href="#保存-GitHub-的用户名和密码" class="headerlink" title="保存 GitHub 的用户名和密码"></a>保存 GitHub 的用户名和密码</h3><p>通过 ssh 远程服务器进行开发后，如果需要 <code>git push</code> 到 GitHub 的话，每次都需要重新输入用户名和密码，比较繁琐。</p>
+<p>可以使用以下命令来设置：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global credential.helper cache</span><br></pre></td></tr></table></figure>
+<p>或者：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global credential.helper store</span><br></pre></td></tr></table></figure>
+<p>使用 <code>cache</code> 选项的话，会将用户名密码保存在内存中，平且在15分钟后从内存中消失，使用 <code>store</code> 选项的话，则会将用户名密码保存在磁盘中，永远都不会消失，除非你更改了 GitHub 的密码，否则是永远都不用输入密码的。但是密码会以明文的方式存储在当前用户的根目录下的 <em>.git-credentials</em> 文件中，比较不安全。</p>
+<p>如果你是 Mac 系统，则可以使用第三个选项 <code>osxkeychain</code>，可以将凭证存储都<a target="_blank" rel="noopener" href="https://support.apple.com/zh-cn/HT204085">钥匙串</a>中。这样你的凭证虽然还是存储在磁盘中，但是它是被加密的，并且也是可以永久使用。</p>
+<p>参考：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E5%87%AD%E8%AF%81%E5%AD%98%E5%82%A8">Git 工具 - 凭证存储</a></li>
+</ul>
+<h3 id="Submodules"><a href="#Submodules" class="headerlink" title="Submodules"></a>Submodules</h3><p>在搭建 hexo 博客的时候，当使用了 next 的 themes 时，修改配置后，发现 commit 总是报错。总觉得哪里不对劲，在 GitHub 上查看项目的时候，next 文件夹只有一个名称，无法点击进入。</p>
+<p>如果一个项目中包含了另一个项目，我们就要使用 Git 的 Submodules 来进行管理。</p>
+<p>首先要在当前主项目上使用 <code>git submodule</code> 命令来添加一个子项目：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git submodule add https://github.com/AemonCao/hexo-theme-next.git themes/next</span><br></pre></td></tr></table></figure>
+<p>默认情况下，子项目会放在一个与仓库名同名的目录中，如果想放到其他地方，可以在命令最后添加一个路径。</p>
+<p>这时候，主项目的目录下会有一个新的 <em>.gitmodules</em> 的文件。</p>
+<p>这是用来保存项子项目的 URL 以及已经拉取的本地目录之间的映射：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[submodule &quot;themes/next&quot;]</span><br><span class="line">        path = themes/next</span><br><span class="line">        url = https://github.com/AemonCao/hexo-theme-next.git</span><br></pre></td></tr></table></figure>
+<p>当前只有一条记录，如果添加了多个子项目，则会有多条记录。</p>
+<p>之后在 Visual Studio Code 的「源代码管理页面」的「源代码管理提供程序」中就会出现两个项目，一个是主项目，一个就是刚刚添加的子项目。</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/Linux学习记录/源代码管理提供程序.png" alt="源代码管理提供程序"></p>
+<!-- <img data-src="/2020/03/11/Linux%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E6%BA%90%E4%BB%A3%E7%A0%81%E7%AE%A1%E7%90%86%E6%8F%90%E4%BE%9B%E7%A8%8B%E5%BA%8F.png" class="" title="源代码管理提供程序"> -->
+<p>现在你就可以更好得管理这两个项目了。</p>
+<p>此时在 GitHub 上，你的主项目中相应的<a target="_blank" rel="noopener" href="https://github.com/AemonCao/AemonCao.github.io/tree/source/themes">子项目文件夹</a>也会有一个指向原仓库的某一次提交的一个链接。</p>
+<p>参考：</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://git-scm.com/book/zh/v2/Git-%E5%B7%A5%E5%85%B7-%E5%AD%90%E6%A8%A1%E5%9D%97">Git 工具 - 子模块</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div></div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="https://cdn.jsdelivr.net/gh/AemonCao/hexo-theme-next@master/source/images/wechatpay.jpg" alt="Aemon 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="https://cdn.jsdelivr.net/gh/AemonCao/hexo-theme-next@master/source/images/alipay.jpg" alt="Aemon 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/Linux/" rel="tag"><i class="fa fa-tag"></i> Linux</a>
+              <a href="/tags/Vim/" rel="tag"><i class="fa fa-tag"></i> Vim</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/03/08/Remote-development-in-Visual-Studio-Code/" rel="prev" title="在 Visual Studio Code 中远程开发">
+      <i class="fa fa-chevron-left"></i> 在 Visual Studio Code 中远程开发
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/03/13/%E5%9C%A8%E5%BE%AE%E4%BF%A1%E4%B8%AD%E4%BD%BF%E7%94%A8ToDoList/" rel="next" title="在微信中使用 ToDoList">
+      在微信中使用 ToDoList <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%91%BD%E4%BB%A4"><span class="nav-number">1.</span> <span class="nav-text">命令</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#tac"><span class="nav-number">1.1.</span> <span class="nav-text">tac</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#w"><span class="nav-number">1.2.</span> <span class="nav-text">w</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#grep"><span class="nav-number">1.3.</span> <span class="nav-text">grep</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#mount"><span class="nav-number">1.4.</span> <span class="nav-text">mount</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vim"><span class="nav-number">2.</span> <span class="nav-text">Vim</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%80%80%E5%87%BA-Vim"><span class="nav-number">2.1.</span> <span class="nav-text">退出 Vim</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9F%A5%E6%89%BE"><span class="nav-number">2.2.</span> <span class="nav-text">查找</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%8A%E4%B8%8B%E7%A7%BB%E5%8A%A8%E4%B8%80%E8%A1%8C%E4%BB%A3%E7%A0%81"><span class="nav-number">2.3.</span> <span class="nav-text">上下移动一行代码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Vim-%E9%85%8D%E7%BD%AE"><span class="nav-number">2.4.</span> <span class="nav-text">Vim 配置</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Git"><span class="nav-number">3.</span> <span class="nav-text">Git</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BF%9D%E5%AD%98-GitHub-%E7%9A%84%E7%94%A8%E6%88%B7%E5%90%8D%E5%92%8C%E5%AF%86%E7%A0%81"><span class="nav-number">3.1.</span> <span class="nav-text">保存 GitHub 的用户名和密码</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Submodules"><span class="nav-number">3.2.</span> <span class="nav-text">Submodules</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Aemon"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Aemon</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">60</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">63</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/AemonCao" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;AemonCao" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:bot960528@gmail.com" title="E-Mail → mailto:bot960528@gmail.com" rel="noopener" target="_blank"><i class="far fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://t.me/Aemon_Cao" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;Aemon_Cao" rel="noopener" target="_blank"><i class="fab fa-telegram fa-fw"></i>Telegram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/rss2.xml" title="RSS → &#x2F;rss2.xml"><i class="fas fa-rss-square fa-fw"></i>RSS</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="Atom → &#x2F;atom.xml"><i class="fas fa-rss-square fa-fw"></i>Atom</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">浙ICP备20007726号-1 </a>
+  </div>
+
+<div class="copyright">
+  
+  &copy; 2017 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Aemon</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/velocity-animate@1/velocity.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/velocity-animate@1/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://www.aemon.top/2020/03/11/Linux%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/',]
+      });
+      });
+  </script>
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'dXrGvgAadbIcmIt5BIuqak9X-gzGzoHsz',
+      appKey     : 'BvQ660cw9YNVNjakRNfdsq1L',
+      placeholder: "评论支持 Markdown 样式。",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

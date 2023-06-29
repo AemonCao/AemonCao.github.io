@@ -1,0 +1,752 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.0.0-rc1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-256x256-next.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.ico">
+  <link rel="mask-icon" href="/images/favicon-256x256-next.ico" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|Monaco:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.css">
+  <script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.aemon.top","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#ff69b4","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="只要种子不死，那些不存在的音乐图书和视频就还活在互联网上，没有任何人可以毁掉。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="榨干这台 NAS 第 002 话-下载工具">
+<meta property="og:url" content="https://www.aemon.top/2022/08/09/%E6%A6%A8%E5%B9%B2%E8%BF%99%E5%8F%B0NAS%E7%AC%AC002%E8%AF%9D-%E4%B8%8B%E8%BD%BD%E5%B7%A5%E5%85%B7/index.html">
+<meta property="og:site_name" content="Aemon&#39;s Blog">
+<meta property="og:description" content="只要种子不死，那些不存在的音乐图书和视频就还活在互联网上，没有任何人可以毁掉。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/%E6%A6%A8%E5%B9%B2%E8%BF%99%E5%8F%B0NAS%E7%AC%AC002%E8%AF%9D-%E4%B8%8B%E8%BD%BD%E5%B7%A5%E5%85%B7/qBittorrent.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/%E6%A6%A8%E5%B9%B2%E8%BF%99%E5%8F%B0NAS%E7%AC%AC002%E8%AF%9D-%E4%B8%8B%E8%BD%BD%E5%B7%A5%E5%85%B7/qBittorrentConfig.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/%E6%A6%A8%E5%B9%B2%E8%BF%99%E5%8F%B0NAS%E7%AC%AC002%E8%AF%9D-%E4%B8%8B%E8%BD%BD%E5%B7%A5%E5%85%B7/qBittorrentConfig2.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/%E6%A6%A8%E5%B9%B2%E8%BF%99%E5%8F%B0NAS%E7%AC%AC002%E8%AF%9D-%E4%B8%8B%E8%BD%BD%E5%B7%A5%E5%85%B7/qBittorrent%E6%96%B0%E5%BB%BA%E5%88%86%E7%B1%BB.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/%E6%A6%A8%E5%B9%B2%E8%BF%99%E5%8F%B0NAS%E7%AC%AC002%E8%AF%9D-%E4%B8%8B%E8%BD%BD%E5%B7%A5%E5%85%B7/Aria2.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/%E6%A6%A8%E5%B9%B2%E8%BF%99%E5%8F%B0NAS%E7%AC%AC002%E8%AF%9D-%E4%B8%8B%E8%BD%BD%E5%B7%A5%E5%85%B7/Aria2Config.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/%E6%A6%A8%E5%B9%B2%E8%BF%99%E5%8F%B0NAS%E7%AC%AC002%E8%AF%9D-%E4%B8%8B%E8%BD%BD%E5%B7%A5%E5%85%B7/AriaNg.png">
+<meta property="article:published_time" content="2022-08-09T14:03:32.000Z">
+<meta property="article:modified_time" content="2023-06-29T07:04:54.438Z">
+<meta property="article:author" content="Aemon">
+<meta property="article:tag" content="Docker">
+<meta property="article:tag" content="NAS">
+<meta property="article:tag" content="unRAID">
+<meta property="article:tag" content="qBittorrent">
+<meta property="article:tag" content="Aria2">
+<meta property="article:tag" content="PT">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/%E6%A6%A8%E5%B9%B2%E8%BF%99%E5%8F%B0NAS%E7%AC%AC002%E8%AF%9D-%E4%B8%8B%E8%BD%BD%E5%B7%A5%E5%85%B7/qBittorrent.png">
+
+<link rel="canonical" href="https://www.aemon.top/2022/08/09/%E6%A6%A8%E5%B9%B2%E8%BF%99%E5%8F%B0NAS%E7%AC%AC002%E8%AF%9D-%E4%B8%8B%E8%BD%BD%E5%B7%A5%E5%85%B7/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>榨干这台 NAS 第 002 话-下载工具 | Aemon's Blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-160072313-1"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-160072313-1');
+      }
+    </script>
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?bba62503a88ce6563ac3ec7e0c6e491c";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Aemon's Blog" type="application/atom+xml">
+<link rel="alternate" href="/rss2.xml" title="Aemon's Blog" type="application/rss+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Aemon's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">切勿浅尝辄止</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fas fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="far fa-hand-spock fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fab fa-accessible-icon fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/AemonCao" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.aemon.top/2022/08/09/%E6%A6%A8%E5%B9%B2%E8%BF%99%E5%8F%B0NAS%E7%AC%AC002%E8%AF%9D-%E4%B8%8B%E8%BD%BD%E5%B7%A5%E5%85%B7/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Aemon">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Aemon's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          榨干这台 NAS 第 002 话-下载工具
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2022-08-09 22:03:32" itemprop="dateCreated datePublished" datetime="2022-08-09T22:03:32+08:00">2022-08-09</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-06-29 15:04:54" itemprop="dateModified" datetime="2023-06-29T15:04:54+08:00">2023-06-29</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%A6%A8%E5%B9%B2%E8%BF%99%E5%8F%B0-NAS/" itemprop="url" rel="index"><span itemprop="name">榨干这台 NAS</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2022/08/09/%E6%A6%A8%E5%B9%B2%E8%BF%99%E5%8F%B0NAS%E7%AC%AC002%E8%AF%9D-%E4%B8%8B%E8%BD%BD%E5%B7%A5%E5%85%B7/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2022/08/09/%E6%A6%A8%E5%B9%B2%E8%BF%99%E5%8F%B0NAS%E7%AC%AC002%E8%AF%9D-%E4%B8%8B%E8%BD%BD%E5%B7%A5%E5%85%B7/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4.3k</span>
+            </span>
+            <div class="post-description">只要种子不死，那些不存在的音乐图书和视频就还活在互联网上，没有任何人可以毁掉。</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>这是一系列关于 NAS 的文章，系列的名称你们也看到了：「<strong>榨干这台 NAS</strong>」。我将尽可能详细的介绍 NAS 相关的知识，帮助你最大限度的发挥你的手中 NAS 的威力！</p>
+<span id="more"></span>
+<p>刚打完篮球回到家，洗完了澡，喝了点小酒，看到有朋友在前两篇文章中催更，那就趁着酒意再写一篇。</p>
+<p>之前我们介绍了目录结构和文件浏览工具，那么，文件从哪儿来呢？最常用的办法就是下载。仔细想想，我们在 PC 上是怎么下载文件的？可以通过浏览器直接下载，也可以通过各种下载软件进行下载。那么在 NAS 上应该使用什么工具呢？接下来我将介绍一下在 NAS 上常用的下载工具。</p>
+<p>PS：喝醉了，如果写错了什么还请见谅。</p>
+<h3 id="qBittorrent"><a href="#qBittorrent" class="headerlink" title="qBittorrent"></a>qBittorrent</h3><p>说起 BT 下载，国内的大家应该第一时间会想到迅雷吧，但是迅雷并不是一个好的 BT 下载软件。一般使用的就是 <strong>qBittorrent</strong> 这款软件。</p>
+<h4 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h4><p>还是老样子，前往「应用『Apps』」页面搜索「qBittorrent」，选择下图所示的应用：</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/榨干这台NAS第002话-下载工具/qBittorrent.png" alt="qBittorrent.png"></p>
+<p>注意不要选错。</p>
+<p>点击「安装『Install』」。</p>
+<h4 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h4><p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/榨干这台NAS第002话-下载工具/qBittorrentConfig.png" alt="qBittorrentConfig.png"></p>
+<p>可以看到这个容器需要配置为三个端口，一个路径和一个环境变量。</p>
+<ol>
+<li><p>将宿主机的 <code>8080</code> 端口映射到容器的 <code>8080</code> 端口，此端口为该容器的 WebUI 端口，之后可以通过此端口来访问 WebUI 界面（注意，请确定宿主机的 <code>8222</code> 端口无其他程序占用，不然将无法启动容器，如果被占用，可以自行更换端口）；</p>
+</li>
+<li><p>将宿主机的 <code>6881</code> 端口映射到容器的 <code>6881</code> 端口，此端口为 <strong>TCP</strong> 连接的端口，<code>6881</code> 是用于传入连接的默认端口；</p>
+</li>
+<li><p>将宿主机的 <code>6881</code> 端口映射到容器的 <code>6881</code> 端口，此端口为 <strong>UDP</strong> 连接的端口，<code>6881</code> 是用于传入连接的默认端口；</p>
+</li>
+<li><p>将宿主机的 <code>/mnt/user/UNRAID/downloads/qBittorrentDownloads</code> 路径映射至容器的 <code>/downloads</code> 路径，此路径为 <strong>qBittorrent</strong> 存放下载文件的路径；</p>
+</li>
+<li><p>设置 <code>WEBUI_PORT</code> 环境变量，值为 <code>8080</code>，这个环境变量的作用为设置容器内 WebUI 的端口，不用去改变它就行，如果这里改变了，那么在第一个端口映射配置时，也要把容器内端口改为改变后的值，否则启动容器后将无法访问 WebUI 页面。</p>
+</li>
+</ol>
+<p>上方都是除了下载路径外都是默认配置，我们需要在默认配置的基础上进行修改：</p>
+<ol>
+<li><p>添加两个新的端口映射，端口值可以大一些，我使用的是：<code>41638</code>，一个为 TCP 端口，一个为 UDP 端口，完成后可以移除上方两个默认的 <code>6881</code> 端口映射；</p>
+</li>
+<li><p>点开下方的「显示更多设置」，修改 Appdata 路径为 <code>/mnt/user/appdata/qBittorrent</code>，这是 <strong>qBittorrent</strong> 所以配置信息所存放的路径；</p>
+</li>
+<li><p>还是在「显示更多设置」中，修改 <code>PUID</code> 环境变量的值为 <code>0</code>，修改 <code>PGID</code> 环境变量的值为 <code>0</code>，这样就可以以 root 用户来启动这个容器了；</p>
+</li>
+<li><p>添加 <code>UMASK</code> 环境变量，值为 <code>000</code>。</p>
+</li>
+</ol>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/榨干这台NAS第002话-下载工具/qBittorrentConfig2.png" alt="qBittorrentConfig2.png"></p>
+<p>确认无误后，点击「应用」，即可启动容器。</p>
+<p>附上 unRAID 下的启动命令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/local/emhttp/plugins/dynamix.docker.manager/scripts/docker run -d --name=&#x27;qBittorrent&#x27; --net=&#x27;bridge&#x27; -e TZ=&quot;Asia/Shanghai&quot; -e HOST_OS=&quot;Unraid&quot; -e HOST_HOSTNAME=&quot;Tower&quot; -e HOST_CONTAINERNAME=&quot;qBittorrent&quot; -e &#x27;WEBUI_PORT&#x27;=&#x27;8080&#x27; -e &#x27;PUID&#x27;=&#x27;0&#x27; -e &#x27;PGID&#x27;=&#x27;0&#x27; -e &#x27;UMASK&#x27;=&#x27;000&#x27; -l net.unraid.docker.managed=dockerman -l net.unraid.docker.webui=&#x27;http://[IP]:[PORT:8080]&#x27; -l net.unraid.docker.icon=&#x27;https://raw.githubusercontent.com/linuxserver/docker-templates/master/linuxserver.io/img/qbittorrent-logo.png&#x27; -p &#x27;8080:8080/tcp&#x27; -p &#x27;41638:41638/tcp&#x27; -p &#x27;41638:41638/udp&#x27; -v &#x27;/mnt/user/UNRAID/downloads/qBittorrentDownloads&#x27;:&#x27;/downloads&#x27;:&#x27;rw&#x27; -v &#x27;/mnt/user/appdata/qbittorrent&#x27;:&#x27;/config&#x27;:&#x27;rw&#x27; &#x27;linuxserver/qbittorrent&#x27;</span><br></pre></td></tr></table></figure>
+<h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><p>打开浏览器，访问 <a target="_blank" rel="noopener" href="http://192.168.1.223:8080">http://192.168.1.223:8080</a>（注意，如果你在上述配置中修改过端口，请访问相应的端口，而 IP 地址则是你的 NAS 的 IP 地址），即可前往 qBittorrent 的操作页面。</p>
+<p>默认的用户名为：<code>admin</code>，默认为密码为：<code>adminadmin</code>。</p>
+<h5 id="修改密码"><a href="#修改密码" class="headerlink" title="修改密码"></a>修改密码</h5><p>登录后的第一件事，请前往「工具」-「选项」-「Web UI」-「验证」修改你的密码。</p>
+<h5 id="一些使其更好使用的配置"><a href="#一些使其更好使用的配置" class="headerlink" title="一些使其更好使用的配置"></a>一些使其更好使用的配置</h5><ol>
+<li><p>「工具」-「选项」-「Web UI」-「语言」修改语言为简体中文；</p>
+</li>
+<li><p>「工具」-「选项」-「连接」-「监听端口」将其设置为之前启动容器时所配置传入连接端口，即刚刚设置的 <code>41638</code>，<strong>强烈建议选择随机端口</strong>，而不是和我的一样，这么做的原因是，首先一部分 PT 站会禁用默认的<code>6881</code> ~ <code>6999</code> 端口。所以尽量不要选择这些范围内的端口；其次某些运营商会对 BT 流量进行封禁，如果很多人使用相同的端口的话，则会增大被运营商发现 的概率；</p>
+</li>
+<li><p>「工具」-「选项」-「下载」勾选「为不完整的文件添加扩展名 .!qB」,这样做可以方便之后设置硬链接；</p>
+</li>
+<li><p>「工具」-「选项」-「高级」-「libtorrent 相关」将「校验时内存使用扩增量」修改大一些，我设置成了 <code>512</code>，这样可以提高校验速度，提升之后辅种效率；</p>
+</li>
+<li><p>「工具」-「选项」-「BitTorrent」勾选「自动添加以下 tracker 到新的 torrent」，并在下方输入框中填入<a href="&#109;&#97;&#x69;&#x6c;&#116;&#x6f;&#58;&#x68;&#x74;&#x74;&#x70;&#115;&#x3a;&#47;&#x2f;&#99;&#100;&#x6e;&#x2e;&#x6a;&#x73;&#x64;&#101;&#x6c;&#x69;&#x76;&#114;&#x2e;&#110;&#x65;&#116;&#47;&#x67;&#104;&#47;&#x6e;&#103;&#x6f;&#115;&#x61;&#110;&#x67;&#47;&#x74;&#x72;&#x61;&#x63;&#107;&#101;&#114;&#x73;&#108;&#x69;&#x73;&#x74;&#x40;&#x6d;&#x61;&#115;&#116;&#x65;&#114;&#x2f;&#x74;&#114;&#97;&#99;&#107;&#x65;&#114;&#x73;&#95;&#x61;&#x6c;&#x6c;&#46;&#116;&#x78;&#116;">&#x68;&#x74;&#x74;&#x70;&#115;&#x3a;&#47;&#x2f;&#99;&#100;&#x6e;&#x2e;&#x6a;&#x73;&#x64;&#101;&#x6c;&#x69;&#x76;&#114;&#x2e;&#110;&#x65;&#116;&#47;&#x67;&#104;&#47;&#x6e;&#103;&#x6f;&#115;&#x61;&#110;&#x67;&#47;&#x74;&#x72;&#x61;&#x63;&#107;&#101;&#114;&#x73;&#108;&#x69;&#x73;&#x74;&#x40;&#x6d;&#x61;&#115;&#116;&#x65;&#114;&#x2f;&#x74;&#114;&#97;&#99;&#107;&#x65;&#114;&#x73;&#95;&#x61;&#x6c;&#x6c;&#46;&#116;&#x78;&#116;</a>中的内容，此处设置的作用的是为了获得更多的供种者，此操作能有效提高下载速度，建议每隔一段时间就更新一下 tracker 列表，更多 tracker 列表可以查看 <a target="_blank" rel="noopener" href="https://github.com/ngosang/trackerslist">https://github.com/ngosang/trackerslist</a> 和 <a target="_blank" rel="noopener" href="https://github.com/XIU2/TrackersListCollection">https://github.com/XIU2/TrackersListCollection</a>。</p>
+</li>
+<li><p>「工具」-「选项」-「BitTorrent」取消勾选「Torrent 排队」,这一步是为了多任务同时下载与上传，BT 的本质就是我为人人，人人为我，你的下载即是别人的上传，所以请最好不要限制你的上传，在不影响使用的情况下提供最多的上传；</p>
+</li>
+<li><p>更多详细配置可以查看 <a target="_blank" rel="noopener" href="https://www.jianshu.com/p/ac70172767ed">https://www.jianshu.com/p/ac70172767ed</a>，此文讲得十分详细。</p>
+</li>
+</ol>
+<h5 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h5><p>qBittorrent 与其他下载工具相比的优势之一在于他有强大的分类和标签机制。在左侧的边栏可以看到分类和便签管理模块。</p>
+<p>我们可以通过鼠标右键任意分类来添加新的分类：</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/榨干这台NAS第002话-下载工具/qBittorrent新建分类.png" alt="qBittorrent新建分类.png"></p>
+<p>然后填入分类名称和保存路径，可以为不同的分类设置不同的路径，例如 Moive 分类，保存路径 <code>/downloads/Media/Moive</code>、TV series 分类，保存路径 <code>/downloads/Media/TV series</code>，大家可以按照我在<a href="/2022/08/08/%E6%A6%A8%E5%B9%B2%E8%BF%99%E5%8F%B0NAS%E7%AC%AC000%E8%AF%9D-%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84/" title="榨干这台 NAS 第 000 话-目录结构">第000话</a>中的 Media 目录配置来建立相关的分类。这会为之后的硬链接提供很大的方便。</p>
+<p>最后在新建任务时候，就能选择已经设定的分类了。当然对于已有的任务对一个或多个任务右键即可在「分类」栏中选择相应的分类。</p>
+<h5 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h5><p>其实有分类就已经完全足够了，标签和分类区别是：</p>
+<ol>
+<li><p>标签无法设置保存路径；</p>
+</li>
+<li><p>一个任务可以拥有多个标签，但是只能拥有一个分类。</p>
+</li>
+</ol>
+<p>大家可以根据实际需求来使用。例如有些任务的名称名字比较奇怪，不好第一时间辨别，就可以使用标签来标记一下。又或者可以按照电影或电视剧的国家，上映年份来设置标签。</p>
+<h4 id="Linux-下的安装"><a href="#Linux-下的安装" class="headerlink" title="Linux 下的安装"></a>Linux 下的安装</h4><p>以下操作均建立在系统已经安装 Docker 的基础之上。</p>
+<ol>
+<li><p>拉取 Docker 镜像</p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull linuxserver/qbittorrent:latest</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>启动容器</p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">docker run \</span><br><span class="line">    -v &#x27;/mnt/user/UNRAID/downloads/qBittorrentDownloads&#x27;:&#x27;/downloads&#x27; \</span><br><span class="line">    -v &#x27;/mnt/user/appdata/qbittorrent&#x27;:&#x27;/config&#x27; \</span><br><span class="line">    -p &#x27;8080:8080/tcp&#x27; \</span><br><span class="line">    -p &#x27;41638:41638/tcp&#x27; \</span><br><span class="line">    -p &#x27;41638:41638/udp&#x27; \</span><br><span class="line">    -e &#x27;WEBUI_PORT&#x27;=&#x27;8080&#x27; \</span><br><span class="line">    -e &#x27;PUID&#x27;=&#x27;0&#x27; \</span><br><span class="line">    -e &#x27;PGID&#x27;=&#x27;0&#x27; \</span><br><span class="line">    -e &#x27;UMASK&#x27;=&#x27;000&#x27; \</span><br><span class="line">    linuxserver/qbittorrent:latest</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="Aria2"><a href="#Aria2" class="headerlink" title="Aria2"></a>Aria2</h3><p>除了专门用于 BT 下载的软件之外，还要推荐的是 <strong>Aria2</strong> 这个工具。它被认为从该软件的下载效率和可用性来看是 Linux 下最好用的下载管理器之一。Aria2 不仅支持 BitTorrent，还能够从各种来源多路检索所请求的文件。包括 HTTP，HTTPS，FTP 和 BitTorrent 协议。</p>
+<h4 id="搜索-1"><a href="#搜索-1" class="headerlink" title="搜索"></a>搜索</h4><p>前往「应用『Apps』」页面搜索「aria2」，选择下图所示的应用：</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/榨干这台NAS第002话-下载工具/Aria2.png" alt="Aria2.png"></p>
+<p>点击「安装『Install』」。</p>
+<h4 id="配置-1"><a href="#配置-1" class="headerlink" title="配置"></a>配置</h4><p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/榨干这台NAS第002话-下载工具/Aria2Config.png" alt="Aria2Config.png"></p>
+<p><strong>Aira2</strong> 的配置看起来比较多，但是大多数使用默认配置即可，我讲一下重点的几个配置：</p>
+<ol>
+<li><p><code>RPC_SECRET</code> 环境变量，这个值就是之后对 <strong>Aira2</strong> 进行管理的密码，设置一个不那么简单的密码即可；</p>
+</li>
+<li><p>将宿主机的 <code>/mnt/user/UNRAID/downloads/aria2Download</code> 路径映射至容器的 <code>/downloads</code> 路径，此路径为 <strong>Aria2</strong> 存放下载文件的路径；</p>
+</li>
+<li><p>将宿主机的 <code>/mnt/user/appdata/aria2-pro</code> 路径映射至容器的 <code>/config</code> 路径，此路径为 <strong>Aria2</strong> 存放下载文件的路径；</p>
+</li>
+<li><p><code>RPC_PORT</code> 是对 <strong>Aira2</strong> 进行管理的端口，默认即可；</p>
+</li>
+<li><p>余下几个端口使用默认配置即可，这里的 <code>Listen Port</code> 的作用和上方 <strong>qBittorrent</strong> 的传入连接的端口是相同的。但是在有 <strong>qBittorrent</strong> 的情况一般就不用 <strong>Aria2</strong> 来进行 BT 下载了，所以这边也就没有必要改动了，使用默认就可以；</p>
+</li>
+</ol>
+<p>确认无误后，点击「应用」，即可启动容器。</p>
+<p>附上 unRAID 下的启动命令：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">/usr/local/emhttp/plugins/dynamix.docker.manager/scripts/docker run -d --name=&#x27;Aria2-Pro&#x27; --net=&#x27;bridge&#x27; -e TZ=&quot;Asia/Shanghai&quot; -e HOST_OS=&quot;Unraid&quot; -e HOST_HOSTNAME=&quot;Tower&quot; -e HOST_CONTAINERNAME=&quot;Aria2-Pro&quot; -e &#x27;RPC_SECRET&#x27;=&#x27;这里填写你的密码&#x27; -e &#x27;IPV6_MODE&#x27;=&#x27;true&#x27; -e &#x27;RPC_PORT&#x27;=&#x27;6800&#x27; -e &#x27;LISTEN_PORT&#x27;=&#x27;6888&#x27; -l net.unraid.docker.managed=dockerman -l net.unraid.docker.webui=&#x27;http://ariang.mayswind.net/latest/&#x27; -l net.unraid.docker.icon=&#x27;https://raw.githubusercontent.com/justin-himself/unraid-templates/master/icons/AriaNg.ico&#x27; -p &#x27;6800:6800/tcp&#x27; -p &#x27;6888:6888/tcp&#x27; -p &#x27;6888:6888/udp&#x27; -v &#x27;/mnt/user/UNRAID/downloads/aria2Download&#x27;:&#x27;/downloads&#x27;:&#x27;rw&#x27; -v &#x27;/mnt/user/appdata/aria2-pro&#x27;:&#x27;/config&#x27;:&#x27;rw&#x27; &#x27;p3terx/aria2-pro&#x27;</span><br></pre></td></tr></table></figure>
+<h4 id="使用-1"><a href="#使用-1" class="headerlink" title="使用"></a>使用</h4><p>与 <strong>qBittorrent</strong> 不同，<strong>Aria2</strong> 容器本身没有提供 WebUI。我们需要通过 <a target="_blank" rel="noopener" href="http://ariang.mayswind.net/">AriaNg</a> 这一工具来对 <strong>Aria2</strong> 进行管理。</p>
+<ol>
+<li><p>打开浏览器，访问 <a target="_blank" rel="noopener" href="http://ariang.mayswind.net/latest">http://ariang.mayswind.net/latest</a>；</p>
+</li>
+<li><p>点击左侧边栏的「AriaNg设置」；</p>
+</li>
+<li><p>选择第二个标签页「RPC（ariang.mayswind.net）」;</p>
+</li>
+<li><p>输入 <strong>Aria2 RPC 别名</strong>，用于区分多个 RPC，例如「家中 NAS」、「公司服务器」；</p>
+</li>
+<li><p>输入 <strong>Aria2 RPC 地址</strong>，将默认的 <ariang.mayswind.net>，修改为你的 NAS 的 IP 地址即可，端口号则为默认的 <code>6800</code>，如果你在配置容器时修改过 <code>RPC_PORT</code>，那么这里需要改为修改后的端口号；</p>
+</li>
+<li><p><strong>Aria2 RPC 协议</strong>选择 「Http」；</p>
+</li>
+<li><p><strong>Aria2 RPC Http 请求方法</strong>选择「POST」；</p>
+</li>
+<li><p><strong>Aria2 RPC 密钥</strong>则为容器配置时填写的 <code>RPC_SECRET</code> 的值；</p>
+</li>
+<li><p>确认无误后，重新刷新本页面即可。</p>
+</li>
+</ol>
+<p>如果配置的没有问题，那么在左侧边栏的 <strong>Aria2 状态</strong>处则会显示绿色的已连接，则代表已经成功连接到你的 <strong>Aria2</strong> 服务。那么你就可以此页面添加下载任务并下载了。</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/榨干这台NAS第002话-下载工具/AriaNg.png" alt="AriaNg.png"></p>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ol>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/qbittorrent/qBittorrent">https://github.com/qbittorrent/qBittorrent</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/XIU2/TrackersListCollection">https://github.com/XIU2/TrackersListCollection</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/ngosang/trackerslist">https://github.com/ngosang/trackerslist</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.jianshu.com/p/ac70172767ed">https://www.jianshu.com/p/ac70172767ed</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/Aria2">https://zh.wikipedia.org/wiki/Aria2</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/aria2/aria2">https://github.com/aria2/aria2</a></p>
+</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div></div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="https://cdn.jsdelivr.net/gh/AemonCao/hexo-theme-next@master/source/images/wechatpay.jpg" alt="Aemon 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="https://cdn.jsdelivr.net/gh/AemonCao/hexo-theme-next@master/source/images/alipay.jpg" alt="Aemon 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/Docker/" rel="tag"><i class="fa fa-tag"></i> Docker</a>
+              <a href="/tags/NAS/" rel="tag"><i class="fa fa-tag"></i> NAS</a>
+              <a href="/tags/unRAID/" rel="tag"><i class="fa fa-tag"></i> unRAID</a>
+              <a href="/tags/qBittorrent/" rel="tag"><i class="fa fa-tag"></i> qBittorrent</a>
+              <a href="/tags/Aria2/" rel="tag"><i class="fa fa-tag"></i> Aria2</a>
+              <a href="/tags/PT/" rel="tag"><i class="fa fa-tag"></i> PT</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2022/08/08/%E6%A6%A8%E5%B9%B2%E8%BF%99%E5%8F%B0NAS%E7%AC%AC001%E8%AF%9D-%E6%96%87%E4%BB%B6%E6%B5%8F%E8%A7%88%E5%99%A8%EF%BC%88FileBrowser%EF%BC%89/" rel="prev" title="榨干这台 NAS 第 001 话-文件浏览器（File Browser）">
+      <i class="fa fa-chevron-left"></i> 榨干这台 NAS 第 001 话-文件浏览器（File Browser）
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2022/08/24/%E6%A6%A8%E5%B9%B2%E8%BF%99%E5%8F%B0NAS%E7%AC%AC003%E8%AF%9D-%E7%A1%AC%E9%93%BE%E6%8E%A5/" rel="next" title="榨干这台 NAS 第 003 话-硬链接">
+      榨干这台 NAS 第 003 话-硬链接 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#qBittorrent"><span class="nav-number">1.</span> <span class="nav-text">qBittorrent</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%90%9C%E7%B4%A2"><span class="nav-number">1.1.</span> <span class="nav-text">搜索</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE"><span class="nav-number">1.2.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8"><span class="nav-number">1.3.</span> <span class="nav-text">使用</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%BF%AE%E6%94%B9%E5%AF%86%E7%A0%81"><span class="nav-number">1.3.1.</span> <span class="nav-text">修改密码</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E4%B8%80%E4%BA%9B%E4%BD%BF%E5%85%B6%E6%9B%B4%E5%A5%BD%E4%BD%BF%E7%94%A8%E7%9A%84%E9%85%8D%E7%BD%AE"><span class="nav-number">1.3.2.</span> <span class="nav-text">一些使其更好使用的配置</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E5%88%86%E7%B1%BB"><span class="nav-number">1.3.3.</span> <span class="nav-text">分类</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#%E6%A0%87%E7%AD%BE"><span class="nav-number">1.3.4.</span> <span class="nav-text">标签</span></a></li></ol></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Linux-%E4%B8%8B%E7%9A%84%E5%AE%89%E8%A3%85"><span class="nav-number">1.4.</span> <span class="nav-text">Linux 下的安装</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Aria2"><span class="nav-number">2.</span> <span class="nav-text">Aria2</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%90%9C%E7%B4%A2-1"><span class="nav-number">2.1.</span> <span class="nav-text">搜索</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%85%8D%E7%BD%AE-1"><span class="nav-number">2.2.</span> <span class="nav-text">配置</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8-1"><span class="nav-number">2.3.</span> <span class="nav-text">使用</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">3.</span> <span class="nav-text">参考</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Aemon"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Aemon</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">60</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">63</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/AemonCao" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;AemonCao" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:bot960528@gmail.com" title="E-Mail → mailto:bot960528@gmail.com" rel="noopener" target="_blank"><i class="far fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://t.me/Aemon_Cao" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;Aemon_Cao" rel="noopener" target="_blank"><i class="fab fa-telegram fa-fw"></i>Telegram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/rss2.xml" title="RSS → &#x2F;rss2.xml"><i class="fas fa-rss-square fa-fw"></i>RSS</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="Atom → &#x2F;atom.xml"><i class="fas fa-rss-square fa-fw"></i>Atom</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">浙ICP备20007726号-1 </a>
+  </div>
+
+<div class="copyright">
+  
+  &copy; 2017 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Aemon</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/velocity-animate@1/velocity.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/velocity-animate@1/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://www.aemon.top/2022/08/09/%E6%A6%A8%E5%B9%B2%E8%BF%99%E5%8F%B0NAS%E7%AC%AC002%E8%AF%9D-%E4%B8%8B%E8%BD%BD%E5%B7%A5%E5%85%B7/',]
+      });
+      });
+  </script>
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'dXrGvgAadbIcmIt5BIuqak9X-gzGzoHsz',
+      appKey     : 'BvQ660cw9YNVNjakRNfdsq1L',
+      placeholder: "评论支持 Markdown 样式。",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

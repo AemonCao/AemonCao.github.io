@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.0.0-rc1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-256x256-next.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.ico">
+  <link rel="mask-icon" href="/images/favicon-256x256-next.ico" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|Monaco:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.css">
+  <script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.aemon.top","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#ff69b4","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="Life, the Universe and Everything">
+<meta property="og:type" content="article">
+<meta property="og:title" content="如何「黑入」你的特斯拉">
+<meta property="og:url" content="https://www.aemon.top/2021/08/03/How-to-hack-your-Tesla/index.html">
+<meta property="og:site_name" content="Aemon&#39;s Blog">
+<meta property="og:description" content="Life, the Universe and Everything">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/How-to-hack-your-Tesla/web_interface.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/How-to-hack-your-Tesla/drive.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/How-to-hack-your-Tesla/race_track.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/How-to-hack-your-Tesla/drive-stats.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/How-to-hack-your-Tesla/drives.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/How-to-hack-your-Tesla/charging-stats.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/How-to-hack-your-Tesla/charging-history.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/How-to-hack-your-Tesla/vampire_drain.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/How-to-hack-your-Tesla/updates.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/How-to-hack-your-Tesla/projected-range.png">
+<meta property="article:published_time" content="2021-08-03T11:33:42.000Z">
+<meta property="article:modified_time" content="2023-06-29T07:04:53.446Z">
+<meta property="article:author" content="Aemon">
+<meta property="article:tag" content="Tesla">
+<meta property="article:tag" content="Docker">
+<meta property="article:tag" content="树莓派">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/How-to-hack-your-Tesla/web_interface.png">
+
+<link rel="canonical" href="https://www.aemon.top/2021/08/03/How-to-hack-your-Tesla/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>如何「黑入」你的特斯拉 | Aemon's Blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-160072313-1"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-160072313-1');
+      }
+    </script>
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?bba62503a88ce6563ac3ec7e0c6e491c";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Aemon's Blog" type="application/atom+xml">
+<link rel="alternate" href="/rss2.xml" title="Aemon's Blog" type="application/rss+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Aemon's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">切勿浅尝辄止</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fas fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="far fa-hand-spock fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fab fa-accessible-icon fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/AemonCao" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.aemon.top/2021/08/03/How-to-hack-your-Tesla/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Aemon">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Aemon's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          如何「黑入」你的特斯拉
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2021-08-03 19:33:42" itemprop="dateCreated datePublished" datetime="2021-08-03T19:33:42+08:00">2021-08-03</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-06-29 15:04:53" itemprop="dateModified" datetime="2023-06-29T15:04:53+08:00">2023-06-29</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Tesla/" itemprop="url" rel="index"><span itemprop="name">Tesla</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2021/08/03/How-to-hack-your-Tesla/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2021/08/03/How-to-hack-your-Tesla/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>2.8k</span>
+            </span>
+            <div class="post-description">Life, the Universe and Everything</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>正题之前，先说一些半题外话：</p>
+<p>提车到现在已经三个多月了，我对 Model 3 的感受就是好开。不过我是基本上没开过油车的。所以我不能说比油车好开多少，毕竟我驾照也是五年前学的，我已经忘了教练车开起来是什么感觉了。</p>
+<p>买车的时候，正是刹车问题最沸沸扬扬的时候，不被影响是不可能的，不过还是抱着一颗支持人类太空计划的心选择了特斯拉（SpaceX 天下第一）。那时候也要很多朋友半调侃的提起这个问题，我都是笑着说：「是的啊，刹车根本没用，每次都是开门直接脚刹」。你要是问我有没有遇到刹车失灵的情况，说实话，到目前为止我都没踩过几脚刹车，单踏板模式太爽了。</p>
+<h3 id="Tesla-App"><a href="#Tesla-App" class="headerlink" title="Tesla App"></a>Tesla App</h3><p>特斯拉有个官方的 <a target="_blank" rel="noopener" href="https://apps.apple.com/cn/app/tesla/id582007913">App</a>，下载后登录 Tesla 账号后就可以对车子进行控制，例如：空调、车窗、前后备箱、闪灯、鸣笛等等，甚至可以控制车子前进后退（极其缓慢的），方便在超挤的车位中进出。</p>
+<p>虽然这个 APP 控制功能强大，但是可以查看的信息却是少得可怜，只能查看车辆的当前位置、当前电量、当前温度、总里程。基本上再没有其他信息了。</p>
+<p>但其实这些信息，车辆都会进行记录，只是 APP 没有展示出来。特斯拉方面已经设计了一整套完善的车机接口，APP 只是调取了部分接口而已。你问我为什么特斯拉不开放？我也不知道，毕竟它做得到车内安装了 14 个喇叭却只启用 8 个；后排座椅硬件上支持座椅加热，却不开放后排座椅加热的开关。</p>
+<h3 id="TeslaMate"><a href="#TeslaMate" class="headerlink" title="TeslaMate"></a>TeslaMate</h3><p>国外已经有大神通过反向特斯拉的 App，取得了很多尚未开放的接口，我要介绍的就是其中一个叫做 <a target="_blank" rel="noopener" href="https://github.com/adriankumpf/teslamate">TeslaMate</a> 的项目。</p>
+<p>它做到了通过调取 Tesla 的接口来获取更多的数据，并将其整合成图表，以实现例如：终身驾驶地图、驾驶效率报告、充电报告、电池退化统计等等等等。</p>
+<p>其中最吸引我的就是终身驾驶地图这一功能，苹果手机的相册拥有地图功能，可以通过照片的拍摄地点来记录你所到过的地方，所以我每到一个新地方就会拍些照片，就好像游戏中打卡一样。我是那种喜欢记录过去的人，这功能简直直击我的心坎。不多说，就但这一个功能，我也要把它搭起来。</p>
+<h3 id="搭建"><a href="#搭建" class="headerlink" title="搭建"></a>搭建</h3><h4 id="搭在哪"><a href="#搭在哪" class="headerlink" title="搭在哪"></a>搭在哪</h4><p>TeslaMate 的文档是这么说的：</p>
+<blockquote>
+<p>A Machine that’s always on, so TeslaMate can continually fetch data.</p>
+</blockquote>
+<p>一台永远在线的机器，这样 TeslaMate 才能不断得获取数据。</p>
+<p>那么现在我就有几个选择：</p>
+<ol>
+<li>自己的台式电脑；</li>
+<li>云服务器；</li>
+<li>树莓派。</li>
+</ol>
+<p>开始是想安装在台式机上的，但是自从我上次由于 24 小时开机挖 ETH 导致电脑无故蓝屏后，我就不太敢长时间让它开机了。</p>
+<p>其次是云服务器，这其实是最好的选择，永远在线（前提是💰足够），并且支持外网访问，这样你在世界各地都能看到自己的车辆数据，那没选择它的原因呢？就是因为💰不够。</p>
+<p>最后就是树莓派了，选它的原因就是不想再看它吃灰了。而且之后配合公网 IP，以及 DDNS，也能实现和云服务器一样的效果。比起云服务器有个优点是，数据都是存在我自己的设备上，相对来说安全一些。所以就决定部署在树莓派上了。</p>
+<h4 id="怎么搭"><a href="#怎么搭" class="headerlink" title="怎么搭"></a>怎么搭</h4><p>首先需要在树莓派上安装 <a target="_blank" rel="noopener" href="https://www.docker.com/">Docker</a>，当然如果部署在台式电脑或者云服务器上，也都是要安装 Docker 的。</p>
+<p>Docker 在树莓派上的安装步骤如下：</p>
+<ol>
+<li><p>安装 Docker</p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -sSL https://get.docker.com | sh</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>为 <code>pi</code> 用户添加权限以运行 Docker 命令</p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo usermod -aG docker pi</span><br></pre></td></tr></table></figure>
+<p> 之后重启一下，或者使用 sudo 来运行下一步的命令。</p>
+</li>
+<li><p>测试 Docker 是否安装成功</p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run hello-world</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>十分重要！安装正确的依赖项</p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install -y libffi-dev libssl-dev</span><br></pre></td></tr></table></figure>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install -y python3 python3-pip</span><br></pre></td></tr></table></figure>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get remove python-configparser</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>安装 <a target="_blank" rel="noopener" href="https://docs.docker.com/compose/">Docker Compose</a></p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo pip3 -v install docker-compose</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>这样，准备工作就完成了。接下来开始安装 TeslaMate：</p>
+<ol>
+<li><p>新建一个名为 <code>docker-compose.yml</code> 的文件，内容如下：</p>
+ <figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">version:</span> <span class="string">&quot;3&quot;</span></span><br><span class="line"></span><br><span class="line"><span class="attr">services:</span></span><br><span class="line">  <span class="attr">teslamate:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">teslamate/teslamate:latest</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">DATABASE_USER=teslamate</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">DATABASE_PASS=secret</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">DATABASE_NAME=teslamate</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">DATABASE_HOST=database</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">MQTT_HOST=mosquitto</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">4000</span><span class="string">:4000</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">./import:/opt/app/import</span></span><br><span class="line">    <span class="attr">cap_drop:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">all</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">database:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">postgres:13</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">POSTGRES_USER=teslamate</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">POSTGRES_PASSWORD=secret</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">POSTGRES_DB=teslamate</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">teslamate-db:/var/lib/postgresql/data</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">grafana:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">teslamate/grafana:latest</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">environment:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">DATABASE_USER=teslamate</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">DATABASE_PASS=secret</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">DATABASE_NAME=teslamate</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">DATABASE_HOST=database</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">3000</span><span class="string">:3000</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">teslamate-grafana-data:/var/lib/grafana</span></span><br><span class="line"></span><br><span class="line">  <span class="attr">mosquitto:</span></span><br><span class="line">    <span class="attr">image:</span> <span class="string">eclipse-mosquitto:2</span></span><br><span class="line">    <span class="attr">restart:</span> <span class="string">always</span></span><br><span class="line">    <span class="attr">command:</span> <span class="string">mosquitto</span> <span class="string">-c</span> <span class="string">/mosquitto-no-auth.conf</span></span><br><span class="line">    <span class="attr">ports:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="number">1883</span><span class="string">:1883</span></span><br><span class="line">    <span class="attr">volumes:</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">mosquitto-conf:/mosquitto/config</span></span><br><span class="line">      <span class="bullet">-</span> <span class="string">mosquitto-data:/mosquitto/data</span></span><br><span class="line"></span><br><span class="line"><span class="attr">volumes:</span></span><br><span class="line">  <span class="attr">teslamate-db:</span></span><br><span class="line">  <span class="attr">teslamate-grafana-data:</span></span><br><span class="line">  <span class="attr">mosquitto-conf:</span></span><br><span class="line">  <span class="attr">mosquitto-data:</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>使用 <code>docker-compose up</code> 命令启动 docker 容器，如果要在后台运行，可以添加 <code>-d</code> 参数：</p>
+ <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker-compose up -d</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<p>好了，至此，属于你自己的 TeslaMate 已经搭建完成了。没错，由于 docker 的存在，搭建的过程还是很简单的。</p>
+<h3 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h3><p>在部署完成后，我们可以访问：<a target="_blank" rel="noopener" href="http://192.168.2.121:4000">http://192.168.2.121:4000</a> 这个网址。</p>
+<p>这边的 IP 地址是我的树莓派的局域网 IP 地址，如果你使用的是云服务器，那就替换成云服务器的公网 IP 地址，并且要去控制台的安全策略组开放 4000 端口以及下面的 3000 端口。如果你是在台式电脑上部署的，那和树莓派一样，替换成你的台式机局域网 IP 地址就行了，或者可以使用 <code>127.0.0.1</code> 这个 IP 来访问。</p>
+<p>进入后，使用你的特斯拉账号来进行登录，不出意外的话，你应该可以看到如下页面：</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/How-to-hack-your-Tesla/web_interface.png" alt="web_interface.png"></p>
+<p>之后，你就可以访问 <a target="_blank" rel="noopener" href="http://192.168.2.121:3000">http://192.168.2.121:3000</a> 来访问 <a target="_blank" rel="noopener" href="https://grafana.com/">Grafana</a> 仪表盘，Grafana 是一个跨平台、开源的数据可视化网络应用程序平台。它可以将 TeslaMate 中数据库的数据通过可视化图表的方式展示出来。</p>
+<h4 id="驾驶细节（Drive-Details）"><a href="#驾驶细节（Drive-Details）" class="headerlink" title="驾驶细节（Drive Details）"></a>驾驶细节（Drive Details）</h4><p>例如你可以看到你每次行程的驾驶细节（Drive Details）</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/How-to-hack-your-Tesla/drive.png" alt="drive.png"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/How-to-hack-your-Tesla/race_track.png" alt="race_track.png"></p>
+<h4 id="驾驶统计（Drive-Stats）"><a href="#驾驶统计（Drive-Stats）" class="headerlink" title="驾驶统计（Drive Stats）"></a>驾驶统计（Drive Stats）</h4><p>你的总历程数，你的总驾驶次数，你的总耗电量，你的预计每月里程，预计每年里程</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/How-to-hack-your-Tesla/drive-stats.png" alt="drive-stats.png"></p>
+<h4 id="驾驶记录（Drives）"><a href="#驾驶记录（Drives）" class="headerlink" title="驾驶记录（Drives）"></a>驾驶记录（Drives）</h4><p>你的每一段行程的记录：起始位置，耗时，里程，开始电量，结束电量，温度，平均速度，耗电量：</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/How-to-hack-your-Tesla/drives.png" alt="drives.png"></p>
+<h4 id="充电统计（Charging-Stats）"><a href="#充电统计（Charging-Stats）" class="headerlink" title="充电统计（Charging Stats）"></a>充电统计（Charging Stats）</h4><p>可以查看你充电的统计（Charging Stats），例如每次充电的时间，是交流还是直流，你在各个地点充电的统计信息</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/How-to-hack-your-Tesla/charging-stats.png" alt="charging-stats.png"></p>
+<h4 id="充电记录（Charges）"><a href="#充电记录（Charges）" class="headerlink" title="充电记录（Charges）"></a>充电记录（Charges）</h4><p>你的每一次充电的记录：时间，充电位置，充电时长，话费，增加的里程</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/How-to-hack-your-Tesla/charging-history.png" alt="charging-history.png"></p>
+<h4 id="亏电记录（Vampire-Drain）"><a href="#亏电记录（Vampire-Drain）" class="headerlink" title="亏电记录（Vampire Drain）"></a>亏电记录（Vampire Drain）</h4><p>每次驻车时的亏电记录</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/How-to-hack-your-Tesla/vampire_drain.png" alt="vampire_drain.png"></p>
+<h4 id="更新记录（Updates）"><a href="#更新记录（Updates）" class="headerlink" title="更新记录（Updates）"></a>更新记录（Updates）</h4><p>每次系统更新的记录：更新开始时间，更新结束时间，系统版本</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/How-to-hack-your-Tesla/updates.png" alt="updates.png"></p>
+<h4 id="预计里程（Projected-Range）"><a href="#预计里程（Projected-Range）" class="headerlink" title="预计里程（Projected Range）"></a>预计里程（Projected Range）</h4><p>你的车辆电池预计里程和总里程数以及时间的关系：</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/How-to-hack-your-Tesla/projected-range.png" alt="projected-range.png"></p>
+<h3 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h3><p>需要注意几点：</p>
+<ol>
+<li><p>每一步操作前，务必知道自己在做什么；</p>
+</li>
+<li><p>上面提供的安装方法，仅仅当在自己的家庭网络中部署时才推荐，如果想要将其暴露在互联网上（例如我提到的安装在云服务器上），请查看官方的<a target="_blank" rel="noopener" href="https://docs.teslamate.org/docs/guides/traefik">高级指南</a>；</p>
+</li>
+<li><p>如果希望长久的使用，还是需要定时备份，备份的方法，请查看<a target="_blank" rel="noopener" href="https://docs.teslamate.org/docs/maintenance/backup_restore">这里</a>；</p>
+</li>
+<li><p>此项目只能展示你部署之后车辆的信息，你部署之前的信息是无法获取到的；</p>
+</li>
+<li><p><del>所有因为此文章，进行操作并导致车辆变砖的情况，本人概不负责；</del></p>
+</li>
+<li><p>请理性看待这一篇文章，这并不是一篇教授你如何入侵的教程，学会了这些你也<strong>不能</strong>启停其他特斯拉车主的车，也<strong>不能</strong>使他们的<strong>刹车失灵</strong>。</p>
+</li>
+</ol>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ul>
+<li><p><a target="_blank" rel="noopener" href="https://github.com/adriankumpf/teslamate">https://github.com/adriankumpf/teslamate</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://docs.teslamate.org/docs/installation/docker">https://docs.teslamate.org/docs/installation/docker</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://dev.to/rohansawant/installing-docker-and-docker-compose-on-the-raspberry-pi-in-5-simple-steps-3mgl">https://dev.to/rohansawant/installing-docker-and-docker-compose-on-the-raspberry-pi-in-5-simple-steps-3mgl</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/BV1u54y167BE">https://www.bilibili.com/video/BV1u54y167BE</a></p>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div></div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="https://cdn.jsdelivr.net/gh/AemonCao/hexo-theme-next@master/source/images/wechatpay.jpg" alt="Aemon 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="https://cdn.jsdelivr.net/gh/AemonCao/hexo-theme-next@master/source/images/alipay.jpg" alt="Aemon 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/Tesla/" rel="tag"><i class="fa fa-tag"></i> Tesla</a>
+              <a href="/tags/Docker/" rel="tag"><i class="fa fa-tag"></i> Docker</a>
+              <a href="/tags/%E6%A0%91%E8%8E%93%E6%B4%BE/" rel="tag"><i class="fa fa-tag"></i> 树莓派</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/07/22/whatisthisthing-13/" rel="prev" title="What is this thing 13">
+      <i class="fa fa-chevron-left"></i> What is this thing 13
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/08/21/whatisthisthing-14/" rel="next" title="What is this thing 14">
+      What is this thing 14 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#Tesla-App"><span class="nav-number">1.</span> <span class="nav-text">Tesla App</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TeslaMate"><span class="nav-number">2.</span> <span class="nav-text">TeslaMate</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%90%AD%E5%BB%BA"><span class="nav-number">3.</span> <span class="nav-text">搭建</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%90%AD%E5%9C%A8%E5%93%AA"><span class="nav-number">3.1.</span> <span class="nav-text">搭在哪</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%80%8E%E4%B9%88%E6%90%AD"><span class="nav-number">3.2.</span> <span class="nav-text">怎么搭</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%BF%E7%94%A8"><span class="nav-number">4.</span> <span class="nav-text">使用</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%A9%BE%E9%A9%B6%E7%BB%86%E8%8A%82%EF%BC%88Drive-Details%EF%BC%89"><span class="nav-number">4.1.</span> <span class="nav-text">驾驶细节（Drive Details）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%A9%BE%E9%A9%B6%E7%BB%9F%E8%AE%A1%EF%BC%88Drive-Stats%EF%BC%89"><span class="nav-number">4.2.</span> <span class="nav-text">驾驶统计（Drive Stats）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%A9%BE%E9%A9%B6%E8%AE%B0%E5%BD%95%EF%BC%88Drives%EF%BC%89"><span class="nav-number">4.3.</span> <span class="nav-text">驾驶记录（Drives）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%85%E7%94%B5%E7%BB%9F%E8%AE%A1%EF%BC%88Charging-Stats%EF%BC%89"><span class="nav-number">4.4.</span> <span class="nav-text">充电统计（Charging Stats）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%85%85%E7%94%B5%E8%AE%B0%E5%BD%95%EF%BC%88Charges%EF%BC%89"><span class="nav-number">4.5.</span> <span class="nav-text">充电记录（Charges）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%8F%E7%94%B5%E8%AE%B0%E5%BD%95%EF%BC%88Vampire-Drain%EF%BC%89"><span class="nav-number">4.6.</span> <span class="nav-text">亏电记录（Vampire Drain）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9B%B4%E6%96%B0%E8%AE%B0%E5%BD%95%EF%BC%88Updates%EF%BC%89"><span class="nav-number">4.7.</span> <span class="nav-text">更新记录（Updates）</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%A2%84%E8%AE%A1%E9%87%8C%E7%A8%8B%EF%BC%88Projected-Range%EF%BC%89"><span class="nav-number">4.8.</span> <span class="nav-text">预计里程（Projected Range）</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9C%80%E5%90%8E"><span class="nav-number">5.</span> <span class="nav-text">最后</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">6.</span> <span class="nav-text">参考</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Aemon"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Aemon</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">60</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">63</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/AemonCao" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;AemonCao" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:bot960528@gmail.com" title="E-Mail → mailto:bot960528@gmail.com" rel="noopener" target="_blank"><i class="far fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://t.me/Aemon_Cao" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;Aemon_Cao" rel="noopener" target="_blank"><i class="fab fa-telegram fa-fw"></i>Telegram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/rss2.xml" title="RSS → &#x2F;rss2.xml"><i class="fas fa-rss-square fa-fw"></i>RSS</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="Atom → &#x2F;atom.xml"><i class="fas fa-rss-square fa-fw"></i>Atom</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">浙ICP备20007726号-1 </a>
+  </div>
+
+<div class="copyright">
+  
+  &copy; 2017 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Aemon</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/velocity-animate@1/velocity.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/velocity-animate@1/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://www.aemon.top/2021/08/03/How-to-hack-your-Tesla/',]
+      });
+      });
+  </script>
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'dXrGvgAadbIcmIt5BIuqak9X-gzGzoHsz',
+      appKey     : 'BvQ660cw9YNVNjakRNfdsq1L',
+      placeholder: "评论支持 Markdown 样式。",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>

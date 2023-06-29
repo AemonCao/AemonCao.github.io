@@ -1,0 +1,761 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.0.0-rc1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-256x256-next.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.ico">
+  <link rel="mask-icon" href="/images/favicon-256x256-next.ico" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|Monaco:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.css">
+  <script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"www.aemon.top","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#ff69b4","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="为方便以后查阅，特地转载一下，整理为 Markdown格式。 转载自：依赖注入那些事儿 - T2噬菌体">
+<meta property="og:type" content="article">
+<meta property="og:title" content="依赖注入那些事儿">
+<meta property="og:url" content="https://www.aemon.top/2017/09/15/those-stories-of-dependency-injection/index.html">
+<meta property="og:site_name" content="Aemon&#39;s Blog">
+<meta property="og:description" content="为方便以后查阅，特地转载一下，整理为 Markdown格式。 转载自：依赖注入那些事儿 - T2噬菌体">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/those-stories-of-dependency-injection/1.webp">
+<meta property="og:image" content="https://www.aemon.top/2017/09/15/those-stories-of-dependency-injection/1.webp">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/those-stories-of-dependency-injection/2.webp">
+<meta property="og:image" content="https://www.aemon.top/2017/09/15/those-stories-of-dependency-injection/2.webp">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/those-stories-of-dependency-injection/3.webp">
+<meta property="og:image" content="https://www.aemon.top/2017/09/15/those-stories-of-dependency-injection/3.webp">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/those-stories-of-dependency-injection/4.webp">
+<meta property="og:image" content="https://www.aemon.top/2017/09/15/those-stories-of-dependency-injection/4.webp">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/those-stories-of-dependency-injection/5.jpg">
+<meta property="og:image" content="https://www.aemon.top/2017/09/15/those-stories-of-dependency-injection/5.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/those-stories-of-dependency-injection/6.webp">
+<meta property="og:image" content="https://www.aemon.top/2017/09/15/those-stories-of-dependency-injection/6.webp">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/those-stories-of-dependency-injection/7.webp">
+<meta property="og:image" content="https://www.aemon.top/2017/09/15/those-stories-of-dependency-injection/7.webp">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/those-stories-of-dependency-injection/8.jpg">
+<meta property="og:image" content="https://www.aemon.top/2017/09/15/those-stories-of-dependency-injection/8.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/those-stories-of-dependency-injection/9.jpg">
+<meta property="og:image" content="https://www.aemon.top/2017/09/15/those-stories-of-dependency-injection/9.jpg">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/those-stories-of-dependency-injection/10.webp">
+<meta property="og:image" content="https://www.aemon.top/2017/09/15/those-stories-of-dependency-injection/10.webp">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/those-stories-of-dependency-injection/11.png">
+<meta property="og:image" content="https://www.aemon.top/2017/09/15/those-stories-of-dependency-injection/11.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/those-stories-of-dependency-injection/12.webp">
+<meta property="og:image" content="https://www.aemon.top/2017/09/15/those-stories-of-dependency-injection/12.webp">
+<meta property="article:published_time" content="2017-09-15T11:37:09.000Z">
+<meta property="article:modified_time" content="2023-06-29T07:04:53.670Z">
+<meta property="article:author" content="Aemon">
+<meta property="article:tag" content="C#">
+<meta property="article:tag" content="依赖注入">
+<meta property="article:tag" content="转载">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/those-stories-of-dependency-injection/1.webp">
+
+<link rel="canonical" href="https://www.aemon.top/2017/09/15/those-stories-of-dependency-injection/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>依赖注入那些事儿 | Aemon's Blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-160072313-1"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-160072313-1');
+      }
+    </script>
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?bba62503a88ce6563ac3ec7e0c6e491c";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Aemon's Blog" type="application/atom+xml">
+<link rel="alternate" href="/rss2.xml" title="Aemon's Blog" type="application/rss+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Aemon's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">切勿浅尝辄止</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fas fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="far fa-hand-spock fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fab fa-accessible-icon fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/AemonCao" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://www.aemon.top/2017/09/15/those-stories-of-dependency-injection/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Aemon">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Aemon's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          依赖注入那些事儿
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2017-09-15 19:37:09" itemprop="dateCreated datePublished" datetime="2017-09-15T19:37:09+08:00">2017-09-15</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2023-06-29 15:04:53" itemprop="dateModified" datetime="2023-06-29T15:04:53+08:00">2023-06-29</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C/" itemprop="url" rel="index"><span itemprop="name">C#</span></a>
+                </span>
+                  ，
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/C/%E8%BD%AC%E8%BD%BD/" itemprop="url" rel="index"><span itemprop="name">转载</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2017/09/15/those-stories-of-dependency-injection/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2017/09/15/those-stories-of-dependency-injection/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>10k</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>为方便以后查阅，特地转载一下，整理为 <a href="/2017/09/15/those-stories-of-dependency-injection/md.txt" title="Markdown格式">Markdown格式</a>。</p>
+<p>转载自：<a target="_blank" rel="noopener" href="http://www.cnblogs.com/leoo2sk/archive/2009/06/17/1504693.html">依赖注入那些事儿 - T2噬菌体</a></p>
+<span id="more"></span>
+<h2 id="IGame-游戏公司的故事"><a href="#IGame-游戏公司的故事" class="headerlink" title="IGame 游戏公司的故事"></a>IGame 游戏公司的故事</h2><h3 id="讨论会"><a href="#讨论会" class="headerlink" title="讨论会"></a>讨论会</h3><p>话说有一个叫 IGame 的游戏公司，正在开发一款 ARPG 游戏（动作&amp;角色扮演类游戏，如魔兽世界、梦幻西游这一类的游戏）。一般这类游戏都有一个基本的功能，就是打怪（玩家攻击怪物，借此获得经验、虚拟货币和虚拟装备），并且根据玩家角色所装备的武器不同，攻击效果也不同。这天，IGame 公司的开发小组正在开会对打怪功能中的某一个功能点如何实现进行讨论，他们面前的大屏幕上是这样一份需求描述的 PPT：</p>
+<!-- ![01_3.gif](https://i.loli.net/2017/09/15/59bb9d3e3a3c1.gif) -->
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/those-stories-of-dependency-injection/1.webp" alt="PPT"></p>
+<!-- <img data-src="/2017/09/15/those-stories-of-dependency-injection/1.webp" class="" title="PPT"> -->
+<p>图1.1 需求描述ppt</p>
+<p>各个开发人员，面对这份需求，展开了热烈的讨论，下面我们看看讨论会上都发生了什么。</p>
+<h3 id="实习生小李的实现方式"><a href="#实习生小李的实现方式" class="headerlink" title="实习生小李的实现方式"></a>实习生小李的实现方式</h3><p>在经过一番讨论后，项目组长 Peter 觉得有必要整理一下各方的意见，他首先询问小李的看法。小李是某学校计算机系大三学生，对游戏开发特别感兴趣，目前是 IGame 公司的一名实习生。 经过短暂的思考，小李阐述了自己的意见： 「我认为，这个需求可以这么实现。HP当然是怪物的一个属性成员，而武器是角色的一个属性成员，类型可以使字符串，用于描述目前角色所装备的武器。角色类有一个攻击方法，以被攻击怪物为参数，当实施一次攻击时，攻击方法被调用，而这个方法首先判断当前角色装备了什么武器，然后据此对被攻击怪物的 <code>HP</code> 进行操作，以产生不同效果。」 而在阐述完后，小李也飞快的在自己的电脑上写了一个 Demo，来演示他的想法，Demo 代码如下：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">IGameLi</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> 怪物</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    <span class="keyword">internal</span> <span class="keyword">sealed</span> <span class="keyword">class</span> <span class="title">Monster</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> 怪物的名字</span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">        <span class="keyword">public</span> String Name &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> 怪物的生命值</span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">        <span class="keyword">public</span> Int32 HP &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Monster</span>(<span class="params">String name,Int32 hp</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">this</span>.Name = name;</span><br><span class="line">            <span class="keyword">this</span>.HP = hp;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">IGameLi</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> 角色</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    <span class="keyword">internal</span> <span class="keyword">sealed</span> <span class="keyword">class</span> <span class="title">Role</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">private</span> Random _random = <span class="keyword">new</span> Random();</span><br><span class="line"></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> 表示角色目前所持武器的字符串</span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">        <span class="keyword">public</span> String WeaponTag &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> 攻击怪物</span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;monster&quot;&gt;</span>被攻击的怪物<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Attack</span>(<span class="params">Monster monster</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (monster.HP &lt;= <span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                Console.WriteLine(<span class="string">&quot;此怪物已死&quot;</span>);</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (<span class="string">&quot;WoodSword&quot;</span> == <span class="keyword">this</span>.WeaponTag)</span><br><span class="line">            &#123;</span><br><span class="line">                monster.HP -= <span class="number">20</span>;</span><br><span class="line">                <span class="keyword">if</span> (monster.HP &lt;= <span class="number">0</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    Console.WriteLine(<span class="string">&quot;攻击成功！怪物&quot;</span> + monster.Name + <span class="string">&quot;已死亡&quot;</span>);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                &#123;</span><br><span class="line">                    Console.WriteLine(<span class="string">&quot;攻击成功！怪物&quot;</span> + monster.Name + <span class="string">&quot;损失20HP&quot;</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (<span class="string">&quot;IronSword&quot;</span> == <span class="keyword">this</span>.WeaponTag)</span><br><span class="line">            &#123;</span><br><span class="line">                monster.HP -= <span class="number">50</span>;</span><br><span class="line">                <span class="keyword">if</span> (monster.HP &lt;= <span class="number">0</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    Console.WriteLine(<span class="string">&quot;攻击成功！怪物&quot;</span> + monster.Name + <span class="string">&quot;已死亡&quot;</span>);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                &#123;</span><br><span class="line">                    Console.WriteLine(<span class="string">&quot;攻击成功！怪物&quot;</span> + monster.Name + <span class="string">&quot;损失50HP&quot;</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (<span class="string">&quot;MagicSword&quot;</span> == <span class="keyword">this</span>.WeaponTag)</span><br><span class="line">            &#123;</span><br><span class="line">                Int32 loss = (_random.NextDouble() &lt; <span class="number">0.5</span>) ? <span class="number">100</span> : <span class="number">200</span>;</span><br><span class="line">                monster.HP -= loss;</span><br><span class="line">                <span class="keyword">if</span> (<span class="number">200</span> == loss)</span><br><span class="line">                &#123;</span><br><span class="line">                    Console.WriteLine(<span class="string">&quot;出现暴击！！！&quot;</span>);</span><br><span class="line">                &#125;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span> (monster.HP &lt;= <span class="number">0</span>)</span><br><span class="line">                &#123;</span><br><span class="line">                    Console.WriteLine(<span class="string">&quot;攻击成功！怪物&quot;</span> + monster.Name + <span class="string">&quot;已死亡&quot;</span>);</span><br><span class="line">                &#125;</span><br><span class="line">                <span class="keyword">else</span></span><br><span class="line">                &#123;</span><br><span class="line">                    Console.WriteLine(<span class="string">&quot;攻击成功！怪物&quot;</span> + monster.Name + <span class="string">&quot;损失&quot;</span> + loss + <span class="string">&quot;HP&quot;</span>);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                Console.WriteLine(<span class="string">&quot;角色手里没有武器，无法攻击！&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">IGameLi</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">class</span> <span class="title">Program</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="built_in">string</span>[] args</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">//生成怪物</span></span><br><span class="line">            Monster monster1 = <span class="keyword">new</span> Monster(<span class="string">&quot;小怪A&quot;</span>, <span class="number">50</span>);</span><br><span class="line">            Monster monster2 = <span class="keyword">new</span> Monster(<span class="string">&quot;小怪B&quot;</span>, <span class="number">50</span>);</span><br><span class="line">            Monster monster3 = <span class="keyword">new</span> Monster(<span class="string">&quot;关主&quot;</span>, <span class="number">200</span>);</span><br><span class="line">            Monster monster4 = <span class="keyword">new</span> Monster(<span class="string">&quot;最终Boss&quot;</span>, <span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line">            <span class="comment">//生成角色</span></span><br><span class="line">            Role role = <span class="keyword">new</span> Role();</span><br><span class="line"></span><br><span class="line">            <span class="comment">//木剑攻击</span></span><br><span class="line">            role.WeaponTag = <span class="string">&quot;WoodSword&quot;</span>;</span><br><span class="line">            role.Attack(monster1);</span><br><span class="line"></span><br><span class="line">            <span class="comment">//铁剑攻击</span></span><br><span class="line">            role.WeaponTag = <span class="string">&quot;IronSword&quot;</span>;</span><br><span class="line">            role.Attack(monster2);</span><br><span class="line">            role.Attack(monster3);</span><br><span class="line"></span><br><span class="line">            <span class="comment">//魔剑攻击</span></span><br><span class="line">            role.WeaponTag = <span class="string">&quot;MagicSword&quot;</span>;</span><br><span class="line">            role.Attack(monster3);</span><br><span class="line">            role.Attack(monster4);</span><br><span class="line">            role.Attack(monster4);</span><br><span class="line">            role.Attack(monster4);</span><br><span class="line">            role.Attack(monster4);</span><br><span class="line">            role.Attack(monster4);</span><br><span class="line"></span><br><span class="line">            Console.ReadLine();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>程序运行结果如下：</p>
+<!-- ![02_3.gif](https://i.loli.net/2017/09/15/59bbae64f08ba.gif) -->
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/those-stories-of-dependency-injection/2.webp" alt="结果023"></p>
+<!-- <img data-src="/2017/09/15/those-stories-of-dependency-injection/2.webp" class="" title="结果023"> -->
+<p>图1.2 小李程序的运行结果</p>
+<h3 id="架构师的建议"><a href="#架构师的建议" class="headerlink" title="架构师的建议"></a>架构师的建议</h3><p>小李阐述完自己的想法并演示了 Demo 后，项目组长 Peter 首先肯定了小李的思考能力、编程能力以及初步的面向对象分析与设计的思想，并承认小李的程序正确完成了需求中的功能。但同时，Peter 也指出小李的设计存在一些问题，他请小于讲一下自己的看法。 小于是一名有五年软件架构经验的架构师，对软件架构、设计模式和面向对象思想有较深入的认识。他向 Peter 点了点头，发表了自己的看法： 「小李的思考能力是不错的，有着基本的面向对象分析设计能力，并且程序正确完成了所需要的功能。不过，这里我想从架构角度，简要说一下我认为这个设计中存在的问题。 首先，小李设计的 <code>Role</code> 类的 <code>Attack</code> 方法很长，并且方法中有一个冗长的 <code>if…else</code> 结构，且每个分支的代码的业务逻辑很相似，只是很少的地方不同。 再者，我认为这个设计比较大的一个问题是，违反了 OCP 原则。在这个设计中，如果以后我们增加一个新的武器，如倚天剑，每次攻击损失 500HP，那么，我们就要打开 <code>Role</code>，修改 <code>Attack</code> 方法。而我们的代码应该是对修改关闭的，当有新武器加入的时候，应该使用扩展完成，避免修改已有代码。 一般来说，当一个方法里面出现冗长的 <code>if…else</code> 或 <code>switch…case</code> 结构，且每个分支代码业务相似时，往往预示这里应该引入多态性来解决问题。而这里，如果把不同武器攻击看成一个策略，那么引入策略模式（ <em>Strategy Pattern</em> ）是明智的选择。 最后说一个小的问题，被攻击后，减HP、死亡判断等都是怪物的职责，这里放在 <code>Role</code> 中有些不当。」</p>
+<blockquote>
+<p>Tip：OCP 原则，即开放关闭原则，指设计应该对扩展开放，对修改关闭。 Tip：策略模式，英文名 <em>Strategy Pattern</em> ，指定义算法族，分别封装起来，让他们之间可以相互替换，此模式使得算法的变化独立于客户。</p>
+</blockquote>
+<p>小于边说，边画了一幅 UML 类图，用于直观表示他的思想：、</p>
+<!-- ![03_3.jpg](https://i.loli.net/2017/09/15/59bbaf77f3db6.jpg) -->
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/those-stories-of-dependency-injection/3.webp" alt="uml类图"></p>
+<!-- <img data-src="/2017/09/15/those-stories-of-dependency-injection/3.webp" class="" title="uml类图"> -->
+<p>图1.3 小于的设计</p>
+<p>Peter 让小李按照小于的设计重构 Demo，小李看了看小于的设计图，很快完成。相关代码如下：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">IGameLiAdv</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">internal</span> <span class="keyword">interface</span> <span class="title">IAttackStrategy</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">void</span> <span class="title">AttackTarget</span>(<span class="params">Monster monster</span>)</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">IGameLiAdv</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">internal</span> <span class="keyword">sealed</span> <span class="keyword">class</span> <span class="title">WoodSword</span> : <span class="title">IAttackStrategy</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">AttackTarget</span>(<span class="params">Monster monster</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            monster.Notify(<span class="number">20</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">IGameLiAdv</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">internal</span> <span class="keyword">sealed</span> <span class="keyword">class</span> <span class="title">IronSword</span> : <span class="title">IAttackStrategy</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">AttackTarget</span>(<span class="params">Monster monster</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            monster.Notify(<span class="number">50</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">IGameLiAdv</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">internal</span> <span class="keyword">sealed</span> <span class="keyword">class</span> <span class="title">MagicSword</span> : <span class="title">IAttackStrategy</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">private</span> Random _random = <span class="keyword">new</span> Random();</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">AttackTarget</span>(<span class="params">Monster monster</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            Int32 loss = (_random.NextDouble() &lt; <span class="number">0.5</span>) ? <span class="number">100</span> : <span class="number">200</span>;</span><br><span class="line">            <span class="keyword">if</span> (<span class="number">200</span> == loss)</span><br><span class="line">            &#123;</span><br><span class="line">                Console.WriteLine(<span class="string">&quot;出现暴击！！！&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            monster.Notify(loss);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">IGameLiAdv</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> 怪物</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    <span class="keyword">internal</span> <span class="keyword">sealed</span> <span class="keyword">class</span> <span class="title">Monster</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> 怪物的名字</span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">        <span class="keyword">public</span> String Name &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> 怪物的生命值</span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">        <span class="keyword">private</span> Int32 HP &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">Monster</span>(<span class="params">String name,Int32 hp</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">this</span>.Name = name;</span><br><span class="line">            <span class="keyword">this</span>.HP = hp;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> 怪物被攻击时，被调用的方法，用来处理被攻击后的状态更改</span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;loss&quot;&gt;</span>此次攻击损失的HP<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Notify</span>(<span class="params">Int32 loss</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">this</span>.HP &lt;= <span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                Console.WriteLine(<span class="string">&quot;此怪物已死&quot;</span>);</span><br><span class="line">                <span class="keyword">return</span>;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">this</span>.HP -= loss;</span><br><span class="line">            <span class="keyword">if</span> (<span class="keyword">this</span>.HP &lt;= <span class="number">0</span>)</span><br><span class="line">            &#123;</span><br><span class="line">                Console.WriteLine(<span class="string">&quot;怪物&quot;</span> + <span class="keyword">this</span>.Name + <span class="string">&quot;被打死&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                Console.WriteLine(<span class="string">&quot;怪物&quot;</span> + <span class="keyword">this</span>.Name + <span class="string">&quot;损失&quot;</span> + loss + <span class="string">&quot;HP&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">IGameLiAdv</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> 角色</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    <span class="keyword">internal</span> <span class="keyword">sealed</span> <span class="keyword">class</span> <span class="title">Role</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> 表示角色目前所持武器</span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">        <span class="keyword">public</span> IAttackStrategy Weapon &#123; <span class="keyword">get</span>; <span class="keyword">set</span>; &#125;</span><br><span class="line"></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> 攻击怪物</span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">        <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;monster&quot;&gt;</span>被攻击的怪物<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Attack</span>(<span class="params">Monster monster</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">this</span>.Weapon.AttackTarget(monster);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">IGameLiAdv</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">class</span> <span class="title">Program</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="built_in">string</span>[] args</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">//生成怪物</span></span><br><span class="line">            Monster monster1 = <span class="keyword">new</span> Monster(<span class="string">&quot;小怪A&quot;</span>, <span class="number">50</span>);</span><br><span class="line">            Monster monster2 = <span class="keyword">new</span> Monster(<span class="string">&quot;小怪B&quot;</span>, <span class="number">50</span>);</span><br><span class="line">            Monster monster3 = <span class="keyword">new</span> Monster(<span class="string">&quot;关主&quot;</span>, <span class="number">200</span>);</span><br><span class="line">            Monster monster4 = <span class="keyword">new</span> Monster(<span class="string">&quot;最终Boss&quot;</span>, <span class="number">1000</span>);</span><br><span class="line"></span><br><span class="line">            <span class="comment">//生成角色</span></span><br><span class="line">            Role role = <span class="keyword">new</span> Role();</span><br><span class="line"></span><br><span class="line">            <span class="comment">//木剑攻击</span></span><br><span class="line">            role.Weapon = <span class="keyword">new</span> WoodSword();</span><br><span class="line">            role.Attack(monster1);</span><br><span class="line"></span><br><span class="line">            <span class="comment">//铁剑攻击</span></span><br><span class="line">            role.Weapon = <span class="keyword">new</span> IronSword();</span><br><span class="line">            role.Attack(monster2);</span><br><span class="line">            role.Attack(monster3);</span><br><span class="line"></span><br><span class="line">            <span class="comment">//魔剑攻击</span></span><br><span class="line">            role.Weapon = <span class="keyword">new</span> MagicSword();</span><br><span class="line">            role.Attack(monster3);</span><br><span class="line">            role.Attack(monster4);</span><br><span class="line">            role.Attack(monster4);</span><br><span class="line">            role.Attack(monster4);</span><br><span class="line">            role.Attack(monster4);</span><br><span class="line">            role.Attack(monster4);</span><br><span class="line"></span><br><span class="line">            Console.ReadLine();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>编译运行以上代码，得到的运行结果与上一版本代码基本一致。</p>
+<h3 id="小李的小结"><a href="#小李的小结" class="headerlink" title="小李的小结"></a>小李的小结</h3><p>Peter 显然对改进后的代码比较满意，他让小李对照两份设计和代码，进行一个小结。小李简略思考了一下，并结合小于对一次设计指出的不足，说道： 「我认为，改进后的代码有如下优点： 第一，虽然类的数量增加了，但是每个类中方法的代码都非常短，没有了以前 <code>Attack</code> 方法那种很长的方法，也没有了冗长的 <code>if…else</code>，代码结构变得很清晰。 第二，类的职责更明确了。在第一个设计中，<code>Role</code> 不但负责攻击，还负责给怪物减少 <code>HP</code> 和判断怪物是否已死。这明显不应该是 <code>Role</code> 的职责，改进后的代码将这两个职责移入Monster内，使得职责明确，提高了类的内聚性。 第三，引入 Strategy 模式后，不但消除了重复性代码，更重要的是，使得设计符合了 OCP。如果以后要加一个新武器，只要新建一个类，实现 <code>IAttackStrategy</code> 接口，当角色需要装备这个新武器时，客户代码只要实例化一个新武器类，并赋给 <code>Role</code> 的 <code>Weapon</code> 成员就可以了，已有的 <code>Role</code> 和 <code>Monster</code> 代码都不用改动。这样就实现了对扩展开发，对修改关闭。」 Peter和小于听后都很满意，认为小李总结的非常出色。 IGame公司的讨论会还在进行着，内容是非常精彩，不过我们先听到这里，因为，接下来，我们要对其中某些问题进行一点探讨。别忘了，本文的主题可是依赖注入，这个主角还没登场呢！让主角等太久可不好。</p>
+<h2 id="探究依赖注入"><a href="#探究依赖注入" class="headerlink" title="探究依赖注入"></a>探究依赖注入</h2><h3 id="故事的启迪"><a href="#故事的启迪" class="headerlink" title="故事的启迪"></a>故事的启迪</h3><p>我们现在静下心来，再回味一下刚才的故事。因为，这个故事里面隐藏着<strong>依赖注入</strong>的出现原因。我说过不只一次，想真正认清一个事物，不能只看「它是什么？什么样子？」，而应该先弄清楚「它是怎么来的？是什么样的需求和背景促使了它的诞生？它被创造出来是做什么用的？」。 回想上面的故事。刚开始，主要需求是一个打怪的功能。小李做了一个初步面向对象的设计：抽取领域场景中的实体（怪物、角色等），封装成类，并为各个类赋予属性与方法，最后通过类的交互完成打怪功能，这应该算是面向对象设计的初级阶段。 在小李的设计基础上，架构师小于指出了几点不足，如不符合 OCP，职责划分不明确等等，并根据情况引入策略模式。这是更高层次的面向对象设计。其实就核心来说，小于只做了一件事：利用多态性，隔离变化。它清楚认识到，这个打怪功能中，有些业务逻辑是不变的，如角色攻击怪物，怪物减少 HP，减到 0 怪物就会死；而变化的仅仅是不同的角色持有不同武器时，每次攻击的效用不一样。于是他的架构，本质就是把变化的部分和不变的部分隔离开，使得变化部分发生变化时，不变部分不受影响。 我们再仔细看看小于的设计图，这样设计后，有个基本的问题需要解决：现在 <code>Role</code> 不依赖具体武器，而仅仅依赖一个 <code>IAttackStrategy</code> 接口，接口是不能实例化的，虽然 <code>Role</code> 的 <code>Weapon</code> 成员类型定义为 <code>IAttackStrategy</code>，但最终还是会被赋予一个实现了 <code>IAttackStrategy</code> 接口的具体武器，并且随着程序进展，一个角色会装备不同的武器，从而产生不同的效用。赋予武器的职责，在 Demo 中是放在了测试代码里。 这里，测试代码实例化一个具体的武器，并赋给 <code>Role</code> 的 <code>Weapon</code> 成员的过程，就是<strong>依赖注入</strong>！这里要清楚，<strong>依赖注入</strong>其实是一个过程的称谓！</p>
+<h3 id="正式定义依赖注入"><a href="#正式定义依赖注入" class="headerlink" title="正式定义依赖注入"></a>正式定义依赖注入</h3><p>下面，用稍微正式一点的语言，定义依赖注入产生的背景缘由和依赖注入的含义。在读的过程中，读者可以结合上面的例子进行理解。 依赖注入产生的背景： 随着面向对象分析与设计的发展，一个良好的设计，核心原则之一就是将变化隔离，使得变化部分发生变化时，不变部分不受影响（这也是 OCP 的目的）。为了做到这一点，要利用面向对象中的多态性，使用多态性后，客户类不再直接依赖服务类，而是依赖于一个抽象的接口，这样，客户类就不能在内部直接实例化具体的服务类。但是，客户类在运作中又客观需要具体的服务类提供服务，因为接口是不能实例化去提供服务的。就产生了「客户类不准实例化具体服务类」和「客户类需要具体服务类」这样一对矛盾。为了解决这个矛盾，开发人员提出了一种模式：客户类（如上例中的 <code>Role</code>）定义一个注入点（<code>Public</code> 成员 <code>Weapon</code>），用于服务类（实现 <code>IAttackStrategy</code> 的具体类，如 <code>WoodSword</code>、<code>IronSword</code> 和 <code>MagicSword</code>，也包括以后加进来的所有实现 <code>IAttackStrategy</code> 的新类）的注入，而客户类的客户类（<code>Program</code>，即测试代码）负责根据情况，实例化服务类，注入到客户类中，从而解决了这个矛盾。 依赖注入的正式定义： 依赖注入（ <em>Dependency Injection</em> ），是这样一个过程：由于某客户类只依赖于服务类的一个接口，而不依赖于具体服务类，所以客户类只定义一个注入点。在程序运行过程中，客户类不直接实例化具体服务类实例，而是客户类的运行上下文环境或专门组件负责实例化服务类，然后将其注入到客户类中，保证客户类的正常运行。</p>
+<h2 id="依赖注入那些事儿"><a href="#依赖注入那些事儿" class="headerlink" title="依赖注入那些事儿"></a>依赖注入那些事儿</h2><p>上面我们从需求背景的角度，讲述了依赖注入的来源和定义。但是，如果依赖注入仅仅就只有这么点东西，那也没有什么值得讨论的了。但是，上面讨论的仅仅是依赖注入的内涵，其外延还是非常广泛的，从依赖注入衍生出了很多相关的概念与技术，下面我们讨论一下依赖注入的「那些事儿」。</p>
+<h3 id="依赖注入的类别"><a href="#依赖注入的类别" class="headerlink" title="依赖注入的类别"></a>依赖注入的类别</h3><p>依赖注入有很多种方法，上面看到的例子中，只是其中的一种，下面分别讨论不同的依赖注入类型。</p>
+<h4 id="Setter-注入"><a href="#Setter-注入" class="headerlink" title="Setter 注入"></a>Setter 注入</h4><p>第一种依赖注入的方式，就是 Setter 注入，上面的例子中，将武器注入 <code>Role</code> 就是 Setter 注入。正式点说： Setter 注入（ <em>Setter Injection</em> ）是指在客户类中，设置一个服务类接口类型的数据成员，并设置一个 <code>Set</code> 方法作为注入点，这个 <code>Set</code> 方法接受一个具体的服务类实例为参数，并将它赋给服务类接口类型的数据成员。</p>
+<!-- ![04_6.jpg](https://i.loli.net/2017/09/15/59bbb21e689a0.jpg) -->
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/those-stories-of-dependency-injection/4.webp" alt="img046"></p>
+<!-- <img data-src="/2017/09/15/those-stories-of-dependency-injection/4.webp" class="" title="img046"> -->
+<p>图3.1 Setter注入示意</p>
+<p>上图展示了Setter注入的结构示意图，客户类 <code>ClientClass</code> 设置 <code>IServiceClass</code> 类型成员 <code>_serviceImpl</code>，并设置 <code>Set_ServiceImpl</code> 方法作为注入点。<code>Context</code> 会负责实例化一个具体的 <code>ServiceClass</code>，然后注入到 <code>ClientClass</code> 里。 下面给出 Setter 注入的示例代码：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">SetterInjection</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">internal</span> <span class="keyword">interface</span> <span class="title">IServiceClass</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function">String <span class="title">ServiceInfo</span>()</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">SetterInjection</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">internal</span> <span class="keyword">class</span> <span class="title">ServiceClassA</span> : <span class="title">IServiceClass</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> String <span class="title">ServiceInfo</span>()</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">&quot;我是ServceClassA&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">SetterInjection</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">internal</span> <span class="keyword">class</span> <span class="title">ServiceClassB</span> : <span class="title">IServiceClass</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> String <span class="title">ServiceInfo</span>()</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="string">&quot;我是ServceClassB&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">SetterInjection</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">internal</span> <span class="keyword">class</span> <span class="title">ClientClass</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">private</span> IServiceClass _serviceImpl;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Set_ServiceImpl</span>(<span class="params">IServiceClass serviceImpl</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">this</span>._serviceImpl = serviceImpl;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">ShowInfo</span>()</span></span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(_serviceImpl.ServiceInfo());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">SetterInjection</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">class</span> <span class="title">Program</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="built_in">string</span>[] args</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            IServiceClass serviceA = <span class="keyword">new</span> ServiceClassA();</span><br><span class="line">            IServiceClass serviceB = <span class="keyword">new</span> ServiceClassB();</span><br><span class="line">            ClientClass client = <span class="keyword">new</span> ClientClass();</span><br><span class="line"></span><br><span class="line">            client.Set_ServiceImpl(serviceA);</span><br><span class="line">            client.ShowInfo();</span><br><span class="line">            client.Set_ServiceImpl(serviceB);</span><br><span class="line">            client.ShowInfo();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>运行结果如下：</p>
+<!-- ![05_3.jpg](https://i.loli.net/2017/09/15/59bbb2c0e0be7.jpg) -->
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/those-stories-of-dependency-injection/5.jpg" alt="结果053"></p>
+<!-- <img data-src="/2017/09/15/those-stories-of-dependency-injection/5.jpg" class="" title="结果053"> -->
+<p>图3.2 Setter注入运行结果</p>
+<h4 id="构造注入"><a href="#构造注入" class="headerlink" title="构造注入"></a>构造注入</h4><p>另外一种依赖注入方式，是通过客户类的构造函数，向客户类注入服务类实例。 构造注入（ <em>Constructor Injection</em> ）是指在客户类中，设置一个服务类接口类型的数据成员，并以构造函数为注入点，这个构造函数接受一个具体的服务类实例为参数，并将它赋给服务类接口类型的数据成员。</p>
+<!-- ![06_3.jpg](https://i.loli.net/2017/09/15/59bbb3267fef0.jpg) -->
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/those-stories-of-dependency-injection/6.webp" alt="img063"></p>
+<!-- <img data-src="/2017/09/15/those-stories-of-dependency-injection/6.webp" class="" title="img063"> -->
+<p>图3.3 构造注入示意</p>
+<p>图3.3是构造注入的示意图，可以看出，与 Setter 注入很类似，只是注入点由 Setter 方法变成了构造方法。这里要注意，由于构造注入只能在实例化客户类时注入一次，所以一点注入，程序运行期间是没法改变一个客户类对象内的服务类实例的。 由于构造注入和 Setter 注入的 <code>IServiceClass</code>，<code>ServiceClassA</code> 和 <code>ServiceClassB</code> 是一样的，所以这里给出另外 <code>ClientClass</code> 类的示例代码：</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">ConstructorInjection</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">internal</span> <span class="keyword">class</span> <span class="title">ClientClass</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">private</span> IServiceClass _serviceImpl;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">ClientClass</span>(<span class="params">IServiceClass serviceImpl</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">this</span>._serviceImpl = serviceImpl;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">ShowInfo</span>()</span></span><br><span class="line">        &#123;</span><br><span class="line">            Console.WriteLine(_serviceImpl.ServiceInfo());</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>可以看到，唯一的变化就是构造函数取代了 <code>Set_ServiceImpl</code> 方法，成为了注入点。</p>
+<h4 id="依赖获取"><a href="#依赖获取" class="headerlink" title="依赖获取"></a>依赖获取</h4><p>上面提到的注入方式，都是客户类被动接受所依赖的服务类，这也符合「注入」这个词。不过还有一种方法，可以和依赖注入达到相同的目的，就是依赖获取。 依赖获取（ <em>Dependency Locate</em> ）是指在系统中提供一个获取点，客户类仍然依赖服务类的接口。当客户类需要服务类时，从获取点主动取得指定的服务类，具体的服务类类型由获取点的配置决定。 可以看到，这种方法变被动为主动，使得客户类在需要时主动获取服务类，而将多态性的实现封装到获取点里面。获取点可以有很多种实现，也许最容易想到的就是建立一个Simple Factory作为获取点，客户类传入一个指定字符串，以获取相应服务类实例。如果所依赖的服务类是一系列类，那么依赖获取一般利用 Abstract Factory 模式构建获取点，然后，将服务类多态性转移到工厂的多态性上，而工厂的类型依赖一个外部配置，如XML文件。 不过，不论使用 Simple Factory 还是 Abstract Factory，都避免不了判断服务类类型或工厂类型，这样系统中总要有一个地方存在不符合 OCP 的 <code>if…else</code> 或 <code>switch…case</code> 结构，这种缺陷是 Simple Factory 和 Abstract Factory 以及依赖获取本身无法消除的，而在某些支持反射的语言中（如 C#），通过将反射机制的引入彻底解决了这个问题（后面讨论）。 下面给一个具体的例子，现在我们假设有个程序，既可以使用 Windows 风格外观，又可以使用 Mac 风格外观，而内部业务是一样的。</p>
+<!-- ![07_3.jpg](https://i.loli.net/2017/09/15/59bbb3d9a6b9f.jpg) -->
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/those-stories-of-dependency-injection/7.webp" alt="img073"></p>
+<!-- <img data-src="/2017/09/15/those-stories-of-dependency-injection/7.webp" class="" title="img073"> -->
+<p>图3.4 依赖获取示意</p>
+<p>上图乍看有点复杂，不过如果读者熟悉 Abstract Factory 模式，应该能很容易看懂，这就是 Abstract Factory 在实际中的一个应用。这里的 Factory Container 作为获取点，是一个静态类，它的「<strong>Type 构造函数</strong>」依据外部的XML配置文件，决定实例化哪个工厂。下面还是来看示例代码。由于不同组件的代码是相似的，这里只给出 Button 组件的示例代码，完整代码请参考文末附上的完整源程序。</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">DependencyLocate</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">internal</span> <span class="keyword">interface</span> <span class="title">IButton</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function">String <span class="title">ShowInfo</span>()</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">DependencyLocate</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">internal</span> <span class="keyword">sealed</span> <span class="keyword">class</span> <span class="title">WindowsButton</span> : <span class="title">IButton</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">public</span> String Description &#123; <span class="keyword">get</span>; <span class="keyword">private</span> <span class="keyword">set</span>; &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">WindowsButton</span>()</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">this</span>.Description = <span class="string">&quot;Windows风格按钮&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> String <span class="title">ShowInfo</span>()</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>.Description;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">DependencyLocate</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">internal</span> <span class="keyword">sealed</span> <span class="keyword">class</span> <span class="title">MacButton</span> : <span class="title">IButton</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">public</span> String Description &#123; <span class="keyword">get</span>; <span class="keyword">private</span> <span class="keyword">set</span>; &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="title">MacButton</span>()</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">this</span>.Description = <span class="string">&quot; Mac风格按钮&quot;</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> String <span class="title">ShowInfo</span>()</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">this</span>.Description;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">DependencyLocate</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">internal</span> <span class="keyword">interface</span> <span class="title">IFactory</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function">IWindow <span class="title">MakeWindow</span>()</span>;</span><br><span class="line"></span><br><span class="line">        <span class="function">IButton <span class="title">MakeButton</span>()</span>;</span><br><span class="line"></span><br><span class="line">        <span class="function">ITextBox <span class="title">MakeTextBox</span>()</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">DependencyLocate</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">internal</span> <span class="keyword">sealed</span> <span class="keyword">class</span> <span class="title">WindowsFactory</span> : <span class="title">IFactory</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> IWindow <span class="title">MakeWindow</span>()</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> WindowsWindow();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> IButton <span class="title">MakeButton</span>()</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> WindowsButton();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> ITextBox <span class="title">MakeTextBox</span>()</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> WindowsTextBox();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">DependencyLocate</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">internal</span> <span class="keyword">sealed</span> <span class="keyword">class</span> <span class="title">MacFactory</span> : <span class="title">IFactory</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">public</span> IWindow <span class="title">MakeWindow</span>()</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> MacWindow();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> IButton <span class="title">MakeButton</span>()</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> MacButton();</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> ITextBox <span class="title">MakeTextBox</span>()</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> MacTextBox();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"><span class="keyword">using</span> System.Xml;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">DependencyLocate</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">internal</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="title">FactoryContainer</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">public</span> <span class="keyword">static</span> IFactory factory &#123; <span class="keyword">get</span>; <span class="keyword">private</span> <span class="keyword">set</span>; &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="title">FactoryContainer</span>()</span></span><br><span class="line">        &#123;</span><br><span class="line">            XmlDocument xmlDoc = <span class="keyword">new</span> XmlDocument();</span><br><span class="line">            xmlDoc.Load(<span class="string">&quot;http://www.cnblogs.com/Config.xml&quot;</span>);</span><br><span class="line">            XmlNode xmlNode = xmlDoc.ChildNodes[<span class="number">1</span>].ChildNodes[<span class="number">0</span>].ChildNodes[<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span> (<span class="string">&quot;Windows&quot;</span> == xmlNode.Value)</span><br><span class="line">            &#123;</span><br><span class="line">                factory = <span class="keyword">new</span> WindowsFactory();</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span> (<span class="string">&quot;Mac&quot;</span> == xmlNode.Value)</span><br><span class="line">            &#123;</span><br><span class="line">                factory = <span class="keyword">new</span> MacFactory();</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">else</span></span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">throw</span> <span class="keyword">new</span> Exception(<span class="string">&quot;Factory Init Error&quot;</span>);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">DependencyLocate</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">class</span> <span class="title">Program</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span>(<span class="params"><span class="built_in">string</span>[] args</span>)</span></span><br><span class="line">        &#123;</span><br><span class="line">            IFactory factory = FactoryContainer.factory;</span><br><span class="line">            IWindow window = factory.MakeWindow();</span><br><span class="line">            Console.WriteLine(<span class="string">&quot;创建 &quot;</span> + window.ShowInfo());</span><br><span class="line">            IButton button = factory.MakeButton();</span><br><span class="line">            Console.WriteLine(<span class="string">&quot;创建 &quot;</span> + button.ShowInfo());</span><br><span class="line">            ITextBox textBox = factory.MakeTextBox();</span><br><span class="line">            Console.WriteLine(<span class="string">&quot;创建 &quot;</span> + textBox.ShowInfo());</span><br><span class="line"></span><br><span class="line">            Console.ReadLine();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里我们用XML作为配置文件。配置文件 <code>Config.xml</code> 如下：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;utf-8&quot;</span> ?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">config</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">factory</span>&gt;</span>Mac<span class="tag">&lt;/<span class="name">factory</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">config</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>可以看到，这里我们将配置设置为 Mac 风格，编译运行上述代码，运行结果如下：</p>
+<!-- ![08_3.jpg](https://i.loli.net/2017/09/15/59bbb4ede424d.jpg) -->
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/those-stories-of-dependency-injection/8.jpg" alt="结果083"></p>
+<!-- <img data-src="/2017/09/15/those-stories-of-dependency-injection/8.jpg" class="" title="结果083"> -->
+<p>图3.5 配置Mac风格后的运行结果</p>
+<p>现在，我们不动程序，仅仅将配置文件中的「Mac」改为 Windows，运行后结果如下：</p>
+<!-- ![09_3.jpg](https://i.loli.net/2017/09/15/59bbb4d5af22b.jpg) -->
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/those-stories-of-dependency-injection/9.jpg" alt="结果093"></p>
+<!-- <img data-src="/2017/09/15/those-stories-of-dependency-injection/9.jpg" class="" title="结果093"> -->
+<p>图3.6 配置为Windows风格后的运行结果</p>
+<p>从运行结果看出，我们仅仅通过修改配置文件，就改变了整个程序的行为（我们甚至没有重新编译程序），这就是多态性的威力，也是依赖注入效果。 本节共讨论了三种基本的依赖注入类别，有关更多依赖注入类别和不同类别对比的知识，可以参考 Martin Fowler 的《<a target="_blank" rel="noopener" href="https://www.martinfowler.com/articles/injection.html"><em>Inversion of Control Containers and the Dependency Injection pattern</em></a>》。</p>
+<h3 id="反射与依赖注入"><a href="#反射与依赖注入" class="headerlink" title="反射与依赖注入"></a>反射与依赖注入</h3><p>回想上面 <em>Dependency Locate</em> 的例子，我们虽然使用了多态性和 <em>Abstract Factory</em> ，但对 OCP 贯彻的不够彻底。在理解这点前，朋友们一定要注意潜在扩展在哪里，潜在会出现扩展的地方是「新的组件系列」而不是「组件种类」，也就是说，这里我们假设组件就三种，不会增加新的组件，但可能出现新的外观系列，如需要加一套 <em>Ubuntu</em> 风格的组件，我们可以新增 <em>UbuntuWindow</em> 、 <em>UbuntuButton</em> 、 <em>UbuntuTextBox</em> 和 <em>UbuntuFactory</em> ，并分别实现相应接口，这是符合 OCP 的，因为这是扩展。但我们除了修改配置文件，还要无可避免的修改 <em>FactoryContainer</em> ，需要加一个分支条件，这个地方破坏了 OCP。依赖注入本身是没有能力解决这个问题的，但如果语言支持反射机制（ <em>Reflection</em> ），则这个问题就迎刃而解。 我们想想，现在的难点是出在这里：对象最终还是要通过「new」来实例化，而「<code>new</code>」只能实例化当前已有的类，如果未来有新类添加进来，必须修改代码。如果，我们能有一种方法，不是通过「<code>new</code>」，而是通过类的名字来实例化对象，那么我们只要将类的名字作为配置项，就可以实现在不修改代码的情况下，加载未来才出现的类。所以，反射给了语言「预见未来」的能力，使得多态性和依赖注入的威力大增。 下面是引入反射机制后，对上面例子的改进：</p>
+<!-- ![10_3.jpg](https://i.loli.net/2017/09/15/59bbb60a2b744.jpg) -->
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/those-stories-of-dependency-injection/10.webp" alt="img103"></p>
+<!-- <img data-src="/2017/09/15/those-stories-of-dependency-injection/10.webp" class="" title="img103"> -->
+<p>图3.7 引入反射机制的Dependency Locate</p>
+<p>可以看出，引入反射机制后，结构简单了很多，一个反射工厂代替了以前的一堆工厂，<code>Factory Container</code> 也不需要了。而且以后有新组件系列加入时，反射工厂是不用改变的，只需改变配置文件就可以完成。下面给出反射工厂和配置文件的代码。</p>
+<figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"><span class="keyword">using</span> System.Linq;</span><br><span class="line"><span class="keyword">using</span> System.Text;</span><br><span class="line"><span class="keyword">using</span> System.Reflection;</span><br><span class="line"><span class="keyword">using</span> System.Xml;</span><br><span class="line"></span><br><span class="line"><span class="keyword">namespace</span> <span class="title">DependencyLocate</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">internal</span> <span class="keyword">static</span> <span class="keyword">class</span> <span class="title">ReflectionFactory</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">static</span> String _windowType;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">static</span> String _buttonType;</span><br><span class="line">        <span class="keyword">private</span> <span class="keyword">static</span> String _textBoxType;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">static</span> <span class="title">ReflectionFactory</span>()</span></span><br><span class="line">        &#123;</span><br><span class="line">            XmlDocument xmlDoc = <span class="keyword">new</span> XmlDocument();</span><br><span class="line">            xmlDoc.Load(<span class="string">&quot;http://www.cnblogs.com/Config.xml&quot;</span>);</span><br><span class="line">            XmlNode xmlNode = xmlDoc.ChildNodes[<span class="number">1</span>].ChildNodes[<span class="number">0</span>];</span><br><span class="line"></span><br><span class="line">            _windowType = xmlNode.ChildNodes[<span class="number">0</span>].Value;</span><br><span class="line">            _buttonType = xmlNode.ChildNodes[<span class="number">1</span>].Value;</span><br><span class="line">            _textBoxType = xmlNode.ChildNodes[<span class="number">2</span>].Value;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> IWindow <span class="title">MakeWindow</span>()</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> Assembly.Load(<span class="string">&quot;DependencyLocate&quot;</span>).CreateInstance(<span class="string">&quot;DependencyLocate.&quot;</span> + _windowType) <span class="keyword">as</span> IWindow;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> IButton <span class="title">MakeButton</span>()</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> Assembly.Load(<span class="string">&quot;DependencyLocate&quot;</span>).CreateInstance(<span class="string">&quot;DependencyLocate.&quot;</span> + _buttonType) <span class="keyword">as</span> IButton;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> ITextBox <span class="title">MakeTextBox</span>()</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">return</span> Assembly.Load(<span class="string">&quot;DependencyLocate&quot;</span>).CreateInstance(<span class="string">&quot;DependencyLocate.&quot;</span> + _textBoxType) <span class="keyword">as</span> ITextBox;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>配置文件如下：</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">&lt;?xml version=<span class="string">&quot;1.0&quot;</span> encoding=<span class="string">&quot;utf-8&quot;</span> ?&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">config</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">window</span>&gt;</span>MacWindow<span class="tag">&lt;/<span class="name">window</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">button</span>&gt;</span>MacButton<span class="tag">&lt;/<span class="name">button</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">textBox</span>&gt;</span>MacTextBox<span class="tag">&lt;/<span class="name">textBox</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">config</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>反射不仅可以与 <em>Dependency Locate</em> 结合，也可以与 <em>Setter Injection</em> 与 <em>Construtor Injection</em> 结合。反射机制的引入，降低了依赖注入结构的复杂度，使得依赖注入彻底符合 OCP，并为通用依赖注入框架（如 Spring.NET 中的 IoC 部分、Unity 等）的设计提供了可能性。</p>
+<h3 id="多态的活性与依赖注入"><a href="#多态的活性与依赖注入" class="headerlink" title="多态的活性与依赖注入"></a>多态的活性与依赖注入</h3><h4 id="多态性的活性"><a href="#多态性的活性" class="headerlink" title="多态性的活性"></a>多态性的活性</h4><p>这一节我们讨论多态的活性及其与依赖注入类型选择间密切的关系。 首先说明，「多态的活性」这个术语是我个人定义的，因为我没有找到既有的概念名词可以表达我的意思，所以就自己造了一个词。这里，某多态的活性是指被此多态隔离的变化所发生变化的频繁程度，频繁程度越高，则活性越强，反之亦然。 上文说过，多态性可以隔离变化，但是，不同的变化，发生的频率是不一样的，这就使得多态的活性有所差别，这种差别影响了依赖注入的类型选择。 举例来说，本文最开始提到的武器多态性，其活性非常高，因为在那个程序中，<em>Role</em> 在一次运行中可能更换多次武器。而现在我们假设 <em>Role</em> 也实现了多态性，这是很可能的，因为在游戏中，不同类型的角色（如暗夜精 灵、牛头人、矮人等）很多属性和业务是想通的，所以很可能通过一个 <em>IRole</em> 或 <em>AbstractRole</em> 抽象类实现多态性，不过，<em>Role</em> 在实例化后（一般在用户登录成功后），是不会变化的，很少有游戏允许同一个玩家在运行中变换 <em>Role</em> 类型，所以 <em>Role</em> 应该是一但实例化，就不会变化，但如果再实例化一个（如另一个玩家登录），则可能就变化了。最后，还有一种多态性是活性非常低的，如我们熟悉的数据访问层多态性，即使我们实现了 SQL Server、Oracle 和 Access 等多种数据库的访问层，并实现了依赖注入，但几乎遇不到程序运行着就改数据库或短期内数据库频繁变动的情况。 以上不同的多态性，不但特征不同，其目的一般也不同，总结如下： 高活多态性——指在客户类实例运行期间，服务类可能会改变的多态性。 中活多态性——指在客户类实例化后，服务类不会改变，但同一时间内存在的不同实例可能拥有不同类型的服务类。 低活多态性——指在客户类实例化后，服务类不会改变，且同一时间内所有客户类都拥有相同类型的服务类。 以上三种多态性，比较好的例子就是上文提到的武器多态性（高活）、角色多态性（中活）和数据访问层多态性（低活）。另外，我们说一种多态性是空间稳定的，如果同一客户类在同一时间内的所有实例都依赖相同类型的服务类，反之则叫做空间不稳定多态性。我们说一种多态性是时间稳定的，如果一个客户类在实例化后，所以来的服务类不能再次更改，反之则叫做时间不稳定多态性。显然，高活多态性时间和空间均不稳定；中活多态性是时间稳定的，但空间不稳定；低活多态性时间空间均稳定。</p>
+<h4 id="不同活性多态的依赖注入选择"><a href="#不同活性多态的依赖注入选择" class="headerlink" title="不同活性多态的依赖注入选择"></a>不同活性多态的依赖注入选择</h4><p>一般来说，高活多态性适合使用 Setter 注入。因为 Setter 注入最灵活，也是唯一允许在同一客户类实例运行期间更改服务类的注入方式。并且这种注入一般由上下文环境通过 Setter 的参数指定服务类类型，方便灵活，适合频繁变化的高活多态性。 对于中活多态性，则适合使用 Constructor 注入。因为 Constructor 注入也是由上下文环境通过 Construtor 的参数指定服务类类型，但一点客户类实例化后，就不能进行再次注入，保证了其时间稳定性。 而对于低活多态性，则适合使用 <em>Dependency Locate</em> 并配合文件配置进行依赖注入，或 Setter、Constructor 配合配置文件注入，因为依赖源来自文件，如果要更改服务类，则需要更改配置文件，一则确保了低活多态性的时间和空间稳定性，二是更改配置文件的方式方便于大规模服务类替换。（因为低活多态性一旦改变行为，往往规模很大，如替换整个数据访问层，如果使用 Setter 和 Construtor 传参，程序中需要改变的地方不计其数） 本质上，这种选择是因为不同的依赖注入类型有着不同的稳定性，大家可以细细体会「活性」、「稳定性」和「依赖注入类型」之间密切的关系。</p>
+<h2 id="IoC-Container"><a href="#IoC-Container" class="headerlink" title="IoC Container"></a>IoC Container</h2><h3 id="IoC-Container-出现的必然性"><a href="#IoC-Container-出现的必然性" class="headerlink" title="IoC Container 出现的必然性"></a>IoC Container 出现的必然性</h3><p>上面讨论了诸多依赖注入的话题。说道依赖注入，就不能不说 <em>IoC Container</em> （IoC 容器），那么到底什么是 <em>IoC</em> 容器？我们还是先来看看它的出现背景。 我们知道，软件开发领域有句著名的论断：不要重复发明轮子！因为软件开发讲求复用，所以，对于应用频繁的需求，总是有人设计各种通用框架和类库以减轻人们的开发负担。例如，数据持久化是非常频繁的需求，于是各种 <em>ORM</em> 框架应运而生；再如，对 <em>MVC</em> 的需求催生了 <em>Struts</em> 等一批用来实现 <em>MVC</em> 的框架。 随着面向对象分析与设计的发展和成熟，<em>OOA&amp;D</em> 被越来越广泛应用于各种项目中，然而，我们知道，用 <em>OO</em> 就不可能不用多态性，用多态性就不可能不用依赖注入，所以，依赖注入变成了非常频繁的需求，而如果全部手工完成，不但负担太重，而且还容易出错。再加上反射机制的发明，于是，自然有人开始设计开发各种用于依赖注入的专用框架。这些专门用于实现依赖注入功能的组件或框架，就是 <em>IoC Container</em> 。 从这点看，<em>IoC Container</em> 的出现有其历史必然性。目前，最著名的 <em>IoC</em> 也许就是 <em>Java</em> 平台上的 <em>Spring</em> 框架的 <em>IoC</em> 组件，而 <em>.NET</em> 平台上也有 <em>Spring.NET</em> 和 <em>Unity</em> 等。</p>
+<h3 id="IoC-Container-的分类"><a href="#IoC-Container-的分类" class="headerlink" title="IoC Container 的分类"></a>IoC Container 的分类</h3><p>前面曾经讨论了三种依赖注入方式，但是，想通过方式对 <em>IoC Container</em> 进行分类很困难，因为现在 <em>IoC Container</em> 都设计很完善，几乎支持所有依赖注入方式。不过，根据不同框架的特性和惯用法，还是可以讲 <em>IoC Container</em> 分为两个大类。</p>
+<h4 id="重量级-IoC-Container"><a href="#重量级-IoC-Container" class="headerlink" title="重量级 IoC Container"></a>重量级 IoC Container</h4><p>所谓重量级 <em>IoC Container</em> ，是指一般用外部配置文件（一般是 <em>XML</em> ）作为依赖源，并托管整个系统各个类的实例化的 <em>IoC Container</em> 。这种 <em>IoC Container</em> ，一般是承接了整个系统几乎所有多态性的依赖注入工作，并承接了所有服务类的实例化工作，而且这些实例化依赖于一个外部配置文件，这种 <em>IoC Container</em> ，很像通过一个文件，定义整个系统多态结构，视野宏大，想要很好驾驭这种 <em>IoC Container</em> ，需要一定的架构设计能力和丰富的实践经验。 <em>Spring</em> 和 <em>Spring.NET</em> 是重量级 <em>IoC Container</em> 的例子。一般来说，这种 <em>IoC Container</em> 稳定性有余而活性不足，适合进行低活多态性的依赖注入。</p>
+<h4 id="轻量级-IoC-Container"><a href="#轻量级-IoC-Container" class="headerlink" title="轻量级 IoC Container"></a>轻量级 IoC Container</h4><p>还有一种 <em>IoC Container</em> ，一般不依赖外部配置文件，而主要使用传参的 Setter 或 Construtor 注入，这种IoC Container叫做轻量级 <em>IoC Container</em> 。这种框架很灵活，使用方便，但往往不稳定，而且依赖点都是程序中的字符串参数，所以，不适合需要大规模替换和相对稳定的低活多态性，而对于高活多态性，有很好的效果。 <em>Unity</em> 是一个典型的轻量级 <em>IoC Container</em> 。</p>
+<h3 id="NET平台上典型-IoC-Container-推介"><a href="#NET平台上典型-IoC-Container-推介" class="headerlink" title=".NET平台上典型 IoC Container 推介"></a>.NET平台上典型 IoC Container 推介</h3><h4 id="Spring-NET"><a href="#Spring-NET" class="headerlink" title="Spring.NET"></a>Spring.NET</h4><!-- ![11_3.png](https://i.loli.net/2017/09/15/59bbb86a93913.png) -->
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/those-stories-of-dependency-injection/11.png" alt="img113"></p>
+<!-- <img data-src="/2017/09/15/those-stories-of-dependency-injection/11.png" class="" title="img113"> -->
+<p><em>Spring.NET</em> 是 <em>Java</em> 平台上 <em>Spring</em> 对 <em>.NET</em> 平台的移植，使用方法和 <em>Spring</em> 很像，并且功能强大，是 <em>.NET</em> 平台上大中型开发 <em>IoC Container</em> 的首选之一。除了 <em>DI</em> 外，<em>Spring.NET</em> 也包括 <em>AOP</em> 等诸多功能。 <em>Spring.NET</em> 的官方网站是：<a target="_blank" rel="noopener" href="http://www.springframework.net/">http://www.springframework.net/</a></p>
+<h4 id="Unity"><a href="#Unity" class="headerlink" title="Unity"></a>Unity</h4><!-- ![12_3.gif](https://i.loli.net/2017/09/15/59bbb8f4a6954.gif) -->
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/those-stories-of-dependency-injection/12.webp" alt="img123"></p>
+<!-- <img data-src="/2017/09/15/those-stories-of-dependency-injection/12.webp" class="" title="img123"> -->
+<p>对于小型项目和讲求敏捷的团队，<em>Spring.NET</em> 可能有点太重量级，那么可以选择轻量级的 <em>Unity</em> 。<em>Unity</em> 是微软 <em>patterns &amp; practices</em> 团队推出的轻量级框架，非常好用，目前最新版本是 1.2。</p>
+<p><em>Unity</em> 的官方网站是：<a target="_blank" rel="noopener" href="http://unity.codeplex.com/">http://unity.codeplex.com/</a></p>
+<h2 id="参考文献"><a href="#参考文献" class="headerlink" title="参考文献"></a>参考文献</h2><ol>
+<li><p><a target="_blank" rel="noopener" href="http://www.codeproject.com/KB/aspnet/IOCDI.aspx">Shivprasad koirala, Design pattern – Inversion of control and Dependency injection</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="http://www.martinfowler.com/articles/injection.html">Martin Fowler, Inversion of Control Containers and the Dependency Injection pattern</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="http://docs.codehaus.org/display/PICO/IoC+Types">Paul, IoC Types</a></p>
+</li>
+<li><p>Eric Freeman, Elisabeth Freeman. Head First Design Patterns. O’Reilly Media, 2004. ISBN 0596007142</p>
+</li>
+<li><p>Erich Gamma, Richard Helm, Ralph Johnson, John Vlissides. Design Patterns: Elements of Reusable Object-Oriented Software. Addison-Wesley, 1995. ISBN 0201633612</p>
+</li>
+<li><p>Patrick Smacchia 著，施凡等 译，C#和.NET2.0 平台、语言与框架。2008.1，人民邮电出版</p>
+</li>
+<li><p>Jeffrey Rechter 著，CLR via C#（影印版）。2008.8，人民邮电出版</p>
+</li>
+</ol>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div></div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="https://cdn.jsdelivr.net/gh/AemonCao/hexo-theme-next@master/source/images/wechatpay.jpg" alt="Aemon 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="https://cdn.jsdelivr.net/gh/AemonCao/hexo-theme-next@master/source/images/alipay.jpg" alt="Aemon 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/C/" rel="tag"><i class="fa fa-tag"></i> C#</a>
+              <a href="/tags/%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5/" rel="tag"><i class="fa fa-tag"></i> 依赖注入</a>
+              <a href="/tags/%E8%BD%AC%E8%BD%BD/" rel="tag"><i class="fa fa-tag"></i> 转载</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2017/08/16/wechat-mini-programs-rusha/" rel="prev" title="微信小程序——RushA">
+      <i class="fa fa-chevron-left"></i> 微信小程序——RushA
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2017/09/23/install-chrome-chromium-browser-on-raspberry/" rel="next" title="在树莓派上安装 Chrome（Chromium） 浏览器">
+      在树莓派上安装 Chrome（Chromium） 浏览器 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#IGame-%E6%B8%B8%E6%88%8F%E5%85%AC%E5%8F%B8%E7%9A%84%E6%95%85%E4%BA%8B"><span class="nav-number">1.</span> <span class="nav-text">IGame 游戏公司的故事</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E8%AE%A8%E8%AE%BA%E4%BC%9A"><span class="nav-number">1.1.</span> <span class="nav-text">讨论会</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%AE%9E%E4%B9%A0%E7%94%9F%E5%B0%8F%E6%9D%8E%E7%9A%84%E5%AE%9E%E7%8E%B0%E6%96%B9%E5%BC%8F"><span class="nav-number">1.2.</span> <span class="nav-text">实习生小李的实现方式</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9E%B6%E6%9E%84%E5%B8%88%E7%9A%84%E5%BB%BA%E8%AE%AE"><span class="nav-number">1.3.</span> <span class="nav-text">架构师的建议</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B0%8F%E6%9D%8E%E7%9A%84%E5%B0%8F%E7%BB%93"><span class="nav-number">1.4.</span> <span class="nav-text">小李的小结</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%A2%E7%A9%B6%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5"><span class="nav-number">2.</span> <span class="nav-text">探究依赖注入</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%95%85%E4%BA%8B%E7%9A%84%E5%90%AF%E8%BF%AA"><span class="nav-number">2.1.</span> <span class="nav-text">故事的启迪</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%AD%A3%E5%BC%8F%E5%AE%9A%E4%B9%89%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5"><span class="nav-number">2.2.</span> <span class="nav-text">正式定义依赖注入</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5%E9%82%A3%E4%BA%9B%E4%BA%8B%E5%84%BF"><span class="nav-number">3.</span> <span class="nav-text">依赖注入那些事儿</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5%E7%9A%84%E7%B1%BB%E5%88%AB"><span class="nav-number">3.1.</span> <span class="nav-text">依赖注入的类别</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Setter-%E6%B3%A8%E5%85%A5"><span class="nav-number">3.1.1.</span> <span class="nav-text">Setter 注入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%9E%84%E9%80%A0%E6%B3%A8%E5%85%A5"><span class="nav-number">3.1.2.</span> <span class="nav-text">构造注入</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BE%9D%E8%B5%96%E8%8E%B7%E5%8F%96"><span class="nav-number">3.1.3.</span> <span class="nav-text">依赖获取</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%8F%8D%E5%B0%84%E4%B8%8E%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5"><span class="nav-number">3.2.</span> <span class="nav-text">反射与依赖注入</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%9A%E6%80%81%E7%9A%84%E6%B4%BB%E6%80%A7%E4%B8%8E%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5"><span class="nav-number">3.3.</span> <span class="nav-text">多态的活性与依赖注入</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%A4%9A%E6%80%81%E6%80%A7%E7%9A%84%E6%B4%BB%E6%80%A7"><span class="nav-number">3.3.1.</span> <span class="nav-text">多态性的活性</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%B8%8D%E5%90%8C%E6%B4%BB%E6%80%A7%E5%A4%9A%E6%80%81%E7%9A%84%E4%BE%9D%E8%B5%96%E6%B3%A8%E5%85%A5%E9%80%89%E6%8B%A9"><span class="nav-number">3.3.2.</span> <span class="nav-text">不同活性多态的依赖注入选择</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IoC-Container"><span class="nav-number">4.</span> <span class="nav-text">IoC Container</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#IoC-Container-%E5%87%BA%E7%8E%B0%E7%9A%84%E5%BF%85%E7%84%B6%E6%80%A7"><span class="nav-number">4.1.</span> <span class="nav-text">IoC Container 出现的必然性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#IoC-Container-%E7%9A%84%E5%88%86%E7%B1%BB"><span class="nav-number">4.2.</span> <span class="nav-text">IoC Container 的分类</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E9%87%8D%E9%87%8F%E7%BA%A7-IoC-Container"><span class="nav-number">4.2.1.</span> <span class="nav-text">重量级 IoC Container</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E8%BD%BB%E9%87%8F%E7%BA%A7-IoC-Container"><span class="nav-number">4.2.2.</span> <span class="nav-text">轻量级 IoC Container</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#NET%E5%B9%B3%E5%8F%B0%E4%B8%8A%E5%85%B8%E5%9E%8B-IoC-Container-%E6%8E%A8%E4%BB%8B"><span class="nav-number">4.3.</span> <span class="nav-text">.NET平台上典型 IoC Container 推介</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#Spring-NET"><span class="nav-number">4.3.1.</span> <span class="nav-text">Spring.NET</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Unity"><span class="nav-number">4.3.2.</span> <span class="nav-text">Unity</span></a></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E6%96%87%E7%8C%AE"><span class="nav-number">5.</span> <span class="nav-text">参考文献</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Aemon"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Aemon</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">60</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">27</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">63</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/AemonCao" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;AemonCao" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:bot960528@gmail.com" title="E-Mail → mailto:bot960528@gmail.com" rel="noopener" target="_blank"><i class="far fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://t.me/Aemon_Cao" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;Aemon_Cao" rel="noopener" target="_blank"><i class="fab fa-telegram fa-fw"></i>Telegram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/rss2.xml" title="RSS → &#x2F;rss2.xml"><i class="fas fa-rss-square fa-fw"></i>RSS</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="Atom → &#x2F;atom.xml"><i class="fas fa-rss-square fa-fw"></i>Atom</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">浙ICP备20007726号-1 </a>
+  </div>
+
+<div class="copyright">
+  
+  &copy; 2017 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Aemon</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/velocity-animate@1/velocity.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/velocity-animate@1/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://www.aemon.top/2017/09/15/those-stories-of-dependency-injection/',]
+      });
+      });
+  </script>
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'dXrGvgAadbIcmIt5BIuqak9X-gzGzoHsz',
+      appKey     : 'BvQ660cw9YNVNjakRNfdsq1L',
+      placeholder: "评论支持 Markdown 样式。",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>
