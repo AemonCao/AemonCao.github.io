@@ -2,7 +2,7 @@
 title: What is this thing 13
 date: 2021-07-22 13:18:55
 description: For the identification of mysterious objects
-tags:  
+tags:
   - What is this thing?
   - 翻译
 categories:
@@ -20,9 +20,9 @@ categories:
 
 在加勒比海的一个主要港口（在我的地皮上）附近挖掘出了这个东西。这是从大炮里射出来的吗？
 
-![大铁球](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-13/大铁球.jpg)
+![大铁球](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-13/大铁球.jpg)
 
-![大铁球](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-13/大铁球2.jpg)
+![大铁球](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-13/大铁球2.jpg)
 
 > A: 100% a cannonball.
 
@@ -36,11 +36,11 @@ categories:
 
 我院子里的地面上冒出的是什么东西？里面有紫红色的金属粘稠物。即使我用铲子挖下薄薄的一层，也会一直冒泡。
 
-![泡沫](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-13/泡沫1.jpg)
+![泡沫](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-13/泡沫1.jpg)
 
-![泡沫](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-13/泡沫2.jpg)
+![泡沫](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-13/泡沫2.jpg)
 
-![泡沫](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-13/泡沫3.jpg)
+![泡沫](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-13/泡沫3.jpg)
 
 <iframe src="//player.bilibili.com/player.html?aid=716812906&bvid=BV1GX4y1c7rf&cid=374491892&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
 
@@ -59,7 +59,7 @@ categories:
 
 像这样，但规模更大。
 
-![泡沫](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-13/泡沫4.jpg)
+![泡沫](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-13/泡沫4.jpg)
 
 > OP: The construction here is mainly finished except for a retention pond down the street. Haven’t noticed any houses nearby getting work done on the ground or having something pumped.
 
@@ -83,9 +83,9 @@ categories:
 
 从我的饼干里出来的这些丝线/线是什么？
 
-![饼干](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-13/饼干.jpg)
+![饼干](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-13/饼干.jpg)
 
-![饼干](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-13/饼干2.jpg)
+![饼干](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-13/饼干2.jpg)
 
 > A: I work in food manufacturing. This is 100% frayed edges of the conveyors that take the crackers through the sheeting process before being transferred to the oven band.
 > Contact the manufacturer with the codes and date on the box. It will help them in their investigation, and you will most likely get some free stuff.
@@ -102,17 +102,17 @@ categories:
 
 这个 ATM 机侧面的两个金属螺柱是什么？
 
-![ATM](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-13/ATM.jpg)
+![ATM](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-13/ATM.jpg)
 
 > A: Pretty sure they put those on there to [stop this from happening](https://www.nwcu.com/learn/how-spot-atm-skimmer).
 
 很明显，他们把这些放在那里是为了[阻止这种情况发生](https://www.nwcu.com/learn/how-spot-atm-skimmer)。
 
-![ATM](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-13/ATM1.jpg)
+![ATM](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-13/ATM1.jpg)
 
-![ATM](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-13/ATM2.png)
+![ATM](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-13/ATM2.png)
 
-![ATM](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-13/ATM3.png)
+![ATM](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-13/ATM3.png)
 
 <https://www.reddit.com/r/whatisthisthing/comments/odk775/what_are_these_2_metal_studs_on_the_side_of_this/>
 
@@ -122,13 +122,13 @@ categories:
 
 在我们的新房子里顶楼的栏杆上发现的。看起来它是用来装东西的，但不知道是什么东西？
 
-![架子](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-13/架子.jpg)
+![架子](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-13/架子.jpg)
 
 > A: Appears to be a 3M Command hair dryer holder. Though given the location, perhaps previous owners were using it for something else (what I have no idea)
 
 看起来是一个 3M 公司的吹风机支架。但是考虑到在这个位置，也许以前的主人用它来做别的事情（我不知道是什么）。
 
-![架子](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-13/架子2.jpg)
+![架子](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-13/架子2.jpg)
 
 <https://www.reddit.com/r/whatisthisthing/comments/ofigao/found_in_our_new_house_on_the_top_landing/>
 
@@ -138,7 +138,7 @@ categories:
 
 在一个乐器里面发现的，它有一个大葡萄那么大，但没有任何足够大的孔洞让它掉到里面。
 
-![老鼠](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-13/老鼠.jpg)
+![老鼠](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-13/老鼠.jpg)
 
 > A: They have these in violins. They call them the mouse. It’s just years and years of fluff and detritus. If they get repaired the repairer will put ‘the mouse’ back into the violin for good luck. It could be something like that.
 
@@ -152,7 +152,7 @@ categories:
 
 我知道这称不上是一个物体，但希望你们仍然可以帮助我。这个紫烟是什么？
 
-![紫烟](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-13/紫烟.jpg)
+![紫烟](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-13/紫烟.jpg)
 
 > A: If it’s a trash-to-ethanol refinery/plant there’s a good chance they got a load of iodine-rich hospital waste.
 

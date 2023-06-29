@@ -2,7 +2,7 @@
 title: What is this thing 3
 date: 2020-09-17 09:33:54
 description: For the identification of mysterious objects
-tags:  
+tags:
   - What is this thing?
   - 翻译
 categories:
@@ -21,7 +21,7 @@ categories:
 
 带钉子的跳绳？两个带有钉子的弹性握把被伞绳连接在了一起。
 
-![JumpRope.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-3/JumpRope.jpg)
+![JumpRope.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-3/JumpRope.jpg)
 
 <!-- {% asset_img JumpRope JumpRope.jpg %} -->
 
@@ -37,7 +37,7 @@ categories:
 
 这是什么？我爸爸在星期一清晨去世了，我和我的兄弟姐妹们在清理他房间里的东西，我们在一个装有他越南的美国空军狗牌的首饰盒里发现了这些东西，很明显这些是别针。我们在寻找能够帮我们鉴别它们的信息，如果它们是他服役期间的，如果不是的话，那这些又是什么呢？他不太愿意谈论他在军队时候的日子。
 
-![DogTag.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-3/DogTag.jpg)
+![DogTag.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-3/DogTag.jpg)
 
 <!-- {% asset_img DogTag DogTag.jpg %} -->
 
@@ -53,7 +53,7 @@ categories:
 
 朋友盘了家商店，商店的阁楼上发现了这件军装，出现在二战时期，这个标志是什么意思？
 
-![insignia.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-3/insignia.jpg)
+![insignia.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-3/insignia.jpg)
 
 <!-- {% asset_img insignia insignia.jpg %} -->
 
@@ -67,7 +67,7 @@ categories:
 
 最初在1927年1月26日第六军批准了肩袖徽章。原来的设计被取消，新的设计于1945年1月10日获得批准。1960年12月6日，修改后的背景色由橄榄色改为军绿色。
 
-![insignia.gif](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-3/insignia.gif)
+![insignia.gif](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-3/insignia.gif)
 
 <!-- {% asset_img insignia insignia.gif %} -->
 
@@ -79,7 +79,7 @@ categories:
 
 建在宾夕法尼亚州东南部一座小山上。门口大约有4-5英尺高。这条路在汽车出现之前行人就很多了。离小溪很近。
 
-![LimeKilns.gif](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-3/LimeKilns.jpg)
+![LimeKilns.gif](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-3/LimeKilns.jpg)
 
 <!-- {% asset_img LimeKilns LimeKilns.jpg %} -->
 
@@ -95,13 +95,13 @@ categories:
 
  我在院子里挖东西的时候发现了这个玻璃样的东西。就和第一张照片一样，它被埋在泥土中大约有2英尺深，重16.5磅(7.5公斤)。
 
- ![glass1.png](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-3/glass1.png)
+ ![glass1.png](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-3/glass1.png)
 
- ![glass2.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-3/glass2.jpg)
+ ![glass2.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-3/glass2.jpg)
 
- ![glass3.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-3/glass3.jpg)
+ ![glass3.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-3/glass3.jpg)
 
- ![glass4.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-3/glass4.jpg)
+ ![glass4.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-3/glass4.jpg)
 
  <!-- {% asset_img glass1 glass1.jpg %} -->
 
@@ -127,7 +127,7 @@ categories:
 
 在清理父母的财产时发现的，之前从未见过类似的东西。生锈了，绝对是古董。
 
-![CandleTommy.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-3/CandleTommy.jpg)
+![CandleTommy.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-3/CandleTommy.jpg)
 
 <!-- {% asset_img CandleTommy CandleTommy.jpg %} -->
 
@@ -137,9 +137,9 @@ categories:
 
 注：去找了下它的使用办法，直接看图：
 
-![CandleTommy.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-3/CandleTommy2.jpg)
+![CandleTommy.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-3/CandleTommy2.jpg)
 
-![CandleTommy.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-3/CandleTommy3.jpg)
+![CandleTommy.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-3/CandleTommy3.jpg)
 
 <!-- {% asset_img CandleTommy2 CandleTommy2.jpg %} -->
 
@@ -153,7 +153,7 @@ categories:
 
 在一袋步枪和手枪子弹中发现的一战时期的军用工具
 
-![WWI.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-3/WWI.jpg)
+![WWI.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-3/WWI.jpg)
 
 <!-- {% asset_img WWI WWI.jpg %} -->
 

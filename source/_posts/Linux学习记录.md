@@ -300,7 +300,7 @@ git submodule add https://github.com/AemonCao/hexo-theme-next.git themes/next
 
 之后在 Visual Studio Code 的「源代码管理页面」的「源代码管理提供程序」中就会出现两个项目，一个是主项目，一个就是刚刚添加的子项目。
 
-![源代码管理提供程序](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/Linux学习记录/源代码管理提供程序.png)
+![源代码管理提供程序](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/Linux学习记录/源代码管理提供程序.png)
 
 <!-- {% asset_img 源代码管理提供程序.png 源代码管理提供程序 %} -->
 

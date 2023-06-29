@@ -2,7 +2,7 @@
 title: What is this thing 6
 date: 2020-12-26 14:56:40
 description: For the identification of mysterious objects
-tags:  
+tags:
   - What is this thing?
   - 翻译
 categories:
@@ -21,11 +21,11 @@ categories:
 
 有谁知道这个盒子是什么吗？
 
-![砚](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-6/砚.jpg)
+![砚](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-6/砚.jpg)
 
-![砚](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-6/砚2.jpg)
+![砚](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-6/砚2.jpg)
 
-![砚](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-6/砚3.jpg)
+![砚](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-6/砚3.jpg)
 
 <!-- {% asset_img 砚 砚.jpg %} -->
 
@@ -46,7 +46,7 @@ categories:
 
 在工作的储藏室里发现的，上面有黑色的小块，编号顺序看起来也好奇怪。
 
-![板子](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-6/板子.jpg)
+![板子](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-6/板子.jpg)
 
 <!-- {% asset_img 板子 板子.jpg %} -->
 
@@ -65,13 +65,13 @@ categories:
 
 这个长得像蹄子的东西是什么?很轻，摸起来有橡胶的感觉。发现于澳大利亚维多利亚州中部的农田。
 
-![蹄子](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-6/蹄子.jpg)
+![蹄子](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-6/蹄子.jpg)
 
-![蹄子](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-6/蹄子2.jpg)
+![蹄子](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-6/蹄子2.jpg)
 
-![蹄子](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-6/蹄子3.jpg)
+![蹄子](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-6/蹄子3.jpg)
 
-![蹄子](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-6/蹄子4.jpg)
+![蹄子](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-6/蹄子4.jpg)
 
 <!-- {% asset_img 蹄子 蹄子.jpg %} -->
 
@@ -96,7 +96,7 @@ categories:
 
 这个装置位于疗养院的水槽和马桶之间。
 
-![水槽](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-6/水槽.jpg)
+![水槽](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-6/水槽.jpg)
 
 <!-- {% asset_img 水槽 水槽.jpg %} -->
 
@@ -112,11 +112,11 @@ categories:
 
 这个坚固的金属穿过了这个空心的木圆柱体。
 
-![手榴弹](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-6/手榴弹.jpg)
+![手榴弹](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-6/手榴弹.jpg)
 
-![手榴弹](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-6/手榴弹2.jpg)
+![手榴弹](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-6/手榴弹2.jpg)
 
-![手榴弹](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-6/手榴弹3.jpg)
+![手榴弹](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-6/手榴弹3.jpg)
 
 <!-- {% asset_img 手榴弹 手榴弹.jpg %} -->
 
@@ -140,11 +140,11 @@ categories:
 
 在一个旧珠宝里发现了一些奇怪的东西。
 
-![酒](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-6/酒.jpg)
+![酒](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-6/酒.jpg)
 
-![酒](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-6/酒2.jpg)
+![酒](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-6/酒2.jpg)
 
-![酒](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-6/酒3.jpg)
+![酒](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-6/酒3.jpg)
 
 <!-- {% asset_img 酒 酒.jpg %} -->
 
@@ -164,11 +164,11 @@ categories:
 
 这个挂在当地公园电线上的奇怪的大桶是什么？
 
-![桶](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-6/桶.jpg)
+![桶](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-6/桶.jpg)
 
-![桶](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-6/桶2.jpg)
+![桶](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-6/桶2.jpg)
 
-![桶](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-6/桶3.jpg)
+![桶](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-6/桶3.jpg)
 
 <!-- {% asset_img 桶 桶.jpg %} -->
 
@@ -188,13 +188,13 @@ categories:
 
 这是在旧工具中找到的。似乎没有依附于任何东西。它可以锁定到位，中间的钻头转动，解开两束织物。我被难倒了！
 
-![书](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-6/书.jpg)
+![书](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-6/书.jpg)
 
-![书](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-6/书2.jpg)
+![书](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-6/书2.jpg)
 
-![书](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-6/书3.jpg)
+![书](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-6/书3.jpg)
 
-![书](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-6/书4.jpg)
+![书](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-6/书4.jpg)
 
 <!-- {% asset_img 书 书.jpg %} -->
 
@@ -208,7 +208,7 @@ categories:
 
 它是用来拿书的。
 
-![书](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-6/书5.jpg)
+![书](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-6/书5.jpg)
 
 <!-- {% asset_img 书 书5.jpg %} -->
 
@@ -216,9 +216,9 @@ categories:
 
 解决了!谢谢你！我想了好几个月了，你几分钟就找到了，哈哈。再一次感谢您！（尽管我有点尴尬！）
 
-![书](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-6/书6.jpg)
+![书](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-6/书6.jpg)
 
-![书](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-6/书7.jpg)
+![书](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-6/书7.jpg)
 
 <!-- {% asset_img 书 书6.jpg %} -->
 
@@ -232,13 +232,13 @@ categories:
 
 银色桶/碟子里面发现的，每 40 个里面就有一个这个，其余都是空的。
 
-![激光元件](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-6/激光元件.jpg)
+![激光元件](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-6/激光元件.jpg)
 
-![激光元件](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-6/激光元件2.jpg)
+![激光元件](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-6/激光元件2.jpg)
 
-![激光元件](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-6/激光元件3.jpg)
+![激光元件](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-6/激光元件3.jpg)
 
-![激光元件](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-6/激光元件4.jpg)
+![激光元件](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-6/激光元件4.jpg)
 
 <!-- {% asset_img 激光元件 激光元件.jpg %} -->
 
@@ -260,7 +260,7 @@ categories:
 
 看看维基百科上的第一张照片。
 
-![激光元件](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-6/激光元件5.jpg)
+![激光元件](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-6/激光元件5.jpg)
 
 <!-- {% asset_img 激光元件 激光元件5.jpg %} -->
 
@@ -276,7 +276,7 @@ categories:
 
 黄铜做的，外部的每一个大头针都能打开，内部的圆直径大概四分之三英寸到一英寸之间。
 
-![指尖陀螺](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-6/指尖陀螺.jpg)
+![指尖陀螺](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-6/指尖陀螺.jpg)
 
 <!-- {% asset_img 指尖陀螺 指尖陀螺.jpg %} -->
 

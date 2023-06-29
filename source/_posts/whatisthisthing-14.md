@@ -2,7 +2,7 @@
 title: What is this thing 14
 date: 2021-08-21 13:33:31
 description: For the identification of mysterious objects
-tags:  
+tags:
   - What is this thing?
   - 翻译
 categories:
@@ -20,7 +20,7 @@ categories:
 
 汤姆·戴利手臂上的这种粘膜式的东西是什么，它有什么用？
 
-![保鲜膜](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-14/保鲜膜.jpg)
+![保鲜膜](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-14/保鲜膜.jpg)
 
 > A: Cling filmed ice packs.
 
@@ -34,7 +34,7 @@ categories:
 
 奥运帆船运动员穿的这种带液体袋的背心是干什么用的？荷兰运动员贝克林和杜茨在赛后接受采访时穿的衣服。
 
-![液体背心](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-14/液体背心.png)
+![液体背心](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-14/液体背心.png)
 
 > A: They are cooling vests.
 
@@ -48,7 +48,7 @@ categories:
 
 我床尾的这些钉子是干什么用的？我们以为是放鞋的，但其实有 9 个。
 
-![床](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-14/床.jpg)
+![床](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-14/床.jpg)
 
 > A: Anchor points for rope play?
 
@@ -62,7 +62,7 @@ categories:
 
 刚买了一个湖边的房子，在码头旁边的水里发现了三个这样的东西。纵横交错的波纹管堆叠，用塑料网包裹，都是用砖头压住的。
 
-![笼子](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-14/笼子.png)
+![笼子](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-14/笼子.png)
 
 > A: It is a fish crib. It is a device to give baby fish a place to hide from the big boys. They also make for some good fishing as the lunckers will hang around hoping for a few little ones to come out.
 
@@ -76,7 +76,7 @@ categories:
 
 妻子在 eBay 上订购了几卷感谢贴纸。结果却送来了这个。已经打电话要求退货了。这些是什么？绿色的圆柱形卷筒，闻起来像绿茶？作为一个喜欢喝茶的人，我是这么想的。
 
-![茶棍](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-14/茶棍.jpg)
+![茶棍](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-14/茶棍.jpg)
 
 > A: They kind of look like plant fertilizer sticks
 
@@ -90,7 +90,7 @@ categories:
 
 工作的酒吧柜台上的这个东西是什么？它是由金属制成的，是空心的。
 
-![可口可乐](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-14/可口可乐.jpg)
+![可口可乐](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-14/可口可乐.jpg)
 
 > A: It's an old fashioned countertop bottle opener, I've seen loads of these in old pubs. The bottles are opened from the other side.
 
@@ -104,13 +104,13 @@ categories:
 
 我在网上买的新文胸里面有一个「微芯片」。在我看来很假，但不知道它到底是什么，也不知道为什么要把它放在这样的褶边里。
 
-![量子芯片](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-14/量子芯片1.jpg)
+![量子芯片](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-14/量子芯片1.jpg)
 
-![量子芯片](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-14/量子芯片2.jpg)
+![量子芯片](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-14/量子芯片2.jpg)
 
-![量子芯片](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-14/量子芯片3.jpg)
+![量子芯片](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-14/量子芯片3.jpg)
 
-![量子芯片](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-14/量子芯片4.jpg)
+![量子芯片](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-14/量子芯片4.jpg)
 
 > A: Google says the Chinese text says 'quantum computer'. I think this is just a marketing gag, without function.
 

@@ -18,7 +18,7 @@ date: 2018-07-19 22:56:39
 
 <!-- ![5.png](https://i.loli.net/2018/07/19/5b507b12be317.png) -->
 
-![电费](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/use-raspberry-with-frp-for-remote-boot/电费.webp)
+![电费](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/use-raspberry-with-frp-for-remote-boot/电费.webp)
 
 <!-- {% asset_img 电费.webp 电费 %} -->
 
@@ -50,7 +50,7 @@ date: 2018-07-19 22:56:39
 
 <!-- ![Routerlist.png](https://i.loli.net/2018/07/19/5b507b1a3f9aa.png) -->
 
-![Routerlist](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/use-raspberry-with-frp-for-remote-boot/Routerlist.webp)
+![Routerlist](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/use-raspberry-with-frp-for-remote-boot/Routerlist.webp)
 
 <!-- {% asset_img Routerlist.webp Routerlist %} -->
 
@@ -64,7 +64,7 @@ ipconfig -all
 
 <!-- ![MACWindows.png](https://i.loli.net/2018/07/19/5b507b1a4128f.png) -->
 
-![MACWindows](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/use-raspberry-with-frp-for-remote-boot/MACWindows.webp)
+![MACWindows](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/use-raspberry-with-frp-for-remote-boot/MACWindows.webp)
 
 <!-- {% asset_img MACWindows.webp MACWindows %} -->
 
@@ -78,7 +78,7 @@ ifconfig
 
 <!-- ![MACraspberry.png](https://i.loli.net/2018/07/19/5b507b1a4292a.png) -->
 
-![MACraspberry](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/use-raspberry-with-frp-for-remote-boot/MACraspberry.webp)
+![MACraspberry](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/use-raspberry-with-frp-for-remote-boot/MACraspberry.webp)
 
 <!-- {% asset_img MACraspberry.webp MACraspberry %} -->
 
@@ -98,7 +98,7 @@ ifconfig
 
 <!-- ![4.png](https://i.loli.net/2018/07/19/5b507b129fdee.png) -->
 
-![网络和共享中心](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/use-raspberry-with-frp-for-remote-boot/4.webp)
+![网络和共享中心](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/use-raspberry-with-frp-for-remote-boot/4.webp)
 
 <!-- {% asset_img 4.webp 网络和共享中心 %} -->
 
@@ -106,7 +106,7 @@ ifconfig
 
 <!-- ![1.png](https://i.loli.net/2018/07/19/5b507b12983ac.png) -->
 
-![更改适配器设置](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/use-raspberry-with-frp-for-remote-boot/1.png)
+![更改适配器设置](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/use-raspberry-with-frp-for-remote-boot/1.png)
 
 <!-- {% asset_img 1.png 更改适配器设置 %} -->
 
@@ -114,7 +114,7 @@ ifconfig
 
 <!-- ![3.png](https://i.loli.net/2018/07/19/5b507b129f1e7.png) -->
 
-![高级](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/use-raspberry-with-frp-for-remote-boot/3.webp)
+![高级](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/use-raspberry-with-frp-for-remote-boot/3.webp)
 
 <!-- {% asset_img 3.webp 高级 %} -->
 
@@ -122,7 +122,7 @@ ifconfig
 
 <!-- ![2.png](https://i.loli.net/2018/07/19/5b507b1298186.png) -->
 
-![电源管理](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/use-raspberry-with-frp-for-remote-boot/2.webp)
+![电源管理](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/use-raspberry-with-frp-for-remote-boot/2.webp)
 
 <!-- {% asset_img 2.webp 电源管理 %} -->
 
@@ -204,7 +204,7 @@ nohup ./frps -c ./frps.ini &
 
 <!-- ![list.png](https://i.loli.net/2018/07/19/5b507b12b3fed.png) -->
 
-![list](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/use-raspberry-with-frp-for-remote-boot/list.webp)
+![list](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/use-raspberry-with-frp-for-remote-boot/list.webp)
 
 <!-- {% asset_img list.webp list %} -->
 
@@ -271,7 +271,7 @@ ssh -p 6022 118.126.***.***
 
 <!-- ![SSHraspberryPC.png](https://i.loli.net/2018/07/19/5b507b1a44208.png) -->
 
-![SSHraspberryPC](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/use-raspberry-with-frp-for-remote-boot/SSHraspberryPC.png)
+![SSHraspberryPC](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/use-raspberry-with-frp-for-remote-boot/SSHraspberryPC.png)
 
 <!-- {% asset_img SSHraspberryPC.png SSHraspberryPC %} -->
 
@@ -279,7 +279,7 @@ ssh -p 6022 118.126.***.***
 
 <!-- ![SSHPhone.png](https://i.loli.net/2018/07/19/5b507b1a5450c.png) -->
 
-![SSHPhone](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/use-raspberry-with-frp-for-remote-boot/SSHPhone.webp)
+![SSHPhone](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/use-raspberry-with-frp-for-remote-boot/SSHPhone.webp)
 
 <!-- {% asset_img SSHPhone.webp SSHPhone %} -->
 
@@ -381,7 +381,7 @@ python wol.py E0:D5:5E:88:88:88
 
     <!-- ![6.png](https://i.loli.net/2018/07/19/5b507b12b69cb.png) -->
 
-    ![MagicPacket](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/use-raspberry-with-frp-for-remote-boot/6.webp)
+    ![MagicPacket](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/use-raspberry-with-frp-for-remote-boot/6.webp)
 
     <!-- {% asset_img 6.webp MagicPacket %} -->
 

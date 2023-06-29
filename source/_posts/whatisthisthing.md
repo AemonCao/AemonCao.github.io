@@ -21,9 +21,9 @@ categories:
 
 我的爷爷前不久去世了，我们在一个杂乱的公文包里发现了这些奇怪的笔记，有非常多页而且看起来都差不多，有人能告诉我这是什么么？
 
-![weird-notes-1.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing/weird-notes-1.jpg)
+![weird-notes-1.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing/weird-notes-1.jpg)
 
-![weird-notes-2.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing/weird-notes-2.jpg)
+![weird-notes-2.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing/weird-notes-2.jpg)
 
 <!-- {% asset_img weird-notes-1 weird-notes-1.jpg %} -->
 
@@ -41,11 +41,11 @@ categories:
 
 在德克萨斯州橡树山的一个河床中找到的，头顶有一个贯穿的小孔。
 
-![caddo-1.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing/caddo-1.jpg)
+![caddo-1.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing/caddo-1.jpg)
 
-![caddo-2.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing/caddo-2.jpg)
+![caddo-2.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing/caddo-2.jpg)
 
-![caddo-3.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing/caddo-3.jpg)
+![caddo-3.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing/caddo-3.jpg)
 
 <!-- {% asset_img caddo-1 caddo-1.jpg %} -->
 
@@ -65,13 +65,13 @@ categories:
 
 在德国弗莱堡发现的，假的杯底里面有着芯片和传感器，看你的了。
 
-![mug-1.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing/mug-1.jpg)
+![mug-1.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing/mug-1.jpg)
 
-![mug-2.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing/mug-2.jpg)
+![mug-2.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing/mug-2.jpg)
 
-![mug-3.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing/mug-3.jpg)
+![mug-3.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing/mug-3.jpg)
 
-![mug-4.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing/mug-4.jpg)
+![mug-4.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing/mug-4.jpg)
 
 <!-- {% asset_img mug-1 mug-1.jpg %} -->
 
@@ -93,7 +93,7 @@ categories:
 
 上面唯一能看到的字是「声波技术」。
 
-![sonic-technology.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing/sonic-technology.jpg)
+![sonic-technology.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing/sonic-technology.jpg)
 
 <!-- {% asset_img sonic-technology sonic-technology.jpg %} -->
 
@@ -110,7 +110,7 @@ categories:
 
 在一个古董店里找到的，这是个嘛？
 
-![NCR.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing/NCR.jpg)
+![NCR.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing/NCR.jpg)
 
 <!-- {% asset_img NCR NCR.jpg %} -->
 
@@ -126,7 +126,7 @@ categories:
 
 拆弹小组被叫来检查这个在路边某个建筑工地上发现的「古董炸弹」,这是真的吗？
 
-![bomb.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing/bomb.jpg)
+![bomb.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing/bomb.jpg)
 
 <!-- {% asset_img bomb bomb.jpg %} -->
 
@@ -142,7 +142,7 @@ categories:
 
 在英国的一个悬崖边发现的，上面有铁链，知道这是什么吗？
 
-![huts.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing/huts.jpg)
+![huts.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing/huts.jpg)
 
 <!-- {% asset_img huts huts.jpg %} -->
 

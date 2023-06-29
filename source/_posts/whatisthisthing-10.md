@@ -2,7 +2,7 @@
 title: What is this thing 10
 date: 2021-04-22 16:41:59
 description: For the identification of mysterious objects
-tags:  
+tags:
   - What is this thing?
   - 翻译
 categories:
@@ -21,7 +21,7 @@ categories:
 
 我的优步司机会随机按的戒指是个什么东西？
 
-![ring](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-10/ring.jpg)
+![ring](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-10/ring.jpg)
 
 > A: Hes praying, thats a counter
 
@@ -37,7 +37,7 @@ categories:
 
 我在一则关于土耳其政变的德国新闻里发现了奇怪的武器。
 
-![信号枪](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-10/信号枪.jpg)
+![信号枪](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-10/信号枪.jpg)
 
 > A: Drone killer. It sends a strong and very directional radio frequency signal to jam the receíver on the drone to cause it to crash.
 
@@ -51,9 +51,9 @@ categories:
 
 在花园里发现的可以合上的金属物件。
 
-![盒子](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-10/盒子1.jpg)
+![盒子](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-10/盒子1.jpg)
 
-![盒子](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-10/盒子2.jpg)
+![盒子](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-10/盒子2.jpg)
 
 > A: Looks like a Hindu ritual box. It is missing the middle piece that would sit in that central hole.
 > See some for sale here:
@@ -65,9 +65,9 @@ categories:
 
 <https://www.exoticindiaart.com/sculptures/Ritual/box/>
 
-![盒子](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-10/盒子3.jpg)
+![盒子](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-10/盒子3.jpg)
 
-![盒子](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-10/盒子4.jpg)
+![盒子](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-10/盒子4.jpg)
 
 <https://www.reddit.com/r/whatisthisthing/comments/mjvmfa/found_in_a_garden_metallic_object_that_closes_in/>
 
@@ -77,7 +77,7 @@ categories:
 
 这艘船后面长长的痕迹是什么?
 
-![痕迹](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-10/痕迹.jpg)
+![痕迹](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-10/痕迹.jpg)
 
 > A: The disturbed water hasn't mixed back into surrounding water very quick and the sun is reflecting off the different surface waves amplifying the difference.
 
@@ -91,7 +91,7 @@ categories:
 
 住在爱彼迎的旅馆里，为什么通风口会发出绿色的光？
 
-![绿光](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-10/绿光.jpg)
+![绿光](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-10/绿光.jpg)
 
 > A: It’s likely could be a UV-C sterilization lamp. Kills germs/viruses as they pass by. Also can help prevent mold and whatnot building up on the coil.
 
@@ -105,7 +105,7 @@ categories:
 
 在明尼苏达公园发现的金属物件，一同被发现的还有一些十九世纪六十年代的物体。
 
-![模具](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-10/模具.jpg)
+![模具](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-10/模具.jpg)
 
 > A: Mold for casting lead soldiers?
 
@@ -127,7 +127,7 @@ categories:
 
 我披萨切片机后面的刺是什么?
 
-![披萨切片机](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-10/披萨切片机.jpg)
+![披萨切片机](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-10/披萨切片机.jpg)
 
 > A: Ravioli maybe? Like pizza cutters are also used to cut pasta.
 
@@ -135,7 +135,7 @@ categories:
 
 （译者注：意大利饺长这样。）
 
-![意大利饺](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-10/意大利饺.webp)
+![意大利饺](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-10/意大利饺.webp)
 
 <https://www.reddit.com/r/whatisthisthing/comments/mjcyrb/what_is_this_spur_on_the_back_of_my_pizza_slicer/>
 
@@ -145,7 +145,7 @@ categories:
 
 也许是旧学校的化学教具？在废弃的建筑里发现的，没有任何信息。
 
-![试管](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-10/试管.jpg)
+![试管](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-10/试管.jpg)
 
 > A: Googling some of the names seems to point to a collection of homeopathic garbage.
 
@@ -163,7 +163,7 @@ categories:
 
 这个奇怪的容器里面装的是什么？
 
-![奇怪的容器](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-10/奇怪的容器.jpg)
+![奇怪的容器](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-10/奇怪的容器.jpg)
 
 > A: Had a hunch, and it's a ( human or equine) sperm shipping container. We've had one of these on here before, which are used to ship bull sperm.
 

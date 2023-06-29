@@ -2,7 +2,7 @@
 title: What is this thing 11
 date: 2021-05-22 10:28:18
 description: For the identification of mysterious objects
-tags:  
+tags:
   - What is this thing?
   - 翻译
 categories:
@@ -20,21 +20,21 @@ categories:
 
 在我家附近的路边发现了这个。我以为它是一个大脑，然后解剖了它，现在我不知道了。有很多小叶子，里面是模糊的，是橡胶的？我的鞋子是用来参考尺寸的。
 
-![白色的大脑](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-11/白色的大脑1.jpg)
+![白色的大脑](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-11/白色的大脑1.jpg)
 
-![白色的大脑](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-11/白色的大脑2.jpg)
+![白色的大脑](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-11/白色的大脑2.jpg)
 
-![白色的大脑](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-11/白色的大脑3.jpg)
+![白色的大脑](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-11/白色的大脑3.jpg)
 
-![白色的大脑](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-11/白色的大脑4.jpg)
+![白色的大脑](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-11/白色的大脑4.jpg)
 
-![白色的大脑](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-11/白色的大脑5.jpg)
+![白色的大脑](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-11/白色的大脑5.jpg)
 
-![白色的大脑](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-11/白色的大脑6.jpg)
+![白色的大脑](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-11/白色的大脑6.jpg)
 
-![白色的大脑](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-11/白色的大脑7.jpg)
+![白色的大脑](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-11/白色的大脑7.jpg)
 
-![白色的大脑](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-11/白色的大脑8.jpg)
+![白色的大脑](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-11/白色的大脑8.jpg)
 
 > A: Is that a shit?!
 
@@ -52,7 +52,7 @@ categories:
 
 这是一扇大门，挡住了通往一些手机塔的道路。为什么有这么多的锁，他们该怎么打开它？
 
-![锁](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-11/锁.jpg)
+![锁](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-11/锁.jpg)
 
 > Q: You can open the gate by unlocking only one padlock. The way it's designed means that multiple people can use the gate, and if one person loses their keys, only their padlock needs replaced. As opposed to one padlock with many keys, you'd need to give tons of people the new key.
 
@@ -66,7 +66,7 @@ categories:
 
 我在等待银行开门，他们把这张卡面向街道。它是用来做什么的？
 
-![银行扑克](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-11/银行扑克.jpg)
+![银行扑克](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-11/银行扑克.jpg)
 
 > A: Former bank employee here. It's definitely a safety signal. We switched ours quarterly and it is to let other employees know that it is all clear to open. Typically we had 2 employees "open" the branch while the rest waited in the parking lot or across the street for "all clear." The openers go in, turn off alarm, search the building and check everything then set the signal.
 
@@ -80,7 +80,7 @@ categories:
 
 在我德国的浴室里发现了这个……
 
-![水龙头](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-11/水龙头.jpg)
+![水龙头](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-11/水龙头.jpg)
 
 > A: It looks like they are meters that show how much hot and cold water has been used. I don’t know why your meter it that way.
 
@@ -94,7 +94,7 @@ categories:
 
 这是个嘛？在一栋老房子的房产清单中，发现了一个可能位于走廊的形状异常的水槽。看起来很窄，对于洗靴子来说可能太小了。
 
-![水槽](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-11/水槽.jpg)
+![水槽](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-11/水槽.jpg)
 
 > A: It’s called a butlers sink, or cleaners sink. It’s used for cleaning, filling buckets, emptying out waste so housekeeping can wash down surfaces without wandering through the house.
 
@@ -108,13 +108,13 @@ categories:
 
 在我的车道上发现的。加拿大皇家骑警昨晚逮捕了我的邻居，这可能与此有关吗？
 
-![针头](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-11/针头.jpg)
+![针头](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-11/针头.jpg)
 
 > A: Yup, a taser dart
 
 是的，一个泰瑟枪的飞镖。
 
-![泰瑟枪飞镖](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-11/泰瑟枪飞镖.jpg)
+![泰瑟枪飞镖](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-11/泰瑟枪飞镖.jpg)
 
 （译者注：说起泰瑟枪突然想到之前有看过 [The Slow Mo Guys](https://www.youtube.com/user/theslowmoguys) 的一期被[泰瑟枪击中的慢镜头视频](https://www.youtube.com/watch?v=576HwhU6PMM)，还蛮有意思的。）
 
@@ -128,7 +128,7 @@ categories:
 
 用鳄鱼夹作为手柄的小勺子。在清理厨房的时候发现了它。
 
-![勺子](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-11/勺子.jpg)
+![勺子](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-11/勺子.jpg)
 
 > A: Coffee scoop with bag clip for coffee bag...
 

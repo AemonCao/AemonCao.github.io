@@ -2,7 +2,7 @@
 title: What is this thing 8
 date: 2021-02-19 11:15:35
 description: For the identification of mysterious objects
-tags:  
+tags:
   - What is this thing?
   - 翻译
 categories:
@@ -21,7 +21,7 @@ categories:
 
 不知名的玻璃制物品里面充满了不知名的液体，在 1900 年代早期的谷仓中找到的。有什么线索么？
 
-![灯泡](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-8/灯泡.jpg)
+![灯泡](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-8/灯泡.jpg)
 
 > A: Fire extinguisher.<https://www.core77.com/posts/25006/light-by-fire-extinguisher-the-anti-incendiary-grenades-of-yore-25006>
 
@@ -39,13 +39,13 @@ categories:
 
 这艘在纽约长岛海岸外竖着三个烟囱的小船是什么？
 
-![小船](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-8/小船.jpg)
+![小船](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-8/小船.jpg)
 
 > A: Not smoke stacks, piles. It’s a working barge, and those piles are lowered into the sea floor to stabilize the vessel while working. They are very commonly used on maritime construction projects such as bridge and tunnel building, surveying, shore protection, etc.
 
 不是烟囱，是桩。 这是一艘正在工作的驳船，将这些桩放到海床中，以在工作时稳定船只。 它们常常用于海事建设项目，例如桥梁和隧道建设，测量，海岸保护等。
 
-![小船2](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-8/小船2.jpg)
+![小船2](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-8/小船2.jpg)
 
 <https://www.reddit.com/r/whatisthisthing/comments/lgtlza/what_is_this_boat_off_the_coast_of_long_island_ny/>
 
@@ -55,7 +55,7 @@ categories:
 
 这是个嘛？在上个月，它成百上千的出现在沙滩上。
 
-![塑料制品](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-8/塑料制品.png)
+![塑料制品](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-8/塑料制品.png)
 
 > A: Bio filter media
 
@@ -69,9 +69,9 @@ categories:
 
 红色的小容器。这个盖子里面连着一个小勺子。
 
-![鼻烟壶](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-8/鼻烟壶.jpg)
+![鼻烟壶](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-8/鼻烟壶.jpg)
 
-![鼻烟壶](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-8/鼻烟壶2.jpg)
+![鼻烟壶](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-8/鼻烟壶2.jpg)
 
 > A: Snuff container
 
@@ -85,7 +85,7 @@ categories:
 
 这些从地面升起的小「房间」遍布西班牙的乡村。许多老房子都有一个。它过去或者现在是用来干什么的?
 
-![小屋子](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-8/小屋子.png)
+![小屋子](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-8/小屋子.png)
 
 > A: They're grain stores called "hórreos".
 
@@ -99,13 +99,13 @@ categories:
 
 我在谷歌地图上发现了这个东西，这是一个非常奇怪的特征，我在网上什么都找不到，除了矛盾的信息。谷歌地图显示这是一列火车，但怎么做到的？为什么？！！有人知道这是什么吗？
 
-![UFO](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-8/UFO1.jpg)
+![UFO](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-8/UFO1.jpg)
 
-![UFO](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-8/UFO2.jpg)
+![UFO](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-8/UFO2.jpg)
 
-![UFO](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-8/UFO3.jpg)
+![UFO](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-8/UFO3.jpg)
 
-![UFO](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-8/UFO4.jpg)
+![UFO](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-8/UFO4.jpg)
 
 > A: It is a block of ice thrown from the near by mountain in an avalanche. [Here's](https://www.livescience.com/61926-snow-antarctica-google-ufo.html) an article about it.
 
@@ -119,7 +119,7 @@ categories:
 
 这个看起来像超人舱的东西是什么？我在加州伯班克散步时看到的。
 
-![异形舱](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-8/异形舱.jpg)
+![异形舱](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-8/异形舱.jpg)
 
 > A: Probably viral marketing.
 
@@ -135,10 +135,10 @@ categories:
 
 这看起来很像异类（高等技术人类）被外星人带走去对抗其他外星人的豆荚。
 
-![异形舱](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-8/异形舱2.png)
+![异形舱](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-8/异形舱2.png)
 
-![异形舱](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-8/异形舱3.png)
+![异形舱](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-8/异形舱3.png)
 
-![异形舱](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-8/异形舱4.png)
+![异形舱](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-8/异形舱4.png)
 
 <https://www.reddit.com/r/whatisthisthing/comments/led04h/what_is_this_thing_that_looks_like_supermans_pod/>

@@ -35,7 +35,7 @@ categories:
 
     <!-- ![Remote Explorer](https://i.loli.net/2020/03/08/YXuTfDQxovHUkNm.png) -->
 
-    ![RemoteExplorer](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/Remote-development-in-Visual-Studio-Code/RemoteExplorer.png)
+    ![RemoteExplorer](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/Remote-development-in-Visual-Studio-Code/RemoteExplorer.png)
 
     <!-- {% asset_img RemoteExplorer.png RemoteExplorer %} -->
 
@@ -47,7 +47,7 @@ categories:
 
 <!-- ![SSH TARGETS](https://i.loli.net/2020/03/08/mlqFf1N9nuxRaEp.png) -->
 
-![SSHTARGETS](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/Remote-development-in-Visual-Studio-Code/SSHTARGETS.png)
+![SSHTARGETS](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/Remote-development-in-Visual-Studio-Code/SSHTARGETS.png)
 
 <!-- {% asset_img SSHTARGETS.png SSHTARGETS %} -->
 
@@ -73,7 +73,7 @@ ssh -p 9588 user@host
 
 <!-- ![password.png](https://i.loli.net/2020/03/08/jXhLQ2UgY5Gwl3f.png) -->
 
-![password](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/Remote-development-in-Visual-Studio-Code/password.png)
+![password](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/Remote-development-in-Visual-Studio-Code/password.png)
 
 <!-- {% asset_img password.png password %} -->
 
@@ -83,7 +83,7 @@ ssh -p 9588 user@host
 
 <!-- ![Opening](https://i.loli.net/2020/03/08/Fa6xRzThrIsEYUN.png) -->
 
-![Opening](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/Remote-development-in-Visual-Studio-Code/Opening.png)
+![Opening](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/Remote-development-in-Visual-Studio-Code/Opening.png)
 
 <!-- {% asset_img Opening.png Opening %} -->
 
@@ -91,7 +91,7 @@ ssh -p 9588 user@host
 
 <!-- ![success.png](https://i.loli.net/2020/03/08/v6jDnFKbcJPWLRl.png) -->
 
-![success](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/Remote-development-in-Visual-Studio-Code/success.png)
+![success](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/Remote-development-in-Visual-Studio-Code/success.png)
 
 <!-- {% asset_img success.png success %} -->
 
@@ -103,7 +103,7 @@ ssh -p 9588 user@host
 
     <!-- ![expoler.png](https://i.loli.net/2020/03/08/Tltvb9aLrmq67CI.png) -->
 
-    ![expoler](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/Remote-development-in-Visual-Studio-Code/expoler.png)
+    ![expoler](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/Remote-development-in-Visual-Studio-Code/expoler.png)
 
     <!-- {% asset_img expoler.png expoler %} -->
 
@@ -111,7 +111,7 @@ ssh -p 9588 user@host
 
     <!-- ![open-folder.png](https://i.loli.net/2020/03/08/2JU7CYA5i6T1Fzc.png) -->
 
-    ![open-folder](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/Remote-development-in-Visual-Studio-Code/open-folder.png)
+    ![open-folder](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/Remote-development-in-Visual-Studio-Code/open-folder.png)
 
     <!-- {% asset_img open-folder.png open-folder %} -->
 
@@ -123,7 +123,7 @@ ssh -p 9588 user@host
 
 <!-- ![error.png](https://i.loli.net/2020/03/08/BemOgUkIxCsjPrh.png) -->
 
-![error](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/Remote-development-in-Visual-Studio-Code/error.png)
+![error](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/Remote-development-in-Visual-Studio-Code/error.png)
 
 <!-- {% asset_img error.png error %} -->
 

@@ -2,7 +2,7 @@
 title: What is this thing 7
 date: 2021-01-22 09:42:13
 description: For the identification of mysterious objects
-tags:  
+tags:
   - What is this thing?
   - 翻译
 categories:
@@ -21,7 +21,7 @@ categories:
 
 在我的拐棍糖 Kisses里面发现了固体金属的「kiss」，这是机器的一部分吗？
 
-![Kisses](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-7/Kisses.jpg)
+![Kisses](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-7/Kisses.jpg)
 
 > A: Definitely not a part of the machine. Since it is the same size and shape, I would say it's a QA "guage" to help operators verify shape and portion size at a glance.
 
@@ -35,7 +35,7 @@ categories:
 
 我的监控摄像头拍到这个人用一个大设备，可能在扫描什么东西？这个人注意到了监控摄像头，似乎改变了主意，但是他们拿着什么东西在做什么？
 
-![监控摄像头](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-7/监控摄像头.jpg)
+![监控摄像头](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-7/监控摄像头.jpg)
 
 > A: this person is probably a carthieve scanning for keyless car keys. never leave them near windows and doors.
 
@@ -53,7 +53,7 @@ categories:
 
 在澳大利亚维多利亚州乡下发现的紫色包裹。
 
-![紫薯](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-7/紫薯.jpeg)
+![紫薯](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-7/紫薯.jpeg)
 
 > A: Dye powder packets tied to the under side of rams to mark which sheep have been inseminated.
 
@@ -71,7 +71,7 @@ categories:
 
 我的邻居（他最近安装了一个亚马逊的门铃摄像头，这对荷兰来说很奇怪）刚刚把它放在了他的屋顶上。它似乎直接对准了我的女室友的卧室窗户，她担心这是另一个摄像头。
 
-![屋顶摄像头](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-7/屋顶摄像头.jpg)
+![屋顶摄像头](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-7/屋顶摄像头.jpg)
 
 > A: You could just straight up ask him. If he gives you some excuse and it disappears you know it wasn’t there for any good reason. If he gives you a reasonable sounding explanation like it’s for satellite internet or weather tracking you can show an interest in it and find out what make/model it is.
 
@@ -83,13 +83,13 @@ categories:
 
 有点像这个：
 
-![R2](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-7/R2.jpg)
+![R2](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-7/R2.jpg)
 
 译者注：这玩意叫[Trimble R2 Integrated GNSS System](https://geospatial.trimble.com/products-and-solutions/trimble-r2)，具体用法如下：
 
-![GNSS](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-7/GNSS1.jpg)
+![GNSS](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-7/GNSS1.jpg)
 
-![GNSS](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-7/GNSS2.jpg)
+![GNSS](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-7/GNSS2.jpg)
 
 <https://www.reddit.com/r/whatisthisthing/comments/kvpc5b/my_neighbor_who_has_recently_installed_an_amazon/>
 
@@ -99,7 +99,7 @@ categories:
 
 这些已经在我们的厨房抽屉中放了很长时间了，但是我们还没有弄清楚它们的用途。 有任何想法吗？
 
-![厨房](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-7/厨房.jpg)
+![厨房](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-7/厨房.jpg)
 
 > A: Green one opens bananas.
 
@@ -109,7 +109,7 @@ categories:
 
 你用蓝色的那个去削橘子皮。我们自己也有一个。
 
-![剥橘子](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-7/剥橘子.jpg)
+![剥橘子](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-7/剥橘子.jpg)
 
 <https://www.reddit.com/r/whatisthisthing/comments/kwm2m6/these_have_been_in_our_kitchen_drawer_for_ages/>
 
@@ -119,7 +119,7 @@ categories:
 
 车窗上多了个洞后在后座发现的子弹状的东西。
 
-![子弹](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-7/子弹.jpg)
+![子弹](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-7/子弹.jpg)
 
 > A: Ya,thats a bullet
 
@@ -133,7 +133,7 @@ categories:
 
 1.5 英寸长，坚硬光滑。发现于弗吉尼亚河底下 5 英尺处。
 
-![化石](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-7/化石.jpg)
+![化石](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-7/化石.jpg)
 
 > A: Fossil snail casting would be my vote.
 

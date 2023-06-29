@@ -2,7 +2,7 @@
 title: What is this thing 4
 date: 2020-12-25 11:06:13
 description: For the identification of mysterious objects
-tags:  
+tags:
   - What is this thing?
   - 翻译
 categories:
@@ -21,11 +21,11 @@ categories:
 
 宾夕法尼亚州排屋的地窖中的隧道。
 
-![Tunnel-1.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-4/Tunnel-1.jpg)
+![Tunnel-1.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-4/Tunnel-1.jpg)
 
-![Tunnel-2.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-4/Tunnel-2.jpg)
+![Tunnel-2.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-4/Tunnel-2.jpg)
 
-![Tunnel-3.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-4/Tunnel-3.jpg)
+![Tunnel-3.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-4/Tunnel-3.jpg)
 
 <!-- {% asset_img Tunnel-1 Tunnel-1.jpg %} -->
 
@@ -45,7 +45,7 @@ categories:
 
 这个附着物是什么？为什么它是圆的？
 
-![Ball.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-4/Ball.jpg)
+![Ball.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-4/Ball.jpg)
 
 <!-- {% asset_img Ball Ball.jpg %} -->
 
@@ -61,7 +61,7 @@ categories:
 
 这是个啥？厄瓜多尔的沙滩看起来是有磁性的。
 
-![Ironsand.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-4/Ironsand.jpg)
+![Ironsand.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-4/Ironsand.jpg)
 
 <!-- {% asset_img Ironsand Ironsand.jpg %} -->
 
@@ -79,7 +79,7 @@ categories:
 
 我的品客薯片上的这些个棕色小东西是什么？？
 
-![Pringle.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-4/Pringle.jpg)
+![Pringle.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-4/Pringle.jpg)
 
 <!-- {% asset_img Pringle Pringle.jpg %} -->
 
@@ -97,7 +97,7 @@ categories:
 
 我在我奶奶的房子（德国）里发现了这些，它们是用薄玻璃做的。不幸的是，没有盒子盖解释它们是什么。
 
-![Glass.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-4/Glass.jpg)
+![Glass.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-4/Glass.jpg)
 
 <!-- {% asset_img Glass Glass.jpg %} -->
 
@@ -105,7 +105,7 @@ categories:
 
 它们是用来装饰花卉的。一朵奇异的花在花筒里。也许在附近的什么地方有一个供它们用的架子，但有些人喜欢把它们和其他装饰品一起用泡沫塑料粘在一起，或者用钻了洞的浮木碎片粘在一起，甚至把它们粘在别的花盆里。我在博登迈斯（德国）的玻璃制造厂见过。
 
-![Glass2.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-4/Glass2.jpg)
+![Glass2.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-4/Glass2.jpg)
 
 <!-- {% asset_img Glass2 Glass2.jpg %} -->
 
@@ -117,7 +117,7 @@ categories:
 
 我在德国的公交车站台上方看到的是什么？
 
-![Bus.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-4/Bus.jpg)
+![Bus.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-4/Bus.jpg)
 
 <!-- {% asset_img Bus Bus.jpg %} -->
 
@@ -133,7 +133,7 @@ categories:
 
 这是什么炸药，今天在阁楼上发现的，直径大概十厘米。
 
-![Explosive.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-4/Explosive.jpg)
+![Explosive.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-4/Explosive.jpg)
 
 <!-- {% asset_img Explosive Explosive.jpg %} -->
 
@@ -149,7 +149,7 @@ categories:
 
 我见过蛮多辆这样子的卡车了，但是我不知道它的用途是什么。
 
-![Cybertruck.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-4/Cybertruck.jpg)
+![Cybertruck.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-4/Cybertruck.jpg)
 
 <!-- {% asset_img Cybertruck Cybertruck.jpg %} -->
 
@@ -165,9 +165,9 @@ categories:
 
 发现了我曾祖父的一些古老的东方丝绸服装。
 
-![Garments.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-4/Garments.jpg)
+![Garments.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-4/Garments.jpg)
 
-![Garments2.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-4/Garments2.jpg)
+![Garments2.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-4/Garments2.jpg)
 
 <!-- {% asset_img Garments Garments.jpg %} -->
 

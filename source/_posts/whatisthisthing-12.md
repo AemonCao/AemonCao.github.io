@@ -2,7 +2,7 @@
 title: What is this thing 12
 date: 2021-06-22 10:08:46
 description: For the identification of mysterious objects
-tags:  
+tags:
   - What is this thing?
   - 翻译
 categories:
@@ -20,17 +20,17 @@ categories:
 
 这个像玻璃管一样的「贝壳」被冲上了卡洛琳北部的海滩，你知道这是什么吗？
 
-![贝壳](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-12/贝壳1.jpg)
+![贝壳](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-12/贝壳1.jpg)
 
-![贝壳](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-12/贝壳2.jpg)
+![贝壳](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-12/贝壳2.jpg)
 
-![贝壳](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-12/贝壳3.jpg)
+![贝壳](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-12/贝壳3.jpg)
 
 > A: Stingray teeth
 
 赤魟的牙齿。
 
-![贝壳](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-12/贝壳4.jpg)
+![贝壳](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-12/贝壳4.jpg)
 
 <https://www.reddit.com/r/whatisthisthing/comments/nrmrx2/found_this_glass_like_tube_shell_washed_up_on_a/>
 
@@ -40,7 +40,7 @@ categories:
 
 在密西西比河岸发现的带金属牌的浮木。
 
-![浮木](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-12/浮木.jpg)
+![浮木](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-12/浮木.jpg)
 
 > A: Looks like a piece from a bedhead. I think the sheath of wheat is a xtian symbol about reaping what you sow and of death and renewal. Something along those lines. Wheat has been used on double (marital) beds for centuries, including the bedhead and upright posts. They're also used on chairs in a literal or a stylised way and represent prosperity in relation to the 'reap what you sow' type of symbolism.
 
@@ -54,7 +54,7 @@ categories:
 
 一个前半部分很深的浴缸，位置是在美国。听说叫做邮递员浴缸，谷歌搜索结果会有色情内容。
 
-![浴缸](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-12/浴缸.jpg)
+![浴缸](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-12/浴缸.jpg)
 
 > A: Probably for washing your feet.
 
@@ -72,7 +72,7 @@ categories:
 
 退潮时在码头下进行金属探测时发现了这些软金属片。
 
-![金属片](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-12/金属片.jpg)
+![金属片](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-12/金属片.jpg)
 
 > A: Saw a similar post a few weeks back and I don’t remember what religion but I’m pretty sure they’re good luck/prayer charms that are tossed in the water on purpose. They’re cheaply buyable and have no significance once they hit the water so you can keep them without upsetting anyone, but no, they aren’t ancient.
 
@@ -86,7 +86,7 @@ categories:
 
 伊利诺伊州的可变停车标志。
 
-![STOP](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-12/STOP.jpg)
+![STOP](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-12/STOP.jpg)
 
 > There wouldn't be another road coming in at a shallow angle to the left of this, would there?
 > These are blinders, typically used so the sign can old be read from a narrow angle. They're also called directional shields. You'll see them on traffic lights a lot more often.
@@ -106,7 +106,7 @@ categories:
 
 一种小型的塑料和金属装置，在自动取款机的卡槽中发现。
 
-![小东西](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-12/小东西.jpg)
+![小东西](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-12/小东西.jpg)
 
 > A: Looks like a Lebanese loop to me used in atm fraud, I won't explain how just tell bank.
 
@@ -120,7 +120,7 @@ categories:
 
 6 英寸高，4 英寸宽，感觉像金属，发现于科罗拉多山麓。
 
-![石头](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-12/石头.jpg)
+![石头](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-12/石头.jpg)
 
 > Looks like an iron nodule. Natural concentration of iron.
 > See here <https://sites.wustl.edu/meteoritesite/items/concretions/#:~:text=Hematite%20nodules%20are%20often%20formed,a%20wide%20variety%20of%20shapes>.

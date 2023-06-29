@@ -2,7 +2,7 @@
 title: What is this thing 5
 date: 2020-12-25 15:29:13
 description: For the identification of mysterious objects
-tags:  
+tags:
   - What is this thing?
   - 翻译
 categories:
@@ -21,7 +21,7 @@ categories:
 
 在树林中发现的巨大金属圆筒（宾夕法尼亚州中部）
 
-![桶](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-5/桶.jpg)
+![桶](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/桶.jpg)
 
 <!-- {% asset_img 桶 桶.jpg %} -->
 
@@ -35,13 +35,13 @@ categories:
 
 看看这些现代版本的样子。
 
-![桶](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-5/桶2.jpg)
+![桶](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/桶2.jpg)
 
-![桶](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-5/桶3.jpg)
+![桶](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/桶3.jpg)
 
-![桶](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-5/桶4.jpg)
+![桶](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/桶4.jpg)
 
-![桶](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-5/桶5.jpg)
+![桶](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/桶5.jpg)
 
 <!-- {% asset_img 桶 桶2.jpg %} -->
 
@@ -59,9 +59,9 @@ categories:
 
 邻居们都在吐槽被搬出去的奇怪机器人。
 
-![机器人](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-5/机器人1.jpg)
+![机器人](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/机器人1.jpg)
 
-![机器人](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-5/机器人2.jpg)
+![机器人](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/机器人2.jpg)
 
 <!-- {% asset_img 机器人 机器人1.jpg %} -->
 
@@ -79,7 +79,7 @@ categories:
 
 有人把这个礼物送给了一个新生儿，却没有说明是什么。
 
-![新生儿](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-5/新生儿1.jpg)
+![新生儿](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/新生儿1.jpg)
 
 <!-- {% asset_img 新生儿 新生儿1.jpg %} -->
 
@@ -90,7 +90,7 @@ categories:
 
 编辑：我只能用此版本找到一个外语网站，但是这里有一张照片：
 
-![新生儿](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-5/新生儿2.jpg)
+![新生儿](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/新生儿2.jpg)
 
 <!-- {% asset_img 新生儿 新生儿2.jpg %} -->
 
@@ -104,7 +104,7 @@ categories:
 
 他们在我公寓的天花板上安装了这个。绿灯每闪一次就发出嗡嗡声。
 
-![杀虫](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-5/杀虫.jpg)
+![杀虫](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/杀虫.jpg)
 
 <!-- {% asset_img 杀虫 杀虫.jpg %} -->
 
@@ -120,7 +120,7 @@ categories:
 
 这是个嘛？妈妈买了一盒旧别针，这是其中之一。似乎是金属的，背面是空的，除了有些粘在什么东西上的痕迹。
 
-![金砖](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-5/金砖.jpg)
+![金砖](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/金砖.jpg)
 
 <!-- {% asset_img 金砖 金砖.jpg %} -->
 
@@ -136,9 +136,9 @@ categories:
 
 winco（超市）制作的厨房工具。不知道是什么。
 
-![工具](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-5/工具1.jpg)
+![工具](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/工具1.jpg)
 
-![工具](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-5/工具2.jpg)
+![工具](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/工具2.jpg)
 
 <!-- {% asset_img 工具 工具1.jpg %} -->
 
@@ -156,7 +156,7 @@ Winco SDS-3，带舒适手柄的虾剥皮机，不锈钢。
 
 在我的新家发现的，建于 20 世纪 50 年代。
 
-![报警器](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-5/报警器.jpg)
+![报警器](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/报警器.jpg)
 
 <!-- {% asset_img 报警器 报警器.jpg %} -->
 

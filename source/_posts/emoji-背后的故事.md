@@ -30,9 +30,9 @@ description: 🌕🌖🌗🌘🌑🌒🌓🌔🌕
 
 下面是一些关于三猿的雕刻作品：
 
-![三猿](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/emoji-背后的故事/三猿1.jpg)
+![三猿](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/emoji-背后的故事/三猿1.jpg)
 
-![三猿](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/emoji-背后的故事/三猿2.jpg)
+![三猿](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/emoji-背后的故事/三猿2.jpg)
 
 另外，游戏《只狼》中，在金刚山仙峰寺幻境中的见闻言三猿，也就是这三只猴子。一般的 Boss 需要用刀剑正面对决，而这一关的目的是为了抓到这三个猿猴。**见猿**的眼神很敏锐，远远看到到主角的存在就会迅速逃跑；**闻猿**的耳朵很灵敏，远远听到主角的脚步声就会迅速逃跑；**言猿**的脖子上挂着一个铜锣，发现玩家后会敲锣发出声响让周围的猴子都逃掉。
 
@@ -44,17 +44,17 @@ description: 🌕🌖🌗🌘🌑🌒🌓🌔🌕
 
 根据🇯🇵《道路交通法》第71条之五的第一项规定，驾驶人在初取得“第一类普通汽车”（普通自動車一種）的驾驶执照之后，必需在车辆前后高度40至120公分的范围内，贴上此标志，至少一年。未贴此标志者若遭查获，会遭违规记点的处分。此规定的目的在于保护道路驾驶经验尚不足的新手驾驶及其周围的车辆，降低交通事故。但并未明文规定一年后是否仍可贴此标志。
 
-![🔰](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/emoji-背后的故事/Wakaba_mark.svg)
+![🔰](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/emoji-背后的故事/Wakaba_mark.svg)
 
-![🔰](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/emoji-背后的故事/SUZUKI_ALTO_LAPIN_Chocolat_HE22S_rear.jpeg)
+![🔰](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/emoji-背后的故事/SUZUKI_ALTO_LAPIN_Chocolat_HE22S_rear.jpeg)
 
 ### 🕴
 
 「浮在地面上的西装男」，一个西装革履，戴着帽子和墨镜，但是却浮在半空，在地面投射阴影，看似飘浮在空中的男士。他是谁？鬼怪？外星人？神秘来客？这其实是参考 The Specials 乐队 2014 年的歌曲 Ghost Town 封面上的人形惊叹号，一般用于表示人形幽灵或有特异功能的人。
 
-![🕴](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/emoji-背后的故事/浮在地面上的西装男.png)
+![🕴](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/emoji-背后的故事/浮在地面上的西装男.png)
 
-![🕴](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/emoji-背后的故事/Ghost_Town.jpeg)
+![🕴](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/emoji-背后的故事/Ghost_Town.jpeg)
 
 ### 👨‍🎤
 
@@ -62,12 +62,12 @@ description: 🌕🌖🌗🌘🌑🌒🌓🌔🌕
 
 这富有个性的面部彩绘造型来源于他的第六张专辑 《Aladdin Sane》。
 
-![👨‍🎤](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/emoji-背后的故事/歌手男.png)
+![👨‍🎤](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/emoji-背后的故事/歌手男.png)
 
-![👨‍🎤](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/emoji-背后的故事/歌手男.jpg)
+![👨‍🎤](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/emoji-背后的故事/歌手男.jpg)
 
 ### 🌊
 
 浪，这也是一个比较常见 emoji。它的来源就是日本浮世绘画家葛饰北斋的著名木刻版画——《神奈川冲浪里》。
 
-![🌊](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/emoji-背后的故事/神奈川冲浪里.jpg)
+![🌊](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/emoji-背后的故事/神奈川冲浪里.jpg)

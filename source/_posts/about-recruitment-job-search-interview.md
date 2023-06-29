@@ -45,7 +45,7 @@ date: 2017-06-10 14:19:44
 
 <!-- ![简历模板.jpg](https://ooo.0o0.ooo/2017/06/20/594916856b099.jpg) -->
 
-![简历模版](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/about-recruitment-job-search-interview/简历模板.jpg)
+![简历模版](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/about-recruitment-job-search-interview/简历模板.jpg)
 
 <!-- {% asset_img 简历模板.jpg 简历模板.jpg %} -->
 
@@ -59,7 +59,7 @@ date: 2017-06-10 14:19:44
 
     <!-- ![snipaste_20170610_134835.png](https://ooo.0o0.ooo/2017/06/10/593b8a955e9d7.png) -->
 
-    ![简历抬头](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/about-recruitment-job-search-interview/简历抬头.png)
+    ![简历抬头](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/about-recruitment-job-search-interview/简历抬头.png)
 
     <!-- {% asset_img 简历抬头.png 简历抬头 %} -->
 

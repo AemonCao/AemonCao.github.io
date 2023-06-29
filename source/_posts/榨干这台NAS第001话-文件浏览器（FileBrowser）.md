@@ -27,13 +27,13 @@ PSS: 当然对于非 unRAID 系统的用户，我也会演示一下在 Linux 系
 
 前往「应用『Apps』」页面搜索「FileBrowser」，选择下图所示的应用：
 
-![FileBrowser.png](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/榨干这台NAS第001话-文件浏览器（FileBrowser）/FileBrowser.png)
+![FileBrowser.png](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/榨干这台NAS第001话-文件浏览器（FileBrowser）/FileBrowser.png)
 
 点击「安装『Install』」，即图中「Actions」按钮所在位置（因为我已经安装过这个软件，所以不会显示「Install」按钮了）。
 
 #### 配置
 
-![FileBrowserConfig.png](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/榨干这台NAS第001话-文件浏览器（FileBrowser）/FileBrowserConfig.png)
+![FileBrowserConfig.png](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/榨干这台NAS第001话-文件浏览器（FileBrowser）/FileBrowserConfig.png)
 
 然后依照上图所示填写。
 

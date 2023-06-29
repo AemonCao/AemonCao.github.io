@@ -26,7 +26,7 @@ date: 2017-09-15 19:37:09
 
 <!-- ![01_3.gif](https://i.loli.net/2017/09/15/59bb9d3e3a3c1.gif) -->
 
-![PPT](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/those-stories-of-dependency-injection/1.webp)
+![PPT](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/those-stories-of-dependency-injection/1.webp)
 
 <!-- {% asset_img 1.webp PPT %} -->
 
@@ -202,7 +202,7 @@ namespace IGameLi
 
 <!-- ![02_3.gif](https://i.loli.net/2017/09/15/59bbae64f08ba.gif) -->
 
-![结果023](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/those-stories-of-dependency-injection/2.webp)
+![结果023](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/those-stories-of-dependency-injection/2.webp)
 
 <!-- {% asset_img 2.webp 结果023 %} -->
 
@@ -218,7 +218,7 @@ namespace IGameLi
 
 <!-- ![03_3.jpg](https://i.loli.net/2017/09/15/59bbaf77f3db6.jpg) -->
 
-![uml类图](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/those-stories-of-dependency-injection/3.webp)
+![uml类图](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/those-stories-of-dependency-injection/3.webp)
 
 <!-- {% asset_img 3.webp uml类图 %} -->
 
@@ -462,7 +462,7 @@ Peter 显然对改进后的代码比较满意，他让小李对照两份设计�
 
 <!-- ![04_6.jpg](https://i.loli.net/2017/09/15/59bbb21e689a0.jpg) -->
 
-![img046](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/those-stories-of-dependency-injection/4.webp)
+![img046](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/those-stories-of-dependency-injection/4.webp)
 
 <!-- {% asset_img 4.webp img046 %} -->
 
@@ -575,7 +575,7 @@ namespace SetterInjection
 
 <!-- ![05_3.jpg](https://i.loli.net/2017/09/15/59bbb2c0e0be7.jpg) -->
 
-![结果053](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/those-stories-of-dependency-injection/5.jpg)
+![结果053](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/those-stories-of-dependency-injection/5.jpg)
 
 <!-- {% asset_img 5.jpg 结果053 %} -->
 
@@ -587,7 +587,7 @@ namespace SetterInjection
 
 <!-- ![06_3.jpg](https://i.loli.net/2017/09/15/59bbb3267fef0.jpg) -->
 
-![img063](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/those-stories-of-dependency-injection/6.webp)
+![img063](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/those-stories-of-dependency-injection/6.webp)
 
 <!-- {% asset_img 6.webp img063 %} -->
 
@@ -628,7 +628,7 @@ namespace ConstructorInjection
 
 <!-- ![07_3.jpg](https://i.loli.net/2017/09/15/59bbb3d9a6b9f.jpg) -->
 
-![img073](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/those-stories-of-dependency-injection/7.webp)
+![img073](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/those-stories-of-dependency-injection/7.webp)
 
 <!-- {% asset_img 7.webp img073 %} -->
 
@@ -851,7 +851,7 @@ namespace DependencyLocate
 
 <!-- ![08_3.jpg](https://i.loli.net/2017/09/15/59bbb4ede424d.jpg) -->
 
-![结果083](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/those-stories-of-dependency-injection/8.jpg)
+![结果083](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/those-stories-of-dependency-injection/8.jpg)
 
 <!-- {% asset_img 8.jpg 结果083 %} -->
 
@@ -861,7 +861,7 @@ namespace DependencyLocate
 
 <!-- ![09_3.jpg](https://i.loli.net/2017/09/15/59bbb4d5af22b.jpg) -->
 
-![结果093](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/those-stories-of-dependency-injection/9.jpg)
+![结果093](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/those-stories-of-dependency-injection/9.jpg)
 
 <!-- {% asset_img 9.jpg 结果093 %} -->
 
@@ -875,7 +875,7 @@ namespace DependencyLocate
 
 <!-- ![10_3.jpg](https://i.loli.net/2017/09/15/59bbb60a2b744.jpg) -->
 
-![img103](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/those-stories-of-dependency-injection/10.webp)
+![img103](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/those-stories-of-dependency-injection/10.webp)
 
 <!-- {% asset_img 10.webp img103 %} -->
 
@@ -975,7 +975,7 @@ namespace DependencyLocate
 
 <!-- ![11_3.png](https://i.loli.net/2017/09/15/59bbb86a93913.png) -->
 
-![img113](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/those-stories-of-dependency-injection/11.png)
+![img113](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/those-stories-of-dependency-injection/11.png)
 
 <!-- {% asset_img 11.png img113 %} -->
 
@@ -985,7 +985,7 @@ _Spring.NET_ 是 _Java_ 平台上 _Spring_ 对 _.NET_ 平台的移植，使用�
 
 <!-- ![12_3.gif](https://i.loli.net/2017/09/15/59bbb8f4a6954.gif) -->
 
-![img123](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/those-stories-of-dependency-injection/12.webp)
+![img123](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/those-stories-of-dependency-injection/12.webp)
 
 <!-- {% asset_img 12.webp img123 %} -->
 
