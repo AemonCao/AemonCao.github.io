@@ -184,7 +184,7 @@
 </li>
 <li><p>「工具」-「选项」-「高级」-「libtorrent 相关」将「校验时内存使用扩增量」修改大一些，我设置成了 <code>512</code>，这样可以提高校验速度，提升之后辅种效率；</p>
 </li>
-<li><p>「工具」-「选项」-「BitTorrent」勾选「自动添加以下 tracker 到新的 torrent」，并在下方输入框中填入<a href="&#109;&#97;&#x69;&#x6c;&#116;&#x6f;&#58;&#x68;&#x74;&#x74;&#x70;&#115;&#x3a;&#47;&#x2f;&#99;&#100;&#x6e;&#x2e;&#x6a;&#x73;&#x64;&#101;&#x6c;&#x69;&#x76;&#114;&#x2e;&#110;&#x65;&#116;&#47;&#x67;&#104;&#47;&#x6e;&#103;&#x6f;&#115;&#x61;&#110;&#x67;&#47;&#x74;&#x72;&#x61;&#x63;&#107;&#101;&#114;&#x73;&#108;&#x69;&#x73;&#x74;&#x40;&#x6d;&#x61;&#115;&#116;&#x65;&#114;&#x2f;&#x74;&#114;&#97;&#99;&#107;&#x65;&#114;&#x73;&#95;&#x61;&#x6c;&#x6c;&#46;&#116;&#x78;&#116;">&#x68;&#x74;&#x74;&#x70;&#115;&#x3a;&#47;&#x2f;&#99;&#100;&#x6e;&#x2e;&#x6a;&#x73;&#x64;&#101;&#x6c;&#x69;&#x76;&#114;&#x2e;&#110;&#x65;&#116;&#47;&#x67;&#104;&#47;&#x6e;&#103;&#x6f;&#115;&#x61;&#110;&#x67;&#47;&#x74;&#x72;&#x61;&#x63;&#107;&#101;&#114;&#x73;&#108;&#x69;&#x73;&#x74;&#x40;&#x6d;&#x61;&#115;&#116;&#x65;&#114;&#x2f;&#x74;&#114;&#97;&#99;&#107;&#x65;&#114;&#x73;&#95;&#x61;&#x6c;&#x6c;&#46;&#116;&#x78;&#116;</a>中的内容，此处设置的作用的是为了获得更多的供种者，此操作能有效提高下载速度，建议每隔一段时间就更新一下 tracker 列表，更多 tracker 列表可以查看 <a href="https://github.com/ngosang/trackerslist">https://github.com/ngosang/trackerslist</a> 和 <a href="https://github.com/XIU2/TrackersListCollection">https://github.com/XIU2/TrackersListCollection</a>。</p>
+<li><p>「工具」-「选项」-「BitTorrent」勾选「自动添加以下 tracker 到新的 torrent」，并在下方输入框中填入<a href="&#x6d;&#x61;&#105;&#x6c;&#x74;&#111;&#58;&#104;&#116;&#116;&#112;&#x73;&#x3a;&#47;&#47;&#99;&#x64;&#x6e;&#x2e;&#106;&#115;&#x64;&#101;&#108;&#x69;&#x76;&#114;&#46;&#110;&#x65;&#116;&#47;&#x67;&#x68;&#x2f;&#x6e;&#x67;&#111;&#x73;&#x61;&#x6e;&#x67;&#x2f;&#116;&#114;&#97;&#x63;&#107;&#101;&#x72;&#x73;&#108;&#105;&#x73;&#116;&#x40;&#109;&#x61;&#x73;&#116;&#x65;&#x72;&#x2f;&#116;&#x72;&#x61;&#99;&#x6b;&#x65;&#x72;&#115;&#x5f;&#97;&#x6c;&#x6c;&#x2e;&#116;&#120;&#116;">&#104;&#116;&#116;&#112;&#x73;&#x3a;&#47;&#47;&#99;&#x64;&#x6e;&#x2e;&#106;&#115;&#x64;&#101;&#108;&#x69;&#x76;&#114;&#46;&#110;&#x65;&#116;&#47;&#x67;&#x68;&#x2f;&#x6e;&#x67;&#111;&#x73;&#x61;&#x6e;&#x67;&#x2f;&#116;&#114;&#97;&#x63;&#107;&#101;&#x72;&#x73;&#108;&#105;&#x73;&#116;&#x40;&#109;&#x61;&#x73;&#116;&#x65;&#x72;&#x2f;&#116;&#x72;&#x61;&#99;&#x6b;&#x65;&#x72;&#115;&#x5f;&#97;&#x6c;&#x6c;&#x2e;&#116;&#120;&#116;</a>中的内容，此处设置的作用的是为了获得更多的供种者，此操作能有效提高下载速度，建议每隔一段时间就更新一下 tracker 列表，更多 tracker 列表可以查看 <a href="https://github.com/ngosang/trackerslist">https://github.com/ngosang/trackerslist</a> 和 <a href="https://github.com/XIU2/TrackersListCollection">https://github.com/XIU2/TrackersListCollection</a>。</p>
 </li>
 <li><p>「工具」-「选项」-「BitTorrent」取消勾选「Torrent 排队」,这一步是为了多任务同时下载与上传，BT 的本质就是我为人人，人人为我，你的下载即是别人的上传，所以请最好不要限制你的上传，在不影响使用的情况下提供最多的上传；</p>
 </li>
@@ -643,7 +643,7 @@
 <p>看起来是一个制造错误，这可能是生产的开始，或结束。要么就是一张去创可贴工厂见比利·布兰卡的金票。</p>
 <p><a href="https://www.reddit.com/r/whatisthisthing/comments/pmum0w/this_was_in_my_bandaid_wrapper_instead_of_a/">https://www.reddit.com/r/whatisthisthing/comments/pmum0w/this_was_in_my_bandaid_wrapper_instead_of_a/</a></p>
 <h3 id="金属圆柱体"><a href="#金属圆柱体" class="headerlink" title="金属圆柱体"></a>金属圆柱体</h3><blockquote>
-<p>Q: I saw this in a theater, what it this piece of metal ? (8 years questionning myself. Please help)</p>
+<p>Q: I saw this in a theater, what it this piece of metal ? (8 years questioning myself. Please help)</p>
 </blockquote>
 <p>我在剧院里看到这个，这块金属是什么？（一个困扰我 8 年的问题，请帮帮我）</p>
 <p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-15/圆柱体金属.jpg" alt="圆柱体金属"></p>
@@ -5972,13 +5972,13 @@
 ]]></content>
   </entry>
   <entry>
-    <title>tags</title>
-    <url>/tags/index.html</url>
+    <title>categories</title>
+    <url>/categories/index.html</url>
     <content><![CDATA[]]></content>
   </entry>
   <entry>
-    <title>categories</title>
-    <url>/categories/index.html</url>
+    <title>tags</title>
+    <url>/tags/index.html</url>
     <content><![CDATA[]]></content>
   </entry>
 </search>
