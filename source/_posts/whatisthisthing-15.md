@@ -2,7 +2,7 @@
 title: What is this thing 15
 date: 2021-09-22 11:00:20
 description: For the identification of mysterious objects
-tags:  
+tags:
   - What is this thing?
   - 翻译
 categories:
@@ -50,7 +50,7 @@ categories:
 
 ### 金属圆柱体
 
-> Q: I saw this in a theater, what it this piece of metal ? (8 years questionning myself. Please help)
+> Q: I saw this in a theater, what it this piece of metal ? (8 years questioning myself. Please help)
 
 我在剧院里看到这个，这块金属是什么？（一个困扰我 8 年的问题，请帮帮我）
 
@@ -71,7 +71,7 @@ categories:
 ![小便池](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/whatisthisthing-15/小便池.jpg)
 
 > A urinal for women: <https://deabath.com/product/1950s-vintage-standard-female-urinal-prop-rental/>
-> > Here we have a 1950’s Standard “Sanistand” Female urinal. Strangely enough, these weren’t terribly popular, but Standard did make them between the mid-1950’s up through the early 1960’s.
+> > Here we have a 1950’s Standard "Sanistand" Female urinal. Strangely enough, these weren’t terribly popular, but Standard did make them between the mid-1950’s up through the early 1960’s.
 
 女用小便池：<https://deabath.com/product/1950s-vintage-standard-female-urinal-prop-rental/>
 
