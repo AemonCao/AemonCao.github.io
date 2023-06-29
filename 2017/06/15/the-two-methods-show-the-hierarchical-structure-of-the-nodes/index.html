@@ -29,21 +29,21 @@
 <meta property="og:site_name" content="Aemon&#39;s Blog">
 <meta property="og:description" content="有时为了更好的看清网页的布局，仅仅通过看代码或者 F12 的调试是不够的。这时候我们就需要一些「黑科技」。这里介绍两种方法，一种是通过 JavaScript 来显示，另一种是通过 CSS 样式来显示。">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/the-two-methods-show-the-hierarchical-structure-of-the-nodes/js.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/the-two-methods-show-the-hierarchical-structure-of-the-nodes/js.png">
 <meta property="og:image" content="https://www.aemon.top/2017/06/15/the-two-methods-show-the-hierarchical-structure-of-the-nodes/js.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/the-two-methods-show-the-hierarchical-structure-of-the-nodes/%E5%8E%9F%E7%BD%91%E7%AB%99.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/the-two-methods-show-the-hierarchical-structure-of-the-nodes/%E5%8E%9F%E7%BD%91%E7%AB%99.png">
 <meta property="og:image" content="https://www.aemon.top/2017/06/15/the-two-methods-show-the-hierarchical-structure-of-the-nodes/%E5%8E%9F%E7%BD%91%E7%AB%99.png">
-<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/the-two-methods-show-the-hierarchical-structure-of-the-nodes/css.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/the-two-methods-show-the-hierarchical-structure-of-the-nodes/css.png">
 <meta property="og:image" content="https://www.aemon.top/2017/06/15/the-two-methods-show-the-hierarchical-structure-of-the-nodes/css.png">
 <meta property="article:published_time" content="2017-06-15T07:09:19.000Z">
-<meta property="article:modified_time" content="2023-06-29T07:30:09.423Z">
+<meta property="article:modified_time" content="2023-06-29T07:46:29.937Z">
 <meta property="article:author" content="Aemon">
 <meta property="article:tag" content="JavaScript">
 <meta property="article:tag" content="WEB前端">
 <meta property="article:tag" content="CSS">
 <meta property="article:tag" content="奇技淫巧">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/the-two-methods-show-the-hierarchical-structure-of-the-nodes/js.png">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/the-two-methods-show-the-hierarchical-structure-of-the-nodes/js.png">
 
 <link rel="canonical" href="https://www.aemon.top/2017/06/15/the-two-methods-show-the-hierarchical-structure-of-the-nodes/">
 
@@ -246,7 +246,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-06-29 15:30:09" itemprop="dateModified" datetime="2023-06-29T15:30:09+08:00">2023-06-29</time>
+                <time title="修改时间：2023-06-29 15:46:29" itemprop="dateModified" datetime="2023-06-29T15:46:29+08:00">2023-06-29</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -303,16 +303,16 @@
 <p>在 <em>F12</em> 中输入此段 <em>JavaScript</em> 代码，就可以显示各个节点的外部框架。</p>
 <p>效果如下：</p>
 <!-- ![js](https://ooo.0o0.ooo/2017/06/15/594230a99e355.png) -->
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/the-two-methods-show-the-hierarchical-structure-of-the-nodes/js.png" alt="js"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/the-two-methods-show-the-hierarchical-structure-of-the-nodes/js.png" alt="js"></p>
 <!-- <img data-src="/2017/06/15/the-two-methods-show-the-hierarchical-structure-of-the-nodes/js.png" class="" title="js"> -->
 <p>原网站：</p>
 <!-- ![原网站](https://ooo.0o0.ooo/2017/06/15/594230a9285a6.png) -->
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/the-two-methods-show-the-hierarchical-structure-of-the-nodes/原网站.png" alt="原网站"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/the-two-methods-show-the-hierarchical-structure-of-the-nodes/原网站.png" alt="原网站"></p>
 <!-- <img data-src="/2017/06/15/the-two-methods-show-the-hierarchical-structure-of-the-nodes/%E5%8E%9F%E7%BD%91%E7%AB%99.png" class="" title="原网站"> -->
 <h2 id="CSS-方法"><a href="#CSS-方法" class="headerlink" title="CSS 方法"></a>CSS 方法</h2><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">* &#123;<span class="attribute">background-color</span>: <span class="built_in">rgba</span>(<span class="number">255</span>, <span class="number">0</span>, <span class="number">0</span>, .<span class="number">2</span>);&#125;</span><br><span class="line">* * &#123;<span class="attribute">background-color</span>: <span class="built_in">rgba</span>(<span class="number">0</span>, <span class="number">255</span>, <span class="number">0</span>, .<span class="number">2</span>);&#125;</span><br><span class="line">* * * &#123;<span class="attribute">background-color</span>: <span class="built_in">rgba</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>, .<span class="number">2</span>);&#125;</span><br><span class="line">* * * * &#123;<span class="attribute">background-color</span>: <span class="built_in">rgba</span>(<span class="number">255</span>, <span class="number">0</span>, <span class="number">255</span>, .<span class="number">2</span>);&#125;</span><br><span class="line">* * * * * &#123;<span class="attribute">background-color</span>: <span class="built_in">rgba</span>(<span class="number">0</span>, <span class="number">255</span>, <span class="number">255</span>, .<span class="number">2</span>);&#125;</span><br><span class="line">* * * * * * &#123;<span class="attribute">background-color</span>: <span class="built_in">rgba</span>(<span class="number">255</span>, <span class="number">255</span>, <span class="number">0</span>, .<span class="number">2</span>);&#125;</span><br></pre></td></tr></table></figure>
 <p>只要在网站中使用这一段 <em>CSS</em> 样式，就能看到如下效果：</p>
 <!-- ![css](https://ooo.0o0.ooo/2017/06/15/594230a9a0f03.png) -->
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@source/source/_posts/the-two-methods-show-the-hierarchical-structure-of-the-nodes/css.png" alt="css"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/the-two-methods-show-the-hierarchical-structure-of-the-nodes/css.png" alt="css"></p>
 <!-- <img data-src="/2017/06/15/the-two-methods-show-the-hierarchical-structure-of-the-nodes/css.png" class="" title="css"> -->
 <h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>两种方法都有自己的优缺点，<em>JavaScript</em> 的使用方便，但是只能适用于单个网站；而 <em>CSS</em> 样式适用于数量多的网站（只需要在公共 <em>CSS</em> 文件中加入这些代码就可以了）。</p>
 <h2 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h2><ol>
