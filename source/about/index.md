@@ -29,9 +29,9 @@ date: 2020-03-11 09:58:43
 
 * 结婚不等于幸福，单身也不意味着不幸福，我们出生就一个人，最后也不可能同时离去，爱情是精神的奢侈品，没有也行。
 
-  ![结婚不等于幸福，单身也不意味着不幸福，我们出生就一个人，最后也不可能同时离去，爱情是精神的奢侈品，没有也行。](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io/about/index/爱情是精神的奢侈品.gif)
+  ![结婚不等于幸福，单身也不意味着不幸福，我们出生就一个人，最后也不可能同时离去，爱情是精神的奢侈品，没有也行。](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/about/index/爱情是精神的奢侈品.gif)
 
-* ![贫富差距](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io/about/index/贫富差距.jpg)
+* ![贫富差距](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/about/index/贫富差距.jpg)
 
 * [民族主义只教会了你去恨你连见都没见过的人，你从未参与过的那些成就，一下子就让你骄傲自豪起来了。你到处吹牛逼，就像有些美国人：「去他妈的法国人！要不是我们两次世界大战都救了这帮 B，他们现在得说德语了」。你心想：「哦哦，那是我们的功劳吗？我们？你，和我？汤米，矮马，我俩救了法国人吗？」](https://weibo.com/1508386642/Iv5EPxTMu)
 
@@ -42,7 +42,7 @@ date: 2020-03-11 09:58:43
 * 世界上只有一种真正的英雄主义，就是认清了生活的真相后还依然热爱它。
 
 * 生活不可能像你想象得那么好，但也不会像你想象得那么糟。
-  
+
   我觉得人的脆弱和坚强都超乎自己的想象。
 
   有时，我可能脆弱得一句话就泪流满面；有时，也发现自己咬着牙走了很长的路。
@@ -71,7 +71,7 @@ date: 2020-03-11 09:58:43
 
 * 年份，是人类创造的虚拟单位，并不会影响时间的连续性。但人类需要虚假又温柔的憧憬来自我安慰，鼓励自己在这个陌生的世界勇敢走下去。
 
-  ![年份](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io/about/index/年份.jpg)
+  ![年份](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/about/index/年份.jpg)
 
 * [别人主动暴露给你的，大都是包装出来的惬意生活。](https://www.v2ex.com/t/778064?p=1#r_10541233)
 
@@ -85,7 +85,7 @@ date: 2020-03-11 09:58:43
 
   [往前看](https://www.bilibili.com/video/BV1Qy4y1W77p?t=591)
 
-* [![place-indexed.png](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io/about/index/place-indexed.png)](https://draemm.li/various/place-atlas/)
+* [![place-indexed.png](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/about/index/place-indexed.png)](https://draemm.li/various/place-atlas/)
 
 * [心无罣碍，无罣碍故，无有恐怖，远离颠倒梦想，究竟涅槃。](https://zh.wikipedia.org/wiki/%E8%88%AC%E8%8B%A5%E6%B3%A2%E7%BE%85%E8%9C%9C%E5%A4%9A%E5%BF%83%E7%B6%93)
 
@@ -103,9 +103,9 @@ date: 2020-03-11 09:58:43
 
 * 混杂部分真相的谎言比直接说谎更有效。
 
-* ![舔.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io/about/index/舔.jpg)
+* ![舔.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/about/index/舔.jpg)
 
-* ![青春这场雨.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io/about/index/青春这场雨.jpg)
+* ![青春这场雨.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/about/index/青春这场雨.jpg)
 
 * The devil is in the detail.
 
@@ -147,7 +147,7 @@ date: 2020-03-11 09:58:43
 
   这就是旅程本身，你无悔的生命。
 
-   ![旅程](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io/about/index/旅程.jpg)
+   ![旅程](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/about/index/旅程.jpg)
 
 * [愿你来世做一只蝉，生于夏初，死于夏末，一生只有烈日当空，不必见那三九寒冬，你会看到那赤脚玩闹的孩童，眼里满是懵懂，也会看到他独饮于漫天星空，藏着一点不舍在眼眸。](https://www.v2ex.com/t/746505#r_10089818)
 
@@ -155,37 +155,37 @@ date: 2020-03-11 09:58:43
 
   我们之于彼此，本就是一些知觉——眼、耳、口、鼻、手的感觉。因此，只要我还能微微触动你的感官，我就只是离开了我自己，而未曾离开你。
 
-  ![win-win](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io/about/index/win-win.png)
+  ![win-win](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/about/index/win-win.png)
 
-* ![don't worry this is not goodbey forever.](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io/about/index/dont_worry_this_is_not_goodbey_forever.jpg)
+* ![don't worry this is not goodbey forever.](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/about/index/dont_worry_this_is_not_goodbey_forever.jpg)
 
 * Those who can, put something in; those who can't, help yourself.
 
   那些可以放入东西的人，放入些东西（捐助）；那些不能的人，救助自己。
 
-  ![Food_basket_Covid](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io/about/index/Food_basket_Covid.jpg)
+  ![Food_basket_Covid](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/about/index/Food_basket_Covid.jpg)
 
 * [人生唯一确定的就是不确定的人生。](https://www.bilibili.com/video/BV1co4y1o7Xg?t=36)
 
-* ![positive](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io/about/index/positive.jpg)
+* ![positive](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/about/index/positive.jpg)
 
-* ![Dementors_Black_Lake](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io/about/index/Dementors_Black_Lake.jpg)
+* ![Dementors_Black_Lake](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/about/index/Dementors_Black_Lake.jpg)
 
 * [如果一个玩笑呢，你不会说给你妈妈和女儿听，那其实你也不应该说给你的女同事和女同学听。](https://www.bilibili.com/video/BV1iX4y1u7Rx?t=107)
 
-* ![去码头整点薯条。](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io/about/index/去码头整点薯条.jpg)
+* ![去码头整点薯条。](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/about/index/去码头整点薯条.jpg)
 
 * 世人慌慌张张，不过图的是碎银几两，偏偏这碎银几两，能解世间万千惆怅，这几两碎银，可让父母安康，可护幼子成长。但这碎银几两，也断了儿时念想，让少年染上沧桑，压弯了脊梁。
 
 * 新鲜感是追寻出来的，而不是等待出来的。多和旧人做新事，少和新人做旧事，前者是上升的山路，后者是循环的泥沼。
 
-  ![新鲜感是追寻出来的，而不是等待出来的。多和旧人做新事，少和新人做旧事，前者是上升的山路，后者是循环的泥沼。](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io/about/index/移情别恋.jpg)
+  ![新鲜感是追寻出来的，而不是等待出来的。多和旧人做新事，少和新人做旧事，前者是上升的山路，后者是循环的泥沼。](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/about/index/移情别恋.jpg)
 
 * [The cost of failure is education.](https://sre.google/sre-book/postmortem-culture/)
 
 * 他在生命的每个阶段，都说了他相信的东西。那你要他怎么样，他什么都没做错。
 
-  ![他在生命的每个阶段，都说了他相信的东西。那你要他怎么样，他什么都没做错。](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io/about/index/他在生命的每个阶段，都说了他相信的东西。那你要他怎么样，他什么都没做错。.GIF)
+  ![他在生命的每个阶段，都说了他相信的东西。那你要他怎么样，他什么都没做错。](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/about/index/他在生命的每个阶段，都说了他相信的东西。那你要他怎么样，他什么都没做错。.GIF)
 
 * 把你们绝望的人，你们迷茫的人，把你们渴望看到胜利之光的畏惧徘徊的人都给我，把那些精神失落、灵魂在流浪的人都送来：在这金色的信念旁，我要为他们把灯举起。
 
@@ -217,13 +217,13 @@ date: 2020-03-11 09:58:43
 
 * 我吃了一吓，赶忙抬起头，却见一个凸颧骨，薄嘴唇，五十岁上下的女人站在我面前，两手搭在髀间，没有系裙，张着两脚，正像一个画图仪器里细脚伶仃的圆规。
 
-  ![圆规](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io/about/index/圆规.gif)
+  ![圆规](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/about/index/圆规.gif)
 
 * 什么才是一生中最正确的浪费?
 
   大概就是顺其自然，回头看时都是回忆，不必悔恨多想，哪怕是不如意的事，也是自己人生的一部分，全部完整才是自己，世事一切无条件接受。
 
-* ![war&butterfly](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io/about/index/war&butterfly.jpg)
+* ![war&butterfly](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/about/index/war&butterfly.jpg)
 
 * 买书如山倒，看书如抽丝。
 
@@ -235,21 +235,21 @@ date: 2020-03-11 09:58:43
 
 * 谁他妈都别想这么轻易离开这个操蛋的世界。
 
-  ![兔子动画](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io/about/index/兔子动画.jpg)
+  ![兔子动画](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/about/index/兔子动画.jpg)
 
-  ![兔子照片](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io/about/index/兔子照片.jpg)
+  ![兔子照片](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/about/index/兔子照片.jpg)
 
-* ![后浪](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io/about/index/后浪.jpg)
+* ![后浪](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/about/index/后浪.jpg)
 
 * 流星从天上飞过，让我们许下美好的心愿，它不像星星那样闪烁，也不像钻石那样珍贵。但是它像火苗一样燃烧着我们那颗与世界和谐共处的心。
 
-  ![王康](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io/about/index/王康.jpg)
+  ![王康](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/about/index/王康.jpg)
 
 * > I held up a fistful of sand and showed it to him, asking for as many years as grains in that pile. Foolish me! I forgot to ask they be years of youth.
 
   我抓起一把沙尘，高高举起，天真地祷告拥有如沙粒般多的年岁，却忘记说，只要青春岁月。
 
-  ![沙子](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io/about/index/沙子.gif)
+  ![沙子](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/about/index/沙子.gif)
 
 * [Look within yourself, What do you see? Is your soul a fading light? Strengthened by fury? Hardened by heat? Search deeper now, What do you see? Whatever you find, you must keep. You cannot fear, what lies beneath. Look within yourself, What do you see?](https://www.bilibili.com/video/BV1Ms411s7kB)
 
@@ -263,23 +263,23 @@ date: 2020-03-11 09:58:43
 
   这都是明枪，还有暗箭呢。势利眼、冷脸子、闲言碎语、指桑骂槐；好了遭人嫉妒，差了让人瞧不起；忠厚的人家说你傻，精明的人家说你奸；冷淡了大伙儿说你傲，热情了群众说你浪；走在前头挨闷棍，走在后头全没份；这也叫活着，纯粹是练他妈一辈子轻功 ！
 
-  ![编辑部的故事](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io/about/index/编辑部的故事.gif)
+  ![编辑部的故事](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/about/index/编辑部的故事.gif)
 
-* ![电学三兄弟](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io/about/index/电学三兄弟.jpg)
+* ![电学三兄弟](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/about/index/电学三兄弟.jpg)
 
 * Let's show them who we are.
 
-* ![R&M](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io/about/index/R&M.jpg)
+* ![R&M](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/about/index/R&M.jpg)
 
 * 纸上得来终觉浅，绝知此事要躬行。
 
-* [![s](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io/about/index/Robert-Landsburg-Mt.-St.-Helens.jpg)](https://en.wikipedia.org/wiki/Robert_Landsburg)
+* [![s](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/about/index/Robert-Landsburg-Mt.-St.-Helens.jpg)](https://en.wikipedia.org/wiki/Robert_Landsburg)
 
 * [为什么看见你弟兄眼中有刺，却不想自己眼中有梁木呢？](https://cnbible.com/matthew/7-3.htm)
 
 * 路上没有灯火的时候，就点亮自己的头颅。
 
-  ![路上没有灯火的时候，就点亮自己的头颅。](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io/about/index/路上没有灯火的时候，就点亮自己的头颅.JPG)
+  ![路上没有灯火的时候，就点亮自己的头颅。](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/about/index/路上没有灯火的时候，就点亮自己的头颅.JPG)
 
 * 有一只小鸭子在排队，想和前面的鸭鸭对齐，可是怎么样都对不齐，它就嘀咕着说：「对不齐鸭对不齐鸭。」
 
@@ -311,25 +311,25 @@ date: 2020-03-11 09:58:43
 
 * 所有的离别，都是我在练习失去你。
 
-  ![所有的离别，都是我在练习失去你。](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io/about/index/所有的离别，都是我在练习失去你。.jpg)
+  ![所有的离别，都是我在练习失去你。](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/about/index/所有的离别，都是我在练习失去你。.jpg)
 
 * [已是悬崖百丈冰，犹有花枝俏。](https://baike.baidu.com/item/%E5%8D%9C%E7%AE%97%E5%AD%90%C2%B7%E5%92%8F%E6%A2%85/124232)
 
 * Teaching sand to think was a mistake.
 
-  [![Teaching sand to think was a mistake.](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io/about/index/Teaching-sand-to-think-was-a-mistake.png)](https://www.bilibili.com/video/av87216714?t=949)
+  [![Teaching sand to think was a mistake.](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/about/index/Teaching-sand-to-think-was-a-mistake.png)](https://www.bilibili.com/video/av87216714?t=949)
 
 * [一个健康的社会不应该只有一种声音。](https://weibo.com/1663937380/Is0UJchJW)
 
 * 警察只是按要求训诫，主播只是按稿子播报，后台只是按上面意思删帖撤热搜。大家都认为自己是好人，一切是生活所迫。只有当每一个人都敢说“我拒绝撒谎”，“我拒绝执行”的时候，我们才不会在某一天求助无门，走投无路，像狗一样地死去。但你敢吗。你不敢。所以请记得，无论这个世界最终烂成什么样子，都是在我们的默许之下完成的。
 
-  ![陈生大王](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io/about/index/陈生大王.jpg)
+  ![陈生大王](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/about/index/陈生大王.jpg)
 
 * [那熔铸眼前世界的炉火，他们早已经忘记了。](https://www.bilibili.com/video/av77327621?t=140)
 
 * Everything will be fine in the end, Morty, And if it isn&apos;t, it&apos;s not the end yet.
 
-  ![Everything-will-be-fine-in-the-end.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io/about/index/Everything-will-be-fine-in-the-end.jpg)
+  ![Everything-will-be-fine-in-the-end.jpg](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/about/index/Everything-will-be-fine-in-the-end.jpg)
 
 * [「轻奢」这个词造得可谓精妙绝伦，是一种市场细分后的修辞手法。比如 100 块的衣服叫「屌丝」，1000 块的叫「奢侈品」，500 块的命名就很讲究了。不能叫「重屌」，而要叫「轻奢」，给人一种我在向社会上层流动的幻觉。](https://www.bilibili.com/video/av83908288#reply2270052215)
 
@@ -353,7 +353,7 @@ date: 2020-03-11 09:58:43
 
 * 我的眼睛很大很大，装得下高山，装得下大海，装得下蓝天，装得下整个世界；我的眼睛很小很小，有时遇到心事，就连两行泪，也装不下。
 
-  ![眼睛](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io/about/index/眼睛.jfif)
+  ![眼睛](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/about/index/眼睛.jfif)
 
 * 最痛苦的是什么呢？你恰巧有一点天赋，够你去觊觎天才们那片殿堂，却不够你进入。你在门前徘徊，却敲不开那扇门。你颓然而坐，却隐隐约约听到殿堂内传来一声叹息：「我好菜啊」。
 
@@ -367,7 +367,7 @@ date: 2020-03-11 09:58:43
 
 * 每当成年人想要改变生活、逆转状态时，会不约而同做一件事：（再次开始）学英语。
 
-  ![每当成年人想要改变生活、逆转状态时，会不约而同做一件事：（再次开始）学英语。](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io/about/index/每当成年人想要改变生活、逆转状态时，会不约而同做一件事：（再次开始）学英语。.jpg)
+  ![每当成年人想要改变生活、逆转状态时，会不约而同做一件事：（再次开始）学英语。](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/about/index/每当成年人想要改变生活、逆转状态时，会不约而同做一件事：（再次开始）学英语。.jpg)
 
 * [卑鄙是卑鄙者的通行证，高尚是高尚者的墓志铭。](https://zh.wikipedia.org/wiki/%E6%9C%A6%E8%83%A7%E8%AF%97#%E5%8C%97%E5%B2%9B)
 
@@ -383,7 +383,7 @@ date: 2020-03-11 09:58:43
 
 * 你无法控制其他人的脾气，但你可以保持一颗冷静的头脑。
 
-  ![你无法控制其他人的脾气，但你可以保持一颗冷静的头脑。](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io/about/index/你无法控制其他人的脾气，但你可以保持一颗冷静的头脑。.jpg)
+  ![你无法控制其他人的脾气，但你可以保持一颗冷静的头脑。](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/about/index/你无法控制其他人的脾气，但你可以保持一颗冷静的头脑。.jpg)
 
 * 没有你在床真的没什么好赖的。
 
@@ -423,20 +423,20 @@ date: 2020-03-11 09:58:43
 
 * 怕什么真理无穷，进一寸有进一寸的欢喜。
 
-  ![胡适](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io/about/index/胡适.jpg)
+  ![胡适](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/about/index/胡适.jpg)
 
 * 梦境和死亡，都无定所，无处可去，终将被遗忘，我们身在此处，但没有人会记得，万物皆逝，仅剩夜晚，再见。
 
-  ![万物皆逝，唯有夜长留](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io/about/index/万物皆逝，唯有夜长留。.jpg)
+  ![万物皆逝，唯有夜长留](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/about/index/万物皆逝，唯有夜长留。.jpg)
 
 * 口才不好的人，总是在夜晚床上躺着时，才想到当时应该怎样反驳别人的话。
 
-  ![口才不好的人，总是在夜晚床上躺着时，才想到当时应该怎样反驳别人的话。](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io/about/index/口才不好的人，总是在夜晚床上躺着时，才想到当时应该怎样反驳别人的话。.jpg)
+  ![口才不好的人，总是在夜晚床上躺着时，才想到当时应该怎样反驳别人的话。](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/about/index/口才不好的人，总是在夜晚床上躺着时，才想到当时应该怎样反驳别人的话。.jpg)
 
 * 遇到喜欢的东西，就把它买下来。钱并不是真的花掉了，只是换一种方式，陪伴在你的身边。
 
-  ![遇到喜欢的东西，就把它买下来。钱并不是真的花掉了，只是换一种方式，陪伴在你的身边。](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io/about/index/GPU.jpg)
+  ![遇到喜欢的东西，就把它买下来。钱并不是真的花掉了，只是换一种方式，陪伴在你的身边。](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/about/index/GPU.jpg)
 
 * 我不看星星，也不说想你。这样星星和你都蒙在鼓里。
 
-  ![我不看星星，也不说想你。这样星星和你都蒙在鼓里。](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io/about/index/我不看星星，也不说想你。这样星星和你都蒙在鼓里。.jpg)
+  ![我不看星星，也不说想你。这样星星和你都蒙在鼓里。](https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/about/index/我不看星星，也不说想你。这样星星和你都蒙在鼓里。.jpg)
