@@ -5,6 +5,8 @@ date: 2020-03-11 09:58:43
 
 关于我什么呢，我也不知道，放一些一直以来收集的骚话吧！
 
+* [Don't let perfect be the enemy of good.](https://en.wikipedia.org/wiki/Perfect_is_the_enemy_of_good)
+
 * 我拥有的都是侥幸啊，我失去的都是人生。
 
 * [平淡的创意，却企图以华丽的表演来掩饰，你应该感到惭愧！](https://www.bilibili.com/video/BV17V411Y77d)
