@@ -5,6 +5,8 @@ date: 2020-03-11 09:58:43
 
 关于我什么呢，我也不知道，放一些一直以来收集的骚话吧！
 
+* 这个世界是一个巨大的草台班子。
+
 * [Don't let perfect be the enemy of good.](https://en.wikipedia.org/wiki/Perfect_is_the_enemy_of_good)
 
 * 我拥有的都是侥幸啊，我失去的都是人生。
