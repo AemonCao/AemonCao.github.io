@@ -1,9 +1,14 @@
 {
   "cSpell.words": [
+    "appdata",
     "Archi",
     "autoread",
     "cursorline",
     "DDNS",
+    "dockerman",
+    "dynamix",
+    "emhttp",
+    "filebrowser",
     "gitmodules",
     "laststatus",
     "listchars",
@@ -21,7 +26,9 @@
     "spelllang",
     "teslamate",
     "undofile",
+    "unraid",
     "visualbell",
+    "webui",
     "wildmenu",
     "wildmode"
   ]
