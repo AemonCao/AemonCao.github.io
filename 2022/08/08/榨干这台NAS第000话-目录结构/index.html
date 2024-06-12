@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 7.0.0">
+<meta name="generator" content="Hexo 7.2.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-256x256-next.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.ico">
@@ -30,7 +30,7 @@
 <meta property="og:description" content="这是一系列关于 NAS 的文章，系列的名称你们也看到了：「榨干这台 NAS」。我将尽可能详细的介绍 NAS 相关的知识，帮助你最大限度的发挥你的手中 NAS 的威力！">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2022-08-08T07:14:00.000Z">
-<meta property="article:modified_time" content="2023-12-18T08:33:13.806Z">
+<meta property="article:modified_time" content="2024-06-12T06:26:27.710Z">
 <meta property="article:author" content="Aemon">
 <meta property="article:tag" content="NAS">
 <meta property="article:tag" content="unRAID">
@@ -237,7 +237,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2023-12-18 16:33:13" itemprop="dateModified" datetime="2023-12-18T16:33:13+08:00">2023-12-18</time>
+                <time title="修改时间：2024-06-12 14:26:27" itemprop="dateModified" datetime="2024-06-12T14:26:27+08:00">2024-06-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -292,8 +292,8 @@
 <span id="more"></span>
 <p>关于第一话，按照一般的文章套路来说，都是介绍一下 NAS 是什么，能用来做什么。但是我觉得能看到这篇文章的人，一般也不再需要科普这些内容。对了，此系列教程全部是软件向的，如果你需要自己组装一台 NAS，那么这系列的文章你可以先收藏，等组装完了再来看。话说回来，本文将向大家介绍一下我是如果规划我的<strong>文件目录结构</strong>的。</p>
 <p>文件目录结构的构建，将对后续所有的容器搭建起到十分关键的影响，说他是万事之根本也不为过，不光是 NAS，你的 PC，你的程序项目，一个考虑周到且一目了然的目录结构，将极大方便你的后续工作。</p>
-<p>PS：本文不但是 NAS 的文件目录，而且是这系列文章的目录结构。</p>
-<p>PPS：关于文件夹的命名规则，全小写（<code>ofcourseistillloveyou</code>），全大写（<code>OFCOURSEISTILLLOVEYOU</code>），大驼峰（<code>OfCourseIStillLoveYou</code>），小驼峰（<code>ofCourseIStillLoveYou</code>），下划线连接（<code>of_course_i_still_love_you</code>），连接号连接（<code>of-course-i-still-love-you</code>）都随你心意，只要你能做到一下几点：「统一、容易辨识、尽量不要空格，尽量只使用英文、数字、连接号和下划线」。</p>
+<p>P.S.：本文不但是 NAS 的文件目录，而且是这系列文章的目录结构。</p>
+<p>P.P.S.：关于文件夹的命名规则，全小写（<code>ofcourseistillloveyou</code>），全大写（<code>OFCOURSEISTILLLOVEYOU</code>），大驼峰（<code>OfCourseIStillLoveYou</code>），小驼峰（<code>ofCourseIStillLoveYou</code>），下划线连接（<code>of_course_i_still_love_you</code>），连接号连接（<code>of-course-i-still-love-you</code>）都随你心意，只要你能做到一下几点：「统一、容易辨识、尽量不要空格，尽量只使用英文、数字、连接号和下划线」。</p>
 <p>系列相关文章：</p>
 <ol>
 <li><a href="/2022/08/08/%E6%A6%A8%E5%B9%B2%E8%BF%99%E5%8F%B0NAS%E7%AC%AC001%E8%AF%9D-%E6%96%87%E4%BB%B6%E6%B5%8F%E8%A7%88%E5%99%A8%EF%BC%88FileBrowser%EF%BC%89/" title="榨干这台 NAS 第 001 话-文件浏览器（File Browser）">榨干这台 NAS 第 001 话-文件浏览器（File Browser）</a>
@@ -309,9 +309,9 @@
 <p>此目录下应该只存放被刮削后的电影，每部电影应该拥有自己的单独子文件夹，子文件夹中存放电影、字幕、nfo文件和海报图片。电影（moive）文件夹的目录将在后续的文章中进行详细介绍。</p>
 <h4 id="tv-series（电视剧集）"><a href="#tv-series（电视剧集）" class="headerlink" title="tv_series（电视剧集）"></a>tv_series（电视剧集）</h4><p>存放你各类电视剧集的地方。</p>
 <p>你的动漫，美剧，韩剧，<del>抗日神剧</del>等都应该存放在这里。和电影（moive）文件夹相同，每部电视剧集应该拥有自己的单独子文件夹，子文件夹中存放电视剧集、字幕、nfo文件和海报图片。电视剧集（tv_series）文件夹的目录将在后续的文章中进行详细介绍。</p>
-<h4 id="av（不正经电影）"><a href="#av（不正经电影）" class="headerlink" title="av（不正经电影）"></a><del>av</del>（不正经电影）</h4><p>存放小姐姐的地方。</p>
+<h4 id="av（不正经电影）"><a href="#av（不正经电影）" class="headerlink" title="av（不正经电影）"></a><del>av（不正经电影）</del></h4><p>存放小姐姐的地方。</p>
 <p>你的小姐姐们都住在这里，这里的文件命名也有相应的规则，具体规则以及相关的工具，也会在后续文章中介绍。</p>
-<h4 id="h（不正经视频）"><a href="#h（不正经视频）" class="headerlink" title="h（不正经视频）"></a>h（不正经视频）</h4><p>一些没有<del>番号</del>部队番号的小姐姐，将会放在这里。</p>
+<h4 id="h（不正经视频）"><a href="#h（不正经视频）" class="headerlink" title="h（不正经视频）"></a><del>h（不正经视频）</del></h4><p>一些没有<del>番号</del>部队番号的小姐姐，将会放在这里。</p>
 <h4 id="youtube"><a href="#youtube" class="headerlink" title="youtube"></a>youtube</h4><p>YouTube 的视频存档将存放在此处。后续将会介绍用于下载 YouTube 视频的工具。</p>
 <h4 id="bilibili"><a href="#bilibili" class="headerlink" title="bilibili"></a>bilibili</h4><p>同 YouTube。</p>
 <h4 id="TeslaCam（特斯拉汽车行车记录视频以及哨兵录像）"><a href="#TeslaCam（特斯拉汽车行车记录视频以及哨兵录像）" class="headerlink" title="TeslaCam（特斯拉汽车行车记录视频以及哨兵录像）"></a>TeslaCam（特斯拉汽车行车记录视频以及哨兵录像）</h4><p>特斯拉汽车行车记录录像将会存放在此处。后续将会介绍用于合并和查看行车记录仪的工具。</p>
@@ -560,7 +560,7 @@
 <div class="copyright">
   
   &copy; 2017 – 
-  <span itemprop="copyrightYear">2023</span>
+  <span itemprop="copyrightYear">2024</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

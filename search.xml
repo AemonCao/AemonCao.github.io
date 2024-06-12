@@ -842,58 +842,6 @@
       </tags>
   </entry>
   <entry>
-    <title>《编码：隐匿在计算机软硬件背后的语言》</title>
-    <url>/2017/05/25/codethe-hidden-language-of-computer-hardware-and-software/</url>
-    <content><![CDATA[<p>《<a href="https://book.douban.com/subject/4822685/">编码：隐匿在计算机软硬件背后的语言</a>》（Code:The Hidden Language of Computer Hardware and Software）</p>
-<span id="more"></span>
-<ol>
-<li><p>那时很可能有些人会认为「logic gates」（逻辑门）装置是以著名的微软公司创始人的名字来命名的。（Bill Gates 中的 Gates 在英文中有「门」的意思）——P108；</p>
-</li>
-<li><p>Meow：猫叫的声音——P111；</p>
-</li>
-<li><p>一般来说，对于涉及正数和负数的加法，如果两个操作数的符号位相同，但结果的符号位不同，则结果是无效的。——P159；</p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>书摘</category>
-      </categories>
-      <tags>
-        <tag>阅读</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>设计模式</title>
-    <url>/2020/03/26/design-pattern/</url>
-    <content><![CDATA[<p>说来惭愧，一直没有好好学这部分的内容，所以趁着这次机会把设计模式这块的知识好好学一下。</p>
-<p>我会使用 C# 来写一些实例代码，并且会将代码放在 <a href="https://github.com/AemonCao/DesignPattern">GitHub</a> 上面，以供参考。</p>
-<span id="more"></span>
-<h2 id="什么是设计模式"><a href="#什么是设计模式" class="headerlink" title="什么是设计模式"></a>什么是设计模式</h2><blockquote>
-<p>在软件工程中，设计模式（design pattern）是对软件设计中普遍存在（反复出现）的各种问题，所提出的解决方案。这个术语是由埃里希·伽玛（Erich Gamma）等人在1990年代从建筑设计领域引入到计算机科学的。</p>
-</blockquote>
-<p>先暂时将 wiki 上的说明拿过来用一下，我相信等我学完之后，可以根据自己的理解再来写一下这个问题：「什么是设计模式？」</p>
-<p>本来是想放到一篇文章里的，但是这样篇幅好像太长了。虽说有目录，但是不太方便手机端的用户，所以还是拆分开来吧。</p>
-<p>这里呢，之后会把设计模式的七大原则写一下，然后放个目录就好啦。</p>
-<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
-<li><a href="/2020/03/29/Singleton-Pattern/" title="单例模式（Singleton Pattern）">单例模式（Singleton Pattern）</a>
-</li>
-<li><a href="/2020/03/29/Simple-Factory-Pattern/" title="简单工厂模式（Simple Factory Pattern）">简单工厂模式（Simple Factory Pattern）</a>
-</li>
-<li><a href="/2020/03/31/Factory-Method-Pattern/" title="工厂方法模式（Factory Method Pattern）">工厂方法模式（Factory Method Pattern）</a>
-</li>
-<li><a href="/2020/04/18/Abstract-Factory-Pattern/" title="抽象工厂模式（Abstract Factory Pattern）">抽象工厂模式（Abstract Factory Pattern）</a>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>设计模式</category>
-      </categories>
-      <tags>
-        <tag>C#</tag>
-        <tag>设计模式</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>ASF（ArchiSteamFarm） 挂卡指南-入门篇</title>
     <url>/2018/09/20/archisteamfarm-guide-getting-started/</url>
     <content><![CDATA[<p>之前有写过 <em>Windows</em> 版本的 <em>ArchiSteamFarm</em> 在<strong>树莓派</strong>上的挂卡教程，那次过后到现在已经一年多了，<em>Steam</em> 库又新进了批货，所以又要挂一次啦。这次呢，发现 <em>ArchiSteamFarm</em> 已经更新到了 <strong>3.3.6.0</strong> 版本，所以就准备用最新的版本。还有就是由于众所周知的原因，国内很难正常的登录 <em>Steam</em> ，所以这次挂机的平台从自家的树莓派转移到了 <em>Google Cloud</em> 上。</p>
@@ -957,13 +905,56 @@
       </tags>
   </entry>
   <entry>
-    <title>世界，您好！</title>
-    <url>/2017/05/24/hello-world/</url>
-    <content><![CDATA[<p>记录一下，希望以后能一直坚持下去。</p>
+    <title>《编码：隐匿在计算机软硬件背后的语言》</title>
+    <url>/2017/05/25/codethe-hidden-language-of-computer-hardware-and-software/</url>
+    <content><![CDATA[<p>《<a href="https://book.douban.com/subject/4822685/">编码：隐匿在计算机软硬件背后的语言</a>》（Code:The Hidden Language of Computer Hardware and Software）</p>
+<span id="more"></span>
+<ol>
+<li><p>那时很可能有些人会认为「logic gates」（逻辑门）装置是以著名的微软公司创始人的名字来命名的。（Bill Gates 中的 Gates 在英文中有「门」的意思）——P108；</p>
+</li>
+<li><p>Meow：猫叫的声音——P111；</p>
+</li>
+<li><p>一般来说，对于涉及正数和负数的加法，如果两个操作数的符号位相同，但结果的符号位不同，则结果是无效的。——P159；</p>
+</li>
+</ol>
 ]]></content>
       <categories>
-        <category>记事</category>
+        <category>书摘</category>
       </categories>
+      <tags>
+        <tag>阅读</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>设计模式</title>
+    <url>/2020/03/26/design-pattern/</url>
+    <content><![CDATA[<p>说来惭愧，一直没有好好学这部分的内容，所以趁着这次机会把设计模式这块的知识好好学一下。</p>
+<p>我会使用 C# 来写一些实例代码，并且会将代码放在 <a href="https://github.com/AemonCao/DesignPattern">GitHub</a> 上面，以供参考。</p>
+<span id="more"></span>
+<h2 id="什么是设计模式"><a href="#什么是设计模式" class="headerlink" title="什么是设计模式"></a>什么是设计模式</h2><blockquote>
+<p>在软件工程中，设计模式（design pattern）是对软件设计中普遍存在（反复出现）的各种问题，所提出的解决方案。这个术语是由埃里希·伽玛（Erich Gamma）等人在1990年代从建筑设计领域引入到计算机科学的。</p>
+</blockquote>
+<p>先暂时将 wiki 上的说明拿过来用一下，我相信等我学完之后，可以根据自己的理解再来写一下这个问题：「什么是设计模式？」</p>
+<p>本来是想放到一篇文章里的，但是这样篇幅好像太长了。虽说有目录，但是不太方便手机端的用户，所以还是拆分开来吧。</p>
+<p>这里呢，之后会把设计模式的七大原则写一下，然后放个目录就好啦。</p>
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><ul>
+<li><a href="/2020/03/29/Singleton-Pattern/" title="单例模式（Singleton Pattern）">单例模式（Singleton Pattern）</a>
+</li>
+<li><a href="/2020/03/29/Simple-Factory-Pattern/" title="简单工厂模式（Simple Factory Pattern）">简单工厂模式（Simple Factory Pattern）</a>
+</li>
+<li><a href="/2020/03/31/Factory-Method-Pattern/" title="工厂方法模式（Factory Method Pattern）">工厂方法模式（Factory Method Pattern）</a>
+</li>
+<li><a href="/2020/04/18/Abstract-Factory-Pattern/" title="抽象工厂模式（Abstract Factory Pattern）">抽象工厂模式（Abstract Factory Pattern）</a>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>设计模式</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+        <tag>设计模式</tag>
+      </tags>
   </entry>
   <entry>
     <title>emoji 背后的故事</title>
@@ -1002,6 +993,15 @@
       <tags>
         <tag>emoji</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>世界，您好！</title>
+    <url>/2017/05/24/hello-world/</url>
+    <content><![CDATA[<p>记录一下，希望以后能一直坚持下去。</p>
+]]></content>
+      <categories>
+        <category>记事</category>
+      </categories>
   </entry>
   <entry>
     <title>hexakosioihexekontahexaphobia</title>
@@ -1448,37 +1448,6 @@
       </tags>
   </entry>
   <entry>
-    <title>使用枚举和按位运算来控制用户权限</title>
-    <url>/2018/12/07/use-enumeration-and-bitwise-operations-to-control-user-permissions/</url>
-    <content><![CDATA[<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>公司重构系统，我被分配到了用户管理模块，在做到权限的时候发现之前的权限管理是用一个长的字符串来存储所有权限的，例如：</p>
-<span id="more"></span>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">5101110</span><br><span class="line">ABCDEFG</span><br></pre></td></tr></table></figure>
-<p>上面的 <code>7</code> 位数字分别对应下面的 <code>7</code> 个权限，除了第一位为权限等级（分为 1 至 5 档）外，其他的都是是否拥有该权限的状态（1 代表拥有该权限，0 代表没有该权限）。 这样的做法虽然看似简单，但在代码编写中会麻烦很多，特别是当权限种类数量很多的时候。所以，在查阅资料后，我决定<strong>使用枚举和按位运算来控制用户权限</strong>（点题），在向 leader 请示后，开始改造。</p>
-<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>首先要把原有的权限拆分为两部分，一部分是第一位的权限等级，另一部分是各个权限状态，需要改造的主要是各个权限状态。 为了简化步骤，我把权限数量缩小为 <code>6</code> 个，实际有 <code>15</code> 个（并且未来还可能增加），具体是这样的： 一个六个权限，分别用 0 和 1 来表示<strong>有</strong>或<strong>没有</strong>对应的权限：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">17</span><br><span class="line"></span><br><span class="line">FEDCBA</span><br><span class="line">010001B</span><br></pre></td></tr></table></figure>
-<p>如上，代表用户拥有 <code>A</code> 权限和 <code>E</code> 权限，同理可得如果有 一个用户拥有 <code>B</code> 权限、<code>C</code> 权限和 <code>D</code> 权限，那我们就可以这样计算：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">2 | 4 | 8 = 14</span><br><span class="line"></span><br><span class="line">  000010B</span><br><span class="line">  000100B</span><br><span class="line">| 001000B</span><br><span class="line">---------</span><br><span class="line">  001110B</span><br></pre></td></tr></table></figure>
-<p>然后我们就可以用 <code>001110</code> 来代表用户所拥有的权限了。 当我们需要<strong>添加权限</strong>的时候，我们就可以用<strong>按位或</strong>（<code>|</code>）来计算，比如我们要为上面的 <code>001110B</code> 来添加一个 F 权限（<code>100000B</code>）：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">001110B | 100000B = 101110B</span><br><span class="line"></span><br><span class="line">14 | 32 = 45</span><br></pre></td></tr></table></figure>
-<p>而且就算用户已经有了需要添加的权限，再进行<strong>按位或</strong>的运算也是没有问题的：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">45 | 32 = 45</span><br><span class="line"></span><br><span class="line">101110B | 100000B = 101110B</span><br></pre></td></tr></table></figure>
-<p>当我们需要<strong>移除权限</strong>的时候，我们就要用到<strong>与非运算</strong>（<code>&amp;</code> 和 <code>~</code>）：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">45 &amp; ~32 = 14</span><br><span class="line"></span><br><span class="line">101110B &amp; ~100000B = 001110B</span><br></pre></td></tr></table></figure>
-<p>同样的，就算用户本来没有这个权限，在移除权限时也不会有问题：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">14 &amp; ~32 = 14</span><br><span class="line"></span><br><span class="line">001110B &amp; ~100000B = 001110B</span><br></pre></td></tr></table></figure>
-<p>当我们需要判断一个用户<strong>是否拥有权限</strong>的时候，可以用用户的权限来<strong>与</strong>（<code>&amp;</code>）要判断的权限，当结果还是判断的权限时，则代表用户有这个权限：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">45 &amp; 32 = 32</span><br><span class="line"></span><br><span class="line">101110B &amp; 100000B = 100000B</span><br></pre></td></tr></table></figure>
-<h2 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h2><p>首先列出所有的权限的枚举：</p>
-<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 权限集枚举</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="keyword">public</span> <span class="built_in">enum</span> RightsSet</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> A 权限</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    ARights = <span class="number">1</span>,</span><br><span class="line"></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> B 权限</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    BRights = <span class="number">2</span>,</span><br><span class="line"></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> C 权限</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    CRights = <span class="number">4</span>,</span><br><span class="line"></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> D 权限</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    DRights = <span class="number">8</span>,</span><br><span class="line"></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> E 权限</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    ERights = <span class="number">16</span>,</span><br><span class="line"></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> F 权限</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    FRights = <span class="number">32</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>注意，枚举的值一定要是 <code>2</code> 的 N 次幂形式。 然后是三个与权限相关个公共静态方法：</p>
-<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 判断是否拥有一个权限</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;userRights&quot;&gt;</span>用户原有的权限<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;newRights&quot;&gt;</span>需要判断的权限<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;returns&gt;</span>是否拥有一个权限<span class="doctag">&lt;/returns&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Boolean <span class="title">hasRights</span>(<span class="params">RightsSet userRights, RightsSet newRights</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> (userRights &amp; newRights) == newRights;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 添加一个权限</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;userRights&quot;&gt;</span>用户原有的权限<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;newRights&quot;&gt;</span>需要添加的权限<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;returns&gt;</span>用户的新权限<span class="doctag">&lt;/returns&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> RightsSet <span class="title">addRights</span>(<span class="params">RightsSet userRights, RightsSet newRights</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> userRights | newRights;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 删除一个权限</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;userRights&quot;&gt;</span>用户原有的权限<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;newRights&quot;&gt;</span>需要删除的权限<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;returns&gt;</span>用户的新权限<span class="doctag">&lt;/returns&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> RightsSet <span class="title">deleteRights</span>(<span class="params">RightsSet userRights, RightsSet newRights</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> userRights &amp; ~newRights;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>位运算是最基础的计算机运算，各个语言的用法不会有太大的变化，所以不管是什么语言应该都是可以实现的； 在数据库中我们只需要存储 <code>RightsSet</code> 的值就可以代表各种权限的组合结果了； 在数据库操作中，如果我们要对某一类的权限进行处理时，也不需要像以前一样进行复杂的字符串处理了； 并且位运算作为基础的计算机运算的速度是非常快的，各种数据库也都支持位运算； 而在代码编写中，我们只需要使用权限的名称（类似于上方代码中的枚举标志符 <code>ARights</code>、<code>BRights</code>）来进行操作，而不用记忆各个权限对应的数值； 当在前端进行权限更改等操作时，我们也可以直接在前端计算好 <code>RightsSet</code> 的值，再传给后台，反过来前台显示也是一样；</p>
-]]></content>
-      <categories>
-        <category>C#</category>
-      </categories>
-  </entry>
-  <entry>
     <title>依赖注入那些事儿</title>
     <url>/2017/09/15/those-stories-of-dependency-injection/</url>
     <content><![CDATA[<p>为方便以后查阅，特地转载一下，整理为 <a href="/2017/09/15/those-stories-of-dependency-injection/md.txt" title="Markdown格式">Markdown格式</a>。</p>
@@ -1624,6 +1593,37 @@
         <tag>依赖注入</tag>
         <tag>转载</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>使用枚举和按位运算来控制用户权限</title>
+    <url>/2018/12/07/use-enumeration-and-bitwise-operations-to-control-user-permissions/</url>
+    <content><![CDATA[<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>公司重构系统，我被分配到了用户管理模块，在做到权限的时候发现之前的权限管理是用一个长的字符串来存储所有权限的，例如：</p>
+<span id="more"></span>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">5101110</span><br><span class="line">ABCDEFG</span><br></pre></td></tr></table></figure>
+<p>上面的 <code>7</code> 位数字分别对应下面的 <code>7</code> 个权限，除了第一位为权限等级（分为 1 至 5 档）外，其他的都是是否拥有该权限的状态（1 代表拥有该权限，0 代表没有该权限）。 这样的做法虽然看似简单，但在代码编写中会麻烦很多，特别是当权限种类数量很多的时候。所以，在查阅资料后，我决定<strong>使用枚举和按位运算来控制用户权限</strong>（点题），在向 leader 请示后，开始改造。</p>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>首先要把原有的权限拆分为两部分，一部分是第一位的权限等级，另一部分是各个权限状态，需要改造的主要是各个权限状态。 为了简化步骤，我把权限数量缩小为 <code>6</code> 个，实际有 <code>15</code> 个（并且未来还可能增加），具体是这样的： 一个六个权限，分别用 0 和 1 来表示<strong>有</strong>或<strong>没有</strong>对应的权限：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">17</span><br><span class="line"></span><br><span class="line">FEDCBA</span><br><span class="line">010001B</span><br></pre></td></tr></table></figure>
+<p>如上，代表用户拥有 <code>A</code> 权限和 <code>E</code> 权限，同理可得如果有 一个用户拥有 <code>B</code> 权限、<code>C</code> 权限和 <code>D</code> 权限，那我们就可以这样计算：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">2 | 4 | 8 = 14</span><br><span class="line"></span><br><span class="line">  000010B</span><br><span class="line">  000100B</span><br><span class="line">| 001000B</span><br><span class="line">---------</span><br><span class="line">  001110B</span><br></pre></td></tr></table></figure>
+<p>然后我们就可以用 <code>001110</code> 来代表用户所拥有的权限了。 当我们需要<strong>添加权限</strong>的时候，我们就可以用<strong>按位或</strong>（<code>|</code>）来计算，比如我们要为上面的 <code>001110B</code> 来添加一个 F 权限（<code>100000B</code>）：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">001110B | 100000B = 101110B</span><br><span class="line"></span><br><span class="line">14 | 32 = 45</span><br></pre></td></tr></table></figure>
+<p>而且就算用户已经有了需要添加的权限，再进行<strong>按位或</strong>的运算也是没有问题的：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">45 | 32 = 45</span><br><span class="line"></span><br><span class="line">101110B | 100000B = 101110B</span><br></pre></td></tr></table></figure>
+<p>当我们需要<strong>移除权限</strong>的时候，我们就要用到<strong>与非运算</strong>（<code>&amp;</code> 和 <code>~</code>）：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">45 &amp; ~32 = 14</span><br><span class="line"></span><br><span class="line">101110B &amp; ~100000B = 001110B</span><br></pre></td></tr></table></figure>
+<p>同样的，就算用户本来没有这个权限，在移除权限时也不会有问题：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">14 &amp; ~32 = 14</span><br><span class="line"></span><br><span class="line">001110B &amp; ~100000B = 001110B</span><br></pre></td></tr></table></figure>
+<p>当我们需要判断一个用户<strong>是否拥有权限</strong>的时候，可以用用户的权限来<strong>与</strong>（<code>&amp;</code>）要判断的权限，当结果还是判断的权限时，则代表用户有这个权限：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">45 &amp; 32 = 32</span><br><span class="line"></span><br><span class="line">101110B &amp; 100000B = 100000B</span><br></pre></td></tr></table></figure>
+<h2 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h2><p>首先列出所有的权限的枚举：</p>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 权限集枚举</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="keyword">public</span> <span class="built_in">enum</span> RightsSet</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> A 权限</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    ARights = <span class="number">1</span>,</span><br><span class="line"></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> B 权限</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    BRights = <span class="number">2</span>,</span><br><span class="line"></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> C 权限</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    CRights = <span class="number">4</span>,</span><br><span class="line"></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> D 权限</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    DRights = <span class="number">8</span>,</span><br><span class="line"></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> E 权限</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    ERights = <span class="number">16</span>,</span><br><span class="line"></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> F 权限</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    FRights = <span class="number">32</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注意，枚举的值一定要是 <code>2</code> 的 N 次幂形式。 然后是三个与权限相关个公共静态方法：</p>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 判断是否拥有一个权限</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;userRights&quot;&gt;</span>用户原有的权限<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;newRights&quot;&gt;</span>需要判断的权限<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;returns&gt;</span>是否拥有一个权限<span class="doctag">&lt;/returns&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Boolean <span class="title">hasRights</span>(<span class="params">RightsSet userRights, RightsSet newRights</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> (userRights &amp; newRights) == newRights;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 添加一个权限</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;userRights&quot;&gt;</span>用户原有的权限<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;newRights&quot;&gt;</span>需要添加的权限<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;returns&gt;</span>用户的新权限<span class="doctag">&lt;/returns&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> RightsSet <span class="title">addRights</span>(<span class="params">RightsSet userRights, RightsSet newRights</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> userRights | newRights;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 删除一个权限</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;userRights&quot;&gt;</span>用户原有的权限<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;newRights&quot;&gt;</span>需要删除的权限<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;returns&gt;</span>用户的新权限<span class="doctag">&lt;/returns&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> RightsSet <span class="title">deleteRights</span>(<span class="params">RightsSet userRights, RightsSet newRights</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> userRights &amp; ~newRights;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>位运算是最基础的计算机运算，各个语言的用法不会有太大的变化，所以不管是什么语言应该都是可以实现的； 在数据库中我们只需要存储 <code>RightsSet</code> 的值就可以代表各种权限的组合结果了； 在数据库操作中，如果我们要对某一类的权限进行处理时，也不需要像以前一样进行复杂的字符串处理了； 并且位运算作为基础的计算机运算的速度是非常快的，各种数据库也都支持位运算； 而在代码编写中，我们只需要使用权限的名称（类似于上方代码中的枚举标志符 <code>ARights</code>、<code>BRights</code>）来进行操作，而不用记忆各个权限对应的数值； 当在前端进行权限更改等操作时，我们也可以直接在前端计算好 <code>RightsSet</code> 的值，再传给后台，反过来前台显示也是一样；</p>
+]]></content>
+      <categories>
+        <category>C#</category>
+      </categories>
   </entry>
   <entry>
     <title>使用 raspberry 配合 frp 来进行远程开机</title>
@@ -3743,53 +3743,6 @@
       </tags>
   </entry>
   <entry>
-    <title>如何在 Spotify 听没有版权的歌</title>
-    <url>/2020/04/10/%E5%A6%82%E4%BD%95%E5%9C%A8-Spotify-%E5%90%AC%E6%B2%A1%E6%9C%89%E7%89%88%E6%9D%83%E7%9A%84%E6%AD%8C/</url>
-    <content><![CDATA[<p>转到 Spotify 好久了，当初是因为音乐版权的原因到 Spotify 的。用了一段时间免费版的，发现还行，就上了车。</p>
-<span id="more"></span>
-<p>但是渐渐的发现，外国的月亮也没有很圆，还是有些歌是找不到的。不知道是不是所在区域的原因（我是美区）。但是如果是这个原因，我想我也不会因为个别歌曲去频繁换区。</p>
-<p>之前在网易云，如果有些歌曲没有版权，那么可以在音乐云盘中上传那些歌，这样就可以缓存到各个终端去听了。</p>
-<p>曾经有人夸赞过这个功能：「想出音乐云盘的产品经理真是个天才」。</p>
-<p>在 Spotify 中也是有类似的功能的，只是没有很显式的标注出来。</p>
-<h2 id="程序版本"><a href="#程序版本" class="headerlink" title="程序版本"></a>程序版本</h2><h3 id="PC-端"><a href="#PC-端" class="headerlink" title="PC 端"></a>PC 端</h3><p>1.1.29.592.gf0779179（Windows 10 10.0.18363）</p>
-<h3 id="手机端"><a href="#手机端" class="headerlink" title="手机端"></a>手机端</h3><p>8.5.52.935（IOS 13.4）</p>
-<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p>没有特别标注的，默认在 PC 端操作。</p>
-<h3 id="添加本地文件夹"><a href="#添加本地文件夹" class="headerlink" title="添加本地文件夹"></a>添加本地文件夹</h3><p>在 Spotify 也是能听本地音乐的，具体方法如下：</p>
-<p>设置（Settings）-本地文件（Local Files）-添加源（ADD A SOURCE）</p>
-<p>然后选择你存放本地音频文件的文件夹。</p>
-<h3 id="播放本地音乐"><a href="#播放本地音乐" class="headerlink" title="播放本地音乐"></a>播放本地音乐</h3><p>在侧边栏你的音乐库（YOUR LIBRARY）选择本地文件（Local Files）；</p>
-<p>这时候你只要右键需要同步的歌曲，选择添加到播放列表（Add to Playlist），然后选择一个播放列表（Playlist）就可以了。之后你就能在各个终端听了。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/如何在-Spotify-听没有版权的歌/2020-04-10.png" alt="2020-04-10"></p>
-<!-- <img data-src="/2020/04/10/%E5%A6%82%E4%BD%95%E5%9C%A8-Spotify-%E5%90%AC%E6%B2%A1%E6%9C%89%E7%89%88%E6%9D%83%E7%9A%84%E6%AD%8C/2020-04-10.png" class="" title="2020-04-10.png"> -->
-<p>但是，如果这时候你想要给这首歌打上赞（Like），加入到已按赞的歌曲（Liked Songs）却是不行。</p>
-<p>而我一般上下班听歌的时候，都是直接播放已按赞的歌曲（Liked Songs），每过一段时间就备份一次，清空列表重新选歌。</p>
-<p>那么该如何将本地的歌曲加入到已按赞的歌曲（Liked Songs）呢？</p>
-<p>这时你需要播放你这首歌曲。</p>
-<h3 id="打开手机-APP"><a href="#打开手机-APP" class="headerlink" title="打开手机 APP"></a>打开手机 APP</h3><p>因为 Spotify 只允许一个终端播放，所以你的 APP 会跳出这个提示：</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/如何在-Spotify-听没有版权的歌/APP-PLAY.png" alt="APP-PLAY.png"></p>
-<!-- <img data-src="/2020/04/10/%E5%A6%82%E4%BD%95%E5%9C%A8-Spotify-%E5%90%AC%E6%B2%A1%E6%9C%89%E7%89%88%E6%9D%83%E7%9A%84%E6%AD%8C/APP-PLAY.png" class="" title="APP-PLAY.png"> -->
-<p>点击继续，然后打开播放页：</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/如何在-Spotify-听没有版权的歌/PLAY.png" alt="PLAY.png"></p>
-<!-- <img data-src="/2020/04/10/%E5%A6%82%E4%BD%95%E5%9C%A8-Spotify-%E5%90%AC%E6%B2%A1%E6%9C%89%E7%89%88%E6%9D%83%E7%9A%84%E6%AD%8C/PLAY.png" class="" title="PLAY.png"> -->
-<p>这时你会发现在手机 APP 上是有心形按钮的，你只需要点击一下，虽然点击之后，在当前界面没有显示标记为赞。</p>
-<p>但是，当你去到已按赞的歌曲（Liked Songs），就能看到这首歌了。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/如何在-Spotify-听没有版权的歌/Liked-Songs.png" alt="Liked-Songs.png"></p>
-<!-- <img data-src="/2020/04/10/%E5%A6%82%E4%BD%95%E5%9C%A8-Spotify-%E5%90%AC%E6%B2%A1%E6%9C%89%E7%89%88%E6%9D%83%E7%9A%84%E6%AD%8C/Liked-Songs.png" class="" title="Liked-Songs.png"> -->
-<p>一般我都是将所有的歌曲下载的。</p>
-<p>这时在所有的终端就都可以听这首歌了。</p>
-<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>要注意的是，在 Spotify 中，歌曲下载后也是无法离线播放的。在播放前 Spotify 应该会有一个验证的过程，验证通过后才能播放下载的歌曲。</p>
-<p>另外还有一个比较头疼的是，每次你的 Spotify Premium 到期后，所有已经下载的歌曲就被删除，下次再开通 Spotify Premium 需要重新下载，比较费时间。</p>
-<p>所以，尽量在到期前对 Spotify Premium 进行续费，不要使其存在空档期。</p>
-]]></content>
-      <categories>
-        <category>奇技淫巧</category>
-      </categories>
-      <tags>
-        <tag>奇技淫巧</tag>
-        <tag>Spotify</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>在微信中使用 ToDoList</title>
     <url>/2020/03/13/%E5%9C%A8%E5%BE%AE%E4%BF%A1%E4%B8%AD%E4%BD%BF%E7%94%A8ToDoList/</url>
     <content><![CDATA[<p>在 <a href="https://www.v2ex.com/t/650838">V2EX</a> 看到了这篇帖子，想到了之前自己琢磨出来的方法，所以在这里记录一下，到时候也可以直接将链接贴到回复中去。</p>
@@ -3839,45 +3792,50 @@
       </tags>
   </entry>
   <entry>
-    <title>微波炉简易使用指南</title>
-    <url>/2021/05/18/%E5%BE%AE%E6%B3%A2%E7%82%89%E7%AE%80%E6%98%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</url>
-    <content><![CDATA[<p>「不要盯着微波炉看，会有辐射。」小时候，总是会听到大人对我这么说。说实话这句话影响了我蛮久一段时间，我甚至会在启动微波炉后跑到另一家房间来避免「辐射」。</p>
-<p>前段时间，我开始自己带饭到公司做为午餐，我妈每天给我准备了不同的菜。在用微波炉加热饭菜的时候我就遇到了很多问题，例如有时候加热出来的饭菜会一部分热，一部分不热；例如加热时我应不应该加盖；什么样的器皿可以放入微波炉加热？</p>
-<p>为了知道这些问题的答案，我想先弄懂微波炉的原理是什么？我觉得只要知道事物的基本原理，那么上面这些问题也就迎刃而解了。</p>
-<h2 id="微波炉的原理"><a href="#微波炉的原理" class="headerlink" title="微波炉的原理"></a>微波炉的原理</h2><p>食物中存在的<a href="https://zh.wikipedia.org/wiki/%E6%9E%81%E6%80%A7">电极性分子</a>会在微波的震荡下旋转，从而产生热量。</p>
-<p>什么是电极性分子呢？简单来说如果分子中的电荷分布不均匀，那么它就是电极性分子。</p>
-<p>水（H2O）——就是一种电极性分子。</p>
-<p>什么又是微波呢？微波和红外线、可见光、X 射线一样，都是一种电磁波。它的频率范围大概在 300MHz 至 300GHz 之间，对应的波长则为 1m 至 1mm之间。微波有三种特性：<strong>穿透</strong>、<strong>吸收</strong>和<strong>反射</strong>。对于玻璃、塑料和瓷器，微波几乎是穿越而不被吸收。对于水和食物等就会吸收微波而使自身发热。而对金属类东西，则会反射微波。</p>
-<p>结合微波的这三种特性，我们就能初步理解微波的设计以及使用方法。</p>
-<h2 id="微波炉的设计与使用"><a href="#微波炉的设计与使用" class="headerlink" title="微波炉的设计与使用"></a>微波炉的设计与使用</h2><p>首先用于加热的器皿可以使用玻璃、塑料和瓷器这些不会吸收的材质，这样在加热完成后器皿的温度只有加热后的食物于其接触传递来的热量。但如果加热的食物带汤，那么器皿的温度还是会很高的，还是得戴手套去取。</p>
-<p>其次是被加热的食物含水量越多，那么加热的效率就会越高，这样将就可以大致的估计需要加热的时间了。需要注意的是，如果加热的是<strong>高脂肪低水份</strong>的食物，那么其加热速度会比高水分的食物更加快，需要减少其加热的时间。</p>
-<p>最后是微波炉的金属壳可以很好的隔绝微波，并使其在腔内不停得反射增大微波使用效率。</p>
-<h2 id="微波炉的一些特点"><a href="#微波炉的一些特点" class="headerlink" title="微波炉的一些特点"></a>微波炉的一些特点</h2><p>相比与一般从外向里的加热方式，微波这是内外同时加热，所以不太会出现外边熟了里面还没熟的情况。</p>
-<p>由于微波会在腔内通过金属壁进行反射，通常这种情况下就会出现驻波，这就导致了被加热的食物在波传播的方向上，会出现一段热一段不太热的情况，而且这个两处的距离和微波的波长有关，简单来说，相邻两处较热区域之间的距离约等于微波的波长的一半，知道了波长，我们就可以算出微波炉微波的频率了。</p>
-<p>也因为上面这种情况，微波炉大多带一个玻璃转盘，通过旋转食物，来规避上面这种间断加热的问题。</p>
-<h2 id="微波炉的一些-Tips"><a href="#微波炉的一些-Tips" class="headerlink" title="微波炉的一些 Tips"></a>微波炉的一些 Tips</h2><ul>
-<li><p>加热带壳和带皮的食物时，需要将其戳破或去皮，否则会因内部水分蒸发导致内部压力增加而爆裂。</p>
-</li>
-<li><p>加热液体时应避免单独入微波炉加热，要放置搅拌棒等以助热能释放。没有杂质的蒸馏水加热后尤其不应立即取出，因温度可能已经超过沸点但仍然不沸腾汽化，一旦受到扰动则会暴沸灼伤。一般家用自来水因为其中含有少许杂质，单独加热也会沸腾。</p>
-</li>
-<li><p>带壳蛋不论生熟都不应微波加热。去壳生蛋须刺破蛋黄，否则高温加热时也会爆裂喷溅；去壳熟蛋因蛋白紧密包覆，蛋黄依然有可能爆裂，需切开加热。</p>
-</li>
-</ul>
-<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ol>
-<li><p><a href="https://zh.wikipedia.org/wiki/%E5%BE%AE%E6%B3%A2%E7%82%89">https://zh.wikipedia.org/wiki/%E5%BE%AE%E6%B3%A2%E7%82%89</a></p>
-</li>
-<li><p><a href="https://en.wikipedia.org/wiki/Microwave_oven">https://en.wikipedia.org/wiki/Microwave_oven</a></p>
-</li>
-<li><p><a href="https://www.youtube.com/watch?v=kp33ZprO0Ck">https://www.youtube.com/watch?v=kp33ZprO0Ck</a></p>
-</li>
-</ol>
+    <title>如何在 Spotify 听没有版权的歌</title>
+    <url>/2020/04/10/%E5%A6%82%E4%BD%95%E5%9C%A8-Spotify-%E5%90%AC%E6%B2%A1%E6%9C%89%E7%89%88%E6%9D%83%E7%9A%84%E6%AD%8C/</url>
+    <content><![CDATA[<p>转到 Spotify 好久了，当初是因为音乐版权的原因到 Spotify 的。用了一段时间免费版的，发现还行，就上了车。</p>
+<span id="more"></span>
+<p>但是渐渐的发现，外国的月亮也没有很圆，还是有些歌是找不到的。不知道是不是所在区域的原因（我是美区）。但是如果是这个原因，我想我也不会因为个别歌曲去频繁换区。</p>
+<p>之前在网易云，如果有些歌曲没有版权，那么可以在音乐云盘中上传那些歌，这样就可以缓存到各个终端去听了。</p>
+<p>曾经有人夸赞过这个功能：「想出音乐云盘的产品经理真是个天才」。</p>
+<p>在 Spotify 中也是有类似的功能的，只是没有很显式的标注出来。</p>
+<h2 id="程序版本"><a href="#程序版本" class="headerlink" title="程序版本"></a>程序版本</h2><h3 id="PC-端"><a href="#PC-端" class="headerlink" title="PC 端"></a>PC 端</h3><p>1.1.29.592.gf0779179（Windows 10 10.0.18363）</p>
+<h3 id="手机端"><a href="#手机端" class="headerlink" title="手机端"></a>手机端</h3><p>8.5.52.935（IOS 13.4）</p>
+<h2 id="步骤"><a href="#步骤" class="headerlink" title="步骤"></a>步骤</h2><p>没有特别标注的，默认在 PC 端操作。</p>
+<h3 id="添加本地文件夹"><a href="#添加本地文件夹" class="headerlink" title="添加本地文件夹"></a>添加本地文件夹</h3><p>在 Spotify 也是能听本地音乐的，具体方法如下：</p>
+<p>设置（Settings）-本地文件（Local Files）-添加源（ADD A SOURCE）</p>
+<p>然后选择你存放本地音频文件的文件夹。</p>
+<h3 id="播放本地音乐"><a href="#播放本地音乐" class="headerlink" title="播放本地音乐"></a>播放本地音乐</h3><p>在侧边栏你的音乐库（YOUR LIBRARY）选择本地文件（Local Files）；</p>
+<p>这时候你只要右键需要同步的歌曲，选择添加到播放列表（Add to Playlist），然后选择一个播放列表（Playlist）就可以了。之后你就能在各个终端听了。</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/如何在-Spotify-听没有版权的歌/2020-04-10.png" alt="2020-04-10"></p>
+<!-- <img data-src="/2020/04/10/%E5%A6%82%E4%BD%95%E5%9C%A8-Spotify-%E5%90%AC%E6%B2%A1%E6%9C%89%E7%89%88%E6%9D%83%E7%9A%84%E6%AD%8C/2020-04-10.png" class="" title="2020-04-10.png"> -->
+<p>但是，如果这时候你想要给这首歌打上赞（Like），加入到已按赞的歌曲（Liked Songs）却是不行。</p>
+<p>而我一般上下班听歌的时候，都是直接播放已按赞的歌曲（Liked Songs），每过一段时间就备份一次，清空列表重新选歌。</p>
+<p>那么该如何将本地的歌曲加入到已按赞的歌曲（Liked Songs）呢？</p>
+<p>这时你需要播放你这首歌曲。</p>
+<h3 id="打开手机-APP"><a href="#打开手机-APP" class="headerlink" title="打开手机 APP"></a>打开手机 APP</h3><p>因为 Spotify 只允许一个终端播放，所以你的 APP 会跳出这个提示：</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/如何在-Spotify-听没有版权的歌/APP-PLAY.png" alt="APP-PLAY.png"></p>
+<!-- <img data-src="/2020/04/10/%E5%A6%82%E4%BD%95%E5%9C%A8-Spotify-%E5%90%AC%E6%B2%A1%E6%9C%89%E7%89%88%E6%9D%83%E7%9A%84%E6%AD%8C/APP-PLAY.png" class="" title="APP-PLAY.png"> -->
+<p>点击继续，然后打开播放页：</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/如何在-Spotify-听没有版权的歌/PLAY.png" alt="PLAY.png"></p>
+<!-- <img data-src="/2020/04/10/%E5%A6%82%E4%BD%95%E5%9C%A8-Spotify-%E5%90%AC%E6%B2%A1%E6%9C%89%E7%89%88%E6%9D%83%E7%9A%84%E6%AD%8C/PLAY.png" class="" title="PLAY.png"> -->
+<p>这时你会发现在手机 APP 上是有心形按钮的，你只需要点击一下，虽然点击之后，在当前界面没有显示标记为赞。</p>
+<p>但是，当你去到已按赞的歌曲（Liked Songs），就能看到这首歌了。</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/如何在-Spotify-听没有版权的歌/Liked-Songs.png" alt="Liked-Songs.png"></p>
+<!-- <img data-src="/2020/04/10/%E5%A6%82%E4%BD%95%E5%9C%A8-Spotify-%E5%90%AC%E6%B2%A1%E6%9C%89%E7%89%88%E6%9D%83%E7%9A%84%E6%AD%8C/Liked-Songs.png" class="" title="Liked-Songs.png"> -->
+<p>一般我都是将所有的歌曲下载的。</p>
+<p>这时在所有的终端就都可以听这首歌了。</p>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>要注意的是，在 Spotify 中，歌曲下载后也是无法离线播放的。在播放前 Spotify 应该会有一个验证的过程，验证通过后才能播放下载的歌曲。</p>
+<p>另外还有一个比较头疼的是，每次你的 Spotify Premium 到期后，所有已经下载的歌曲就被删除，下次再开通 Spotify Premium 需要重新下载，比较费时间。</p>
+<p>所以，尽量在到期前对 Spotify Premium 进行续费，不要使其存在空档期。</p>
 ]]></content>
       <categories>
-        <category>事物原理</category>
+        <category>奇技淫巧</category>
       </categories>
       <tags>
-        <tag>微波炉</tag>
-        <tag>常识</tag>
+        <tag>奇技淫巧</tag>
+        <tag>Spotify</tag>
       </tags>
   </entry>
   <entry>
@@ -3940,6 +3898,48 @@
       </categories>
       <tags>
         <tag>博客</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>微波炉简易使用指南</title>
+    <url>/2021/05/18/%E5%BE%AE%E6%B3%A2%E7%82%89%E7%AE%80%E6%98%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</url>
+    <content><![CDATA[<p>「不要盯着微波炉看，会有辐射。」小时候，总是会听到大人对我这么说。说实话这句话影响了我蛮久一段时间，我甚至会在启动微波炉后跑到另一家房间来避免「辐射」。</p>
+<p>前段时间，我开始自己带饭到公司做为午餐，我妈每天给我准备了不同的菜。在用微波炉加热饭菜的时候我就遇到了很多问题，例如有时候加热出来的饭菜会一部分热，一部分不热；例如加热时我应不应该加盖；什么样的器皿可以放入微波炉加热？</p>
+<p>为了知道这些问题的答案，我想先弄懂微波炉的原理是什么？我觉得只要知道事物的基本原理，那么上面这些问题也就迎刃而解了。</p>
+<h2 id="微波炉的原理"><a href="#微波炉的原理" class="headerlink" title="微波炉的原理"></a>微波炉的原理</h2><p>食物中存在的<a href="https://zh.wikipedia.org/wiki/%E6%9E%81%E6%80%A7">电极性分子</a>会在微波的震荡下旋转，从而产生热量。</p>
+<p>什么是电极性分子呢？简单来说如果分子中的电荷分布不均匀，那么它就是电极性分子。</p>
+<p>水（H2O）——就是一种电极性分子。</p>
+<p>什么又是微波呢？微波和红外线、可见光、X 射线一样，都是一种电磁波。它的频率范围大概在 300MHz 至 300GHz 之间，对应的波长则为 1m 至 1mm之间。微波有三种特性：<strong>穿透</strong>、<strong>吸收</strong>和<strong>反射</strong>。对于玻璃、塑料和瓷器，微波几乎是穿越而不被吸收。对于水和食物等就会吸收微波而使自身发热。而对金属类东西，则会反射微波。</p>
+<p>结合微波的这三种特性，我们就能初步理解微波的设计以及使用方法。</p>
+<h2 id="微波炉的设计与使用"><a href="#微波炉的设计与使用" class="headerlink" title="微波炉的设计与使用"></a>微波炉的设计与使用</h2><p>首先用于加热的器皿可以使用玻璃、塑料和瓷器这些不会吸收的材质，这样在加热完成后器皿的温度只有加热后的食物于其接触传递来的热量。但如果加热的食物带汤，那么器皿的温度还是会很高的，还是得戴手套去取。</p>
+<p>其次是被加热的食物含水量越多，那么加热的效率就会越高，这样将就可以大致的估计需要加热的时间了。需要注意的是，如果加热的是<strong>高脂肪低水份</strong>的食物，那么其加热速度会比高水分的食物更加快，需要减少其加热的时间。</p>
+<p>最后是微波炉的金属壳可以很好的隔绝微波，并使其在腔内不停得反射增大微波使用效率。</p>
+<h2 id="微波炉的一些特点"><a href="#微波炉的一些特点" class="headerlink" title="微波炉的一些特点"></a>微波炉的一些特点</h2><p>相比与一般从外向里的加热方式，微波这是内外同时加热，所以不太会出现外边熟了里面还没熟的情况。</p>
+<p>由于微波会在腔内通过金属壁进行反射，通常这种情况下就会出现驻波，这就导致了被加热的食物在波传播的方向上，会出现一段热一段不太热的情况，而且这个两处的距离和微波的波长有关，简单来说，相邻两处较热区域之间的距离约等于微波的波长的一半，知道了波长，我们就可以算出微波炉微波的频率了。</p>
+<p>也因为上面这种情况，微波炉大多带一个玻璃转盘，通过旋转食物，来规避上面这种间断加热的问题。</p>
+<h2 id="微波炉的一些-Tips"><a href="#微波炉的一些-Tips" class="headerlink" title="微波炉的一些 Tips"></a>微波炉的一些 Tips</h2><ul>
+<li><p>加热带壳和带皮的食物时，需要将其戳破或去皮，否则会因内部水分蒸发导致内部压力增加而爆裂。</p>
+</li>
+<li><p>加热液体时应避免单独入微波炉加热，要放置搅拌棒等以助热能释放。没有杂质的蒸馏水加热后尤其不应立即取出，因温度可能已经超过沸点但仍然不沸腾汽化，一旦受到扰动则会暴沸灼伤。一般家用自来水因为其中含有少许杂质，单独加热也会沸腾。</p>
+</li>
+<li><p>带壳蛋不论生熟都不应微波加热。去壳生蛋须刺破蛋黄，否则高温加热时也会爆裂喷溅；去壳熟蛋因蛋白紧密包覆，蛋黄依然有可能爆裂，需切开加热。</p>
+</li>
+</ul>
+<h2 id="参考链接"><a href="#参考链接" class="headerlink" title="参考链接"></a>参考链接</h2><ol>
+<li><p><a href="https://zh.wikipedia.org/wiki/%E5%BE%AE%E6%B3%A2%E7%82%89">https://zh.wikipedia.org/wiki/%E5%BE%AE%E6%B3%A2%E7%82%89</a></p>
+</li>
+<li><p><a href="https://en.wikipedia.org/wiki/Microwave_oven">https://en.wikipedia.org/wiki/Microwave_oven</a></p>
+</li>
+<li><p><a href="https://www.youtube.com/watch?v=kp33ZprO0Ck">https://www.youtube.com/watch?v=kp33ZprO0Ck</a></p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>事物原理</category>
+      </categories>
+      <tags>
+        <tag>微波炉</tag>
+        <tag>常识</tag>
       </tags>
   </entry>
   <entry>
@@ -4013,8 +4013,8 @@
 <span id="more"></span>
 <p>关于第一话，按照一般的文章套路来说，都是介绍一下 NAS 是什么，能用来做什么。但是我觉得能看到这篇文章的人，一般也不再需要科普这些内容。对了，此系列教程全部是软件向的，如果你需要自己组装一台 NAS，那么这系列的文章你可以先收藏，等组装完了再来看。话说回来，本文将向大家介绍一下我是如果规划我的<strong>文件目录结构</strong>的。</p>
 <p>文件目录结构的构建，将对后续所有的容器搭建起到十分关键的影响，说他是万事之根本也不为过，不光是 NAS，你的 PC，你的程序项目，一个考虑周到且一目了然的目录结构，将极大方便你的后续工作。</p>
-<p>PS：本文不但是 NAS 的文件目录，而且是这系列文章的目录结构。</p>
-<p>PPS：关于文件夹的命名规则，全小写（<code>ofcourseistillloveyou</code>），全大写（<code>OFCOURSEISTILLLOVEYOU</code>），大驼峰（<code>OfCourseIStillLoveYou</code>），小驼峰（<code>ofCourseIStillLoveYou</code>），下划线连接（<code>of_course_i_still_love_you</code>），连接号连接（<code>of-course-i-still-love-you</code>）都随你心意，只要你能做到一下几点：「统一、容易辨识、尽量不要空格，尽量只使用英文、数字、连接号和下划线」。</p>
+<p>P.S.：本文不但是 NAS 的文件目录，而且是这系列文章的目录结构。</p>
+<p>P.P.S.：关于文件夹的命名规则，全小写（<code>ofcourseistillloveyou</code>），全大写（<code>OFCOURSEISTILLLOVEYOU</code>），大驼峰（<code>OfCourseIStillLoveYou</code>），小驼峰（<code>ofCourseIStillLoveYou</code>），下划线连接（<code>of_course_i_still_love_you</code>），连接号连接（<code>of-course-i-still-love-you</code>）都随你心意，只要你能做到一下几点：「统一、容易辨识、尽量不要空格，尽量只使用英文、数字、连接号和下划线」。</p>
 <p>系列相关文章：</p>
 <ol>
 <li><a href="/2022/08/08/%E6%A6%A8%E5%B9%B2%E8%BF%99%E5%8F%B0NAS%E7%AC%AC001%E8%AF%9D-%E6%96%87%E4%BB%B6%E6%B5%8F%E8%A7%88%E5%99%A8%EF%BC%88FileBrowser%EF%BC%89/" title="榨干这台 NAS 第 001 话-文件浏览器（File Browser）">榨干这台 NAS 第 001 话-文件浏览器（File Browser）</a>
@@ -4030,9 +4030,9 @@
 <p>此目录下应该只存放被刮削后的电影，每部电影应该拥有自己的单独子文件夹，子文件夹中存放电影、字幕、nfo文件和海报图片。电影（moive）文件夹的目录将在后续的文章中进行详细介绍。</p>
 <h4 id="tv-series（电视剧集）"><a href="#tv-series（电视剧集）" class="headerlink" title="tv_series（电视剧集）"></a>tv_series（电视剧集）</h4><p>存放你各类电视剧集的地方。</p>
 <p>你的动漫，美剧，韩剧，<del>抗日神剧</del>等都应该存放在这里。和电影（moive）文件夹相同，每部电视剧集应该拥有自己的单独子文件夹，子文件夹中存放电视剧集、字幕、nfo文件和海报图片。电视剧集（tv_series）文件夹的目录将在后续的文章中进行详细介绍。</p>
-<h4 id="av（不正经电影）"><a href="#av（不正经电影）" class="headerlink" title="av（不正经电影）"></a><del>av</del>（不正经电影）</h4><p>存放小姐姐的地方。</p>
+<h4 id="av（不正经电影）"><a href="#av（不正经电影）" class="headerlink" title="av（不正经电影）"></a><del>av（不正经电影）</del></h4><p>存放小姐姐的地方。</p>
 <p>你的小姐姐们都住在这里，这里的文件命名也有相应的规则，具体规则以及相关的工具，也会在后续文章中介绍。</p>
-<h4 id="h（不正经视频）"><a href="#h（不正经视频）" class="headerlink" title="h（不正经视频）"></a>h（不正经视频）</h4><p>一些没有<del>番号</del>部队番号的小姐姐，将会放在这里。</p>
+<h4 id="h（不正经视频）"><a href="#h（不正经视频）" class="headerlink" title="h（不正经视频）"></a><del>h（不正经视频）</del></h4><p>一些没有<del>番号</del>部队番号的小姐姐，将会放在这里。</p>
 <h4 id="youtube"><a href="#youtube" class="headerlink" title="youtube"></a>youtube</h4><p>YouTube 的视频存档将存放在此处。后续将会介绍用于下载 YouTube 视频的工具。</p>
 <h4 id="bilibili"><a href="#bilibili" class="headerlink" title="bilibili"></a>bilibili</h4><p>同 YouTube。</p>
 <h4 id="TeslaCam（特斯拉汽车行车记录视频以及哨兵录像）"><a href="#TeslaCam（特斯拉汽车行车记录视频以及哨兵录像）" class="headerlink" title="TeslaCam（特斯拉汽车行车记录视频以及哨兵录像）"></a>TeslaCam（特斯拉汽车行车记录视频以及哨兵录像）</h4><p>特斯拉汽车行车记录录像将会存放在此处。后续将会介绍用于合并和查看行车记录仪的工具。</p>
@@ -4232,7 +4232,7 @@
 </li>
 <li><p>「工具」-「选项」-「高级」-「libtorrent 相关」将「校验时内存使用扩增量」修改大一些，我设置成了 <code>512</code>，这样可以提高校验速度，提升之后辅种效率；</p>
 </li>
-<li><p>「工具」-「选项」-「BitTorrent」勾选「自动添加以下 tracker 到新的 torrent」，并在下方输入框中填入<a href="&#109;&#x61;&#105;&#x6c;&#x74;&#x6f;&#58;&#104;&#116;&#x74;&#112;&#115;&#x3a;&#x2f;&#x2f;&#x63;&#100;&#110;&#x2e;&#x6a;&#x73;&#x64;&#101;&#108;&#x69;&#x76;&#114;&#46;&#x6e;&#x65;&#x74;&#x2f;&#103;&#x68;&#47;&#x6e;&#x67;&#x6f;&#x73;&#x61;&#x6e;&#x67;&#x2f;&#116;&#114;&#x61;&#99;&#x6b;&#101;&#114;&#x73;&#x6c;&#105;&#x73;&#116;&#64;&#109;&#97;&#115;&#x74;&#101;&#114;&#47;&#116;&#114;&#97;&#99;&#x6b;&#x65;&#x72;&#x73;&#95;&#97;&#108;&#108;&#46;&#x74;&#x78;&#116;">&#104;&#116;&#x74;&#112;&#115;&#x3a;&#x2f;&#x2f;&#x63;&#100;&#110;&#x2e;&#x6a;&#x73;&#x64;&#101;&#108;&#x69;&#x76;&#114;&#46;&#x6e;&#x65;&#x74;&#x2f;&#103;&#x68;&#47;&#x6e;&#x67;&#x6f;&#x73;&#x61;&#x6e;&#x67;&#x2f;&#116;&#114;&#x61;&#99;&#x6b;&#101;&#114;&#x73;&#x6c;&#105;&#x73;&#116;&#64;&#109;&#97;&#115;&#x74;&#101;&#114;&#47;&#116;&#114;&#97;&#99;&#x6b;&#x65;&#x72;&#x73;&#95;&#97;&#108;&#108;&#46;&#x74;&#x78;&#116;</a>中的内容，此处设置的作用的是为了获得更多的供种者，此操作能有效提高下载速度，建议每隔一段时间就更新一下 tracker 列表，更多 tracker 列表可以查看 <a href="https://github.com/ngosang/trackerslist">https://github.com/ngosang/trackerslist</a> 和 <a href="https://github.com/XIU2/TrackersListCollection">https://github.com/XIU2/TrackersListCollection</a>。</p>
+<li><p>「工具」-「选项」-「BitTorrent」勾选「自动添加以下 tracker 到新的 torrent」，并在下方输入框中填入<a href="&#x6d;&#97;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#x68;&#116;&#x74;&#x70;&#115;&#x3a;&#47;&#47;&#99;&#100;&#x6e;&#x2e;&#x6a;&#x73;&#100;&#101;&#x6c;&#105;&#x76;&#x72;&#46;&#110;&#x65;&#116;&#x2f;&#x67;&#x68;&#47;&#110;&#103;&#111;&#115;&#97;&#x6e;&#x67;&#47;&#116;&#x72;&#97;&#x63;&#107;&#101;&#114;&#115;&#x6c;&#105;&#115;&#x74;&#x40;&#109;&#97;&#115;&#116;&#x65;&#x72;&#x2f;&#x74;&#114;&#97;&#99;&#107;&#101;&#x72;&#115;&#95;&#x61;&#108;&#x6c;&#x2e;&#x74;&#120;&#x74;">&#x68;&#116;&#x74;&#x70;&#115;&#x3a;&#47;&#47;&#99;&#100;&#x6e;&#x2e;&#x6a;&#x73;&#100;&#101;&#x6c;&#105;&#x76;&#x72;&#46;&#110;&#x65;&#116;&#x2f;&#x67;&#x68;&#47;&#110;&#103;&#111;&#115;&#97;&#x6e;&#x67;&#47;&#116;&#x72;&#97;&#x63;&#107;&#101;&#114;&#115;&#x6c;&#105;&#115;&#x74;&#x40;&#109;&#97;&#115;&#116;&#x65;&#x72;&#x2f;&#x74;&#114;&#97;&#99;&#107;&#101;&#x72;&#115;&#95;&#x61;&#108;&#x6c;&#x2e;&#x74;&#120;&#x74;</a>中的内容，此处设置的作用的是为了获得更多的供种者，此操作能有效提高下载速度，建议每隔一段时间就更新一下 tracker 列表，更多 tracker 列表可以查看 <a href="https://github.com/ngosang/trackerslist">https://github.com/ngosang/trackerslist</a> 和 <a href="https://github.com/XIU2/TrackersListCollection">https://github.com/XIU2/TrackersListCollection</a>。</p>
 </li>
 <li><p>「工具」-「选项」-「BitTorrent」取消勾选「Torrent 排队」,这一步是为了多任务同时下载与上传，BT 的本质就是我为人人，人人为我，你的下载即是别人的上传，所以请最好不要限制你的上传，在不影响使用的情况下提供最多的上传；</p>
 </li>
@@ -4417,7 +4417,9 @@
     <content><![CDATA[<p>这是一系列关于 NAS 的文章，系列的名称你们也看到了：「<strong>榨干这台 NAS</strong>」。我将尽可能详细的介绍 NAS 相关的知识，帮助你最大限度的发挥你的手中 NAS 的威力！</p>
 <span id="more"></span>
 <p>上一话中，讲解了硬链接功能，适合 PT 玩家们使用。那么之后就需要对下载下来的资源进行整理了。</p>
-<p>我们在一般的视频网站中看电影或电视剧的时候，都会看到影视剧有海报，简介，分类，演职人员表等信息，那么这些信息应该怎么来呢？在我们自建的影音库中，所有的这些都需要通过「刮削」来获取。</p>
+<p>我们在一般的视频网站中看电影或电视剧的时候，都会看到影视剧有海报，简介，分类，演职人员表等信息，那么这些信息应该怎么来呢？</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/榨干这台NAS第004话-刮削/电视墙海报墙效果.png" alt="电视墙海报墙效果.png"></p>
+<p>在我们自建的影音库中，所有的这些都需要通过「刮削」来获取。</p>
 <p>对于一般的影视剧，通过一款叫做 TinyMediaManager 的软件即可一条龙完成刮削。</p>
 <h4 id="安装-TinyMediaManager"><a href="#安装-TinyMediaManager" class="headerlink" title="安装 TinyMediaManager"></a>安装 TinyMediaManager</h4><p><a href="https://www.tinymediamanager.org/">TinyMediaManager</a> 支持 Windows、macOS、Linux 以及 Docker，对于我们基于 NAS 的使用场景来说，使用 Docker 是更为方便的。当然你也可以使用其他的版本，各个版本之间除了安装方式不同，使用方法都是一样的。</p>
 <p>需要注意的是，TinyMediaManager 在4.0后改为了付费软件，如果没有付费将只支持刮削 50 部影视剧，所以接下来我们将使用 3.0 版本的 TinyMediaManager，放心，两个版本的刮削效果完全相同。</p>
