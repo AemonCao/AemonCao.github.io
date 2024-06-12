@@ -7,10 +7,10 @@
     "clean": "hexo clean",
     "deploy": "hexo deploy",
     "server": "hexo server",
-    "new:post" : "hexo new post $1"
+    "new:post": "hexo new post $1"
   },
   "hexo": {
-    "version": "7.0.0-rc1"
+    "version": "7.2.0"
   },
   "dependencies": {
     "hexo": "^7.0.0-rc1",
