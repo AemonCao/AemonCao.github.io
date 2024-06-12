@@ -19,28 +19,28 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"www.aemon.top","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#ff69b4","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"aemoncao.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#ff69b4","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="在 V2EX 看到了这篇帖子，想到了之前自己琢磨出来的方法，所以在这里记录一下，到时候也可以直接将链接贴到回复中去。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="在微信中使用 ToDoList">
-<meta property="og:url" content="https://www.aemon.top/2020/03/13/%E5%9C%A8%E5%BE%AE%E4%BF%A1%E4%B8%AD%E4%BD%BF%E7%94%A8ToDoList/index.html">
+<meta property="og:url" content="https://aemoncao.github.io/2020/03/13/%E5%9C%A8%E5%BE%AE%E4%BF%A1%E4%B8%AD%E4%BD%BF%E7%94%A8ToDoList/index.html">
 <meta property="og:site_name" content="Aemon&#39;s Blog">
 <meta property="og:description" content="在 V2EX 看到了这篇帖子，想到了之前自己琢磨出来的方法，所以在这里记录一下，到时候也可以直接将链接贴到回复中去。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/%E5%9C%A8%E5%BE%AE%E4%BF%A1%E4%B8%AD%E4%BD%BF%E7%94%A8ToDoList/%E6%95%88%E6%9E%9C.jpg">
-<meta property="og:image" content="https://www.aemon.top/2020/03/13/%E5%9C%A8%E5%BE%AE%E4%BF%A1%E4%B8%AD%E4%BD%BF%E7%94%A8ToDoList/%E6%95%88%E6%9E%9C.jpg">
+<meta property="og:image" content="https://aemoncao.github.io/2020/03/13/%E5%9C%A8%E5%BE%AE%E4%BF%A1%E4%B8%AD%E4%BD%BF%E7%94%A8ToDoList/%E6%95%88%E6%9E%9C.jpg">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/%E5%9C%A8%E5%BE%AE%E4%BF%A1%E4%B8%AD%E4%BD%BF%E7%94%A8ToDoList/%E7%BD%AE%E9%A1%B6.jpg">
-<meta property="og:image" content="https://www.aemon.top/2020/03/13/%E5%9C%A8%E5%BE%AE%E4%BF%A1%E4%B8%AD%E4%BD%BF%E7%94%A8ToDoList/%E7%BD%AE%E9%A1%B6.jpg">
+<meta property="og:image" content="https://aemoncao.github.io/2020/03/13/%E5%9C%A8%E5%BE%AE%E4%BF%A1%E4%B8%AD%E4%BD%BF%E7%94%A8ToDoList/%E7%BD%AE%E9%A1%B6.jpg">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/%E5%9C%A8%E5%BE%AE%E4%BF%A1%E4%B8%AD%E4%BD%BF%E7%94%A8ToDoList/%E5%BE%85%E5%8A%9E.jpg">
-<meta property="og:image" content="https://www.aemon.top/2020/03/13/%E5%9C%A8%E5%BE%AE%E4%BF%A1%E4%B8%AD%E4%BD%BF%E7%94%A8ToDoList/%E5%BE%85%E5%8A%9E.jpg">
+<meta property="og:image" content="https://aemoncao.github.io/2020/03/13/%E5%9C%A8%E5%BE%AE%E4%BF%A1%E4%B8%AD%E4%BD%BF%E7%94%A8ToDoList/%E5%BE%85%E5%8A%9E.jpg">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/%E5%9C%A8%E5%BE%AE%E4%BF%A1%E4%B8%AD%E4%BD%BF%E7%94%A8ToDoList/%E7%BD%AE%E9%A1%B6%E9%80%89%E9%A1%B9.jpg">
-<meta property="og:image" content="https://www.aemon.top/2020/03/13/%E5%9C%A8%E5%BE%AE%E4%BF%A1%E4%B8%AD%E4%BD%BF%E7%94%A8ToDoList/%E7%BD%AE%E9%A1%B6%E9%80%89%E9%A1%B9.jpg">
+<meta property="og:image" content="https://aemoncao.github.io/2020/03/13/%E5%9C%A8%E5%BE%AE%E4%BF%A1%E4%B8%AD%E4%BD%BF%E7%94%A8ToDoList/%E7%BD%AE%E9%A1%B6%E9%80%89%E9%A1%B9.jpg">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/%E5%9C%A8%E5%BE%AE%E4%BF%A1%E4%B8%AD%E4%BD%BF%E7%94%A8ToDoList/%E6%8F%90%E9%86%92.jpg">
-<meta property="og:image" content="https://www.aemon.top/2020/03/13/%E5%9C%A8%E5%BE%AE%E4%BF%A1%E4%B8%AD%E4%BD%BF%E7%94%A8ToDoList/%E6%8F%90%E9%86%92.jpg">
+<meta property="og:image" content="https://aemoncao.github.io/2020/03/13/%E5%9C%A8%E5%BE%AE%E4%BF%A1%E4%B8%AD%E4%BD%BF%E7%94%A8ToDoList/%E6%8F%90%E9%86%92.jpg">
 <meta property="article:published_time" content="2020-03-13T13:13:31.000Z">
-<meta property="article:modified_time" content="2024-06-12T06:26:27.690Z">
+<meta property="article:modified_time" content="2024-06-12T06:27:26.032Z">
 <meta property="article:author" content="Aemon">
 <meta property="article:tag" content="奇技淫巧">
 <meta property="article:tag" content="微信">
@@ -48,7 +48,7 @@
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/%E5%9C%A8%E5%BE%AE%E4%BF%A1%E4%B8%AD%E4%BD%BF%E7%94%A8ToDoList/%E6%95%88%E6%9E%9C.jpg">
 
-<link rel="canonical" href="https://www.aemon.top/2020/03/13/%E5%9C%A8%E5%BE%AE%E4%BF%A1%E4%B8%AD%E4%BD%BF%E7%94%A8ToDoList/">
+<link rel="canonical" href="https://aemoncao.github.io/2020/03/13/%E5%9C%A8%E5%BE%AE%E4%BF%A1%E4%B8%AD%E4%BD%BF%E7%94%A8ToDoList/">
 
 
 <script id="page-configurations">
@@ -219,7 +219,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://www.aemon.top/2020/03/13/%E5%9C%A8%E5%BE%AE%E4%BF%A1%E4%B8%AD%E4%BD%BF%E7%94%A8ToDoList/">
+    <link itemprop="mainEntityOfPage" href="https://aemoncao.github.io/2020/03/13/%E5%9C%A8%E5%BE%AE%E4%BF%A1%E4%B8%AD%E4%BD%BF%E7%94%A8ToDoList/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -249,7 +249,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-06-12 14:26:27" itemprop="dateModified" datetime="2024-06-12T14:26:27+08:00">2024-06-12</time>
+                <time title="修改时间：2024-06-12 14:27:26" itemprop="dateModified" datetime="2024-06-12T14:27:26+08:00">2024-06-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -608,7 +608,7 @@
       quicklink({
         timeout : 3000,
         priority: true,
-        ignores : [uri => uri.includes('#'),uri => uri === 'https://www.aemon.top/2020/03/13/%E5%9C%A8%E5%BE%AE%E4%BF%A1%E4%B8%AD%E4%BD%BF%E7%94%A8ToDoList/',]
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://aemoncao.github.io/2020/03/13/%E5%9C%A8%E5%BE%AE%E4%BF%A1%E4%B8%AD%E4%BD%BF%E7%94%A8ToDoList/',]
       });
       });
   </script>

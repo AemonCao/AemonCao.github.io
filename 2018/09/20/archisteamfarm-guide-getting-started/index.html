@@ -19,18 +19,18 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"www.aemon.top","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#ff69b4","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"aemoncao.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#ff69b4","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="之前有写过 Windows 版本的 ArchiSteamFarm 在树莓派上的挂卡教程，那次过后到现在已经一年多了，Steam 库又新进了批货，所以又要挂一次啦。这次呢，发现 ArchiSteamFarm 已经更新到了 3.3.6.0 版本，所以就准备用最新的版本。还有就是由于众所周知的原因，国内很难正常的登录 Steam ，所以这次挂机的平台从自家的树莓派转移到了 Google Cloud 上。">
 <meta property="og:type" content="article">
 <meta property="og:title" content="ASF（ArchiSteamFarm） 挂卡指南-入门篇">
-<meta property="og:url" content="https://www.aemon.top/2018/09/20/archisteamfarm-guide-getting-started/index.html">
+<meta property="og:url" content="https://aemoncao.github.io/2018/09/20/archisteamfarm-guide-getting-started/index.html">
 <meta property="og:site_name" content="Aemon&#39;s Blog">
 <meta property="og:description" content="之前有写过 Windows 版本的 ArchiSteamFarm 在树莓派上的挂卡教程，那次过后到现在已经一年多了，Steam 库又新进了批货，所以又要挂一次啦。这次呢，发现 ArchiSteamFarm 已经更新到了 3.3.6.0 版本，所以就准备用最新的版本。还有就是由于众所周知的原因，国内很难正常的登录 Steam ，所以这次挂机的平台从自家的树莓派转移到了 Google Cloud 上。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-09-20T09:26:59.000Z">
-<meta property="article:modified_time" content="2024-06-12T06:26:26.966Z">
+<meta property="article:modified_time" content="2024-06-12T06:27:25.308Z">
 <meta property="article:author" content="Aemon">
 <meta property="article:tag" content="Linux">
 <meta property="article:tag" content="ArchiSteamFarm">
@@ -40,7 +40,7 @@
 <meta property="article:tag" content="挂卡">
 <meta name="twitter:card" content="summary">
 
-<link rel="canonical" href="https://www.aemon.top/2018/09/20/archisteamfarm-guide-getting-started/">
+<link rel="canonical" href="https://aemoncao.github.io/2018/09/20/archisteamfarm-guide-getting-started/">
 
 
 <script id="page-configurations">
@@ -211,7 +211,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
-    <link itemprop="mainEntityOfPage" href="https://www.aemon.top/2018/09/20/archisteamfarm-guide-getting-started/">
+    <link itemprop="mainEntityOfPage" href="https://aemoncao.github.io/2018/09/20/archisteamfarm-guide-getting-started/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/images/avatar.jpg">
@@ -241,7 +241,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2024-06-12 14:26:26" itemprop="dateModified" datetime="2024-06-12T14:26:26+08:00">2024-06-12</time>
+                <time title="修改时间：2024-06-12 14:27:25" itemprop="dateModified" datetime="2024-06-12T14:27:25+08:00">2024-06-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -614,7 +614,7 @@
       quicklink({
         timeout : 3000,
         priority: true,
-        ignores : [uri => uri.includes('#'),uri => uri === 'https://www.aemon.top/2018/09/20/archisteamfarm-guide-getting-started/',]
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://aemoncao.github.io/2018/09/20/archisteamfarm-guide-getting-started/',]
       });
       });
   </script>

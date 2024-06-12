@@ -1766,19 +1766,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Green 和 Lime</title>
-    <url>/2019/01/03/web-colors/</url>
-    <content><![CDATA[<p>在 HTML 中，部分颜色可以使用颜色名来代替，比起代码会更好理解，例如 Aqua（<code>#00FFFF</code>）、Maroon（<code>#800000</code>）、Pink（<code>#FFC0CB</code>）等等。</p>
-<span id="more"></span>
-<p>比较的特殊的就是三原色了：Red、Green、Blue。</p>
-<p>当你在代码中使用这三个颜色的时候，你会发现 Red 和 Blue 都是很理所当然的 <code>#FF0000</code> 和 <code>#0000FF</code>，但 Green 却不是 <code>#00FF00</code> 而是奇怪的 <code>#008000</code>。</p>
-<p>事实上，真正的正绿色（<code>#00FF00</code>）的颜色名则是 Lime，Green 所代表的绿色看起来更加符合视觉效果里的绿色，而 Lime 则是计算机所认为的正绿色。</p>
-]]></content>
-      <categories>
-        <category>趣闻</category>
-      </categories>
-  </entry>
-  <entry>
     <title>微信小程序——RushA</title>
     <url>/2017/08/16/wechat-mini-programs-rusha/</url>
     <content><![CDATA[<p>因为现在是三个人合租，所以免不了 AA，但是在付钱的时候 AA，未免也太麻烦了。所以就要等到事后再去算账，然后分别转账，数量少还好，如果数量多的话，计算起来就会特别繁琐，尤其是有些东西不是完全公平的 AA，每个人所占的比例不同。 由此，想要借助<strong>微信小程序</strong>平台来进行一款记账小程序的开发，也可以借此学习一下小程序。</p>
@@ -1801,6 +1788,119 @@
       <categories>
         <category>小程序</category>
       </categories>
+  </entry>
+  <entry>
+    <title>Green 和 Lime</title>
+    <url>/2019/01/03/web-colors/</url>
+    <content><![CDATA[<p>在 HTML 中，部分颜色可以使用颜色名来代替，比起代码会更好理解，例如 Aqua（<code>#00FFFF</code>）、Maroon（<code>#800000</code>）、Pink（<code>#FFC0CB</code>）等等。</p>
+<span id="more"></span>
+<p>比较的特殊的就是三原色了：Red、Green、Blue。</p>
+<p>当你在代码中使用这三个颜色的时候，你会发现 Red 和 Blue 都是很理所当然的 <code>#FF0000</code> 和 <code>#0000FF</code>，但 Green 却不是 <code>#00FF00</code> 而是奇怪的 <code>#008000</code>。</p>
+<p>事实上，真正的正绿色（<code>#00FF00</code>）的颜色名则是 Lime，Green 所代表的绿色看起来更加符合视觉效果里的绿色，而 Lime 则是计算机所认为的正绿色。</p>
+]]></content>
+      <categories>
+        <category>趣闻</category>
+      </categories>
+  </entry>
+  <entry>
+    <title>What is this thing 11</title>
+    <url>/2021/05/22/whatisthisthing-11/</url>
+    <content><![CDATA[<p><a href="https://www.reddit.com/r/whatisthisthing/">What is this thing</a> 是 reddit 上的一个社区（community），上面时不时会有人发一些没见过的玩意来提问。</p>
+<p>一起来看看吧！</p>
+<span id="more"></span>
+<h3 id="白色的大脑"><a href="#白色的大脑" class="headerlink" title="白色的大脑"></a>白色的大脑</h3><blockquote>
+<p>Q: Found this on the side of the road in my neighborhood. Thought it was a brain, then dissected it and now I have no idea. Lots of small lobes, fuzzy inside, rubbery? My shoe for size reference.</p>
+</blockquote>
+<p>在我家附近的路边发现了这个。我以为它是一个大脑，然后解剖了它，现在我不知道了。有很多小叶子，里面是模糊的，是橡胶的？我的鞋子是用来参考尺寸的。</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-11/白色的大脑1.jpg" alt="白色的大脑"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-11/白色的大脑2.jpg" alt="白色的大脑"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-11/白色的大脑3.jpg" alt="白色的大脑"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-11/白色的大脑4.jpg" alt="白色的大脑"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-11/白色的大脑5.jpg" alt="白色的大脑"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-11/白色的大脑6.jpg" alt="白色的大脑"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-11/白色的大脑7.jpg" alt="白色的大脑"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-11/白色的大脑8.jpg" alt="白色的大脑"></p>
+<blockquote>
+<p>A: Is that a shit?!</p>
+</blockquote>
+<p>那是坨屎吗？</p>
+<blockquote>
+<p>Q: Solved. I’m an idiot who dissected dog poop</p>
+</blockquote>
+<p>（题主）：解决了。我是一个解剖狗屎的白痴。</p>
+<p><a href="https://www.reddit.com/r/whatisthisthing/comments/nb4z70/found_this_on_the_side_of_the_road_in_my/">https://www.reddit.com/r/whatisthisthing/comments/nb4z70/found_this_on_the_side_of_the_road_in_my/</a></p>
+<h3 id="好多锁"><a href="#好多锁" class="headerlink" title="好多锁"></a>好多锁</h3><blockquote>
+<p>Q: This is a on gate blocking road access to some cell towers. Why so many locks, and how would someone even open it?</p>
+</blockquote>
+<p>这是一扇大门，挡住了通往一些手机塔的道路。为什么有这么多的锁，他们该怎么打开它？</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-11/锁.jpg" alt="锁"></p>
+<blockquote>
+<p>Q: You can open the gate by unlocking only one padlock. The way it’s designed means that multiple people can use the gate, and if one person loses their keys, only their padlock needs replaced. As opposed to one padlock with many keys, you’d need to give tons of people the new key.</p>
+</blockquote>
+<p>你只需解开一个挂锁就可以打开大门。它的设计方式意味着多人可以使用这扇门，如果一个人丢了钥匙，只有他的挂锁需要更换。相对于一个挂锁有很多钥匙，你需要给所有人新的钥匙。</p>
+<p><a href="https://www.reddit.com/r/whatisthisthing/comments/n0s3ym/this_is_a_on_gate_blocking_road_access_to_some/">https://www.reddit.com/r/whatisthisthing/comments/n0s3ym/this_is_a_on_gate_blocking_road_access_to_some/</a></p>
+<h3 id="马其顿的亚历山大三世"><a href="#马其顿的亚历山大三世" class="headerlink" title="马其顿的亚历山大三世"></a>马其顿的亚历山大三世</h3><blockquote>
+<p>Q: Im waiting for the bank to open and they have this card facing the street. What is it used for?</p>
+</blockquote>
+<p>我在等待银行开门，他们把这张卡面向街道。它是用来做什么的？</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-11/银行扑克.jpg" alt="银行扑克"></p>
+<blockquote>
+<p>A: Former bank employee here. It’s definitely a safety signal. We switched ours quarterly and it is to let other employees know that it is all clear to open. Typically we had 2 employees “open” the branch while the rest waited in the parking lot or across the street for “all clear.” The openers go in, turn off alarm, search the building and check everything then set the signal.</p>
+</blockquote>
+<p>我是前银行雇员。这绝对是一个安全信号。我们每季度更换一次信号，是为了让其他员工知道可以开门了。通常情况下，我们有两名员工”打开“分行，而其他员工在停车场或街对面等待“一切正常”。开门人进去，关闭警报，搜索大楼并检查一切，然后设置信号。</p>
+<p><a href="https://www.reddit.com/r/whatisthisthing/comments/nbk05j/im_waiting_for_the_bank_to_open_and_they_have/">https://www.reddit.com/r/whatisthisthing/comments/nbk05j/im_waiting_for_the_bank_to_open_and_they_have/</a></p>
+<h3 id="水龙头"><a href="#水龙头" class="headerlink" title="水龙头"></a>水龙头</h3><blockquote>
+<p>Q: Found this in my bathroom in Germany…</p>
+</blockquote>
+<p>在我德国的浴室里发现了这个……</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-11/水龙头.jpg" alt="水龙头"></p>
+<blockquote>
+<p>A: It looks like they are meters that show how much hot and cold water has been used. I don’t know why your meter it that way.</p>
+</blockquote>
+<p>看起来它们是显示已使用多少热水和冷水的仪表,我不知道为什么你的水表是这样的。</p>
+<p><a href="https://www.reddit.com/r/whatisthisthing/comments/my6wyq/found_this_in_my_bathroom_in_germany/">https://www.reddit.com/r/whatisthisthing/comments/my6wyq/found_this_in_my_bathroom_in_germany/</a></p>
+<h3 id="小水槽"><a href="#小水槽" class="headerlink" title="小水槽"></a>小水槽</h3><blockquote>
+<p>Q: WITT? An unusually shaped sink possibly in a corridoor, spotted in a property listing on an older house. Looks quite narrow, probably too small for washing boots.</p>
+</blockquote>
+<p>这是个嘛？在一栋老房子的房产清单中，发现了一个可能位于走廊的形状异常的水槽。看起来很窄，对于洗靴子来说可能太小了。</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-11/水槽.jpg" alt="水槽"></p>
+<blockquote>
+<p>A: It’s called a butlers sink, or cleaners sink. It’s used for cleaning, filling buckets, emptying out waste so housekeeping can wash down surfaces without wandering through the house.</p>
+</blockquote>
+<p>它被称为管家水槽，或清洁工水槽。它用于清洁，装水桶，倒掉废物，这样家政人员就可以清理外部，而不用在房子里乱转。</p>
+<p><a href="https://www.reddit.com/r/whatisthisthing/comments/mzlaua/witt_an_unusually_shaped_sink_possibly_in_a/">https://www.reddit.com/r/whatisthisthing/comments/mzlaua/witt_an_unusually_shaped_sink_possibly_in_a/</a></p>
+<h3 id="针头"><a href="#针头" class="headerlink" title="针头"></a>针头</h3><blockquote>
+<p>Q: Found on my driveway. The RCMP arrested my neighbour last night; could it be related to that?</p>
+</blockquote>
+<p>在我的车道上发现的。加拿大皇家骑警昨晚逮捕了我的邻居，这可能与此有关吗？</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-11/针头.jpg" alt="针头"></p>
+<blockquote>
+<p>A: Yup, a taser dart</p>
+</blockquote>
+<p>是的，一个泰瑟枪的飞镖。</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-11/泰瑟枪飞镖.jpg" alt="泰瑟枪飞镖"></p>
+<p>（译者注：说起泰瑟枪突然想到之前有看过 <a href="https://www.youtube.com/user/theslowmoguys">The Slow Mo Guys</a> 的一期被<a href="https://www.youtube.com/watch?v=576HwhU6PMM">泰瑟枪击中的慢镜头视频</a>，还蛮有意思的。）</p>
+<iframe src="//player.bilibili.com/player.html?aid=2897330&bvid=BV1Cs41117Fe&cid=4528688&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+<p><a href="https://www.reddit.com/r/whatisthisthing/comments/n166j5/found_on_my_driveway_the_rcmp_arrested_my/">https://www.reddit.com/r/whatisthisthing/comments/n166j5/found_on_my_driveway_the_rcmp_arrested_my/</a></p>
+<h3 id="勺子"><a href="#勺子" class="headerlink" title="勺子"></a>勺子</h3><blockquote>
+<p>Q: Small scoop with alligator clip as the handle. Found it cleaning out the kitchen.</p>
+</blockquote>
+<p>用鳄鱼夹作为手柄的小勺子。在清理厨房的时候发现了它。</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-11/勺子.jpg" alt="勺子"></p>
+<blockquote>
+<p>A: Coffee scoop with bag clip for coffee bag…</p>
+</blockquote>
+<p>带有咖啡袋夹的咖啡勺…</p>
+<p><a href="https://www.reddit.com/r/whatisthisthing/comments/n53yxi/small_scoop_with_alligator_clip_as_the_handle/">https://www.reddit.com/r/whatisthisthing/comments/n53yxi/small_scoop_with_alligator_clip_as_the_handle/</a></p>
+]]></content>
+      <categories>
+        <category>What is this thing?</category>
+      </categories>
+      <tags>
+        <tag>翻译</tag>
+        <tag>What is this thing?</tag>
+      </tags>
   </entry>
   <entry>
     <title>What is this thing 10</title>
@@ -1916,106 +2016,6 @@
 </blockquote>
 <p>我有预感，它是一个（人类或马）精子运输容器。我们之前在这上面有一个，用来运送公牛精子的。</p>
 <p><a href="https://www.reddit.com/r/whatisthisthing/comments/mt7gx3/what_would_be_shipped_in_this_strange_shaped/">https://www.reddit.com/r/whatisthisthing/comments/mt7gx3/what_would_be_shipped_in_this_strange_shaped/</a></p>
-]]></content>
-      <categories>
-        <category>What is this thing?</category>
-      </categories>
-      <tags>
-        <tag>翻译</tag>
-        <tag>What is this thing?</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>What is this thing 11</title>
-    <url>/2021/05/22/whatisthisthing-11/</url>
-    <content><![CDATA[<p><a href="https://www.reddit.com/r/whatisthisthing/">What is this thing</a> 是 reddit 上的一个社区（community），上面时不时会有人发一些没见过的玩意来提问。</p>
-<p>一起来看看吧！</p>
-<span id="more"></span>
-<h3 id="白色的大脑"><a href="#白色的大脑" class="headerlink" title="白色的大脑"></a>白色的大脑</h3><blockquote>
-<p>Q: Found this on the side of the road in my neighborhood. Thought it was a brain, then dissected it and now I have no idea. Lots of small lobes, fuzzy inside, rubbery? My shoe for size reference.</p>
-</blockquote>
-<p>在我家附近的路边发现了这个。我以为它是一个大脑，然后解剖了它，现在我不知道了。有很多小叶子，里面是模糊的，是橡胶的？我的鞋子是用来参考尺寸的。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-11/白色的大脑1.jpg" alt="白色的大脑"></p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-11/白色的大脑2.jpg" alt="白色的大脑"></p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-11/白色的大脑3.jpg" alt="白色的大脑"></p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-11/白色的大脑4.jpg" alt="白色的大脑"></p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-11/白色的大脑5.jpg" alt="白色的大脑"></p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-11/白色的大脑6.jpg" alt="白色的大脑"></p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-11/白色的大脑7.jpg" alt="白色的大脑"></p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-11/白色的大脑8.jpg" alt="白色的大脑"></p>
-<blockquote>
-<p>A: Is that a shit?!</p>
-</blockquote>
-<p>那是坨屎吗？</p>
-<blockquote>
-<p>Q: Solved. I’m an idiot who dissected dog poop</p>
-</blockquote>
-<p>（题主）：解决了。我是一个解剖狗屎的白痴。</p>
-<p><a href="https://www.reddit.com/r/whatisthisthing/comments/nb4z70/found_this_on_the_side_of_the_road_in_my/">https://www.reddit.com/r/whatisthisthing/comments/nb4z70/found_this_on_the_side_of_the_road_in_my/</a></p>
-<h3 id="好多锁"><a href="#好多锁" class="headerlink" title="好多锁"></a>好多锁</h3><blockquote>
-<p>Q: This is a on gate blocking road access to some cell towers. Why so many locks, and how would someone even open it?</p>
-</blockquote>
-<p>这是一扇大门，挡住了通往一些手机塔的道路。为什么有这么多的锁，他们该怎么打开它？</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-11/锁.jpg" alt="锁"></p>
-<blockquote>
-<p>Q: You can open the gate by unlocking only one padlock. The way it’s designed means that multiple people can use the gate, and if one person loses their keys, only their padlock needs replaced. As opposed to one padlock with many keys, you’d need to give tons of people the new key.</p>
-</blockquote>
-<p>你只需解开一个挂锁就可以打开大门。它的设计方式意味着多人可以使用这扇门，如果一个人丢了钥匙，只有他的挂锁需要更换。相对于一个挂锁有很多钥匙，你需要给所有人新的钥匙。</p>
-<p><a href="https://www.reddit.com/r/whatisthisthing/comments/n0s3ym/this_is_a_on_gate_blocking_road_access_to_some/">https://www.reddit.com/r/whatisthisthing/comments/n0s3ym/this_is_a_on_gate_blocking_road_access_to_some/</a></p>
-<h3 id="马其顿的亚历山大三世"><a href="#马其顿的亚历山大三世" class="headerlink" title="马其顿的亚历山大三世"></a>马其顿的亚历山大三世</h3><blockquote>
-<p>Q: Im waiting for the bank to open and they have this card facing the street. What is it used for?</p>
-</blockquote>
-<p>我在等待银行开门，他们把这张卡面向街道。它是用来做什么的？</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-11/银行扑克.jpg" alt="银行扑克"></p>
-<blockquote>
-<p>A: Former bank employee here. It’s definitely a safety signal. We switched ours quarterly and it is to let other employees know that it is all clear to open. Typically we had 2 employees “open” the branch while the rest waited in the parking lot or across the street for “all clear.” The openers go in, turn off alarm, search the building and check everything then set the signal.</p>
-</blockquote>
-<p>我是前银行雇员。这绝对是一个安全信号。我们每季度更换一次信号，是为了让其他员工知道可以开门了。通常情况下，我们有两名员工”打开“分行，而其他员工在停车场或街对面等待“一切正常”。开门人进去，关闭警报，搜索大楼并检查一切，然后设置信号。</p>
-<p><a href="https://www.reddit.com/r/whatisthisthing/comments/nbk05j/im_waiting_for_the_bank_to_open_and_they_have/">https://www.reddit.com/r/whatisthisthing/comments/nbk05j/im_waiting_for_the_bank_to_open_and_they_have/</a></p>
-<h3 id="水龙头"><a href="#水龙头" class="headerlink" title="水龙头"></a>水龙头</h3><blockquote>
-<p>Q: Found this in my bathroom in Germany…</p>
-</blockquote>
-<p>在我德国的浴室里发现了这个……</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-11/水龙头.jpg" alt="水龙头"></p>
-<blockquote>
-<p>A: It looks like they are meters that show how much hot and cold water has been used. I don’t know why your meter it that way.</p>
-</blockquote>
-<p>看起来它们是显示已使用多少热水和冷水的仪表,我不知道为什么你的水表是这样的。</p>
-<p><a href="https://www.reddit.com/r/whatisthisthing/comments/my6wyq/found_this_in_my_bathroom_in_germany/">https://www.reddit.com/r/whatisthisthing/comments/my6wyq/found_this_in_my_bathroom_in_germany/</a></p>
-<h3 id="小水槽"><a href="#小水槽" class="headerlink" title="小水槽"></a>小水槽</h3><blockquote>
-<p>Q: WITT? An unusually shaped sink possibly in a corridoor, spotted in a property listing on an older house. Looks quite narrow, probably too small for washing boots.</p>
-</blockquote>
-<p>这是个嘛？在一栋老房子的房产清单中，发现了一个可能位于走廊的形状异常的水槽。看起来很窄，对于洗靴子来说可能太小了。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-11/水槽.jpg" alt="水槽"></p>
-<blockquote>
-<p>A: It’s called a butlers sink, or cleaners sink. It’s used for cleaning, filling buckets, emptying out waste so housekeeping can wash down surfaces without wandering through the house.</p>
-</blockquote>
-<p>它被称为管家水槽，或清洁工水槽。它用于清洁，装水桶，倒掉废物，这样家政人员就可以清理外部，而不用在房子里乱转。</p>
-<p><a href="https://www.reddit.com/r/whatisthisthing/comments/mzlaua/witt_an_unusually_shaped_sink_possibly_in_a/">https://www.reddit.com/r/whatisthisthing/comments/mzlaua/witt_an_unusually_shaped_sink_possibly_in_a/</a></p>
-<h3 id="针头"><a href="#针头" class="headerlink" title="针头"></a>针头</h3><blockquote>
-<p>Q: Found on my driveway. The RCMP arrested my neighbour last night; could it be related to that?</p>
-</blockquote>
-<p>在我的车道上发现的。加拿大皇家骑警昨晚逮捕了我的邻居，这可能与此有关吗？</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-11/针头.jpg" alt="针头"></p>
-<blockquote>
-<p>A: Yup, a taser dart</p>
-</blockquote>
-<p>是的，一个泰瑟枪的飞镖。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-11/泰瑟枪飞镖.jpg" alt="泰瑟枪飞镖"></p>
-<p>（译者注：说起泰瑟枪突然想到之前有看过 <a href="https://www.youtube.com/user/theslowmoguys">The Slow Mo Guys</a> 的一期被<a href="https://www.youtube.com/watch?v=576HwhU6PMM">泰瑟枪击中的慢镜头视频</a>，还蛮有意思的。）</p>
-<iframe src="//player.bilibili.com/player.html?aid=2897330&bvid=BV1Cs41117Fe&cid=4528688&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
-
-<p><a href="https://www.reddit.com/r/whatisthisthing/comments/n166j5/found_on_my_driveway_the_rcmp_arrested_my/">https://www.reddit.com/r/whatisthisthing/comments/n166j5/found_on_my_driveway_the_rcmp_arrested_my/</a></p>
-<h3 id="勺子"><a href="#勺子" class="headerlink" title="勺子"></a>勺子</h3><blockquote>
-<p>Q: Small scoop with alligator clip as the handle. Found it cleaning out the kitchen.</p>
-</blockquote>
-<p>用鳄鱼夹作为手柄的小勺子。在清理厨房的时候发现了它。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-11/勺子.jpg" alt="勺子"></p>
-<blockquote>
-<p>A: Coffee scoop with bag clip for coffee bag…</p>
-</blockquote>
-<p>带有咖啡袋夹的咖啡勺…</p>
-<p><a href="https://www.reddit.com/r/whatisthisthing/comments/n53yxi/small_scoop_with_alligator_clip_as_the_handle/">https://www.reddit.com/r/whatisthisthing/comments/n53yxi/small_scoop_with_alligator_clip_as_the_handle/</a></p>
 ]]></content>
       <categories>
         <category>What is this thing?</category>
@@ -4232,7 +4232,7 @@
 </li>
 <li><p>「工具」-「选项」-「高级」-「libtorrent 相关」将「校验时内存使用扩增量」修改大一些，我设置成了 <code>512</code>，这样可以提高校验速度，提升之后辅种效率；</p>
 </li>
-<li><p>「工具」-「选项」-「BitTorrent」勾选「自动添加以下 tracker 到新的 torrent」，并在下方输入框中填入<a href="&#x6d;&#97;&#x69;&#x6c;&#x74;&#x6f;&#x3a;&#x68;&#116;&#x74;&#x70;&#115;&#x3a;&#47;&#47;&#99;&#100;&#x6e;&#x2e;&#x6a;&#x73;&#100;&#101;&#x6c;&#105;&#x76;&#x72;&#46;&#110;&#x65;&#116;&#x2f;&#x67;&#x68;&#47;&#110;&#103;&#111;&#115;&#97;&#x6e;&#x67;&#47;&#116;&#x72;&#97;&#x63;&#107;&#101;&#114;&#115;&#x6c;&#105;&#115;&#x74;&#x40;&#109;&#97;&#115;&#116;&#x65;&#x72;&#x2f;&#x74;&#114;&#97;&#99;&#107;&#101;&#x72;&#115;&#95;&#x61;&#108;&#x6c;&#x2e;&#x74;&#120;&#x74;">&#x68;&#116;&#x74;&#x70;&#115;&#x3a;&#47;&#47;&#99;&#100;&#x6e;&#x2e;&#x6a;&#x73;&#100;&#101;&#x6c;&#105;&#x76;&#x72;&#46;&#110;&#x65;&#116;&#x2f;&#x67;&#x68;&#47;&#110;&#103;&#111;&#115;&#97;&#x6e;&#x67;&#47;&#116;&#x72;&#97;&#x63;&#107;&#101;&#114;&#115;&#x6c;&#105;&#115;&#x74;&#x40;&#109;&#97;&#115;&#116;&#x65;&#x72;&#x2f;&#x74;&#114;&#97;&#99;&#107;&#101;&#x72;&#115;&#95;&#x61;&#108;&#x6c;&#x2e;&#x74;&#120;&#x74;</a>中的内容，此处设置的作用的是为了获得更多的供种者，此操作能有效提高下载速度，建议每隔一段时间就更新一下 tracker 列表，更多 tracker 列表可以查看 <a href="https://github.com/ngosang/trackerslist">https://github.com/ngosang/trackerslist</a> 和 <a href="https://github.com/XIU2/TrackersListCollection">https://github.com/XIU2/TrackersListCollection</a>。</p>
+<li><p>「工具」-「选项」-「BitTorrent」勾选「自动添加以下 tracker 到新的 torrent」，并在下方输入框中填入<a href="&#x6d;&#x61;&#105;&#108;&#116;&#111;&#58;&#104;&#x74;&#116;&#x70;&#115;&#x3a;&#47;&#x2f;&#x63;&#100;&#110;&#x2e;&#x6a;&#x73;&#x64;&#x65;&#x6c;&#105;&#x76;&#x72;&#x2e;&#x6e;&#101;&#116;&#x2f;&#x67;&#104;&#47;&#110;&#103;&#x6f;&#115;&#x61;&#x6e;&#103;&#x2f;&#116;&#114;&#97;&#x63;&#x6b;&#101;&#x72;&#115;&#108;&#105;&#115;&#116;&#x40;&#x6d;&#x61;&#115;&#116;&#101;&#114;&#x2f;&#116;&#114;&#97;&#99;&#x6b;&#101;&#114;&#115;&#x5f;&#x61;&#108;&#x6c;&#46;&#x74;&#120;&#116;">&#104;&#x74;&#116;&#x70;&#115;&#x3a;&#47;&#x2f;&#x63;&#100;&#110;&#x2e;&#x6a;&#x73;&#x64;&#x65;&#x6c;&#105;&#x76;&#x72;&#x2e;&#x6e;&#101;&#116;&#x2f;&#x67;&#104;&#47;&#110;&#103;&#x6f;&#115;&#x61;&#x6e;&#103;&#x2f;&#116;&#114;&#97;&#x63;&#x6b;&#101;&#x72;&#115;&#108;&#105;&#115;&#116;&#x40;&#x6d;&#x61;&#115;&#116;&#101;&#114;&#x2f;&#116;&#114;&#97;&#99;&#x6b;&#101;&#114;&#115;&#x5f;&#x61;&#108;&#x6c;&#46;&#x74;&#120;&#116;</a>中的内容，此处设置的作用的是为了获得更多的供种者，此操作能有效提高下载速度，建议每隔一段时间就更新一下 tracker 列表，更多 tracker 列表可以查看 <a href="https://github.com/ngosang/trackerslist">https://github.com/ngosang/trackerslist</a> 和 <a href="https://github.com/XIU2/TrackersListCollection">https://github.com/XIU2/TrackersListCollection</a>。</p>
 </li>
 <li><p>「工具」-「选项」-「BitTorrent」取消勾选「Torrent 排队」,这一步是为了多任务同时下载与上传，BT 的本质就是我为人人，人人为我，你的下载即是别人的上传，所以请最好不要限制你的上传，在不影响使用的情况下提供最多的上传；</p>
 </li>
