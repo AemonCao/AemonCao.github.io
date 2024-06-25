@@ -365,6 +365,61 @@
       </tags>
   </entry>
   <entry>
+    <title>Premiere Pro 学习笔记</title>
+    <url>/2021/03/16/Premiere-Pro-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p>本文将采用问答的形式来记录学习 Premiere Pro 中遇到的问题。</p>
+<p>目前正在学习过程中，等日后条目多了，将会进行分类。</p>
+<h3 id="导入的图片素材分辨率和项目分辨率不一致，该怎么修改图片大小？"><a href="#导入的图片素材分辨率和项目分辨率不一致，该怎么修改图片大小？" class="headerlink" title="导入的图片素材分辨率和项目分辨率不一致，该怎么修改图片大小？"></a>导入的图片素材分辨率和项目分辨率不一致，该怎么修改图片大小？</h3><ol>
+<li><p>将图片素材拖入视频轨道；</p>
+</li>
+<li><p>单击轨道中的相应素材；</p>
+</li>
+<li><p>在「源」窗口中单击「效果控件」标签页；</p>
+</li>
+<li><p>调整在「运动」效果下的「缩放」属性大小，即可同步调整素材大小了；</p>
+</li>
+<li><p>点击「缩放」标签即可在「节目」窗口显示图片大小变换框，可以直接用鼠标进行操作。</p>
+</li>
+</ol>
+<h3 id="音频如何调整声音大小？"><a href="#音频如何调整声音大小？" class="headerlink" title="音频如何调整声音大小？"></a>音频如何调整声音大小？</h3><ol>
+<li><p>将声音素材拖入视频轨道；</p>
+</li>
+<li><p>单击轨道中的相应素材；</p>
+</li>
+<li><p>在「源」窗口中单击「效果控件」标签页；</p>
+</li>
+<li><p>调整在「音量」效果下的「级别」属性大小，即可调整素材的音量大小了。</p>
+</li>
+</ol>
+<h3 id="如何将视频定格若干秒？"><a href="#如何将视频定格若干秒？" class="headerlink" title="如何将视频定格若干秒？"></a>如何将视频定格若干秒？</h3><ol>
+<li><p>「仅拖动视频」到序列；</p>
+</li>
+<li><p>在序列中，右键单击视频线前面的「fx」，选择「时间重映射」-&gt;「速度」；</p>
+</li>
+<li><p>拖动时间线到需要定格的画面；</p>
+</li>
+<li><p>在「源」窗口中单击「效果控件」标签页；</p>
+</li>
+<li><p>左键单击「视频」-&gt;「时间重映射」-&gt;「速度」-&gt;「添加/移除关键帧」来添加关键帧；</p>
+</li>
+<li><p>按住「Ctrl」+「Alt」用鼠标左键长按关键帧右侧标记并拖动需要定格的时长；</p>
+</li>
+<li><p>「仅拖动音频」到序列（这样做是为了将图像和声音分离，不然的话定格之后音画将不同步）；</p>
+</li>
+<li><p>使用「剃刀工具」在关键帧处将音频拆分为两段；</p>
+</li>
+<li><p>使用「选择工具」将后半段移动至定格结束后的位置。</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Premiere Pro</category>
+      </categories>
+      <tags>
+        <tag>Premiere Pro</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>在 Visual Studio Code 中远程开发</title>
     <url>/2020/03/08/Remote-development-in-Visual-Studio-Code/</url>
     <content><![CDATA[<p>由于近期的疫情影响，导致复工时候只能在家办公，所以捣鼓了一下远程办公，特此记录一下。</p>
@@ -442,61 +497,6 @@
       </categories>
       <tags>
         <tag>Visual Studio Code</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Premiere Pro 学习笔记</title>
-    <url>/2021/03/16/Premiere-Pro-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<p>本文将采用问答的形式来记录学习 Premiere Pro 中遇到的问题。</p>
-<p>目前正在学习过程中，等日后条目多了，将会进行分类。</p>
-<h3 id="导入的图片素材分辨率和项目分辨率不一致，该怎么修改图片大小？"><a href="#导入的图片素材分辨率和项目分辨率不一致，该怎么修改图片大小？" class="headerlink" title="导入的图片素材分辨率和项目分辨率不一致，该怎么修改图片大小？"></a>导入的图片素材分辨率和项目分辨率不一致，该怎么修改图片大小？</h3><ol>
-<li><p>将图片素材拖入视频轨道；</p>
-</li>
-<li><p>单击轨道中的相应素材；</p>
-</li>
-<li><p>在「源」窗口中单击「效果控件」标签页；</p>
-</li>
-<li><p>调整在「运动」效果下的「缩放」属性大小，即可同步调整素材大小了；</p>
-</li>
-<li><p>点击「缩放」标签即可在「节目」窗口显示图片大小变换框，可以直接用鼠标进行操作。</p>
-</li>
-</ol>
-<h3 id="音频如何调整声音大小？"><a href="#音频如何调整声音大小？" class="headerlink" title="音频如何调整声音大小？"></a>音频如何调整声音大小？</h3><ol>
-<li><p>将声音素材拖入视频轨道；</p>
-</li>
-<li><p>单击轨道中的相应素材；</p>
-</li>
-<li><p>在「源」窗口中单击「效果控件」标签页；</p>
-</li>
-<li><p>调整在「音量」效果下的「级别」属性大小，即可调整素材的音量大小了。</p>
-</li>
-</ol>
-<h3 id="如何将视频定格若干秒？"><a href="#如何将视频定格若干秒？" class="headerlink" title="如何将视频定格若干秒？"></a>如何将视频定格若干秒？</h3><ol>
-<li><p>「仅拖动视频」到序列；</p>
-</li>
-<li><p>在序列中，右键单击视频线前面的「fx」，选择「时间重映射」-&gt;「速度」；</p>
-</li>
-<li><p>拖动时间线到需要定格的画面；</p>
-</li>
-<li><p>在「源」窗口中单击「效果控件」标签页；</p>
-</li>
-<li><p>左键单击「视频」-&gt;「时间重映射」-&gt;「速度」-&gt;「添加/移除关键帧」来添加关键帧；</p>
-</li>
-<li><p>按住「Ctrl」+「Alt」用鼠标左键长按关键帧右侧标记并拖动需要定格的时长；</p>
-</li>
-<li><p>「仅拖动音频」到序列（这样做是为了将图像和声音分离，不然的话定格之后音画将不同步）；</p>
-</li>
-<li><p>使用「剃刀工具」在关键帧处将音频拆分为两段；</p>
-</li>
-<li><p>使用「选择工具」将后半段移动至定格结束后的位置。</p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Premiere Pro</category>
-      </categories>
-      <tags>
-        <tag>Premiere Pro</tag>
       </tags>
   </entry>
   <entry>
@@ -905,27 +905,6 @@
       </tags>
   </entry>
   <entry>
-    <title>《编码：隐匿在计算机软硬件背后的语言》</title>
-    <url>/2017/05/25/codethe-hidden-language-of-computer-hardware-and-software/</url>
-    <content><![CDATA[<p>《<a href="https://book.douban.com/subject/4822685/">编码：隐匿在计算机软硬件背后的语言</a>》（Code:The Hidden Language of Computer Hardware and Software）</p>
-<span id="more"></span>
-<ol>
-<li><p>那时很可能有些人会认为「logic gates」（逻辑门）装置是以著名的微软公司创始人的名字来命名的。（Bill Gates 中的 Gates 在英文中有「门」的意思）——P108；</p>
-</li>
-<li><p>Meow：猫叫的声音——P111；</p>
-</li>
-<li><p>一般来说，对于涉及正数和负数的加法，如果两个操作数的符号位相同，但结果的符号位不同，则结果是无效的。——P159；</p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>书摘</category>
-      </categories>
-      <tags>
-        <tag>阅读</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>设计模式</title>
     <url>/2020/03/26/design-pattern/</url>
     <content><![CDATA[<p>说来惭愧，一直没有好好学这部分的内容，所以趁着这次机会把设计模式这块的知识好好学一下。</p>
@@ -954,6 +933,27 @@
       <tags>
         <tag>C#</tag>
         <tag>设计模式</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>《编码：隐匿在计算机软硬件背后的语言》</title>
+    <url>/2017/05/25/codethe-hidden-language-of-computer-hardware-and-software/</url>
+    <content><![CDATA[<p>《<a href="https://book.douban.com/subject/4822685/">编码：隐匿在计算机软硬件背后的语言</a>》（Code:The Hidden Language of Computer Hardware and Software）</p>
+<span id="more"></span>
+<ol>
+<li><p>那时很可能有些人会认为「logic gates」（逻辑门）装置是以著名的微软公司创始人的名字来命名的。（Bill Gates 中的 Gates 在英文中有「门」的意思）——P108；</p>
+</li>
+<li><p>Meow：猫叫的声音——P111；</p>
+</li>
+<li><p>一般来说，对于涉及正数和负数的加法，如果两个操作数的符号位相同，但结果的符号位不同，则结果是无效的。——P159；</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>书摘</category>
+      </categories>
+      <tags>
+        <tag>阅读</tag>
       </tags>
   </entry>
   <entry>
@@ -1252,44 +1252,6 @@
       </tags>
   </entry>
   <entry>
-    <title>两种方法显示节点的层次结构</title>
-    <url>/2017/06/15/the-two-methods-show-the-hierarchical-structure-of-the-nodes/</url>
-    <content><![CDATA[<p>有时为了更好的看清网页的布局，仅仅通过看代码或者 <em>F12</em> 的调试是不够的。这时候我们就需要一些「黑科技」。这里介绍两种方法，一种是通过 <em>JavaScript</em> 来显示，另一种是通过 <em>CSS</em> 样式来显示。</p>
-<span id="more"></span>
-<h2 id="JavaScript-方法"><a href="#JavaScript-方法" class="headerlink" title="JavaScript 方法"></a>JavaScript 方法</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">[].<span class="property">forEach</span>.<span class="title function_">call</span>($$(<span class="string">&quot;*&quot;</span>), <span class="keyword">function</span>(<span class="params">a</span>) &#123;</span><br><span class="line">    a.<span class="property">style</span>.<span class="property">outline</span> = <span class="string">&quot;1px solid #&quot;</span> + (~~(<span class="title class_">Math</span>.<span class="title function_">random</span>() * (<span class="number">1</span> &amp; lt; &amp; lt; <span class="number">24</span>))).<span class="title function_">toString</span>(<span class="number">16</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-<p>在 <em>F12</em> 中输入此段 <em>JavaScript</em> 代码，就可以显示各个节点的外部框架。</p>
-<p>效果如下：</p>
-<!-- ![js](https://ooo.0o0.ooo/2017/06/15/594230a99e355.png) -->
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/the-two-methods-show-the-hierarchical-structure-of-the-nodes/js.png" alt="js"></p>
-<!-- <img data-src="/2017/06/15/the-two-methods-show-the-hierarchical-structure-of-the-nodes/js.png" class="" title="js"> -->
-<p>原网站：</p>
-<!-- ![原网站](https://ooo.0o0.ooo/2017/06/15/594230a9285a6.png) -->
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/the-two-methods-show-the-hierarchical-structure-of-the-nodes/原网站.png" alt="原网站"></p>
-<!-- <img data-src="/2017/06/15/the-two-methods-show-the-hierarchical-structure-of-the-nodes/%E5%8E%9F%E7%BD%91%E7%AB%99.png" class="" title="原网站"> -->
-<h2 id="CSS-方法"><a href="#CSS-方法" class="headerlink" title="CSS 方法"></a>CSS 方法</h2><figure class="highlight css"><table><tr><td class="code"><pre><span class="line">* &#123;<span class="attribute">background-color</span>: <span class="built_in">rgba</span>(<span class="number">255</span>, <span class="number">0</span>, <span class="number">0</span>, .<span class="number">2</span>);&#125;</span><br><span class="line">* * &#123;<span class="attribute">background-color</span>: <span class="built_in">rgba</span>(<span class="number">0</span>, <span class="number">255</span>, <span class="number">0</span>, .<span class="number">2</span>);&#125;</span><br><span class="line">* * * &#123;<span class="attribute">background-color</span>: <span class="built_in">rgba</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>, .<span class="number">2</span>);&#125;</span><br><span class="line">* * * * &#123;<span class="attribute">background-color</span>: <span class="built_in">rgba</span>(<span class="number">255</span>, <span class="number">0</span>, <span class="number">255</span>, .<span class="number">2</span>);&#125;</span><br><span class="line">* * * * * &#123;<span class="attribute">background-color</span>: <span class="built_in">rgba</span>(<span class="number">0</span>, <span class="number">255</span>, <span class="number">255</span>, .<span class="number">2</span>);&#125;</span><br><span class="line">* * * * * * &#123;<span class="attribute">background-color</span>: <span class="built_in">rgba</span>(<span class="number">255</span>, <span class="number">255</span>, <span class="number">0</span>, .<span class="number">2</span>);&#125;</span><br></pre></td></tr></table></figure>
-<p>只要在网站中使用这一段 <em>CSS</em> 样式，就能看到如下效果：</p>
-<!-- ![css](https://ooo.0o0.ooo/2017/06/15/594230a9a0f03.png) -->
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/the-two-methods-show-the-hierarchical-structure-of-the-nodes/css.png" alt="css"></p>
-<!-- <img data-src="/2017/06/15/the-two-methods-show-the-hierarchical-structure-of-the-nodes/css.png" class="" title="css"> -->
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>两种方法都有自己的优缺点，<em>JavaScript</em> 的使用方便，但是只能适用于单个网站；而 <em>CSS</em> 样式适用于数量多的网站（只需要在公共 <em>CSS</em> 文件中加入这些代码就可以了）。</p>
-<h2 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h2><ol>
-<li><p><a href="https://www.zhihu.com/question/27432017/answer/40621923">代码来源-知乎</a></p>
-</li>
-<li><p><a href="https://www.quora.com/What-are-the-most-interesting-HTML-JS-DOM-CSS-hacks-that-most-web-developers-dont-know-about/answer/Gajus-Kuizinas">代码来源-Quora</a></p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>WEB 前端</category>
-      </categories>
-      <tags>
-        <tag>JavaScript</tag>
-        <tag>WEB前端</tag>
-        <tag>CSS</tag>
-        <tag>奇技淫巧</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>RESTful API 设计：13 个让你用户开心的最佳实践</title>
     <url>/2020/12/14/restful-api-design-13-best-practices-to-make-your-users-happy/</url>
     <content><![CDATA[<p>Web 服务在 HTTP 协议存在的时候就已经存在了。但是，特别是当云计算问世以来，它们已成为让客户与我们的数据进行交互的一种非常普遍的方式。</p>
@@ -1445,6 +1407,44 @@
       <tags>
         <tag>RESTful</tag>
         <tag>翻译</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>两种方法显示节点的层次结构</title>
+    <url>/2017/06/15/the-two-methods-show-the-hierarchical-structure-of-the-nodes/</url>
+    <content><![CDATA[<p>有时为了更好的看清网页的布局，仅仅通过看代码或者 <em>F12</em> 的调试是不够的。这时候我们就需要一些「黑科技」。这里介绍两种方法，一种是通过 <em>JavaScript</em> 来显示，另一种是通过 <em>CSS</em> 样式来显示。</p>
+<span id="more"></span>
+<h2 id="JavaScript-方法"><a href="#JavaScript-方法" class="headerlink" title="JavaScript 方法"></a>JavaScript 方法</h2><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">[].<span class="property">forEach</span>.<span class="title function_">call</span>($$(<span class="string">&quot;*&quot;</span>), <span class="keyword">function</span>(<span class="params">a</span>) &#123;</span><br><span class="line">    a.<span class="property">style</span>.<span class="property">outline</span> = <span class="string">&quot;1px solid #&quot;</span> + (~~(<span class="title class_">Math</span>.<span class="title function_">random</span>() * (<span class="number">1</span> &amp; lt; &amp; lt; <span class="number">24</span>))).<span class="title function_">toString</span>(<span class="number">16</span>)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+<p>在 <em>F12</em> 中输入此段 <em>JavaScript</em> 代码，就可以显示各个节点的外部框架。</p>
+<p>效果如下：</p>
+<!-- ![js](https://ooo.0o0.ooo/2017/06/15/594230a99e355.png) -->
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/the-two-methods-show-the-hierarchical-structure-of-the-nodes/js.png" alt="js"></p>
+<!-- <img data-src="/2017/06/15/the-two-methods-show-the-hierarchical-structure-of-the-nodes/js.png" class="" title="js"> -->
+<p>原网站：</p>
+<!-- ![原网站](https://ooo.0o0.ooo/2017/06/15/594230a9285a6.png) -->
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/the-two-methods-show-the-hierarchical-structure-of-the-nodes/原网站.png" alt="原网站"></p>
+<!-- <img data-src="/2017/06/15/the-two-methods-show-the-hierarchical-structure-of-the-nodes/%E5%8E%9F%E7%BD%91%E7%AB%99.png" class="" title="原网站"> -->
+<h2 id="CSS-方法"><a href="#CSS-方法" class="headerlink" title="CSS 方法"></a>CSS 方法</h2><figure class="highlight css"><table><tr><td class="code"><pre><span class="line">* &#123;<span class="attribute">background-color</span>: <span class="built_in">rgba</span>(<span class="number">255</span>, <span class="number">0</span>, <span class="number">0</span>, .<span class="number">2</span>);&#125;</span><br><span class="line">* * &#123;<span class="attribute">background-color</span>: <span class="built_in">rgba</span>(<span class="number">0</span>, <span class="number">255</span>, <span class="number">0</span>, .<span class="number">2</span>);&#125;</span><br><span class="line">* * * &#123;<span class="attribute">background-color</span>: <span class="built_in">rgba</span>(<span class="number">0</span>, <span class="number">0</span>, <span class="number">255</span>, .<span class="number">2</span>);&#125;</span><br><span class="line">* * * * &#123;<span class="attribute">background-color</span>: <span class="built_in">rgba</span>(<span class="number">255</span>, <span class="number">0</span>, <span class="number">255</span>, .<span class="number">2</span>);&#125;</span><br><span class="line">* * * * * &#123;<span class="attribute">background-color</span>: <span class="built_in">rgba</span>(<span class="number">0</span>, <span class="number">255</span>, <span class="number">255</span>, .<span class="number">2</span>);&#125;</span><br><span class="line">* * * * * * &#123;<span class="attribute">background-color</span>: <span class="built_in">rgba</span>(<span class="number">255</span>, <span class="number">255</span>, <span class="number">0</span>, .<span class="number">2</span>);&#125;</span><br></pre></td></tr></table></figure>
+<p>只要在网站中使用这一段 <em>CSS</em> 样式，就能看到如下效果：</p>
+<!-- ![css](https://ooo.0o0.ooo/2017/06/15/594230a9a0f03.png) -->
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/the-two-methods-show-the-hierarchical-structure-of-the-nodes/css.png" alt="css"></p>
+<!-- <img data-src="/2017/06/15/the-two-methods-show-the-hierarchical-structure-of-the-nodes/css.png" class="" title="css"> -->
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>两种方法都有自己的优缺点，<em>JavaScript</em> 的使用方便，但是只能适用于单个网站；而 <em>CSS</em> 样式适用于数量多的网站（只需要在公共 <em>CSS</em> 文件中加入这些代码就可以了）。</p>
+<h2 id="来源"><a href="#来源" class="headerlink" title="来源"></a>来源</h2><ol>
+<li><p><a href="https://www.zhihu.com/question/27432017/answer/40621923">代码来源-知乎</a></p>
+</li>
+<li><p><a href="https://www.quora.com/What-are-the-most-interesting-HTML-JS-DOM-CSS-hacks-that-most-web-developers-dont-know-about/answer/Gajus-Kuizinas">代码来源-Quora</a></p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>WEB 前端</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+        <tag>WEB前端</tag>
+        <tag>CSS</tag>
+        <tag>奇技淫巧</tag>
       </tags>
   </entry>
   <entry>
@@ -2639,120 +2639,6 @@
       </tags>
   </entry>
   <entry>
-    <title>What is this thing 5</title>
-    <url>/2020/12/25/whatisthisthing-5/</url>
-    <content><![CDATA[<p><a href="https://www.reddit.com/r/whatisthisthing/">What is this thing</a> 是 reddit 上的一个社区（community），上面时不时会有人发一些没见过的玩意来提问。</p>
-<p>一起来看看吧！</p>
-<span id="more"></span>
-<h3 id="桶"><a href="#桶" class="headerlink" title="桶"></a>桶</h3><blockquote>
-<p>Q: Huge metal cylinder found in the middle of the woods (Central Pennsylvania)</p>
-</blockquote>
-<p>在树林中发现的巨大金属圆筒（宾夕法尼亚州中部）</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/桶.jpg" alt="桶"></p>
-<!-- <img data-src="/2020/12/25/whatisthisthing-5/%E6%A1%B6.jpg" class="桶"> -->
-<blockquote>
-<p>A: It’s an “upright” tank for fluid storage. Normally 12’ diameter and 20’ tall, they hold 400 barrels of fluid. This one is laid on its side, which is how most are transported.<br>Used in oilfield applications, this one was probably ditched illegally because it has been exposed to or contains excessive amounts of NORM or naturally occurring radioactive material. NORM is present in small amounts in produced fluids, builds up in storage tanks over time and is very expensive to get rid of.<br>See this for some examples of modern versions.</p>
-</blockquote>
-<p>这是一个用来储存液体的「立式」容器。它们通常直径 12 英尺，高 20 英尺，可容纳 400 桶（47600 升）液体。这个桶是侧卧的，大多数都是这样运输的。</p>
-<p>在油田应用中，使用的这一种可能是非法丢弃的，因为它暴露于或含有过量的标准或自然产生的放射性物质。天然放射物质以少量的形式存在于生产流体中，随着时间的推移在储存罐中积累，并且去除它非常昂贵。</p>
-<p>看看这些现代版本的样子。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/桶2.jpg" alt="桶"></p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/桶3.jpg" alt="桶"></p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/桶4.jpg" alt="桶"></p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/桶5.jpg" alt="桶"></p>
-<!-- <img data-src="/2020/12/25/whatisthisthing-5/%E6%A1%B62.jpg" class="桶"> -->
-<!-- <img data-src="/2020/12/25/whatisthisthing-5/%E6%A1%B63.jpg" class="桶"> -->
-<!-- <img data-src="/2020/12/25/whatisthisthing-5/%E6%A1%B64.jpg" class="桶"> -->
-<!-- <img data-src="/2020/12/25/whatisthisthing-5/%E6%A1%B65.jpg" class="桶"> -->
-<p><a href="https://www.reddit.com/r/whatisthisthing/comments/k2q3x9/huge_metal_cylinder_found_in_the_middle_of_the/">https://www.reddit.com/r/whatisthisthing/comments/k2q3x9/huge_metal_cylinder_found_in_the_middle_of_the/</a></p>
-<h3 id="机器人"><a href="#机器人" class="headerlink" title="机器人"></a>机器人</h3><blockquote>
-<p>Q: Strange Robot Friend Neighbors Trashed After Moving Out</p>
-</blockquote>
-<p>邻居们都在吐槽被搬出去的奇怪机器人。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/机器人1.jpg" alt="机器人"></p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/机器人2.jpg" alt="机器人"></p>
-<!-- <img data-src="/2020/12/25/whatisthisthing-5/%E6%9C%BA%E5%99%A8%E4%BA%BA1.jpg" class="机器人"> -->
-<!-- <img data-src="/2020/12/25/whatisthisthing-5/%E6%9C%BA%E5%99%A8%E4%BA%BA2.jpg" class="机器人"> -->
-<blockquote>
-<p>A: My guess is a robot used for a laser tag game. The thing is holding a blaster and the eyes likely have sort of photocell or means to detect the laser. Laser tags were big back in the 90s.</p>
-</blockquote>
-<p>我猜是用来玩激光枪战游戏的机器人。这东西拿着一个爆破器，眼睛可能有某种光电池或手段来探测激光。激光枪战在 90 年代很流行。</p>
-<p><a href="https://www.reddit.com/r/whatisthisthing/comments/k3v3q8/strange_robot_friend_neighbors_trashed_after/">https://www.reddit.com/r/whatisthisthing/comments/k3v3q8/strange_robot_friend_neighbors_trashed_after/</a></p>
-<h3 id="新生儿"><a href="#新生儿" class="headerlink" title="新生儿"></a>新生儿</h3><blockquote>
-<p>Q: Someone was gifted this for a new baby with no note on what it is</p>
-</blockquote>
-<p>有人把这个礼物送给了一个新生儿，却没有说明是什么。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/新生儿1.jpg" alt="新生儿"></p>
-<!-- <img data-src="/2020/12/25/whatisthisthing-5/%E6%96%B0%E7%94%9F%E5%84%BF1.jpg" class="新生儿"> -->
-<blockquote>
-<p>A: It is a door silencer. It wraps around and covers the latch on a door so that it doesn’t latch and the rubber also makes the door open and close silently. The straps go around the doorknob on each side.<br>EDIT: I could only find a foreign language site with this version, but here’s a picture from there: <a href="http://ae01.alicdn.com/kf/H8c7289b680bc4ef59fd8915e0eeafd8bP/-.jpg">http://ae01.alicdn.com/kf/H8c7289b680bc4ef59fd8915e0eeafd8bP/-.jpg</a></p>
-</blockquote>
-<p>这是一个门消音器。它可以包裹并覆盖门上的闩锁，从而不会使门关上，并且橡胶还可以使门安静地打开和关闭。带子绕在门把手的每一侧。</p>
-<p>编辑：我只能用此版本找到一个外语网站，但是这里有一张照片：</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/新生儿2.jpg" alt="新生儿"></p>
-<!-- <img data-src="/2020/12/25/whatisthisthing-5/%E6%96%B0%E7%94%9F%E5%84%BF2.jpg" class="新生儿"> -->
-<p>（译者注：答案中的这张图片还是从淘宝拿来的。）</p>
-<p><a href="https://www.reddit.com/r/whatisthisthing/comments/k95b1x/someone_was_gifted_this_for_a_new_baby_with_no/">https://www.reddit.com/r/whatisthisthing/comments/k95b1x/someone_was_gifted_this_for_a_new_baby_with_no/</a></p>
-<h3 id="杀虫"><a href="#杀虫" class="headerlink" title="杀虫"></a>杀虫</h3><blockquote>
-<p>Q: They installed this thing on the ceiling of my apartment building. The green light makes a buzz sound with each flash</p>
-</blockquote>
-<p>他们在我公寓的天花板上安装了这个。绿灯每闪一次就发出嗡嗡声。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/杀虫.jpg" alt="杀虫"></p>
-<!-- <img data-src="/2020/12/25/whatisthisthing-5/%E6%9D%80%E8%99%AB.jpg" class="杀虫"> -->
-<blockquote>
-<p>A: It’s called the Pestinator 360. It repels insects and rodents. A rather janky install for a ceiling though. <a href="https://www.amazon.com/gp/aw/d/B06ZY79XLC/ref=cm_cr_arp_mb_bdcrb_top?ie=UTF8">https://www.amazon.com/gp/aw/d/B06ZY79XLC/ref=cm_cr_arp_mb_bdcrb_top?ie=UTF8</a></p>
-</blockquote>
-<p>它被称为 Pestinator 360。它能驱赶昆虫和啮齿动物。不过天花板的安装还真不怎么样。<a href="https://www.amazon.com/gp/aw/d/B06ZY79XLC/ref=cm_cr_arp_mb_bdcrb_top?ie=UTF8">https://www.amazon.com/gp/aw/d/B06ZY79XLC/ref=cm_cr_arp_mb_bdcrb_top?ie=UTF8</a></p>
-<p><a href="https://www.reddit.com/r/whatisthisthing/comments/keshzv/they_installed_this_thing_on_the_ceiling_of_my/">https://www.reddit.com/r/whatisthisthing/comments/keshzv/they_installed_this_thing_on_the_ceiling_of_my/</a></p>
-<h3 id="金砖？"><a href="#金砖？" class="headerlink" title="金砖？"></a>金砖？</h3><blockquote>
-<p>Q: WITT? Mom bought a box of old pins and this was among them. Appears to be metal, backside is empty aside from marks of being glued to something</p>
-</blockquote>
-<p>这是个嘛？妈妈买了一盒旧别针，这是其中之一。似乎是金属的，背面是空的，除了有些粘在什么东西上的痕迹。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/金砖.jpg" alt="金砖"></p>
-<!-- <img data-src="/2020/12/25/whatisthisthing-5/%E9%87%91%E7%A0%96.jpg" class="金砖"> -->
-<blockquote>
-<p>A: Readers Digest sweepstakes token</p>
-</blockquote>
-<p>读者文摘的抽奖代币</p>
-<p><a href="https://www.reddit.com/r/whatisthisthing/comments/kg7izm/witt_mom_bought_a_box_of_old_pins_and_this_was/">https://www.reddit.com/r/whatisthisthing/comments/kg7izm/witt_mom_bought_a_box_of_old_pins_and_this_was/</a></p>
-<h3 id="不知道用途的工具"><a href="#不知道用途的工具" class="headerlink" title="不知道用途的工具"></a>不知道用途的工具</h3><blockquote>
-<p>Q: Kitchen tool made by winco. No idea what it is</p>
-</blockquote>
-<p>winco（超市）制作的厨房工具。不知道是什么。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/工具1.jpg" alt="工具"></p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/工具2.jpg" alt="工具"></p>
-<!-- <img data-src="/2020/12/25/whatisthisthing-5/%E5%B7%A5%E5%85%B71.jpg" class="工具"> -->
-<!-- <img data-src="/2020/12/25/whatisthisthing-5/%E5%B7%A5%E5%85%B72.jpg" class="工具"> -->
-<blockquote>
-<p>A: Winco SDS-3, Shrimp Peeler with Comfort Grip Handle, Stainless Steel</p>
-</blockquote>
-<p>Winco SDS-3，带舒适手柄的虾剥皮机，不锈钢。</p>
-<p><a href="https://www.reddit.com/r/whatisthisthing/comments/k0xx73/kitchen_tool_made_by_winco_no_idea_what_it_is/">https://www.reddit.com/r/whatisthisthing/comments/k0xx73/kitchen_tool_made_by_winco_no_idea_what_it_is/</a></p>
-<h3 id="报警器"><a href="#报警器" class="headerlink" title="报警器"></a>报警器</h3><blockquote>
-<p>Q: Found in my new home, built in the 1950s</p>
-</blockquote>
-<p>在我的新家发现的，建于 20 世纪 50 年代。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/报警器.jpg" alt="报警器"></p>
-<!-- <img data-src="/2020/12/25/whatisthisthing-5/%E6%8A%A5%E8%AD%A6%E5%99%A8.jpg" class="报警器"> -->
-<blockquote>
-<p>A: It’s an on / off for a house alarm.</p>
-</blockquote>
-<p>它被用来打开或关闭房屋报警。</p>
-<blockquote>
-<p>A: Although in this case it’s 99% likely for an alarm, switches like this were used for other things as well. I did a remodel last summer where a same/similar switch was used to lower and raise a massive chandelier- for cleaning or bulb replacement.</p>
-</blockquote>
-<p>虽然在这种情况下警报器的可能性是99%，但像这样的开关也被用于其他用途。去年夏天，我做了一次改造，用了一个相同或类似的开关来降低和提高一个巨大的吊灯——为了清洁或更换灯泡。</p>
-<p><a href="https://www.reddit.com/r/whatisthisthing/comments/kc23cn/found_in_my_new_home_built_in_the_1950s/">https://www.reddit.com/r/whatisthisthing/comments/kc23cn/found_in_my_new_home_built_in_the_1950s/</a></p>
-]]></content>
-      <categories>
-        <category>What is this thing?</category>
-      </categories>
-      <tags>
-        <tag>翻译</tag>
-        <tag>What is this thing?</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>What is this thing 4</title>
     <url>/2020/12/25/whatisthisthing-4/</url>
     <content><![CDATA[<p><a href="https://www.reddit.com/r/whatisthisthing/">What is this thing</a> 是 reddit 上的一个社区（community），上面时不时会有人发一些没见过的玩意来提问。</p>
@@ -2868,6 +2754,120 @@
 </blockquote>
 <p>在20世纪二三十年代，穿这样的长袍打麻将相当流行。</p>
 <p><a href="https://www.reddit.com/r/whatisthisthing/comments/jzpw4e/found_some_old_oriental_silk_garments_of_my_great/">https://www.reddit.com/r/whatisthisthing/comments/jzpw4e/found_some_old_oriental_silk_garments_of_my_great/</a></p>
+]]></content>
+      <categories>
+        <category>What is this thing?</category>
+      </categories>
+      <tags>
+        <tag>翻译</tag>
+        <tag>What is this thing?</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>What is this thing 5</title>
+    <url>/2020/12/25/whatisthisthing-5/</url>
+    <content><![CDATA[<p><a href="https://www.reddit.com/r/whatisthisthing/">What is this thing</a> 是 reddit 上的一个社区（community），上面时不时会有人发一些没见过的玩意来提问。</p>
+<p>一起来看看吧！</p>
+<span id="more"></span>
+<h3 id="桶"><a href="#桶" class="headerlink" title="桶"></a>桶</h3><blockquote>
+<p>Q: Huge metal cylinder found in the middle of the woods (Central Pennsylvania)</p>
+</blockquote>
+<p>在树林中发现的巨大金属圆筒（宾夕法尼亚州中部）</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/桶.jpg" alt="桶"></p>
+<!-- <img data-src="/2020/12/25/whatisthisthing-5/%E6%A1%B6.jpg" class="桶"> -->
+<blockquote>
+<p>A: It’s an “upright” tank for fluid storage. Normally 12’ diameter and 20’ tall, they hold 400 barrels of fluid. This one is laid on its side, which is how most are transported.<br>Used in oilfield applications, this one was probably ditched illegally because it has been exposed to or contains excessive amounts of NORM or naturally occurring radioactive material. NORM is present in small amounts in produced fluids, builds up in storage tanks over time and is very expensive to get rid of.<br>See this for some examples of modern versions.</p>
+</blockquote>
+<p>这是一个用来储存液体的「立式」容器。它们通常直径 12 英尺，高 20 英尺，可容纳 400 桶（47600 升）液体。这个桶是侧卧的，大多数都是这样运输的。</p>
+<p>在油田应用中，使用的这一种可能是非法丢弃的，因为它暴露于或含有过量的标准或自然产生的放射性物质。天然放射物质以少量的形式存在于生产流体中，随着时间的推移在储存罐中积累，并且去除它非常昂贵。</p>
+<p>看看这些现代版本的样子。</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/桶2.jpg" alt="桶"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/桶3.jpg" alt="桶"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/桶4.jpg" alt="桶"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/桶5.jpg" alt="桶"></p>
+<!-- <img data-src="/2020/12/25/whatisthisthing-5/%E6%A1%B62.jpg" class="桶"> -->
+<!-- <img data-src="/2020/12/25/whatisthisthing-5/%E6%A1%B63.jpg" class="桶"> -->
+<!-- <img data-src="/2020/12/25/whatisthisthing-5/%E6%A1%B64.jpg" class="桶"> -->
+<!-- <img data-src="/2020/12/25/whatisthisthing-5/%E6%A1%B65.jpg" class="桶"> -->
+<p><a href="https://www.reddit.com/r/whatisthisthing/comments/k2q3x9/huge_metal_cylinder_found_in_the_middle_of_the/">https://www.reddit.com/r/whatisthisthing/comments/k2q3x9/huge_metal_cylinder_found_in_the_middle_of_the/</a></p>
+<h3 id="机器人"><a href="#机器人" class="headerlink" title="机器人"></a>机器人</h3><blockquote>
+<p>Q: Strange Robot Friend Neighbors Trashed After Moving Out</p>
+</blockquote>
+<p>邻居们都在吐槽被搬出去的奇怪机器人。</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/机器人1.jpg" alt="机器人"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/机器人2.jpg" alt="机器人"></p>
+<!-- <img data-src="/2020/12/25/whatisthisthing-5/%E6%9C%BA%E5%99%A8%E4%BA%BA1.jpg" class="机器人"> -->
+<!-- <img data-src="/2020/12/25/whatisthisthing-5/%E6%9C%BA%E5%99%A8%E4%BA%BA2.jpg" class="机器人"> -->
+<blockquote>
+<p>A: My guess is a robot used for a laser tag game. The thing is holding a blaster and the eyes likely have sort of photocell or means to detect the laser. Laser tags were big back in the 90s.</p>
+</blockquote>
+<p>我猜是用来玩激光枪战游戏的机器人。这东西拿着一个爆破器，眼睛可能有某种光电池或手段来探测激光。激光枪战在 90 年代很流行。</p>
+<p><a href="https://www.reddit.com/r/whatisthisthing/comments/k3v3q8/strange_robot_friend_neighbors_trashed_after/">https://www.reddit.com/r/whatisthisthing/comments/k3v3q8/strange_robot_friend_neighbors_trashed_after/</a></p>
+<h3 id="新生儿"><a href="#新生儿" class="headerlink" title="新生儿"></a>新生儿</h3><blockquote>
+<p>Q: Someone was gifted this for a new baby with no note on what it is</p>
+</blockquote>
+<p>有人把这个礼物送给了一个新生儿，却没有说明是什么。</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/新生儿1.jpg" alt="新生儿"></p>
+<!-- <img data-src="/2020/12/25/whatisthisthing-5/%E6%96%B0%E7%94%9F%E5%84%BF1.jpg" class="新生儿"> -->
+<blockquote>
+<p>A: It is a door silencer. It wraps around and covers the latch on a door so that it doesn’t latch and the rubber also makes the door open and close silently. The straps go around the doorknob on each side.<br>EDIT: I could only find a foreign language site with this version, but here’s a picture from there: <a href="http://ae01.alicdn.com/kf/H8c7289b680bc4ef59fd8915e0eeafd8bP/-.jpg">http://ae01.alicdn.com/kf/H8c7289b680bc4ef59fd8915e0eeafd8bP/-.jpg</a></p>
+</blockquote>
+<p>这是一个门消音器。它可以包裹并覆盖门上的闩锁，从而不会使门关上，并且橡胶还可以使门安静地打开和关闭。带子绕在门把手的每一侧。</p>
+<p>编辑：我只能用此版本找到一个外语网站，但是这里有一张照片：</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/新生儿2.jpg" alt="新生儿"></p>
+<!-- <img data-src="/2020/12/25/whatisthisthing-5/%E6%96%B0%E7%94%9F%E5%84%BF2.jpg" class="新生儿"> -->
+<p>（译者注：答案中的这张图片还是从淘宝拿来的。）</p>
+<p><a href="https://www.reddit.com/r/whatisthisthing/comments/k95b1x/someone_was_gifted_this_for_a_new_baby_with_no/">https://www.reddit.com/r/whatisthisthing/comments/k95b1x/someone_was_gifted_this_for_a_new_baby_with_no/</a></p>
+<h3 id="杀虫"><a href="#杀虫" class="headerlink" title="杀虫"></a>杀虫</h3><blockquote>
+<p>Q: They installed this thing on the ceiling of my apartment building. The green light makes a buzz sound with each flash</p>
+</blockquote>
+<p>他们在我公寓的天花板上安装了这个。绿灯每闪一次就发出嗡嗡声。</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/杀虫.jpg" alt="杀虫"></p>
+<!-- <img data-src="/2020/12/25/whatisthisthing-5/%E6%9D%80%E8%99%AB.jpg" class="杀虫"> -->
+<blockquote>
+<p>A: It’s called the Pestinator 360. It repels insects and rodents. A rather janky install for a ceiling though. <a href="https://www.amazon.com/gp/aw/d/B06ZY79XLC/ref=cm_cr_arp_mb_bdcrb_top?ie=UTF8">https://www.amazon.com/gp/aw/d/B06ZY79XLC/ref=cm_cr_arp_mb_bdcrb_top?ie=UTF8</a></p>
+</blockquote>
+<p>它被称为 Pestinator 360。它能驱赶昆虫和啮齿动物。不过天花板的安装还真不怎么样。<a href="https://www.amazon.com/gp/aw/d/B06ZY79XLC/ref=cm_cr_arp_mb_bdcrb_top?ie=UTF8">https://www.amazon.com/gp/aw/d/B06ZY79XLC/ref=cm_cr_arp_mb_bdcrb_top?ie=UTF8</a></p>
+<p><a href="https://www.reddit.com/r/whatisthisthing/comments/keshzv/they_installed_this_thing_on_the_ceiling_of_my/">https://www.reddit.com/r/whatisthisthing/comments/keshzv/they_installed_this_thing_on_the_ceiling_of_my/</a></p>
+<h3 id="金砖？"><a href="#金砖？" class="headerlink" title="金砖？"></a>金砖？</h3><blockquote>
+<p>Q: WITT? Mom bought a box of old pins and this was among them. Appears to be metal, backside is empty aside from marks of being glued to something</p>
+</blockquote>
+<p>这是个嘛？妈妈买了一盒旧别针，这是其中之一。似乎是金属的，背面是空的，除了有些粘在什么东西上的痕迹。</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/金砖.jpg" alt="金砖"></p>
+<!-- <img data-src="/2020/12/25/whatisthisthing-5/%E9%87%91%E7%A0%96.jpg" class="金砖"> -->
+<blockquote>
+<p>A: Readers Digest sweepstakes token</p>
+</blockquote>
+<p>读者文摘的抽奖代币</p>
+<p><a href="https://www.reddit.com/r/whatisthisthing/comments/kg7izm/witt_mom_bought_a_box_of_old_pins_and_this_was/">https://www.reddit.com/r/whatisthisthing/comments/kg7izm/witt_mom_bought_a_box_of_old_pins_and_this_was/</a></p>
+<h3 id="不知道用途的工具"><a href="#不知道用途的工具" class="headerlink" title="不知道用途的工具"></a>不知道用途的工具</h3><blockquote>
+<p>Q: Kitchen tool made by winco. No idea what it is</p>
+</blockquote>
+<p>winco（超市）制作的厨房工具。不知道是什么。</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/工具1.jpg" alt="工具"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/工具2.jpg" alt="工具"></p>
+<!-- <img data-src="/2020/12/25/whatisthisthing-5/%E5%B7%A5%E5%85%B71.jpg" class="工具"> -->
+<!-- <img data-src="/2020/12/25/whatisthisthing-5/%E5%B7%A5%E5%85%B72.jpg" class="工具"> -->
+<blockquote>
+<p>A: Winco SDS-3, Shrimp Peeler with Comfort Grip Handle, Stainless Steel</p>
+</blockquote>
+<p>Winco SDS-3，带舒适手柄的虾剥皮机，不锈钢。</p>
+<p><a href="https://www.reddit.com/r/whatisthisthing/comments/k0xx73/kitchen_tool_made_by_winco_no_idea_what_it_is/">https://www.reddit.com/r/whatisthisthing/comments/k0xx73/kitchen_tool_made_by_winco_no_idea_what_it_is/</a></p>
+<h3 id="报警器"><a href="#报警器" class="headerlink" title="报警器"></a>报警器</h3><blockquote>
+<p>Q: Found in my new home, built in the 1950s</p>
+</blockquote>
+<p>在我的新家发现的，建于 20 世纪 50 年代。</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/报警器.jpg" alt="报警器"></p>
+<!-- <img data-src="/2020/12/25/whatisthisthing-5/%E6%8A%A5%E8%AD%A6%E5%99%A8.jpg" class="报警器"> -->
+<blockquote>
+<p>A: It’s an on / off for a house alarm.</p>
+</blockquote>
+<p>它被用来打开或关闭房屋报警。</p>
+<blockquote>
+<p>A: Although in this case it’s 99% likely for an alarm, switches like this were used for other things as well. I did a remodel last summer where a same/similar switch was used to lower and raise a massive chandelier- for cleaning or bulb replacement.</p>
+</blockquote>
+<p>虽然在这种情况下警报器的可能性是99%，但像这样的开关也被用于其他用途。去年夏天，我做了一次改造，用了一个相同或类似的开关来降低和提高一个巨大的吊灯——为了清洁或更换灯泡。</p>
+<p><a href="https://www.reddit.com/r/whatisthisthing/comments/kc23cn/found_in_my_new_home_built_in_the_1950s/">https://www.reddit.com/r/whatisthisthing/comments/kc23cn/found_in_my_new_home_built_in_the_1950s/</a></p>
 ]]></content>
       <categories>
         <category>What is this thing?</category>
@@ -3466,55 +3466,6 @@
       </tags>
   </entry>
   <entry>
-    <title>在微信中使用 ToDoList</title>
-    <url>/2020/03/13/%E5%9C%A8%E5%BE%AE%E4%BF%A1%E4%B8%AD%E4%BD%BF%E7%94%A8ToDoList/</url>
-    <content><![CDATA[<p>在 <a href="https://www.v2ex.com/t/650838">V2EX</a> 看到了这篇帖子，想到了之前自己琢磨出来的方法，所以在这里记录一下，到时候也可以直接将链接贴到回复中去。</p>
-<span id="more"></span>
-<h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><p>效果如下：</p>
-<!-- ![效果.jpg](https://i.loli.net/2020/03/13/pcINsy3t4xwO8ro.jpg) -->
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/在微信中使用ToDoList/效果.jpg" alt="效果"></p>
-<!-- <img data-src="/2020/03/13/%E5%9C%A8%E5%BE%AE%E4%BF%A1%E4%B8%AD%E4%BD%BF%E7%94%A8ToDoList/%E6%95%88%E6%9E%9C.jpg" class="" title="效果.jpg"> -->
-<!-- ![置顶.jpg](https://i.loli.net/2020/03/13/oqslDcLjPWhFyJt.jpg) -->
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/在微信中使用ToDoList/置顶.jpg" alt="置顶"></p>
-<!-- <img data-src="/2020/03/13/%E5%9C%A8%E5%BE%AE%E4%BF%A1%E4%B8%AD%E4%BD%BF%E7%94%A8ToDoList/%E7%BD%AE%E9%A1%B6.jpg" class="" title="置顶.jpg"> -->
-<h2 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤"></a>具体步骤</h2><ol>
-<li><p>打开 <code>微信</code>-<code>我</code>-<code>收藏</code>；</p>
-</li>
-<li><p>击右上角的 <code>+</code> 添加一个新的笔记；</p>
-</li>
-<li><p>第一行输入 <code>ToDoList</code>，这是你置顶后所显示的标题；</p>
-</li>
-<li><p>然后下方的几个按钮就可以使用了，一般都是用最后一个的待办列表；</p>
- <!-- ![待办](https://i.loli.net/2020/03/13/IDoYRdFaKsw1bHq.jpg) -->
-<p> <img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/在微信中使用ToDoList/待办.jpg" alt="待办"></p>
- <!-- <img data-src="/2020/03/13/%E5%9C%A8%E5%BE%AE%E4%BF%A1%E4%B8%AD%E4%BD%BF%E7%94%A8ToDoList/%E5%BE%85%E5%8A%9E.jpg" class="" title="待办.jpg"> -->
-</li>
-<li><p>写完成后，点击右上角的 <code>···</code>，你可以选择<code>浮窗</code>，也可以选择置顶<code>在聊天中置顶</code>；</p>
- <!-- ![置顶选项.jpg](https://i.loli.net/2020/03/13/9FCy2oXMiQdrla1.jpg) -->
-<p> <img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/在微信中使用ToDoList/置顶选项.jpg" alt="置顶选项"></p>
- <!-- <img data-src="/2020/03/13/%E5%9C%A8%E5%BE%AE%E4%BF%A1%E4%B8%AD%E4%BD%BF%E7%94%A8ToDoList/%E7%BD%AE%E9%A1%B6%E9%80%89%E9%A1%B9.jpg" class="" title="置顶选项.jpg"> -->
-</li>
-<li><p>这样就已经完成了，当你需要查看的时候，你只需要点击聊天列表界面顶部的 <code>ToDoList</code>，就能进入这份笔记中查看你的待办事项了。</p>
-</li>
-</ol>
-<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>这个方法勉强可以满足最基本的 <code>ToDoList</code> 功能，对于普通人来说，也是只能说是到了勉强够用的程度，毕竟他没有提醒功能。</p>
-<p>我一般是在去超市进行采购的时候，会在这里列一下采购清单，方便核对。</p>
-<p>说起提醒功能，微信可以对聊天双方所发的消息进行提醒，长按一条消息，在 <a href="https://zhuanlan.zhihu.com/p/29026281">Popover</a> 中选择 <code>提醒</code>（在 IOS 中需要点击 Popover 右侧的 <code>▶</code>，才能在下一页看到 <code>提醒</code> 选项），选择提醒时间后，微信就会在提醒时间为你发送一条提醒。</p>
-<!-- ![提醒](https://i.loli.net/2020/03/13/hrTYKjQmvH3zxb4.jpg) -->
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/在微信中使用ToDoList/提醒.jpg" alt="提醒"></p>
-<!-- <img data-src="/2020/03/13/%E5%9C%A8%E5%BE%AE%E4%BF%A1%E4%B8%AD%E4%BD%BF%E7%94%A8ToDoList/%E6%8F%90%E9%86%92.jpg" class="" title="提醒.jpg"> -->
-<p>微信真的是很封闭的软件，你甚至不能找到分享到其他 APP 的按钮。</p>
-]]></content>
-      <categories>
-        <category>奇技淫巧</category>
-      </categories>
-      <tags>
-        <tag>奇技淫巧</tag>
-        <tag>微信</tag>
-        <tag>WeChat</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>《齐玛蓝》——阿拉斯泰尔·雷诺兹</title>
     <url>/2019/03/22/zima-blue/</url>
     <content><![CDATA[<p>前些天看了 Netflix 出品的 <a href="https://www.netflix.com/title/80174608"><em>Love, Death &amp; Robots</em></a> ，第十四集讲的就是这个故事，动画很好，小说也写得很好，特地转载一下。 转载自：<a href="http://www.eleefeed.com/f/201939">http://www.eleefeed.com/f/201939</a></p>
@@ -3789,6 +3740,55 @@
         <tag>Love Death &amp;amp; Robots</tag>
         <tag>Zima Blue</tag>
         <tag>爱，死亡和机器人</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>在微信中使用 ToDoList</title>
+    <url>/2020/03/13/%E5%9C%A8%E5%BE%AE%E4%BF%A1%E4%B8%AD%E4%BD%BF%E7%94%A8ToDoList/</url>
+    <content><![CDATA[<p>在 <a href="https://www.v2ex.com/t/650838">V2EX</a> 看到了这篇帖子，想到了之前自己琢磨出来的方法，所以在这里记录一下，到时候也可以直接将链接贴到回复中去。</p>
+<span id="more"></span>
+<h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><p>效果如下：</p>
+<!-- ![效果.jpg](https://i.loli.net/2020/03/13/pcINsy3t4xwO8ro.jpg) -->
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/在微信中使用ToDoList/效果.jpg" alt="效果"></p>
+<!-- <img data-src="/2020/03/13/%E5%9C%A8%E5%BE%AE%E4%BF%A1%E4%B8%AD%E4%BD%BF%E7%94%A8ToDoList/%E6%95%88%E6%9E%9C.jpg" class="" title="效果.jpg"> -->
+<!-- ![置顶.jpg](https://i.loli.net/2020/03/13/oqslDcLjPWhFyJt.jpg) -->
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/在微信中使用ToDoList/置顶.jpg" alt="置顶"></p>
+<!-- <img data-src="/2020/03/13/%E5%9C%A8%E5%BE%AE%E4%BF%A1%E4%B8%AD%E4%BD%BF%E7%94%A8ToDoList/%E7%BD%AE%E9%A1%B6.jpg" class="" title="置顶.jpg"> -->
+<h2 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤"></a>具体步骤</h2><ol>
+<li><p>打开 <code>微信</code>-<code>我</code>-<code>收藏</code>；</p>
+</li>
+<li><p>击右上角的 <code>+</code> 添加一个新的笔记；</p>
+</li>
+<li><p>第一行输入 <code>ToDoList</code>，这是你置顶后所显示的标题；</p>
+</li>
+<li><p>然后下方的几个按钮就可以使用了，一般都是用最后一个的待办列表；</p>
+ <!-- ![待办](https://i.loli.net/2020/03/13/IDoYRdFaKsw1bHq.jpg) -->
+<p> <img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/在微信中使用ToDoList/待办.jpg" alt="待办"></p>
+ <!-- <img data-src="/2020/03/13/%E5%9C%A8%E5%BE%AE%E4%BF%A1%E4%B8%AD%E4%BD%BF%E7%94%A8ToDoList/%E5%BE%85%E5%8A%9E.jpg" class="" title="待办.jpg"> -->
+</li>
+<li><p>写完成后，点击右上角的 <code>···</code>，你可以选择<code>浮窗</code>，也可以选择置顶<code>在聊天中置顶</code>；</p>
+ <!-- ![置顶选项.jpg](https://i.loli.net/2020/03/13/9FCy2oXMiQdrla1.jpg) -->
+<p> <img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/在微信中使用ToDoList/置顶选项.jpg" alt="置顶选项"></p>
+ <!-- <img data-src="/2020/03/13/%E5%9C%A8%E5%BE%AE%E4%BF%A1%E4%B8%AD%E4%BD%BF%E7%94%A8ToDoList/%E7%BD%AE%E9%A1%B6%E9%80%89%E9%A1%B9.jpg" class="" title="置顶选项.jpg"> -->
+</li>
+<li><p>这样就已经完成了，当你需要查看的时候，你只需要点击聊天列表界面顶部的 <code>ToDoList</code>，就能进入这份笔记中查看你的待办事项了。</p>
+</li>
+</ol>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>这个方法勉强可以满足最基本的 <code>ToDoList</code> 功能，对于普通人来说，也是只能说是到了勉强够用的程度，毕竟他没有提醒功能。</p>
+<p>我一般是在去超市进行采购的时候，会在这里列一下采购清单，方便核对。</p>
+<p>说起提醒功能，微信可以对聊天双方所发的消息进行提醒，长按一条消息，在 <a href="https://zhuanlan.zhihu.com/p/29026281">Popover</a> 中选择 <code>提醒</code>（在 IOS 中需要点击 Popover 右侧的 <code>▶</code>，才能在下一页看到 <code>提醒</code> 选项），选择提醒时间后，微信就会在提醒时间为你发送一条提醒。</p>
+<!-- ![提醒](https://i.loli.net/2020/03/13/hrTYKjQmvH3zxb4.jpg) -->
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/在微信中使用ToDoList/提醒.jpg" alt="提醒"></p>
+<!-- <img data-src="/2020/03/13/%E5%9C%A8%E5%BE%AE%E4%BF%A1%E4%B8%AD%E4%BD%BF%E7%94%A8ToDoList/%E6%8F%90%E9%86%92.jpg" class="" title="提醒.jpg"> -->
+<p>微信真的是很封闭的软件，你甚至不能找到分享到其他 APP 的按钮。</p>
+]]></content>
+      <categories>
+        <category>奇技淫巧</category>
+      </categories>
+      <tags>
+        <tag>奇技淫巧</tag>
+        <tag>微信</tag>
+        <tag>WeChat</tag>
       </tags>
   </entry>
   <entry>
@@ -4230,7 +4230,7 @@
 </li>
 <li><p>「工具」-「选项」-「高级」-「libtorrent 相关」将「校验时内存使用扩增量」修改大一些，我设置成了 <code>512</code>，这样可以提高校验速度，提升之后辅种效率；</p>
 </li>
-<li><p>「工具」-「选项」-「BitTorrent」勾选「自动添加以下 tracker 到新的 torrent」，并在下方输入框中填入<a href="&#109;&#x61;&#105;&#x6c;&#116;&#x6f;&#x3a;&#104;&#116;&#116;&#112;&#x73;&#x3a;&#47;&#x2f;&#99;&#100;&#x6e;&#x2e;&#106;&#x73;&#x64;&#x65;&#108;&#x69;&#x76;&#x72;&#x2e;&#110;&#101;&#116;&#47;&#x67;&#x68;&#47;&#x6e;&#103;&#111;&#115;&#97;&#110;&#103;&#47;&#116;&#x72;&#x61;&#x63;&#107;&#x65;&#114;&#115;&#x6c;&#105;&#115;&#x74;&#64;&#109;&#x61;&#115;&#116;&#x65;&#x72;&#x2f;&#x74;&#114;&#x61;&#99;&#x6b;&#x65;&#x72;&#115;&#x5f;&#x61;&#108;&#x6c;&#x2e;&#116;&#x78;&#116;">&#104;&#116;&#116;&#112;&#x73;&#x3a;&#47;&#x2f;&#99;&#100;&#x6e;&#x2e;&#106;&#x73;&#x64;&#x65;&#108;&#x69;&#x76;&#x72;&#x2e;&#110;&#101;&#116;&#47;&#x67;&#x68;&#47;&#x6e;&#103;&#111;&#115;&#97;&#110;&#103;&#47;&#116;&#x72;&#x61;&#x63;&#107;&#x65;&#114;&#115;&#x6c;&#105;&#115;&#x74;&#64;&#109;&#x61;&#115;&#116;&#x65;&#x72;&#x2f;&#x74;&#114;&#x61;&#99;&#x6b;&#x65;&#x72;&#115;&#x5f;&#x61;&#108;&#x6c;&#x2e;&#116;&#x78;&#116;</a>中的内容，此处设置的作用的是为了获得更多的供种者，此操作能有效提高下载速度，建议每隔一段时间就更新一下 tracker 列表，更多 tracker 列表可以查看 <a href="https://github.com/ngosang/trackerslist">https://github.com/ngosang/trackerslist</a> 和 <a href="https://github.com/XIU2/TrackersListCollection">https://github.com/XIU2/TrackersListCollection</a>。</p>
+<li><p>「工具」-「选项」-「BitTorrent」勾选「自动添加以下 tracker 到新的 torrent」，并在下方输入框中填入<a href="&#109;&#97;&#105;&#108;&#116;&#111;&#x3a;&#104;&#116;&#116;&#112;&#x73;&#x3a;&#47;&#x2f;&#x63;&#100;&#110;&#46;&#x6a;&#x73;&#x64;&#101;&#x6c;&#105;&#x76;&#x72;&#46;&#x6e;&#101;&#116;&#47;&#x67;&#104;&#x2f;&#110;&#103;&#111;&#115;&#97;&#110;&#x67;&#47;&#x74;&#x72;&#x61;&#99;&#x6b;&#101;&#114;&#x73;&#x6c;&#105;&#x73;&#116;&#64;&#x6d;&#x61;&#x73;&#116;&#x65;&#x72;&#47;&#x74;&#114;&#x61;&#x63;&#x6b;&#x65;&#114;&#115;&#95;&#x61;&#108;&#x6c;&#46;&#116;&#120;&#x74;">&#104;&#116;&#116;&#112;&#x73;&#x3a;&#47;&#x2f;&#x63;&#100;&#110;&#46;&#x6a;&#x73;&#x64;&#101;&#x6c;&#105;&#x76;&#x72;&#46;&#x6e;&#101;&#116;&#47;&#x67;&#104;&#x2f;&#110;&#103;&#111;&#115;&#97;&#110;&#x67;&#47;&#x74;&#x72;&#x61;&#99;&#x6b;&#101;&#114;&#x73;&#x6c;&#105;&#x73;&#116;&#64;&#x6d;&#x61;&#x73;&#116;&#x65;&#x72;&#47;&#x74;&#114;&#x61;&#x63;&#x6b;&#x65;&#114;&#115;&#95;&#x61;&#108;&#x6c;&#46;&#116;&#120;&#x74;</a>中的内容，此处设置的作用的是为了获得更多的供种者，此操作能有效提高下载速度，建议每隔一段时间就更新一下 tracker 列表，更多 tracker 列表可以查看 <a href="https://github.com/ngosang/trackerslist">https://github.com/ngosang/trackerslist</a> 和 <a href="https://github.com/XIU2/TrackersListCollection">https://github.com/XIU2/TrackersListCollection</a>。</p>
 </li>
 <li><p>「工具」-「选项」-「BitTorrent」取消勾选「Torrent 排队」,这一步是为了多任务同时下载与上传，BT 的本质就是我为人人，人人为我，你的下载即是别人的上传，所以请最好不要限制你的上传，在不影响使用的情况下提供最多的上传；</p>
 </li>
@@ -4678,40 +4678,6 @@
       <tags>
         <tag>转载</tag>
         <tag>保险</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>《罗生门》</title>
-    <url>/2020/05/19/%E7%BD%97%E7%94%9F%E9%97%A8/</url>
-    <content><![CDATA[<p>《<a href="https://book.douban.com/subject/4908882/">罗生门</a>》（羅生門）</p>
-<ul>
-<li><p>肆意违反道德者乃经济意识匮乏之人；一味屈从道德者乃懦夫或懒汉。</p>
-</li>
-<li><p>侏儒的祈祷</p>
-<p>我是穿五彩衣、献筋斗戏的侏儒，唯以享受太平为乐的侏儒，敬祈满足我的心愿：</p>
-<p>不要使我穷得粒米皆无，不要让我富得熊掌食厌。</p>
-<p>不要让采桑农妇都对我嗤之以鼻，不要使后宫佳丽亦对我秋波频传。</p>
-<p>不要让我愚昧得麦菽不分，不要使我聪明得明察云天。</p>
-<p>尤其不要使我成为英雄而勇敢善战。时下我便不时梦见或跨越惊涛骇浪或登临险峰之巅，即在梦中变不可能为可能——再没有比这种梦更令人惶恐不安。如与恶龙搏斗一样，我正在为同梦的对峙而苦恼不堪。请不要让我成为英雄，不要使我产生雄心义胆，永保这无能无力的我一生平安。</p>
-<p>我是醉春日之酒诵金缕之歌的侏儒，唯求日日如此天天这般。</p>
-</li>
-<li><p>古往今来，众多父母不知重复了多少遍这样一句话：「我终归是不行了，但无论如何要使子女出人头地！」</p>
-</li>
-<li><p>老好人最像的是天上的神。第一适合对其讲述欢喜，第二适合与之倾诉不幸，第三是可有可无。</p>
-</li>
-<li><p>恋爱不过是披以诗的外衣的性欲。至少不披以诗的外衣的性欲不值得称之为恋爱。</p>
-</li>
-<li><p>我们最为自豪的仅限于我们所不具有的东西。实例：Τ精通德语，但他桌子上常放的全是英语书。</p>
-</li>
-<li><p>再没有比不受罚更痛苦的惩罚。如果神保佑决不受罚则另当别论。</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>书摘</category>
-      </categories>
-      <tags>
-        <tag>阅读</tag>
       </tags>
   </entry>
   <entry>
@@ -5615,6 +5581,40 @@
       </tags>
   </entry>
   <entry>
+    <title>《罗生门》</title>
+    <url>/2020/05/19/%E7%BD%97%E7%94%9F%E9%97%A8/</url>
+    <content><![CDATA[<p>《<a href="https://book.douban.com/subject/4908882/">罗生门</a>》（羅生門）</p>
+<ul>
+<li><p>肆意违反道德者乃经济意识匮乏之人；一味屈从道德者乃懦夫或懒汉。</p>
+</li>
+<li><p>侏儒的祈祷</p>
+<p>我是穿五彩衣、献筋斗戏的侏儒，唯以享受太平为乐的侏儒，敬祈满足我的心愿：</p>
+<p>不要使我穷得粒米皆无，不要让我富得熊掌食厌。</p>
+<p>不要让采桑农妇都对我嗤之以鼻，不要使后宫佳丽亦对我秋波频传。</p>
+<p>不要让我愚昧得麦菽不分，不要使我聪明得明察云天。</p>
+<p>尤其不要使我成为英雄而勇敢善战。时下我便不时梦见或跨越惊涛骇浪或登临险峰之巅，即在梦中变不可能为可能——再没有比这种梦更令人惶恐不安。如与恶龙搏斗一样，我正在为同梦的对峙而苦恼不堪。请不要让我成为英雄，不要使我产生雄心义胆，永保这无能无力的我一生平安。</p>
+<p>我是醉春日之酒诵金缕之歌的侏儒，唯求日日如此天天这般。</p>
+</li>
+<li><p>古往今来，众多父母不知重复了多少遍这样一句话：「我终归是不行了，但无论如何要使子女出人头地！」</p>
+</li>
+<li><p>老好人最像的是天上的神。第一适合对其讲述欢喜，第二适合与之倾诉不幸，第三是可有可无。</p>
+</li>
+<li><p>恋爱不过是披以诗的外衣的性欲。至少不披以诗的外衣的性欲不值得称之为恋爱。</p>
+</li>
+<li><p>我们最为自豪的仅限于我们所不具有的东西。实例：Τ精通德语，但他桌子上常放的全是英语书。</p>
+</li>
+<li><p>再没有比不受罚更痛苦的惩罚。如果神保佑决不受罚则另当别论。</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>书摘</category>
+      </categories>
+      <tags>
+        <tag>阅读</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>青旅</title>
     <url>/2021/04/08/%E9%9D%92%E6%97%85/</url>
     <content><![CDATA[<p>在出发前就已经想好要做一个沙发客，或者住青年旅舍。说实话从来没有一个人去旅行过，过去都是和朋友家人一起住快捷酒店。这次一个人出来，住青旅的第一个目的是为了省钱，毕竟比起快捷酒店来说，青旅一天只需要几十元，便宜了一半不止。其二，由于是一个人的原因，我想着住青旅说不定就遇到志同道合的朋友，可以一起旅行。</p>
@@ -5660,6 +5660,8 @@
     <url>/about/index.html</url>
     <content><![CDATA[<p>关于我什么呢，我也不知道，放一些一直以来收集的骚话吧！</p>
 <ul>
+<li><p>你以为社会是一台精密仪器，各行精英谨慎周密地维持其运转，但经历越多越发现这个社会就是个草台班子，一小撮精英带一大帮混子，尽最大努力维持着社会的底线而已。</p>
+</li>
 <li><p>这个世界是一个巨大的草台班子。</p>
 </li>
 <li><p><a href="https://en.wikipedia.org/wiki/Perfect_is_the_enemy_of_good">Don’t let perfect be the enemy of good.</a></p>
