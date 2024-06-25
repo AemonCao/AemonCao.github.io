@@ -5,6 +5,8 @@ date: 2020-03-11 09:58:43
 
 关于我什么呢，我也不知道，放一些一直以来收集的骚话吧！
 
+* 你以为社会是一台精密仪器，各行精英谨慎周密地维持其运转，但经历越多越发现这个社会就是个草台班子，一小撮精英带一大帮混子，尽最大努力维持着社会的底线而已。
+
 * 这个世界是一个巨大的草台班子。
 
 * [Don't let perfect be the enemy of good.](https://en.wikipedia.org/wiki/Perfect_is_the_enemy_of_good)
