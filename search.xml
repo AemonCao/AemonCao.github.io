@@ -1,42 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>工厂方法模式（Factory Method Pattern）</title>
-    <url>/2020/03/31/Factory-Method-Pattern/</url>
-    <content><![CDATA[<p>工厂方法模式的目的是：</p>
-<blockquote>
-<p>通过让子类决定该创建的对象是什么，来达到将对象创建的过程封装的目的。</p>
-</blockquote>
-<span id="more"></span>
-<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>我们还是继续<a href="/2020/03/29/Simple-Factory-Pattern/" title="简单工厂模式（Simple Factory Pattern）">简单工厂模式（Simple Factory Pattern）</a>中的披萨店。</p>
-<p>首先我们需要修改一下 <code>Pizza</code> 类：</p>
-<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 披萨抽象类</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title">Pizza</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">string</span> name;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">string</span> dough;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">string</span> sauce;</span><br><span class="line">    <span class="keyword">public</span> ArrayList toppings = <span class="keyword">new</span> ArrayList();</span><br><span class="line"></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> 准备 Pizza</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Prepare</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;Prepring &quot;</span> + name);</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;Tossing dough...&quot;</span>);</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;Adding sauce...&quot;</span>);</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;Adding toppings: &quot;</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; toppings.Count; i++)</span><br><span class="line">            Console.WriteLine(<span class="string">&quot;    &quot;</span> + toppings[i]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> 烘培 Pizza</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Bake</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;Bake for 25 minutes at 350&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> 切 Pizza</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Cut</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;Cutting the pizza into diagonal slices&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> 装箱 Pizza</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Box</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;Place pizza in official PizzaStore box&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>然后通过继承，我们有了几种不同风格和口味的 <code>Pizza</code>：</p>
-<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 纽约芝士披萨</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">NYStyleCheesePizza</span> : <span class="title">Pizza</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">NYStyleCheesePizza</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        name = <span class="string">&quot;NY Style Sauce and Cheese Pizza&quot;</span>;</span><br><span class="line">        dough = <span class="string">&quot;Thin Crust Dough&quot;</span>;</span><br><span class="line">        sauce = <span class="string">&quot;Marinara Sauce&quot;</span>;</span><br><span class="line"></span><br><span class="line">        toppings.Add(<span class="string">&quot;Grated Reggiano Cheese&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 纽约素食披萨</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">NYStyleVeggiePizza</span> : <span class="title">Pizza</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">NYStyleVeggiePizza</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        name = <span class="string">&quot;NY Style Sauce and Veggie Pizza&quot;</span>;</span><br><span class="line">        dough = <span class="string">&quot;Thin Crust Dough&quot;</span>;</span><br><span class="line">        sauce = <span class="string">&quot;Marinara Sauce&quot;</span>;</span><br><span class="line"></span><br><span class="line">        toppings.Add(<span class="string">&quot;Grated Reggiano Veggie&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 芝加哥芝士披萨</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">ChicagoStyleCheesePizza</span> : <span class="title">Pizza</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ChicagoStyleCheesePizza</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        name = <span class="string">&quot;Chicago Style Deep Dish Cheese Pizza&quot;</span>;</span><br><span class="line">        dough = <span class="string">&quot;Extra Thick Crust Dough&quot;</span>;</span><br><span class="line">        sauce = <span class="string">&quot;Plum Tomato Sauce&quot;</span>;</span><br><span class="line"></span><br><span class="line">        toppings.Add(<span class="string">&quot;Shredded Mozzarella Cheese&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">override</span> <span class="keyword">void</span> <span class="title">Cut</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;Cutting the pizza into square slices&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 芝加哥素食披萨</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">ChicagoStyleVeggiePizza</span> : <span class="title">Pizza</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ChicagoStyleVeggiePizza</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        name = <span class="string">&quot;Chicago Style Deep Dish Veggie Pizza&quot;</span>;</span><br><span class="line">        dough = <span class="string">&quot;Extra Thick Crust Dough&quot;</span>;</span><br><span class="line">        sauce = <span class="string">&quot;Plum Tomato Sauce&quot;</span>;</span><br><span class="line"></span><br><span class="line">        toppings.Add(<span class="string">&quot;Shredded Mozzarella Veggie&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">override</span> <span class="keyword">void</span> <span class="title">Cut</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;Cutting the pizza into square slices&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>相比较之前的写法，新的写法将 <code>Pizza</code> 抽象类中的方法改成了虚方法（<code>virtual</code>）。这样的话，之后继承此抽象类的子类就不需要某些不用改动的方法进行重复的 <code>override</code> 了。就像代码所展示的一样，我们只对 <code>Cut</code> 方法进行了覆写，因为 Chicago Style 的披萨需要切成方形的。</p>
-<p>之后是 <code>PizzaStore</code> 的部分：</p>
-<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title">PizzaStore</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">abstract</span> Pizza <span class="title">CreatePizza</span>(<span class="params"><span class="built_in">string</span> type</span>)</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Pizza <span class="title">OrderPizza</span>(<span class="params"><span class="built_in">string</span> type</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        Pizza pizza;</span><br><span class="line"></span><br><span class="line">        pizza = CreatePizza(type);</span><br><span class="line"></span><br><span class="line">        pizza.Prepare();</span><br><span class="line">        pizza.Bake();</span><br><span class="line">        pizza.Cut();</span><br><span class="line">        pizza.Box();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> pizza;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>我们将 <code>PizzaStore</code> 也写成了一个抽象类，我们把它称作<strong>抽象创造者类</strong>，同时还有一个 <code>CreatePizza</code> 的抽象方法。而这就是<strong>工厂方法</strong>，当然，是抽象的。它返回一个 <code>Pizza</code>，这就是<strong>产品</strong>。</p>
-<p>继承：</p>
-<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">NYStylePizzaStore</span> : <span class="title">PizzaStore</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">override</span> Pizza <span class="title">CreatePizza</span>(<span class="params"><span class="built_in">string</span> type</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (type.Equals(<span class="string">&quot;cheese&quot;</span>))</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> NYStyleCheesePizza();</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (type.Equals(<span class="string">&quot;viggie&quot;</span>))</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> NYStyleVeggiePizza();</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">ChicagoStylePizzaStore</span> : <span class="title">PizzaStore</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">override</span> Pizza <span class="title">CreatePizza</span>(<span class="params"><span class="built_in">string</span> type</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (type.Equals(<span class="string">&quot;cheese&quot;</span>))</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> ChicagoStyleCheesePizza();</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (type.Equals(<span class="string">&quot;viggie&quot;</span>))</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> ChicagoStyleVeggiePizza();</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这两个 <code>PizzaStore</code> 的子类（<strong>具体创造者</strong>）实现了 <code>CreatePizza</code> 抽象方法，这就是真正实现实例化的工厂方法。</p>
-<p>我们把实例化的工作都交给了子类，或者说是交给了子类中的一个方法，这个方法就是一个工厂。</p>
-<h2 id="注意的点"><a href="#注意的点" class="headerlink" title="注意的点"></a>注意的点</h2><ul>
-<li>简单工厂和工厂方法之间的差异：简单方法把全部的事情都在一个地方做完了，而工厂方法则是定义了一个框架，通过继承抽象类来创造实际的产品。</li>
-</ul>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p><a href="https://github.com/AemonCao/DesignPattern/tree/master/DesignPattern/FactoryMethodPattern">FactoryMethodPattern</a></p>
-]]></content>
-      <categories>
-        <category>设计模式</category>
-      </categories>
-      <tags>
-        <tag>C#</tag>
-        <tag>设计模式</tag>
-        <tag>工厂方法模式</tag>
-        <tag>Factory Method Pattern</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>抽象工厂模式（Abstract Factory Pattern）</title>
     <url>/2020/04/18/Abstract-Factory-Pattern/</url>
     <content><![CDATA[<p>抽象工厂模式的定义是：</p>
@@ -98,6 +62,42 @@
         <tag>设计模式</tag>
         <tag>抽象工厂模式</tag>
         <tag>Abstract Factory Pattern</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>工厂方法模式（Factory Method Pattern）</title>
+    <url>/2020/03/31/Factory-Method-Pattern/</url>
+    <content><![CDATA[<p>工厂方法模式的目的是：</p>
+<blockquote>
+<p>通过让子类决定该创建的对象是什么，来达到将对象创建的过程封装的目的。</p>
+</blockquote>
+<span id="more"></span>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>我们还是继续<a href="/2020/03/29/Simple-Factory-Pattern/" title="简单工厂模式（Simple Factory Pattern）">简单工厂模式（Simple Factory Pattern）</a>中的披萨店。</p>
+<p>首先我们需要修改一下 <code>Pizza</code> 类：</p>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 披萨抽象类</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title">Pizza</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">string</span> name;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">string</span> dough;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">string</span> sauce;</span><br><span class="line">    <span class="keyword">public</span> ArrayList toppings = <span class="keyword">new</span> ArrayList();</span><br><span class="line"></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> 准备 Pizza</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Prepare</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;Prepring &quot;</span> + name);</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;Tossing dough...&quot;</span>);</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;Adding sauce...&quot;</span>);</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;Adding toppings: &quot;</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; toppings.Count; i++)</span><br><span class="line">            Console.WriteLine(<span class="string">&quot;    &quot;</span> + toppings[i]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> 烘培 Pizza</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Bake</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;Bake for 25 minutes at 350&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> 切 Pizza</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Cut</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;Cutting the pizza into diagonal slices&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> 装箱 Pizza</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Box</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;Place pizza in official PizzaStore box&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后通过继承，我们有了几种不同风格和口味的 <code>Pizza</code>：</p>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 纽约芝士披萨</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">NYStyleCheesePizza</span> : <span class="title">Pizza</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">NYStyleCheesePizza</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        name = <span class="string">&quot;NY Style Sauce and Cheese Pizza&quot;</span>;</span><br><span class="line">        dough = <span class="string">&quot;Thin Crust Dough&quot;</span>;</span><br><span class="line">        sauce = <span class="string">&quot;Marinara Sauce&quot;</span>;</span><br><span class="line"></span><br><span class="line">        toppings.Add(<span class="string">&quot;Grated Reggiano Cheese&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 纽约素食披萨</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">NYStyleVeggiePizza</span> : <span class="title">Pizza</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">NYStyleVeggiePizza</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        name = <span class="string">&quot;NY Style Sauce and Veggie Pizza&quot;</span>;</span><br><span class="line">        dough = <span class="string">&quot;Thin Crust Dough&quot;</span>;</span><br><span class="line">        sauce = <span class="string">&quot;Marinara Sauce&quot;</span>;</span><br><span class="line"></span><br><span class="line">        toppings.Add(<span class="string">&quot;Grated Reggiano Veggie&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 芝加哥芝士披萨</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">ChicagoStyleCheesePizza</span> : <span class="title">Pizza</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ChicagoStyleCheesePizza</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        name = <span class="string">&quot;Chicago Style Deep Dish Cheese Pizza&quot;</span>;</span><br><span class="line">        dough = <span class="string">&quot;Extra Thick Crust Dough&quot;</span>;</span><br><span class="line">        sauce = <span class="string">&quot;Plum Tomato Sauce&quot;</span>;</span><br><span class="line"></span><br><span class="line">        toppings.Add(<span class="string">&quot;Shredded Mozzarella Cheese&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">override</span> <span class="keyword">void</span> <span class="title">Cut</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;Cutting the pizza into square slices&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 芝加哥素食披萨</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">ChicagoStyleVeggiePizza</span> : <span class="title">Pizza</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ChicagoStyleVeggiePizza</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        name = <span class="string">&quot;Chicago Style Deep Dish Veggie Pizza&quot;</span>;</span><br><span class="line">        dough = <span class="string">&quot;Extra Thick Crust Dough&quot;</span>;</span><br><span class="line">        sauce = <span class="string">&quot;Plum Tomato Sauce&quot;</span>;</span><br><span class="line"></span><br><span class="line">        toppings.Add(<span class="string">&quot;Shredded Mozzarella Veggie&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">override</span> <span class="keyword">void</span> <span class="title">Cut</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;Cutting the pizza into square slices&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>相比较之前的写法，新的写法将 <code>Pizza</code> 抽象类中的方法改成了虚方法（<code>virtual</code>）。这样的话，之后继承此抽象类的子类就不需要某些不用改动的方法进行重复的 <code>override</code> 了。就像代码所展示的一样，我们只对 <code>Cut</code> 方法进行了覆写，因为 Chicago Style 的披萨需要切成方形的。</p>
+<p>之后是 <code>PizzaStore</code> 的部分：</p>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title">PizzaStore</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">abstract</span> Pizza <span class="title">CreatePizza</span>(<span class="params"><span class="built_in">string</span> type</span>)</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Pizza <span class="title">OrderPizza</span>(<span class="params"><span class="built_in">string</span> type</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        Pizza pizza;</span><br><span class="line"></span><br><span class="line">        pizza = CreatePizza(type);</span><br><span class="line"></span><br><span class="line">        pizza.Prepare();</span><br><span class="line">        pizza.Bake();</span><br><span class="line">        pizza.Cut();</span><br><span class="line">        pizza.Box();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> pizza;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们将 <code>PizzaStore</code> 也写成了一个抽象类，我们把它称作<strong>抽象创造者类</strong>，同时还有一个 <code>CreatePizza</code> 的抽象方法。而这就是<strong>工厂方法</strong>，当然，是抽象的。它返回一个 <code>Pizza</code>，这就是<strong>产品</strong>。</p>
+<p>继承：</p>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">NYStylePizzaStore</span> : <span class="title">PizzaStore</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">override</span> Pizza <span class="title">CreatePizza</span>(<span class="params"><span class="built_in">string</span> type</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (type.Equals(<span class="string">&quot;cheese&quot;</span>))</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> NYStyleCheesePizza();</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (type.Equals(<span class="string">&quot;viggie&quot;</span>))</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> NYStyleVeggiePizza();</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">ChicagoStylePizzaStore</span> : <span class="title">PizzaStore</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">override</span> Pizza <span class="title">CreatePizza</span>(<span class="params"><span class="built_in">string</span> type</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (type.Equals(<span class="string">&quot;cheese&quot;</span>))</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> ChicagoStyleCheesePizza();</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (type.Equals(<span class="string">&quot;viggie&quot;</span>))</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> ChicagoStyleVeggiePizza();</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这两个 <code>PizzaStore</code> 的子类（<strong>具体创造者</strong>）实现了 <code>CreatePizza</code> 抽象方法，这就是真正实现实例化的工厂方法。</p>
+<p>我们把实例化的工作都交给了子类，或者说是交给了子类中的一个方法，这个方法就是一个工厂。</p>
+<h2 id="注意的点"><a href="#注意的点" class="headerlink" title="注意的点"></a>注意的点</h2><ul>
+<li>简单工厂和工厂方法之间的差异：简单方法把全部的事情都在一个地方做完了，而工厂方法则是定义了一个框架，通过继承抽象类来创造实际的产品。</li>
+</ul>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p><a href="https://github.com/AemonCao/DesignPattern/tree/master/DesignPattern/FactoryMethodPattern">FactoryMethodPattern</a></p>
+]]></content>
+      <categories>
+        <category>设计模式</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+        <tag>设计模式</tag>
+        <tag>工厂方法模式</tag>
+        <tag>Factory Method Pattern</tag>
       </tags>
   </entry>
   <entry>
@@ -365,6 +365,61 @@
       </tags>
   </entry>
   <entry>
+    <title>Premiere Pro 学习笔记</title>
+    <url>/2021/03/16/Premiere-Pro-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p>本文将采用问答的形式来记录学习 Premiere Pro 中遇到的问题。</p>
+<p>目前正在学习过程中，等日后条目多了，将会进行分类。</p>
+<h3 id="导入的图片素材分辨率和项目分辨率不一致，该怎么修改图片大小？"><a href="#导入的图片素材分辨率和项目分辨率不一致，该怎么修改图片大小？" class="headerlink" title="导入的图片素材分辨率和项目分辨率不一致，该怎么修改图片大小？"></a>导入的图片素材分辨率和项目分辨率不一致，该怎么修改图片大小？</h3><ol>
+<li><p>将图片素材拖入视频轨道；</p>
+</li>
+<li><p>单击轨道中的相应素材；</p>
+</li>
+<li><p>在「源」窗口中单击「效果控件」标签页；</p>
+</li>
+<li><p>调整在「运动」效果下的「缩放」属性大小，即可同步调整素材大小了；</p>
+</li>
+<li><p>点击「缩放」标签即可在「节目」窗口显示图片大小变换框，可以直接用鼠标进行操作。</p>
+</li>
+</ol>
+<h3 id="音频如何调整声音大小？"><a href="#音频如何调整声音大小？" class="headerlink" title="音频如何调整声音大小？"></a>音频如何调整声音大小？</h3><ol>
+<li><p>将声音素材拖入视频轨道；</p>
+</li>
+<li><p>单击轨道中的相应素材；</p>
+</li>
+<li><p>在「源」窗口中单击「效果控件」标签页；</p>
+</li>
+<li><p>调整在「音量」效果下的「级别」属性大小，即可调整素材的音量大小了。</p>
+</li>
+</ol>
+<h3 id="如何将视频定格若干秒？"><a href="#如何将视频定格若干秒？" class="headerlink" title="如何将视频定格若干秒？"></a>如何将视频定格若干秒？</h3><ol>
+<li><p>「仅拖动视频」到序列；</p>
+</li>
+<li><p>在序列中，右键单击视频线前面的「fx」，选择「时间重映射」-&gt;「速度」；</p>
+</li>
+<li><p>拖动时间线到需要定格的画面；</p>
+</li>
+<li><p>在「源」窗口中单击「效果控件」标签页；</p>
+</li>
+<li><p>左键单击「视频」-&gt;「时间重映射」-&gt;「速度」-&gt;「添加/移除关键帧」来添加关键帧；</p>
+</li>
+<li><p>按住「Ctrl」+「Alt」用鼠标左键长按关键帧右侧标记并拖动需要定格的时长；</p>
+</li>
+<li><p>「仅拖动音频」到序列（这样做是为了将图像和声音分离，不然的话定格之后音画将不同步）；</p>
+</li>
+<li><p>使用「剃刀工具」在关键帧处将音频拆分为两段；</p>
+</li>
+<li><p>使用「选择工具」将后半段移动至定格结束后的位置。</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Premiere Pro</category>
+      </categories>
+      <tags>
+        <tag>Premiere Pro</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>在 Visual Studio Code 中远程开发</title>
     <url>/2020/03/08/Remote-development-in-Visual-Studio-Code/</url>
     <content><![CDATA[<p>由于近期的疫情影响，导致复工时候只能在家办公，所以捣鼓了一下远程办公，特此记录一下。</p>
@@ -442,61 +497,6 @@
       </categories>
       <tags>
         <tag>Visual Studio Code</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>Premiere Pro 学习笔记</title>
-    <url>/2021/03/16/Premiere-Pro-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<p>本文将采用问答的形式来记录学习 Premiere Pro 中遇到的问题。</p>
-<p>目前正在学习过程中，等日后条目多了，将会进行分类。</p>
-<h3 id="导入的图片素材分辨率和项目分辨率不一致，该怎么修改图片大小？"><a href="#导入的图片素材分辨率和项目分辨率不一致，该怎么修改图片大小？" class="headerlink" title="导入的图片素材分辨率和项目分辨率不一致，该怎么修改图片大小？"></a>导入的图片素材分辨率和项目分辨率不一致，该怎么修改图片大小？</h3><ol>
-<li><p>将图片素材拖入视频轨道；</p>
-</li>
-<li><p>单击轨道中的相应素材；</p>
-</li>
-<li><p>在「源」窗口中单击「效果控件」标签页；</p>
-</li>
-<li><p>调整在「运动」效果下的「缩放」属性大小，即可同步调整素材大小了；</p>
-</li>
-<li><p>点击「缩放」标签即可在「节目」窗口显示图片大小变换框，可以直接用鼠标进行操作。</p>
-</li>
-</ol>
-<h3 id="音频如何调整声音大小？"><a href="#音频如何调整声音大小？" class="headerlink" title="音频如何调整声音大小？"></a>音频如何调整声音大小？</h3><ol>
-<li><p>将声音素材拖入视频轨道；</p>
-</li>
-<li><p>单击轨道中的相应素材；</p>
-</li>
-<li><p>在「源」窗口中单击「效果控件」标签页；</p>
-</li>
-<li><p>调整在「音量」效果下的「级别」属性大小，即可调整素材的音量大小了。</p>
-</li>
-</ol>
-<h3 id="如何将视频定格若干秒？"><a href="#如何将视频定格若干秒？" class="headerlink" title="如何将视频定格若干秒？"></a>如何将视频定格若干秒？</h3><ol>
-<li><p>「仅拖动视频」到序列；</p>
-</li>
-<li><p>在序列中，右键单击视频线前面的「fx」，选择「时间重映射」-&gt;「速度」；</p>
-</li>
-<li><p>拖动时间线到需要定格的画面；</p>
-</li>
-<li><p>在「源」窗口中单击「效果控件」标签页；</p>
-</li>
-<li><p>左键单击「视频」-&gt;「时间重映射」-&gt;「速度」-&gt;「添加/移除关键帧」来添加关键帧；</p>
-</li>
-<li><p>按住「Ctrl」+「Alt」用鼠标左键长按关键帧右侧标记并拖动需要定格的时长；</p>
-</li>
-<li><p>「仅拖动音频」到序列（这样做是为了将图像和声音分离，不然的话定格之后音画将不同步）；</p>
-</li>
-<li><p>使用「剃刀工具」在关键帧处将音频拆分为两段；</p>
-</li>
-<li><p>使用「选择工具」将后半段移动至定格结束后的位置。</p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Premiere Pro</category>
-      </categories>
-      <tags>
-        <tag>Premiere Pro</tag>
       </tags>
   </entry>
   <entry>
@@ -1448,37 +1448,6 @@
       </tags>
   </entry>
   <entry>
-    <title>使用枚举和按位运算来控制用户权限</title>
-    <url>/2018/12/07/use-enumeration-and-bitwise-operations-to-control-user-permissions/</url>
-    <content><![CDATA[<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>公司重构系统，我被分配到了用户管理模块，在做到权限的时候发现之前的权限管理是用一个长的字符串来存储所有权限的，例如：</p>
-<span id="more"></span>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">5101110</span><br><span class="line">ABCDEFG</span><br></pre></td></tr></table></figure>
-<p>上面的 <code>7</code> 位数字分别对应下面的 <code>7</code> 个权限，除了第一位为权限等级（分为 1 至 5 档）外，其他的都是是否拥有该权限的状态（1 代表拥有该权限，0 代表没有该权限）。 这样的做法虽然看似简单，但在代码编写中会麻烦很多，特别是当权限种类数量很多的时候。所以，在查阅资料后，我决定<strong>使用枚举和按位运算来控制用户权限</strong>（点题），在向 leader 请示后，开始改造。</p>
-<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>首先要把原有的权限拆分为两部分，一部分是第一位的权限等级，另一部分是各个权限状态，需要改造的主要是各个权限状态。 为了简化步骤，我把权限数量缩小为 <code>6</code> 个，实际有 <code>15</code> 个（并且未来还可能增加），具体是这样的： 一个六个权限，分别用 0 和 1 来表示<strong>有</strong>或<strong>没有</strong>对应的权限：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">17</span><br><span class="line"></span><br><span class="line">FEDCBA</span><br><span class="line">010001B</span><br></pre></td></tr></table></figure>
-<p>如上，代表用户拥有 <code>A</code> 权限和 <code>E</code> 权限，同理可得如果有 一个用户拥有 <code>B</code> 权限、<code>C</code> 权限和 <code>D</code> 权限，那我们就可以这样计算：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">2 | 4 | 8 = 14</span><br><span class="line"></span><br><span class="line">  000010B</span><br><span class="line">  000100B</span><br><span class="line">| 001000B</span><br><span class="line">---------</span><br><span class="line">  001110B</span><br></pre></td></tr></table></figure>
-<p>然后我们就可以用 <code>001110</code> 来代表用户所拥有的权限了。 当我们需要<strong>添加权限</strong>的时候，我们就可以用<strong>按位或</strong>（<code>|</code>）来计算，比如我们要为上面的 <code>001110B</code> 来添加一个 F 权限（<code>100000B</code>）：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">001110B | 100000B = 101110B</span><br><span class="line"></span><br><span class="line">14 | 32 = 45</span><br></pre></td></tr></table></figure>
-<p>而且就算用户已经有了需要添加的权限，再进行<strong>按位或</strong>的运算也是没有问题的：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">45 | 32 = 45</span><br><span class="line"></span><br><span class="line">101110B | 100000B = 101110B</span><br></pre></td></tr></table></figure>
-<p>当我们需要<strong>移除权限</strong>的时候，我们就要用到<strong>与非运算</strong>（<code>&amp;</code> 和 <code>~</code>）：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">45 &amp; ~32 = 14</span><br><span class="line"></span><br><span class="line">101110B &amp; ~100000B = 001110B</span><br></pre></td></tr></table></figure>
-<p>同样的，就算用户本来没有这个权限，在移除权限时也不会有问题：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">14 &amp; ~32 = 14</span><br><span class="line"></span><br><span class="line">001110B &amp; ~100000B = 001110B</span><br></pre></td></tr></table></figure>
-<p>当我们需要判断一个用户<strong>是否拥有权限</strong>的时候，可以用用户的权限来<strong>与</strong>（<code>&amp;</code>）要判断的权限，当结果还是判断的权限时，则代表用户有这个权限：</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">45 &amp; 32 = 32</span><br><span class="line"></span><br><span class="line">101110B &amp; 100000B = 100000B</span><br></pre></td></tr></table></figure>
-<h2 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h2><p>首先列出所有的权限的枚举：</p>
-<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 权限集枚举</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="keyword">public</span> <span class="built_in">enum</span> RightsSet</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> A 权限</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    ARights = <span class="number">1</span>,</span><br><span class="line"></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> B 权限</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    BRights = <span class="number">2</span>,</span><br><span class="line"></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> C 权限</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    CRights = <span class="number">4</span>,</span><br><span class="line"></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> D 权限</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    DRights = <span class="number">8</span>,</span><br><span class="line"></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> E 权限</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    ERights = <span class="number">16</span>,</span><br><span class="line"></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> F 权限</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    FRights = <span class="number">32</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>注意，枚举的值一定要是 <code>2</code> 的 N 次幂形式。 然后是三个与权限相关个公共静态方法：</p>
-<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 判断是否拥有一个权限</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;userRights&quot;&gt;</span>用户原有的权限<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;newRights&quot;&gt;</span>需要判断的权限<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;returns&gt;</span>是否拥有一个权限<span class="doctag">&lt;/returns&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Boolean <span class="title">hasRights</span>(<span class="params">RightsSet userRights, RightsSet newRights</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> (userRights &amp; newRights) == newRights;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 添加一个权限</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;userRights&quot;&gt;</span>用户原有的权限<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;newRights&quot;&gt;</span>需要添加的权限<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;returns&gt;</span>用户的新权限<span class="doctag">&lt;/returns&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> RightsSet <span class="title">addRights</span>(<span class="params">RightsSet userRights, RightsSet newRights</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> userRights | newRights;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 删除一个权限</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;userRights&quot;&gt;</span>用户原有的权限<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;newRights&quot;&gt;</span>需要删除的权限<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;returns&gt;</span>用户的新权限<span class="doctag">&lt;/returns&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> RightsSet <span class="title">deleteRights</span>(<span class="params">RightsSet userRights, RightsSet newRights</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> userRights &amp; ~newRights;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>位运算是最基础的计算机运算，各个语言的用法不会有太大的变化，所以不管是什么语言应该都是可以实现的； 在数据库中我们只需要存储 <code>RightsSet</code> 的值就可以代表各种权限的组合结果了； 在数据库操作中，如果我们要对某一类的权限进行处理时，也不需要像以前一样进行复杂的字符串处理了； 并且位运算作为基础的计算机运算的速度是非常快的，各种数据库也都支持位运算； 而在代码编写中，我们只需要使用权限的名称（类似于上方代码中的枚举标志符 <code>ARights</code>、<code>BRights</code>）来进行操作，而不用记忆各个权限对应的数值； 当在前端进行权限更改等操作时，我们也可以直接在前端计算好 <code>RightsSet</code> 的值，再传给后台，反过来前台显示也是一样；</p>
-]]></content>
-      <categories>
-        <category>C#</category>
-      </categories>
-  </entry>
-  <entry>
     <title>依赖注入那些事儿</title>
     <url>/2017/09/15/those-stories-of-dependency-injection/</url>
     <content><![CDATA[<p>为方便以后查阅，特地转载一下，整理为 <a href="/2017/09/15/those-stories-of-dependency-injection/md.txt" title="Markdown格式">Markdown格式</a>。</p>
@@ -1624,6 +1593,37 @@
         <tag>依赖注入</tag>
         <tag>转载</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>使用枚举和按位运算来控制用户权限</title>
+    <url>/2018/12/07/use-enumeration-and-bitwise-operations-to-control-user-permissions/</url>
+    <content><![CDATA[<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>公司重构系统，我被分配到了用户管理模块，在做到权限的时候发现之前的权限管理是用一个长的字符串来存储所有权限的，例如：</p>
+<span id="more"></span>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">5101110</span><br><span class="line">ABCDEFG</span><br></pre></td></tr></table></figure>
+<p>上面的 <code>7</code> 位数字分别对应下面的 <code>7</code> 个权限，除了第一位为权限等级（分为 1 至 5 档）外，其他的都是是否拥有该权限的状态（1 代表拥有该权限，0 代表没有该权限）。 这样的做法虽然看似简单，但在代码编写中会麻烦很多，特别是当权限种类数量很多的时候。所以，在查阅资料后，我决定<strong>使用枚举和按位运算来控制用户权限</strong>（点题），在向 leader 请示后，开始改造。</p>
+<h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>首先要把原有的权限拆分为两部分，一部分是第一位的权限等级，另一部分是各个权限状态，需要改造的主要是各个权限状态。 为了简化步骤，我把权限数量缩小为 <code>6</code> 个，实际有 <code>15</code> 个（并且未来还可能增加），具体是这样的： 一个六个权限，分别用 0 和 1 来表示<strong>有</strong>或<strong>没有</strong>对应的权限：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">17</span><br><span class="line"></span><br><span class="line">FEDCBA</span><br><span class="line">010001B</span><br></pre></td></tr></table></figure>
+<p>如上，代表用户拥有 <code>A</code> 权限和 <code>E</code> 权限，同理可得如果有 一个用户拥有 <code>B</code> 权限、<code>C</code> 权限和 <code>D</code> 权限，那我们就可以这样计算：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">2 | 4 | 8 = 14</span><br><span class="line"></span><br><span class="line">  000010B</span><br><span class="line">  000100B</span><br><span class="line">| 001000B</span><br><span class="line">---------</span><br><span class="line">  001110B</span><br></pre></td></tr></table></figure>
+<p>然后我们就可以用 <code>001110</code> 来代表用户所拥有的权限了。 当我们需要<strong>添加权限</strong>的时候，我们就可以用<strong>按位或</strong>（<code>|</code>）来计算，比如我们要为上面的 <code>001110B</code> 来添加一个 F 权限（<code>100000B</code>）：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">001110B | 100000B = 101110B</span><br><span class="line"></span><br><span class="line">14 | 32 = 45</span><br></pre></td></tr></table></figure>
+<p>而且就算用户已经有了需要添加的权限，再进行<strong>按位或</strong>的运算也是没有问题的：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">45 | 32 = 45</span><br><span class="line"></span><br><span class="line">101110B | 100000B = 101110B</span><br></pre></td></tr></table></figure>
+<p>当我们需要<strong>移除权限</strong>的时候，我们就要用到<strong>与非运算</strong>（<code>&amp;</code> 和 <code>~</code>）：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">45 &amp; ~32 = 14</span><br><span class="line"></span><br><span class="line">101110B &amp; ~100000B = 001110B</span><br></pre></td></tr></table></figure>
+<p>同样的，就算用户本来没有这个权限，在移除权限时也不会有问题：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">14 &amp; ~32 = 14</span><br><span class="line"></span><br><span class="line">001110B &amp; ~100000B = 001110B</span><br></pre></td></tr></table></figure>
+<p>当我们需要判断一个用户<strong>是否拥有权限</strong>的时候，可以用用户的权限来<strong>与</strong>（<code>&amp;</code>）要判断的权限，当结果还是判断的权限时，则代表用户有这个权限：</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">45 &amp; 32 = 32</span><br><span class="line"></span><br><span class="line">101110B &amp; 100000B = 100000B</span><br></pre></td></tr></table></figure>
+<h2 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h2><p>首先列出所有的权限的枚举：</p>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 权限集枚举</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="keyword">public</span> <span class="built_in">enum</span> RightsSet</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> A 权限</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    ARights = <span class="number">1</span>,</span><br><span class="line"></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> B 权限</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    BRights = <span class="number">2</span>,</span><br><span class="line"></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> C 权限</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    CRights = <span class="number">4</span>,</span><br><span class="line"></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> D 权限</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    DRights = <span class="number">8</span>,</span><br><span class="line"></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> E 权限</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    ERights = <span class="number">16</span>,</span><br><span class="line"></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> F 权限</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    FRights = <span class="number">32</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注意，枚举的值一定要是 <code>2</code> 的 N 次幂形式。 然后是三个与权限相关个公共静态方法：</p>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 判断是否拥有一个权限</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;userRights&quot;&gt;</span>用户原有的权限<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;newRights&quot;&gt;</span>需要判断的权限<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;returns&gt;</span>是否拥有一个权限<span class="doctag">&lt;/returns&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Boolean <span class="title">hasRights</span>(<span class="params">RightsSet userRights, RightsSet newRights</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> (userRights &amp; newRights) == newRights;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 添加一个权限</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;userRights&quot;&gt;</span>用户原有的权限<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;newRights&quot;&gt;</span>需要添加的权限<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;returns&gt;</span>用户的新权限<span class="doctag">&lt;/returns&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> RightsSet <span class="title">addRights</span>(<span class="params">RightsSet userRights, RightsSet newRights</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> userRights | newRights;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 删除一个权限</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;userRights&quot;&gt;</span>用户原有的权限<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;newRights&quot;&gt;</span>需要删除的权限<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;returns&gt;</span>用户的新权限<span class="doctag">&lt;/returns&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> RightsSet <span class="title">deleteRights</span>(<span class="params">RightsSet userRights, RightsSet newRights</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> userRights &amp; ~newRights;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>位运算是最基础的计算机运算，各个语言的用法不会有太大的变化，所以不管是什么语言应该都是可以实现的； 在数据库中我们只需要存储 <code>RightsSet</code> 的值就可以代表各种权限的组合结果了； 在数据库操作中，如果我们要对某一类的权限进行处理时，也不需要像以前一样进行复杂的字符串处理了； 并且位运算作为基础的计算机运算的速度是非常快的，各种数据库也都支持位运算； 而在代码编写中，我们只需要使用权限的名称（类似于上方代码中的枚举标志符 <code>ARights</code>、<code>BRights</code>）来进行操作，而不用记忆各个权限对应的数值； 当在前端进行权限更改等操作时，我们也可以直接在前端计算好 <code>RightsSet</code> 的值，再传给后台，反过来前台显示也是一样；</p>
+]]></content>
+      <categories>
+        <category>C#</category>
+      </categories>
   </entry>
   <entry>
     <title>使用 raspberry 配合 frp 来进行远程开机</title>
@@ -1779,6 +1779,30 @@
       </categories>
   </entry>
   <entry>
+    <title>微信小程序——RushA</title>
+    <url>/2017/08/16/wechat-mini-programs-rusha/</url>
+    <content><![CDATA[<p>因为现在是三个人合租，所以免不了 AA，但是在付钱的时候 AA，未免也太麻烦了。所以就要等到事后再去算账，然后分别转账，数量少还好，如果数量多的话，计算起来就会特别繁琐，尤其是有些东西不是完全公平的 AA，每个人所占的比例不同。 由此，想要借助<strong>微信小程序</strong>平台来进行一款记账小程序的开发，也可以借此学习一下小程序。</p>
+<span id="more"></span>
+<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><h3 id="名字"><a href="#名字" class="headerlink" title="名字"></a>名字</h3><p>首先是名字，叫做 <em>RushA</em> ，本来是想取名叫 <em>RushB</em> 的，但是被已经有这个名字了，所以只能退而求其次。名字的来源是 <code>CS:GO</code> 中一个「战术」，意思就是 5 人快速去 B 点，从而达到出其不意的效果。通常这么使用：</p>
+<blockquote>
+<p>Rush B, dont stop.</p>
+</blockquote>
+<p>其他的话没有什么别的意思，纯粹是应景。</p>
+<h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><p>然后是需要实现的功能：</p>
+<ol>
+<li><p>实现两人以上的 <code>AA</code> 账单分配；</p>
+</li>
+<li><p>能够动态的添加人数，并且添加要方便，每添加一个人就要分配一个颜色，这样会比较容易辨别，最好添加几个快捷选项；</p>
+</li>
+<li><p>在添加人员之后，则进入记账页面，可以一条一条的添加项目。</p>
+</li>
+</ol>
+<h3 id="待续"><a href="#待续" class="headerlink" title="待续"></a>待续</h3>]]></content>
+      <categories>
+        <category>小程序</category>
+      </categories>
+  </entry>
+  <entry>
     <title>What is this thing 10</title>
     <url>/2021/04/22/whatisthisthing-10/</url>
     <content><![CDATA[<p><a href="https://www.reddit.com/r/whatisthisthing/">What is this thing</a> 是 reddit 上的一个社区（community），上面时不时会有人发一些没见过的玩意来提问。</p>
@@ -1900,30 +1924,6 @@
         <tag>翻译</tag>
         <tag>What is this thing?</tag>
       </tags>
-  </entry>
-  <entry>
-    <title>微信小程序——RushA</title>
-    <url>/2017/08/16/wechat-mini-programs-rusha/</url>
-    <content><![CDATA[<p>因为现在是三个人合租，所以免不了 AA，但是在付钱的时候 AA，未免也太麻烦了。所以就要等到事后再去算账，然后分别转账，数量少还好，如果数量多的话，计算起来就会特别繁琐，尤其是有些东西不是完全公平的 AA，每个人所占的比例不同。 由此，想要借助<strong>微信小程序</strong>平台来进行一款记账小程序的开发，也可以借此学习一下小程序。</p>
-<span id="more"></span>
-<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><h3 id="名字"><a href="#名字" class="headerlink" title="名字"></a>名字</h3><p>首先是名字，叫做 <em>RushA</em> ，本来是想取名叫 <em>RushB</em> 的，但是被已经有这个名字了，所以只能退而求其次。名字的来源是 <code>CS:GO</code> 中一个「战术」，意思就是 5 人快速去 B 点，从而达到出其不意的效果。通常这么使用：</p>
-<blockquote>
-<p>Rush B, dont stop.</p>
-</blockquote>
-<p>其他的话没有什么别的意思，纯粹是应景。</p>
-<h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><p>然后是需要实现的功能：</p>
-<ol>
-<li><p>实现两人以上的 <code>AA</code> 账单分配；</p>
-</li>
-<li><p>能够动态的添加人数，并且添加要方便，每添加一个人就要分配一个颜色，这样会比较容易辨别，最好添加几个快捷选项；</p>
-</li>
-<li><p>在添加人员之后，则进入记账页面，可以一条一条的添加项目。</p>
-</li>
-</ol>
-<h3 id="待续"><a href="#待续" class="headerlink" title="待续"></a>待续</h3>]]></content>
-      <categories>
-        <category>小程序</category>
-      </categories>
   </entry>
   <entry>
     <title>What is this thing 11</title>
@@ -2124,6 +2124,94 @@
       </tags>
   </entry>
   <entry>
+    <title>What is this thing 14</title>
+    <url>/2021/08/21/whatisthisthing-14/</url>
+    <content><![CDATA[<p><a href="https://www.reddit.com/r/whatisthisthing/">What is this thing</a> 是 reddit 上的一个社区（community），上面时不时会有人发一些没见过的玩意来提问。</p>
+<p>一起来看看吧！</p>
+<span id="more"></span>
+<h3 id="保鲜膜"><a href="#保鲜膜" class="headerlink" title="保鲜膜"></a>保鲜膜</h3><blockquote>
+<p>Q: What is this cling film type stuff on Tom Daley’s arms, and what’s it for?</p>
+</blockquote>
+<p>汤姆·戴利手臂上的这种粘膜式的东西是什么，它有什么用？</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-14/保鲜膜.jpg" alt="保鲜膜"></p>
+<blockquote>
+<p>A: Cling filmed ice packs.</p>
+</blockquote>
+<p>保鲜膜冰袋。</p>
+<p><a href="https://www.reddit.com/r/whatisthisthing/comments/owgb70/what_is_this_cling_film_type_stuff_on_tom_daleys/">https://www.reddit.com/r/whatisthisthing/comments/owgb70/what_is_this_cling_film_type_stuff_on_tom_daleys/</a></p>
+<h3 id="液体背心"><a href="#液体背心" class="headerlink" title="液体背心"></a>液体背心</h3><blockquote>
+<p>Q: What are these vest with liquid pouches worn by olympic sailors for? Worn by Dutch sailors Bekkering and Duetz during a post race interview.</p>
+</blockquote>
+<p>奥运帆船运动员穿的这种带液体袋的背心是干什么用的？荷兰运动员贝克林和杜茨在赛后接受采访时穿的衣服。</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-14/液体背心.png" alt="液体背心"></p>
+<blockquote>
+<p>A: They are cooling vests.</p>
+</blockquote>
+<p>它们是冷却背心。</p>
+<p><a href="https://www.reddit.com/r/whatisthisthing/comments/oui3f3/what_are_these_vest_with_liquid_pouches_worn_by/">https://www.reddit.com/r/whatisthisthing/comments/oui3f3/what_are_these_vest_with_liquid_pouches_worn_by/</a></p>
+<h3 id="九个钉子"><a href="#九个钉子" class="headerlink" title="九个钉子"></a>九个钉子</h3><blockquote>
+<p>Q: What are these pegs at the end of my bed used for? We thought they were for shoes, but there are 9 of them.</p>
+</blockquote>
+<p>我床尾的这些钉子是干什么用的？我们以为是放鞋的，但其实有 9 个。</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-14/床.jpg" alt="床"></p>
+<blockquote>
+<p>A: Anchor points for rope play?</p>
+</blockquote>
+<p>玩绳子时候用的锚点？</p>
+<p><a href="https://www.reddit.com/r/whatisthisthing/comments/or4uz3/what_are_these_pegs_at_the_end_of_my_bed_used_for/">https://www.reddit.com/r/whatisthisthing/comments/or4uz3/what_are_these_pegs_at_the_end_of_my_bed_used_for/</a></p>
+<h3 id="笼子"><a href="#笼子" class="headerlink" title="笼子"></a>笼子</h3><blockquote>
+<p>Q: Just bought a lake home and found three of these in the water next to the pier. Criss-Cross stack of corrugated pipes wrapped in plastic netting all weight down by bricks.</p>
+</blockquote>
+<p>刚买了一个湖边的房子，在码头旁边的水里发现了三个这样的东西。纵横交错的波纹管堆叠，用塑料网包裹，都是用砖头压住的。</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-14/笼子.png" alt="笼子"></p>
+<blockquote>
+<p>A: It is a fish crib. It is a device to give baby fish a place to hide from the big boys. They also make for some good fishing as the lunckers will hang around hoping for a few little ones to come out.</p>
+</blockquote>
+<p>它是一个鱼床。它是一种给小鱼提供躲避大鱼的地方的装置。它们也是一好的捕鱼方式，因为小鱼会在周围徘徊，希望有几个小鱼出来。</p>
+<p><a href="https://www.reddit.com/r/whatisthisthing/comments/ova47s/just_bought_a_lake_home_and_found_three_of_these/">https://www.reddit.com/r/whatisthisthing/comments/ova47s/just_bought_a_lake_home_and_found_three_of_these/</a></p>
+<h3 id="茶棍"><a href="#茶棍" class="headerlink" title="茶棍"></a>茶棍</h3><blockquote>
+<p>Q: Wife ordered rolls of thank you stickers on ebay. This came instead. Already called for return. What are they? Green cylindrical rolls of what smell like green tea? I’m a big tea drinker and that’s what I think.</p>
+</blockquote>
+<p>妻子在 eBay 上订购了几卷感谢贴纸。结果却送来了这个。已经打电话要求退货了。这些是什么？绿色的圆柱形卷筒，闻起来像绿茶？作为一个喜欢喝茶的人，我是这么想的。</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-14/茶棍.jpg" alt="茶棍"></p>
+<blockquote>
+<p>A: They kind of look like plant fertilizer sticks</p>
+</blockquote>
+<p>它们看起来有点像植物肥料棒。</p>
+<p><a href="https://www.reddit.com/r/whatisthisthing/comments/orkug9/wife_ordered_rolls_of_thank_you_stickers_on_ebay/">https://www.reddit.com/r/whatisthisthing/comments/orkug9/wife_ordered_rolls_of_thank_you_stickers_on_ebay/</a></p>
+<h3 id="可口可乐"><a href="#可口可乐" class="headerlink" title="可口可乐"></a>可口可乐</h3><blockquote>
+<p>Q: What is this thing on the bar counter at work? It is made of metal and hollow.</p>
+</blockquote>
+<p>工作的酒吧柜台上的这个东西是什么？它是由金属制成的，是空心的。</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-14/可口可乐.jpg" alt="可口可乐"></p>
+<blockquote>
+<p>A: It’s an old fashioned countertop bottle opener, I’ve seen loads of these in old pubs. The bottles are opened from the other side.</p>
+</blockquote>
+<p>这是一种老式的台面开瓶器，我在老酒馆里见过很多这种开瓶器。瓶子从另一侧打开。</p>
+<p><a href="https://www.reddit.com/r/whatisthisthing/comments/ovtwdb/what_is_this_thing_on_the_bar_counter_at_work_it/">https://www.reddit.com/r/whatisthisthing/comments/ovtwdb/what_is_this_thing_on_the_bar_counter_at_work_it/</a></p>
+<h3 id="量子芯片"><a href="#量子芯片" class="headerlink" title="量子芯片"></a>量子芯片</h3><blockquote>
+<p>Q: New bra I bought online has a “microchip” inside of it. Looks pretty fake to me but can’t pinpoint what is it exactly and why such lengths to have it inside the hems like this.</p>
+</blockquote>
+<p>我在网上买的新文胸里面有一个「微芯片」。在我看来很假，但不知道它到底是什么，也不知道为什么要把它放在这样的褶边里。</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-14/量子芯片1.jpg" alt="量子芯片"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-14/量子芯片2.jpg" alt="量子芯片"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-14/量子芯片3.jpg" alt="量子芯片"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-14/量子芯片4.jpg" alt="量子芯片"></p>
+<blockquote>
+<p>A: Google says the Chinese text says ‘quantum computer’. I think this is just a marketing gag, without function.</p>
+</blockquote>
+<p>谷歌说上面的中文是「量子芯片」。我认为这只是一个营销噱头，没有任何作用。</p>
+<p><a href="https://www.reddit.com/r/whatisthisthing/comments/otxuxp/new_bra_i_bought_online_has_a_microchip_inside_of/">https://www.reddit.com/r/whatisthisthing/comments/otxuxp/new_bra_i_bought_online_has_a_microchip_inside_of/</a></p>
+]]></content>
+      <categories>
+        <category>What is this thing?</category>
+      </categories>
+      <tags>
+        <tag>翻译</tag>
+        <tag>What is this thing?</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>What is this thing 13</title>
     <url>/2021/07/22/whatisthisthing-13/</url>
     <content><![CDATA[<p><a href="https://www.reddit.com/r/whatisthisthing/">What is this thing</a> 是 reddit 上的一个社区（community），上面时不时会有人发一些没见过的玩意来提问。</p>
@@ -2240,94 +2328,6 @@
       </tags>
   </entry>
   <entry>
-    <title>What is this thing 14</title>
-    <url>/2021/08/21/whatisthisthing-14/</url>
-    <content><![CDATA[<p><a href="https://www.reddit.com/r/whatisthisthing/">What is this thing</a> 是 reddit 上的一个社区（community），上面时不时会有人发一些没见过的玩意来提问。</p>
-<p>一起来看看吧！</p>
-<span id="more"></span>
-<h3 id="保鲜膜"><a href="#保鲜膜" class="headerlink" title="保鲜膜"></a>保鲜膜</h3><blockquote>
-<p>Q: What is this cling film type stuff on Tom Daley’s arms, and what’s it for?</p>
-</blockquote>
-<p>汤姆·戴利手臂上的这种粘膜式的东西是什么，它有什么用？</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-14/保鲜膜.jpg" alt="保鲜膜"></p>
-<blockquote>
-<p>A: Cling filmed ice packs.</p>
-</blockquote>
-<p>保鲜膜冰袋。</p>
-<p><a href="https://www.reddit.com/r/whatisthisthing/comments/owgb70/what_is_this_cling_film_type_stuff_on_tom_daleys/">https://www.reddit.com/r/whatisthisthing/comments/owgb70/what_is_this_cling_film_type_stuff_on_tom_daleys/</a></p>
-<h3 id="液体背心"><a href="#液体背心" class="headerlink" title="液体背心"></a>液体背心</h3><blockquote>
-<p>Q: What are these vest with liquid pouches worn by olympic sailors for? Worn by Dutch sailors Bekkering and Duetz during a post race interview.</p>
-</blockquote>
-<p>奥运帆船运动员穿的这种带液体袋的背心是干什么用的？荷兰运动员贝克林和杜茨在赛后接受采访时穿的衣服。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-14/液体背心.png" alt="液体背心"></p>
-<blockquote>
-<p>A: They are cooling vests.</p>
-</blockquote>
-<p>它们是冷却背心。</p>
-<p><a href="https://www.reddit.com/r/whatisthisthing/comments/oui3f3/what_are_these_vest_with_liquid_pouches_worn_by/">https://www.reddit.com/r/whatisthisthing/comments/oui3f3/what_are_these_vest_with_liquid_pouches_worn_by/</a></p>
-<h3 id="九个钉子"><a href="#九个钉子" class="headerlink" title="九个钉子"></a>九个钉子</h3><blockquote>
-<p>Q: What are these pegs at the end of my bed used for? We thought they were for shoes, but there are 9 of them.</p>
-</blockquote>
-<p>我床尾的这些钉子是干什么用的？我们以为是放鞋的，但其实有 9 个。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-14/床.jpg" alt="床"></p>
-<blockquote>
-<p>A: Anchor points for rope play?</p>
-</blockquote>
-<p>玩绳子时候用的锚点？</p>
-<p><a href="https://www.reddit.com/r/whatisthisthing/comments/or4uz3/what_are_these_pegs_at_the_end_of_my_bed_used_for/">https://www.reddit.com/r/whatisthisthing/comments/or4uz3/what_are_these_pegs_at_the_end_of_my_bed_used_for/</a></p>
-<h3 id="笼子"><a href="#笼子" class="headerlink" title="笼子"></a>笼子</h3><blockquote>
-<p>Q: Just bought a lake home and found three of these in the water next to the pier. Criss-Cross stack of corrugated pipes wrapped in plastic netting all weight down by bricks.</p>
-</blockquote>
-<p>刚买了一个湖边的房子，在码头旁边的水里发现了三个这样的东西。纵横交错的波纹管堆叠，用塑料网包裹，都是用砖头压住的。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-14/笼子.png" alt="笼子"></p>
-<blockquote>
-<p>A: It is a fish crib. It is a device to give baby fish a place to hide from the big boys. They also make for some good fishing as the lunckers will hang around hoping for a few little ones to come out.</p>
-</blockquote>
-<p>它是一个鱼床。它是一种给小鱼提供躲避大鱼的地方的装置。它们也是一好的捕鱼方式，因为小鱼会在周围徘徊，希望有几个小鱼出来。</p>
-<p><a href="https://www.reddit.com/r/whatisthisthing/comments/ova47s/just_bought_a_lake_home_and_found_three_of_these/">https://www.reddit.com/r/whatisthisthing/comments/ova47s/just_bought_a_lake_home_and_found_three_of_these/</a></p>
-<h3 id="茶棍"><a href="#茶棍" class="headerlink" title="茶棍"></a>茶棍</h3><blockquote>
-<p>Q: Wife ordered rolls of thank you stickers on ebay. This came instead. Already called for return. What are they? Green cylindrical rolls of what smell like green tea? I’m a big tea drinker and that’s what I think.</p>
-</blockquote>
-<p>妻子在 eBay 上订购了几卷感谢贴纸。结果却送来了这个。已经打电话要求退货了。这些是什么？绿色的圆柱形卷筒，闻起来像绿茶？作为一个喜欢喝茶的人，我是这么想的。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-14/茶棍.jpg" alt="茶棍"></p>
-<blockquote>
-<p>A: They kind of look like plant fertilizer sticks</p>
-</blockquote>
-<p>它们看起来有点像植物肥料棒。</p>
-<p><a href="https://www.reddit.com/r/whatisthisthing/comments/orkug9/wife_ordered_rolls_of_thank_you_stickers_on_ebay/">https://www.reddit.com/r/whatisthisthing/comments/orkug9/wife_ordered_rolls_of_thank_you_stickers_on_ebay/</a></p>
-<h3 id="可口可乐"><a href="#可口可乐" class="headerlink" title="可口可乐"></a>可口可乐</h3><blockquote>
-<p>Q: What is this thing on the bar counter at work? It is made of metal and hollow.</p>
-</blockquote>
-<p>工作的酒吧柜台上的这个东西是什么？它是由金属制成的，是空心的。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-14/可口可乐.jpg" alt="可口可乐"></p>
-<blockquote>
-<p>A: It’s an old fashioned countertop bottle opener, I’ve seen loads of these in old pubs. The bottles are opened from the other side.</p>
-</blockquote>
-<p>这是一种老式的台面开瓶器，我在老酒馆里见过很多这种开瓶器。瓶子从另一侧打开。</p>
-<p><a href="https://www.reddit.com/r/whatisthisthing/comments/ovtwdb/what_is_this_thing_on_the_bar_counter_at_work_it/">https://www.reddit.com/r/whatisthisthing/comments/ovtwdb/what_is_this_thing_on_the_bar_counter_at_work_it/</a></p>
-<h3 id="量子芯片"><a href="#量子芯片" class="headerlink" title="量子芯片"></a>量子芯片</h3><blockquote>
-<p>Q: New bra I bought online has a “microchip” inside of it. Looks pretty fake to me but can’t pinpoint what is it exactly and why such lengths to have it inside the hems like this.</p>
-</blockquote>
-<p>我在网上买的新文胸里面有一个「微芯片」。在我看来很假，但不知道它到底是什么，也不知道为什么要把它放在这样的褶边里。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-14/量子芯片1.jpg" alt="量子芯片"></p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-14/量子芯片2.jpg" alt="量子芯片"></p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-14/量子芯片3.jpg" alt="量子芯片"></p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-14/量子芯片4.jpg" alt="量子芯片"></p>
-<blockquote>
-<p>A: Google says the Chinese text says ‘quantum computer’. I think this is just a marketing gag, without function.</p>
-</blockquote>
-<p>谷歌说上面的中文是「量子芯片」。我认为这只是一个营销噱头，没有任何作用。</p>
-<p><a href="https://www.reddit.com/r/whatisthisthing/comments/otxuxp/new_bra_i_bought_online_has_a_microchip_inside_of/">https://www.reddit.com/r/whatisthisthing/comments/otxuxp/new_bra_i_bought_online_has_a_microchip_inside_of/</a></p>
-]]></content>
-      <categories>
-        <category>What is this thing?</category>
-      </categories>
-      <tags>
-        <tag>翻译</tag>
-        <tag>What is this thing?</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>What is this thing 15</title>
     <url>/2021/09/22/whatisthisthing-15/</url>
     <content><![CDATA[<p><a href="https://www.reddit.com/r/whatisthisthing/">What is this thing</a> 是 reddit 上的一个社区（community），上面时不时会有人发一些没见过的玩意来提问。</p>
@@ -2417,107 +2417,6 @@
 </blockquote>
 <p>对我来说看起来像一个真菌菌落。 来源：微生物学家。</p>
 <p><a href="https://www.reddit.com/r/whatisthisthing/comments/pif0ye/white_blob_in_a_bottled_vitamin_water/">https://www.reddit.com/r/whatisthisthing/comments/pif0ye/white_blob_in_a_bottled_vitamin_water/</a></p>
-]]></content>
-      <categories>
-        <category>What is this thing?</category>
-      </categories>
-      <tags>
-        <tag>翻译</tag>
-        <tag>What is this thing?</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>What is this thing 2</title>
-    <url>/2020/09/16/whatisthisthing-2/</url>
-    <content><![CDATA[<p><a href="https://www.reddit.com/r/whatisthisthing/">What is this thing</a> 是 reddit 上的一个社区（community），上面时不时会有人发一些没见过的玩意来提问。</p>
-<p>一起来看看吧！</p>
-<span id="more"></span>
-<h3 id="瓦片"><a href="#瓦片" class="headerlink" title="瓦片"></a>瓦片</h3><blockquote>
-<p>Q: Slave Tile?? Found at an antique store in Orlando. WITT</p>
-</blockquote>
-<p>奴隶瓦片？在一家奥兰多的古董店里找到的。这是个嘛？</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-2/slave-tile.jpg" alt="weird-notes-2.jpg"></p>
-<!-- <img data-src="/2020/09/16/whatisthisthing-2/slave-tile.jpg" class="slave-tile"> -->
-<blockquote>
-<p>A: Tiles of this type were reportedly made and used by slaves in Georgia as grave markers and garden tiles.</p>
-</blockquote>
-<p>据说，这种类型的瓦片是乔治亚州的奴隶制造的，被用于墓碑和花园的瓦片。</p>
-<p><a href="https://www.reddit.com/r/whatisthisthing/comments/it9uvo/slave_tile_found_at_an_antique_store_in_orlando/">https://www.reddit.com/r/whatisthisthing/comments/it9uvo/slave_tile_found_at_an_antique_store_in_orlando/</a></p>
-<h3 id="被裱起来的电路板"><a href="#被裱起来的电路板" class="headerlink" title="被裱起来的电路板"></a>被裱起来的电路板</h3><blockquote>
-<p>Q: Framed old circuit board. Belonged to my great uncle. I’m curious to know what it was used for and why it might have been framed.</p>
-</blockquote>
-<p>被装裱起来的旧电路板，属于我的叔公，我很想知道它是做什么的，为什么要被裱起来。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-2/circuit-board-1.jpg" alt="circuit-board-1.jpg"></p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-2/circuit-board-2.jpg" alt="circuit-board-2.jpg"></p>
-<!-- <img data-src="/2020/09/16/whatisthisthing-2/circuit-board-1.jpg" class="circuit-board-1"> -->
-<!-- <img data-src="/2020/09/16/whatisthisthing-2/circuit-board-2.jpg" class="circuit-board-2"> -->
-<blockquote>
-<p>A: ml747m seems to be an op amp. date code is 1973. so it is some sort of analog circuit. maybe your great uncle designed it. i have many of the boards i have designed mounted in frames and hanging on the wall.</p>
-</blockquote>
-<p>ML747M 看起来像一个运算放大器，日期代码是 1973。所以这应该是某种模拟电路。或许这是你的叔公设计的。我设计的很多板子都放在框架中挂在了墙上。</p>
-<p><a href="https://www.reddit.com/r/whatisthisthing/comments/ipdjs5/framed_old_circuit_board_belonged_to_my_great/">https://www.reddit.com/r/whatisthisthing/comments/ipdjs5/framed_old_circuit_board_belonged_to_my_great/</a></p>
-<h3 id="组装带"><a href="#组装带" class="headerlink" title="组装带"></a>组装带</h3><blockquote>
-<p>Q: “Assembly tape” on my Pop-Tart this morning. It’s also on the inside of the wrapper.</p>
-</blockquote>
-<p>早上在「Pop-Tart」上发现的组装带，在包装袋的内部也有。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-2/assembly-tape-1.jpg" alt="assembly-tape-1.jpg"></p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-2/assembly-tape-2.jpg" alt="assembly-tape-2.jpg"></p>
-<!-- <img data-src="/2020/09/16/whatisthisthing-2/assembly-tape-1.jpg" class="assembly-tape-1"> -->
-<!-- <img data-src="/2020/09/16/whatisthisthing-2/assembly-tape-2.jpg" class="assembly-tape-2"> -->
-<blockquote>
-<p>A: Splice from film change on flow wrapper during processing. When one roll of “wrapper” is exhausted the next roll is taped to the tag end to run it through the equipment. High visibility tape typically ensures it is removed downstream in the production process.</p>
-</blockquote>
-<p>这种胶接来自包装生产线的上薄膜的变化，当一卷组装带用完时，下一卷组装带粘贴到标签端使其穿过设备。这种看起来非常明显的胶带，通常可以确保在生产线下游发现并移除他们。</p>
-<p><a href="https://www.reddit.com/r/whatisthisthing/comments/iqooe6/assembly_tape_on_my_poptart_this_morning_its_also/">https://www.reddit.com/r/whatisthisthing/comments/iqooe6/assembly_tape_on_my_poptart_this_morning_its_also/</a></p>
-<h3 id="铁片"><a href="#铁片" class="headerlink" title="铁片"></a>铁片</h3><blockquote>
-<p>Q: Found metal detecting outside of an old church.</p>
-</blockquote>
-<p>在一座老教堂外边发现的铁片。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-2/metal.jpg" alt="metal.jpg"></p>
-<!-- <img data-src="/2020/09/16/whatisthisthing-2/metal.jpg" class="metal"> -->
-<blockquote>
-<p>A: It looks like a Ferrotype photograph. They started being used in the 1850s’s.</p>
-</blockquote>
-<p>这个看起来像一个铁板照片，在19世纪50年代开始使用。</p>
-<p><a href="https://www.reddit.com/r/whatisthisthing/comments/iq4lj3/found_metal_detecting_outside_of_an_old_church/">https://www.reddit.com/r/whatisthisthing/comments/iq4lj3/found_metal_detecting_outside_of_an_old_church/</a></p>
-<h3 id="天花板上的钥匙"><a href="#天花板上的钥匙" class="headerlink" title="天花板上的钥匙"></a>天花板上的钥匙</h3><blockquote>
-<p>Q: Key in the ceiling at school</p>
-</blockquote>
-<p>学校天花板上的钥匙。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-2/key.jpg" alt="key.jpg"></p>
-<!-- <img data-src="/2020/09/16/whatisthisthing-2/key.jpg" class="key"> -->
-<blockquote>
-<p>A: This could be to test duct detectors in a fire alarm system. Duct detectors will shut off the air conditioning unit if it senses smoke to prevent it from circulating the air.</p>
-</blockquote>
-<p>这个可能是为了测试火灾报警系统中的风管探测器，如果风管探测器检测到烟雾，它将关闭空调，防止空气流通。</p>
-<p><a href="https://www.reddit.com/r/whatisthisthing/comments/ir4ivm/key_in_the_ceiling_at_school/">https://www.reddit.com/r/whatisthisthing/comments/ir4ivm/key_in_the_ceiling_at_school/</a></p>
-<h3 id="谷歌地图"><a href="#谷歌地图" class="headerlink" title="谷歌地图"></a>谷歌地图</h3><blockquote>
-<p>Q: Found on Google maps in the Yukon/Delta region in Alaska, went back to look for it agaun after screen shot but couldn’t find anything. What is it?</p>
-</blockquote>
-<p>使用谷歌地图在阿拉斯加州的育空三角洲地区的找到的，截图下来继续查找，没有任何发现，这个是什么？</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-2/LORAN.jpg" alt="LORAN.jpg"></p>
-<!-- <img data-src="/2020/09/16/whatisthisthing-2/LORAN.jpg" class="LORAN"> -->
-<blockquote>
-<p>A: <a href="https://goo.gl/maps/Te4nCUtFCKzBckfJ8">Here it is</a><br><a href="https://www.loran-history.info/tok/tok.htm">Here’s some information on it.</a> Decommissioned LORAN array.</p>
-</blockquote>
-<p>一个正式停用的远距离无线电导航系统阵列。</p>
-<p>（译者注：英文缩写 LORAN，为「Long Range Navigation」（远程导航）的缩写，中文音译为「罗兰」或「劳兰」，是在二战期间由美国开发的一种无线电导航及授时系统。目前已衍生了多个版本。）</p>
-<p><a href="https://www.reddit.com/r/whatisthisthing/comments/ip68ur/found_on_google_maps_in_the_yukondelta_region_in/">https://www.reddit.com/r/whatisthisthing/comments/ip68ur/found_on_google_maps_in_the_yukondelta_region_in/</a></p>
-<h3 id="钟"><a href="#钟" class="headerlink" title="钟"></a>钟</h3><blockquote>
-<p>Q: Weird old bell found in the Hudson Valley.</p>
-</blockquote>
-<p>哈德逊河谷发现的怪异的古钟。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-2/bell.jpg" alt="bell.jpg"></p>
-<!-- <img data-src="/2020/09/16/whatisthisthing-2/bell.jpg" class="bell"> -->
-<blockquote>
-<p>A: Dutch East Indian Nautical bell?</p>
-</blockquote>
-<p>荷兰东印度航海钟？</p>
-<blockquote>
-<p>A: Vereenigde Oostindische Compagnie</p>
-</blockquote>
-<p>荷兰东印度公司</p>
-<p><a href="https://www.reddit.com/r/whatisthisthing/comments/iq3ij4/weird_old_bell_found_in_the_hudson_valley/">https://www.reddit.com/r/whatisthisthing/comments/iq3ij4/weird_old_bell_found_in_the_hudson_valley/</a></p>
 ]]></content>
       <categories>
         <category>What is this thing?</category>
@@ -2629,6 +2528,107 @@
 </blockquote>
 <p>这是一种用来拆卸步枪进行维护和清洁的工具。它还可以帮助调整步枪的瞄准器。</p>
 <p><a href="https://www.reddit.com/r/whatisthisthing/comments/iqsnqx/wwiera_army_tool_found_in_a_bag_of_rifle_and/">https://www.reddit.com/r/whatisthisthing/comments/iqsnqx/wwiera_army_tool_found_in_a_bag_of_rifle_and/</a></p>
+]]></content>
+      <categories>
+        <category>What is this thing?</category>
+      </categories>
+      <tags>
+        <tag>翻译</tag>
+        <tag>What is this thing?</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>What is this thing 2</title>
+    <url>/2020/09/16/whatisthisthing-2/</url>
+    <content><![CDATA[<p><a href="https://www.reddit.com/r/whatisthisthing/">What is this thing</a> 是 reddit 上的一个社区（community），上面时不时会有人发一些没见过的玩意来提问。</p>
+<p>一起来看看吧！</p>
+<span id="more"></span>
+<h3 id="瓦片"><a href="#瓦片" class="headerlink" title="瓦片"></a>瓦片</h3><blockquote>
+<p>Q: Slave Tile?? Found at an antique store in Orlando. WITT</p>
+</blockquote>
+<p>奴隶瓦片？在一家奥兰多的古董店里找到的。这是个嘛？</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-2/slave-tile.jpg" alt="weird-notes-2.jpg"></p>
+<!-- <img data-src="/2020/09/16/whatisthisthing-2/slave-tile.jpg" class="slave-tile"> -->
+<blockquote>
+<p>A: Tiles of this type were reportedly made and used by slaves in Georgia as grave markers and garden tiles.</p>
+</blockquote>
+<p>据说，这种类型的瓦片是乔治亚州的奴隶制造的，被用于墓碑和花园的瓦片。</p>
+<p><a href="https://www.reddit.com/r/whatisthisthing/comments/it9uvo/slave_tile_found_at_an_antique_store_in_orlando/">https://www.reddit.com/r/whatisthisthing/comments/it9uvo/slave_tile_found_at_an_antique_store_in_orlando/</a></p>
+<h3 id="被裱起来的电路板"><a href="#被裱起来的电路板" class="headerlink" title="被裱起来的电路板"></a>被裱起来的电路板</h3><blockquote>
+<p>Q: Framed old circuit board. Belonged to my great uncle. I’m curious to know what it was used for and why it might have been framed.</p>
+</blockquote>
+<p>被装裱起来的旧电路板，属于我的叔公，我很想知道它是做什么的，为什么要被裱起来。</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-2/circuit-board-1.jpg" alt="circuit-board-1.jpg"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-2/circuit-board-2.jpg" alt="circuit-board-2.jpg"></p>
+<!-- <img data-src="/2020/09/16/whatisthisthing-2/circuit-board-1.jpg" class="circuit-board-1"> -->
+<!-- <img data-src="/2020/09/16/whatisthisthing-2/circuit-board-2.jpg" class="circuit-board-2"> -->
+<blockquote>
+<p>A: ml747m seems to be an op amp. date code is 1973. so it is some sort of analog circuit. maybe your great uncle designed it. i have many of the boards i have designed mounted in frames and hanging on the wall.</p>
+</blockquote>
+<p>ML747M 看起来像一个运算放大器，日期代码是 1973。所以这应该是某种模拟电路。或许这是你的叔公设计的。我设计的很多板子都放在框架中挂在了墙上。</p>
+<p><a href="https://www.reddit.com/r/whatisthisthing/comments/ipdjs5/framed_old_circuit_board_belonged_to_my_great/">https://www.reddit.com/r/whatisthisthing/comments/ipdjs5/framed_old_circuit_board_belonged_to_my_great/</a></p>
+<h3 id="组装带"><a href="#组装带" class="headerlink" title="组装带"></a>组装带</h3><blockquote>
+<p>Q: “Assembly tape” on my Pop-Tart this morning. It’s also on the inside of the wrapper.</p>
+</blockquote>
+<p>早上在「Pop-Tart」上发现的组装带，在包装袋的内部也有。</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-2/assembly-tape-1.jpg" alt="assembly-tape-1.jpg"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-2/assembly-tape-2.jpg" alt="assembly-tape-2.jpg"></p>
+<!-- <img data-src="/2020/09/16/whatisthisthing-2/assembly-tape-1.jpg" class="assembly-tape-1"> -->
+<!-- <img data-src="/2020/09/16/whatisthisthing-2/assembly-tape-2.jpg" class="assembly-tape-2"> -->
+<blockquote>
+<p>A: Splice from film change on flow wrapper during processing. When one roll of “wrapper” is exhausted the next roll is taped to the tag end to run it through the equipment. High visibility tape typically ensures it is removed downstream in the production process.</p>
+</blockquote>
+<p>这种胶接来自包装生产线的上薄膜的变化，当一卷组装带用完时，下一卷组装带粘贴到标签端使其穿过设备。这种看起来非常明显的胶带，通常可以确保在生产线下游发现并移除他们。</p>
+<p><a href="https://www.reddit.com/r/whatisthisthing/comments/iqooe6/assembly_tape_on_my_poptart_this_morning_its_also/">https://www.reddit.com/r/whatisthisthing/comments/iqooe6/assembly_tape_on_my_poptart_this_morning_its_also/</a></p>
+<h3 id="铁片"><a href="#铁片" class="headerlink" title="铁片"></a>铁片</h3><blockquote>
+<p>Q: Found metal detecting outside of an old church.</p>
+</blockquote>
+<p>在一座老教堂外边发现的铁片。</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-2/metal.jpg" alt="metal.jpg"></p>
+<!-- <img data-src="/2020/09/16/whatisthisthing-2/metal.jpg" class="metal"> -->
+<blockquote>
+<p>A: It looks like a Ferrotype photograph. They started being used in the 1850s’s.</p>
+</blockquote>
+<p>这个看起来像一个铁板照片，在19世纪50年代开始使用。</p>
+<p><a href="https://www.reddit.com/r/whatisthisthing/comments/iq4lj3/found_metal_detecting_outside_of_an_old_church/">https://www.reddit.com/r/whatisthisthing/comments/iq4lj3/found_metal_detecting_outside_of_an_old_church/</a></p>
+<h3 id="天花板上的钥匙"><a href="#天花板上的钥匙" class="headerlink" title="天花板上的钥匙"></a>天花板上的钥匙</h3><blockquote>
+<p>Q: Key in the ceiling at school</p>
+</blockquote>
+<p>学校天花板上的钥匙。</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-2/key.jpg" alt="key.jpg"></p>
+<!-- <img data-src="/2020/09/16/whatisthisthing-2/key.jpg" class="key"> -->
+<blockquote>
+<p>A: This could be to test duct detectors in a fire alarm system. Duct detectors will shut off the air conditioning unit if it senses smoke to prevent it from circulating the air.</p>
+</blockquote>
+<p>这个可能是为了测试火灾报警系统中的风管探测器，如果风管探测器检测到烟雾，它将关闭空调，防止空气流通。</p>
+<p><a href="https://www.reddit.com/r/whatisthisthing/comments/ir4ivm/key_in_the_ceiling_at_school/">https://www.reddit.com/r/whatisthisthing/comments/ir4ivm/key_in_the_ceiling_at_school/</a></p>
+<h3 id="谷歌地图"><a href="#谷歌地图" class="headerlink" title="谷歌地图"></a>谷歌地图</h3><blockquote>
+<p>Q: Found on Google maps in the Yukon/Delta region in Alaska, went back to look for it agaun after screen shot but couldn’t find anything. What is it?</p>
+</blockquote>
+<p>使用谷歌地图在阿拉斯加州的育空三角洲地区的找到的，截图下来继续查找，没有任何发现，这个是什么？</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-2/LORAN.jpg" alt="LORAN.jpg"></p>
+<!-- <img data-src="/2020/09/16/whatisthisthing-2/LORAN.jpg" class="LORAN"> -->
+<blockquote>
+<p>A: <a href="https://goo.gl/maps/Te4nCUtFCKzBckfJ8">Here it is</a><br><a href="https://www.loran-history.info/tok/tok.htm">Here’s some information on it.</a> Decommissioned LORAN array.</p>
+</blockquote>
+<p>一个正式停用的远距离无线电导航系统阵列。</p>
+<p>（译者注：英文缩写 LORAN，为「Long Range Navigation」（远程导航）的缩写，中文音译为「罗兰」或「劳兰」，是在二战期间由美国开发的一种无线电导航及授时系统。目前已衍生了多个版本。）</p>
+<p><a href="https://www.reddit.com/r/whatisthisthing/comments/ip68ur/found_on_google_maps_in_the_yukondelta_region_in/">https://www.reddit.com/r/whatisthisthing/comments/ip68ur/found_on_google_maps_in_the_yukondelta_region_in/</a></p>
+<h3 id="钟"><a href="#钟" class="headerlink" title="钟"></a>钟</h3><blockquote>
+<p>Q: Weird old bell found in the Hudson Valley.</p>
+</blockquote>
+<p>哈德逊河谷发现的怪异的古钟。</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-2/bell.jpg" alt="bell.jpg"></p>
+<!-- <img data-src="/2020/09/16/whatisthisthing-2/bell.jpg" class="bell"> -->
+<blockquote>
+<p>A: Dutch East Indian Nautical bell?</p>
+</blockquote>
+<p>荷兰东印度航海钟？</p>
+<blockquote>
+<p>A: Vereenigde Oostindische Compagnie</p>
+</blockquote>
+<p>荷兰东印度公司</p>
+<p><a href="https://www.reddit.com/r/whatisthisthing/comments/iq3ij4/weird_old_bell_found_in_the_hudson_valley/">https://www.reddit.com/r/whatisthisthing/comments/iq3ij4/weird_old_bell_found_in_the_hudson_valley/</a></p>
 ]]></content>
       <categories>
         <category>What is this thing?</category>
@@ -3466,6 +3466,55 @@
       </tags>
   </entry>
   <entry>
+    <title>在微信中使用 ToDoList</title>
+    <url>/2020/03/13/%E5%9C%A8%E5%BE%AE%E4%BF%A1%E4%B8%AD%E4%BD%BF%E7%94%A8ToDoList/</url>
+    <content><![CDATA[<p>在 <a href="https://www.v2ex.com/t/650838">V2EX</a> 看到了这篇帖子，想到了之前自己琢磨出来的方法，所以在这里记录一下，到时候也可以直接将链接贴到回复中去。</p>
+<span id="more"></span>
+<h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><p>效果如下：</p>
+<!-- ![效果.jpg](https://i.loli.net/2020/03/13/pcINsy3t4xwO8ro.jpg) -->
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/在微信中使用ToDoList/效果.jpg" alt="效果"></p>
+<!-- <img data-src="/2020/03/13/%E5%9C%A8%E5%BE%AE%E4%BF%A1%E4%B8%AD%E4%BD%BF%E7%94%A8ToDoList/%E6%95%88%E6%9E%9C.jpg" class="" title="效果.jpg"> -->
+<!-- ![置顶.jpg](https://i.loli.net/2020/03/13/oqslDcLjPWhFyJt.jpg) -->
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/在微信中使用ToDoList/置顶.jpg" alt="置顶"></p>
+<!-- <img data-src="/2020/03/13/%E5%9C%A8%E5%BE%AE%E4%BF%A1%E4%B8%AD%E4%BD%BF%E7%94%A8ToDoList/%E7%BD%AE%E9%A1%B6.jpg" class="" title="置顶.jpg"> -->
+<h2 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤"></a>具体步骤</h2><ol>
+<li><p>打开 <code>微信</code>-<code>我</code>-<code>收藏</code>；</p>
+</li>
+<li><p>击右上角的 <code>+</code> 添加一个新的笔记；</p>
+</li>
+<li><p>第一行输入 <code>ToDoList</code>，这是你置顶后所显示的标题；</p>
+</li>
+<li><p>然后下方的几个按钮就可以使用了，一般都是用最后一个的待办列表；</p>
+ <!-- ![待办](https://i.loli.net/2020/03/13/IDoYRdFaKsw1bHq.jpg) -->
+<p> <img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/在微信中使用ToDoList/待办.jpg" alt="待办"></p>
+ <!-- <img data-src="/2020/03/13/%E5%9C%A8%E5%BE%AE%E4%BF%A1%E4%B8%AD%E4%BD%BF%E7%94%A8ToDoList/%E5%BE%85%E5%8A%9E.jpg" class="" title="待办.jpg"> -->
+</li>
+<li><p>写完成后，点击右上角的 <code>···</code>，你可以选择<code>浮窗</code>，也可以选择置顶<code>在聊天中置顶</code>；</p>
+ <!-- ![置顶选项.jpg](https://i.loli.net/2020/03/13/9FCy2oXMiQdrla1.jpg) -->
+<p> <img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/在微信中使用ToDoList/置顶选项.jpg" alt="置顶选项"></p>
+ <!-- <img data-src="/2020/03/13/%E5%9C%A8%E5%BE%AE%E4%BF%A1%E4%B8%AD%E4%BD%BF%E7%94%A8ToDoList/%E7%BD%AE%E9%A1%B6%E9%80%89%E9%A1%B9.jpg" class="" title="置顶选项.jpg"> -->
+</li>
+<li><p>这样就已经完成了，当你需要查看的时候，你只需要点击聊天列表界面顶部的 <code>ToDoList</code>，就能进入这份笔记中查看你的待办事项了。</p>
+</li>
+</ol>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>这个方法勉强可以满足最基本的 <code>ToDoList</code> 功能，对于普通人来说，也是只能说是到了勉强够用的程度，毕竟他没有提醒功能。</p>
+<p>我一般是在去超市进行采购的时候，会在这里列一下采购清单，方便核对。</p>
+<p>说起提醒功能，微信可以对聊天双方所发的消息进行提醒，长按一条消息，在 <a href="https://zhuanlan.zhihu.com/p/29026281">Popover</a> 中选择 <code>提醒</code>（在 IOS 中需要点击 Popover 右侧的 <code>▶</code>，才能在下一页看到 <code>提醒</code> 选项），选择提醒时间后，微信就会在提醒时间为你发送一条提醒。</p>
+<!-- ![提醒](https://i.loli.net/2020/03/13/hrTYKjQmvH3zxb4.jpg) -->
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/在微信中使用ToDoList/提醒.jpg" alt="提醒"></p>
+<!-- <img data-src="/2020/03/13/%E5%9C%A8%E5%BE%AE%E4%BF%A1%E4%B8%AD%E4%BD%BF%E7%94%A8ToDoList/%E6%8F%90%E9%86%92.jpg" class="" title="提醒.jpg"> -->
+<p>微信真的是很封闭的软件，你甚至不能找到分享到其他 APP 的按钮。</p>
+]]></content>
+      <categories>
+        <category>奇技淫巧</category>
+      </categories>
+      <tags>
+        <tag>奇技淫巧</tag>
+        <tag>微信</tag>
+        <tag>WeChat</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>《齐玛蓝》——阿拉斯泰尔·雷诺兹</title>
     <url>/2019/03/22/zima-blue/</url>
     <content><![CDATA[<p>前些天看了 Netflix 出品的 <a href="https://www.netflix.com/title/80174608"><em>Love, Death &amp; Robots</em></a> ，第十四集讲的就是这个故事，动画很好，小说也写得很好，特地转载一下。 转载自：<a href="http://www.eleefeed.com/f/201939">http://www.eleefeed.com/f/201939</a></p>
@@ -3743,55 +3792,6 @@
       </tags>
   </entry>
   <entry>
-    <title>在微信中使用 ToDoList</title>
-    <url>/2020/03/13/%E5%9C%A8%E5%BE%AE%E4%BF%A1%E4%B8%AD%E4%BD%BF%E7%94%A8ToDoList/</url>
-    <content><![CDATA[<p>在 <a href="https://www.v2ex.com/t/650838">V2EX</a> 看到了这篇帖子，想到了之前自己琢磨出来的方法，所以在这里记录一下，到时候也可以直接将链接贴到回复中去。</p>
-<span id="more"></span>
-<h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><p>效果如下：</p>
-<!-- ![效果.jpg](https://i.loli.net/2020/03/13/pcINsy3t4xwO8ro.jpg) -->
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/在微信中使用ToDoList/效果.jpg" alt="效果"></p>
-<!-- <img data-src="/2020/03/13/%E5%9C%A8%E5%BE%AE%E4%BF%A1%E4%B8%AD%E4%BD%BF%E7%94%A8ToDoList/%E6%95%88%E6%9E%9C.jpg" class="" title="效果.jpg"> -->
-<!-- ![置顶.jpg](https://i.loli.net/2020/03/13/oqslDcLjPWhFyJt.jpg) -->
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/在微信中使用ToDoList/置顶.jpg" alt="置顶"></p>
-<!-- <img data-src="/2020/03/13/%E5%9C%A8%E5%BE%AE%E4%BF%A1%E4%B8%AD%E4%BD%BF%E7%94%A8ToDoList/%E7%BD%AE%E9%A1%B6.jpg" class="" title="置顶.jpg"> -->
-<h2 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤"></a>具体步骤</h2><ol>
-<li><p>打开 <code>微信</code>-<code>我</code>-<code>收藏</code>；</p>
-</li>
-<li><p>击右上角的 <code>+</code> 添加一个新的笔记；</p>
-</li>
-<li><p>第一行输入 <code>ToDoList</code>，这是你置顶后所显示的标题；</p>
-</li>
-<li><p>然后下方的几个按钮就可以使用了，一般都是用最后一个的待办列表；</p>
- <!-- ![待办](https://i.loli.net/2020/03/13/IDoYRdFaKsw1bHq.jpg) -->
-<p> <img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/在微信中使用ToDoList/待办.jpg" alt="待办"></p>
- <!-- <img data-src="/2020/03/13/%E5%9C%A8%E5%BE%AE%E4%BF%A1%E4%B8%AD%E4%BD%BF%E7%94%A8ToDoList/%E5%BE%85%E5%8A%9E.jpg" class="" title="待办.jpg"> -->
-</li>
-<li><p>写完成后，点击右上角的 <code>···</code>，你可以选择<code>浮窗</code>，也可以选择置顶<code>在聊天中置顶</code>；</p>
- <!-- ![置顶选项.jpg](https://i.loli.net/2020/03/13/9FCy2oXMiQdrla1.jpg) -->
-<p> <img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/在微信中使用ToDoList/置顶选项.jpg" alt="置顶选项"></p>
- <!-- <img data-src="/2020/03/13/%E5%9C%A8%E5%BE%AE%E4%BF%A1%E4%B8%AD%E4%BD%BF%E7%94%A8ToDoList/%E7%BD%AE%E9%A1%B6%E9%80%89%E9%A1%B9.jpg" class="" title="置顶选项.jpg"> -->
-</li>
-<li><p>这样就已经完成了，当你需要查看的时候，你只需要点击聊天列表界面顶部的 <code>ToDoList</code>，就能进入这份笔记中查看你的待办事项了。</p>
-</li>
-</ol>
-<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>这个方法勉强可以满足最基本的 <code>ToDoList</code> 功能，对于普通人来说，也是只能说是到了勉强够用的程度，毕竟他没有提醒功能。</p>
-<p>我一般是在去超市进行采购的时候，会在这里列一下采购清单，方便核对。</p>
-<p>说起提醒功能，微信可以对聊天双方所发的消息进行提醒，长按一条消息，在 <a href="https://zhuanlan.zhihu.com/p/29026281">Popover</a> 中选择 <code>提醒</code>（在 IOS 中需要点击 Popover 右侧的 <code>▶</code>，才能在下一页看到 <code>提醒</code> 选项），选择提醒时间后，微信就会在提醒时间为你发送一条提醒。</p>
-<!-- ![提醒](https://i.loli.net/2020/03/13/hrTYKjQmvH3zxb4.jpg) -->
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/在微信中使用ToDoList/提醒.jpg" alt="提醒"></p>
-<!-- <img data-src="/2020/03/13/%E5%9C%A8%E5%BE%AE%E4%BF%A1%E4%B8%AD%E4%BD%BF%E7%94%A8ToDoList/%E6%8F%90%E9%86%92.jpg" class="" title="提醒.jpg"> -->
-<p>微信真的是很封闭的软件，你甚至不能找到分享到其他 APP 的按钮。</p>
-]]></content>
-      <categories>
-        <category>奇技淫巧</category>
-      </categories>
-      <tags>
-        <tag>奇技淫巧</tag>
-        <tag>微信</tag>
-        <tag>WeChat</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>如何在 Spotify 听没有版权的歌</title>
     <url>/2020/04/10/%E5%A6%82%E4%BD%95%E5%9C%A8-Spotify-%E5%90%AC%E6%B2%A1%E6%9C%89%E7%89%88%E6%9D%83%E7%9A%84%E6%AD%8C/</url>
     <content><![CDATA[<p>转到 Spotify 好久了，当初是因为音乐版权的原因到 Spotify 的。用了一段时间免费版的，发现还行，就上了车。</p>
@@ -4007,6 +4007,72 @@
       </tags>
   </entry>
   <entry>
+    <title>榨干这台 NAS 第 001 话-文件浏览器（File Browser）</title>
+    <url>/2022/08/08/%E6%A6%A8%E5%B9%B2%E8%BF%99%E5%8F%B0NAS%E7%AC%AC001%E8%AF%9D-%E6%96%87%E4%BB%B6%E6%B5%8F%E8%A7%88%E5%99%A8%EF%BC%88FileBrowser%EF%BC%89/</url>
+    <content><![CDATA[<p>这是一系列关于 NAS 的文章，系列的名称你们也看到了：「<strong>榨干这台 NAS</strong>」。我将尽可能详细的介绍 NAS 相关的知识，帮助你最大限度的发挥你的手中 NAS 的威力！</p>
+<span id="more"></span>
+<p>在上一话中我们介绍了目录结构，那么应该如何编辑这些目录和文件呢？最最原始的方式就是使用命令来执行这些操作。但是这对于一部分不熟悉 Linux 系统的人来说，会显得有些困难。所以，这一话，我将介绍一个软件，可以用于 NAS 的文件浏览。如果你是群晖或威联通用户，那么其系统自带的软件就应该能满足大部分需求了，所以可以跳过这一话。</p>
+<p>PS：接下来的操作将在 unRAID（6.10.2） 系统上进行。</p>
+<p>PSS: 当然对于非 unRAID 系统的用户，我也会演示一下在 Linux 系统下应该如何进行安装。</p>
+<h3 id="unRAID-下的安装和使用"><a href="#unRAID-下的安装和使用" class="headerlink" title="unRAID 下的安装和使用"></a>unRAID 下的安装和使用</h3><h4 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h4><p>前往「应用『Apps』」页面搜索「FileBrowser」，选择下图所示的应用：</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/榨干这台NAS第001话-文件浏览器（FileBrowser）/FileBrowser.png" alt="FileBrowser.png"></p>
+<p>点击「安装『Install』」，即图中「Actions」按钮所在位置（因为我已经安装过这个软件，所以不会显示「Install」按钮了）。</p>
+<h4 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h4><p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/榨干这台NAS第001话-文件浏览器（FileBrowser）/FileBrowserConfig.png" alt="FileBrowserConfig.png"></p>
+<p>然后依照上图所示填写。</p>
+<p>主要是配置了两个路径和一个端口：</p>
+<ol>
+<li><p>将宿主机的 <code>/</code> 路径映射至容器的 <code>/srv</code> 路径，此路径为你需要进行文件管理的路径；</p>
+</li>
+<li><p>将宿主机的 <code>/mnt/user/appdata/filebrowser/</code> 路径映射至容器的 <code>/db/</code> 路径，此路径为此容器的配置数据库路径，你之后所设置的用户名密码等个性配置信息都将存储在这里；</p>
+</li>
+<li><p>将宿主机的 <code>8222</code> 端口映射到容器的 <code>80</code> 端口，此端口为该容器的 WebUI 端口，之后可以通过此端口来访问 WebUI 界面（注意，请确定宿主机的 <code>8222</code> 端口无其他程序占用，不然将无法启动容器，如果被占用，可以自行更换端口）。</p>
+</li>
+</ol>
+<p>点击应用，即可启动容器。如果你的配置无误，那么在等待片刻后，容器将会自动启动，接下来就可以使用了。</p>
+<p>附上 unRAID 下的启动命令：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">/usr/local/emhttp/plugins/dynamix.docker.manager/scripts/docker run -d --name=&#x27;FileBrowser&#x27; --net=&#x27;bridge&#x27; -e TZ=&quot;Asia/Shanghai&quot; -e HOST_OS=&quot;Unraid&quot; -e HOST_HOSTNAME=&quot;Tower&quot; -e HOST_CONTAINERNAME=&quot;FileBrowser&quot; -l net.unraid.docker.managed=dockerman -l net.unraid.docker.webui=&#x27;http://[IP]:[PORT:8222]/files/&#x27; -l net.unraid.docker.icon=&#x27;https://github.com/maschhoff/docker/raw/master/filebrowser/35781395.png&#x27; -p &#x27;8222:80/tcp&#x27; -v &#x27;/&#x27;:&#x27;/srv&#x27;:&#x27;rw&#x27; -v &#x27;/mnt/user/appdata/filebrowser/&#x27;:&#x27;/db/&#x27;:&#x27;rw&#x27; &#x27;filebrowser/filebrowser&#x27; -d /db/database.db</span><br></pre></td></tr></table></figure>
+<h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><p>打开浏览器，访问 <a href="http://192.168.1.223:8222">http://192.168.1.223:8222</a>（注意，如果你在上述配置中修改过端口，请访问相应的端口，而 IP 地址则是你的 NAS 的 IP 地址），即可前往 File Browser 的操作页面。</p>
+<p>默认的用户名为：<code>admin</code>，默认为密码为：<code>admin</code>。</p>
+<h5 id="修改密码"><a href="#修改密码" class="headerlink" title="修改密码"></a>修改密码</h5><p>登录后的第一件事，请前往「设置」-「个人设置」页面修改你的密码。</p>
+<h5 id="一些使其更好使用的配置"><a href="#一些使其更好使用的配置" class="headerlink" title="一些使其更好使用的配置"></a>一些使其更好使用的配置</h5><ol>
+<li><p>在「设置」-「个人设置」中将语言修改为中文；</p>
+</li>
+<li><p>在「设置」-「个人设置」中<strong>取消勾选</strong>「不显示隐藏文件」，这样你就能看到隐藏的文件和文件夹了；</p>
+</li>
+<li><p>在「设置」-「个人设置」中<strong>取消勾选</strong>「使用单击来打开文件和目录」，这样可以更加符合 Windows 资源管理器的操作逻辑，同时也可以使用 <em>ctrl</em> 和 <em>shift</em> 来进行多选操作了；</p>
+</li>
+<li><p>由于在安装容器的时候设置了管理目录为宿主机的 <code>/</code> 路径，所以每次访问 WebUI 默认路径都是此路径，要想更换默认路径的话，软件并没有相应的设置，但是我们可以曲线救国，首先去到我们想默认显示的路径下。例如：<code>/mnt/user/appdata/</code>，然后我们只要将当前页面（<a href="http://192.168.1.223:8222/files/mnt/user/appdata/">http://192.168.1.223:8222/files/mnt/user/appdata/</a>）添加到浏览器的书签，这样以后就可以通过这个书签来访问此路径了。同样的，我们可以为不同的目录设置不同的书签，从而达到快捷访问的目的。</p>
+</li>
+</ol>
+<h3 id="Linux-下的安装"><a href="#Linux-下的安装" class="headerlink" title="Linux 下的安装"></a>Linux 下的安装</h3><p>以下操作均建立在系统已经安装 Docker 的基础之上。</p>
+<ol>
+<li><p>拉取 Docker 镜像</p>
+ <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker pull filebrowser/filebrowser:latest</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>启动容器</p>
+ <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker run \</span><br><span class="line">    -v &#x27;/&#x27;:&#x27;/srv&#x27; \</span><br><span class="line">    -v &#x27;/mnt/user/appdata/filebrowser/&#x27;:&#x27;/db/&#x27; \</span><br><span class="line">    -p &#x27;8222:80/tcp&#x27; \</span><br><span class="line">    filebrowser/filebrowser:latest \</span><br><span class="line">    -d /db/database.db</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ul>
+<li><p><a href="https://filebrowser.org/">https://filebrowser.org/</a></p>
+</li>
+<li><p><a href="https://github.com/filebrowser/filebrowser">https://github.com/filebrowser/filebrowser</a></p>
+</li>
+<li><p><a href="https://hub.docker.com/r/filebrowser/filebrowser">https://hub.docker.com/r/filebrowser/filebrowser</a></p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>榨干这台 NAS</category>
+      </categories>
+      <tags>
+        <tag>Docker</tag>
+        <tag>NAS</tag>
+        <tag>unRAID</tag>
+        <tag>File Browser</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>榨干这台 NAS 第 000 话-目录结构</title>
     <url>/2022/08/08/%E6%A6%A8%E5%B9%B2%E8%BF%99%E5%8F%B0NAS%E7%AC%AC000%E8%AF%9D-%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84/</url>
     <content><![CDATA[<p>这是一系列关于 NAS 的文章，系列的名称你们也看到了：「<strong>榨干这台 NAS</strong>」。我将尽可能详细的介绍 NAS 相关的知识，帮助你最大限度的发挥你的手中 NAS 的威力！</p>
@@ -4113,72 +4179,6 @@
       </tags>
   </entry>
   <entry>
-    <title>榨干这台 NAS 第 001 话-文件浏览器（File Browser）</title>
-    <url>/2022/08/08/%E6%A6%A8%E5%B9%B2%E8%BF%99%E5%8F%B0NAS%E7%AC%AC001%E8%AF%9D-%E6%96%87%E4%BB%B6%E6%B5%8F%E8%A7%88%E5%99%A8%EF%BC%88FileBrowser%EF%BC%89/</url>
-    <content><![CDATA[<p>这是一系列关于 NAS 的文章，系列的名称你们也看到了：「<strong>榨干这台 NAS</strong>」。我将尽可能详细的介绍 NAS 相关的知识，帮助你最大限度的发挥你的手中 NAS 的威力！</p>
-<span id="more"></span>
-<p>在上一话中我们介绍了目录结构，那么应该如何编辑这些目录和文件呢？最最原始的方式就是使用命令来执行这些操作。但是这对于一部分不熟悉 Linux 系统的人来说，会显得有些困难。所以，这一话，我将介绍一个软件，可以用于 NAS 的文件浏览。如果你是群晖或威联通用户，那么其系统自带的软件就应该能满足大部分需求了，所以可以跳过这一话。</p>
-<p>PS：接下来的操作将在 unRAID（6.10.2） 系统上进行。</p>
-<p>PSS: 当然对于非 unRAID 系统的用户，我也会演示一下在 Linux 系统下应该如何进行安装。</p>
-<h3 id="unRAID-下的安装和使用"><a href="#unRAID-下的安装和使用" class="headerlink" title="unRAID 下的安装和使用"></a>unRAID 下的安装和使用</h3><h4 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h4><p>前往「应用『Apps』」页面搜索「FileBrowser」，选择下图所示的应用：</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/榨干这台NAS第001话-文件浏览器（FileBrowser）/FileBrowser.png" alt="FileBrowser.png"></p>
-<p>点击「安装『Install』」，即图中「Actions」按钮所在位置（因为我已经安装过这个软件，所以不会显示「Install」按钮了）。</p>
-<h4 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h4><p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/榨干这台NAS第001话-文件浏览器（FileBrowser）/FileBrowserConfig.png" alt="FileBrowserConfig.png"></p>
-<p>然后依照上图所示填写。</p>
-<p>主要是配置了两个路径和一个端口：</p>
-<ol>
-<li><p>将宿主机的 <code>/</code> 路径映射至容器的 <code>/srv</code> 路径，此路径为你需要进行文件管理的路径；</p>
-</li>
-<li><p>将宿主机的 <code>/mnt/user/appdata/filebrowser/</code> 路径映射至容器的 <code>/db/</code> 路径，此路径为此容器的配置数据库路径，你之后所设置的用户名密码等个性配置信息都将存储在这里；</p>
-</li>
-<li><p>将宿主机的 <code>8222</code> 端口映射到容器的 <code>80</code> 端口，此端口为该容器的 WebUI 端口，之后可以通过此端口来访问 WebUI 界面（注意，请确定宿主机的 <code>8222</code> 端口无其他程序占用，不然将无法启动容器，如果被占用，可以自行更换端口）。</p>
-</li>
-</ol>
-<p>点击应用，即可启动容器。如果你的配置无误，那么在等待片刻后，容器将会自动启动，接下来就可以使用了。</p>
-<p>附上 unRAID 下的启动命令：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">/usr/local/emhttp/plugins/dynamix.docker.manager/scripts/docker run -d --name=&#x27;FileBrowser&#x27; --net=&#x27;bridge&#x27; -e TZ=&quot;Asia/Shanghai&quot; -e HOST_OS=&quot;Unraid&quot; -e HOST_HOSTNAME=&quot;Tower&quot; -e HOST_CONTAINERNAME=&quot;FileBrowser&quot; -l net.unraid.docker.managed=dockerman -l net.unraid.docker.webui=&#x27;http://[IP]:[PORT:8222]/files/&#x27; -l net.unraid.docker.icon=&#x27;https://github.com/maschhoff/docker/raw/master/filebrowser/35781395.png&#x27; -p &#x27;8222:80/tcp&#x27; -v &#x27;/&#x27;:&#x27;/srv&#x27;:&#x27;rw&#x27; -v &#x27;/mnt/user/appdata/filebrowser/&#x27;:&#x27;/db/&#x27;:&#x27;rw&#x27; &#x27;filebrowser/filebrowser&#x27; -d /db/database.db</span><br></pre></td></tr></table></figure>
-<h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><p>打开浏览器，访问 <a href="http://192.168.1.223:8222">http://192.168.1.223:8222</a>（注意，如果你在上述配置中修改过端口，请访问相应的端口，而 IP 地址则是你的 NAS 的 IP 地址），即可前往 File Browser 的操作页面。</p>
-<p>默认的用户名为：<code>admin</code>，默认为密码为：<code>admin</code>。</p>
-<h5 id="修改密码"><a href="#修改密码" class="headerlink" title="修改密码"></a>修改密码</h5><p>登录后的第一件事，请前往「设置」-「个人设置」页面修改你的密码。</p>
-<h5 id="一些使其更好使用的配置"><a href="#一些使其更好使用的配置" class="headerlink" title="一些使其更好使用的配置"></a>一些使其更好使用的配置</h5><ol>
-<li><p>在「设置」-「个人设置」中将语言修改为中文；</p>
-</li>
-<li><p>在「设置」-「个人设置」中<strong>取消勾选</strong>「不显示隐藏文件」，这样你就能看到隐藏的文件和文件夹了；</p>
-</li>
-<li><p>在「设置」-「个人设置」中<strong>取消勾选</strong>「使用单击来打开文件和目录」，这样可以更加符合 Windows 资源管理器的操作逻辑，同时也可以使用 <em>ctrl</em> 和 <em>shift</em> 来进行多选操作了；</p>
-</li>
-<li><p>由于在安装容器的时候设置了管理目录为宿主机的 <code>/</code> 路径，所以每次访问 WebUI 默认路径都是此路径，要想更换默认路径的话，软件并没有相应的设置，但是我们可以曲线救国，首先去到我们想默认显示的路径下。例如：<code>/mnt/user/appdata/</code>，然后我们只要将当前页面（<a href="http://192.168.1.223:8222/files/mnt/user/appdata/">http://192.168.1.223:8222/files/mnt/user/appdata/</a>）添加到浏览器的书签，这样以后就可以通过这个书签来访问此路径了。同样的，我们可以为不同的目录设置不同的书签，从而达到快捷访问的目的。</p>
-</li>
-</ol>
-<h3 id="Linux-下的安装"><a href="#Linux-下的安装" class="headerlink" title="Linux 下的安装"></a>Linux 下的安装</h3><p>以下操作均建立在系统已经安装 Docker 的基础之上。</p>
-<ol>
-<li><p>拉取 Docker 镜像</p>
- <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker pull filebrowser/filebrowser:latest</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>启动容器</p>
- <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker run \</span><br><span class="line">    -v &#x27;/&#x27;:&#x27;/srv&#x27; \</span><br><span class="line">    -v &#x27;/mnt/user/appdata/filebrowser/&#x27;:&#x27;/db/&#x27; \</span><br><span class="line">    -p &#x27;8222:80/tcp&#x27; \</span><br><span class="line">    filebrowser/filebrowser:latest \</span><br><span class="line">    -d /db/database.db</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ul>
-<li><p><a href="https://filebrowser.org/">https://filebrowser.org/</a></p>
-</li>
-<li><p><a href="https://github.com/filebrowser/filebrowser">https://github.com/filebrowser/filebrowser</a></p>
-</li>
-<li><p><a href="https://hub.docker.com/r/filebrowser/filebrowser">https://hub.docker.com/r/filebrowser/filebrowser</a></p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>榨干这台 NAS</category>
-      </categories>
-      <tags>
-        <tag>Docker</tag>
-        <tag>NAS</tag>
-        <tag>unRAID</tag>
-        <tag>File Browser</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>榨干这台 NAS 第 002 话-下载工具</title>
     <url>/2022/08/09/%E6%A6%A8%E5%B9%B2%E8%BF%99%E5%8F%B0NAS%E7%AC%AC002%E8%AF%9D-%E4%B8%8B%E8%BD%BD%E5%B7%A5%E5%85%B7/</url>
     <content><![CDATA[<p>这是一系列关于 NAS 的文章，系列的名称你们也看到了：「<strong>榨干这台 NAS</strong>」。我将尽可能详细的介绍 NAS 相关的知识，帮助你最大限度的发挥你的手中 NAS 的威力！</p>
@@ -4230,7 +4230,7 @@
 </li>
 <li><p>「工具」-「选项」-「高级」-「libtorrent 相关」将「校验时内存使用扩增量」修改大一些，我设置成了 <code>512</code>，这样可以提高校验速度，提升之后辅种效率；</p>
 </li>
-<li><p>「工具」-「选项」-「BitTorrent」勾选「自动添加以下 tracker 到新的 torrent」，并在下方输入框中填入<a href="&#x6d;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#116;&#x74;&#x70;&#115;&#58;&#x2f;&#x2f;&#x63;&#100;&#110;&#46;&#x6a;&#115;&#100;&#101;&#108;&#x69;&#x76;&#x72;&#46;&#110;&#101;&#116;&#47;&#x67;&#x68;&#47;&#110;&#103;&#x6f;&#x73;&#97;&#110;&#x67;&#x2f;&#x74;&#114;&#x61;&#99;&#107;&#x65;&#x72;&#115;&#x6c;&#x69;&#x73;&#x74;&#64;&#x6d;&#97;&#115;&#x74;&#101;&#114;&#47;&#x74;&#x72;&#97;&#99;&#x6b;&#101;&#x72;&#115;&#x5f;&#x61;&#x6c;&#108;&#46;&#x74;&#120;&#x74;">&#104;&#116;&#x74;&#x70;&#115;&#58;&#x2f;&#x2f;&#x63;&#100;&#110;&#46;&#x6a;&#115;&#100;&#101;&#108;&#x69;&#x76;&#x72;&#46;&#110;&#101;&#116;&#47;&#x67;&#x68;&#47;&#110;&#103;&#x6f;&#x73;&#97;&#110;&#x67;&#x2f;&#x74;&#114;&#x61;&#99;&#107;&#x65;&#x72;&#115;&#x6c;&#x69;&#x73;&#x74;&#64;&#x6d;&#97;&#115;&#x74;&#101;&#114;&#47;&#x74;&#x72;&#97;&#99;&#x6b;&#101;&#x72;&#115;&#x5f;&#x61;&#x6c;&#108;&#46;&#x74;&#120;&#x74;</a>中的内容，此处设置的作用的是为了获得更多的供种者，此操作能有效提高下载速度，建议每隔一段时间就更新一下 tracker 列表，更多 tracker 列表可以查看 <a href="https://github.com/ngosang/trackerslist">https://github.com/ngosang/trackerslist</a> 和 <a href="https://github.com/XIU2/TrackersListCollection">https://github.com/XIU2/TrackersListCollection</a>。</p>
+<li><p>「工具」-「选项」-「BitTorrent」勾选「自动添加以下 tracker 到新的 torrent」，并在下方输入框中填入<a href="&#x6d;&#97;&#x69;&#x6c;&#116;&#111;&#x3a;&#x68;&#x74;&#116;&#112;&#115;&#58;&#x2f;&#47;&#x63;&#100;&#x6e;&#46;&#106;&#x73;&#100;&#101;&#108;&#x69;&#x76;&#114;&#46;&#110;&#101;&#116;&#47;&#103;&#104;&#47;&#x6e;&#103;&#x6f;&#115;&#x61;&#x6e;&#x67;&#47;&#x74;&#x72;&#x61;&#x63;&#107;&#x65;&#x72;&#115;&#108;&#105;&#x73;&#x74;&#x40;&#x6d;&#97;&#x73;&#x74;&#101;&#114;&#47;&#116;&#x72;&#97;&#99;&#107;&#x65;&#114;&#115;&#x5f;&#x61;&#108;&#x6c;&#46;&#116;&#120;&#116;">&#x68;&#x74;&#116;&#112;&#115;&#58;&#x2f;&#47;&#x63;&#100;&#x6e;&#46;&#106;&#x73;&#100;&#101;&#108;&#x69;&#x76;&#114;&#46;&#110;&#101;&#116;&#47;&#103;&#104;&#47;&#x6e;&#103;&#x6f;&#115;&#x61;&#x6e;&#x67;&#47;&#x74;&#x72;&#x61;&#x63;&#107;&#x65;&#x72;&#115;&#108;&#105;&#x73;&#x74;&#x40;&#x6d;&#97;&#x73;&#x74;&#101;&#114;&#47;&#116;&#x72;&#97;&#99;&#107;&#x65;&#114;&#115;&#x5f;&#x61;&#108;&#x6c;&#46;&#116;&#120;&#116;</a>中的内容，此处设置的作用的是为了获得更多的供种者，此操作能有效提高下载速度，建议每隔一段时间就更新一下 tracker 列表，更多 tracker 列表可以查看 <a href="https://github.com/ngosang/trackerslist">https://github.com/ngosang/trackerslist</a> 和 <a href="https://github.com/XIU2/TrackersListCollection">https://github.com/XIU2/TrackersListCollection</a>。</p>
 </li>
 <li><p>「工具」-「选项」-「BitTorrent」取消勾选「Torrent 排队」,这一步是为了多任务同时下载与上传，BT 的本质就是我为人人，人人为我，你的下载即是别人的上传，所以请最好不要限制你的上传，在不影响使用的情况下提供最多的上传；</p>
 </li>
