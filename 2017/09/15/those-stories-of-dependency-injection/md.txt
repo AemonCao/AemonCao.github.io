@@ -7,7 +7,6 @@ tags:
 url: 227.html
 id: 227
 categories:
-  - 'C#'
   - 转载
 date: 2017-09-15 19:37:09
 ---

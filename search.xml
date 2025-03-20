@@ -905,27 +905,6 @@
       </tags>
   </entry>
   <entry>
-    <title>《编码：隐匿在计算机软硬件背后的语言》</title>
-    <url>/2017/05/25/codethe-hidden-language-of-computer-hardware-and-software/</url>
-    <content><![CDATA[<p>《<a href="https://book.douban.com/subject/4822685/">编码：隐匿在计算机软硬件背后的语言</a>》（Code:The Hidden Language of Computer Hardware and Software）</p>
-<span id="more"></span>
-<ol>
-<li><p>那时很可能有些人会认为「logic gates」（逻辑门）装置是以著名的微软公司创始人的名字来命名的。（Bill Gates 中的 Gates 在英文中有「门」的意思）——P108；</p>
-</li>
-<li><p>Meow：猫叫的声音——P111；</p>
-</li>
-<li><p>一般来说，对于涉及正数和负数的加法，如果两个操作数的符号位相同，但结果的符号位不同，则结果是无效的。——P159；</p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>书摘</category>
-      </categories>
-      <tags>
-        <tag>阅读</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>设计模式</title>
     <url>/2020/03/26/design-pattern/</url>
     <content><![CDATA[<p>说来惭愧，一直没有好好学这部分的内容，所以趁着这次机会把设计模式这块的知识好好学一下。</p>
@@ -954,6 +933,27 @@
       <tags>
         <tag>C#</tag>
         <tag>设计模式</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>《编码：隐匿在计算机软硬件背后的语言》</title>
+    <url>/2017/05/25/codethe-hidden-language-of-computer-hardware-and-software/</url>
+    <content><![CDATA[<p>《<a href="https://book.douban.com/subject/4822685/">编码：隐匿在计算机软硬件背后的语言</a>》（Code:The Hidden Language of Computer Hardware and Software）</p>
+<span id="more"></span>
+<ol>
+<li><p>那时很可能有些人会认为「logic gates」（逻辑门）装置是以著名的微软公司创始人的名字来命名的。（Bill Gates 中的 Gates 在英文中有「门」的意思）——P108；</p>
+</li>
+<li><p>Meow：猫叫的声音——P111；</p>
+</li>
+<li><p>一般来说，对于涉及正数和负数的加法，如果两个操作数的符号位相同，但结果的符号位不同，则结果是无效的。——P159；</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>书摘</category>
+      </categories>
+      <tags>
+        <tag>阅读</tag>
       </tags>
   </entry>
   <entry>
@@ -995,15 +995,6 @@
       </tags>
   </entry>
   <entry>
-    <title>世界，您好！</title>
-    <url>/2017/05/24/hello-world/</url>
-    <content><![CDATA[<p>记录一下，希望以后能一直坚持下去。</p>
-]]></content>
-      <categories>
-        <category>记事</category>
-      </categories>
-  </entry>
-  <entry>
     <title>hexakosioihexekontahexaphobia</title>
     <url>/2017/07/11/hexa-koseeo-ee-hexe-konta-hexaphobia/</url>
     <content><![CDATA[<p>hexakosioihexekontahexaphobia 是指专门指害怕666这个数字，即666恐惧症。 还有一首同名歌曲。蛮好听的。 <a href="http://www.niubb.net/a/20160828/308224.html">来源</a></p>
@@ -1014,6 +1005,15 @@
       <tags>
         <tag>趣闻</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>世界，您好！</title>
+    <url>/2017/05/24/hello-world/</url>
+    <content><![CDATA[<p>记录一下，希望以后能一直坚持下去。</p>
+]]></content>
+      <categories>
+        <category>记事</category>
+      </categories>
   </entry>
   <entry>
     <title>如何删除数组中的 NaN 值</title>
@@ -1585,7 +1585,6 @@
 </ol>
 ]]></content>
       <categories>
-        <category>C#</category>
         <category>转载</category>
       </categories>
       <tags>
@@ -2124,94 +2123,6 @@
       </tags>
   </entry>
   <entry>
-    <title>What is this thing 14</title>
-    <url>/2021/08/21/whatisthisthing-14/</url>
-    <content><![CDATA[<p><a href="https://www.reddit.com/r/whatisthisthing/">What is this thing</a> 是 reddit 上的一个社区（community），上面时不时会有人发一些没见过的玩意来提问。</p>
-<p>一起来看看吧！</p>
-<span id="more"></span>
-<h3 id="保鲜膜"><a href="#保鲜膜" class="headerlink" title="保鲜膜"></a>保鲜膜</h3><blockquote>
-<p>Q: What is this cling film type stuff on Tom Daley’s arms, and what’s it for?</p>
-</blockquote>
-<p>汤姆·戴利手臂上的这种粘膜式的东西是什么，它有什么用？</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-14/保鲜膜.jpg" alt="保鲜膜"></p>
-<blockquote>
-<p>A: Cling filmed ice packs.</p>
-</blockquote>
-<p>保鲜膜冰袋。</p>
-<p><a href="https://www.reddit.com/r/whatisthisthing/comments/owgb70/what_is_this_cling_film_type_stuff_on_tom_daleys/">https://www.reddit.com/r/whatisthisthing/comments/owgb70/what_is_this_cling_film_type_stuff_on_tom_daleys/</a></p>
-<h3 id="液体背心"><a href="#液体背心" class="headerlink" title="液体背心"></a>液体背心</h3><blockquote>
-<p>Q: What are these vest with liquid pouches worn by olympic sailors for? Worn by Dutch sailors Bekkering and Duetz during a post race interview.</p>
-</blockquote>
-<p>奥运帆船运动员穿的这种带液体袋的背心是干什么用的？荷兰运动员贝克林和杜茨在赛后接受采访时穿的衣服。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-14/液体背心.png" alt="液体背心"></p>
-<blockquote>
-<p>A: They are cooling vests.</p>
-</blockquote>
-<p>它们是冷却背心。</p>
-<p><a href="https://www.reddit.com/r/whatisthisthing/comments/oui3f3/what_are_these_vest_with_liquid_pouches_worn_by/">https://www.reddit.com/r/whatisthisthing/comments/oui3f3/what_are_these_vest_with_liquid_pouches_worn_by/</a></p>
-<h3 id="九个钉子"><a href="#九个钉子" class="headerlink" title="九个钉子"></a>九个钉子</h3><blockquote>
-<p>Q: What are these pegs at the end of my bed used for? We thought they were for shoes, but there are 9 of them.</p>
-</blockquote>
-<p>我床尾的这些钉子是干什么用的？我们以为是放鞋的，但其实有 9 个。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-14/床.jpg" alt="床"></p>
-<blockquote>
-<p>A: Anchor points for rope play?</p>
-</blockquote>
-<p>玩绳子时候用的锚点？</p>
-<p><a href="https://www.reddit.com/r/whatisthisthing/comments/or4uz3/what_are_these_pegs_at_the_end_of_my_bed_used_for/">https://www.reddit.com/r/whatisthisthing/comments/or4uz3/what_are_these_pegs_at_the_end_of_my_bed_used_for/</a></p>
-<h3 id="笼子"><a href="#笼子" class="headerlink" title="笼子"></a>笼子</h3><blockquote>
-<p>Q: Just bought a lake home and found three of these in the water next to the pier. Criss-Cross stack of corrugated pipes wrapped in plastic netting all weight down by bricks.</p>
-</blockquote>
-<p>刚买了一个湖边的房子，在码头旁边的水里发现了三个这样的东西。纵横交错的波纹管堆叠，用塑料网包裹，都是用砖头压住的。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-14/笼子.png" alt="笼子"></p>
-<blockquote>
-<p>A: It is a fish crib. It is a device to give baby fish a place to hide from the big boys. They also make for some good fishing as the lunckers will hang around hoping for a few little ones to come out.</p>
-</blockquote>
-<p>它是一个鱼床。它是一种给小鱼提供躲避大鱼的地方的装置。它们也是一好的捕鱼方式，因为小鱼会在周围徘徊，希望有几个小鱼出来。</p>
-<p><a href="https://www.reddit.com/r/whatisthisthing/comments/ova47s/just_bought_a_lake_home_and_found_three_of_these/">https://www.reddit.com/r/whatisthisthing/comments/ova47s/just_bought_a_lake_home_and_found_three_of_these/</a></p>
-<h3 id="茶棍"><a href="#茶棍" class="headerlink" title="茶棍"></a>茶棍</h3><blockquote>
-<p>Q: Wife ordered rolls of thank you stickers on ebay. This came instead. Already called for return. What are they? Green cylindrical rolls of what smell like green tea? I’m a big tea drinker and that’s what I think.</p>
-</blockquote>
-<p>妻子在 eBay 上订购了几卷感谢贴纸。结果却送来了这个。已经打电话要求退货了。这些是什么？绿色的圆柱形卷筒，闻起来像绿茶？作为一个喜欢喝茶的人，我是这么想的。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-14/茶棍.jpg" alt="茶棍"></p>
-<blockquote>
-<p>A: They kind of look like plant fertilizer sticks</p>
-</blockquote>
-<p>它们看起来有点像植物肥料棒。</p>
-<p><a href="https://www.reddit.com/r/whatisthisthing/comments/orkug9/wife_ordered_rolls_of_thank_you_stickers_on_ebay/">https://www.reddit.com/r/whatisthisthing/comments/orkug9/wife_ordered_rolls_of_thank_you_stickers_on_ebay/</a></p>
-<h3 id="可口可乐"><a href="#可口可乐" class="headerlink" title="可口可乐"></a>可口可乐</h3><blockquote>
-<p>Q: What is this thing on the bar counter at work? It is made of metal and hollow.</p>
-</blockquote>
-<p>工作的酒吧柜台上的这个东西是什么？它是由金属制成的，是空心的。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-14/可口可乐.jpg" alt="可口可乐"></p>
-<blockquote>
-<p>A: It’s an old fashioned countertop bottle opener, I’ve seen loads of these in old pubs. The bottles are opened from the other side.</p>
-</blockquote>
-<p>这是一种老式的台面开瓶器，我在老酒馆里见过很多这种开瓶器。瓶子从另一侧打开。</p>
-<p><a href="https://www.reddit.com/r/whatisthisthing/comments/ovtwdb/what_is_this_thing_on_the_bar_counter_at_work_it/">https://www.reddit.com/r/whatisthisthing/comments/ovtwdb/what_is_this_thing_on_the_bar_counter_at_work_it/</a></p>
-<h3 id="量子芯片"><a href="#量子芯片" class="headerlink" title="量子芯片"></a>量子芯片</h3><blockquote>
-<p>Q: New bra I bought online has a “microchip” inside of it. Looks pretty fake to me but can’t pinpoint what is it exactly and why such lengths to have it inside the hems like this.</p>
-</blockquote>
-<p>我在网上买的新文胸里面有一个「微芯片」。在我看来很假，但不知道它到底是什么，也不知道为什么要把它放在这样的褶边里。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-14/量子芯片1.jpg" alt="量子芯片"></p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-14/量子芯片2.jpg" alt="量子芯片"></p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-14/量子芯片3.jpg" alt="量子芯片"></p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-14/量子芯片4.jpg" alt="量子芯片"></p>
-<blockquote>
-<p>A: Google says the Chinese text says ‘quantum computer’. I think this is just a marketing gag, without function.</p>
-</blockquote>
-<p>谷歌说上面的中文是「量子芯片」。我认为这只是一个营销噱头，没有任何作用。</p>
-<p><a href="https://www.reddit.com/r/whatisthisthing/comments/otxuxp/new_bra_i_bought_online_has_a_microchip_inside_of/">https://www.reddit.com/r/whatisthisthing/comments/otxuxp/new_bra_i_bought_online_has_a_microchip_inside_of/</a></p>
-]]></content>
-      <categories>
-        <category>What is this thing?</category>
-      </categories>
-      <tags>
-        <tag>翻译</tag>
-        <tag>What is this thing?</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>What is this thing 13</title>
     <url>/2021/07/22/whatisthisthing-13/</url>
     <content><![CDATA[<p><a href="https://www.reddit.com/r/whatisthisthing/">What is this thing</a> 是 reddit 上的一个社区（community），上面时不时会有人发一些没见过的玩意来提问。</p>
@@ -2328,6 +2239,94 @@
       </tags>
   </entry>
   <entry>
+    <title>What is this thing 14</title>
+    <url>/2021/08/21/whatisthisthing-14/</url>
+    <content><![CDATA[<p><a href="https://www.reddit.com/r/whatisthisthing/">What is this thing</a> 是 reddit 上的一个社区（community），上面时不时会有人发一些没见过的玩意来提问。</p>
+<p>一起来看看吧！</p>
+<span id="more"></span>
+<h3 id="保鲜膜"><a href="#保鲜膜" class="headerlink" title="保鲜膜"></a>保鲜膜</h3><blockquote>
+<p>Q: What is this cling film type stuff on Tom Daley’s arms, and what’s it for?</p>
+</blockquote>
+<p>汤姆·戴利手臂上的这种粘膜式的东西是什么，它有什么用？</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-14/保鲜膜.jpg" alt="保鲜膜"></p>
+<blockquote>
+<p>A: Cling filmed ice packs.</p>
+</blockquote>
+<p>保鲜膜冰袋。</p>
+<p><a href="https://www.reddit.com/r/whatisthisthing/comments/owgb70/what_is_this_cling_film_type_stuff_on_tom_daleys/">https://www.reddit.com/r/whatisthisthing/comments/owgb70/what_is_this_cling_film_type_stuff_on_tom_daleys/</a></p>
+<h3 id="液体背心"><a href="#液体背心" class="headerlink" title="液体背心"></a>液体背心</h3><blockquote>
+<p>Q: What are these vest with liquid pouches worn by olympic sailors for? Worn by Dutch sailors Bekkering and Duetz during a post race interview.</p>
+</blockquote>
+<p>奥运帆船运动员穿的这种带液体袋的背心是干什么用的？荷兰运动员贝克林和杜茨在赛后接受采访时穿的衣服。</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-14/液体背心.png" alt="液体背心"></p>
+<blockquote>
+<p>A: They are cooling vests.</p>
+</blockquote>
+<p>它们是冷却背心。</p>
+<p><a href="https://www.reddit.com/r/whatisthisthing/comments/oui3f3/what_are_these_vest_with_liquid_pouches_worn_by/">https://www.reddit.com/r/whatisthisthing/comments/oui3f3/what_are_these_vest_with_liquid_pouches_worn_by/</a></p>
+<h3 id="九个钉子"><a href="#九个钉子" class="headerlink" title="九个钉子"></a>九个钉子</h3><blockquote>
+<p>Q: What are these pegs at the end of my bed used for? We thought they were for shoes, but there are 9 of them.</p>
+</blockquote>
+<p>我床尾的这些钉子是干什么用的？我们以为是放鞋的，但其实有 9 个。</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-14/床.jpg" alt="床"></p>
+<blockquote>
+<p>A: Anchor points for rope play?</p>
+</blockquote>
+<p>玩绳子时候用的锚点？</p>
+<p><a href="https://www.reddit.com/r/whatisthisthing/comments/or4uz3/what_are_these_pegs_at_the_end_of_my_bed_used_for/">https://www.reddit.com/r/whatisthisthing/comments/or4uz3/what_are_these_pegs_at_the_end_of_my_bed_used_for/</a></p>
+<h3 id="笼子"><a href="#笼子" class="headerlink" title="笼子"></a>笼子</h3><blockquote>
+<p>Q: Just bought a lake home and found three of these in the water next to the pier. Criss-Cross stack of corrugated pipes wrapped in plastic netting all weight down by bricks.</p>
+</blockquote>
+<p>刚买了一个湖边的房子，在码头旁边的水里发现了三个这样的东西。纵横交错的波纹管堆叠，用塑料网包裹，都是用砖头压住的。</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-14/笼子.png" alt="笼子"></p>
+<blockquote>
+<p>A: It is a fish crib. It is a device to give baby fish a place to hide from the big boys. They also make for some good fishing as the lunckers will hang around hoping for a few little ones to come out.</p>
+</blockquote>
+<p>它是一个鱼床。它是一种给小鱼提供躲避大鱼的地方的装置。它们也是一好的捕鱼方式，因为小鱼会在周围徘徊，希望有几个小鱼出来。</p>
+<p><a href="https://www.reddit.com/r/whatisthisthing/comments/ova47s/just_bought_a_lake_home_and_found_three_of_these/">https://www.reddit.com/r/whatisthisthing/comments/ova47s/just_bought_a_lake_home_and_found_three_of_these/</a></p>
+<h3 id="茶棍"><a href="#茶棍" class="headerlink" title="茶棍"></a>茶棍</h3><blockquote>
+<p>Q: Wife ordered rolls of thank you stickers on ebay. This came instead. Already called for return. What are they? Green cylindrical rolls of what smell like green tea? I’m a big tea drinker and that’s what I think.</p>
+</blockquote>
+<p>妻子在 eBay 上订购了几卷感谢贴纸。结果却送来了这个。已经打电话要求退货了。这些是什么？绿色的圆柱形卷筒，闻起来像绿茶？作为一个喜欢喝茶的人，我是这么想的。</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-14/茶棍.jpg" alt="茶棍"></p>
+<blockquote>
+<p>A: They kind of look like plant fertilizer sticks</p>
+</blockquote>
+<p>它们看起来有点像植物肥料棒。</p>
+<p><a href="https://www.reddit.com/r/whatisthisthing/comments/orkug9/wife_ordered_rolls_of_thank_you_stickers_on_ebay/">https://www.reddit.com/r/whatisthisthing/comments/orkug9/wife_ordered_rolls_of_thank_you_stickers_on_ebay/</a></p>
+<h3 id="可口可乐"><a href="#可口可乐" class="headerlink" title="可口可乐"></a>可口可乐</h3><blockquote>
+<p>Q: What is this thing on the bar counter at work? It is made of metal and hollow.</p>
+</blockquote>
+<p>工作的酒吧柜台上的这个东西是什么？它是由金属制成的，是空心的。</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-14/可口可乐.jpg" alt="可口可乐"></p>
+<blockquote>
+<p>A: It’s an old fashioned countertop bottle opener, I’ve seen loads of these in old pubs. The bottles are opened from the other side.</p>
+</blockquote>
+<p>这是一种老式的台面开瓶器，我在老酒馆里见过很多这种开瓶器。瓶子从另一侧打开。</p>
+<p><a href="https://www.reddit.com/r/whatisthisthing/comments/ovtwdb/what_is_this_thing_on_the_bar_counter_at_work_it/">https://www.reddit.com/r/whatisthisthing/comments/ovtwdb/what_is_this_thing_on_the_bar_counter_at_work_it/</a></p>
+<h3 id="量子芯片"><a href="#量子芯片" class="headerlink" title="量子芯片"></a>量子芯片</h3><blockquote>
+<p>Q: New bra I bought online has a “microchip” inside of it. Looks pretty fake to me but can’t pinpoint what is it exactly and why such lengths to have it inside the hems like this.</p>
+</blockquote>
+<p>我在网上买的新文胸里面有一个「微芯片」。在我看来很假，但不知道它到底是什么，也不知道为什么要把它放在这样的褶边里。</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-14/量子芯片1.jpg" alt="量子芯片"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-14/量子芯片2.jpg" alt="量子芯片"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-14/量子芯片3.jpg" alt="量子芯片"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-14/量子芯片4.jpg" alt="量子芯片"></p>
+<blockquote>
+<p>A: Google says the Chinese text says ‘quantum computer’. I think this is just a marketing gag, without function.</p>
+</blockquote>
+<p>谷歌说上面的中文是「量子芯片」。我认为这只是一个营销噱头，没有任何作用。</p>
+<p><a href="https://www.reddit.com/r/whatisthisthing/comments/otxuxp/new_bra_i_bought_online_has_a_microchip_inside_of/">https://www.reddit.com/r/whatisthisthing/comments/otxuxp/new_bra_i_bought_online_has_a_microchip_inside_of/</a></p>
+]]></content>
+      <categories>
+        <category>What is this thing?</category>
+      </categories>
+      <tags>
+        <tag>翻译</tag>
+        <tag>What is this thing?</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>What is this thing 15</title>
     <url>/2021/09/22/whatisthisthing-15/</url>
     <content><![CDATA[<p><a href="https://www.reddit.com/r/whatisthisthing/">What is this thing</a> 是 reddit 上的一个社区（community），上面时不时会有人发一些没见过的玩意来提问。</p>
@@ -2417,6 +2416,107 @@
 </blockquote>
 <p>对我来说看起来像一个真菌菌落。 来源：微生物学家。</p>
 <p><a href="https://www.reddit.com/r/whatisthisthing/comments/pif0ye/white_blob_in_a_bottled_vitamin_water/">https://www.reddit.com/r/whatisthisthing/comments/pif0ye/white_blob_in_a_bottled_vitamin_water/</a></p>
+]]></content>
+      <categories>
+        <category>What is this thing?</category>
+      </categories>
+      <tags>
+        <tag>翻译</tag>
+        <tag>What is this thing?</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>What is this thing 2</title>
+    <url>/2020/09/16/whatisthisthing-2/</url>
+    <content><![CDATA[<p><a href="https://www.reddit.com/r/whatisthisthing/">What is this thing</a> 是 reddit 上的一个社区（community），上面时不时会有人发一些没见过的玩意来提问。</p>
+<p>一起来看看吧！</p>
+<span id="more"></span>
+<h3 id="瓦片"><a href="#瓦片" class="headerlink" title="瓦片"></a>瓦片</h3><blockquote>
+<p>Q: Slave Tile?? Found at an antique store in Orlando. WITT</p>
+</blockquote>
+<p>奴隶瓦片？在一家奥兰多的古董店里找到的。这是个嘛？</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-2/slave-tile.jpg" alt="weird-notes-2.jpg"></p>
+<!-- <img data-src="/2020/09/16/whatisthisthing-2/slave-tile.jpg" class="slave-tile"> -->
+<blockquote>
+<p>A: Tiles of this type were reportedly made and used by slaves in Georgia as grave markers and garden tiles.</p>
+</blockquote>
+<p>据说，这种类型的瓦片是乔治亚州的奴隶制造的，被用于墓碑和花园的瓦片。</p>
+<p><a href="https://www.reddit.com/r/whatisthisthing/comments/it9uvo/slave_tile_found_at_an_antique_store_in_orlando/">https://www.reddit.com/r/whatisthisthing/comments/it9uvo/slave_tile_found_at_an_antique_store_in_orlando/</a></p>
+<h3 id="被裱起来的电路板"><a href="#被裱起来的电路板" class="headerlink" title="被裱起来的电路板"></a>被裱起来的电路板</h3><blockquote>
+<p>Q: Framed old circuit board. Belonged to my great uncle. I’m curious to know what it was used for and why it might have been framed.</p>
+</blockquote>
+<p>被装裱起来的旧电路板，属于我的叔公，我很想知道它是做什么的，为什么要被裱起来。</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-2/circuit-board-1.jpg" alt="circuit-board-1.jpg"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-2/circuit-board-2.jpg" alt="circuit-board-2.jpg"></p>
+<!-- <img data-src="/2020/09/16/whatisthisthing-2/circuit-board-1.jpg" class="circuit-board-1"> -->
+<!-- <img data-src="/2020/09/16/whatisthisthing-2/circuit-board-2.jpg" class="circuit-board-2"> -->
+<blockquote>
+<p>A: ml747m seems to be an op amp. date code is 1973. so it is some sort of analog circuit. maybe your great uncle designed it. i have many of the boards i have designed mounted in frames and hanging on the wall.</p>
+</blockquote>
+<p>ML747M 看起来像一个运算放大器，日期代码是 1973。所以这应该是某种模拟电路。或许这是你的叔公设计的。我设计的很多板子都放在框架中挂在了墙上。</p>
+<p><a href="https://www.reddit.com/r/whatisthisthing/comments/ipdjs5/framed_old_circuit_board_belonged_to_my_great/">https://www.reddit.com/r/whatisthisthing/comments/ipdjs5/framed_old_circuit_board_belonged_to_my_great/</a></p>
+<h3 id="组装带"><a href="#组装带" class="headerlink" title="组装带"></a>组装带</h3><blockquote>
+<p>Q: “Assembly tape” on my Pop-Tart this morning. It’s also on the inside of the wrapper.</p>
+</blockquote>
+<p>早上在「Pop-Tart」上发现的组装带，在包装袋的内部也有。</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-2/assembly-tape-1.jpg" alt="assembly-tape-1.jpg"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-2/assembly-tape-2.jpg" alt="assembly-tape-2.jpg"></p>
+<!-- <img data-src="/2020/09/16/whatisthisthing-2/assembly-tape-1.jpg" class="assembly-tape-1"> -->
+<!-- <img data-src="/2020/09/16/whatisthisthing-2/assembly-tape-2.jpg" class="assembly-tape-2"> -->
+<blockquote>
+<p>A: Splice from film change on flow wrapper during processing. When one roll of “wrapper” is exhausted the next roll is taped to the tag end to run it through the equipment. High visibility tape typically ensures it is removed downstream in the production process.</p>
+</blockquote>
+<p>这种胶接来自包装生产线的上薄膜的变化，当一卷组装带用完时，下一卷组装带粘贴到标签端使其穿过设备。这种看起来非常明显的胶带，通常可以确保在生产线下游发现并移除他们。</p>
+<p><a href="https://www.reddit.com/r/whatisthisthing/comments/iqooe6/assembly_tape_on_my_poptart_this_morning_its_also/">https://www.reddit.com/r/whatisthisthing/comments/iqooe6/assembly_tape_on_my_poptart_this_morning_its_also/</a></p>
+<h3 id="铁片"><a href="#铁片" class="headerlink" title="铁片"></a>铁片</h3><blockquote>
+<p>Q: Found metal detecting outside of an old church.</p>
+</blockquote>
+<p>在一座老教堂外边发现的铁片。</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-2/metal.jpg" alt="metal.jpg"></p>
+<!-- <img data-src="/2020/09/16/whatisthisthing-2/metal.jpg" class="metal"> -->
+<blockquote>
+<p>A: It looks like a Ferrotype photograph. They started being used in the 1850s’s.</p>
+</blockquote>
+<p>这个看起来像一个铁板照片，在19世纪50年代开始使用。</p>
+<p><a href="https://www.reddit.com/r/whatisthisthing/comments/iq4lj3/found_metal_detecting_outside_of_an_old_church/">https://www.reddit.com/r/whatisthisthing/comments/iq4lj3/found_metal_detecting_outside_of_an_old_church/</a></p>
+<h3 id="天花板上的钥匙"><a href="#天花板上的钥匙" class="headerlink" title="天花板上的钥匙"></a>天花板上的钥匙</h3><blockquote>
+<p>Q: Key in the ceiling at school</p>
+</blockquote>
+<p>学校天花板上的钥匙。</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-2/key.jpg" alt="key.jpg"></p>
+<!-- <img data-src="/2020/09/16/whatisthisthing-2/key.jpg" class="key"> -->
+<blockquote>
+<p>A: This could be to test duct detectors in a fire alarm system. Duct detectors will shut off the air conditioning unit if it senses smoke to prevent it from circulating the air.</p>
+</blockquote>
+<p>这个可能是为了测试火灾报警系统中的风管探测器，如果风管探测器检测到烟雾，它将关闭空调，防止空气流通。</p>
+<p><a href="https://www.reddit.com/r/whatisthisthing/comments/ir4ivm/key_in_the_ceiling_at_school/">https://www.reddit.com/r/whatisthisthing/comments/ir4ivm/key_in_the_ceiling_at_school/</a></p>
+<h3 id="谷歌地图"><a href="#谷歌地图" class="headerlink" title="谷歌地图"></a>谷歌地图</h3><blockquote>
+<p>Q: Found on Google maps in the Yukon/Delta region in Alaska, went back to look for it agaun after screen shot but couldn’t find anything. What is it?</p>
+</blockquote>
+<p>使用谷歌地图在阿拉斯加州的育空三角洲地区的找到的，截图下来继续查找，没有任何发现，这个是什么？</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-2/LORAN.jpg" alt="LORAN.jpg"></p>
+<!-- <img data-src="/2020/09/16/whatisthisthing-2/LORAN.jpg" class="LORAN"> -->
+<blockquote>
+<p>A: <a href="https://goo.gl/maps/Te4nCUtFCKzBckfJ8">Here it is</a><br><a href="https://www.loran-history.info/tok/tok.htm">Here’s some information on it.</a> Decommissioned LORAN array.</p>
+</blockquote>
+<p>一个正式停用的远距离无线电导航系统阵列。</p>
+<p>（译者注：英文缩写 LORAN，为「Long Range Navigation」（远程导航）的缩写，中文音译为「罗兰」或「劳兰」，是在二战期间由美国开发的一种无线电导航及授时系统。目前已衍生了多个版本。）</p>
+<p><a href="https://www.reddit.com/r/whatisthisthing/comments/ip68ur/found_on_google_maps_in_the_yukondelta_region_in/">https://www.reddit.com/r/whatisthisthing/comments/ip68ur/found_on_google_maps_in_the_yukondelta_region_in/</a></p>
+<h3 id="钟"><a href="#钟" class="headerlink" title="钟"></a>钟</h3><blockquote>
+<p>Q: Weird old bell found in the Hudson Valley.</p>
+</blockquote>
+<p>哈德逊河谷发现的怪异的古钟。</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-2/bell.jpg" alt="bell.jpg"></p>
+<!-- <img data-src="/2020/09/16/whatisthisthing-2/bell.jpg" class="bell"> -->
+<blockquote>
+<p>A: Dutch East Indian Nautical bell?</p>
+</blockquote>
+<p>荷兰东印度航海钟？</p>
+<blockquote>
+<p>A: Vereenigde Oostindische Compagnie</p>
+</blockquote>
+<p>荷兰东印度公司</p>
+<p><a href="https://www.reddit.com/r/whatisthisthing/comments/iq3ij4/weird_old_bell_found_in_the_hudson_valley/">https://www.reddit.com/r/whatisthisthing/comments/iq3ij4/weird_old_bell_found_in_the_hudson_valley/</a></p>
 ]]></content>
       <categories>
         <category>What is this thing?</category>
@@ -2538,97 +2638,110 @@
       </tags>
   </entry>
   <entry>
-    <title>What is this thing 2</title>
-    <url>/2020/09/16/whatisthisthing-2/</url>
+    <title>What is this thing 5</title>
+    <url>/2020/12/25/whatisthisthing-5/</url>
     <content><![CDATA[<p><a href="https://www.reddit.com/r/whatisthisthing/">What is this thing</a> 是 reddit 上的一个社区（community），上面时不时会有人发一些没见过的玩意来提问。</p>
 <p>一起来看看吧！</p>
 <span id="more"></span>
-<h3 id="瓦片"><a href="#瓦片" class="headerlink" title="瓦片"></a>瓦片</h3><blockquote>
-<p>Q: Slave Tile?? Found at an antique store in Orlando. WITT</p>
+<h3 id="桶"><a href="#桶" class="headerlink" title="桶"></a>桶</h3><blockquote>
+<p>Q: Huge metal cylinder found in the middle of the woods (Central Pennsylvania)</p>
 </blockquote>
-<p>奴隶瓦片？在一家奥兰多的古董店里找到的。这是个嘛？</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-2/slave-tile.jpg" alt="weird-notes-2.jpg"></p>
-<!-- <img data-src="/2020/09/16/whatisthisthing-2/slave-tile.jpg" class="slave-tile"> -->
+<p>在树林中发现的巨大金属圆筒（宾夕法尼亚州中部）</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/桶.jpg" alt="桶"></p>
+<!-- <img data-src="/2020/12/25/whatisthisthing-5/%E6%A1%B6.jpg" class="桶"> -->
 <blockquote>
-<p>A: Tiles of this type were reportedly made and used by slaves in Georgia as grave markers and garden tiles.</p>
+<p>A: It’s an “upright” tank for fluid storage. Normally 12’ diameter and 20’ tall, they hold 400 barrels of fluid. This one is laid on its side, which is how most are transported.<br>Used in oilfield applications, this one was probably ditched illegally because it has been exposed to or contains excessive amounts of NORM or naturally occurring radioactive material. NORM is present in small amounts in produced fluids, builds up in storage tanks over time and is very expensive to get rid of.<br>See this for some examples of modern versions.</p>
 </blockquote>
-<p>据说，这种类型的瓦片是乔治亚州的奴隶制造的，被用于墓碑和花园的瓦片。</p>
-<p><a href="https://www.reddit.com/r/whatisthisthing/comments/it9uvo/slave_tile_found_at_an_antique_store_in_orlando/">https://www.reddit.com/r/whatisthisthing/comments/it9uvo/slave_tile_found_at_an_antique_store_in_orlando/</a></p>
-<h3 id="被裱起来的电路板"><a href="#被裱起来的电路板" class="headerlink" title="被裱起来的电路板"></a>被裱起来的电路板</h3><blockquote>
-<p>Q: Framed old circuit board. Belonged to my great uncle. I’m curious to know what it was used for and why it might have been framed.</p>
+<p>这是一个用来储存液体的「立式」容器。它们通常直径 12 英尺，高 20 英尺，可容纳 400 桶（47600 升）液体。这个桶是侧卧的，大多数都是这样运输的。</p>
+<p>在油田应用中，使用的这一种可能是非法丢弃的，因为它暴露于或含有过量的标准或自然产生的放射性物质。天然放射物质以少量的形式存在于生产流体中，随着时间的推移在储存罐中积累，并且去除它非常昂贵。</p>
+<p>看看这些现代版本的样子。</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/桶2.jpg" alt="桶"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/桶3.jpg" alt="桶"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/桶4.jpg" alt="桶"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/桶5.jpg" alt="桶"></p>
+<!-- <img data-src="/2020/12/25/whatisthisthing-5/%E6%A1%B62.jpg" class="桶"> -->
+<!-- <img data-src="/2020/12/25/whatisthisthing-5/%E6%A1%B63.jpg" class="桶"> -->
+<!-- <img data-src="/2020/12/25/whatisthisthing-5/%E6%A1%B64.jpg" class="桶"> -->
+<!-- <img data-src="/2020/12/25/whatisthisthing-5/%E6%A1%B65.jpg" class="桶"> -->
+<p><a href="https://www.reddit.com/r/whatisthisthing/comments/k2q3x9/huge_metal_cylinder_found_in_the_middle_of_the/">https://www.reddit.com/r/whatisthisthing/comments/k2q3x9/huge_metal_cylinder_found_in_the_middle_of_the/</a></p>
+<h3 id="机器人"><a href="#机器人" class="headerlink" title="机器人"></a>机器人</h3><blockquote>
+<p>Q: Strange Robot Friend Neighbors Trashed After Moving Out</p>
 </blockquote>
-<p>被装裱起来的旧电路板，属于我的叔公，我很想知道它是做什么的，为什么要被裱起来。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-2/circuit-board-1.jpg" alt="circuit-board-1.jpg"></p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-2/circuit-board-2.jpg" alt="circuit-board-2.jpg"></p>
-<!-- <img data-src="/2020/09/16/whatisthisthing-2/circuit-board-1.jpg" class="circuit-board-1"> -->
-<!-- <img data-src="/2020/09/16/whatisthisthing-2/circuit-board-2.jpg" class="circuit-board-2"> -->
+<p>邻居们都在吐槽被搬出去的奇怪机器人。</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/机器人1.jpg" alt="机器人"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/机器人2.jpg" alt="机器人"></p>
+<!-- <img data-src="/2020/12/25/whatisthisthing-5/%E6%9C%BA%E5%99%A8%E4%BA%BA1.jpg" class="机器人"> -->
+<!-- <img data-src="/2020/12/25/whatisthisthing-5/%E6%9C%BA%E5%99%A8%E4%BA%BA2.jpg" class="机器人"> -->
 <blockquote>
-<p>A: ml747m seems to be an op amp. date code is 1973. so it is some sort of analog circuit. maybe your great uncle designed it. i have many of the boards i have designed mounted in frames and hanging on the wall.</p>
+<p>A: My guess is a robot used for a laser tag game. The thing is holding a blaster and the eyes likely have sort of photocell or means to detect the laser. Laser tags were big back in the 90s.</p>
 </blockquote>
-<p>ML747M 看起来像一个运算放大器，日期代码是 1973。所以这应该是某种模拟电路。或许这是你的叔公设计的。我设计的很多板子都放在框架中挂在了墙上。</p>
-<p><a href="https://www.reddit.com/r/whatisthisthing/comments/ipdjs5/framed_old_circuit_board_belonged_to_my_great/">https://www.reddit.com/r/whatisthisthing/comments/ipdjs5/framed_old_circuit_board_belonged_to_my_great/</a></p>
-<h3 id="组装带"><a href="#组装带" class="headerlink" title="组装带"></a>组装带</h3><blockquote>
-<p>Q: “Assembly tape” on my Pop-Tart this morning. It’s also on the inside of the wrapper.</p>
+<p>我猜是用来玩激光枪战游戏的机器人。这东西拿着一个爆破器，眼睛可能有某种光电池或手段来探测激光。激光枪战在 90 年代很流行。</p>
+<p><a href="https://www.reddit.com/r/whatisthisthing/comments/k3v3q8/strange_robot_friend_neighbors_trashed_after/">https://www.reddit.com/r/whatisthisthing/comments/k3v3q8/strange_robot_friend_neighbors_trashed_after/</a></p>
+<h3 id="新生儿"><a href="#新生儿" class="headerlink" title="新生儿"></a>新生儿</h3><blockquote>
+<p>Q: Someone was gifted this for a new baby with no note on what it is</p>
 </blockquote>
-<p>早上在「Pop-Tart」上发现的组装带，在包装袋的内部也有。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-2/assembly-tape-1.jpg" alt="assembly-tape-1.jpg"></p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-2/assembly-tape-2.jpg" alt="assembly-tape-2.jpg"></p>
-<!-- <img data-src="/2020/09/16/whatisthisthing-2/assembly-tape-1.jpg" class="assembly-tape-1"> -->
-<!-- <img data-src="/2020/09/16/whatisthisthing-2/assembly-tape-2.jpg" class="assembly-tape-2"> -->
+<p>有人把这个礼物送给了一个新生儿，却没有说明是什么。</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/新生儿1.jpg" alt="新生儿"></p>
+<!-- <img data-src="/2020/12/25/whatisthisthing-5/%E6%96%B0%E7%94%9F%E5%84%BF1.jpg" class="新生儿"> -->
 <blockquote>
-<p>A: Splice from film change on flow wrapper during processing. When one roll of “wrapper” is exhausted the next roll is taped to the tag end to run it through the equipment. High visibility tape typically ensures it is removed downstream in the production process.</p>
+<p>A: It is a door silencer. It wraps around and covers the latch on a door so that it doesn’t latch and the rubber also makes the door open and close silently. The straps go around the doorknob on each side.<br>EDIT: I could only find a foreign language site with this version, but here’s a picture from there: <a href="http://ae01.alicdn.com/kf/H8c7289b680bc4ef59fd8915e0eeafd8bP/-.jpg">http://ae01.alicdn.com/kf/H8c7289b680bc4ef59fd8915e0eeafd8bP/-.jpg</a></p>
 </blockquote>
-<p>这种胶接来自包装生产线的上薄膜的变化，当一卷组装带用完时，下一卷组装带粘贴到标签端使其穿过设备。这种看起来非常明显的胶带，通常可以确保在生产线下游发现并移除他们。</p>
-<p><a href="https://www.reddit.com/r/whatisthisthing/comments/iqooe6/assembly_tape_on_my_poptart_this_morning_its_also/">https://www.reddit.com/r/whatisthisthing/comments/iqooe6/assembly_tape_on_my_poptart_this_morning_its_also/</a></p>
-<h3 id="铁片"><a href="#铁片" class="headerlink" title="铁片"></a>铁片</h3><blockquote>
-<p>Q: Found metal detecting outside of an old church.</p>
+<p>这是一个门消音器。它可以包裹并覆盖门上的闩锁，从而不会使门关上，并且橡胶还可以使门安静地打开和关闭。带子绕在门把手的每一侧。</p>
+<p>编辑：我只能用此版本找到一个外语网站，但是这里有一张照片：</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/新生儿2.jpg" alt="新生儿"></p>
+<!-- <img data-src="/2020/12/25/whatisthisthing-5/%E6%96%B0%E7%94%9F%E5%84%BF2.jpg" class="新生儿"> -->
+<p>（译者注：答案中的这张图片还是从淘宝拿来的。）</p>
+<p><a href="https://www.reddit.com/r/whatisthisthing/comments/k95b1x/someone_was_gifted_this_for_a_new_baby_with_no/">https://www.reddit.com/r/whatisthisthing/comments/k95b1x/someone_was_gifted_this_for_a_new_baby_with_no/</a></p>
+<h3 id="杀虫"><a href="#杀虫" class="headerlink" title="杀虫"></a>杀虫</h3><blockquote>
+<p>Q: They installed this thing on the ceiling of my apartment building. The green light makes a buzz sound with each flash</p>
 </blockquote>
-<p>在一座老教堂外边发现的铁片。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-2/metal.jpg" alt="metal.jpg"></p>
-<!-- <img data-src="/2020/09/16/whatisthisthing-2/metal.jpg" class="metal"> -->
+<p>他们在我公寓的天花板上安装了这个。绿灯每闪一次就发出嗡嗡声。</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/杀虫.jpg" alt="杀虫"></p>
+<!-- <img data-src="/2020/12/25/whatisthisthing-5/%E6%9D%80%E8%99%AB.jpg" class="杀虫"> -->
 <blockquote>
-<p>A: It looks like a Ferrotype photograph. They started being used in the 1850s’s.</p>
+<p>A: It’s called the Pestinator 360. It repels insects and rodents. A rather janky install for a ceiling though. <a href="https://www.amazon.com/gp/aw/d/B06ZY79XLC/ref=cm_cr_arp_mb_bdcrb_top?ie=UTF8">https://www.amazon.com/gp/aw/d/B06ZY79XLC/ref=cm_cr_arp_mb_bdcrb_top?ie=UTF8</a></p>
 </blockquote>
-<p>这个看起来像一个铁板照片，在19世纪50年代开始使用。</p>
-<p><a href="https://www.reddit.com/r/whatisthisthing/comments/iq4lj3/found_metal_detecting_outside_of_an_old_church/">https://www.reddit.com/r/whatisthisthing/comments/iq4lj3/found_metal_detecting_outside_of_an_old_church/</a></p>
-<h3 id="天花板上的钥匙"><a href="#天花板上的钥匙" class="headerlink" title="天花板上的钥匙"></a>天花板上的钥匙</h3><blockquote>
-<p>Q: Key in the ceiling at school</p>
+<p>它被称为 Pestinator 360。它能驱赶昆虫和啮齿动物。不过天花板的安装还真不怎么样。<a href="https://www.amazon.com/gp/aw/d/B06ZY79XLC/ref=cm_cr_arp_mb_bdcrb_top?ie=UTF8">https://www.amazon.com/gp/aw/d/B06ZY79XLC/ref=cm_cr_arp_mb_bdcrb_top?ie=UTF8</a></p>
+<p><a href="https://www.reddit.com/r/whatisthisthing/comments/keshzv/they_installed_this_thing_on_the_ceiling_of_my/">https://www.reddit.com/r/whatisthisthing/comments/keshzv/they_installed_this_thing_on_the_ceiling_of_my/</a></p>
+<h3 id="金砖？"><a href="#金砖？" class="headerlink" title="金砖？"></a>金砖？</h3><blockquote>
+<p>Q: WITT? Mom bought a box of old pins and this was among them. Appears to be metal, backside is empty aside from marks of being glued to something</p>
 </blockquote>
-<p>学校天花板上的钥匙。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-2/key.jpg" alt="key.jpg"></p>
-<!-- <img data-src="/2020/09/16/whatisthisthing-2/key.jpg" class="key"> -->
+<p>这是个嘛？妈妈买了一盒旧别针，这是其中之一。似乎是金属的，背面是空的，除了有些粘在什么东西上的痕迹。</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/金砖.jpg" alt="金砖"></p>
+<!-- <img data-src="/2020/12/25/whatisthisthing-5/%E9%87%91%E7%A0%96.jpg" class="金砖"> -->
 <blockquote>
-<p>A: This could be to test duct detectors in a fire alarm system. Duct detectors will shut off the air conditioning unit if it senses smoke to prevent it from circulating the air.</p>
+<p>A: Readers Digest sweepstakes token</p>
 </blockquote>
-<p>这个可能是为了测试火灾报警系统中的风管探测器，如果风管探测器检测到烟雾，它将关闭空调，防止空气流通。</p>
-<p><a href="https://www.reddit.com/r/whatisthisthing/comments/ir4ivm/key_in_the_ceiling_at_school/">https://www.reddit.com/r/whatisthisthing/comments/ir4ivm/key_in_the_ceiling_at_school/</a></p>
-<h3 id="谷歌地图"><a href="#谷歌地图" class="headerlink" title="谷歌地图"></a>谷歌地图</h3><blockquote>
-<p>Q: Found on Google maps in the Yukon/Delta region in Alaska, went back to look for it agaun after screen shot but couldn’t find anything. What is it?</p>
+<p>读者文摘的抽奖代币</p>
+<p><a href="https://www.reddit.com/r/whatisthisthing/comments/kg7izm/witt_mom_bought_a_box_of_old_pins_and_this_was/">https://www.reddit.com/r/whatisthisthing/comments/kg7izm/witt_mom_bought_a_box_of_old_pins_and_this_was/</a></p>
+<h3 id="不知道用途的工具"><a href="#不知道用途的工具" class="headerlink" title="不知道用途的工具"></a>不知道用途的工具</h3><blockquote>
+<p>Q: Kitchen tool made by winco. No idea what it is</p>
 </blockquote>
-<p>使用谷歌地图在阿拉斯加州的育空三角洲地区的找到的，截图下来继续查找，没有任何发现，这个是什么？</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-2/LORAN.jpg" alt="LORAN.jpg"></p>
-<!-- <img data-src="/2020/09/16/whatisthisthing-2/LORAN.jpg" class="LORAN"> -->
+<p>winco（超市）制作的厨房工具。不知道是什么。</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/工具1.jpg" alt="工具"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/工具2.jpg" alt="工具"></p>
+<!-- <img data-src="/2020/12/25/whatisthisthing-5/%E5%B7%A5%E5%85%B71.jpg" class="工具"> -->
+<!-- <img data-src="/2020/12/25/whatisthisthing-5/%E5%B7%A5%E5%85%B72.jpg" class="工具"> -->
 <blockquote>
-<p>A: <a href="https://goo.gl/maps/Te4nCUtFCKzBckfJ8">Here it is</a><br><a href="https://www.loran-history.info/tok/tok.htm">Here’s some information on it.</a> Decommissioned LORAN array.</p>
+<p>A: Winco SDS-3, Shrimp Peeler with Comfort Grip Handle, Stainless Steel</p>
 </blockquote>
-<p>一个正式停用的远距离无线电导航系统阵列。</p>
-<p>（译者注：英文缩写 LORAN，为「Long Range Navigation」（远程导航）的缩写，中文音译为「罗兰」或「劳兰」，是在二战期间由美国开发的一种无线电导航及授时系统。目前已衍生了多个版本。）</p>
-<p><a href="https://www.reddit.com/r/whatisthisthing/comments/ip68ur/found_on_google_maps_in_the_yukondelta_region_in/">https://www.reddit.com/r/whatisthisthing/comments/ip68ur/found_on_google_maps_in_the_yukondelta_region_in/</a></p>
-<h3 id="钟"><a href="#钟" class="headerlink" title="钟"></a>钟</h3><blockquote>
-<p>Q: Weird old bell found in the Hudson Valley.</p>
+<p>Winco SDS-3，带舒适手柄的虾剥皮机，不锈钢。</p>
+<p><a href="https://www.reddit.com/r/whatisthisthing/comments/k0xx73/kitchen_tool_made_by_winco_no_idea_what_it_is/">https://www.reddit.com/r/whatisthisthing/comments/k0xx73/kitchen_tool_made_by_winco_no_idea_what_it_is/</a></p>
+<h3 id="报警器"><a href="#报警器" class="headerlink" title="报警器"></a>报警器</h3><blockquote>
+<p>Q: Found in my new home, built in the 1950s</p>
 </blockquote>
-<p>哈德逊河谷发现的怪异的古钟。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-2/bell.jpg" alt="bell.jpg"></p>
-<!-- <img data-src="/2020/09/16/whatisthisthing-2/bell.jpg" class="bell"> -->
+<p>在我的新家发现的，建于 20 世纪 50 年代。</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/报警器.jpg" alt="报警器"></p>
+<!-- <img data-src="/2020/12/25/whatisthisthing-5/%E6%8A%A5%E8%AD%A6%E5%99%A8.jpg" class="报警器"> -->
 <blockquote>
-<p>A: Dutch East Indian Nautical bell?</p>
+<p>A: It’s an on / off for a house alarm.</p>
 </blockquote>
-<p>荷兰东印度航海钟？</p>
+<p>它被用来打开或关闭房屋报警。</p>
 <blockquote>
-<p>A: Vereenigde Oostindische Compagnie</p>
+<p>A: Although in this case it’s 99% likely for an alarm, switches like this were used for other things as well. I did a remodel last summer where a same/similar switch was used to lower and raise a massive chandelier- for cleaning or bulb replacement.</p>
 </blockquote>
-<p>荷兰东印度公司</p>
-<p><a href="https://www.reddit.com/r/whatisthisthing/comments/iq3ij4/weird_old_bell_found_in_the_hudson_valley/">https://www.reddit.com/r/whatisthisthing/comments/iq3ij4/weird_old_bell_found_in_the_hudson_valley/</a></p>
+<p>虽然在这种情况下警报器的可能性是99%，但像这样的开关也被用于其他用途。去年夏天，我做了一次改造，用了一个相同或类似的开关来降低和提高一个巨大的吊灯——为了清洁或更换灯泡。</p>
+<p><a href="https://www.reddit.com/r/whatisthisthing/comments/kc23cn/found_in_my_new_home_built_in_the_1950s/">https://www.reddit.com/r/whatisthisthing/comments/kc23cn/found_in_my_new_home_built_in_the_1950s/</a></p>
 ]]></content>
       <categories>
         <category>What is this thing?</category>
@@ -2754,120 +2867,6 @@
 </blockquote>
 <p>在20世纪二三十年代，穿这样的长袍打麻将相当流行。</p>
 <p><a href="https://www.reddit.com/r/whatisthisthing/comments/jzpw4e/found_some_old_oriental_silk_garments_of_my_great/">https://www.reddit.com/r/whatisthisthing/comments/jzpw4e/found_some_old_oriental_silk_garments_of_my_great/</a></p>
-]]></content>
-      <categories>
-        <category>What is this thing?</category>
-      </categories>
-      <tags>
-        <tag>翻译</tag>
-        <tag>What is this thing?</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>What is this thing 5</title>
-    <url>/2020/12/25/whatisthisthing-5/</url>
-    <content><![CDATA[<p><a href="https://www.reddit.com/r/whatisthisthing/">What is this thing</a> 是 reddit 上的一个社区（community），上面时不时会有人发一些没见过的玩意来提问。</p>
-<p>一起来看看吧！</p>
-<span id="more"></span>
-<h3 id="桶"><a href="#桶" class="headerlink" title="桶"></a>桶</h3><blockquote>
-<p>Q: Huge metal cylinder found in the middle of the woods (Central Pennsylvania)</p>
-</blockquote>
-<p>在树林中发现的巨大金属圆筒（宾夕法尼亚州中部）</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/桶.jpg" alt="桶"></p>
-<!-- <img data-src="/2020/12/25/whatisthisthing-5/%E6%A1%B6.jpg" class="桶"> -->
-<blockquote>
-<p>A: It’s an “upright” tank for fluid storage. Normally 12’ diameter and 20’ tall, they hold 400 barrels of fluid. This one is laid on its side, which is how most are transported.<br>Used in oilfield applications, this one was probably ditched illegally because it has been exposed to or contains excessive amounts of NORM or naturally occurring radioactive material. NORM is present in small amounts in produced fluids, builds up in storage tanks over time and is very expensive to get rid of.<br>See this for some examples of modern versions.</p>
-</blockquote>
-<p>这是一个用来储存液体的「立式」容器。它们通常直径 12 英尺，高 20 英尺，可容纳 400 桶（47600 升）液体。这个桶是侧卧的，大多数都是这样运输的。</p>
-<p>在油田应用中，使用的这一种可能是非法丢弃的，因为它暴露于或含有过量的标准或自然产生的放射性物质。天然放射物质以少量的形式存在于生产流体中，随着时间的推移在储存罐中积累，并且去除它非常昂贵。</p>
-<p>看看这些现代版本的样子。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/桶2.jpg" alt="桶"></p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/桶3.jpg" alt="桶"></p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/桶4.jpg" alt="桶"></p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/桶5.jpg" alt="桶"></p>
-<!-- <img data-src="/2020/12/25/whatisthisthing-5/%E6%A1%B62.jpg" class="桶"> -->
-<!-- <img data-src="/2020/12/25/whatisthisthing-5/%E6%A1%B63.jpg" class="桶"> -->
-<!-- <img data-src="/2020/12/25/whatisthisthing-5/%E6%A1%B64.jpg" class="桶"> -->
-<!-- <img data-src="/2020/12/25/whatisthisthing-5/%E6%A1%B65.jpg" class="桶"> -->
-<p><a href="https://www.reddit.com/r/whatisthisthing/comments/k2q3x9/huge_metal_cylinder_found_in_the_middle_of_the/">https://www.reddit.com/r/whatisthisthing/comments/k2q3x9/huge_metal_cylinder_found_in_the_middle_of_the/</a></p>
-<h3 id="机器人"><a href="#机器人" class="headerlink" title="机器人"></a>机器人</h3><blockquote>
-<p>Q: Strange Robot Friend Neighbors Trashed After Moving Out</p>
-</blockquote>
-<p>邻居们都在吐槽被搬出去的奇怪机器人。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/机器人1.jpg" alt="机器人"></p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/机器人2.jpg" alt="机器人"></p>
-<!-- <img data-src="/2020/12/25/whatisthisthing-5/%E6%9C%BA%E5%99%A8%E4%BA%BA1.jpg" class="机器人"> -->
-<!-- <img data-src="/2020/12/25/whatisthisthing-5/%E6%9C%BA%E5%99%A8%E4%BA%BA2.jpg" class="机器人"> -->
-<blockquote>
-<p>A: My guess is a robot used for a laser tag game. The thing is holding a blaster and the eyes likely have sort of photocell or means to detect the laser. Laser tags were big back in the 90s.</p>
-</blockquote>
-<p>我猜是用来玩激光枪战游戏的机器人。这东西拿着一个爆破器，眼睛可能有某种光电池或手段来探测激光。激光枪战在 90 年代很流行。</p>
-<p><a href="https://www.reddit.com/r/whatisthisthing/comments/k3v3q8/strange_robot_friend_neighbors_trashed_after/">https://www.reddit.com/r/whatisthisthing/comments/k3v3q8/strange_robot_friend_neighbors_trashed_after/</a></p>
-<h3 id="新生儿"><a href="#新生儿" class="headerlink" title="新生儿"></a>新生儿</h3><blockquote>
-<p>Q: Someone was gifted this for a new baby with no note on what it is</p>
-</blockquote>
-<p>有人把这个礼物送给了一个新生儿，却没有说明是什么。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/新生儿1.jpg" alt="新生儿"></p>
-<!-- <img data-src="/2020/12/25/whatisthisthing-5/%E6%96%B0%E7%94%9F%E5%84%BF1.jpg" class="新生儿"> -->
-<blockquote>
-<p>A: It is a door silencer. It wraps around and covers the latch on a door so that it doesn’t latch and the rubber also makes the door open and close silently. The straps go around the doorknob on each side.<br>EDIT: I could only find a foreign language site with this version, but here’s a picture from there: <a href="http://ae01.alicdn.com/kf/H8c7289b680bc4ef59fd8915e0eeafd8bP/-.jpg">http://ae01.alicdn.com/kf/H8c7289b680bc4ef59fd8915e0eeafd8bP/-.jpg</a></p>
-</blockquote>
-<p>这是一个门消音器。它可以包裹并覆盖门上的闩锁，从而不会使门关上，并且橡胶还可以使门安静地打开和关闭。带子绕在门把手的每一侧。</p>
-<p>编辑：我只能用此版本找到一个外语网站，但是这里有一张照片：</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/新生儿2.jpg" alt="新生儿"></p>
-<!-- <img data-src="/2020/12/25/whatisthisthing-5/%E6%96%B0%E7%94%9F%E5%84%BF2.jpg" class="新生儿"> -->
-<p>（译者注：答案中的这张图片还是从淘宝拿来的。）</p>
-<p><a href="https://www.reddit.com/r/whatisthisthing/comments/k95b1x/someone_was_gifted_this_for_a_new_baby_with_no/">https://www.reddit.com/r/whatisthisthing/comments/k95b1x/someone_was_gifted_this_for_a_new_baby_with_no/</a></p>
-<h3 id="杀虫"><a href="#杀虫" class="headerlink" title="杀虫"></a>杀虫</h3><blockquote>
-<p>Q: They installed this thing on the ceiling of my apartment building. The green light makes a buzz sound with each flash</p>
-</blockquote>
-<p>他们在我公寓的天花板上安装了这个。绿灯每闪一次就发出嗡嗡声。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/杀虫.jpg" alt="杀虫"></p>
-<!-- <img data-src="/2020/12/25/whatisthisthing-5/%E6%9D%80%E8%99%AB.jpg" class="杀虫"> -->
-<blockquote>
-<p>A: It’s called the Pestinator 360. It repels insects and rodents. A rather janky install for a ceiling though. <a href="https://www.amazon.com/gp/aw/d/B06ZY79XLC/ref=cm_cr_arp_mb_bdcrb_top?ie=UTF8">https://www.amazon.com/gp/aw/d/B06ZY79XLC/ref=cm_cr_arp_mb_bdcrb_top?ie=UTF8</a></p>
-</blockquote>
-<p>它被称为 Pestinator 360。它能驱赶昆虫和啮齿动物。不过天花板的安装还真不怎么样。<a href="https://www.amazon.com/gp/aw/d/B06ZY79XLC/ref=cm_cr_arp_mb_bdcrb_top?ie=UTF8">https://www.amazon.com/gp/aw/d/B06ZY79XLC/ref=cm_cr_arp_mb_bdcrb_top?ie=UTF8</a></p>
-<p><a href="https://www.reddit.com/r/whatisthisthing/comments/keshzv/they_installed_this_thing_on_the_ceiling_of_my/">https://www.reddit.com/r/whatisthisthing/comments/keshzv/they_installed_this_thing_on_the_ceiling_of_my/</a></p>
-<h3 id="金砖？"><a href="#金砖？" class="headerlink" title="金砖？"></a>金砖？</h3><blockquote>
-<p>Q: WITT? Mom bought a box of old pins and this was among them. Appears to be metal, backside is empty aside from marks of being glued to something</p>
-</blockquote>
-<p>这是个嘛？妈妈买了一盒旧别针，这是其中之一。似乎是金属的，背面是空的，除了有些粘在什么东西上的痕迹。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/金砖.jpg" alt="金砖"></p>
-<!-- <img data-src="/2020/12/25/whatisthisthing-5/%E9%87%91%E7%A0%96.jpg" class="金砖"> -->
-<blockquote>
-<p>A: Readers Digest sweepstakes token</p>
-</blockquote>
-<p>读者文摘的抽奖代币</p>
-<p><a href="https://www.reddit.com/r/whatisthisthing/comments/kg7izm/witt_mom_bought_a_box_of_old_pins_and_this_was/">https://www.reddit.com/r/whatisthisthing/comments/kg7izm/witt_mom_bought_a_box_of_old_pins_and_this_was/</a></p>
-<h3 id="不知道用途的工具"><a href="#不知道用途的工具" class="headerlink" title="不知道用途的工具"></a>不知道用途的工具</h3><blockquote>
-<p>Q: Kitchen tool made by winco. No idea what it is</p>
-</blockquote>
-<p>winco（超市）制作的厨房工具。不知道是什么。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/工具1.jpg" alt="工具"></p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/工具2.jpg" alt="工具"></p>
-<!-- <img data-src="/2020/12/25/whatisthisthing-5/%E5%B7%A5%E5%85%B71.jpg" class="工具"> -->
-<!-- <img data-src="/2020/12/25/whatisthisthing-5/%E5%B7%A5%E5%85%B72.jpg" class="工具"> -->
-<blockquote>
-<p>A: Winco SDS-3, Shrimp Peeler with Comfort Grip Handle, Stainless Steel</p>
-</blockquote>
-<p>Winco SDS-3，带舒适手柄的虾剥皮机，不锈钢。</p>
-<p><a href="https://www.reddit.com/r/whatisthisthing/comments/k0xx73/kitchen_tool_made_by_winco_no_idea_what_it_is/">https://www.reddit.com/r/whatisthisthing/comments/k0xx73/kitchen_tool_made_by_winco_no_idea_what_it_is/</a></p>
-<h3 id="报警器"><a href="#报警器" class="headerlink" title="报警器"></a>报警器</h3><blockquote>
-<p>Q: Found in my new home, built in the 1950s</p>
-</blockquote>
-<p>在我的新家发现的，建于 20 世纪 50 年代。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-5/报警器.jpg" alt="报警器"></p>
-<!-- <img data-src="/2020/12/25/whatisthisthing-5/%E6%8A%A5%E8%AD%A6%E5%99%A8.jpg" class="报警器"> -->
-<blockquote>
-<p>A: It’s an on / off for a house alarm.</p>
-</blockquote>
-<p>它被用来打开或关闭房屋报警。</p>
-<blockquote>
-<p>A: Although in this case it’s 99% likely for an alarm, switches like this were used for other things as well. I did a remodel last summer where a same/similar switch was used to lower and raise a massive chandelier- for cleaning or bulb replacement.</p>
-</blockquote>
-<p>虽然在这种情况下警报器的可能性是99%，但像这样的开关也被用于其他用途。去年夏天，我做了一次改造，用了一个相同或类似的开关来降低和提高一个巨大的吊灯——为了清洁或更换灯泡。</p>
-<p><a href="https://www.reddit.com/r/whatisthisthing/comments/kc23cn/found_in_my_new_home_built_in_the_1950s/">https://www.reddit.com/r/whatisthisthing/comments/kc23cn/found_in_my_new_home_built_in_the_1950s/</a></p>
 ]]></content>
       <categories>
         <category>What is this thing?</category>
@@ -3466,55 +3465,6 @@
       </tags>
   </entry>
   <entry>
-    <title>在微信中使用 ToDoList</title>
-    <url>/2020/03/13/%E5%9C%A8%E5%BE%AE%E4%BF%A1%E4%B8%AD%E4%BD%BF%E7%94%A8ToDoList/</url>
-    <content><![CDATA[<p>在 <a href="https://www.v2ex.com/t/650838">V2EX</a> 看到了这篇帖子，想到了之前自己琢磨出来的方法，所以在这里记录一下，到时候也可以直接将链接贴到回复中去。</p>
-<span id="more"></span>
-<h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><p>效果如下：</p>
-<!-- ![效果.jpg](https://i.loli.net/2020/03/13/pcINsy3t4xwO8ro.jpg) -->
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/在微信中使用ToDoList/效果.jpg" alt="效果"></p>
-<!-- <img data-src="/2020/03/13/%E5%9C%A8%E5%BE%AE%E4%BF%A1%E4%B8%AD%E4%BD%BF%E7%94%A8ToDoList/%E6%95%88%E6%9E%9C.jpg" class="" title="效果.jpg"> -->
-<!-- ![置顶.jpg](https://i.loli.net/2020/03/13/oqslDcLjPWhFyJt.jpg) -->
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/在微信中使用ToDoList/置顶.jpg" alt="置顶"></p>
-<!-- <img data-src="/2020/03/13/%E5%9C%A8%E5%BE%AE%E4%BF%A1%E4%B8%AD%E4%BD%BF%E7%94%A8ToDoList/%E7%BD%AE%E9%A1%B6.jpg" class="" title="置顶.jpg"> -->
-<h2 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤"></a>具体步骤</h2><ol>
-<li><p>打开 <code>微信</code>-<code>我</code>-<code>收藏</code>；</p>
-</li>
-<li><p>击右上角的 <code>+</code> 添加一个新的笔记；</p>
-</li>
-<li><p>第一行输入 <code>ToDoList</code>，这是你置顶后所显示的标题；</p>
-</li>
-<li><p>然后下方的几个按钮就可以使用了，一般都是用最后一个的待办列表；</p>
- <!-- ![待办](https://i.loli.net/2020/03/13/IDoYRdFaKsw1bHq.jpg) -->
-<p> <img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/在微信中使用ToDoList/待办.jpg" alt="待办"></p>
- <!-- <img data-src="/2020/03/13/%E5%9C%A8%E5%BE%AE%E4%BF%A1%E4%B8%AD%E4%BD%BF%E7%94%A8ToDoList/%E5%BE%85%E5%8A%9E.jpg" class="" title="待办.jpg"> -->
-</li>
-<li><p>写完成后，点击右上角的 <code>···</code>，你可以选择<code>浮窗</code>，也可以选择置顶<code>在聊天中置顶</code>；</p>
- <!-- ![置顶选项.jpg](https://i.loli.net/2020/03/13/9FCy2oXMiQdrla1.jpg) -->
-<p> <img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/在微信中使用ToDoList/置顶选项.jpg" alt="置顶选项"></p>
- <!-- <img data-src="/2020/03/13/%E5%9C%A8%E5%BE%AE%E4%BF%A1%E4%B8%AD%E4%BD%BF%E7%94%A8ToDoList/%E7%BD%AE%E9%A1%B6%E9%80%89%E9%A1%B9.jpg" class="" title="置顶选项.jpg"> -->
-</li>
-<li><p>这样就已经完成了，当你需要查看的时候，你只需要点击聊天列表界面顶部的 <code>ToDoList</code>，就能进入这份笔记中查看你的待办事项了。</p>
-</li>
-</ol>
-<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>这个方法勉强可以满足最基本的 <code>ToDoList</code> 功能，对于普通人来说，也是只能说是到了勉强够用的程度，毕竟他没有提醒功能。</p>
-<p>我一般是在去超市进行采购的时候，会在这里列一下采购清单，方便核对。</p>
-<p>说起提醒功能，微信可以对聊天双方所发的消息进行提醒，长按一条消息，在 <a href="https://zhuanlan.zhihu.com/p/29026281">Popover</a> 中选择 <code>提醒</code>（在 IOS 中需要点击 Popover 右侧的 <code>▶</code>，才能在下一页看到 <code>提醒</code> 选项），选择提醒时间后，微信就会在提醒时间为你发送一条提醒。</p>
-<!-- ![提醒](https://i.loli.net/2020/03/13/hrTYKjQmvH3zxb4.jpg) -->
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/在微信中使用ToDoList/提醒.jpg" alt="提醒"></p>
-<!-- <img data-src="/2020/03/13/%E5%9C%A8%E5%BE%AE%E4%BF%A1%E4%B8%AD%E4%BD%BF%E7%94%A8ToDoList/%E6%8F%90%E9%86%92.jpg" class="" title="提醒.jpg"> -->
-<p>微信真的是很封闭的软件，你甚至不能找到分享到其他 APP 的按钮。</p>
-]]></content>
-      <categories>
-        <category>奇技淫巧</category>
-      </categories>
-      <tags>
-        <tag>奇技淫巧</tag>
-        <tag>微信</tag>
-        <tag>WeChat</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>《齐玛蓝》——阿拉斯泰尔·雷诺兹</title>
     <url>/2019/03/22/zima-blue/</url>
     <content><![CDATA[<p>前些天看了 Netflix 出品的 <a href="https://www.netflix.com/title/80174608"><em>Love, Death &amp; Robots</em></a> ，第十四集讲的就是这个故事，动画很好，小说也写得很好，特地转载一下。 转载自：<a href="http://www.eleefeed.com/f/201939">http://www.eleefeed.com/f/201939</a></p>
@@ -3781,7 +3731,6 @@
 <!-- <img data-src="/2019/03/22/zima-blue/Zima-Blue.jpg" class="" title="Zima-Blue.jpg"> -->
 ]]></content>
       <categories>
-        <category>科幻</category>
         <category>转载</category>
       </categories>
       <tags>
@@ -3789,6 +3738,55 @@
         <tag>Love Death &amp;amp; Robots</tag>
         <tag>Zima Blue</tag>
         <tag>爱，死亡和机器人</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>在微信中使用 ToDoList</title>
+    <url>/2020/03/13/%E5%9C%A8%E5%BE%AE%E4%BF%A1%E4%B8%AD%E4%BD%BF%E7%94%A8ToDoList/</url>
+    <content><![CDATA[<p>在 <a href="https://www.v2ex.com/t/650838">V2EX</a> 看到了这篇帖子，想到了之前自己琢磨出来的方法，所以在这里记录一下，到时候也可以直接将链接贴到回复中去。</p>
+<span id="more"></span>
+<h2 id="效果"><a href="#效果" class="headerlink" title="效果"></a>效果</h2><p>效果如下：</p>
+<!-- ![效果.jpg](https://i.loli.net/2020/03/13/pcINsy3t4xwO8ro.jpg) -->
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/在微信中使用ToDoList/效果.jpg" alt="效果"></p>
+<!-- <img data-src="/2020/03/13/%E5%9C%A8%E5%BE%AE%E4%BF%A1%E4%B8%AD%E4%BD%BF%E7%94%A8ToDoList/%E6%95%88%E6%9E%9C.jpg" class="" title="效果.jpg"> -->
+<!-- ![置顶.jpg](https://i.loli.net/2020/03/13/oqslDcLjPWhFyJt.jpg) -->
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/在微信中使用ToDoList/置顶.jpg" alt="置顶"></p>
+<!-- <img data-src="/2020/03/13/%E5%9C%A8%E5%BE%AE%E4%BF%A1%E4%B8%AD%E4%BD%BF%E7%94%A8ToDoList/%E7%BD%AE%E9%A1%B6.jpg" class="" title="置顶.jpg"> -->
+<h2 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤"></a>具体步骤</h2><ol>
+<li><p>打开 <code>微信</code>-<code>我</code>-<code>收藏</code>；</p>
+</li>
+<li><p>击右上角的 <code>+</code> 添加一个新的笔记；</p>
+</li>
+<li><p>第一行输入 <code>ToDoList</code>，这是你置顶后所显示的标题；</p>
+</li>
+<li><p>然后下方的几个按钮就可以使用了，一般都是用最后一个的待办列表；</p>
+ <!-- ![待办](https://i.loli.net/2020/03/13/IDoYRdFaKsw1bHq.jpg) -->
+<p> <img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/在微信中使用ToDoList/待办.jpg" alt="待办"></p>
+ <!-- <img data-src="/2020/03/13/%E5%9C%A8%E5%BE%AE%E4%BF%A1%E4%B8%AD%E4%BD%BF%E7%94%A8ToDoList/%E5%BE%85%E5%8A%9E.jpg" class="" title="待办.jpg"> -->
+</li>
+<li><p>写完成后，点击右上角的 <code>···</code>，你可以选择<code>浮窗</code>，也可以选择置顶<code>在聊天中置顶</code>；</p>
+ <!-- ![置顶选项.jpg](https://i.loli.net/2020/03/13/9FCy2oXMiQdrla1.jpg) -->
+<p> <img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/在微信中使用ToDoList/置顶选项.jpg" alt="置顶选项"></p>
+ <!-- <img data-src="/2020/03/13/%E5%9C%A8%E5%BE%AE%E4%BF%A1%E4%B8%AD%E4%BD%BF%E7%94%A8ToDoList/%E7%BD%AE%E9%A1%B6%E9%80%89%E9%A1%B9.jpg" class="" title="置顶选项.jpg"> -->
+</li>
+<li><p>这样就已经完成了，当你需要查看的时候，你只需要点击聊天列表界面顶部的 <code>ToDoList</code>，就能进入这份笔记中查看你的待办事项了。</p>
+</li>
+</ol>
+<h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>这个方法勉强可以满足最基本的 <code>ToDoList</code> 功能，对于普通人来说，也是只能说是到了勉强够用的程度，毕竟他没有提醒功能。</p>
+<p>我一般是在去超市进行采购的时候，会在这里列一下采购清单，方便核对。</p>
+<p>说起提醒功能，微信可以对聊天双方所发的消息进行提醒，长按一条消息，在 <a href="https://zhuanlan.zhihu.com/p/29026281">Popover</a> 中选择 <code>提醒</code>（在 IOS 中需要点击 Popover 右侧的 <code>▶</code>，才能在下一页看到 <code>提醒</code> 选项），选择提醒时间后，微信就会在提醒时间为你发送一条提醒。</p>
+<!-- ![提醒](https://i.loli.net/2020/03/13/hrTYKjQmvH3zxb4.jpg) -->
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/在微信中使用ToDoList/提醒.jpg" alt="提醒"></p>
+<!-- <img data-src="/2020/03/13/%E5%9C%A8%E5%BE%AE%E4%BF%A1%E4%B8%AD%E4%BD%BF%E7%94%A8ToDoList/%E6%8F%90%E9%86%92.jpg" class="" title="提醒.jpg"> -->
+<p>微信真的是很封闭的软件，你甚至不能找到分享到其他 APP 的按钮。</p>
+]]></content>
+      <categories>
+        <category>奇技淫巧</category>
+      </categories>
+      <tags>
+        <tag>奇技淫巧</tag>
+        <tag>微信</tag>
+        <tag>WeChat</tag>
       </tags>
   </entry>
   <entry>
@@ -3901,6 +3899,44 @@
       </tags>
   </entry>
   <entry>
+    <title>《悲惨世界》</title>
+    <url>/2019/12/10/%E6%82%B2%E6%83%A8%E4%B8%96%E7%95%8C/</url>
+    <content><![CDATA[<p>《<a href="https://book.douban.com/subject/5407295/">悲惨世界</a>》（Les Misérables）</p>
+<ul>
+<li><p>一个不愿意让人批评的社会，好比一位讳疾忌医的病人。</p>
+</li>
+<li><p>再说，谁又能实现自己的理想呢？</p>
+</li>
+<li><p>即使搞字谜，也要有个限度。凡事都有分寸。即使是饮食，也有限度。女士们，你们喜欢苹果酱馅饼，但不要吃得太多。即使吃馅饼，也要合情合理，要讲究艺术。暴食会惩罚暴食的人。贪吃会惩罚贪吃的人。消化不良是仁慈的上帝用来教训胃的。请记住，我们每一种欲望，即使是爱情，都有一个胃，不要塞得太满。做任何事，都要及时写上‘终止’。在紧急关头要善于控制自己，要给欲望插上插销，把欲念送进拘留所，将自己送进警察局。聪明人在适当的时候会把自己抓起来。</p>
+</li>
+<li><p>博杜安阵亡，富瓦受伤，烈火，屠杀，屠戮，英国人的血、德国人的血、法国人的血，汇成一条汹涌的小河，一口井里堆满尸体，纳索和不伦瑞克的两个团被歼灭，迪普拉阵亡，布拉克曼阵亡，英国近卫队受到重创，法国雷耶兵团的四十个营中，损失了二十个营，就在这乌戈蒙破城堡里，三千人被砍死劈伤，被手扼死，被子弹射死，被火烧死；所有这一切，只为今天一个农民对一个旅客说：「先生，给我三法郎，您乐意的话，我给您讲讲滑铁卢的事。」</p>
+</li>
+<li><p>大革命前，若有大人物如法兰西元帅、亲王、公爵或封臣经过勃艮第或香槟的某个城市，官员们要来致词，并用四只舟形银杯，敬献四种不同的美酒。在第一只酒杯上，刻着「猴酒」，第二只刻着「狮酒」，第三只刻着「羊酒」，第四只刻着「猪酒」。这四个铭文表达四种不同程度的醉酒状：第一种是快乐，第二种是愤怒，第三种是迟钝，最后一种是傻呆。</p>
+</li>
+<li><p>我们给与人的快乐有其可爱的一面，它不像任何反光，会渐渐衰弱，而是反回到我们身上时，会更光辉灿烂。</p>
+</li>
+<li><p>白天是恶棍，只配吃闭门羹。体面的人要等天空点亮星星时，才能点亮智慧。</p>
+</li>
+<li><p>女人玩弄美色，正如孩子玩弄刀枪，结果是自讨苦吃。</p>
+</li>
+<li><p>石头下面有颗心</p>
+</li>
+<li><p>她的脑袋又落到马里尤斯的膝盖上，眼睛也合上了。他以为这个可怜的姑娘已走了。埃波妮一动不动。就在马里尤斯以为她从此长眠不醒的时候，她却慢慢睁开眼，露出死亡时的幽深阴沉的神态，她用看似来自另一个世界的温柔语气对他说：「听我说，马里尤斯先生，我想我是有点爱上您了。」她又尽力笑了笑，便断气了。</p>
+</li>
+<li><p>读者此刻手上的这部书，从头到尾，从整体到细节，不管多么断断续续，不管有什么例外或缺陷，它总是在叙述从恶走向善，从不公正走向公正，从虚假走向真实，从黑夜走向白天，从贪欲走向良心，从腐朽走向生活，从兽性走向责任，从地狱走向天堂，从虚无走向上帝。出发点是物质，终点是灵魂。始为妖怪，终为天使。</p>
+</li>
+<li><p>在现实的人类社会中，除非有更大的光明将它改变，否则永远存在着两种人，一个在天上，一个在地下，一个是从善的亚伯，一个是从恶的该隐。</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>书摘</category>
+      </categories>
+      <tags>
+        <tag>阅读</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>微波炉简易使用指南</title>
     <url>/2021/05/18/%E5%BE%AE%E6%B3%A2%E7%82%89%E7%AE%80%E6%98%93%E4%BD%BF%E7%94%A8%E6%8C%87%E5%8D%97/</url>
     <content><![CDATA[<p>「不要盯着微波炉看，会有辐射。」小时候，总是会听到大人对我这么说。说实话这句话影响了我蛮久一段时间，我甚至会在启动微波炉后跑到另一家房间来避免「辐射」。</p>
@@ -3943,44 +3979,6 @@
       </tags>
   </entry>
   <entry>
-    <title>《悲惨世界》</title>
-    <url>/2019/12/10/%E6%82%B2%E6%83%A8%E4%B8%96%E7%95%8C/</url>
-    <content><![CDATA[<p>《<a href="https://book.douban.com/subject/5407295/">悲惨世界</a>》（Les Misérables）</p>
-<ul>
-<li><p>一个不愿意让人批评的社会，好比一位讳疾忌医的病人。</p>
-</li>
-<li><p>再说，谁又能实现自己的理想呢？</p>
-</li>
-<li><p>即使搞字谜，也要有个限度。凡事都有分寸。即使是饮食，也有限度。女士们，你们喜欢苹果酱馅饼，但不要吃得太多。即使吃馅饼，也要合情合理，要讲究艺术。暴食会惩罚暴食的人。贪吃会惩罚贪吃的人。消化不良是仁慈的上帝用来教训胃的。请记住，我们每一种欲望，即使是爱情，都有一个胃，不要塞得太满。做任何事，都要及时写上‘终止’。在紧急关头要善于控制自己，要给欲望插上插销，把欲念送进拘留所，将自己送进警察局。聪明人在适当的时候会把自己抓起来。</p>
-</li>
-<li><p>博杜安阵亡，富瓦受伤，烈火，屠杀，屠戮，英国人的血、德国人的血、法国人的血，汇成一条汹涌的小河，一口井里堆满尸体，纳索和不伦瑞克的两个团被歼灭，迪普拉阵亡，布拉克曼阵亡，英国近卫队受到重创，法国雷耶兵团的四十个营中，损失了二十个营，就在这乌戈蒙破城堡里，三千人被砍死劈伤，被手扼死，被子弹射死，被火烧死；所有这一切，只为今天一个农民对一个旅客说：「先生，给我三法郎，您乐意的话，我给您讲讲滑铁卢的事。」</p>
-</li>
-<li><p>大革命前，若有大人物如法兰西元帅、亲王、公爵或封臣经过勃艮第或香槟的某个城市，官员们要来致词，并用四只舟形银杯，敬献四种不同的美酒。在第一只酒杯上，刻着「猴酒」，第二只刻着「狮酒」，第三只刻着「羊酒」，第四只刻着「猪酒」。这四个铭文表达四种不同程度的醉酒状：第一种是快乐，第二种是愤怒，第三种是迟钝，最后一种是傻呆。</p>
-</li>
-<li><p>我们给与人的快乐有其可爱的一面，它不像任何反光，会渐渐衰弱，而是反回到我们身上时，会更光辉灿烂。</p>
-</li>
-<li><p>白天是恶棍，只配吃闭门羹。体面的人要等天空点亮星星时，才能点亮智慧。</p>
-</li>
-<li><p>女人玩弄美色，正如孩子玩弄刀枪，结果是自讨苦吃。</p>
-</li>
-<li><p>石头下面有颗心</p>
-</li>
-<li><p>她的脑袋又落到马里尤斯的膝盖上，眼睛也合上了。他以为这个可怜的姑娘已走了。埃波妮一动不动。就在马里尤斯以为她从此长眠不醒的时候，她却慢慢睁开眼，露出死亡时的幽深阴沉的神态，她用看似来自另一个世界的温柔语气对他说：「听我说，马里尤斯先生，我想我是有点爱上您了。」她又尽力笑了笑，便断气了。</p>
-</li>
-<li><p>读者此刻手上的这部书，从头到尾，从整体到细节，不管多么断断续续，不管有什么例外或缺陷，它总是在叙述从恶走向善，从不公正走向公正，从虚假走向真实，从黑夜走向白天，从贪欲走向良心，从腐朽走向生活，从兽性走向责任，从地狱走向天堂，从虚无走向上帝。出发点是物质，终点是灵魂。始为妖怪，终为天使。</p>
-</li>
-<li><p>在现实的人类社会中，除非有更大的光明将它改变，否则永远存在着两种人，一个在天上，一个在地下，一个是从善的亚伯，一个是从恶的该隐。</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>书摘</category>
-      </categories>
-      <tags>
-        <tag>阅读</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>《月亮与六便士》</title>
     <url>/2019/07/19/%E6%9C%88%E4%BA%AE%E4%B8%8E%E5%85%AD%E4%BE%BF%E5%A3%AB/</url>
     <content><![CDATA[<p>《<a href="https://book.douban.com/subject/26954760/">月亮与六便士</a>》（The Moon and Sixpence）</p>
@@ -4004,72 +4002,6 @@
       </categories>
       <tags>
         <tag>阅读</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>榨干这台 NAS 第 001 话-文件浏览器（File Browser）</title>
-    <url>/2022/08/08/%E6%A6%A8%E5%B9%B2%E8%BF%99%E5%8F%B0NAS%E7%AC%AC001%E8%AF%9D-%E6%96%87%E4%BB%B6%E6%B5%8F%E8%A7%88%E5%99%A8%EF%BC%88FileBrowser%EF%BC%89/</url>
-    <content><![CDATA[<p>这是一系列关于 NAS 的文章，系列的名称你们也看到了：「<strong>榨干这台 NAS</strong>」。我将尽可能详细的介绍 NAS 相关的知识，帮助你最大限度的发挥你的手中 NAS 的威力！</p>
-<span id="more"></span>
-<p>在上一话中我们介绍了目录结构，那么应该如何编辑这些目录和文件呢？最最原始的方式就是使用命令来执行这些操作。但是这对于一部分不熟悉 Linux 系统的人来说，会显得有些困难。所以，这一话，我将介绍一个软件，可以用于 NAS 的文件浏览。如果你是群晖或威联通用户，那么其系统自带的软件就应该能满足大部分需求了，所以可以跳过这一话。</p>
-<p>PS：接下来的操作将在 unRAID（6.10.2） 系统上进行。</p>
-<p>PSS: 当然对于非 unRAID 系统的用户，我也会演示一下在 Linux 系统下应该如何进行安装。</p>
-<h3 id="unRAID-下的安装和使用"><a href="#unRAID-下的安装和使用" class="headerlink" title="unRAID 下的安装和使用"></a>unRAID 下的安装和使用</h3><h4 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h4><p>前往「应用『Apps』」页面搜索「FileBrowser」，选择下图所示的应用：</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/榨干这台NAS第001话-文件浏览器（FileBrowser）/FileBrowser.png" alt="FileBrowser.png"></p>
-<p>点击「安装『Install』」，即图中「Actions」按钮所在位置（因为我已经安装过这个软件，所以不会显示「Install」按钮了）。</p>
-<h4 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h4><p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/榨干这台NAS第001话-文件浏览器（FileBrowser）/FileBrowserConfig.png" alt="FileBrowserConfig.png"></p>
-<p>然后依照上图所示填写。</p>
-<p>主要是配置了两个路径和一个端口：</p>
-<ol>
-<li><p>将宿主机的 <code>/</code> 路径映射至容器的 <code>/srv</code> 路径，此路径为你需要进行文件管理的路径；</p>
-</li>
-<li><p>将宿主机的 <code>/mnt/user/appdata/filebrowser/</code> 路径映射至容器的 <code>/db/</code> 路径，此路径为此容器的配置数据库路径，你之后所设置的用户名密码等个性配置信息都将存储在这里；</p>
-</li>
-<li><p>将宿主机的 <code>8222</code> 端口映射到容器的 <code>80</code> 端口，此端口为该容器的 WebUI 端口，之后可以通过此端口来访问 WebUI 界面（注意，请确定宿主机的 <code>8222</code> 端口无其他程序占用，不然将无法启动容器，如果被占用，可以自行更换端口）。</p>
-</li>
-</ol>
-<p>点击应用，即可启动容器。如果你的配置无误，那么在等待片刻后，容器将会自动启动，接下来就可以使用了。</p>
-<p>附上 unRAID 下的启动命令：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">/usr/local/emhttp/plugins/dynamix.docker.manager/scripts/docker run -d --name=&#x27;FileBrowser&#x27; --net=&#x27;bridge&#x27; -e TZ=&quot;Asia/Shanghai&quot; -e HOST_OS=&quot;Unraid&quot; -e HOST_HOSTNAME=&quot;Tower&quot; -e HOST_CONTAINERNAME=&quot;FileBrowser&quot; -l net.unraid.docker.managed=dockerman -l net.unraid.docker.webui=&#x27;http://[IP]:[PORT:8222]/files/&#x27; -l net.unraid.docker.icon=&#x27;https://github.com/maschhoff/docker/raw/master/filebrowser/35781395.png&#x27; -p &#x27;8222:80/tcp&#x27; -v &#x27;/&#x27;:&#x27;/srv&#x27;:&#x27;rw&#x27; -v &#x27;/mnt/user/appdata/filebrowser/&#x27;:&#x27;/db/&#x27;:&#x27;rw&#x27; &#x27;filebrowser/filebrowser&#x27; -d /db/database.db</span><br></pre></td></tr></table></figure>
-<h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><p>打开浏览器，访问 <a href="http://192.168.1.223:8222">http://192.168.1.223:8222</a>（注意，如果你在上述配置中修改过端口，请访问相应的端口，而 IP 地址则是你的 NAS 的 IP 地址），即可前往 File Browser 的操作页面。</p>
-<p>默认的用户名为：<code>admin</code>，默认为密码为：<code>admin</code>。</p>
-<h5 id="修改密码"><a href="#修改密码" class="headerlink" title="修改密码"></a>修改密码</h5><p>登录后的第一件事，请前往「设置」-「个人设置」页面修改你的密码。</p>
-<h5 id="一些使其更好使用的配置"><a href="#一些使其更好使用的配置" class="headerlink" title="一些使其更好使用的配置"></a>一些使其更好使用的配置</h5><ol>
-<li><p>在「设置」-「个人设置」中将语言修改为中文；</p>
-</li>
-<li><p>在「设置」-「个人设置」中<strong>取消勾选</strong>「不显示隐藏文件」，这样你就能看到隐藏的文件和文件夹了；</p>
-</li>
-<li><p>在「设置」-「个人设置」中<strong>取消勾选</strong>「使用单击来打开文件和目录」，这样可以更加符合 Windows 资源管理器的操作逻辑，同时也可以使用 <em>ctrl</em> 和 <em>shift</em> 来进行多选操作了；</p>
-</li>
-<li><p>由于在安装容器的时候设置了管理目录为宿主机的 <code>/</code> 路径，所以每次访问 WebUI 默认路径都是此路径，要想更换默认路径的话，软件并没有相应的设置，但是我们可以曲线救国，首先去到我们想默认显示的路径下。例如：<code>/mnt/user/appdata/</code>，然后我们只要将当前页面（<a href="http://192.168.1.223:8222/files/mnt/user/appdata/">http://192.168.1.223:8222/files/mnt/user/appdata/</a>）添加到浏览器的书签，这样以后就可以通过这个书签来访问此路径了。同样的，我们可以为不同的目录设置不同的书签，从而达到快捷访问的目的。</p>
-</li>
-</ol>
-<h3 id="Linux-下的安装"><a href="#Linux-下的安装" class="headerlink" title="Linux 下的安装"></a>Linux 下的安装</h3><p>以下操作均建立在系统已经安装 Docker 的基础之上。</p>
-<ol>
-<li><p>拉取 Docker 镜像</p>
- <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker pull filebrowser/filebrowser:latest</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>启动容器</p>
- <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker run \</span><br><span class="line">    -v &#x27;/&#x27;:&#x27;/srv&#x27; \</span><br><span class="line">    -v &#x27;/mnt/user/appdata/filebrowser/&#x27;:&#x27;/db/&#x27; \</span><br><span class="line">    -p &#x27;8222:80/tcp&#x27; \</span><br><span class="line">    filebrowser/filebrowser:latest \</span><br><span class="line">    -d /db/database.db</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ul>
-<li><p><a href="https://filebrowser.org/">https://filebrowser.org/</a></p>
-</li>
-<li><p><a href="https://github.com/filebrowser/filebrowser">https://github.com/filebrowser/filebrowser</a></p>
-</li>
-<li><p><a href="https://hub.docker.com/r/filebrowser/filebrowser">https://hub.docker.com/r/filebrowser/filebrowser</a></p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>榨干这台 NAS</category>
-      </categories>
-      <tags>
-        <tag>Docker</tag>
-        <tag>NAS</tag>
-        <tag>unRAID</tag>
-        <tag>File Browser</tag>
       </tags>
   </entry>
   <entry>
@@ -4179,6 +4111,72 @@
       </tags>
   </entry>
   <entry>
+    <title>榨干这台 NAS 第 001 话-文件浏览器（File Browser）</title>
+    <url>/2022/08/08/%E6%A6%A8%E5%B9%B2%E8%BF%99%E5%8F%B0NAS%E7%AC%AC001%E8%AF%9D-%E6%96%87%E4%BB%B6%E6%B5%8F%E8%A7%88%E5%99%A8%EF%BC%88FileBrowser%EF%BC%89/</url>
+    <content><![CDATA[<p>这是一系列关于 NAS 的文章，系列的名称你们也看到了：「<strong>榨干这台 NAS</strong>」。我将尽可能详细的介绍 NAS 相关的知识，帮助你最大限度的发挥你的手中 NAS 的威力！</p>
+<span id="more"></span>
+<p>在上一话中我们介绍了目录结构，那么应该如何编辑这些目录和文件呢？最最原始的方式就是使用命令来执行这些操作。但是这对于一部分不熟悉 Linux 系统的人来说，会显得有些困难。所以，这一话，我将介绍一个软件，可以用于 NAS 的文件浏览。如果你是群晖或威联通用户，那么其系统自带的软件就应该能满足大部分需求了，所以可以跳过这一话。</p>
+<p>PS：接下来的操作将在 unRAID（6.10.2） 系统上进行。</p>
+<p>PSS: 当然对于非 unRAID 系统的用户，我也会演示一下在 Linux 系统下应该如何进行安装。</p>
+<h3 id="unRAID-下的安装和使用"><a href="#unRAID-下的安装和使用" class="headerlink" title="unRAID 下的安装和使用"></a>unRAID 下的安装和使用</h3><h4 id="搜索"><a href="#搜索" class="headerlink" title="搜索"></a>搜索</h4><p>前往「应用『Apps』」页面搜索「FileBrowser」，选择下图所示的应用：</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/榨干这台NAS第001话-文件浏览器（FileBrowser）/FileBrowser.png" alt="FileBrowser.png"></p>
+<p>点击「安装『Install』」，即图中「Actions」按钮所在位置（因为我已经安装过这个软件，所以不会显示「Install」按钮了）。</p>
+<h4 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h4><p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/榨干这台NAS第001话-文件浏览器（FileBrowser）/FileBrowserConfig.png" alt="FileBrowserConfig.png"></p>
+<p>然后依照上图所示填写。</p>
+<p>主要是配置了两个路径和一个端口：</p>
+<ol>
+<li><p>将宿主机的 <code>/</code> 路径映射至容器的 <code>/srv</code> 路径，此路径为你需要进行文件管理的路径；</p>
+</li>
+<li><p>将宿主机的 <code>/mnt/user/appdata/filebrowser/</code> 路径映射至容器的 <code>/db/</code> 路径，此路径为此容器的配置数据库路径，你之后所设置的用户名密码等个性配置信息都将存储在这里；</p>
+</li>
+<li><p>将宿主机的 <code>8222</code> 端口映射到容器的 <code>80</code> 端口，此端口为该容器的 WebUI 端口，之后可以通过此端口来访问 WebUI 界面（注意，请确定宿主机的 <code>8222</code> 端口无其他程序占用，不然将无法启动容器，如果被占用，可以自行更换端口）。</p>
+</li>
+</ol>
+<p>点击应用，即可启动容器。如果你的配置无误，那么在等待片刻后，容器将会自动启动，接下来就可以使用了。</p>
+<p>附上 unRAID 下的启动命令：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">/usr/local/emhttp/plugins/dynamix.docker.manager/scripts/docker run -d --name=&#x27;FileBrowser&#x27; --net=&#x27;bridge&#x27; -e TZ=&quot;Asia/Shanghai&quot; -e HOST_OS=&quot;Unraid&quot; -e HOST_HOSTNAME=&quot;Tower&quot; -e HOST_CONTAINERNAME=&quot;FileBrowser&quot; -l net.unraid.docker.managed=dockerman -l net.unraid.docker.webui=&#x27;http://[IP]:[PORT:8222]/files/&#x27; -l net.unraid.docker.icon=&#x27;https://github.com/maschhoff/docker/raw/master/filebrowser/35781395.png&#x27; -p &#x27;8222:80/tcp&#x27; -v &#x27;/&#x27;:&#x27;/srv&#x27;:&#x27;rw&#x27; -v &#x27;/mnt/user/appdata/filebrowser/&#x27;:&#x27;/db/&#x27;:&#x27;rw&#x27; &#x27;filebrowser/filebrowser&#x27; -d /db/database.db</span><br></pre></td></tr></table></figure>
+<h4 id="使用"><a href="#使用" class="headerlink" title="使用"></a>使用</h4><p>打开浏览器，访问 <a href="http://192.168.1.223:8222">http://192.168.1.223:8222</a>（注意，如果你在上述配置中修改过端口，请访问相应的端口，而 IP 地址则是你的 NAS 的 IP 地址），即可前往 File Browser 的操作页面。</p>
+<p>默认的用户名为：<code>admin</code>，默认为密码为：<code>admin</code>。</p>
+<h5 id="修改密码"><a href="#修改密码" class="headerlink" title="修改密码"></a>修改密码</h5><p>登录后的第一件事，请前往「设置」-「个人设置」页面修改你的密码。</p>
+<h5 id="一些使其更好使用的配置"><a href="#一些使其更好使用的配置" class="headerlink" title="一些使其更好使用的配置"></a>一些使其更好使用的配置</h5><ol>
+<li><p>在「设置」-「个人设置」中将语言修改为中文；</p>
+</li>
+<li><p>在「设置」-「个人设置」中<strong>取消勾选</strong>「不显示隐藏文件」，这样你就能看到隐藏的文件和文件夹了；</p>
+</li>
+<li><p>在「设置」-「个人设置」中<strong>取消勾选</strong>「使用单击来打开文件和目录」，这样可以更加符合 Windows 资源管理器的操作逻辑，同时也可以使用 <em>ctrl</em> 和 <em>shift</em> 来进行多选操作了；</p>
+</li>
+<li><p>由于在安装容器的时候设置了管理目录为宿主机的 <code>/</code> 路径，所以每次访问 WebUI 默认路径都是此路径，要想更换默认路径的话，软件并没有相应的设置，但是我们可以曲线救国，首先去到我们想默认显示的路径下。例如：<code>/mnt/user/appdata/</code>，然后我们只要将当前页面（<a href="http://192.168.1.223:8222/files/mnt/user/appdata/">http://192.168.1.223:8222/files/mnt/user/appdata/</a>）添加到浏览器的书签，这样以后就可以通过这个书签来访问此路径了。同样的，我们可以为不同的目录设置不同的书签，从而达到快捷访问的目的。</p>
+</li>
+</ol>
+<h3 id="Linux-下的安装"><a href="#Linux-下的安装" class="headerlink" title="Linux 下的安装"></a>Linux 下的安装</h3><p>以下操作均建立在系统已经安装 Docker 的基础之上。</p>
+<ol>
+<li><p>拉取 Docker 镜像</p>
+ <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker pull filebrowser/filebrowser:latest</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>启动容器</p>
+ <figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">docker run \</span><br><span class="line">    -v &#x27;/&#x27;:&#x27;/srv&#x27; \</span><br><span class="line">    -v &#x27;/mnt/user/appdata/filebrowser/&#x27;:&#x27;/db/&#x27; \</span><br><span class="line">    -p &#x27;8222:80/tcp&#x27; \</span><br><span class="line">    filebrowser/filebrowser:latest \</span><br><span class="line">    -d /db/database.db</span><br></pre></td></tr></table></figure>
+</li>
+</ol>
+<h3 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h3><ul>
+<li><p><a href="https://filebrowser.org/">https://filebrowser.org/</a></p>
+</li>
+<li><p><a href="https://github.com/filebrowser/filebrowser">https://github.com/filebrowser/filebrowser</a></p>
+</li>
+<li><p><a href="https://hub.docker.com/r/filebrowser/filebrowser">https://hub.docker.com/r/filebrowser/filebrowser</a></p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>榨干这台 NAS</category>
+      </categories>
+      <tags>
+        <tag>Docker</tag>
+        <tag>NAS</tag>
+        <tag>unRAID</tag>
+        <tag>File Browser</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>榨干这台 NAS 第 002 话-下载工具</title>
     <url>/2022/08/09/%E6%A6%A8%E5%B9%B2%E8%BF%99%E5%8F%B0NAS%E7%AC%AC002%E8%AF%9D-%E4%B8%8B%E8%BD%BD%E5%B7%A5%E5%85%B7/</url>
     <content><![CDATA[<p>这是一系列关于 NAS 的文章，系列的名称你们也看到了：「<strong>榨干这台 NAS</strong>」。我将尽可能详细的介绍 NAS 相关的知识，帮助你最大限度的发挥你的手中 NAS 的威力！</p>
@@ -4230,7 +4228,7 @@
 </li>
 <li><p>「工具」-「选项」-「高级」-「libtorrent 相关」将「校验时内存使用扩增量」修改大一些，我设置成了 <code>512</code>，这样可以提高校验速度，提升之后辅种效率；</p>
 </li>
-<li><p>「工具」-「选项」-「BitTorrent」勾选「自动添加以下 tracker 到新的 torrent」，并在下方输入框中填入<a href="&#x6d;&#97;&#x69;&#x6c;&#116;&#111;&#x3a;&#x68;&#x74;&#116;&#112;&#115;&#58;&#x2f;&#47;&#x63;&#100;&#x6e;&#46;&#106;&#x73;&#100;&#101;&#108;&#x69;&#x76;&#114;&#46;&#110;&#101;&#116;&#47;&#103;&#104;&#47;&#x6e;&#103;&#x6f;&#115;&#x61;&#x6e;&#x67;&#47;&#x74;&#x72;&#x61;&#x63;&#107;&#x65;&#x72;&#115;&#108;&#105;&#x73;&#x74;&#x40;&#x6d;&#97;&#x73;&#x74;&#101;&#114;&#47;&#116;&#x72;&#97;&#99;&#107;&#x65;&#114;&#115;&#x5f;&#x61;&#108;&#x6c;&#46;&#116;&#120;&#116;">&#x68;&#x74;&#116;&#112;&#115;&#58;&#x2f;&#47;&#x63;&#100;&#x6e;&#46;&#106;&#x73;&#100;&#101;&#108;&#x69;&#x76;&#114;&#46;&#110;&#101;&#116;&#47;&#103;&#104;&#47;&#x6e;&#103;&#x6f;&#115;&#x61;&#x6e;&#x67;&#47;&#x74;&#x72;&#x61;&#x63;&#107;&#x65;&#x72;&#115;&#108;&#105;&#x73;&#x74;&#x40;&#x6d;&#97;&#x73;&#x74;&#101;&#114;&#47;&#116;&#x72;&#97;&#99;&#107;&#x65;&#114;&#115;&#x5f;&#x61;&#108;&#x6c;&#46;&#116;&#120;&#116;</a>中的内容，此处设置的作用的是为了获得更多的供种者，此操作能有效提高下载速度，建议每隔一段时间就更新一下 tracker 列表，更多 tracker 列表可以查看 <a href="https://github.com/ngosang/trackerslist">https://github.com/ngosang/trackerslist</a> 和 <a href="https://github.com/XIU2/TrackersListCollection">https://github.com/XIU2/TrackersListCollection</a>。</p>
+<li><p>「工具」-「选项」-「BitTorrent」勾选「自动添加以下 tracker 到新的 torrent」，并在下方输入框中填入<a href="&#109;&#97;&#x69;&#x6c;&#116;&#111;&#x3a;&#x68;&#x74;&#116;&#x70;&#x73;&#x3a;&#47;&#x2f;&#99;&#100;&#x6e;&#46;&#106;&#x73;&#x64;&#x65;&#x6c;&#x69;&#118;&#114;&#46;&#110;&#x65;&#x74;&#47;&#103;&#x68;&#x2f;&#110;&#x67;&#111;&#115;&#97;&#110;&#103;&#47;&#x74;&#x72;&#x61;&#x63;&#x6b;&#x65;&#114;&#115;&#x6c;&#x69;&#115;&#x74;&#64;&#109;&#97;&#x73;&#116;&#101;&#114;&#47;&#116;&#x72;&#97;&#99;&#x6b;&#101;&#114;&#x73;&#95;&#97;&#x6c;&#x6c;&#46;&#x74;&#120;&#x74;">&#x68;&#x74;&#116;&#x70;&#x73;&#x3a;&#47;&#x2f;&#99;&#100;&#x6e;&#46;&#106;&#x73;&#x64;&#x65;&#x6c;&#x69;&#118;&#114;&#46;&#110;&#x65;&#x74;&#47;&#103;&#x68;&#x2f;&#110;&#x67;&#111;&#115;&#97;&#110;&#103;&#47;&#x74;&#x72;&#x61;&#x63;&#x6b;&#x65;&#114;&#115;&#x6c;&#x69;&#115;&#x74;&#64;&#109;&#97;&#x73;&#116;&#101;&#114;&#47;&#116;&#x72;&#97;&#99;&#x6b;&#101;&#114;&#x73;&#95;&#97;&#x6c;&#x6c;&#46;&#x74;&#120;&#x74;</a>中的内容，此处设置的作用的是为了获得更多的供种者，此操作能有效提高下载速度，建议每隔一段时间就更新一下 tracker 列表，更多 tracker 列表可以查看 <a href="https://github.com/ngosang/trackerslist">https://github.com/ngosang/trackerslist</a> 和 <a href="https://github.com/XIU2/TrackersListCollection">https://github.com/XIU2/TrackersListCollection</a>。</p>
 </li>
 <li><p>「工具」-「选项」-「BitTorrent」取消勾选「Torrent 排队」,这一步是为了多任务同时下载与上传，BT 的本质就是我为人人，人人为我，你的下载即是别人的上传，所以请最好不要限制你的上传，在不影响使用的情况下提供最多的上传；</p>
 </li>
@@ -4520,6 +4518,164 @@
         <tag>Docker</tag>
         <tag>NAS</tag>
         <tag>unRAID</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>煎蛋保险小课堂</title>
+    <url>/2021/09/29/%E7%85%8E%E8%9B%8B%E4%BF%9D%E9%99%A9%E5%B0%8F%E8%AF%BE%E5%A0%82/</url>
+    <content><![CDATA[<p>蛋友 阿Lam：</p>
+<blockquote>
+<p>因为看到部分蛋友有保险困扰。我又刚好是这行的，所以做了个小科普。</p>
+</blockquote>
+<p>转载自：<a href="http://jandan.net/p/109642">煎蛋保险小课堂</a></p>
+<span id="more"></span>
+<h2 id="有哪些保险？"><a href="#有哪些保险？" class="headerlink" title="有哪些保险？"></a>有哪些保险？</h2><p>保险的种类称作险种，按缴费方式分，可以分为<strong>社会保险</strong>（强制交）和<strong>商业保险</strong>（自愿购买）。</p>
+<h3 id="社会保险（社保）"><a href="#社会保险（社保）" class="headerlink" title="社会保险（社保）"></a>社会保险（社保）</h3><ol>
+<li><p>城镇职工五险一金中的五险：养老保险、医疗保险、工伤保险、失业保险、生育保险；</p>
+</li>
+<li><p>城市少儿医保；</p>
+</li>
+<li><p>城镇居民医疗保险/乡镇居民的新型农村合作医疗（新农合）。</p>
+</li>
+</ol>
+<p>社保是国家福利，是最基础的保障，商保可以没有，但社保必须在手。</p>
+<p>医保是社保中的一个类别，具体指五险中的医疗保险、城市少儿医保、城镇居民医疗保险、新农合。四者不能重复报销，所以在公司交了五险一金的，在老家就不用浪费钱交新农合了。</p>
+<p>城市少儿医保是给小孩子办的，有本市户口的，出生就可以办；没本市户口的，要等上幼儿园/小学后才能统一办；没本市户口的家庭，可以先给孩子在老家交个新农合，平时在城市门诊治疗是没法报销了，但住院治疗要花大钱时可以申请异地报销。</p>
+<p>有社保的人在买部分商保时，比没社保的要便宜</p>
+<h3 id="商业保险"><a href="#商业保险" class="headerlink" title="商业保险"></a>商业保险</h3><p>商业保险按保险标的（对象）分为<strong>人身险</strong>和<strong>财产险</strong>。</p>
+<p><strong>人身险</strong>就是保人的寿命和健康的，<strong>财产险</strong>就是保人的房车等财产的，其中的代表就是车险。</p>
+<p>人身险里有四大类险种，分别是<strong>寿险</strong>、<strong>重疾险</strong>、<strong>医疗险</strong>、<strong>意外险</strong>。其中<strong>重疾险</strong>和<strong>医疗险</strong>都属于健康险。</p>
+<ol>
+<li><p>寿险（保死，狗带了就赔一大笔钱）；</p>
+</li>
+<li><p>健康险（保生，生病了就赔钱或报销医疗费）；</p>
+<ol>
+<li><p>重疾险；</p>
+</li>
+<li><p>医疗险：百万医疗险、防癌医疗险、小额医疗险。</p>
+</li>
+</ol>
+</li>
+<li><p>意外险（保非疾病导致的生和死，比如被车撞了，狗带了就赔钱，没带就报销医疗费。但如果是因癌症等疾病引起的，那带不带都不赔）。</p>
+</li>
+</ol>
+<h3 id="课外小姿势"><a href="#课外小姿势" class="headerlink" title="课外小姿势"></a>课外小姿势</h3><h4 id="团险"><a href="#团险" class="headerlink" title="团险"></a>团险</h4><p>公司团险不是一个具体的险种，而是一种承保方式，我们平常办商保都是个人给个人买，团险则是一个团体给它的成员统一购买。<br>像有些公司 HR 招人时喊的「六险一金」，多的那个险就一般是商业团险，具体险种一般是意外险、医疗险，成本大概是 100 块/人年。</p>
+<h4 id="「我买了保险」"><a href="#「我买了保险」" class="headerlink" title="「我买了保险」"></a>「我买了保险」</h4><p>重疾险的理赔动不动就是几十万，所以审核会很严格，会查你的诊断报告、病例书等，所以在看一些你不知道是什么病的时候，记得提醒医生：「我买了保险！」</p>
+<p>然后有经验的医生都能 get 到，病例就尽量不会写影响理赔的内容了。</p>
+<h4 id="自由职业怎么交社保"><a href="#自由职业怎么交社保" class="headerlink" title="自由职业怎么交社保"></a>自由职业怎么交社保</h4><ol>
+<li><p>挂在朋友或专门的公司去正常交职工五险一金，但这个有法律风险，不提倡；</p>
+</li>
+<li><p>在当地社保局以灵活就业人员身份，去申请缴纳职工医保和养老保险；</p>
+</li>
+<li><p>在户口所在地的社保局交居民医疗保险和居民养老保险。</p>
+</li>
+</ol>
+<h2 id="社会保险有什么用？"><a href="#社会保险有什么用？" class="headerlink" title="社会保险有什么用？"></a>社会保险有什么用？</h2><h3 id="养老保险"><a href="#养老保险" class="headerlink" title="养老保险"></a>养老保险</h3><p>退休后发养老金。</p>
+<h3 id="工伤保险"><a href="#工伤保险" class="headerlink" title="工伤保险"></a>工伤保险</h3><p>因公受伤时，报销医疗费。</p>
+<h3 id="失业保险"><a href="#失业保险" class="headerlink" title="失业保险"></a>失业保险</h3><p>职工被辞退后无业，或农村户口辞职后无业时，可以领取失业保险金。</p>
+<h3 id="生育保险"><a href="#生育保险" class="headerlink" title="生育保险"></a>生育保险</h3><p>产妇在生育前后可以领取生育津贴、报销检查费、接生费、手术费等费用。</p>
+<h3 id="职工医疗保险、少儿保险、新农合、城镇居民医疗保险"><a href="#职工医疗保险、少儿保险、新农合、城镇居民医疗保险" class="headerlink" title="职工医疗保险、少儿保险、新农合、城镇居民医疗保险"></a>职工医疗保险、少儿保险、新农合、城镇居民医疗保险</h3><p>看病时报销医疗费。</p>
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>凡是报销类的社保，要求治疗项目和药物必须在国家医保目录内，才可以报销。简称社保范围内用药。范围外的，不予报销。</p>
+<p>国家医保目录见链接：<a href="http://www.gov.cn/xinwen/2019-11/28/content_5456660.htm">国家医保局、人力资源社会保障部印发2019年国家医保谈判准入药品名单</a></p>
+<p>有人就问了，那我记不住怎么办？</p>
+<p>那就在问诊时对医生说一句：「医生你好，麻烦尽量开社保范围内用药哈~」。</p>
+<p>要是医生说他也记不住，那你就得好好寻思一下你找的是什么医生了。</p>
+<h2 id="商业保险有什么用？"><a href="#商业保险有什么用？" class="headerlink" title="商业保险有什么用？"></a>商业保险有什么用？</h2><h3 id="寿险"><a href="#寿险" class="headerlink" title="寿险"></a>寿险</h3><h4 id="寿险·分类"><a href="#寿险·分类" class="headerlink" title="寿险·分类"></a>寿险·分类</h4><p>寿险按保障期限，可以分为<strong>定期寿险</strong>和<strong>终身寿险</strong>。<strong>定寿</strong>便宜，预算有限就先买来用着；<strong>终身寿险</strong>贵，适合预算足，想留笔钱给子女，及「我不管！反正我花了钱就要有得赔！」的人。</p>
+<h4 id="寿险·赔付条件"><a href="#寿险·赔付条件" class="headerlink" title="寿险·赔付条件"></a>寿险·赔付条件</h4><p>那很明显啦，寿险是自己挂了，给家属拿钱的。</p>
+<h4 id="寿险·适合人群"><a href="#寿险·适合人群" class="headerlink" title="寿险·适合人群"></a>寿险·适合人群</h4><ol>
+<li>家庭支柱</li>
+<li>成年的独生子女</li>
+</ol>
+<p>比如一家老小靠着张三吃饭，但张三突然挂了，有寿险，那家里人就有几十万赔偿傍身；</p>
+<p>没赔偿，那家里人就要守着没还完的房贷吃土了。还有像我这种单身狗，很怕哪天突然狗带了，我妈没人照顾，所以我就给自己买了份保到 60 岁的定寿。</p>
+<h4 id="寿险·常见坑"><a href="#寿险·常见坑" class="headerlink" title="寿险·常见坑"></a>寿险·常见坑</h4><blockquote>
+<p>小孩子没必要买寿险</p>
+</blockquote>
+<p>给孩子买保险，是为了在孩子生病时有钱治。但寿险是人没了才能拿的，孩子都没了要这钱做什么？所以每次看到有些代理人逮着朋友刚生孩子就让买寿险，我！就！很！烦！</p>
+<h3 id="重疾险"><a href="#重疾险" class="headerlink" title="重疾险"></a>重疾险</h3><p>大部分人说的大病保险，就是<strong>重疾险</strong>和<strong>百万医疗险</strong>（下详）。</p>
+<h4 id="重疾险·分类"><a href="#重疾险·分类" class="headerlink" title="重疾险·分类"></a>重疾险·分类</h4><p>按保障期限，可以分为<strong>定期重疾险</strong>和<strong>终身重疾险</strong>，<strong>定期重疾险</strong>比<strong>终身重疾险</strong>便宜很多，男性 20 岁买 50 万保额，保到 60 岁只要两千左右，保到 70 岁是三四千，保终身要七八千。但我国男性平均寿命 70 岁，女性 73……</p>
+<p>按赔付条件，可以分为<strong>消费型重疾险</strong>和<strong>返还型重疾险</strong>。<strong>返还型重疾险</strong>是个坑，坑到有部分保司把「返还」给打成了敏感词，让我想批判都只能叫做「那个保险」，搞得像搞黄色一样。</p>
+<h4 id="重疾险·赔付条件"><a href="#重疾险·赔付条件" class="headerlink" title="重疾险·赔付条件"></a>重疾险·赔付条件</h4><p>确诊即赔（部分疾病需达到合同约定条件），提前给付。</p>
+<p>被保人一旦确诊保单约定的某种疾病，或达到合同约定条件，就提前赔付相应保额。这段话有点长，所以很多代理人图省事（或本身就是坏），省略了「达到合同约定条件」，简写为「确诊即赔」，但这是不规范的，所以就惹出了很多麻烦！</p>
+<p>首先，普通人、临床医学、保险医学，这三者对「重疾」的定义是不一样的。</p>
+<p>保险里的重疾是针对那些病情严重、治疗花费巨大、不易治愈的疾病。像心脏支架手术。人老了或太胖后，心脏血管就会硬化堵塞，管道变窄，这时候就可以在血管切个口子，放个支架进去，把血管撑大来，让它能正常工作。是物理+精神双重意义上的「开心」~</p>
+<ol>
+<li>普通人：都要动到心脏了，常威你还说不是重疾？</li>
+<li>临床医学：全麻都不用，局部麻醉就可以做，不算小手术，要经验丰富的医生才能做，但也不算什么大 case；</li>
+<li>保险医学：国产支架 8000 块，进口支架 1 万块，手术完就可以下床，1 天就能出院，1 周就能生活自理。要是这样都能拿 50 万重疾理赔，那患癌症的不要面子的啊？！</li>
+</ol>
+<p>再举个被最多人 diss「苛刻的急性心肌梗塞」，这是一个标准的急性心肌梗塞的重疾条款定义。</p>
+<blockquote>
+<p><strong>煎蛋保险小课堂</strong></p>
+<p><em>客户</em>：医生都说我是急性心肌梗塞咯！合同里也说了保急性心肌梗塞的啊，为什么你不赔？！</p>
+<p><em>理赔专员</em>：先生您好，合同里有说明急性心肌梗塞要满足至少 3 个条件才算重疾，才可以赔的。</p>
+<p><em>客户</em>：医生说了不算，你们说才算？你们这是要重新定义急性心肌梗塞吗？</p>
+<p><em>理赔专员</em>：先生，我们合同里有规……</p>
+<p><em>客户</em>：保险都是大屁眼子！</p>
+<p><em>理赔专员</em>：……（屁眼子好累）</p>
+</blockquote>
+<p>很多代理人在解释时，都只会复读「这是合同规定的」。但规定了什么，难道我们就不认字吗？<br>换我听了这种解释，我也会觉得保险是大屁眼子，但是为什么会要这样规定呢？</p>
+<p>这里借鉴一个车险里的玻璃险来参考，车的挡风玻璃出现轻微裂痕但又不影响正常使用时，为了避免车主拿到理赔后不更换玻璃，甚至在裂痕扩大后二次申请赔偿，所以会和车主协商，对玻璃进行扩损，用小锤锤砸到玻璃确保用不了，才能理赔。</p>
+<p>回到重疾定义也是一样的，就算是感冒也分轻感冒和重感冒、流感致死，重疾也是需要确定这个病到达了「重」的程度才能按重疾理赔。</p>
+<p>我们再回顾一下知识要点：保险里的重疾是针对那些<strong>病情严重</strong>、<strong>治疗花费巨大</strong>、<strong>不易治愈</strong>的疾病，都没到那么严重呢，保险公司赔的话也很委屈，而且 25 种重大疾病的重疾定义是由国家银保监会统一规定的，保险公司动不了手脚。</p>
+<h4 id="重疾险·适合人群"><a href="#重疾险·适合人群" class="headerlink" title="重疾险·适合人群"></a>重疾险·适合人群</h4><p>除了老人外的人。</p>
+<p>重疾险的价格是越年轻买就越便宜：0 岁小宝宝买定期重疾的抄底价是 500 左右/年。60 岁大宝宝买，就要奔近 10000 元/年去了，交的钱和赔的钱都要持平了。</p>
+<p>另外重疾险对被保人的健康状况有要求，像高血压、有肺结节的人群很难投保，或者需要加费，甚至直接被拒保。因此买到了重疾险的人，就相当于获得了保险公司的「检疫合格认证」：此人身体 OK，请大家放心食用。</p>
+<p>但对于那种什么「能买保险代表你有福气」的论调……我通常会回一句「对呀~能吃屎还代表您牙口好呢」。</p>
+<h3 id="医疗险"><a href="#医疗险" class="headerlink" title="医疗险"></a>医疗险</h3><h4 id="医疗险·分类"><a href="#医疗险·分类" class="headerlink" title="医疗险·分类"></a>医疗险·分类</h4><p>医疗险常见的有<strong>百万医疗险</strong>、<strong>防癌医疗险</strong>和<strong>小额医疗险</strong>。</p>
+<ol>
+<li><p>百万医疗险</p>
+<p> 300+/年，是为治大病用的，不管是因为意外、癌症或其他疾病原因都可以报销（违法犯罪的除外！），通常有 1 万免赔额，所以基本也就住院才能用得到了，额度最高可以报销上百万。</p>
+</li>
+<li><p>防癌医疗险</p>
+<p> 300～1000/年，是百万医疗险的精简版，只保因癌症导致的治疗，是专门给买不了百万医疗险提供的备胎。</p>
+</li>
+<li><p>小额医疗险</p>
+<p> 500～600/年，是日常看小病用的，免赔额从零到几百不等，额度通常在两三万内，是百万医疗险的补充。</p>
+</li>
+</ol>
+<h4 id="医疗险·赔付条件"><a href="#医疗险·赔付条件" class="headerlink" title="医疗险·赔付条件"></a>医疗险·赔付条件</h4><p>医疗险都是报销型，花多少，报多少。</p>
+<p>这里要注意一点：医疗险通常会要求社保范围内用药。部分产品可以报销非社保用药、门诊治疗，但价格也会相对比较贵，可以按需选择。</p>
+<p>很多人搞不懂<strong>医疗险</strong>和<strong>重疾险</strong>的区别，这里简单类比一下：</p>
+<p><strong>百万医疗险</strong>：报销型，需要治疗完成后拿着票据去报销。像个会计小姐姐：「发生医疗支出了？OK，拿发票来，我报销。」</p>
+<p><strong>重疾险</strong>：提前给付型，确诊即赔（部分需要达到理赔条件）。像个土豪朋友：「发生重大疾病了？OK，给个账号，我给你打钱」</p>
+<p>百万医疗险通常搭配重疾险使用，如果实在要 2 选 1 的话，我会先选百万医疗险。</p>
+<h4 id="医疗险·适合人群"><a href="#医疗险·适合人群" class="headerlink" title="医疗险·适合人群"></a>医疗险·适合人群</h4><ol>
+<li><p>百万医疗险：适合10岁以上所有能买的人买</p>
+<p> 百万医疗险是最体现保险本质的险种，但也是对被保人健康要求最严格的险种，老人、三高等人群通常是买不了的了。</p>
+<p> 不管是男是女，是20岁还是40岁，一年200多，就能换到最高100万的医疗费用报销。<br> 但8岁以下的宝宝理赔率比较高，会受到针对，价格会跳到900多。这时候就不推荐给孩子配医疗险了，可以换成惠民保+意外险。</p>
+</li>
+<li><p>防癌医疗险：适合买不了百万医疗险的老人和三高患者买</p>
+<p> 防癌险对健康要求会比百万医疗险宽松，所以老人和三高可以退而求其次，买一份防癌险，来保障最高发的癌症疾病。</p>
+</li>
+<li><p>小额医疗险：不推荐购买</p>
+<p> 小额医疗险使用的频率高，理赔率就高，所以保费也跟着贵，贵还是小事，最怕的是医疗险理赔多了，会被保险公司认为这人健康有问题，影响到后面买保险和理赔，所以综合考虑，不推荐购买。</p>
+</li>
+</ol>
+<h3 id="意外险"><a href="#意外险" class="headerlink" title="意外险"></a>意外险</h3><h4 id="意外险·分类"><a href="#意外险·分类" class="headerlink" title="意外险·分类"></a>意外险·分类</h4><p>按保障范围可以分为<strong>综合意外险</strong>和<strong>交通工具意外险</strong>、猝死险等<strong>专项意外险</strong>。</p>
+<p>部分意外险只保身故和全残，不保意外伤害医疗。这种一般还是长期型意外险，又贵又坑。还有部分打着<strong>综合意外险</strong>名号的产品，却只保交通工具引起的意外，像落水、被狗咬这种就不赔，这点需要看清楚。</p>
+<h4 id="意外险·理赔条件"><a href="#意外险·理赔条件" class="headerlink" title="意外险·理赔条件"></a>意外险·理赔条件</h4><p>意外险的理赔有一个基础定义：所受到的伤害必须是外来的、突发的、非本意的、非疾病的，才会赔。</p>
+<p>比如吃鱼时被刺卡喉了，这叫外来的突发的，可以赔。但坐姿不端导致腰椎间盘突出，这种就不是外来的，还属于疾病，不赔。张三出门被车撞了，这叫非本意的，可以赔。但要是张三看到车来了赶紧撞上去，没撞伤的叫碰瓷，撞伤了的叫骗保，不但不赔还要接受来自警察叔叔的惩罚。</p>
+<h4 id="意外险·适合人群"><a href="#意外险·适合人群" class="headerlink" title="意外险·适合人群"></a>意外险·适合人群</h4><ol>
+<li><p>普通人</p>
+<p> 普通人买意外险主要看意外伤害医疗额度，买的时候需要注意3大点：是否可以用于门诊医疗；是否可以报销社保范围外医疗；如果有住院津贴的话，那就更是加分项。</p>
+</li>
+<li><p>老人、孩子</p>
+<p> 老人腿脚不便，容易摔碰，小孩子太好动，而且容易发生烫伤、鱼刺卡喉这种小意外，所以这两者都推荐购买。</p>
+</li>
+<li><p>空中飞人、出差达人</p>
+<p> 说起来让人心塞，但这两类人要注意看身故/伤残额度……</p>
+</li>
+</ol>
+<p>伤残这里有个坑，伤残等级最低是 10 级，最高是 1 级，有些意外险只赔全残（1、2级），不赔伤残。</p>
+<p>交通工具赔付这里也有个要注意的点：有些意外险只赔公共交通工具，像高铁、公交、地铁、出租车。但是网约车这种私人运营的交通工具，到底属不属于「公共」，法律没定性，所以部分保司也没更新，容易引起纠纷，买的时候多问一嘴。</p>
+]]></content>
+      <categories>
+        <category>转载</category>
+      </categories>
+      <tags>
+        <tag>转载</tag>
+        <tag>保险</tag>
       </tags>
   </entry>
   <entry>
@@ -5420,164 +5576,6 @@
       </categories>
       <tags>
         <tag>英语</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>煎蛋保险小课堂</title>
-    <url>/2021/09/29/%E7%85%8E%E8%9B%8B%E4%BF%9D%E9%99%A9%E5%B0%8F%E8%AF%BE%E5%A0%82/</url>
-    <content><![CDATA[<p>蛋友 阿Lam：</p>
-<blockquote>
-<p>因为看到部分蛋友有保险困扰。我又刚好是这行的，所以做了个小科普。</p>
-</blockquote>
-<p>转载自：<a href="http://jandan.net/p/109642">煎蛋保险小课堂</a></p>
-<span id="more"></span>
-<h2 id="有哪些保险？"><a href="#有哪些保险？" class="headerlink" title="有哪些保险？"></a>有哪些保险？</h2><p>保险的种类称作险种，按缴费方式分，可以分为<strong>社会保险</strong>（强制交）和<strong>商业保险</strong>（自愿购买）。</p>
-<h3 id="社会保险（社保）"><a href="#社会保险（社保）" class="headerlink" title="社会保险（社保）"></a>社会保险（社保）</h3><ol>
-<li><p>城镇职工五险一金中的五险：养老保险、医疗保险、工伤保险、失业保险、生育保险；</p>
-</li>
-<li><p>城市少儿医保；</p>
-</li>
-<li><p>城镇居民医疗保险/乡镇居民的新型农村合作医疗（新农合）。</p>
-</li>
-</ol>
-<p>社保是国家福利，是最基础的保障，商保可以没有，但社保必须在手。</p>
-<p>医保是社保中的一个类别，具体指五险中的医疗保险、城市少儿医保、城镇居民医疗保险、新农合。四者不能重复报销，所以在公司交了五险一金的，在老家就不用浪费钱交新农合了。</p>
-<p>城市少儿医保是给小孩子办的，有本市户口的，出生就可以办；没本市户口的，要等上幼儿园/小学后才能统一办；没本市户口的家庭，可以先给孩子在老家交个新农合，平时在城市门诊治疗是没法报销了，但住院治疗要花大钱时可以申请异地报销。</p>
-<p>有社保的人在买部分商保时，比没社保的要便宜</p>
-<h3 id="商业保险"><a href="#商业保险" class="headerlink" title="商业保险"></a>商业保险</h3><p>商业保险按保险标的（对象）分为<strong>人身险</strong>和<strong>财产险</strong>。</p>
-<p><strong>人身险</strong>就是保人的寿命和健康的，<strong>财产险</strong>就是保人的房车等财产的，其中的代表就是车险。</p>
-<p>人身险里有四大类险种，分别是<strong>寿险</strong>、<strong>重疾险</strong>、<strong>医疗险</strong>、<strong>意外险</strong>。其中<strong>重疾险</strong>和<strong>医疗险</strong>都属于健康险。</p>
-<ol>
-<li><p>寿险（保死，狗带了就赔一大笔钱）；</p>
-</li>
-<li><p>健康险（保生，生病了就赔钱或报销医疗费）；</p>
-<ol>
-<li><p>重疾险；</p>
-</li>
-<li><p>医疗险：百万医疗险、防癌医疗险、小额医疗险。</p>
-</li>
-</ol>
-</li>
-<li><p>意外险（保非疾病导致的生和死，比如被车撞了，狗带了就赔钱，没带就报销医疗费。但如果是因癌症等疾病引起的，那带不带都不赔）。</p>
-</li>
-</ol>
-<h3 id="课外小姿势"><a href="#课外小姿势" class="headerlink" title="课外小姿势"></a>课外小姿势</h3><h4 id="团险"><a href="#团险" class="headerlink" title="团险"></a>团险</h4><p>公司团险不是一个具体的险种，而是一种承保方式，我们平常办商保都是个人给个人买，团险则是一个团体给它的成员统一购买。<br>像有些公司 HR 招人时喊的「六险一金」，多的那个险就一般是商业团险，具体险种一般是意外险、医疗险，成本大概是 100 块/人年。</p>
-<h4 id="「我买了保险」"><a href="#「我买了保险」" class="headerlink" title="「我买了保险」"></a>「我买了保险」</h4><p>重疾险的理赔动不动就是几十万，所以审核会很严格，会查你的诊断报告、病例书等，所以在看一些你不知道是什么病的时候，记得提醒医生：「我买了保险！」</p>
-<p>然后有经验的医生都能 get 到，病例就尽量不会写影响理赔的内容了。</p>
-<h4 id="自由职业怎么交社保"><a href="#自由职业怎么交社保" class="headerlink" title="自由职业怎么交社保"></a>自由职业怎么交社保</h4><ol>
-<li><p>挂在朋友或专门的公司去正常交职工五险一金，但这个有法律风险，不提倡；</p>
-</li>
-<li><p>在当地社保局以灵活就业人员身份，去申请缴纳职工医保和养老保险；</p>
-</li>
-<li><p>在户口所在地的社保局交居民医疗保险和居民养老保险。</p>
-</li>
-</ol>
-<h2 id="社会保险有什么用？"><a href="#社会保险有什么用？" class="headerlink" title="社会保险有什么用？"></a>社会保险有什么用？</h2><h3 id="养老保险"><a href="#养老保险" class="headerlink" title="养老保险"></a>养老保险</h3><p>退休后发养老金。</p>
-<h3 id="工伤保险"><a href="#工伤保险" class="headerlink" title="工伤保险"></a>工伤保险</h3><p>因公受伤时，报销医疗费。</p>
-<h3 id="失业保险"><a href="#失业保险" class="headerlink" title="失业保险"></a>失业保险</h3><p>职工被辞退后无业，或农村户口辞职后无业时，可以领取失业保险金。</p>
-<h3 id="生育保险"><a href="#生育保险" class="headerlink" title="生育保险"></a>生育保险</h3><p>产妇在生育前后可以领取生育津贴、报销检查费、接生费、手术费等费用。</p>
-<h3 id="职工医疗保险、少儿保险、新农合、城镇居民医疗保险"><a href="#职工医疗保险、少儿保险、新农合、城镇居民医疗保险" class="headerlink" title="职工医疗保险、少儿保险、新农合、城镇居民医疗保险"></a>职工医疗保险、少儿保险、新农合、城镇居民医疗保险</h3><p>看病时报销医疗费。</p>
-<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>凡是报销类的社保，要求治疗项目和药物必须在国家医保目录内，才可以报销。简称社保范围内用药。范围外的，不予报销。</p>
-<p>国家医保目录见链接：<a href="http://www.gov.cn/xinwen/2019-11/28/content_5456660.htm">国家医保局、人力资源社会保障部印发2019年国家医保谈判准入药品名单</a></p>
-<p>有人就问了，那我记不住怎么办？</p>
-<p>那就在问诊时对医生说一句：「医生你好，麻烦尽量开社保范围内用药哈~」。</p>
-<p>要是医生说他也记不住，那你就得好好寻思一下你找的是什么医生了。</p>
-<h2 id="商业保险有什么用？"><a href="#商业保险有什么用？" class="headerlink" title="商业保险有什么用？"></a>商业保险有什么用？</h2><h3 id="寿险"><a href="#寿险" class="headerlink" title="寿险"></a>寿险</h3><h4 id="寿险·分类"><a href="#寿险·分类" class="headerlink" title="寿险·分类"></a>寿险·分类</h4><p>寿险按保障期限，可以分为<strong>定期寿险</strong>和<strong>终身寿险</strong>。<strong>定寿</strong>便宜，预算有限就先买来用着；<strong>终身寿险</strong>贵，适合预算足，想留笔钱给子女，及「我不管！反正我花了钱就要有得赔！」的人。</p>
-<h4 id="寿险·赔付条件"><a href="#寿险·赔付条件" class="headerlink" title="寿险·赔付条件"></a>寿险·赔付条件</h4><p>那很明显啦，寿险是自己挂了，给家属拿钱的。</p>
-<h4 id="寿险·适合人群"><a href="#寿险·适合人群" class="headerlink" title="寿险·适合人群"></a>寿险·适合人群</h4><ol>
-<li>家庭支柱</li>
-<li>成年的独生子女</li>
-</ol>
-<p>比如一家老小靠着张三吃饭，但张三突然挂了，有寿险，那家里人就有几十万赔偿傍身；</p>
-<p>没赔偿，那家里人就要守着没还完的房贷吃土了。还有像我这种单身狗，很怕哪天突然狗带了，我妈没人照顾，所以我就给自己买了份保到 60 岁的定寿。</p>
-<h4 id="寿险·常见坑"><a href="#寿险·常见坑" class="headerlink" title="寿险·常见坑"></a>寿险·常见坑</h4><blockquote>
-<p>小孩子没必要买寿险</p>
-</blockquote>
-<p>给孩子买保险，是为了在孩子生病时有钱治。但寿险是人没了才能拿的，孩子都没了要这钱做什么？所以每次看到有些代理人逮着朋友刚生孩子就让买寿险，我！就！很！烦！</p>
-<h3 id="重疾险"><a href="#重疾险" class="headerlink" title="重疾险"></a>重疾险</h3><p>大部分人说的大病保险，就是<strong>重疾险</strong>和<strong>百万医疗险</strong>（下详）。</p>
-<h4 id="重疾险·分类"><a href="#重疾险·分类" class="headerlink" title="重疾险·分类"></a>重疾险·分类</h4><p>按保障期限，可以分为<strong>定期重疾险</strong>和<strong>终身重疾险</strong>，<strong>定期重疾险</strong>比<strong>终身重疾险</strong>便宜很多，男性 20 岁买 50 万保额，保到 60 岁只要两千左右，保到 70 岁是三四千，保终身要七八千。但我国男性平均寿命 70 岁，女性 73……</p>
-<p>按赔付条件，可以分为<strong>消费型重疾险</strong>和<strong>返还型重疾险</strong>。<strong>返还型重疾险</strong>是个坑，坑到有部分保司把「返还」给打成了敏感词，让我想批判都只能叫做「那个保险」，搞得像搞黄色一样。</p>
-<h4 id="重疾险·赔付条件"><a href="#重疾险·赔付条件" class="headerlink" title="重疾险·赔付条件"></a>重疾险·赔付条件</h4><p>确诊即赔（部分疾病需达到合同约定条件），提前给付。</p>
-<p>被保人一旦确诊保单约定的某种疾病，或达到合同约定条件，就提前赔付相应保额。这段话有点长，所以很多代理人图省事（或本身就是坏），省略了「达到合同约定条件」，简写为「确诊即赔」，但这是不规范的，所以就惹出了很多麻烦！</p>
-<p>首先，普通人、临床医学、保险医学，这三者对「重疾」的定义是不一样的。</p>
-<p>保险里的重疾是针对那些病情严重、治疗花费巨大、不易治愈的疾病。像心脏支架手术。人老了或太胖后，心脏血管就会硬化堵塞，管道变窄，这时候就可以在血管切个口子，放个支架进去，把血管撑大来，让它能正常工作。是物理+精神双重意义上的「开心」~</p>
-<ol>
-<li>普通人：都要动到心脏了，常威你还说不是重疾？</li>
-<li>临床医学：全麻都不用，局部麻醉就可以做，不算小手术，要经验丰富的医生才能做，但也不算什么大 case；</li>
-<li>保险医学：国产支架 8000 块，进口支架 1 万块，手术完就可以下床，1 天就能出院，1 周就能生活自理。要是这样都能拿 50 万重疾理赔，那患癌症的不要面子的啊？！</li>
-</ol>
-<p>再举个被最多人 diss「苛刻的急性心肌梗塞」，这是一个标准的急性心肌梗塞的重疾条款定义。</p>
-<blockquote>
-<p><strong>煎蛋保险小课堂</strong></p>
-<p><em>客户</em>：医生都说我是急性心肌梗塞咯！合同里也说了保急性心肌梗塞的啊，为什么你不赔？！</p>
-<p><em>理赔专员</em>：先生您好，合同里有说明急性心肌梗塞要满足至少 3 个条件才算重疾，才可以赔的。</p>
-<p><em>客户</em>：医生说了不算，你们说才算？你们这是要重新定义急性心肌梗塞吗？</p>
-<p><em>理赔专员</em>：先生，我们合同里有规……</p>
-<p><em>客户</em>：保险都是大屁眼子！</p>
-<p><em>理赔专员</em>：……（屁眼子好累）</p>
-</blockquote>
-<p>很多代理人在解释时，都只会复读「这是合同规定的」。但规定了什么，难道我们就不认字吗？<br>换我听了这种解释，我也会觉得保险是大屁眼子，但是为什么会要这样规定呢？</p>
-<p>这里借鉴一个车险里的玻璃险来参考，车的挡风玻璃出现轻微裂痕但又不影响正常使用时，为了避免车主拿到理赔后不更换玻璃，甚至在裂痕扩大后二次申请赔偿，所以会和车主协商，对玻璃进行扩损，用小锤锤砸到玻璃确保用不了，才能理赔。</p>
-<p>回到重疾定义也是一样的，就算是感冒也分轻感冒和重感冒、流感致死，重疾也是需要确定这个病到达了「重」的程度才能按重疾理赔。</p>
-<p>我们再回顾一下知识要点：保险里的重疾是针对那些<strong>病情严重</strong>、<strong>治疗花费巨大</strong>、<strong>不易治愈</strong>的疾病，都没到那么严重呢，保险公司赔的话也很委屈，而且 25 种重大疾病的重疾定义是由国家银保监会统一规定的，保险公司动不了手脚。</p>
-<h4 id="重疾险·适合人群"><a href="#重疾险·适合人群" class="headerlink" title="重疾险·适合人群"></a>重疾险·适合人群</h4><p>除了老人外的人。</p>
-<p>重疾险的价格是越年轻买就越便宜：0 岁小宝宝买定期重疾的抄底价是 500 左右/年。60 岁大宝宝买，就要奔近 10000 元/年去了，交的钱和赔的钱都要持平了。</p>
-<p>另外重疾险对被保人的健康状况有要求，像高血压、有肺结节的人群很难投保，或者需要加费，甚至直接被拒保。因此买到了重疾险的人，就相当于获得了保险公司的「检疫合格认证」：此人身体 OK，请大家放心食用。</p>
-<p>但对于那种什么「能买保险代表你有福气」的论调……我通常会回一句「对呀~能吃屎还代表您牙口好呢」。</p>
-<h3 id="医疗险"><a href="#医疗险" class="headerlink" title="医疗险"></a>医疗险</h3><h4 id="医疗险·分类"><a href="#医疗险·分类" class="headerlink" title="医疗险·分类"></a>医疗险·分类</h4><p>医疗险常见的有<strong>百万医疗险</strong>、<strong>防癌医疗险</strong>和<strong>小额医疗险</strong>。</p>
-<ol>
-<li><p>百万医疗险</p>
-<p> 300+/年，是为治大病用的，不管是因为意外、癌症或其他疾病原因都可以报销（违法犯罪的除外！），通常有 1 万免赔额，所以基本也就住院才能用得到了，额度最高可以报销上百万。</p>
-</li>
-<li><p>防癌医疗险</p>
-<p> 300～1000/年，是百万医疗险的精简版，只保因癌症导致的治疗，是专门给买不了百万医疗险提供的备胎。</p>
-</li>
-<li><p>小额医疗险</p>
-<p> 500～600/年，是日常看小病用的，免赔额从零到几百不等，额度通常在两三万内，是百万医疗险的补充。</p>
-</li>
-</ol>
-<h4 id="医疗险·赔付条件"><a href="#医疗险·赔付条件" class="headerlink" title="医疗险·赔付条件"></a>医疗险·赔付条件</h4><p>医疗险都是报销型，花多少，报多少。</p>
-<p>这里要注意一点：医疗险通常会要求社保范围内用药。部分产品可以报销非社保用药、门诊治疗，但价格也会相对比较贵，可以按需选择。</p>
-<p>很多人搞不懂<strong>医疗险</strong>和<strong>重疾险</strong>的区别，这里简单类比一下：</p>
-<p><strong>百万医疗险</strong>：报销型，需要治疗完成后拿着票据去报销。像个会计小姐姐：「发生医疗支出了？OK，拿发票来，我报销。」</p>
-<p><strong>重疾险</strong>：提前给付型，确诊即赔（部分需要达到理赔条件）。像个土豪朋友：「发生重大疾病了？OK，给个账号，我给你打钱」</p>
-<p>百万医疗险通常搭配重疾险使用，如果实在要 2 选 1 的话，我会先选百万医疗险。</p>
-<h4 id="医疗险·适合人群"><a href="#医疗险·适合人群" class="headerlink" title="医疗险·适合人群"></a>医疗险·适合人群</h4><ol>
-<li><p>百万医疗险：适合10岁以上所有能买的人买</p>
-<p> 百万医疗险是最体现保险本质的险种，但也是对被保人健康要求最严格的险种，老人、三高等人群通常是买不了的了。</p>
-<p> 不管是男是女，是20岁还是40岁，一年200多，就能换到最高100万的医疗费用报销。<br> 但8岁以下的宝宝理赔率比较高，会受到针对，价格会跳到900多。这时候就不推荐给孩子配医疗险了，可以换成惠民保+意外险。</p>
-</li>
-<li><p>防癌医疗险：适合买不了百万医疗险的老人和三高患者买</p>
-<p> 防癌险对健康要求会比百万医疗险宽松，所以老人和三高可以退而求其次，买一份防癌险，来保障最高发的癌症疾病。</p>
-</li>
-<li><p>小额医疗险：不推荐购买</p>
-<p> 小额医疗险使用的频率高，理赔率就高，所以保费也跟着贵，贵还是小事，最怕的是医疗险理赔多了，会被保险公司认为这人健康有问题，影响到后面买保险和理赔，所以综合考虑，不推荐购买。</p>
-</li>
-</ol>
-<h3 id="意外险"><a href="#意外险" class="headerlink" title="意外险"></a>意外险</h3><h4 id="意外险·分类"><a href="#意外险·分类" class="headerlink" title="意外险·分类"></a>意外险·分类</h4><p>按保障范围可以分为<strong>综合意外险</strong>和<strong>交通工具意外险</strong>、猝死险等<strong>专项意外险</strong>。</p>
-<p>部分意外险只保身故和全残，不保意外伤害医疗。这种一般还是长期型意外险，又贵又坑。还有部分打着<strong>综合意外险</strong>名号的产品，却只保交通工具引起的意外，像落水、被狗咬这种就不赔，这点需要看清楚。</p>
-<h4 id="意外险·理赔条件"><a href="#意外险·理赔条件" class="headerlink" title="意外险·理赔条件"></a>意外险·理赔条件</h4><p>意外险的理赔有一个基础定义：所受到的伤害必须是外来的、突发的、非本意的、非疾病的，才会赔。</p>
-<p>比如吃鱼时被刺卡喉了，这叫外来的突发的，可以赔。但坐姿不端导致腰椎间盘突出，这种就不是外来的，还属于疾病，不赔。张三出门被车撞了，这叫非本意的，可以赔。但要是张三看到车来了赶紧撞上去，没撞伤的叫碰瓷，撞伤了的叫骗保，不但不赔还要接受来自警察叔叔的惩罚。</p>
-<h4 id="意外险·适合人群"><a href="#意外险·适合人群" class="headerlink" title="意外险·适合人群"></a>意外险·适合人群</h4><ol>
-<li><p>普通人</p>
-<p> 普通人买意外险主要看意外伤害医疗额度，买的时候需要注意3大点：是否可以用于门诊医疗；是否可以报销社保范围外医疗；如果有住院津贴的话，那就更是加分项。</p>
-</li>
-<li><p>老人、孩子</p>
-<p> 老人腿脚不便，容易摔碰，小孩子太好动，而且容易发生烫伤、鱼刺卡喉这种小意外，所以这两者都推荐购买。</p>
-</li>
-<li><p>空中飞人、出差达人</p>
-<p> 说起来让人心塞，但这两类人要注意看身故/伤残额度……</p>
-</li>
-</ol>
-<p>伤残这里有个坑，伤残等级最低是 10 级，最高是 1 级，有些意外险只赔全残（1、2级），不赔伤残。</p>
-<p>交通工具赔付这里也有个要注意的点：有些意外险只赔公共交通工具，像高铁、公交、地铁、出租车。但是网约车这种私人运营的交通工具，到底属不属于「公共」，法律没定性，所以部分保司也没更新，容易引起纠纷，买的时候多问一嘴。</p>
-]]></content>
-      <categories>
-        <category>转载</category>
-      </categories>
-      <tags>
-        <tag>转载</tag>
-        <tag>保险</tag>
       </tags>
   </entry>
   <entry>
