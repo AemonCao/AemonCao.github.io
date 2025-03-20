@@ -1,6 +1,42 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
+    <title>工厂方法模式（Factory Method Pattern）</title>
+    <url>/2020/03/31/Factory-Method-Pattern/</url>
+    <content><![CDATA[<p>工厂方法模式的目的是：</p>
+<blockquote>
+<p>通过让子类决定该创建的对象是什么，来达到将对象创建的过程封装的目的。</p>
+</blockquote>
+<span id="more"></span>
+<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>我们还是继续<a href="/2020/03/29/Simple-Factory-Pattern/" title="简单工厂模式（Simple Factory Pattern）">简单工厂模式（Simple Factory Pattern）</a>中的披萨店。</p>
+<p>首先我们需要修改一下 <code>Pizza</code> 类：</p>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 披萨抽象类</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title">Pizza</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">string</span> name;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">string</span> dough;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">string</span> sauce;</span><br><span class="line">    <span class="keyword">public</span> ArrayList toppings = <span class="keyword">new</span> ArrayList();</span><br><span class="line"></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> 准备 Pizza</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Prepare</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;Prepring &quot;</span> + name);</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;Tossing dough...&quot;</span>);</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;Adding sauce...&quot;</span>);</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;Adding toppings: &quot;</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; toppings.Count; i++)</span><br><span class="line">            Console.WriteLine(<span class="string">&quot;    &quot;</span> + toppings[i]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> 烘培 Pizza</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Bake</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;Bake for 25 minutes at 350&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> 切 Pizza</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Cut</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;Cutting the pizza into diagonal slices&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> 装箱 Pizza</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Box</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;Place pizza in official PizzaStore box&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>然后通过继承，我们有了几种不同风格和口味的 <code>Pizza</code>：</p>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 纽约芝士披萨</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">NYStyleCheesePizza</span> : <span class="title">Pizza</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">NYStyleCheesePizza</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        name = <span class="string">&quot;NY Style Sauce and Cheese Pizza&quot;</span>;</span><br><span class="line">        dough = <span class="string">&quot;Thin Crust Dough&quot;</span>;</span><br><span class="line">        sauce = <span class="string">&quot;Marinara Sauce&quot;</span>;</span><br><span class="line"></span><br><span class="line">        toppings.Add(<span class="string">&quot;Grated Reggiano Cheese&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 纽约素食披萨</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">NYStyleVeggiePizza</span> : <span class="title">Pizza</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">NYStyleVeggiePizza</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        name = <span class="string">&quot;NY Style Sauce and Veggie Pizza&quot;</span>;</span><br><span class="line">        dough = <span class="string">&quot;Thin Crust Dough&quot;</span>;</span><br><span class="line">        sauce = <span class="string">&quot;Marinara Sauce&quot;</span>;</span><br><span class="line"></span><br><span class="line">        toppings.Add(<span class="string">&quot;Grated Reggiano Veggie&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 芝加哥芝士披萨</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">ChicagoStyleCheesePizza</span> : <span class="title">Pizza</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ChicagoStyleCheesePizza</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        name = <span class="string">&quot;Chicago Style Deep Dish Cheese Pizza&quot;</span>;</span><br><span class="line">        dough = <span class="string">&quot;Extra Thick Crust Dough&quot;</span>;</span><br><span class="line">        sauce = <span class="string">&quot;Plum Tomato Sauce&quot;</span>;</span><br><span class="line"></span><br><span class="line">        toppings.Add(<span class="string">&quot;Shredded Mozzarella Cheese&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">override</span> <span class="keyword">void</span> <span class="title">Cut</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;Cutting the pizza into square slices&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 芝加哥素食披萨</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">ChicagoStyleVeggiePizza</span> : <span class="title">Pizza</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ChicagoStyleVeggiePizza</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        name = <span class="string">&quot;Chicago Style Deep Dish Veggie Pizza&quot;</span>;</span><br><span class="line">        dough = <span class="string">&quot;Extra Thick Crust Dough&quot;</span>;</span><br><span class="line">        sauce = <span class="string">&quot;Plum Tomato Sauce&quot;</span>;</span><br><span class="line"></span><br><span class="line">        toppings.Add(<span class="string">&quot;Shredded Mozzarella Veggie&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">override</span> <span class="keyword">void</span> <span class="title">Cut</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;Cutting the pizza into square slices&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>相比较之前的写法，新的写法将 <code>Pizza</code> 抽象类中的方法改成了虚方法（<code>virtual</code>）。这样的话，之后继承此抽象类的子类就不需要某些不用改动的方法进行重复的 <code>override</code> 了。就像代码所展示的一样，我们只对 <code>Cut</code> 方法进行了覆写，因为 Chicago Style 的披萨需要切成方形的。</p>
+<p>之后是 <code>PizzaStore</code> 的部分：</p>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title">PizzaStore</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">abstract</span> Pizza <span class="title">CreatePizza</span>(<span class="params"><span class="built_in">string</span> type</span>)</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Pizza <span class="title">OrderPizza</span>(<span class="params"><span class="built_in">string</span> type</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        Pizza pizza;</span><br><span class="line"></span><br><span class="line">        pizza = CreatePizza(type);</span><br><span class="line"></span><br><span class="line">        pizza.Prepare();</span><br><span class="line">        pizza.Bake();</span><br><span class="line">        pizza.Cut();</span><br><span class="line">        pizza.Box();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> pizza;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>我们将 <code>PizzaStore</code> 也写成了一个抽象类，我们把它称作<strong>抽象创造者类</strong>，同时还有一个 <code>CreatePizza</code> 的抽象方法。而这就是<strong>工厂方法</strong>，当然，是抽象的。它返回一个 <code>Pizza</code>，这就是<strong>产品</strong>。</p>
+<p>继承：</p>
+<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">NYStylePizzaStore</span> : <span class="title">PizzaStore</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">override</span> Pizza <span class="title">CreatePizza</span>(<span class="params"><span class="built_in">string</span> type</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (type.Equals(<span class="string">&quot;cheese&quot;</span>))</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> NYStyleCheesePizza();</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (type.Equals(<span class="string">&quot;viggie&quot;</span>))</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> NYStyleVeggiePizza();</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">ChicagoStylePizzaStore</span> : <span class="title">PizzaStore</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">override</span> Pizza <span class="title">CreatePizza</span>(<span class="params"><span class="built_in">string</span> type</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (type.Equals(<span class="string">&quot;cheese&quot;</span>))</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> ChicagoStyleCheesePizza();</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (type.Equals(<span class="string">&quot;viggie&quot;</span>))</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> ChicagoStyleVeggiePizza();</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这两个 <code>PizzaStore</code> 的子类（<strong>具体创造者</strong>）实现了 <code>CreatePizza</code> 抽象方法，这就是真正实现实例化的工厂方法。</p>
+<p>我们把实例化的工作都交给了子类，或者说是交给了子类中的一个方法，这个方法就是一个工厂。</p>
+<h2 id="注意的点"><a href="#注意的点" class="headerlink" title="注意的点"></a>注意的点</h2><ul>
+<li>简单工厂和工厂方法之间的差异：简单方法把全部的事情都在一个地方做完了，而工厂方法则是定义了一个框架，通过继承抽象类来创造实际的产品。</li>
+</ul>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p><a href="https://github.com/AemonCao/DesignPattern/tree/master/DesignPattern/FactoryMethodPattern">FactoryMethodPattern</a></p>
+]]></content>
+      <categories>
+        <category>设计模式</category>
+      </categories>
+      <tags>
+        <tag>C#</tag>
+        <tag>设计模式</tag>
+        <tag>工厂方法模式</tag>
+        <tag>Factory Method Pattern</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>抽象工厂模式（Abstract Factory Pattern）</title>
     <url>/2020/04/18/Abstract-Factory-Pattern/</url>
     <content><![CDATA[<p>抽象工厂模式的定义是：</p>
@@ -62,42 +98,6 @@
         <tag>设计模式</tag>
         <tag>抽象工厂模式</tag>
         <tag>Abstract Factory Pattern</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>工厂方法模式（Factory Method Pattern）</title>
-    <url>/2020/03/31/Factory-Method-Pattern/</url>
-    <content><![CDATA[<p>工厂方法模式的目的是：</p>
-<blockquote>
-<p>通过让子类决定该创建的对象是什么，来达到将对象创建的过程封装的目的。</p>
-</blockquote>
-<span id="more"></span>
-<h2 id="实现"><a href="#实现" class="headerlink" title="实现"></a>实现</h2><p>我们还是继续<a href="/2020/03/29/Simple-Factory-Pattern/" title="简单工厂模式（Simple Factory Pattern）">简单工厂模式（Simple Factory Pattern）</a>中的披萨店。</p>
-<p>首先我们需要修改一下 <code>Pizza</code> 类：</p>
-<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 披萨抽象类</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title">Pizza</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">string</span> name;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">string</span> dough;</span><br><span class="line">    <span class="keyword">public</span> <span class="built_in">string</span> sauce;</span><br><span class="line">    <span class="keyword">public</span> ArrayList toppings = <span class="keyword">new</span> ArrayList();</span><br><span class="line"></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> 准备 Pizza</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Prepare</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;Prepring &quot;</span> + name);</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;Tossing dough...&quot;</span>);</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;Adding sauce...&quot;</span>);</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;Adding toppings: &quot;</span>);</span><br><span class="line">        <span class="keyword">for</span> (<span class="built_in">int</span> i = <span class="number">0</span>; i &lt; toppings.Count; i++)</span><br><span class="line">            Console.WriteLine(<span class="string">&quot;    &quot;</span> + toppings[i]);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> 烘培 Pizza</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Bake</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;Bake for 25 minutes at 350&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> 切 Pizza</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Cut</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;Cutting the pizza into diagonal slices&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> 装箱 Pizza</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">virtual</span> <span class="keyword">void</span> <span class="title">Box</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;Place pizza in official PizzaStore box&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> String <span class="title">getName</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> name;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>然后通过继承，我们有了几种不同风格和口味的 <code>Pizza</code>：</p>
-<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 纽约芝士披萨</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">NYStyleCheesePizza</span> : <span class="title">Pizza</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">NYStyleCheesePizza</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        name = <span class="string">&quot;NY Style Sauce and Cheese Pizza&quot;</span>;</span><br><span class="line">        dough = <span class="string">&quot;Thin Crust Dough&quot;</span>;</span><br><span class="line">        sauce = <span class="string">&quot;Marinara Sauce&quot;</span>;</span><br><span class="line"></span><br><span class="line">        toppings.Add(<span class="string">&quot;Grated Reggiano Cheese&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 纽约素食披萨</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">NYStyleVeggiePizza</span> : <span class="title">Pizza</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">NYStyleVeggiePizza</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        name = <span class="string">&quot;NY Style Sauce and Veggie Pizza&quot;</span>;</span><br><span class="line">        dough = <span class="string">&quot;Thin Crust Dough&quot;</span>;</span><br><span class="line">        sauce = <span class="string">&quot;Marinara Sauce&quot;</span>;</span><br><span class="line"></span><br><span class="line">        toppings.Add(<span class="string">&quot;Grated Reggiano Veggie&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 芝加哥芝士披萨</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">ChicagoStyleCheesePizza</span> : <span class="title">Pizza</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ChicagoStyleCheesePizza</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        name = <span class="string">&quot;Chicago Style Deep Dish Cheese Pizza&quot;</span>;</span><br><span class="line">        dough = <span class="string">&quot;Extra Thick Crust Dough&quot;</span>;</span><br><span class="line">        sauce = <span class="string">&quot;Plum Tomato Sauce&quot;</span>;</span><br><span class="line"></span><br><span class="line">        toppings.Add(<span class="string">&quot;Shredded Mozzarella Cheese&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">override</span> <span class="keyword">void</span> <span class="title">Cut</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;Cutting the pizza into square slices&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 芝加哥素食披萨</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">ChicagoStyleVeggiePizza</span> : <span class="title">Pizza</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">ChicagoStyleVeggiePizza</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        name = <span class="string">&quot;Chicago Style Deep Dish Veggie Pizza&quot;</span>;</span><br><span class="line">        dough = <span class="string">&quot;Extra Thick Crust Dough&quot;</span>;</span><br><span class="line">        sauce = <span class="string">&quot;Plum Tomato Sauce&quot;</span>;</span><br><span class="line"></span><br><span class="line">        toppings.Add(<span class="string">&quot;Shredded Mozzarella Veggie&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">override</span> <span class="keyword">void</span> <span class="title">Cut</span>()</span></span><br><span class="line">    &#123;</span><br><span class="line">        Console.WriteLine(<span class="string">&quot;Cutting the pizza into square slices&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>相比较之前的写法，新的写法将 <code>Pizza</code> 抽象类中的方法改成了虚方法（<code>virtual</code>）。这样的话，之后继承此抽象类的子类就不需要某些不用改动的方法进行重复的 <code>override</code> 了。就像代码所展示的一样，我们只对 <code>Cut</code> 方法进行了覆写，因为 Chicago Style 的披萨需要切成方形的。</p>
-<p>之后是 <code>PizzaStore</code> 的部分：</p>
-<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">class</span> <span class="title">PizzaStore</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">abstract</span> Pizza <span class="title">CreatePizza</span>(<span class="params"><span class="built_in">string</span> type</span>)</span>;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> Pizza <span class="title">OrderPizza</span>(<span class="params"><span class="built_in">string</span> type</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        Pizza pizza;</span><br><span class="line"></span><br><span class="line">        pizza = CreatePizza(type);</span><br><span class="line"></span><br><span class="line">        pizza.Prepare();</span><br><span class="line">        pizza.Bake();</span><br><span class="line">        pizza.Cut();</span><br><span class="line">        pizza.Box();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">return</span> pizza;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>我们将 <code>PizzaStore</code> 也写成了一个抽象类，我们把它称作<strong>抽象创造者类</strong>，同时还有一个 <code>CreatePizza</code> 的抽象方法。而这就是<strong>工厂方法</strong>，当然，是抽象的。它返回一个 <code>Pizza</code>，这就是<strong>产品</strong>。</p>
-<p>继承：</p>
-<figure class="highlight csharp"><table><tr><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">NYStylePizzaStore</span> : <span class="title">PizzaStore</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">override</span> Pizza <span class="title">CreatePizza</span>(<span class="params"><span class="built_in">string</span> type</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (type.Equals(<span class="string">&quot;cheese&quot;</span>))</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> NYStyleCheesePizza();</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (type.Equals(<span class="string">&quot;viggie&quot;</span>))</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> NYStyleVeggiePizza();</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title">ChicagoStylePizzaStore</span> : <span class="title">PizzaStore</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">protected</span> <span class="keyword">override</span> Pizza <span class="title">CreatePizza</span>(<span class="params"><span class="built_in">string</span> type</span>)</span></span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (type.Equals(<span class="string">&quot;cheese&quot;</span>))</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> ChicagoStyleCheesePizza();</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span> (type.Equals(<span class="string">&quot;viggie&quot;</span>))</span><br><span class="line">            <span class="keyword">return</span> <span class="keyword">new</span> ChicagoStyleVeggiePizza();</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">            <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>这两个 <code>PizzaStore</code> 的子类（<strong>具体创造者</strong>）实现了 <code>CreatePizza</code> 抽象方法，这就是真正实现实例化的工厂方法。</p>
-<p>我们把实例化的工作都交给了子类，或者说是交给了子类中的一个方法，这个方法就是一个工厂。</p>
-<h2 id="注意的点"><a href="#注意的点" class="headerlink" title="注意的点"></a>注意的点</h2><ul>
-<li>简单工厂和工厂方法之间的差异：简单方法把全部的事情都在一个地方做完了，而工厂方法则是定义了一个框架，通过继承抽象类来创造实际的产品。</li>
-</ul>
-<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><p><a href="https://github.com/AemonCao/DesignPattern/tree/master/DesignPattern/FactoryMethodPattern">FactoryMethodPattern</a></p>
-]]></content>
-      <categories>
-        <category>设计模式</category>
-      </categories>
-      <tags>
-        <tag>C#</tag>
-        <tag>设计模式</tag>
-        <tag>工厂方法模式</tag>
-        <tag>Factory Method Pattern</tag>
       </tags>
   </entry>
   <entry>
@@ -365,61 +365,6 @@
       </tags>
   </entry>
   <entry>
-    <title>Premiere Pro 学习笔记</title>
-    <url>/2021/03/16/Premiere-Pro-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
-    <content><![CDATA[<p>本文将采用问答的形式来记录学习 Premiere Pro 中遇到的问题。</p>
-<p>目前正在学习过程中，等日后条目多了，将会进行分类。</p>
-<h3 id="导入的图片素材分辨率和项目分辨率不一致，该怎么修改图片大小？"><a href="#导入的图片素材分辨率和项目分辨率不一致，该怎么修改图片大小？" class="headerlink" title="导入的图片素材分辨率和项目分辨率不一致，该怎么修改图片大小？"></a>导入的图片素材分辨率和项目分辨率不一致，该怎么修改图片大小？</h3><ol>
-<li><p>将图片素材拖入视频轨道；</p>
-</li>
-<li><p>单击轨道中的相应素材；</p>
-</li>
-<li><p>在「源」窗口中单击「效果控件」标签页；</p>
-</li>
-<li><p>调整在「运动」效果下的「缩放」属性大小，即可同步调整素材大小了；</p>
-</li>
-<li><p>点击「缩放」标签即可在「节目」窗口显示图片大小变换框，可以直接用鼠标进行操作。</p>
-</li>
-</ol>
-<h3 id="音频如何调整声音大小？"><a href="#音频如何调整声音大小？" class="headerlink" title="音频如何调整声音大小？"></a>音频如何调整声音大小？</h3><ol>
-<li><p>将声音素材拖入视频轨道；</p>
-</li>
-<li><p>单击轨道中的相应素材；</p>
-</li>
-<li><p>在「源」窗口中单击「效果控件」标签页；</p>
-</li>
-<li><p>调整在「音量」效果下的「级别」属性大小，即可调整素材的音量大小了。</p>
-</li>
-</ol>
-<h3 id="如何将视频定格若干秒？"><a href="#如何将视频定格若干秒？" class="headerlink" title="如何将视频定格若干秒？"></a>如何将视频定格若干秒？</h3><ol>
-<li><p>「仅拖动视频」到序列；</p>
-</li>
-<li><p>在序列中，右键单击视频线前面的「fx」，选择「时间重映射」-&gt;「速度」；</p>
-</li>
-<li><p>拖动时间线到需要定格的画面；</p>
-</li>
-<li><p>在「源」窗口中单击「效果控件」标签页；</p>
-</li>
-<li><p>左键单击「视频」-&gt;「时间重映射」-&gt;「速度」-&gt;「添加/移除关键帧」来添加关键帧；</p>
-</li>
-<li><p>按住「Ctrl」+「Alt」用鼠标左键长按关键帧右侧标记并拖动需要定格的时长；</p>
-</li>
-<li><p>「仅拖动音频」到序列（这样做是为了将图像和声音分离，不然的话定格之后音画将不同步）；</p>
-</li>
-<li><p>使用「剃刀工具」在关键帧处将音频拆分为两段；</p>
-</li>
-<li><p>使用「选择工具」将后半段移动至定格结束后的位置。</p>
-</li>
-</ol>
-]]></content>
-      <categories>
-        <category>Premiere Pro</category>
-      </categories>
-      <tags>
-        <tag>Premiere Pro</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>在 Visual Studio Code 中远程开发</title>
     <url>/2020/03/08/Remote-development-in-Visual-Studio-Code/</url>
     <content><![CDATA[<p>由于近期的疫情影响，导致复工时候只能在家办公，所以捣鼓了一下远程办公，特此记录一下。</p>
@@ -497,6 +442,61 @@
       </categories>
       <tags>
         <tag>Visual Studio Code</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>Premiere Pro 学习笔记</title>
+    <url>/2021/03/16/Premiere-Pro-%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</url>
+    <content><![CDATA[<p>本文将采用问答的形式来记录学习 Premiere Pro 中遇到的问题。</p>
+<p>目前正在学习过程中，等日后条目多了，将会进行分类。</p>
+<h3 id="导入的图片素材分辨率和项目分辨率不一致，该怎么修改图片大小？"><a href="#导入的图片素材分辨率和项目分辨率不一致，该怎么修改图片大小？" class="headerlink" title="导入的图片素材分辨率和项目分辨率不一致，该怎么修改图片大小？"></a>导入的图片素材分辨率和项目分辨率不一致，该怎么修改图片大小？</h3><ol>
+<li><p>将图片素材拖入视频轨道；</p>
+</li>
+<li><p>单击轨道中的相应素材；</p>
+</li>
+<li><p>在「源」窗口中单击「效果控件」标签页；</p>
+</li>
+<li><p>调整在「运动」效果下的「缩放」属性大小，即可同步调整素材大小了；</p>
+</li>
+<li><p>点击「缩放」标签即可在「节目」窗口显示图片大小变换框，可以直接用鼠标进行操作。</p>
+</li>
+</ol>
+<h3 id="音频如何调整声音大小？"><a href="#音频如何调整声音大小？" class="headerlink" title="音频如何调整声音大小？"></a>音频如何调整声音大小？</h3><ol>
+<li><p>将声音素材拖入视频轨道；</p>
+</li>
+<li><p>单击轨道中的相应素材；</p>
+</li>
+<li><p>在「源」窗口中单击「效果控件」标签页；</p>
+</li>
+<li><p>调整在「音量」效果下的「级别」属性大小，即可调整素材的音量大小了。</p>
+</li>
+</ol>
+<h3 id="如何将视频定格若干秒？"><a href="#如何将视频定格若干秒？" class="headerlink" title="如何将视频定格若干秒？"></a>如何将视频定格若干秒？</h3><ol>
+<li><p>「仅拖动视频」到序列；</p>
+</li>
+<li><p>在序列中，右键单击视频线前面的「fx」，选择「时间重映射」-&gt;「速度」；</p>
+</li>
+<li><p>拖动时间线到需要定格的画面；</p>
+</li>
+<li><p>在「源」窗口中单击「效果控件」标签页；</p>
+</li>
+<li><p>左键单击「视频」-&gt;「时间重映射」-&gt;「速度」-&gt;「添加/移除关键帧」来添加关键帧；</p>
+</li>
+<li><p>按住「Ctrl」+「Alt」用鼠标左键长按关键帧右侧标记并拖动需要定格的时长；</p>
+</li>
+<li><p>「仅拖动音频」到序列（这样做是为了将图像和声音分离，不然的话定格之后音画将不同步）；</p>
+</li>
+<li><p>使用「剃刀工具」在关键帧处将音频拆分为两段；</p>
+</li>
+<li><p>使用「选择工具」将后半段移动至定格结束后的位置。</p>
+</li>
+</ol>
+]]></content>
+      <categories>
+        <category>Premiere Pro</category>
+      </categories>
+      <tags>
+        <tag>Premiere Pro</tag>
       </tags>
   </entry>
   <entry>
@@ -764,24 +764,6 @@
       </tags>
   </entry>
   <entry>
-    <title>将博客从阿里云迁移到老薛主机</title>
-    <url>/2017/07/06/aliyun-to-laoxuehost/</url>
-    <content><![CDATA[<p>将博客从阿里云迁移到老薛主机</p>
-<span id="more"></span>
-<h2 id="2017年6月23日-15-23"><a href="#2017年6月23日-15-23" class="headerlink" title="2017年6月23日 15:23"></a>2017年6月23日 15:23</h2><p>记录一下，等搬家之后开始动手。 还有 15 天到期，刚去问了一下老薛的客服，说是会有一次免费的网站搬家服务。具体到时候在说。</p>
-<h2 id="2017年7月6日-08-43"><a href="#2017年7月6日-08-43" class="headerlink" title="2017年7月6日 08:43"></a>2017年7月6日 08:43</h2><p>然后昨天刚买了一年的香港主机，提供的免费搬家服务，然后就没自己什么事情了。感觉没学到什么东西呀，到时候自己再备份一下吧。</p>
-<h2 id="2017年7月7日-14-33"><a href="#2017年7月7日-14-33" class="headerlink" title="2017年7月7日 14:33"></a>2017年7月7日 14:33</h2><p>有一点需要补充的是，换到老薛之后， <code>WordPress</code> 的更新以及插件的更新更加快了，之前在阿里云都是死活更新不了的。</p>
-]]></content>
-      <categories>
-        <category>虚拟主机</category>
-      </categories>
-      <tags>
-        <tag>博客</tag>
-        <tag>虚拟主机</tag>
-        <tag>阿里云</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>关于招聘，求职，面试。</title>
     <url>/2017/06/10/about-recruitment-job-search-interview/</url>
     <content><![CDATA[<p>这几天正要求职，和很多公司企业有交流，总结一点经验。</p>
@@ -839,6 +821,24 @@
       </categories>
       <tags>
         <tag>面试</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>将博客从阿里云迁移到老薛主机</title>
+    <url>/2017/07/06/aliyun-to-laoxuehost/</url>
+    <content><![CDATA[<p>将博客从阿里云迁移到老薛主机</p>
+<span id="more"></span>
+<h2 id="2017年6月23日-15-23"><a href="#2017年6月23日-15-23" class="headerlink" title="2017年6月23日 15:23"></a>2017年6月23日 15:23</h2><p>记录一下，等搬家之后开始动手。 还有 15 天到期，刚去问了一下老薛的客服，说是会有一次免费的网站搬家服务。具体到时候在说。</p>
+<h2 id="2017年7月6日-08-43"><a href="#2017年7月6日-08-43" class="headerlink" title="2017年7月6日 08:43"></a>2017年7月6日 08:43</h2><p>然后昨天刚买了一年的香港主机，提供的免费搬家服务，然后就没自己什么事情了。感觉没学到什么东西呀，到时候自己再备份一下吧。</p>
+<h2 id="2017年7月7日-14-33"><a href="#2017年7月7日-14-33" class="headerlink" title="2017年7月7日 14:33"></a>2017年7月7日 14:33</h2><p>有一点需要补充的是，换到老薛之后， <code>WordPress</code> 的更新以及插件的更新更加快了，之前在阿里云都是死活更新不了的。</p>
+]]></content>
+      <categories>
+        <category>虚拟主机</category>
+      </categories>
+      <tags>
+        <tag>博客</tag>
+        <tag>虚拟主机</tag>
+        <tag>阿里云</tag>
       </tags>
   </entry>
   <entry>
@@ -1479,146 +1479,6 @@
       </categories>
   </entry>
   <entry>
-    <title>使用 raspberry 配合 frp 来进行远程开机</title>
-    <url>/2018/07/19/use-raspberry-with-frp-for-remote-boot/</url>
-    <content><![CDATA[<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>一直有在外操作家里电脑的需求，远程控制这一步好解决，一般是通过 <em>TeamViewer</em> 来进行。但是前提之一是需要家中电脑时刻处于开机状态，但是由于电脑是台式即使待机也比平常笔记本的功率要高不少（可以看一下半个月的电费），而且如果 24 小时开机的话，散热器风扇一直处于运行状态，会使机箱的灰尘增多，这样的话清灰频率又要大大增加了。</p>
-<span id="more"></span>
-<!-- ![5.png](https://i.loli.net/2018/07/19/5b507b12be317.png) -->
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/use-raspberry-with-frp-for-remote-boot/电费.webp" alt="电费"></p>
-<!-- <img data-src="/2018/07/19/use-raspberry-with-frp-for-remote-boot/%E7%94%B5%E8%B4%B9.webp" class="" title="电费"> -->
-<p>所以需要一种可以远程开机的办法。</p>
-<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>之前的方法是使用即时通讯软件让家中的室友帮忙开机，但是也只限于家中有室友的情况，如果室友去上班了，那就没办法了。 也想过训练猫来帮助我开机，但是奈何这猫实在太蠢，朽木不可雕也。而且就算是训练成功了，那当我需要开机时，我该怎么通知到猫呢？这也是一个问题。 在试验过各种方法后，最后我使用了树莓派（raspberry）结合 frp 的方式来完成我的需求。</p>
-<h2 id="事先准备"><a href="#事先准备" class="headerlink" title="事先准备"></a>事先准备</h2><p>需要用到的设备有：</p>
-<ol>
-<li><p>用来进行远程开机以及远程控制的设备一台；</p>
-</li>
-<li><p>具有 <strong>IP/MAC绑定</strong> 功能的路由器一台；</p>
-</li>
-<li><p>树莓派一台；</p>
-</li>
-<li><p>支持 WOL 的 PC 一台；</p>
-</li>
-<li><p>带有公网 IP 的服务器一台。</p>
-</li>
-</ol>
-<h2 id="具体操作"><a href="#具体操作" class="headerlink" title="具体操作"></a>具体操作</h2><h3 id="局域网设备配置"><a href="#局域网设备配置" class="headerlink" title="局域网设备配置"></a>局域网设备配置</h3><p>首先是家中局域网的配置，PC 和 树莓派要位于同一局域网，然后在路由器中把两者的 MAC 和 IP 进行绑定。这里需要注意的是 MAC 不是代表一台设备而是一个网卡，所以在设置树莓派的 MAC 地址的时候需要根据当前树莓派连接路由器的方式来设置。我使用的路由器可以直接查看设备的 MAC 地址。如下：</p>
-<!-- ![Routerlist.png](https://i.loli.net/2018/07/19/5b507b1a3f9aa.png) -->
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/use-raspberry-with-frp-for-remote-boot/Routerlist.webp" alt="Routerlist"></p>
-<!-- <img data-src="/2018/07/19/use-raspberry-with-frp-for-remote-boot/Routerlist.webp" class="" title="Routerlist"> -->
-<p>如果路由器无法查看 MAC 地址或者设备太多无法区分，那么在 <strong>Windows</strong> 系统下可以使用</p>
-<figure class="highlight bat"><table><tr><td class="code"><pre><span class="line"><span class="built_in">ipconfig</span> -all</span><br></pre></td></tr></table></figure>
-<p>来查看</p>
-<!-- ![MACWindows.png](https://i.loli.net/2018/07/19/5b507b1a4128f.png) -->
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/use-raspberry-with-frp-for-remote-boot/MACWindows.webp" alt="MACWindows"></p>
-<!-- <img data-src="/2018/07/19/use-raspberry-with-frp-for-remote-boot/MACWindows.webp" class="" title="MACWindows"> -->
-<p>在 <strong>raspberry</strong> 下可以使用</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ifconfig</span><br></pre></td></tr></table></figure>
-<p>来查看</p>
-<!-- ![MACraspberry.png](https://i.loli.net/2018/07/19/5b507b1a4292a.png) -->
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/use-raspberry-with-frp-for-remote-boot/MACraspberry.webp" alt="MACraspberry"></p>
-<!--  -->
-<p>可以看到树莓派有两个 MAC 地址，由于我是使用无线连接所以我选择的是第二个 <em>wlan0</em>。 然后使用 <strong>IP/MAC绑定</strong> 功能将两台设备与 IP 进行绑定，绑定的时候建议就选择当前使用的 IP 以免用了其他设备正在使用的 IP，造成 IP 冲突。 如果绑定了其他的 IP，请在绑定成功后重启设备。</p>
-<h3 id="PC-WOL-配置"><a href="#PC-WOL-配置" class="headerlink" title="PC WOL 配置"></a>PC WOL 配置</h3><p>然后是要配置 PC 使其可以支持 WOL（wake-on-LAN）开机。WOL 是一种电源管理功能，中文译为 <strong>网络唤醒</strong>，以下是 Wiki 对其作出的解释：</p>
-<blockquote>
-<p>Wake-on-LAN 简称 WOL 或 WoL，中文多译为「网络唤醒」、「远程唤醒」技术。WOL是一种技术，同时也是该技术的规范标准，它的功效在于让已经进入休眠状态或关机状态的电脑，透过局域网（多半为以太网）的另一端对其发令，使其从休眠状态唤醒、恢复成运作状态，或从关机状态转成引导状态。此外，与WOL相关的技术也包括远程下令关机、远程下令重启等相关的遥控机制。</p>
-</blockquote>
-<p>它的具体方法就是向要启动的设备发送一个魔法数据包（Magic Packet）：</p>
-<blockquote>
-<p>魔法数据包（Magic Packet）是一个广播性的帧（frame），透过端口7或端口9进行发送，且可以用无连接（Connectionless protocol）的通信协议（如UDP、IPX）来传递，不过一般而言多是用UDP，原因是Novell公司的Netware网络操作系统的IPX协议已经愈来愈少机会被使用。 在魔法数据包内，每次都会先有连续6个”FF”（十六进制，换算成二进制即：11111111）的数据，即：FF FF FF FF FF FF，在连续6个”FF”后则开始带出MAC地址信息，有时还会带出4字节或6字节的密码，一旦经由网卡侦测、解读、研判（广播）魔法数据包的内容，内容中的MAC地址、密码若与电脑自身的地址、密码吻合，就会启动唤醒、引导的程序。</p>
-</blockquote>
-<p>所以我们要先设置 BIOS 打开「<strong>网卡唤醒</strong>」这一功能，由于各个品牌主板的 BIOS 各不相同，所以设置的方法也各式各样，大家可以自行搜索「<strong>wake on lan 设置</strong>」，来寻找正确的方式。不过大多是在 <strong>电源管理</strong>（Power Management Setup）中。 然后是系统上的设置，这里我以 <em>Windows 10 17134.165</em> 版本为例。 首先右键「<strong>网络</strong>」-「<strong>属性</strong>」来打开「<strong>网络和共享中心</strong>」面板：</p>
-<!-- ![4.png](https://i.loli.net/2018/07/19/5b507b129fdee.png) -->
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/use-raspberry-with-frp-for-remote-boot/4.webp" alt="网络和共享中心"></p>
-<!-- <img data-src="/2018/07/19/use-raspberry-with-frp-for-remote-boot/4.webp" class="" title="网络和共享中心"> -->
-<p>在左侧单击「<strong>更改适配器设置</strong>」-右键你现在正在使用的网卡-「<strong>属性</strong>」来打开「<strong>属性</strong>」面板：</p>
-<!-- ![1.png](https://i.loli.net/2018/07/19/5b507b12983ac.png) -->
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/use-raspberry-with-frp-for-remote-boot/1.png" alt="更改适配器设置"></p>
-<!-- <img data-src="/2018/07/19/use-raspberry-with-frp-for-remote-boot/1.png" class="" title="更改适配器设置"> -->
-<p>单击上方的「<strong>配置</strong>」-选择「<strong>高级</strong>」选项卡-在属性类别中将「<strong>关机 网络唤醒</strong>」和「<strong>魔术封包唤醒</strong>」的值设置为「<strong>开启</strong>」：</p>
-<!-- ![3.png](https://i.loli.net/2018/07/19/5b507b129f1e7.png) -->
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/use-raspberry-with-frp-for-remote-boot/3.webp" alt="高级"></p>
-<!-- <img data-src="/2018/07/19/use-raspberry-with-frp-for-remote-boot/3.webp" class="" title="高级"> -->
-<p>选择「<strong>电源管理</strong>」选项卡-勾选「<strong>允许计算机关闭此设备以节约电源</strong>」和「<strong>允许此设备唤醒计算机</strong>」选项：</p>
-<!-- ![2.png](https://i.loli.net/2018/07/19/5b507b1298186.png) -->
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/use-raspberry-with-frp-for-remote-boot/2.webp" alt="电源管理"></p>
-<!-- <img data-src="/2018/07/19/use-raspberry-with-frp-for-remote-boot/2.webp" class="" title="电源管理"> -->
-<p>就此，PC 端的设置已经完成了。</p>
-<h3 id="带公网-IP-的服务器配置"><a href="#带公网-IP-的服务器配置" class="headerlink" title="带公网 IP 的服务器配置"></a>带公网 IP 的服务器配置</h3><p>带公网 IP 的服务器，大家可以去阿里云或者腾讯云买一台最低配的就可以了，我的这台是之前在腾讯云薅羊毛薅的。 这个服务器的作用主要是运行 <em>frp</em> 的服务端来使局域网内的树莓派可以内网穿透。 <em>frp</em> 是一个免费的开源的内网穿透软件，而且部署简单方便。具体方式如下：</p>
-<p>我们可以在 <a href="https://github.com/fatedier/frp/releases">https://github.com/fatedier/frp/releases</a> 下载指定架构下的版本，我在腾讯云服务器上使用的 <em>Ubuntu</em> 系统，所以选择的是 <code>frp_0.20.0_linux_amd64.tar.gz</code> 这个版本。可以下载下来使用 <em>FTP</em> 来放到服务器上，也可以在服务器上使用：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">wget https://github.com/fatedier/frp/releases/download/v0.20.0/frp_0.20.0_linux_amd64.tar.gz</span><br></pre></td></tr></table></figure>
-<p>来直接下载到服务器上。</p>
-<h4 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h4><p>下载完成后使用：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">tar -zxvf frp_0.20.0_linux_amd64.tar.gz</span><br></pre></td></tr></table></figure>
-<p>解压文件。</p>
-<h4 id="进入目录"><a href="#进入目录" class="headerlink" title="进入目录"></a>进入目录</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cd frp_2.20.0_linux_amd64</span><br></pre></td></tr></table></figure>
-<h4 id="通过-rm-命令来删除-frpc-和-frpc-ini-两个文件"><a href="#通过-rm-命令来删除-frpc-和-frpc-ini-两个文件" class="headerlink" title="通过 rm 命令来删除 frpc 和 frpc.ini 两个文件"></a>通过 <code>rm</code> 命令来删除 <code>frpc</code> 和 <code>frpc.ini</code> 两个文件</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">rm frpc frpc.ini</span><br></pre></td></tr></table></figure>
-<h4 id="打开配置文件-frps-ini"><a href="#打开配置文件-frps-ini" class="headerlink" title="打开配置文件 frps.ini"></a>打开配置文件 <code>frps.ini</code></h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">vim frps.ini</span><br></pre></td></tr></table></figure>
-<h4 id="更改服务端配置"><a href="#更改服务端配置" class="headerlink" title="更改服务端配置"></a>更改服务端配置</h4><p>更改配置如下：</p>
-<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[common]</span></span><br><span class="line"><span class="attr">bind_port</span> = <span class="number">7000</span>           <span class="comment">#与客户端绑定的进行通信的端口</span></span><br><span class="line"><span class="attr">vhost_http_port</span> = <span class="number">6081</span>     <span class="comment">#访问客户端web服务自定义的端口号</span></span><br></pre></td></tr></table></figure>
-<p>注：</p>
-<ol>
-<li><p>「#」 后面的是注释，可以不写；</p>
-</li>
-<li><p>这边 <em>Vim</em> 的用法可以上搜索引擎查一下，这里不多赘述。</p>
-</li>
-</ol>
-<h4 id="启动服务端服务"><a href="#启动服务端服务" class="headerlink" title="启动服务端服务"></a>启动服务端服务</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">./frps -c ./frps.ini</span><br></pre></td></tr></table></figure>
-<p>这个是前台启动服务，会输出日志信息，是用来调试的用的，到时调试成功了就可以使用后台服务启动：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">nohup ./frps -c ./frps.ini &amp;</span><br></pre></td></tr></table></figure>
-<p>至此，服务器也设置完成。</p>
-<h3 id="树莓派配置"><a href="#树莓派配置" class="headerlink" title="树莓派配置"></a>树莓派配置</h3><p>我现在使用的是 <em>Raspberry 3B</em>，当时是在淘宝 <em>￥195</em> 的价格买的，如果配上电源以及 <em>SD</em> 卡的等配件一共是 <em>￥278.9</em>。清单如下：</p>
-<!-- ![list.png](https://i.loli.net/2018/07/19/5b507b12b3fed.png) -->
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/use-raspberry-with-frp-for-remote-boot/list.webp" alt="list"></p>
-<!-- <img data-src="/2018/07/19/use-raspberry-with-frp-for-remote-boot/list.webp" class="" title="list"> -->
-<p>之后的系统安装我就不在这详细说明了，网上有很多详细的教程。 树莓派的配置和服务器配置其实是差不多的，不同的是服务器上的部署的是 <em>frp</em> 的服务端，而树莓派上的部署的是客户端。 从下载到解压的步骤和服务器端是一模一样的，只要照着之前的步骤做就可以了。 从第三步删除文件开始有所不同：</p>
-<h4 id="删除不必要的文件"><a href="#删除不必要的文件" class="headerlink" title="删除不必要的文件"></a>删除不必要的文件</h4><p>在服务器上我们删除的是 <code>frpc</code> 和 <code>frpc.ini</code>，这两个是 <em>frp</em> 的客户端程序和客户端配置文件，同理我们在树莓派也就是服务器端上就要删除 <code>frps</code> 和 <code>frps.ini</code> 这两个文件：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">rm frps frps.ini</span><br></pre></td></tr></table></figure>
-<h4 id="打开配置文件-frpc-ini"><a href="#打开配置文件-frpc-ini" class="headerlink" title="打开配置文件 frpc.ini"></a>打开配置文件 <code>frpc.ini</code></h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">vim frpc.ini</span><br></pre></td></tr></table></figure>
-<h4 id="更改客户端配置"><a href="#更改客户端配置" class="headerlink" title="更改客户端配置"></a>更改客户端配置</h4><p>更改配置如下：</p>
-<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[common]</span></span><br><span class="line"><span class="attr">server_addr</span> = <span class="number">118.126</span>.***.***</span><br><span class="line"><span class="attr">server_port</span> = <span class="number">7000</span></span><br><span class="line"></span><br><span class="line"><span class="section">[ssh]</span></span><br><span class="line"><span class="attr">type</span> = tcp</span><br><span class="line"><span class="attr">local_ip</span> = <span class="number">192.168</span>.<span class="number">1.100</span></span><br><span class="line"><span class="attr">local_port</span> = <span class="number">22</span></span><br><span class="line"><span class="attr">remote_port</span> = <span class="number">6022</span></span><br><span class="line"></span><br><span class="line"><span class="section">[mysql]</span></span><br><span class="line"><span class="attr">type</span> = tcp</span><br><span class="line"><span class="attr">local_port</span> = <span class="number">3306</span></span><br><span class="line"><span class="attr">remote_port</span> = <span class="number">3306</span></span><br></pre></td></tr></table></figure>
-<p><code>server_addr</code> 即为服务器的公网 IP 的地址，<code>server_port</code> 为之前在服务端配置时的 <code>bind_port</code>，这里我用的是 <code>7000</code>。 然后是需要内网穿透的服务的配置，我这里写了两个，一个是 <em>SSH</em>，一个是 <em>MySQL</em>。如果只要能进行远程连接的话我们只需要 <em>SSH</em> 的配置就好了，这里要注意的就是 <code>remote_port</code>，自定义的端口号，不要填 <code>22</code>，因为在服务器上已经被占用了（被用于服务器的 <em>SSH</em>），所以你要选一个没被占用的端口来使用，这里我用的是 <code>6022</code>。</p>
-<h4 id="启动客户端服务"><a href="#启动客户端服务" class="headerlink" title="启动客户端服务"></a>启动客户端服务</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">./frpc -c ./frpc.ini</span><br></pre></td></tr></table></figure>
-<p>同样的，后台服务启动是：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">nohup ./frpc -c ./frpc.ini &amp;</span><br></pre></td></tr></table></figure>
-<h3 id="测试-frp"><a href="#测试-frp" class="headerlink" title="测试 frp"></a>测试 frp</h3><p>现在我们可以在自己的 PC 上使用以下命令来访问树莓派了：</p>
-<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">ssh <span class="literal">-p</span> <span class="number">6022</span> <span class="number">118.126</span>.***.***</span><br></pre></td></tr></table></figure>
-<p>然后键入树莓派的密码就可以了：</p>
-<!-- ![SSHraspberryPC.png](https://i.loli.net/2018/07/19/5b507b1a44208.png) -->
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/use-raspberry-with-frp-for-remote-boot/SSHraspberryPC.png" alt="SSHraspberryPC"></p>
-<!-- <img data-src="/2018/07/19/use-raspberry-with-frp-for-remote-boot/SSHraspberryPC.png" class="" title="SSHraspberryPC"> -->
-<p>当然也可以用手机的移动网络来访问：</p>
-<!-- ![SSHPhone.png](https://i.loli.net/2018/07/19/5b507b1a5450c.png) -->
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/use-raspberry-with-frp-for-remote-boot/SSHPhone.webp" alt="SSHPhone"></p>
-<!-- <img data-src="/2018/07/19/use-raspberry-with-frp-for-remote-boot/SSHPhone.webp" class="" title="SSHPhone"> -->
-<p>至此我们已经成功的内网内网穿透了，即可以从外网访问内网设备了，接下来我们就要通过树莓派来使家中的 PC 开机了。</p>
-<h3 id="在树莓派上使用-WOL-控制-PC-开机"><a href="#在树莓派上使用-WOL-控制-PC-开机" class="headerlink" title="在树莓派上使用 WOL 控制 PC 开机"></a>在树莓派上使用 <em>WOL</em> 控制 PC 开机</h3><p>这里我找了好多软件，测试了好久，不是没有 <em>Linux</em> 平台的，就是不能用。所以最后还是用 <em>Python</em> 了，具体代码如下：</p>
-<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- encoding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">from</span> __future__ <span class="keyword">import</span> absolute_import</span><br><span class="line"><span class="keyword">from</span> __future__ <span class="keyword">import</span> unicode_literals</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> argparse</span><br><span class="line"><span class="keyword">import</span> socket</span><br><span class="line"><span class="keyword">import</span> struct</span><br><span class="line"></span><br><span class="line">BROADCAST_IP = <span class="string">&#x27;255.255.255.255&#x27;</span></span><br><span class="line">DEFAULT_PORT = <span class="number">9</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">create_magic_packet</span>(<span class="params">macaddress</span>):</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(macaddress) == <span class="number">12</span>:</span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">    <span class="keyword">elif</span> <span class="built_in">len</span>(macaddress) == <span class="number">17</span>:</span><br><span class="line">        sep = macaddress[<span class="number">2</span>]</span><br><span class="line">        macaddress = macaddress.replace(sep, <span class="string">&#x27;&#x27;</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">raise</span> ValueError(<span class="string">&#x27;Incorrect MAC address format&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Pad the synchronization stream</span></span><br><span class="line">    data = <span class="string">b&#x27;FFFFFFFFFFFF&#x27;</span> + (macaddress * <span class="number">16</span>).encode()</span><br><span class="line">    send_data = <span class="string">b&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Split up the hex values in pack</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="built_in">len</span>(data), <span class="number">2</span>):</span><br><span class="line">        send_data += struct.pack(<span class="string">b&#x27;B&#x27;</span>, <span class="built_in">int</span>(data[i: i + <span class="number">2</span>], <span class="number">16</span>))</span><br><span class="line">    <span class="keyword">return</span> send_data</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">send_magic_packet</span>(<span class="params">*macs, **kwargs</span>):</span><br><span class="line">    packets = []</span><br><span class="line">    ip = kwargs.pop(<span class="string">&#x27;ip_address&#x27;</span>, BROADCAST_IP)</span><br><span class="line">    port = kwargs.pop(<span class="string">&#x27;port&#x27;</span>, DEFAULT_PORT)</span><br><span class="line">    <span class="keyword">for</span> k <span class="keyword">in</span> kwargs:</span><br><span class="line">        <span class="keyword">raise</span> TypeError(<span class="string">&#x27;send_magic_packet() got an unexpected keyword &#x27;</span></span><br><span class="line">                        <span class="string">&#x27;argument &#123;!r&#125;&#x27;</span>.<span class="built_in">format</span>(k))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> mac <span class="keyword">in</span> macs:</span><br><span class="line">        packet = create_magic_packet(mac)</span><br><span class="line">        packets.append(packet)</span><br><span class="line"></span><br><span class="line">    sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)</span><br><span class="line">    sock.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, <span class="number">1</span>)</span><br><span class="line">    sock.connect((ip, port))</span><br><span class="line">    <span class="keyword">for</span> packet <span class="keyword">in</span> packets:</span><br><span class="line">        sock.send(packet)</span><br><span class="line">    sock.close()</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>(<span class="params">argv=<span class="literal">None</span></span>):</span><br><span class="line">    parser = argparse.ArgumentParser(</span><br><span class="line">        description=<span class="string">&#x27;Wake one or more computers using the wake on lan&#x27;</span></span><br><span class="line">                    <span class="string">&#x27; protocol.&#x27;</span>)</span><br><span class="line">    parser.add_argument(</span><br><span class="line">        <span class="string">&#x27;macs&#x27;</span>,</span><br><span class="line">        metavar=<span class="string">&#x27;mac address&#x27;</span>,</span><br><span class="line">        nargs=<span class="string">&#x27;+&#x27;</span>,</span><br><span class="line">        <span class="built_in">help</span>=<span class="string">&#x27;The mac addresses or of the computers you are trying to wake.&#x27;</span>)</span><br><span class="line">    parser.add_argument(</span><br><span class="line">        <span class="string">&#x27;-i&#x27;</span>,</span><br><span class="line">        metavar=<span class="string">&#x27;ip&#x27;</span>,</span><br><span class="line">        default=BROADCAST_IP,</span><br><span class="line">        <span class="built_in">help</span>=<span class="string">&#x27;The ip address of the host to send the magic packet to.&#x27;</span></span><br><span class="line">                <span class="string">&#x27; (default &#123;&#125;)&#x27;</span>.<span class="built_in">format</span>(BROADCAST_IP))</span><br><span class="line">    parser.add_argument(</span><br><span class="line">        <span class="string">&#x27;-p&#x27;</span>,</span><br><span class="line">        metavar=<span class="string">&#x27;port&#x27;</span>,</span><br><span class="line">        <span class="built_in">type</span>=<span class="built_in">int</span>,</span><br><span class="line">        default=DEFAULT_PORT,</span><br><span class="line">        <span class="built_in">help</span>=<span class="string">&#x27;The port of the host to send the magic packet to (default 9)&#x27;</span>)</span><br><span class="line">    args = parser.parse_args(argv)</span><br><span class="line">    send_magic_packet(*args.macs, ip_address=args.i, port=args.p)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:  <span class="comment"># pragma: nocover</span></span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
-<p>我们把上面的代码保存为 <code>*.py</code> 格式，例如 <code>wol.py</code> 然后通过 <em>ftp</em> 传输到树莓派上去。 然后在存有这个 <code>wol.py</code> 的文件夹下使用：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">python wol.py E0:D5:5E:88:88:88</span><br></pre></td></tr></table></figure>
-<p><code>E0:D5:5E:88:88:88</code> 就是你需要启动的 PC 的 MAC 地址了。 回车后发现没有任何提示，这是正常了，因为在 <em>Linux</em> 中，<em>没有消息就是好消息</em>。 如果你只需要启动一台 PC，而且你不想记录这么长的 MAC 地址（通常也不需要你记录，因为你可以在终端通过上下键来显示历史使用过的命令），你可以将你的 MAC 地址写入到代码中去，这样就可以一劳永逸了。 至此，你已经可以通过树莓派来启动你的 PC 了，快关闭你的电脑试一试吧。</p>
-<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ol>
-<li><p>事后，我用 <em>Wireshark</em> 抓了包，找到了这个 <em>Magic Packet</em>：</p>
- <!-- ![6.png](https://i.loli.net/2018/07/19/5b507b12b69cb.png) -->
-<p> <img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/use-raspberry-with-frp-for-remote-boot/6.webp" alt="MagicPacket"></p>
- <!-- <img data-src="/2018/07/19/use-raspberry-with-frp-for-remote-boot/6.webp" class="" title="MagicPacket"> -->
-<p> 发现和 <em>Wiki</em> 上说的一样：以 <code>6</code> 个 <code>FF</code> 开始，并且重复 <code>16</code> 遍 MAC 地址。</p>
-</li>
-<li><p>可以看到，我在树莓派上的 <em>frp</em> 配置文件中有一个 <em>MySQL</em> 的条目：</p>
- <figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[mysql]</span></span><br><span class="line"><span class="attr">type</span> = tcp</span><br><span class="line"><span class="attr">local_port</span> = <span class="number">3306</span></span><br><span class="line"><span class="attr">remote_port</span> = <span class="number">3306</span></span><br></pre></td></tr></table></figure>
-<p> 当如此设置后，并且在树莓派上安装 <em>MySQL</em>，就可以在外网用类似的方法来访问内网的数据库了。 同样的，我们知道，网站（HTTP）是通过 <code>80</code> 端口来传输的，由此如果我们在树莓派上有部署网站的话，那么就可以通过 <em>frp</em> 进行类似的配置（这部分可能会有一些不同），我们就可以在外网访问该网站了。</p>
-</li>
-</ol>
-<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>没有总结。</p>
-]]></content>
-      <categories>
-        <category>Linux</category>
-        <category>树莓派</category>
-      </categories>
-      <tags>
-        <tag>树莓派</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>依赖注入那些事儿</title>
     <url>/2017/09/15/those-stories-of-dependency-injection/</url>
     <content><![CDATA[<p>为方便以后查阅，特地转载一下，整理为 <a href="/2017/09/15/those-stories-of-dependency-injection/md.txt" title="Markdown格式">Markdown格式</a>。</p>
@@ -1766,6 +1626,146 @@
       </tags>
   </entry>
   <entry>
+    <title>使用 raspberry 配合 frp 来进行远程开机</title>
+    <url>/2018/07/19/use-raspberry-with-frp-for-remote-boot/</url>
+    <content><![CDATA[<h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>一直有在外操作家里电脑的需求，远程控制这一步好解决，一般是通过 <em>TeamViewer</em> 来进行。但是前提之一是需要家中电脑时刻处于开机状态，但是由于电脑是台式即使待机也比平常笔记本的功率要高不少（可以看一下半个月的电费），而且如果 24 小时开机的话，散热器风扇一直处于运行状态，会使机箱的灰尘增多，这样的话清灰频率又要大大增加了。</p>
+<span id="more"></span>
+<!-- ![5.png](https://i.loli.net/2018/07/19/5b507b12be317.png) -->
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/use-raspberry-with-frp-for-remote-boot/电费.webp" alt="电费"></p>
+<!-- <img data-src="/2018/07/19/use-raspberry-with-frp-for-remote-boot/%E7%94%B5%E8%B4%B9.webp" class="" title="电费"> -->
+<p>所以需要一种可以远程开机的办法。</p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>之前的方法是使用即时通讯软件让家中的室友帮忙开机，但是也只限于家中有室友的情况，如果室友去上班了，那就没办法了。 也想过训练猫来帮助我开机，但是奈何这猫实在太蠢，朽木不可雕也。而且就算是训练成功了，那当我需要开机时，我该怎么通知到猫呢？这也是一个问题。 在试验过各种方法后，最后我使用了树莓派（raspberry）结合 frp 的方式来完成我的需求。</p>
+<h2 id="事先准备"><a href="#事先准备" class="headerlink" title="事先准备"></a>事先准备</h2><p>需要用到的设备有：</p>
+<ol>
+<li><p>用来进行远程开机以及远程控制的设备一台；</p>
+</li>
+<li><p>具有 <strong>IP/MAC绑定</strong> 功能的路由器一台；</p>
+</li>
+<li><p>树莓派一台；</p>
+</li>
+<li><p>支持 WOL 的 PC 一台；</p>
+</li>
+<li><p>带有公网 IP 的服务器一台。</p>
+</li>
+</ol>
+<h2 id="具体操作"><a href="#具体操作" class="headerlink" title="具体操作"></a>具体操作</h2><h3 id="局域网设备配置"><a href="#局域网设备配置" class="headerlink" title="局域网设备配置"></a>局域网设备配置</h3><p>首先是家中局域网的配置，PC 和 树莓派要位于同一局域网，然后在路由器中把两者的 MAC 和 IP 进行绑定。这里需要注意的是 MAC 不是代表一台设备而是一个网卡，所以在设置树莓派的 MAC 地址的时候需要根据当前树莓派连接路由器的方式来设置。我使用的路由器可以直接查看设备的 MAC 地址。如下：</p>
+<!-- ![Routerlist.png](https://i.loli.net/2018/07/19/5b507b1a3f9aa.png) -->
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/use-raspberry-with-frp-for-remote-boot/Routerlist.webp" alt="Routerlist"></p>
+<!-- <img data-src="/2018/07/19/use-raspberry-with-frp-for-remote-boot/Routerlist.webp" class="" title="Routerlist"> -->
+<p>如果路由器无法查看 MAC 地址或者设备太多无法区分，那么在 <strong>Windows</strong> 系统下可以使用</p>
+<figure class="highlight bat"><table><tr><td class="code"><pre><span class="line"><span class="built_in">ipconfig</span> -all</span><br></pre></td></tr></table></figure>
+<p>来查看</p>
+<!-- ![MACWindows.png](https://i.loli.net/2018/07/19/5b507b1a4128f.png) -->
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/use-raspberry-with-frp-for-remote-boot/MACWindows.webp" alt="MACWindows"></p>
+<!-- <img data-src="/2018/07/19/use-raspberry-with-frp-for-remote-boot/MACWindows.webp" class="" title="MACWindows"> -->
+<p>在 <strong>raspberry</strong> 下可以使用</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ifconfig</span><br></pre></td></tr></table></figure>
+<p>来查看</p>
+<!-- ![MACraspberry.png](https://i.loli.net/2018/07/19/5b507b1a4292a.png) -->
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/use-raspberry-with-frp-for-remote-boot/MACraspberry.webp" alt="MACraspberry"></p>
+<!--  -->
+<p>可以看到树莓派有两个 MAC 地址，由于我是使用无线连接所以我选择的是第二个 <em>wlan0</em>。 然后使用 <strong>IP/MAC绑定</strong> 功能将两台设备与 IP 进行绑定，绑定的时候建议就选择当前使用的 IP 以免用了其他设备正在使用的 IP，造成 IP 冲突。 如果绑定了其他的 IP，请在绑定成功后重启设备。</p>
+<h3 id="PC-WOL-配置"><a href="#PC-WOL-配置" class="headerlink" title="PC WOL 配置"></a>PC WOL 配置</h3><p>然后是要配置 PC 使其可以支持 WOL（wake-on-LAN）开机。WOL 是一种电源管理功能，中文译为 <strong>网络唤醒</strong>，以下是 Wiki 对其作出的解释：</p>
+<blockquote>
+<p>Wake-on-LAN 简称 WOL 或 WoL，中文多译为「网络唤醒」、「远程唤醒」技术。WOL是一种技术，同时也是该技术的规范标准，它的功效在于让已经进入休眠状态或关机状态的电脑，透过局域网（多半为以太网）的另一端对其发令，使其从休眠状态唤醒、恢复成运作状态，或从关机状态转成引导状态。此外，与WOL相关的技术也包括远程下令关机、远程下令重启等相关的遥控机制。</p>
+</blockquote>
+<p>它的具体方法就是向要启动的设备发送一个魔法数据包（Magic Packet）：</p>
+<blockquote>
+<p>魔法数据包（Magic Packet）是一个广播性的帧（frame），透过端口7或端口9进行发送，且可以用无连接（Connectionless protocol）的通信协议（如UDP、IPX）来传递，不过一般而言多是用UDP，原因是Novell公司的Netware网络操作系统的IPX协议已经愈来愈少机会被使用。 在魔法数据包内，每次都会先有连续6个”FF”（十六进制，换算成二进制即：11111111）的数据，即：FF FF FF FF FF FF，在连续6个”FF”后则开始带出MAC地址信息，有时还会带出4字节或6字节的密码，一旦经由网卡侦测、解读、研判（广播）魔法数据包的内容，内容中的MAC地址、密码若与电脑自身的地址、密码吻合，就会启动唤醒、引导的程序。</p>
+</blockquote>
+<p>所以我们要先设置 BIOS 打开「<strong>网卡唤醒</strong>」这一功能，由于各个品牌主板的 BIOS 各不相同，所以设置的方法也各式各样，大家可以自行搜索「<strong>wake on lan 设置</strong>」，来寻找正确的方式。不过大多是在 <strong>电源管理</strong>（Power Management Setup）中。 然后是系统上的设置，这里我以 <em>Windows 10 17134.165</em> 版本为例。 首先右键「<strong>网络</strong>」-「<strong>属性</strong>」来打开「<strong>网络和共享中心</strong>」面板：</p>
+<!-- ![4.png](https://i.loli.net/2018/07/19/5b507b129fdee.png) -->
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/use-raspberry-with-frp-for-remote-boot/4.webp" alt="网络和共享中心"></p>
+<!-- <img data-src="/2018/07/19/use-raspberry-with-frp-for-remote-boot/4.webp" class="" title="网络和共享中心"> -->
+<p>在左侧单击「<strong>更改适配器设置</strong>」-右键你现在正在使用的网卡-「<strong>属性</strong>」来打开「<strong>属性</strong>」面板：</p>
+<!-- ![1.png](https://i.loli.net/2018/07/19/5b507b12983ac.png) -->
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/use-raspberry-with-frp-for-remote-boot/1.png" alt="更改适配器设置"></p>
+<!-- <img data-src="/2018/07/19/use-raspberry-with-frp-for-remote-boot/1.png" class="" title="更改适配器设置"> -->
+<p>单击上方的「<strong>配置</strong>」-选择「<strong>高级</strong>」选项卡-在属性类别中将「<strong>关机 网络唤醒</strong>」和「<strong>魔术封包唤醒</strong>」的值设置为「<strong>开启</strong>」：</p>
+<!-- ![3.png](https://i.loli.net/2018/07/19/5b507b129f1e7.png) -->
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/use-raspberry-with-frp-for-remote-boot/3.webp" alt="高级"></p>
+<!-- <img data-src="/2018/07/19/use-raspberry-with-frp-for-remote-boot/3.webp" class="" title="高级"> -->
+<p>选择「<strong>电源管理</strong>」选项卡-勾选「<strong>允许计算机关闭此设备以节约电源</strong>」和「<strong>允许此设备唤醒计算机</strong>」选项：</p>
+<!-- ![2.png](https://i.loli.net/2018/07/19/5b507b1298186.png) -->
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/use-raspberry-with-frp-for-remote-boot/2.webp" alt="电源管理"></p>
+<!-- <img data-src="/2018/07/19/use-raspberry-with-frp-for-remote-boot/2.webp" class="" title="电源管理"> -->
+<p>就此，PC 端的设置已经完成了。</p>
+<h3 id="带公网-IP-的服务器配置"><a href="#带公网-IP-的服务器配置" class="headerlink" title="带公网 IP 的服务器配置"></a>带公网 IP 的服务器配置</h3><p>带公网 IP 的服务器，大家可以去阿里云或者腾讯云买一台最低配的就可以了，我的这台是之前在腾讯云薅羊毛薅的。 这个服务器的作用主要是运行 <em>frp</em> 的服务端来使局域网内的树莓派可以内网穿透。 <em>frp</em> 是一个免费的开源的内网穿透软件，而且部署简单方便。具体方式如下：</p>
+<p>我们可以在 <a href="https://github.com/fatedier/frp/releases">https://github.com/fatedier/frp/releases</a> 下载指定架构下的版本，我在腾讯云服务器上使用的 <em>Ubuntu</em> 系统，所以选择的是 <code>frp_0.20.0_linux_amd64.tar.gz</code> 这个版本。可以下载下来使用 <em>FTP</em> 来放到服务器上，也可以在服务器上使用：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">wget https://github.com/fatedier/frp/releases/download/v0.20.0/frp_0.20.0_linux_amd64.tar.gz</span><br></pre></td></tr></table></figure>
+<p>来直接下载到服务器上。</p>
+<h4 id="解压"><a href="#解压" class="headerlink" title="解压"></a>解压</h4><p>下载完成后使用：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">tar -zxvf frp_0.20.0_linux_amd64.tar.gz</span><br></pre></td></tr></table></figure>
+<p>解压文件。</p>
+<h4 id="进入目录"><a href="#进入目录" class="headerlink" title="进入目录"></a>进入目录</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">cd frp_2.20.0_linux_amd64</span><br></pre></td></tr></table></figure>
+<h4 id="通过-rm-命令来删除-frpc-和-frpc-ini-两个文件"><a href="#通过-rm-命令来删除-frpc-和-frpc-ini-两个文件" class="headerlink" title="通过 rm 命令来删除 frpc 和 frpc.ini 两个文件"></a>通过 <code>rm</code> 命令来删除 <code>frpc</code> 和 <code>frpc.ini</code> 两个文件</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">rm frpc frpc.ini</span><br></pre></td></tr></table></figure>
+<h4 id="打开配置文件-frps-ini"><a href="#打开配置文件-frps-ini" class="headerlink" title="打开配置文件 frps.ini"></a>打开配置文件 <code>frps.ini</code></h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">vim frps.ini</span><br></pre></td></tr></table></figure>
+<h4 id="更改服务端配置"><a href="#更改服务端配置" class="headerlink" title="更改服务端配置"></a>更改服务端配置</h4><p>更改配置如下：</p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[common]</span></span><br><span class="line"><span class="attr">bind_port</span> = <span class="number">7000</span>           <span class="comment">#与客户端绑定的进行通信的端口</span></span><br><span class="line"><span class="attr">vhost_http_port</span> = <span class="number">6081</span>     <span class="comment">#访问客户端web服务自定义的端口号</span></span><br></pre></td></tr></table></figure>
+<p>注：</p>
+<ol>
+<li><p>「#」 后面的是注释，可以不写；</p>
+</li>
+<li><p>这边 <em>Vim</em> 的用法可以上搜索引擎查一下，这里不多赘述。</p>
+</li>
+</ol>
+<h4 id="启动服务端服务"><a href="#启动服务端服务" class="headerlink" title="启动服务端服务"></a>启动服务端服务</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">./frps -c ./frps.ini</span><br></pre></td></tr></table></figure>
+<p>这个是前台启动服务，会输出日志信息，是用来调试的用的，到时调试成功了就可以使用后台服务启动：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">nohup ./frps -c ./frps.ini &amp;</span><br></pre></td></tr></table></figure>
+<p>至此，服务器也设置完成。</p>
+<h3 id="树莓派配置"><a href="#树莓派配置" class="headerlink" title="树莓派配置"></a>树莓派配置</h3><p>我现在使用的是 <em>Raspberry 3B</em>，当时是在淘宝 <em>￥195</em> 的价格买的，如果配上电源以及 <em>SD</em> 卡的等配件一共是 <em>￥278.9</em>。清单如下：</p>
+<!-- ![list.png](https://i.loli.net/2018/07/19/5b507b12b3fed.png) -->
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/use-raspberry-with-frp-for-remote-boot/list.webp" alt="list"></p>
+<!-- <img data-src="/2018/07/19/use-raspberry-with-frp-for-remote-boot/list.webp" class="" title="list"> -->
+<p>之后的系统安装我就不在这详细说明了，网上有很多详细的教程。 树莓派的配置和服务器配置其实是差不多的，不同的是服务器上的部署的是 <em>frp</em> 的服务端，而树莓派上的部署的是客户端。 从下载到解压的步骤和服务器端是一模一样的，只要照着之前的步骤做就可以了。 从第三步删除文件开始有所不同：</p>
+<h4 id="删除不必要的文件"><a href="#删除不必要的文件" class="headerlink" title="删除不必要的文件"></a>删除不必要的文件</h4><p>在服务器上我们删除的是 <code>frpc</code> 和 <code>frpc.ini</code>，这两个是 <em>frp</em> 的客户端程序和客户端配置文件，同理我们在树莓派也就是服务器端上就要删除 <code>frps</code> 和 <code>frps.ini</code> 这两个文件：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">rm frps frps.ini</span><br></pre></td></tr></table></figure>
+<h4 id="打开配置文件-frpc-ini"><a href="#打开配置文件-frpc-ini" class="headerlink" title="打开配置文件 frpc.ini"></a>打开配置文件 <code>frpc.ini</code></h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">vim frpc.ini</span><br></pre></td></tr></table></figure>
+<h4 id="更改客户端配置"><a href="#更改客户端配置" class="headerlink" title="更改客户端配置"></a>更改客户端配置</h4><p>更改配置如下：</p>
+<figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[common]</span></span><br><span class="line"><span class="attr">server_addr</span> = <span class="number">118.126</span>.***.***</span><br><span class="line"><span class="attr">server_port</span> = <span class="number">7000</span></span><br><span class="line"></span><br><span class="line"><span class="section">[ssh]</span></span><br><span class="line"><span class="attr">type</span> = tcp</span><br><span class="line"><span class="attr">local_ip</span> = <span class="number">192.168</span>.<span class="number">1.100</span></span><br><span class="line"><span class="attr">local_port</span> = <span class="number">22</span></span><br><span class="line"><span class="attr">remote_port</span> = <span class="number">6022</span></span><br><span class="line"></span><br><span class="line"><span class="section">[mysql]</span></span><br><span class="line"><span class="attr">type</span> = tcp</span><br><span class="line"><span class="attr">local_port</span> = <span class="number">3306</span></span><br><span class="line"><span class="attr">remote_port</span> = <span class="number">3306</span></span><br></pre></td></tr></table></figure>
+<p><code>server_addr</code> 即为服务器的公网 IP 的地址，<code>server_port</code> 为之前在服务端配置时的 <code>bind_port</code>，这里我用的是 <code>7000</code>。 然后是需要内网穿透的服务的配置，我这里写了两个，一个是 <em>SSH</em>，一个是 <em>MySQL</em>。如果只要能进行远程连接的话我们只需要 <em>SSH</em> 的配置就好了，这里要注意的就是 <code>remote_port</code>，自定义的端口号，不要填 <code>22</code>，因为在服务器上已经被占用了（被用于服务器的 <em>SSH</em>），所以你要选一个没被占用的端口来使用，这里我用的是 <code>6022</code>。</p>
+<h4 id="启动客户端服务"><a href="#启动客户端服务" class="headerlink" title="启动客户端服务"></a>启动客户端服务</h4><figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">./frpc -c ./frpc.ini</span><br></pre></td></tr></table></figure>
+<p>同样的，后台服务启动是：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">nohup ./frpc -c ./frpc.ini &amp;</span><br></pre></td></tr></table></figure>
+<h3 id="测试-frp"><a href="#测试-frp" class="headerlink" title="测试 frp"></a>测试 frp</h3><p>现在我们可以在自己的 PC 上使用以下命令来访问树莓派了：</p>
+<figure class="highlight powershell"><table><tr><td class="code"><pre><span class="line">ssh <span class="literal">-p</span> <span class="number">6022</span> <span class="number">118.126</span>.***.***</span><br></pre></td></tr></table></figure>
+<p>然后键入树莓派的密码就可以了：</p>
+<!-- ![SSHraspberryPC.png](https://i.loli.net/2018/07/19/5b507b1a44208.png) -->
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/use-raspberry-with-frp-for-remote-boot/SSHraspberryPC.png" alt="SSHraspberryPC"></p>
+<!-- <img data-src="/2018/07/19/use-raspberry-with-frp-for-remote-boot/SSHraspberryPC.png" class="" title="SSHraspberryPC"> -->
+<p>当然也可以用手机的移动网络来访问：</p>
+<!-- ![SSHPhone.png](https://i.loli.net/2018/07/19/5b507b1a5450c.png) -->
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/use-raspberry-with-frp-for-remote-boot/SSHPhone.webp" alt="SSHPhone"></p>
+<!-- <img data-src="/2018/07/19/use-raspberry-with-frp-for-remote-boot/SSHPhone.webp" class="" title="SSHPhone"> -->
+<p>至此我们已经成功的内网内网穿透了，即可以从外网访问内网设备了，接下来我们就要通过树莓派来使家中的 PC 开机了。</p>
+<h3 id="在树莓派上使用-WOL-控制-PC-开机"><a href="#在树莓派上使用-WOL-控制-PC-开机" class="headerlink" title="在树莓派上使用 WOL 控制 PC 开机"></a>在树莓派上使用 <em>WOL</em> 控制 PC 开机</h3><p>这里我找了好多软件，测试了好久，不是没有 <em>Linux</em> 平台的，就是不能用。所以最后还是用 <em>Python</em> 了，具体代码如下：</p>
+<figure class="highlight python"><table><tr><td class="code"><pre><span class="line"><span class="comment">#!/usr/bin/env python</span></span><br><span class="line"><span class="comment"># -*- encoding: utf-8 -*-</span></span><br><span class="line"><span class="keyword">from</span> __future__ <span class="keyword">import</span> absolute_import</span><br><span class="line"><span class="keyword">from</span> __future__ <span class="keyword">import</span> unicode_literals</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> argparse</span><br><span class="line"><span class="keyword">import</span> socket</span><br><span class="line"><span class="keyword">import</span> struct</span><br><span class="line"></span><br><span class="line">BROADCAST_IP = <span class="string">&#x27;255.255.255.255&#x27;</span></span><br><span class="line">DEFAULT_PORT = <span class="number">9</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">create_magic_packet</span>(<span class="params">macaddress</span>):</span><br><span class="line">    <span class="keyword">if</span> <span class="built_in">len</span>(macaddress) == <span class="number">12</span>:</span><br><span class="line">        <span class="keyword">pass</span></span><br><span class="line">    <span class="keyword">elif</span> <span class="built_in">len</span>(macaddress) == <span class="number">17</span>:</span><br><span class="line">        sep = macaddress[<span class="number">2</span>]</span><br><span class="line">        macaddress = macaddress.replace(sep, <span class="string">&#x27;&#x27;</span>)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">raise</span> ValueError(<span class="string">&#x27;Incorrect MAC address format&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Pad the synchronization stream</span></span><br><span class="line">    data = <span class="string">b&#x27;FFFFFFFFFFFF&#x27;</span> + (macaddress * <span class="number">16</span>).encode()</span><br><span class="line">    send_data = <span class="string">b&#x27;&#x27;</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># Split up the hex values in pack</span></span><br><span class="line">    <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="built_in">len</span>(data), <span class="number">2</span>):</span><br><span class="line">        send_data += struct.pack(<span class="string">b&#x27;B&#x27;</span>, <span class="built_in">int</span>(data[i: i + <span class="number">2</span>], <span class="number">16</span>))</span><br><span class="line">    <span class="keyword">return</span> send_data</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">send_magic_packet</span>(<span class="params">*macs, **kwargs</span>):</span><br><span class="line">    packets = []</span><br><span class="line">    ip = kwargs.pop(<span class="string">&#x27;ip_address&#x27;</span>, BROADCAST_IP)</span><br><span class="line">    port = kwargs.pop(<span class="string">&#x27;port&#x27;</span>, DEFAULT_PORT)</span><br><span class="line">    <span class="keyword">for</span> k <span class="keyword">in</span> kwargs:</span><br><span class="line">        <span class="keyword">raise</span> TypeError(<span class="string">&#x27;send_magic_packet() got an unexpected keyword &#x27;</span></span><br><span class="line">                        <span class="string">&#x27;argument &#123;!r&#125;&#x27;</span>.<span class="built_in">format</span>(k))</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> mac <span class="keyword">in</span> macs:</span><br><span class="line">        packet = create_magic_packet(mac)</span><br><span class="line">        packets.append(packet)</span><br><span class="line"></span><br><span class="line">    sock = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)</span><br><span class="line">    sock.setsockopt(socket.SOL_SOCKET, socket.SO_BROADCAST, <span class="number">1</span>)</span><br><span class="line">    sock.connect((ip, port))</span><br><span class="line">    <span class="keyword">for</span> packet <span class="keyword">in</span> packets:</span><br><span class="line">        sock.send(packet)</span><br><span class="line">    sock.close()</span><br><span class="line"></span><br><span class="line"><span class="keyword">def</span> <span class="title function_">main</span>(<span class="params">argv=<span class="literal">None</span></span>):</span><br><span class="line">    parser = argparse.ArgumentParser(</span><br><span class="line">        description=<span class="string">&#x27;Wake one or more computers using the wake on lan&#x27;</span></span><br><span class="line">                    <span class="string">&#x27; protocol.&#x27;</span>)</span><br><span class="line">    parser.add_argument(</span><br><span class="line">        <span class="string">&#x27;macs&#x27;</span>,</span><br><span class="line">        metavar=<span class="string">&#x27;mac address&#x27;</span>,</span><br><span class="line">        nargs=<span class="string">&#x27;+&#x27;</span>,</span><br><span class="line">        <span class="built_in">help</span>=<span class="string">&#x27;The mac addresses or of the computers you are trying to wake.&#x27;</span>)</span><br><span class="line">    parser.add_argument(</span><br><span class="line">        <span class="string">&#x27;-i&#x27;</span>,</span><br><span class="line">        metavar=<span class="string">&#x27;ip&#x27;</span>,</span><br><span class="line">        default=BROADCAST_IP,</span><br><span class="line">        <span class="built_in">help</span>=<span class="string">&#x27;The ip address of the host to send the magic packet to.&#x27;</span></span><br><span class="line">                <span class="string">&#x27; (default &#123;&#125;)&#x27;</span>.<span class="built_in">format</span>(BROADCAST_IP))</span><br><span class="line">    parser.add_argument(</span><br><span class="line">        <span class="string">&#x27;-p&#x27;</span>,</span><br><span class="line">        metavar=<span class="string">&#x27;port&#x27;</span>,</span><br><span class="line">        <span class="built_in">type</span>=<span class="built_in">int</span>,</span><br><span class="line">        default=DEFAULT_PORT,</span><br><span class="line">        <span class="built_in">help</span>=<span class="string">&#x27;The port of the host to send the magic packet to (default 9)&#x27;</span>)</span><br><span class="line">    args = parser.parse_args(argv)</span><br><span class="line">    send_magic_packet(*args.macs, ip_address=args.i, port=args.p)</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:  <span class="comment"># pragma: nocover</span></span><br><span class="line">    main()</span><br></pre></td></tr></table></figure>
+<p>我们把上面的代码保存为 <code>*.py</code> 格式，例如 <code>wol.py</code> 然后通过 <em>ftp</em> 传输到树莓派上去。 然后在存有这个 <code>wol.py</code> 的文件夹下使用：</p>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">python wol.py E0:D5:5E:88:88:88</span><br></pre></td></tr></table></figure>
+<p><code>E0:D5:5E:88:88:88</code> 就是你需要启动的 PC 的 MAC 地址了。 回车后发现没有任何提示，这是正常了，因为在 <em>Linux</em> 中，<em>没有消息就是好消息</em>。 如果你只需要启动一台 PC，而且你不想记录这么长的 MAC 地址（通常也不需要你记录，因为你可以在终端通过上下键来显示历史使用过的命令），你可以将你的 MAC 地址写入到代码中去，这样就可以一劳永逸了。 至此，你已经可以通过树莓派来启动你的 PC 了，快关闭你的电脑试一试吧。</p>
+<h2 id="其他"><a href="#其他" class="headerlink" title="其他"></a>其他</h2><ol>
+<li><p>事后，我用 <em>Wireshark</em> 抓了包，找到了这个 <em>Magic Packet</em>：</p>
+ <!-- ![6.png](https://i.loli.net/2018/07/19/5b507b12b69cb.png) -->
+<p> <img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/use-raspberry-with-frp-for-remote-boot/6.webp" alt="MagicPacket"></p>
+ <!-- <img data-src="/2018/07/19/use-raspberry-with-frp-for-remote-boot/6.webp" class="" title="MagicPacket"> -->
+<p> 发现和 <em>Wiki</em> 上说的一样：以 <code>6</code> 个 <code>FF</code> 开始，并且重复 <code>16</code> 遍 MAC 地址。</p>
+</li>
+<li><p>可以看到，我在树莓派上的 <em>frp</em> 配置文件中有一个 <em>MySQL</em> 的条目：</p>
+ <figure class="highlight ini"><table><tr><td class="code"><pre><span class="line"><span class="section">[mysql]</span></span><br><span class="line"><span class="attr">type</span> = tcp</span><br><span class="line"><span class="attr">local_port</span> = <span class="number">3306</span></span><br><span class="line"><span class="attr">remote_port</span> = <span class="number">3306</span></span><br></pre></td></tr></table></figure>
+<p> 当如此设置后，并且在树莓派上安装 <em>MySQL</em>，就可以在外网用类似的方法来访问内网的数据库了。 同样的，我们知道，网站（HTTP）是通过 <code>80</code> 端口来传输的，由此如果我们在树莓派上有部署网站的话，那么就可以通过 <em>frp</em> 进行类似的配置（这部分可能会有一些不同），我们就可以在外网访问该网站了。</p>
+</li>
+</ol>
+<h2 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h2><p>没有总结。</p>
+]]></content>
+      <categories>
+        <category>Linux</category>
+        <category>树莓派</category>
+      </categories>
+      <tags>
+        <tag>树莓派</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>Green 和 Lime</title>
     <url>/2019/01/03/web-colors/</url>
     <content><![CDATA[<p>在 HTML 中，部分颜色可以使用颜色名来代替，比起代码会更好理解，例如 Aqua（<code>#00FFFF</code>）、Maroon（<code>#800000</code>）、Pink（<code>#FFC0CB</code>）等等。</p>
@@ -1776,30 +1776,6 @@
 ]]></content>
       <categories>
         <category>趣闻</category>
-      </categories>
-  </entry>
-  <entry>
-    <title>微信小程序——RushA</title>
-    <url>/2017/08/16/wechat-mini-programs-rusha/</url>
-    <content><![CDATA[<p>因为现在是三个人合租，所以免不了 AA，但是在付钱的时候 AA，未免也太麻烦了。所以就要等到事后再去算账，然后分别转账，数量少还好，如果数量多的话，计算起来就会特别繁琐，尤其是有些东西不是完全公平的 AA，每个人所占的比例不同。 由此，想要借助<strong>微信小程序</strong>平台来进行一款记账小程序的开发，也可以借此学习一下小程序。</p>
-<span id="more"></span>
-<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><h3 id="名字"><a href="#名字" class="headerlink" title="名字"></a>名字</h3><p>首先是名字，叫做 <em>RushA</em> ，本来是想取名叫 <em>RushB</em> 的，但是被已经有这个名字了，所以只能退而求其次。名字的来源是 <code>CS:GO</code> 中一个「战术」，意思就是 5 人快速去 B 点，从而达到出其不意的效果。通常这么使用：</p>
-<blockquote>
-<p>Rush B, dont stop.</p>
-</blockquote>
-<p>其他的话没有什么别的意思，纯粹是应景。</p>
-<h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><p>然后是需要实现的功能：</p>
-<ol>
-<li><p>实现两人以上的 <code>AA</code> 账单分配；</p>
-</li>
-<li><p>能够动态的添加人数，并且添加要方便，每添加一个人就要分配一个颜色，这样会比较容易辨别，最好添加几个快捷选项；</p>
-</li>
-<li><p>在添加人员之后，则进入记账页面，可以一条一条的添加项目。</p>
-</li>
-</ol>
-<h3 id="待续"><a href="#待续" class="headerlink" title="待续"></a>待续</h3>]]></content>
-      <categories>
-        <category>小程序</category>
       </categories>
   </entry>
   <entry>
@@ -1924,6 +1900,30 @@
         <tag>翻译</tag>
         <tag>What is this thing?</tag>
       </tags>
+  </entry>
+  <entry>
+    <title>微信小程序——RushA</title>
+    <url>/2017/08/16/wechat-mini-programs-rusha/</url>
+    <content><![CDATA[<p>因为现在是三个人合租，所以免不了 AA，但是在付钱的时候 AA，未免也太麻烦了。所以就要等到事后再去算账，然后分别转账，数量少还好，如果数量多的话，计算起来就会特别繁琐，尤其是有些东西不是完全公平的 AA，每个人所占的比例不同。 由此，想要借助<strong>微信小程序</strong>平台来进行一款记账小程序的开发，也可以借此学习一下小程序。</p>
+<span id="more"></span>
+<h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><h3 id="名字"><a href="#名字" class="headerlink" title="名字"></a>名字</h3><p>首先是名字，叫做 <em>RushA</em> ，本来是想取名叫 <em>RushB</em> 的，但是被已经有这个名字了，所以只能退而求其次。名字的来源是 <code>CS:GO</code> 中一个「战术」，意思就是 5 人快速去 B 点，从而达到出其不意的效果。通常这么使用：</p>
+<blockquote>
+<p>Rush B, dont stop.</p>
+</blockquote>
+<p>其他的话没有什么别的意思，纯粹是应景。</p>
+<h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><p>然后是需要实现的功能：</p>
+<ol>
+<li><p>实现两人以上的 <code>AA</code> 账单分配；</p>
+</li>
+<li><p>能够动态的添加人数，并且添加要方便，每添加一个人就要分配一个颜色，这样会比较容易辨别，最好添加几个快捷选项；</p>
+</li>
+<li><p>在添加人员之后，则进入记账页面，可以一条一条的添加项目。</p>
+</li>
+</ol>
+<h3 id="待续"><a href="#待续" class="headerlink" title="待续"></a>待续</h3>]]></content>
+      <categories>
+        <category>小程序</category>
+      </categories>
   </entry>
   <entry>
     <title>What is this thing 11</title>
@@ -3165,100 +3165,6 @@
       </tags>
   </entry>
   <entry>
-    <title>What is this thing 9</title>
-    <url>/2021/03/22/whatisthisthing-9/</url>
-    <content><![CDATA[<p><a href="https://www.reddit.com/r/whatisthisthing/">What is this thing</a> 是 reddit 上的一个社区（community），上面时不时会有人发一些没见过的玩意来提问。</p>
-<p>一起来看看吧！</p>
-<span id="more"></span>
-<h3 id="飞机零件"><a href="#飞机零件" class="headerlink" title="飞机零件"></a>飞机零件</h3><blockquote>
-<p>Q: Any guesses as to what this plane part is? Fell out of the sky in Colorado when that United engine failed.</p>
-</blockquote>
-<p>大家能猜一下这是飞机哪部分吗？因为联合航空的飞机引擎故障的时候这东西正好从科罗拉多的天空坠落。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-9/飞机零件.jpg" alt="飞机零件"></p>
-<blockquote>
-<p>A: I think that’s a vape pen dude.</p>
-</blockquote>
-<p>我想这就是个电子烟，兄弟。</p>
-<p><a href="https://www.reddit.com/r/whatisthisthing/comments/lr0h1u/any_guesses_as_to_what_this_plane_part_is_fell/">https://www.reddit.com/r/whatisthisthing/comments/lr0h1u/any_guesses_as_to_what_this_plane_part_is_fell/</a></p>
-<h3 id="奇怪的草地"><a href="#奇怪的草地" class="headerlink" title="奇怪的草地"></a>奇怪的草地</h3><blockquote>
-<p>Q: What would cause my friends lawn to look like this after the snow melted.</p>
-</blockquote>
-<p>是什么原因导致我朋友的草地在雪融化之后变成了这副样子？</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-9/草地.png" alt="草地"></p>
-<blockquote>
-<p>A: That’s some major vole activity. They look a lot like mice, but tend to be very active under winter snows and like tunneling.</p>
-</blockquote>
-<p>这是田鼠的主要活动轨迹。它们看起来很像老鼠，但是它们往往在冬天的雪下非常活跃，喜欢挖隧道。</p>
-<p><a href="https://www.reddit.com/r/whatisthisthing/comments/lz6gbg/what_would_cause_my_friends_lawn_to_look_like/">https://www.reddit.com/r/whatisthisthing/comments/lz6gbg/what_would_cause_my_friends_lawn_to_look_like/</a></p>
-<h3 id="金属球"><a href="#金属球" class="headerlink" title="金属球"></a>金属球</h3><blockquote>
-<p>Q: Metal sphere with russian writing found on a Bahama beach.</p>
-</blockquote>
-<p>巴哈马海滩上发现的带有俄罗斯文字的金属球。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-9/金属球1.jpg" alt="金属球"></p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-9/金属球2.jpg" alt="金属球"></p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-9/金属球3.jpg" alt="金属球"></p>
-<blockquote>
-<p>A: Its a pneumatic accumulator tank of engine control system of Soyuz rocket. Somebody point it here in comments. <a href="http://joyreactor.cc/post/3388576#comment15651851">http://joyreactor.cc/post/3388576#comment15651851</a></p>
-</blockquote>
-<p>它是联盟号火箭发动机控制系统的气动蓄能器油箱。有人在这条评论里面提到了它。<a href="http://joyreactor.cc/post/3388576#comment15651851">http://joyreactor.cc/post/3388576#comment15651851</a></p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-9/金属球4.jpeg" alt="金属球"></p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-9/金属球5.jpeg" alt="金属球"></p>
-<p><a href="https://www.reddit.com/r/whatisthisthing/comments/lv4uwd/metal_sphere_with_russian_writing_found_on_a/">https://www.reddit.com/r/whatisthisthing/comments/lv4uwd/metal_sphere_with_russian_writing_found_on_a/</a></p>
-<h3 id="emmm"><a href="#emmm" class="headerlink" title="emmm"></a>emmm</h3><blockquote>
-<p>Q: Saw this bulldozer with a giant spike on the front in a meme. Is this a weird forklift? Why does it only have 1 spike then? Is this possibly to push around a very specific type of equipment?</p>
-</blockquote>
-<p>我在表情包里看到一辆前面有个大钉子的推土机。这是一台奇怪的叉车吗？为什么只有一个凸出来的钉子呢？这可能是为了推动一种特定类型物体的设备吗？</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-9/挖掘机.png" alt="挖掘机"></p>
-<blockquote>
-<p>A: We have one similar to that at work. The spike is a little bigger and longer, but we use it for moving steel coils around the coil yard.</p>
-</blockquote>
-<p>我们公司也有一个类似的。钉子稍大一些，也稍长一些，但我们用它来在卷厂周围移动钢卷。</p>
-<p><a href="https://www.reddit.com/r/whatisthisthing/comments/lppdko/saw_this_bulldozer_with_a_giant_spike_on_the/">https://www.reddit.com/r/whatisthisthing/comments/lppdko/saw_this_bulldozer_with_a_giant_spike_on_the/</a></p>
-<h3 id="矿洞"><a href="#矿洞" class="headerlink" title="矿洞"></a>矿洞</h3><blockquote>
-<p>Q: Found while trail running. What are these things? There’s rotten wood that goes along it that looks cut/altered by man. Would it be for making a flat surface to easily maneuver the mine?</p>
-</blockquote>
-<p>在越野跑时发现。这些是什么东西？沿路有腐烂的木头，看起来像是被人砍过/改造过的。是为了制造一个平坦的地面来方便地操纵矿井吗？</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-9/矿井.jpg" alt="矿井"></p>
-<blockquote>
-<p>A: It’s a collapsed wood-stave pipeline, it may have been for dewatering the mine.</p>
-</blockquote>
-<p> 这是一条坍塌的木板管道，可能是用来给矿井排水的。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-9/矿井2.jfif" alt="矿井"></p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-9/矿井3.jpg" alt="矿井"></p>
-<p> <a href="https://www.reddit.com/r/whatisthisthing/comments/m6mhto/found_while_trail_running_what_are_these_things/">https://www.reddit.com/r/whatisthisthing/comments/m6mhto/found_while_trail_running_what_are_these_things/</a></p>
-<h3 id="折叠门"><a href="#折叠门" class="headerlink" title="折叠门"></a>折叠门</h3><blockquote>
-<p>Q: Door with a hinged section a quarter through horizontally?</p>
-</blockquote>
-<p> 在这扇门的四分之一处为什么会安装有铰链？</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-9/折叠门1.jpg" alt="折叠门"></p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-9/折叠门2.jpg" alt="折叠门"></p>
-<blockquote>
-<p>A: So it can fold around the corner when it’s open, and not stick out into the room</p>
-</blockquote>
-<p>这样的话当它打开的时候，它可以折叠到角落里，而不会伸到房间里。</p>
-<p><a href="https://www.reddit.com/r/whatisthisthing/comments/lozrpi/door_with_a_hinged_section_a_quarter_through/">https://www.reddit.com/r/whatisthisthing/comments/lozrpi/door_with_a_hinged_section_a_quarter_through/</a></p>
-<h3 id="两个勺子"><a href="#两个勺子" class="headerlink" title="两个勺子"></a>两个勺子</h3><blockquote>
-<p>Q: WITT: Two spoons attached to a wooden handle at the thrift store?</p>
-</blockquote>
-<p>在旧货店发现的一个木柄上绑着两个勺子，这是个嘛？</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-9/勺子.jpg" alt="勺子"></p>
-<blockquote>
-<p>A: It’s a musical instrument literally called “spoons”. Used as percussion by clacking the spoons together. I’ll see if I can find an example of them being played.</p>
-</blockquote>
-<p>它是一种乐器，名字就叫「勺子」,用勺子和勺子敲击。我看看能不能找到一个他们在玩的例子。</p>
-<iframe src="//player.bilibili.com/player.html?aid=60322841&bvid=BV1Nt41177AM&cid=105024872&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
-
-<p><a href="https://www.reddit.com/r/whatisthisthing/comments/lv9vbd/witt_two_spoons_attached_to_a_wooden_handle_at/">https://www.reddit.com/r/whatisthisthing/comments/lv9vbd/witt_two_spoons_attached_to_a_wooden_handle_at/</a></p>
-]]></content>
-      <categories>
-        <category>What is this thing?</category>
-      </categories>
-      <tags>
-        <tag>翻译</tag>
-        <tag>What is this thing?</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>What is this thing 8</title>
     <url>/2021/02/19/whatisthisthing-8/</url>
     <content><![CDATA[<p><a href="https://www.reddit.com/r/whatisthisthing/">What is this thing</a> 是 reddit 上的一个社区（community），上面时不时会有人发一些没见过的玩意来提问。</p>
@@ -3352,6 +3258,100 @@
 <p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-8/异形舱3.png" alt="异形舱"></p>
 <p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-8/异形舱4.png" alt="异形舱"></p>
 <p><a href="https://www.reddit.com/r/whatisthisthing/comments/led04h/what_is_this_thing_that_looks_like_supermans_pod/">https://www.reddit.com/r/whatisthisthing/comments/led04h/what_is_this_thing_that_looks_like_supermans_pod/</a></p>
+]]></content>
+      <categories>
+        <category>What is this thing?</category>
+      </categories>
+      <tags>
+        <tag>翻译</tag>
+        <tag>What is this thing?</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>What is this thing 9</title>
+    <url>/2021/03/22/whatisthisthing-9/</url>
+    <content><![CDATA[<p><a href="https://www.reddit.com/r/whatisthisthing/">What is this thing</a> 是 reddit 上的一个社区（community），上面时不时会有人发一些没见过的玩意来提问。</p>
+<p>一起来看看吧！</p>
+<span id="more"></span>
+<h3 id="飞机零件"><a href="#飞机零件" class="headerlink" title="飞机零件"></a>飞机零件</h3><blockquote>
+<p>Q: Any guesses as to what this plane part is? Fell out of the sky in Colorado when that United engine failed.</p>
+</blockquote>
+<p>大家能猜一下这是飞机哪部分吗？因为联合航空的飞机引擎故障的时候这东西正好从科罗拉多的天空坠落。</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-9/飞机零件.jpg" alt="飞机零件"></p>
+<blockquote>
+<p>A: I think that’s a vape pen dude.</p>
+</blockquote>
+<p>我想这就是个电子烟，兄弟。</p>
+<p><a href="https://www.reddit.com/r/whatisthisthing/comments/lr0h1u/any_guesses_as_to_what_this_plane_part_is_fell/">https://www.reddit.com/r/whatisthisthing/comments/lr0h1u/any_guesses_as_to_what_this_plane_part_is_fell/</a></p>
+<h3 id="奇怪的草地"><a href="#奇怪的草地" class="headerlink" title="奇怪的草地"></a>奇怪的草地</h3><blockquote>
+<p>Q: What would cause my friends lawn to look like this after the snow melted.</p>
+</blockquote>
+<p>是什么原因导致我朋友的草地在雪融化之后变成了这副样子？</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-9/草地.png" alt="草地"></p>
+<blockquote>
+<p>A: That’s some major vole activity. They look a lot like mice, but tend to be very active under winter snows and like tunneling.</p>
+</blockquote>
+<p>这是田鼠的主要活动轨迹。它们看起来很像老鼠，但是它们往往在冬天的雪下非常活跃，喜欢挖隧道。</p>
+<p><a href="https://www.reddit.com/r/whatisthisthing/comments/lz6gbg/what_would_cause_my_friends_lawn_to_look_like/">https://www.reddit.com/r/whatisthisthing/comments/lz6gbg/what_would_cause_my_friends_lawn_to_look_like/</a></p>
+<h3 id="金属球"><a href="#金属球" class="headerlink" title="金属球"></a>金属球</h3><blockquote>
+<p>Q: Metal sphere with russian writing found on a Bahama beach.</p>
+</blockquote>
+<p>巴哈马海滩上发现的带有俄罗斯文字的金属球。</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-9/金属球1.jpg" alt="金属球"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-9/金属球2.jpg" alt="金属球"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-9/金属球3.jpg" alt="金属球"></p>
+<blockquote>
+<p>A: Its a pneumatic accumulator tank of engine control system of Soyuz rocket. Somebody point it here in comments. <a href="http://joyreactor.cc/post/3388576#comment15651851">http://joyreactor.cc/post/3388576#comment15651851</a></p>
+</blockquote>
+<p>它是联盟号火箭发动机控制系统的气动蓄能器油箱。有人在这条评论里面提到了它。<a href="http://joyreactor.cc/post/3388576#comment15651851">http://joyreactor.cc/post/3388576#comment15651851</a></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-9/金属球4.jpeg" alt="金属球"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-9/金属球5.jpeg" alt="金属球"></p>
+<p><a href="https://www.reddit.com/r/whatisthisthing/comments/lv4uwd/metal_sphere_with_russian_writing_found_on_a/">https://www.reddit.com/r/whatisthisthing/comments/lv4uwd/metal_sphere_with_russian_writing_found_on_a/</a></p>
+<h3 id="emmm"><a href="#emmm" class="headerlink" title="emmm"></a>emmm</h3><blockquote>
+<p>Q: Saw this bulldozer with a giant spike on the front in a meme. Is this a weird forklift? Why does it only have 1 spike then? Is this possibly to push around a very specific type of equipment?</p>
+</blockquote>
+<p>我在表情包里看到一辆前面有个大钉子的推土机。这是一台奇怪的叉车吗？为什么只有一个凸出来的钉子呢？这可能是为了推动一种特定类型物体的设备吗？</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-9/挖掘机.png" alt="挖掘机"></p>
+<blockquote>
+<p>A: We have one similar to that at work. The spike is a little bigger and longer, but we use it for moving steel coils around the coil yard.</p>
+</blockquote>
+<p>我们公司也有一个类似的。钉子稍大一些，也稍长一些，但我们用它来在卷厂周围移动钢卷。</p>
+<p><a href="https://www.reddit.com/r/whatisthisthing/comments/lppdko/saw_this_bulldozer_with_a_giant_spike_on_the/">https://www.reddit.com/r/whatisthisthing/comments/lppdko/saw_this_bulldozer_with_a_giant_spike_on_the/</a></p>
+<h3 id="矿洞"><a href="#矿洞" class="headerlink" title="矿洞"></a>矿洞</h3><blockquote>
+<p>Q: Found while trail running. What are these things? There’s rotten wood that goes along it that looks cut/altered by man. Would it be for making a flat surface to easily maneuver the mine?</p>
+</blockquote>
+<p>在越野跑时发现。这些是什么东西？沿路有腐烂的木头，看起来像是被人砍过/改造过的。是为了制造一个平坦的地面来方便地操纵矿井吗？</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-9/矿井.jpg" alt="矿井"></p>
+<blockquote>
+<p>A: It’s a collapsed wood-stave pipeline, it may have been for dewatering the mine.</p>
+</blockquote>
+<p> 这是一条坍塌的木板管道，可能是用来给矿井排水的。</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-9/矿井2.jfif" alt="矿井"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-9/矿井3.jpg" alt="矿井"></p>
+<p> <a href="https://www.reddit.com/r/whatisthisthing/comments/m6mhto/found_while_trail_running_what_are_these_things/">https://www.reddit.com/r/whatisthisthing/comments/m6mhto/found_while_trail_running_what_are_these_things/</a></p>
+<h3 id="折叠门"><a href="#折叠门" class="headerlink" title="折叠门"></a>折叠门</h3><blockquote>
+<p>Q: Door with a hinged section a quarter through horizontally?</p>
+</blockquote>
+<p> 在这扇门的四分之一处为什么会安装有铰链？</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-9/折叠门1.jpg" alt="折叠门"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-9/折叠门2.jpg" alt="折叠门"></p>
+<blockquote>
+<p>A: So it can fold around the corner when it’s open, and not stick out into the room</p>
+</blockquote>
+<p>这样的话当它打开的时候，它可以折叠到角落里，而不会伸到房间里。</p>
+<p><a href="https://www.reddit.com/r/whatisthisthing/comments/lozrpi/door_with_a_hinged_section_a_quarter_through/">https://www.reddit.com/r/whatisthisthing/comments/lozrpi/door_with_a_hinged_section_a_quarter_through/</a></p>
+<h3 id="两个勺子"><a href="#两个勺子" class="headerlink" title="两个勺子"></a>两个勺子</h3><blockquote>
+<p>Q: WITT: Two spoons attached to a wooden handle at the thrift store?</p>
+</blockquote>
+<p>在旧货店发现的一个木柄上绑着两个勺子，这是个嘛？</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/whatisthisthing-9/勺子.jpg" alt="勺子"></p>
+<blockquote>
+<p>A: It’s a musical instrument literally called “spoons”. Used as percussion by clacking the spoons together. I’ll see if I can find an example of them being played.</p>
+</blockquote>
+<p>它是一种乐器，名字就叫「勺子」,用勺子和勺子敲击。我看看能不能找到一个他们在玩的例子。</p>
+<iframe src="//player.bilibili.com/player.html?aid=60322841&bvid=BV1Nt41177AM&cid=105024872&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" allowfullscreen="true"> </iframe>
+
+<p><a href="https://www.reddit.com/r/whatisthisthing/comments/lv9vbd/witt_two_spoons_attached_to_a_wooden_handle_at/">https://www.reddit.com/r/whatisthisthing/comments/lv9vbd/witt_two_spoons_attached_to_a_wooden_handle_at/</a></p>
 ]]></content>
       <categories>
         <category>What is this thing?</category>
@@ -3943,32 +3943,6 @@
       </tags>
   </entry>
   <entry>
-    <title>《月亮与六便士》</title>
-    <url>/2019/07/19/%E6%9C%88%E4%BA%AE%E4%B8%8E%E5%85%AD%E4%BE%BF%E5%A3%AB/</url>
-    <content><![CDATA[<p>《<a href="https://book.douban.com/subject/26954760/">月亮与六便士</a>》（The Moon and Sixpence）</p>
-<ul>
-<li><p>我不想谋生。我想生活。</p>
-</li>
-<li><p>感情自有其理，理性难以知晓。</p>
-</li>
-<li><p>让人行动高尚的，有时是自满得意；而痛苦，往往使人变得心胸狭窄，充满仇恨。</p>
-</li>
-<li><p>我不想过去。唯一重要的，是永恒的现在。</p>
-</li>
-<li><p>女人心中的爱，往往只是亲昵和安慰，大多数女人都是这种反应。这是一种被动的感情，能够被任何一个人激起，就像藤蔓可以攀爬在任何一棵树上；当一个姑娘嫁给随便哪个男人，总相信日久生情，世俗之见，如此牢固。说到底，这种感情不过是衣食无虞的满足，财产殷实的骄傲，受人爱慕的愉悦，以及家庭圆满的得意；女人赋予这种感情精神层面的价值，只是出于一种无伤大雅的虚荣。</p>
-</li>
-<li><p>上帝的磨盘转得很慢，但磨得很细。</p>
-</li>
-</ul>
-]]></content>
-      <categories>
-        <category>书摘</category>
-      </categories>
-      <tags>
-        <tag>阅读</tag>
-      </tags>
-  </entry>
-  <entry>
     <title>《悲惨世界》</title>
     <url>/2019/12/10/%E6%82%B2%E6%83%A8%E4%B8%96%E7%95%8C/</url>
     <content><![CDATA[<p>《<a href="https://book.douban.com/subject/5407295/">悲惨世界</a>》（Les Misérables）</p>
@@ -4007,6 +3981,32 @@
       </tags>
   </entry>
   <entry>
+    <title>《月亮与六便士》</title>
+    <url>/2019/07/19/%E6%9C%88%E4%BA%AE%E4%B8%8E%E5%85%AD%E4%BE%BF%E5%A3%AB/</url>
+    <content><![CDATA[<p>《<a href="https://book.douban.com/subject/26954760/">月亮与六便士</a>》（The Moon and Sixpence）</p>
+<ul>
+<li><p>我不想谋生。我想生活。</p>
+</li>
+<li><p>感情自有其理，理性难以知晓。</p>
+</li>
+<li><p>让人行动高尚的，有时是自满得意；而痛苦，往往使人变得心胸狭窄，充满仇恨。</p>
+</li>
+<li><p>我不想过去。唯一重要的，是永恒的现在。</p>
+</li>
+<li><p>女人心中的爱，往往只是亲昵和安慰，大多数女人都是这种反应。这是一种被动的感情，能够被任何一个人激起，就像藤蔓可以攀爬在任何一棵树上；当一个姑娘嫁给随便哪个男人，总相信日久生情，世俗之见，如此牢固。说到底，这种感情不过是衣食无虞的满足，财产殷实的骄傲，受人爱慕的愉悦，以及家庭圆满的得意；女人赋予这种感情精神层面的价值，只是出于一种无伤大雅的虚荣。</p>
+</li>
+<li><p>上帝的磨盘转得很慢，但磨得很细。</p>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>书摘</category>
+      </categories>
+      <tags>
+        <tag>阅读</tag>
+      </tags>
+  </entry>
+  <entry>
     <title>榨干这台 NAS 第 000 话-目录结构</title>
     <url>/2022/08/08/%E6%A6%A8%E5%B9%B2%E8%BF%99%E5%8F%B0NAS%E7%AC%AC000%E8%AF%9D-%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84/</url>
     <content><![CDATA[<p>这是一系列关于 NAS 的文章，系列的名称你们也看到了：「<strong>榨干这台 NAS</strong>」。我将尽可能详细的介绍 NAS 相关的知识，帮助你最大限度的发挥你的手中 NAS 的威力！</p>
@@ -4022,14 +4022,14 @@
 </ol>
 <h2 id="root（根目录）"><a href="#root（根目录）" class="headerlink" title="root（根目录）"></a>root（根目录）</h2><p>这里的 root 指的是你的 NAS 中存放你大部分个人文件的最顶层目录，而不是 Linux 系统中的 <code>/</code> 目录。</p>
 <p>从这里开始，我们就要对你的文件进行分类。</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">𝐫𝐨𝐨𝐭</span><br><span class="line">├── backup</span><br><span class="line">├── books</span><br><span class="line">├── code</span><br><span class="line">├── data</span><br><span class="line">├── downloads</span><br><span class="line">├── manga</span><br><span class="line">├── media</span><br><span class="line">├── music</span><br><span class="line">└── pictures</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">root</span><br><span class="line">├── backup</span><br><span class="line">├── books</span><br><span class="line">├── code</span><br><span class="line">├── data</span><br><span class="line">├── downloads</span><br><span class="line">├── manga</span><br><span class="line">├── media</span><br><span class="line">├── music</span><br><span class="line">└── pictures</span><br></pre></td></tr></table></figure>
 <h3 id="media（媒体）"><a href="#media（媒体）" class="headerlink" title="media（媒体）"></a>media（媒体）</h3><p>存放你大多数媒体文件的地方。</p>
 <p>肯定有一部分人想要有一台 NAS 的初衷是想搭建一个自己的家庭媒体中心。而这个文件夹就是家庭媒体中心的关键。你的电视剧，电影，小电影，行车记录仪，各类自媒体的视频存档，都可以放在这个文件夹下面。</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">root</span><br><span class="line">├── backup</span><br><span class="line">├── books</span><br><span class="line">├── code</span><br><span class="line">├── data</span><br><span class="line">├── downloads</span><br><span class="line">├── manga</span><br><span class="line">├── 𝐦𝐞𝐝𝐢𝐚</span><br><span class="line">│   ├── av</span><br><span class="line">│   ├── bilibili</span><br><span class="line">│   ├── h</span><br><span class="line">│   ├── moive</span><br><span class="line">│   ├── tv_series</span><br><span class="line">│   ├── teslacam</span><br><span class="line">│   └── youtube</span><br><span class="line">├── music</span><br><span class="line">└── pictures</span><br></pre></td></tr></table></figure>
-<h4 id="moive（电影）"><a href="#moive（电影）" class="headerlink" title="moive（电影）"></a>moive（电影）</h4><p>存放你正经电影的地方。</p>
-<p>此目录下应该只存放被刮削后的电影，每部电影应该拥有自己的单独子文件夹，子文件夹中存放电影、字幕、nfo文件和海报图片。电影（moive）文件夹的目录将在后续的文章中进行详细介绍。</p>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">root</span><br><span class="line">├── backup</span><br><span class="line">├── books</span><br><span class="line">├── code</span><br><span class="line">├── data</span><br><span class="line">├── downloads</span><br><span class="line">├── manga</span><br><span class="line">├── media</span><br><span class="line">│   ├── av</span><br><span class="line">│   ├── bilibili</span><br><span class="line">│   ├── h</span><br><span class="line">│   ├── movie</span><br><span class="line">│   ├── tv_series</span><br><span class="line">│   ├── teslacam</span><br><span class="line">│   └── youtube</span><br><span class="line">├── music</span><br><span class="line">└── pictures</span><br></pre></td></tr></table></figure>
+<h4 id="movie（电影）"><a href="#movie（电影）" class="headerlink" title="movie（电影）"></a>movie（电影）</h4><p>存放你正经电影的地方。</p>
+<p>此目录下应该只存放被刮削后的电影，每部电影应该拥有自己的单独子文件夹，子文件夹中存放电影、字幕、nfo文件和海报图片。电影（movie）文件夹的目录将在后续的文章中进行详细介绍。</p>
 <h4 id="tv-series（电视剧集）"><a href="#tv-series（电视剧集）" class="headerlink" title="tv_series（电视剧集）"></a>tv_series（电视剧集）</h4><p>存放你各类电视剧集的地方。</p>
-<p>你的动漫，美剧，韩剧，<del>抗日神剧</del>等都应该存放在这里。和电影（moive）文件夹相同，每部电视剧集应该拥有自己的单独子文件夹，子文件夹中存放电视剧集、字幕、nfo文件和海报图片。电视剧集（tv_series）文件夹的目录将在后续的文章中进行详细介绍。</p>
+<p>你的动漫，美剧，韩剧，<del>抗日神剧</del>等都应该存放在这里。和电影（movie）文件夹相同，每部电视剧集应该拥有自己的单独子文件夹，子文件夹中存放电视剧集、字幕、nfo文件和海报图片。电视剧集（tv_series）文件夹的目录将在后续的文章中进行详细介绍。</p>
 <h4 id="av（不正经电影）"><a href="#av（不正经电影）" class="headerlink" title="av（不正经电影）"></a><del>av（不正经电影）</del></h4><p>存放小姐姐的地方。</p>
 <p>你的小姐姐们都住在这里，这里的文件命名也有相应的规则，具体规则以及相关的工具，也会在后续文章中介绍。</p>
 <h4 id="h（不正经视频）"><a href="#h（不正经视频）" class="headerlink" title="h（不正经视频）"></a><del>h（不正经视频）</del></h4><p>一些没有<del>番号</del>部队番号的小姐姐，将会放在这里。</p>
@@ -4038,7 +4038,7 @@
 <h4 id="TeslaCam（特斯拉汽车行车记录视频以及哨兵录像）"><a href="#TeslaCam（特斯拉汽车行车记录视频以及哨兵录像）" class="headerlink" title="TeslaCam（特斯拉汽车行车记录视频以及哨兵录像）"></a>TeslaCam（特斯拉汽车行车记录视频以及哨兵录像）</h4><p>特斯拉汽车行车记录录像将会存放在此处。后续将会介绍用于合并和查看行车记录仪的工具。</p>
 <h3 id="pictures（照片）"><a href="#pictures（照片）" class="headerlink" title="pictures（照片）"></a>pictures（照片）</h3><p>NAS 的另一个作用就是作为家庭相册，你的手机，相机拍摄的照片和视都将存储在此处，在这里，分类的方式多种多样，可以按照设备分类、按照日期分类、按照事件分类请以你觉得方便的形式进行分类，这些都不太会影响后续的家庭相册的建立。但是请尽量做到容易辨识。</p>
 <p>关于家庭相册的建立，后续的文章也将会进行介绍。</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">root</span><br><span class="line">├── backup</span><br><span class="line">├── books</span><br><span class="line">├── code</span><br><span class="line">├── data</span><br><span class="line">├── downloads</span><br><span class="line">├── manga</span><br><span class="line">├── media</span><br><span class="line">├── music</span><br><span class="line">└── 𝐩𝐢𝐜𝐭𝐮𝐫𝐞𝐬</span><br><span class="line">    ├── iPhone_7</span><br><span class="line">    │   └── 2022</span><br><span class="line">    │       └── 08</span><br><span class="line">    ├── Nikon_D5600</span><br><span class="line">    │   └── 20220808_重庆行</span><br><span class="line">    ├── iCloud</span><br><span class="line">    │   └── bot960528gmailcom</span><br><span class="line">    │       └── 2022</span><br><span class="line">    │           └── 08</span><br><span class="line">    │               └── 08</span><br><span class="line">    ├── Qzone</span><br><span class="line">    └── other</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">root</span><br><span class="line">├── backup</span><br><span class="line">├── books</span><br><span class="line">├── code</span><br><span class="line">├── data</span><br><span class="line">├── downloads</span><br><span class="line">├── manga</span><br><span class="line">├── media</span><br><span class="line">├── music</span><br><span class="line">└── pictures</span><br><span class="line">    ├── iPhone_7</span><br><span class="line">    │   └── 2022</span><br><span class="line">    │       └── 08</span><br><span class="line">    ├── Nikon_D5600</span><br><span class="line">    │   └── 20220808_重庆行</span><br><span class="line">    ├── iCloud</span><br><span class="line">    │   └── bot960528gmailcom</span><br><span class="line">    │       └── 2022</span><br><span class="line">    │           └── 08</span><br><span class="line">    │               └── 08</span><br><span class="line">    ├── Qzone</span><br><span class="line">    └── other</span><br></pre></td></tr></table></figure>
 <p>接下来介绍几种分类方式：</p>
 <h4 id="iPhone-7（按照设备）"><a href="#iPhone-7（按照设备）" class="headerlink" title="iPhone_7（按照设备）"></a>iPhone_7（按照设备）</h4><p>此处将存放你的 iPhone 7 拍摄的照片和视频。</p>
 <h5 id="2022（年份）"><a href="#2022（年份）" class="headerlink" title="2022（年份）"></a>2022（年份）</h5><p>此处将存放你的 iPhone 7 于 2022 年所拍摄的照片和视频。</p>
@@ -4056,13 +4056,13 @@
 <li><a href="/2022/08/09/%E6%A6%A8%E5%B9%B2%E8%BF%99%E5%8F%B0NAS%E7%AC%AC002%E8%AF%9D-%E4%B8%8B%E8%BD%BD%E5%B7%A5%E5%85%B7/" title="榨干这台 NAS 第 002 话-下载工具">榨干这台 NAS 第 002 话-下载工具</a>
 </li>
 </ol>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">root</span><br><span class="line">├── backup</span><br><span class="line">├── books</span><br><span class="line">├── code</span><br><span class="line">├── data</span><br><span class="line">├── 𝐝𝐨𝐰𝐧𝐥𝐨𝐚𝐝𝐬</span><br><span class="line">│   ├── aria2Downloads</span><br><span class="line">│   ├── emuleDownloads</span><br><span class="line">│   ├── farmDownloads</span><br><span class="line">│   ├── qBittorrentDownloads</span><br><span class="line">│   ├── thunderDownloads</span><br><span class="line">│   └── transmissionDownloads</span><br><span class="line">├── manga</span><br><span class="line">├── media</span><br><span class="line">├── music</span><br><span class="line">└── pictures</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">root</span><br><span class="line">├── backup</span><br><span class="line">├── books</span><br><span class="line">├── code</span><br><span class="line">├── data</span><br><span class="line">├── downloads</span><br><span class="line">│   ├── aria2Downloads</span><br><span class="line">│   ├── emuleDownloads</span><br><span class="line">│   ├── farmDownloads</span><br><span class="line">│   ├── qBittorrentDownloads</span><br><span class="line">│   ├── thunderDownloads</span><br><span class="line">│   └── transmissionDownloads</span><br><span class="line">├── manga</span><br><span class="line">├── media</span><br><span class="line">├── music</span><br><span class="line">└── pictures</span><br></pre></td></tr></table></figure>
 <h4 id="aria2Download（aria2-下载目录）"><a href="#aria2Download（aria2-下载目录）" class="headerlink" title="aria2Download（aria2 下载目录）"></a>aria2Download（aria2 下载目录）</h4><p>此处将存放由 aria2 下载的文件。</p>
 <h4 id="emuleDownloads（emule-下载目录）"><a href="#emuleDownloads（emule-下载目录）" class="headerlink" title="emuleDownloads（emule 下载目录）"></a>emuleDownloads（emule 下载目录）</h4><p>此处将存放由 emule 下载的文件。</p>
 <h4 id="qBittorrentDownloads（qBittorrent-下载目录）"><a href="#qBittorrentDownloads（qBittorrent-下载目录）" class="headerlink" title="qBittorrentDownloads（qBittorrent 下载目录）"></a>qBittorrentDownloads（qBittorrent 下载目录）</h4><p>此处将存放由 qBittorrent 下载的文件。</p>
 <h4 id="transmissionDownloads（transmission-下载目录）"><a href="#transmissionDownloads（transmission-下载目录）" class="headerlink" title="transmissionDownloads（transmission 下载目录）"></a>transmissionDownloads（transmission 下载目录）</h4><p>此处将存放由 transmission 下载的文件。</p>
 <h3 id="code（代码）"><a href="#code（代码）" class="headerlink" title="code（代码）"></a>code（代码）</h3><p>如果你是一个程序员，那么 NAS 还能成为你的代码仓库，当你在 NAS 上部署你的 git 服务时，其中的数据就可以存储在这里。如果你只将此文件夹作为你的工作目录的话（例如通过 ssh 连接到此服务器进行编码），那么你可以按照代码类型或者编程语言进行分类。</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">root</span><br><span class="line">├── backup</span><br><span class="line">├── books</span><br><span class="line">├── 𝐜𝐨𝐝𝐞</span><br><span class="line">│   ├── script</span><br><span class="line">│   ├── project</span><br><span class="line">│   ├── java</span><br><span class="line">│   └── python</span><br><span class="line">├── data</span><br><span class="line">├── downloads</span><br><span class="line">├── manga</span><br><span class="line">├── media</span><br><span class="line">├── music</span><br><span class="line">└── pictures</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">root</span><br><span class="line">├── backup</span><br><span class="line">├── books</span><br><span class="line">├── code</span><br><span class="line">│   ├── script</span><br><span class="line">│   ├── project</span><br><span class="line">│   ├── java</span><br><span class="line">│   └── python</span><br><span class="line">├── data</span><br><span class="line">├── downloads</span><br><span class="line">├── manga</span><br><span class="line">├── media</span><br><span class="line">├── music</span><br><span class="line">└── pictures</span><br></pre></td></tr></table></figure>
 <h4 id="script（按照类型）"><a href="#script（按照类型）" class="headerlink" title="script（按照类型）"></a>script（按照类型）</h4><p>此处将存放你的各类脚本。</p>
 <h4 id="project（按照类型）"><a href="#project（按照类型）" class="headerlink" title="project（按照类型）"></a>project（按照类型）</h4><p>此处将存放你的各个项目。</p>
 <h4 id="java（按照编程语言）"><a href="#java（按照编程语言）" class="headerlink" title="java（按照编程语言）"></a>java（按照编程语言）</h4><p>此处将存放你使用 java 编写的代码。</p>
@@ -4081,19 +4081,19 @@
 </li>
 </ol>
 <p>请大家<strong>务必</strong>重视备份的重要性，不然等到数据丢失的时候，是无论如何也无法挽救的。</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">root</span><br><span class="line">├── 𝐛𝐚𝐜𝐤𝐮𝐩</span><br><span class="line">│   ├── bitwarden_backup</span><br><span class="line">│   └── wechat_backup</span><br><span class="line">├── books</span><br><span class="line">├── code</span><br><span class="line">├── data</span><br><span class="line">├── downloads</span><br><span class="line">├── manga</span><br><span class="line">├── media</span><br><span class="line">├── music</span><br><span class="line">└── pictures</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">root</span><br><span class="line">├── backup</span><br><span class="line">│   ├── bitwarden_backup</span><br><span class="line">│   └── wechat_backup</span><br><span class="line">├── books</span><br><span class="line">├── code</span><br><span class="line">├── data</span><br><span class="line">├── downloads</span><br><span class="line">├── manga</span><br><span class="line">├── media</span><br><span class="line">├── music</span><br><span class="line">└── pictures</span><br></pre></td></tr></table></figure>
 <h4 id="wechat-backup（微信备份）"><a href="#wechat-backup（微信备份）" class="headerlink" title="wechat_backup（微信备份）"></a>wechat_backup（微信备份）</h4><p>这里用于存放你的微信备份。</p>
 <h4 id="bitwarden-backup"><a href="#bitwarden-backup" class="headerlink" title="bitwarden_backup"></a>bitwarden_backup</h4><p>这里用于存放你的 BitWarden 备份。</p>
 <h3 id="music（音乐）"><a href="#music（音乐）" class="headerlink" title="music（音乐）"></a>music（音乐）</h3><p>此处用于存放你的音乐。音乐的分类就比较简单，可以先按歌手进行分类，然后再安装专辑分类即可。</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">root</span><br><span class="line">├── backup</span><br><span class="line">├── books</span><br><span class="line">├── code</span><br><span class="line">├── data</span><br><span class="line">├── downloads</span><br><span class="line">├── manga</span><br><span class="line">├── media</span><br><span class="line">├── 𝐦𝐮𝐬𝐢𝐜</span><br><span class="line">│   └── 周杰伦</span><br><span class="line">│       └── 叶惠美</span><br><span class="line">└── pictures</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">root</span><br><span class="line">├── backup</span><br><span class="line">├── books</span><br><span class="line">├── code</span><br><span class="line">├── data</span><br><span class="line">├── downloads</span><br><span class="line">├── manga</span><br><span class="line">├── media</span><br><span class="line">├── music</span><br><span class="line">│   └── 周杰伦</span><br><span class="line">│       └── 叶惠美</span><br><span class="line">└── pictures</span><br></pre></td></tr></table></figure>
 <h4 id="周杰伦"><a href="#周杰伦" class="headerlink" title="周杰伦"></a>周杰伦</h4><p>此处用于存放周杰伦的音乐。</p>
 <h5 id="叶惠美"><a href="#叶惠美" class="headerlink" title="叶惠美"></a>叶惠美</h5><p>此处用于存放周杰伦的叶惠美专辑的歌曲。</p>
 <h3 id="books（电子书）"><a href="#books（电子书）" class="headerlink" title="books（电子书）"></a>books（电子书）</h3><p>此处用于存放你的电子书，可以按照书籍的类型来分类，如：小说、文献、教科等等，这边将不再进行举例。。后续也将会介绍如果搭建你的电子书仓库。</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">root</span><br><span class="line">├── backup</span><br><span class="line">├── 𝐛𝐨𝐨𝐤𝐬</span><br><span class="line">├── code</span><br><span class="line">├── data</span><br><span class="line">├── downloads</span><br><span class="line">├── manga</span><br><span class="line">├── media</span><br><span class="line">├── music</span><br><span class="line">└── pictures</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">root</span><br><span class="line">├── backup</span><br><span class="line">├── books</span><br><span class="line">├── code</span><br><span class="line">├── data</span><br><span class="line">├── downloads</span><br><span class="line">├── manga</span><br><span class="line">├── media</span><br><span class="line">├── music</span><br><span class="line">└── pictures</span><br></pre></td></tr></table></figure>
 <h3 id="manga（漫画）"><a href="#manga（漫画）" class="headerlink" title="manga（漫画）"></a>manga（漫画）</h3><p>此处用于存放的漫画。后续也将会介绍如果搭建你的漫画仓库。</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">root</span><br><span class="line">├── backup</span><br><span class="line">├── books</span><br><span class="line">├── code</span><br><span class="line">├── data</span><br><span class="line">├── downloads</span><br><span class="line">├── 𝐦𝐚𝐧𝐠𝐚</span><br><span class="line">├── media</span><br><span class="line">├── music</span><br><span class="line">└── pictures</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">root</span><br><span class="line">├── backup</span><br><span class="line">├── books</span><br><span class="line">├── code</span><br><span class="line">├── data</span><br><span class="line">├── downloads</span><br><span class="line">├── manga</span><br><span class="line">├── media</span><br><span class="line">├── music</span><br><span class="line">└── pictures</span><br></pre></td></tr></table></figure>
 <h3 id="data（数据）"><a href="#data（数据）" class="headerlink" title="data（数据）"></a>data（数据）</h3><p>数据是一个宽泛的词，其实上述所有的分类，都可以将其划进数据目录，所以这个目录的目的就是为了存放那些无法被上述目录所包含的数据。</p>
-<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">root</span><br><span class="line">├── backup</span><br><span class="line">├── books</span><br><span class="line">├── code</span><br><span class="line">├── 𝐝𝐚𝐭𝐚</span><br><span class="line">│   ├── document</span><br><span class="line">│   └── ISO</span><br><span class="line">│       ├── Windows</span><br><span class="line">│       ├── Ubuntu</span><br><span class="line">│       ├── Adobe</span><br><span class="line">│       └── JetBrains</span><br><span class="line">├── downloads</span><br><span class="line">├── manga</span><br><span class="line">├── media</span><br><span class="line">├── music</span><br><span class="line">└── pictures</span><br></pre></td></tr></table></figure>
+<figure class="highlight text"><table><tr><td class="code"><pre><span class="line">root</span><br><span class="line">├── backup</span><br><span class="line">├── books</span><br><span class="line">├── code</span><br><span class="line">├── data</span><br><span class="line">│   ├── document</span><br><span class="line">│   └── ISO</span><br><span class="line">│       ├── Windows</span><br><span class="line">│       ├── Ubuntu</span><br><span class="line">│       ├── Adobe</span><br><span class="line">│       └── JetBrains</span><br><span class="line">├── downloads</span><br><span class="line">├── manga</span><br><span class="line">├── media</span><br><span class="line">├── music</span><br><span class="line">└── pictures</span><br></pre></td></tr></table></figure>
 <h4 id="ISO"><a href="#ISO" class="headerlink" title="ISO"></a>ISO</h4><p>用于存放你下载的各类系统镜像和各类软件的安装文件。</p>
 <h5 id="Windows"><a href="#Windows" class="headerlink" title="Windows"></a>Windows</h5><p>用于存放 Windows 系统安装镜像。</p>
 <h5 id="Ubuntu"><a href="#Ubuntu" class="headerlink" title="Ubuntu"></a>Ubuntu</h5><p>用于存放 Ubuntu 系统安装镜像。</p>
@@ -4230,7 +4230,7 @@
 </li>
 <li><p>「工具」-「选项」-「高级」-「libtorrent 相关」将「校验时内存使用扩增量」修改大一些，我设置成了 <code>512</code>，这样可以提高校验速度，提升之后辅种效率；</p>
 </li>
-<li><p>「工具」-「选项」-「BitTorrent」勾选「自动添加以下 tracker 到新的 torrent」，并在下方输入框中填入<a href="&#x6d;&#97;&#105;&#x6c;&#x74;&#x6f;&#x3a;&#x68;&#x74;&#x74;&#112;&#x73;&#x3a;&#47;&#47;&#x63;&#100;&#110;&#46;&#106;&#x73;&#100;&#x65;&#108;&#105;&#x76;&#114;&#46;&#x6e;&#x65;&#x74;&#47;&#x67;&#x68;&#x2f;&#x6e;&#103;&#x6f;&#115;&#x61;&#x6e;&#x67;&#47;&#116;&#114;&#97;&#x63;&#x6b;&#x65;&#114;&#115;&#108;&#105;&#x73;&#x74;&#64;&#x6d;&#97;&#x73;&#x74;&#101;&#x72;&#x2f;&#x74;&#x72;&#x61;&#99;&#x6b;&#x65;&#114;&#x73;&#x5f;&#97;&#x6c;&#x6c;&#x2e;&#116;&#120;&#x74;">&#x68;&#x74;&#x74;&#112;&#x73;&#x3a;&#47;&#47;&#x63;&#100;&#110;&#46;&#106;&#x73;&#100;&#x65;&#108;&#105;&#x76;&#114;&#46;&#x6e;&#x65;&#x74;&#47;&#x67;&#x68;&#x2f;&#x6e;&#103;&#x6f;&#115;&#x61;&#x6e;&#x67;&#47;&#116;&#114;&#97;&#x63;&#x6b;&#x65;&#114;&#115;&#108;&#105;&#x73;&#x74;&#64;&#x6d;&#97;&#x73;&#x74;&#101;&#x72;&#x2f;&#x74;&#x72;&#x61;&#99;&#x6b;&#x65;&#114;&#x73;&#x5f;&#97;&#x6c;&#x6c;&#x2e;&#116;&#120;&#x74;</a>中的内容，此处设置的作用的是为了获得更多的供种者，此操作能有效提高下载速度，建议每隔一段时间就更新一下 tracker 列表，更多 tracker 列表可以查看 <a href="https://github.com/ngosang/trackerslist">https://github.com/ngosang/trackerslist</a> 和 <a href="https://github.com/XIU2/TrackersListCollection">https://github.com/XIU2/TrackersListCollection</a>。</p>
+<li><p>「工具」-「选项」-「BitTorrent」勾选「自动添加以下 tracker 到新的 torrent」，并在下方输入框中填入<a href="&#x6d;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#116;&#x74;&#x70;&#115;&#58;&#x2f;&#x2f;&#x63;&#100;&#110;&#46;&#x6a;&#115;&#100;&#101;&#108;&#x69;&#x76;&#x72;&#46;&#110;&#101;&#116;&#47;&#x67;&#x68;&#47;&#110;&#103;&#x6f;&#x73;&#97;&#110;&#x67;&#x2f;&#x74;&#114;&#x61;&#99;&#107;&#x65;&#x72;&#115;&#x6c;&#x69;&#x73;&#x74;&#64;&#x6d;&#97;&#115;&#x74;&#101;&#114;&#47;&#x74;&#x72;&#97;&#99;&#x6b;&#101;&#x72;&#115;&#x5f;&#x61;&#x6c;&#108;&#46;&#x74;&#120;&#x74;">&#104;&#116;&#x74;&#x70;&#115;&#58;&#x2f;&#x2f;&#x63;&#100;&#110;&#46;&#x6a;&#115;&#100;&#101;&#108;&#x69;&#x76;&#x72;&#46;&#110;&#101;&#116;&#47;&#x67;&#x68;&#47;&#110;&#103;&#x6f;&#x73;&#97;&#110;&#x67;&#x2f;&#x74;&#114;&#x61;&#99;&#107;&#x65;&#x72;&#115;&#x6c;&#x69;&#x73;&#x74;&#64;&#x6d;&#97;&#115;&#x74;&#101;&#114;&#47;&#x74;&#x72;&#97;&#99;&#x6b;&#101;&#x72;&#115;&#x5f;&#x61;&#x6c;&#108;&#46;&#x74;&#120;&#x74;</a>中的内容，此处设置的作用的是为了获得更多的供种者，此操作能有效提高下载速度，建议每隔一段时间就更新一下 tracker 列表，更多 tracker 列表可以查看 <a href="https://github.com/ngosang/trackerslist">https://github.com/ngosang/trackerslist</a> 和 <a href="https://github.com/XIU2/TrackersListCollection">https://github.com/XIU2/TrackersListCollection</a>。</p>
 </li>
 <li><p>「工具」-「选项」-「BitTorrent」取消勾选「Torrent 排队」,这一步是为了多任务同时下载与上传，BT 的本质就是我为人人，人人为我，你的下载即是别人的上传，所以请最好不要限制你的上传，在不影响使用的情况下提供最多的上传；</p>
 </li>
@@ -4240,7 +4240,7 @@
 <h5 id="分类"><a href="#分类" class="headerlink" title="分类"></a>分类</h5><p>qBittorrent 与其他下载工具相比的优势之一在于他有强大的分类和标签机制。在左侧的边栏可以看到分类和便签管理模块。</p>
 <p>我们可以通过鼠标右键任意分类来添加新的分类：</p>
 <p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/榨干这台NAS第002话-下载工具/qBittorrent新建分类.png" alt="qBittorrent新建分类.png"></p>
-<p>然后填入分类名称和保存路径，可以为不同的分类设置不同的路径，例如 Moive 分类，保存路径 <code>/downloads/Media/Moive</code>、TV series 分类，保存路径 <code>/downloads/Media/TV series</code>，大家可以按照我在<a href="/2022/08/08/%E6%A6%A8%E5%B9%B2%E8%BF%99%E5%8F%B0NAS%E7%AC%AC000%E8%AF%9D-%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84/" title="榨干这台 NAS 第 000 话-目录结构">第000话</a>中的 Media 目录配置来建立相关的分类。这会为之后的硬链接提供很大的方便。</p>
+<p>然后填入分类名称和保存路径，可以为不同的分类设置不同的路径，例如 Movie 分类，保存路径 <code>/downloads/Media/Movie</code>、TV series 分类，保存路径 <code>/downloads/Media/TV series</code>，大家可以按照我在<a href="/2022/08/08/%E6%A6%A8%E5%B9%B2%E8%BF%99%E5%8F%B0NAS%E7%AC%AC000%E8%AF%9D-%E7%9B%AE%E5%BD%95%E7%BB%93%E6%9E%84/" title="榨干这台 NAS 第 000 话-目录结构">第000话</a>中的 Media 目录配置来建立相关的分类。这会为之后的硬链接提供很大的方便。</p>
 <p>最后在新建任务时候，就能选择已经设定的分类了。当然对于已有的任务对一个或多个任务右键即可在「分类」栏中选择相应的分类。</p>
 <h5 id="标签"><a href="#标签" class="headerlink" title="标签"></a>标签</h5><p>其实有分类就已经完全足够了，标签和分类区别是：</p>
 <ol>
@@ -4341,17 +4341,17 @@
 <p>那么什么是硬链接呢？与硬链接相对应的，还有一种软链接，软链接其实就相当于 Windows 中的快捷方式，只是一个指向源文件的文件。在我们删除源文件后，快捷方式将无法使用。而硬链接就不一样了，你同样可以像创建软链接一样创建多个硬链接。但是当你删除源文件后，硬链接还是可以正常使用，和普通文件没有区别。只有当你删除所有的源文件和硬链接后，这个文件才算是真正的被删除。并且多个硬链接和源文件只会占用一个文件的空间。</p>
 <p>举例来说：</p>
 <ol>
-<li><p>你下载了最新的电影 <code>不能说的秘密2.mp4</code>，它存放在：<code>Downloads/qBittorrentDownloads/media/moive/不能说的秘密/不能说的秘密2.mp4</code>；</p>
+<li><p>你下载了最新的电影 <code>不能说的秘密2.mp4</code>，它存放在：<code>Downloads/qBittorrentDownloads/media/movie/不能说的秘密/不能说的秘密2.mp4</code>；</p>
 </li>
-<li><p>你就可以创建一个硬链接，在另一个文件夹下面：<code>media/moive/不能说的秘密2（2034）/不能说的秘密2（2034）.mp4</code>；</p>
+<li><p>你就可以创建一个硬链接，在另一个文件夹下面：<code>media/movie/不能说的秘密2（2034）/不能说的秘密2（2034）.mp4</code>；</p>
 </li>
-<li><p>这时候，你可以将 <code>Downloads/qBittorrentDownloads/media/moive/不能说的秘密/不能说的秘密2.mp4</code> 删除，<code>media/moive/不能说的秘密2（2034）/不能说的秘密2（2034）.mp4</code> 仍然可以使用，反过来也是一样。但是不能将两个文件同时删除；</p>
+<li><p>这时候，你可以将 <code>Downloads/qBittorrentDownloads/media/movie/不能说的秘密/不能说的秘密2.mp4</code> 删除，<code>media/movie/不能说的秘密2（2034）/不能说的秘密2（2034）.mp4</code> 仍然可以使用，反过来也是一样。但是不能将两个文件同时删除；</p>
 </li>
 <li><p>如果你创建的硬链接源文件发生了变化，你的所有硬链接同时也会将变化同步，例外的：文件名的变化将不会同步。</p>
 </li>
 </ol>
 <h3 id="如何创建硬链接"><a href="#如何创建硬链接" class="headerlink" title="如何创建硬链接"></a>如何创建硬链接</h3><p>简单的方法是使用 <code>ln</code> 命令，以上面的例子来说，只需要执行以下命令：</p>
-<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ln /Downloads/qBittorrentDownloads/media/moive/不能说的秘密/不能说的秘密2.mp4 /media/moive/不能说的秘密2（2034）/不能说的秘密2（2034）.mp4</span><br></pre></td></tr></table></figure>
+<figure class="highlight shell"><table><tr><td class="code"><pre><span class="line">ln /Downloads/qBittorrentDownloads/media/movie/不能说的秘密/不能说的秘密2.mp4 /media/movie/不能说的秘密2（2034）/不能说的秘密2（2034）.mp4</span><br></pre></td></tr></table></figure>
 <p>就可以创建一个硬链接。</p>
 <p>但是这样对于一个文件来说还好说，对于众多的电影来说，却是一项大工程。所以我们需要用到 <a href="https://github.com/likun7981/hlink">hLink</a> 这一硬链接工具。</p>
 <h4 id="安装-hLink"><a href="#安装-hLink" class="headerlink" title="安装 hLink"></a>安装 hLink</h4><p>在 UNRAID 的应用市场中并没有 hLink，所以无法通过应用市场直接安装。</p>
@@ -4366,14 +4366,14 @@
 <li><p>首先点击「创建配置」</p>
 <p> <img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/榨干这台NAS第003话-硬链接/创建配置.png" alt="创建配置.png"></p>
 </li>
-<li><p>为配置输入一个名字，用于标记这个配置的作用，例如：Moive；</p>
+<li><p>为配置输入一个名字，用于标记这个配置的作用，例如：Movie；</p>
 </li>
 <li><p>接下来就要对配置文件进行修改，可以先看一下默认的配置文件：</p>
  <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">// 重要说明路径地址都请填写 绝对路径！！！！</span></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> &#123;</span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 源路径与目标路径的映射关系</span></span><br><span class="line"><span class="comment">  * 例子:</span></span><br><span class="line"><span class="comment">  *  pathsMapping: &#123;</span></span><br><span class="line"><span class="comment">  *     &#x27;/path/to/exampleSource&#x27;: &#x27;/path/to/exampleDest&#x27;,</span></span><br><span class="line"><span class="comment">  *     &#x27;/path/to/exampleSource2&#x27;: &#x27;/path/to/exampleDest2&#x27;</span></span><br><span class="line"><span class="comment">  *  &#125;</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line">  <span class="attr">pathsMapping</span>: &#123;&#125;,</span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 需要包含的后缀，如果与exclude同时配置，则取两者的交集</span></span><br><span class="line"><span class="comment">  * include 留空表示包含所有文件</span></span><br><span class="line"><span class="comment">  *</span></span><br><span class="line"><span class="comment">  * 后缀不够用? 高阶用法: https://hlink.likun.me/other/v2.html#%E6%96%B0%E5%A2%9E%E5%8A%9F%E8%83%BD</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line">  <span class="attr">include</span>: [</span><br><span class="line">    <span class="string">&#x27;mp4&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;flv&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;f4v&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;webm&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;m4v&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;mov&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;cpk&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;dirac&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;3gp&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;3g2&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;rm&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;rmvb&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;wmv&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;avi&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;asf&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;mpg&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;mpeg&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;mpe&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;vob&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;mkv&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;ram&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;qt&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;fli&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;flc&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;mod&#x27;</span>,</span><br><span class="line">    <span class="string">&#x27;iso&#x27;</span>,</span><br><span class="line">  ],</span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * 需要排除的后缀，如果与include同时配置，则取两者的交集</span></span><br><span class="line"><span class="comment">  *</span></span><br><span class="line"><span class="comment">  * 后缀不够用? 高阶用法: https://hlink.likun.me/other/v2.html#%E6%96%B0%E5%A2%9E%E5%8A%9F%E8%83%BD</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line">  <span class="attr">exclude</span>: [],</span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@scope</span> 该配置项 hlink 专用</span></span><br><span class="line"><span class="comment">  * 是否保持原有目录结构，为false时则只保存一级目录结构</span></span><br><span class="line"><span class="comment">  * 可选值: true/false</span></span><br><span class="line"><span class="comment">  * 例子：</span></span><br><span class="line"><span class="comment">  *  - 源地址目录为：/a</span></span><br><span class="line"><span class="comment">  *  - 目标地址目录为: /d</span></span><br><span class="line"><span class="comment">  *  - 链接的文件地址为 /a/b/c/z/y/mv.mkv；</span></span><br><span class="line"><span class="comment">  *  如果设置为true  生成的硬链地址为: /d/b/c/z/y/mv.mkv</span></span><br><span class="line"><span class="comment">  *  如果设置为false 生成的硬链地址为：/d/y/mv.mkv</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line">  <span class="attr">keepDirStruct</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@scope</span> 该配置项 hlink 专用</span></span><br><span class="line"><span class="comment">  * 是否打开缓存，为true表示打开</span></span><br><span class="line"><span class="comment">  * 可选值: true/false</span></span><br><span class="line"><span class="comment">  * 打开后，每次硬链后会把对应文件存入缓存，就算下次删除硬链，也不会进行硬链</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line">  <span class="attr">openCache</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@scope</span> 该配置项 hlink 专用</span></span><br><span class="line"><span class="comment">  * 是否为独立文件创建同名文件夹，为true表示创建</span></span><br><span class="line"><span class="comment">  * 可选值: true/false</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line">  <span class="attr">mkdirIfSingle</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="comment">/**</span></span><br><span class="line"><span class="comment">   * <span class="doctag">@scope</span> 该配置项为 hlink prune 命令专用</span></span><br><span class="line"><span class="comment">  * 是否删除文件及所在目录，为false只会删除文件</span></span><br><span class="line"><span class="comment">  * 可选值: true/false</span></span><br><span class="line"><span class="comment">  */</span></span><br><span class="line">  <span class="attr">deleteDir</span>: <span class="literal">false</span>,</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p> 可以到看到大部分配置都已经有的了，我们只要修改部分就行。例如最重要的 <code>pathsMapping</code> 属性。这是时候需要注意，此时填写的路径不是当前宿主机中的路径，而是容器中的路径，你需要根据启动容器时候的目录映射参数来修改相对应的路径。</p>
-<p> 例如我的启动参数中映射是：<code>-v /mnt/user:/share</code>，即在宿主机的路径 <code>/mnt/user</code> 等于容器中的 <code>/share</code>，所以我原本电影（源文件）的下载路径：<code>/mnt/user/UNRAID/downloads/qBittorrentDownloads/Media/Moive</code>，这时候就要改为：<code>/share/UNRAID/downloads/qBittorrentDownloads/Media/Moive</code>，原本硬链接的存放位置：<code>/mnt/user/UNRAID/media/Moive</code>，就要更改为：<code>/share/UNRAID/media/Moive</code>。</p>
+<p> 例如我的启动参数中映射是：<code>-v /mnt/user:/share</code>，即在宿主机的路径 <code>/mnt/user</code> 等于容器中的 <code>/share</code>，所以我原本电影（源文件）的下载路径：<code>/mnt/user/UNRAID/downloads/qBittorrentDownloads/Media/Movie</code>，这时候就要改为：<code>/share/UNRAID/downloads/qBittorrentDownloads/Media/Movie</code>，原本硬链接的存放位置：<code>/mnt/user/UNRAID/media/Movie</code>，就要更改为：<code>/share/UNRAID/media/Movie</code>。</p>
 <p> 所以最后我的 <code>pathsMapping</code> 属性就是：</p>
- <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="attr">pathsMapping</span>: &#123;</span><br><span class="line">  <span class="string">&#x27;/share/UNRAID/downloads/qBittorrentDownloads/Media/Moive&#x27;</span>: <span class="string">&#x27;/share/UNRAID/media/Moive&#x27;</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
+ <figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="attr">pathsMapping</span>: &#123;</span><br><span class="line">  <span class="string">&#x27;/share/UNRAID/downloads/qBittorrentDownloads/Media/Movie&#x27;</span>: <span class="string">&#x27;/share/UNRAID/media/Movie&#x27;</span></span><br><span class="line">&#125;,</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>然后点击「确定」；</p>
 </li>
@@ -4520,164 +4520,6 @@
         <tag>Docker</tag>
         <tag>NAS</tag>
         <tag>unRAID</tag>
-      </tags>
-  </entry>
-  <entry>
-    <title>煎蛋保险小课堂</title>
-    <url>/2021/09/29/%E7%85%8E%E8%9B%8B%E4%BF%9D%E9%99%A9%E5%B0%8F%E8%AF%BE%E5%A0%82/</url>
-    <content><![CDATA[<p>蛋友 阿Lam：</p>
-<blockquote>
-<p>因为看到部分蛋友有保险困扰。我又刚好是这行的，所以做了个小科普。</p>
-</blockquote>
-<p>转载自：<a href="http://jandan.net/p/109642">煎蛋保险小课堂</a></p>
-<span id="more"></span>
-<h2 id="有哪些保险？"><a href="#有哪些保险？" class="headerlink" title="有哪些保险？"></a>有哪些保险？</h2><p>保险的种类称作险种，按缴费方式分，可以分为<strong>社会保险</strong>（强制交）和<strong>商业保险</strong>（自愿购买）。</p>
-<h3 id="社会保险（社保）"><a href="#社会保险（社保）" class="headerlink" title="社会保险（社保）"></a>社会保险（社保）</h3><ol>
-<li><p>城镇职工五险一金中的五险：养老保险、医疗保险、工伤保险、失业保险、生育保险；</p>
-</li>
-<li><p>城市少儿医保；</p>
-</li>
-<li><p>城镇居民医疗保险/乡镇居民的新型农村合作医疗（新农合）。</p>
-</li>
-</ol>
-<p>社保是国家福利，是最基础的保障，商保可以没有，但社保必须在手。</p>
-<p>医保是社保中的一个类别，具体指五险中的医疗保险、城市少儿医保、城镇居民医疗保险、新农合。四者不能重复报销，所以在公司交了五险一金的，在老家就不用浪费钱交新农合了。</p>
-<p>城市少儿医保是给小孩子办的，有本市户口的，出生就可以办；没本市户口的，要等上幼儿园/小学后才能统一办；没本市户口的家庭，可以先给孩子在老家交个新农合，平时在城市门诊治疗是没法报销了，但住院治疗要花大钱时可以申请异地报销。</p>
-<p>有社保的人在买部分商保时，比没社保的要便宜</p>
-<h3 id="商业保险"><a href="#商业保险" class="headerlink" title="商业保险"></a>商业保险</h3><p>商业保险按保险标的（对象）分为<strong>人身险</strong>和<strong>财产险</strong>。</p>
-<p><strong>人身险</strong>就是保人的寿命和健康的，<strong>财产险</strong>就是保人的房车等财产的，其中的代表就是车险。</p>
-<p>人身险里有四大类险种，分别是<strong>寿险</strong>、<strong>重疾险</strong>、<strong>医疗险</strong>、<strong>意外险</strong>。其中<strong>重疾险</strong>和<strong>医疗险</strong>都属于健康险。</p>
-<ol>
-<li><p>寿险（保死，狗带了就赔一大笔钱）；</p>
-</li>
-<li><p>健康险（保生，生病了就赔钱或报销医疗费）；</p>
-<ol>
-<li><p>重疾险；</p>
-</li>
-<li><p>医疗险：百万医疗险、防癌医疗险、小额医疗险。</p>
-</li>
-</ol>
-</li>
-<li><p>意外险（保非疾病导致的生和死，比如被车撞了，狗带了就赔钱，没带就报销医疗费。但如果是因癌症等疾病引起的，那带不带都不赔）。</p>
-</li>
-</ol>
-<h3 id="课外小姿势"><a href="#课外小姿势" class="headerlink" title="课外小姿势"></a>课外小姿势</h3><h4 id="团险"><a href="#团险" class="headerlink" title="团险"></a>团险</h4><p>公司团险不是一个具体的险种，而是一种承保方式，我们平常办商保都是个人给个人买，团险则是一个团体给它的成员统一购买。<br>像有些公司 HR 招人时喊的「六险一金」，多的那个险就一般是商业团险，具体险种一般是意外险、医疗险，成本大概是 100 块/人年。</p>
-<h4 id="「我买了保险」"><a href="#「我买了保险」" class="headerlink" title="「我买了保险」"></a>「我买了保险」</h4><p>重疾险的理赔动不动就是几十万，所以审核会很严格，会查你的诊断报告、病例书等，所以在看一些你不知道是什么病的时候，记得提醒医生：「我买了保险！」</p>
-<p>然后有经验的医生都能 get 到，病例就尽量不会写影响理赔的内容了。</p>
-<h4 id="自由职业怎么交社保"><a href="#自由职业怎么交社保" class="headerlink" title="自由职业怎么交社保"></a>自由职业怎么交社保</h4><ol>
-<li><p>挂在朋友或专门的公司去正常交职工五险一金，但这个有法律风险，不提倡；</p>
-</li>
-<li><p>在当地社保局以灵活就业人员身份，去申请缴纳职工医保和养老保险；</p>
-</li>
-<li><p>在户口所在地的社保局交居民医疗保险和居民养老保险。</p>
-</li>
-</ol>
-<h2 id="社会保险有什么用？"><a href="#社会保险有什么用？" class="headerlink" title="社会保险有什么用？"></a>社会保险有什么用？</h2><h3 id="养老保险"><a href="#养老保险" class="headerlink" title="养老保险"></a>养老保险</h3><p>退休后发养老金。</p>
-<h3 id="工伤保险"><a href="#工伤保险" class="headerlink" title="工伤保险"></a>工伤保险</h3><p>因公受伤时，报销医疗费。</p>
-<h3 id="失业保险"><a href="#失业保险" class="headerlink" title="失业保险"></a>失业保险</h3><p>职工被辞退后无业，或农村户口辞职后无业时，可以领取失业保险金。</p>
-<h3 id="生育保险"><a href="#生育保险" class="headerlink" title="生育保险"></a>生育保险</h3><p>产妇在生育前后可以领取生育津贴、报销检查费、接生费、手术费等费用。</p>
-<h3 id="职工医疗保险、少儿保险、新农合、城镇居民医疗保险"><a href="#职工医疗保险、少儿保险、新农合、城镇居民医疗保险" class="headerlink" title="职工医疗保险、少儿保险、新农合、城镇居民医疗保险"></a>职工医疗保险、少儿保险、新农合、城镇居民医疗保险</h3><p>看病时报销医疗费。</p>
-<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>凡是报销类的社保，要求治疗项目和药物必须在国家医保目录内，才可以报销。简称社保范围内用药。范围外的，不予报销。</p>
-<p>国家医保目录见链接：<a href="http://www.gov.cn/xinwen/2019-11/28/content_5456660.htm">国家医保局、人力资源社会保障部印发2019年国家医保谈判准入药品名单</a></p>
-<p>有人就问了，那我记不住怎么办？</p>
-<p>那就在问诊时对医生说一句：「医生你好，麻烦尽量开社保范围内用药哈~」。</p>
-<p>要是医生说他也记不住，那你就得好好寻思一下你找的是什么医生了。</p>
-<h2 id="商业保险有什么用？"><a href="#商业保险有什么用？" class="headerlink" title="商业保险有什么用？"></a>商业保险有什么用？</h2><h3 id="寿险"><a href="#寿险" class="headerlink" title="寿险"></a>寿险</h3><h4 id="寿险·分类"><a href="#寿险·分类" class="headerlink" title="寿险·分类"></a>寿险·分类</h4><p>寿险按保障期限，可以分为<strong>定期寿险</strong>和<strong>终身寿险</strong>。<strong>定寿</strong>便宜，预算有限就先买来用着；<strong>终身寿险</strong>贵，适合预算足，想留笔钱给子女，及「我不管！反正我花了钱就要有得赔！」的人。</p>
-<h4 id="寿险·赔付条件"><a href="#寿险·赔付条件" class="headerlink" title="寿险·赔付条件"></a>寿险·赔付条件</h4><p>那很明显啦，寿险是自己挂了，给家属拿钱的。</p>
-<h4 id="寿险·适合人群"><a href="#寿险·适合人群" class="headerlink" title="寿险·适合人群"></a>寿险·适合人群</h4><ol>
-<li>家庭支柱</li>
-<li>成年的独生子女</li>
-</ol>
-<p>比如一家老小靠着张三吃饭，但张三突然挂了，有寿险，那家里人就有几十万赔偿傍身；</p>
-<p>没赔偿，那家里人就要守着没还完的房贷吃土了。还有像我这种单身狗，很怕哪天突然狗带了，我妈没人照顾，所以我就给自己买了份保到 60 岁的定寿。</p>
-<h4 id="寿险·常见坑"><a href="#寿险·常见坑" class="headerlink" title="寿险·常见坑"></a>寿险·常见坑</h4><blockquote>
-<p>小孩子没必要买寿险</p>
-</blockquote>
-<p>给孩子买保险，是为了在孩子生病时有钱治。但寿险是人没了才能拿的，孩子都没了要这钱做什么？所以每次看到有些代理人逮着朋友刚生孩子就让买寿险，我！就！很！烦！</p>
-<h3 id="重疾险"><a href="#重疾险" class="headerlink" title="重疾险"></a>重疾险</h3><p>大部分人说的大病保险，就是<strong>重疾险</strong>和<strong>百万医疗险</strong>（下详）。</p>
-<h4 id="重疾险·分类"><a href="#重疾险·分类" class="headerlink" title="重疾险·分类"></a>重疾险·分类</h4><p>按保障期限，可以分为<strong>定期重疾险</strong>和<strong>终身重疾险</strong>，<strong>定期重疾险</strong>比<strong>终身重疾险</strong>便宜很多，男性 20 岁买 50 万保额，保到 60 岁只要两千左右，保到 70 岁是三四千，保终身要七八千。但我国男性平均寿命 70 岁，女性 73……</p>
-<p>按赔付条件，可以分为<strong>消费型重疾险</strong>和<strong>返还型重疾险</strong>。<strong>返还型重疾险</strong>是个坑，坑到有部分保司把「返还」给打成了敏感词，让我想批判都只能叫做「那个保险」，搞得像搞黄色一样。</p>
-<h4 id="重疾险·赔付条件"><a href="#重疾险·赔付条件" class="headerlink" title="重疾险·赔付条件"></a>重疾险·赔付条件</h4><p>确诊即赔（部分疾病需达到合同约定条件），提前给付。</p>
-<p>被保人一旦确诊保单约定的某种疾病，或达到合同约定条件，就提前赔付相应保额。这段话有点长，所以很多代理人图省事（或本身就是坏），省略了「达到合同约定条件」，简写为「确诊即赔」，但这是不规范的，所以就惹出了很多麻烦！</p>
-<p>首先，普通人、临床医学、保险医学，这三者对「重疾」的定义是不一样的。</p>
-<p>保险里的重疾是针对那些病情严重、治疗花费巨大、不易治愈的疾病。像心脏支架手术。人老了或太胖后，心脏血管就会硬化堵塞，管道变窄，这时候就可以在血管切个口子，放个支架进去，把血管撑大来，让它能正常工作。是物理+精神双重意义上的「开心」~</p>
-<ol>
-<li>普通人：都要动到心脏了，常威你还说不是重疾？</li>
-<li>临床医学：全麻都不用，局部麻醉就可以做，不算小手术，要经验丰富的医生才能做，但也不算什么大 case；</li>
-<li>保险医学：国产支架 8000 块，进口支架 1 万块，手术完就可以下床，1 天就能出院，1 周就能生活自理。要是这样都能拿 50 万重疾理赔，那患癌症的不要面子的啊？！</li>
-</ol>
-<p>再举个被最多人 diss「苛刻的急性心肌梗塞」，这是一个标准的急性心肌梗塞的重疾条款定义。</p>
-<blockquote>
-<p><strong>煎蛋保险小课堂</strong></p>
-<p><em>客户</em>：医生都说我是急性心肌梗塞咯！合同里也说了保急性心肌梗塞的啊，为什么你不赔？！</p>
-<p><em>理赔专员</em>：先生您好，合同里有说明急性心肌梗塞要满足至少 3 个条件才算重疾，才可以赔的。</p>
-<p><em>客户</em>：医生说了不算，你们说才算？你们这是要重新定义急性心肌梗塞吗？</p>
-<p><em>理赔专员</em>：先生，我们合同里有规……</p>
-<p><em>客户</em>：保险都是大屁眼子！</p>
-<p><em>理赔专员</em>：……（屁眼子好累）</p>
-</blockquote>
-<p>很多代理人在解释时，都只会复读「这是合同规定的」。但规定了什么，难道我们就不认字吗？<br>换我听了这种解释，我也会觉得保险是大屁眼子，但是为什么会要这样规定呢？</p>
-<p>这里借鉴一个车险里的玻璃险来参考，车的挡风玻璃出现轻微裂痕但又不影响正常使用时，为了避免车主拿到理赔后不更换玻璃，甚至在裂痕扩大后二次申请赔偿，所以会和车主协商，对玻璃进行扩损，用小锤锤砸到玻璃确保用不了，才能理赔。</p>
-<p>回到重疾定义也是一样的，就算是感冒也分轻感冒和重感冒、流感致死，重疾也是需要确定这个病到达了「重」的程度才能按重疾理赔。</p>
-<p>我们再回顾一下知识要点：保险里的重疾是针对那些<strong>病情严重</strong>、<strong>治疗花费巨大</strong>、<strong>不易治愈</strong>的疾病，都没到那么严重呢，保险公司赔的话也很委屈，而且 25 种重大疾病的重疾定义是由国家银保监会统一规定的，保险公司动不了手脚。</p>
-<h4 id="重疾险·适合人群"><a href="#重疾险·适合人群" class="headerlink" title="重疾险·适合人群"></a>重疾险·适合人群</h4><p>除了老人外的人。</p>
-<p>重疾险的价格是越年轻买就越便宜：0 岁小宝宝买定期重疾的抄底价是 500 左右/年。60 岁大宝宝买，就要奔近 10000 元/年去了，交的钱和赔的钱都要持平了。</p>
-<p>另外重疾险对被保人的健康状况有要求，像高血压、有肺结节的人群很难投保，或者需要加费，甚至直接被拒保。因此买到了重疾险的人，就相当于获得了保险公司的「检疫合格认证」：此人身体 OK，请大家放心食用。</p>
-<p>但对于那种什么「能买保险代表你有福气」的论调……我通常会回一句「对呀~能吃屎还代表您牙口好呢」。</p>
-<h3 id="医疗险"><a href="#医疗险" class="headerlink" title="医疗险"></a>医疗险</h3><h4 id="医疗险·分类"><a href="#医疗险·分类" class="headerlink" title="医疗险·分类"></a>医疗险·分类</h4><p>医疗险常见的有<strong>百万医疗险</strong>、<strong>防癌医疗险</strong>和<strong>小额医疗险</strong>。</p>
-<ol>
-<li><p>百万医疗险</p>
-<p> 300+/年，是为治大病用的，不管是因为意外、癌症或其他疾病原因都可以报销（违法犯罪的除外！），通常有 1 万免赔额，所以基本也就住院才能用得到了，额度最高可以报销上百万。</p>
-</li>
-<li><p>防癌医疗险</p>
-<p> 300～1000/年，是百万医疗险的精简版，只保因癌症导致的治疗，是专门给买不了百万医疗险提供的备胎。</p>
-</li>
-<li><p>小额医疗险</p>
-<p> 500～600/年，是日常看小病用的，免赔额从零到几百不等，额度通常在两三万内，是百万医疗险的补充。</p>
-</li>
-</ol>
-<h4 id="医疗险·赔付条件"><a href="#医疗险·赔付条件" class="headerlink" title="医疗险·赔付条件"></a>医疗险·赔付条件</h4><p>医疗险都是报销型，花多少，报多少。</p>
-<p>这里要注意一点：医疗险通常会要求社保范围内用药。部分产品可以报销非社保用药、门诊治疗，但价格也会相对比较贵，可以按需选择。</p>
-<p>很多人搞不懂<strong>医疗险</strong>和<strong>重疾险</strong>的区别，这里简单类比一下：</p>
-<p><strong>百万医疗险</strong>：报销型，需要治疗完成后拿着票据去报销。像个会计小姐姐：「发生医疗支出了？OK，拿发票来，我报销。」</p>
-<p><strong>重疾险</strong>：提前给付型，确诊即赔（部分需要达到理赔条件）。像个土豪朋友：「发生重大疾病了？OK，给个账号，我给你打钱」</p>
-<p>百万医疗险通常搭配重疾险使用，如果实在要 2 选 1 的话，我会先选百万医疗险。</p>
-<h4 id="医疗险·适合人群"><a href="#医疗险·适合人群" class="headerlink" title="医疗险·适合人群"></a>医疗险·适合人群</h4><ol>
-<li><p>百万医疗险：适合10岁以上所有能买的人买</p>
-<p> 百万医疗险是最体现保险本质的险种，但也是对被保人健康要求最严格的险种，老人、三高等人群通常是买不了的了。</p>
-<p> 不管是男是女，是20岁还是40岁，一年200多，就能换到最高100万的医疗费用报销。<br> 但8岁以下的宝宝理赔率比较高，会受到针对，价格会跳到900多。这时候就不推荐给孩子配医疗险了，可以换成惠民保+意外险。</p>
-</li>
-<li><p>防癌医疗险：适合买不了百万医疗险的老人和三高患者买</p>
-<p> 防癌险对健康要求会比百万医疗险宽松，所以老人和三高可以退而求其次，买一份防癌险，来保障最高发的癌症疾病。</p>
-</li>
-<li><p>小额医疗险：不推荐购买</p>
-<p> 小额医疗险使用的频率高，理赔率就高，所以保费也跟着贵，贵还是小事，最怕的是医疗险理赔多了，会被保险公司认为这人健康有问题，影响到后面买保险和理赔，所以综合考虑，不推荐购买。</p>
-</li>
-</ol>
-<h3 id="意外险"><a href="#意外险" class="headerlink" title="意外险"></a>意外险</h3><h4 id="意外险·分类"><a href="#意外险·分类" class="headerlink" title="意外险·分类"></a>意外险·分类</h4><p>按保障范围可以分为<strong>综合意外险</strong>和<strong>交通工具意外险</strong>、猝死险等<strong>专项意外险</strong>。</p>
-<p>部分意外险只保身故和全残，不保意外伤害医疗。这种一般还是长期型意外险，又贵又坑。还有部分打着<strong>综合意外险</strong>名号的产品，却只保交通工具引起的意外，像落水、被狗咬这种就不赔，这点需要看清楚。</p>
-<h4 id="意外险·理赔条件"><a href="#意外险·理赔条件" class="headerlink" title="意外险·理赔条件"></a>意外险·理赔条件</h4><p>意外险的理赔有一个基础定义：所受到的伤害必须是外来的、突发的、非本意的、非疾病的，才会赔。</p>
-<p>比如吃鱼时被刺卡喉了，这叫外来的突发的，可以赔。但坐姿不端导致腰椎间盘突出，这种就不是外来的，还属于疾病，不赔。张三出门被车撞了，这叫非本意的，可以赔。但要是张三看到车来了赶紧撞上去，没撞伤的叫碰瓷，撞伤了的叫骗保，不但不赔还要接受来自警察叔叔的惩罚。</p>
-<h4 id="意外险·适合人群"><a href="#意外险·适合人群" class="headerlink" title="意外险·适合人群"></a>意外险·适合人群</h4><ol>
-<li><p>普通人</p>
-<p> 普通人买意外险主要看意外伤害医疗额度，买的时候需要注意3大点：是否可以用于门诊医疗；是否可以报销社保范围外医疗；如果有住院津贴的话，那就更是加分项。</p>
-</li>
-<li><p>老人、孩子</p>
-<p> 老人腿脚不便，容易摔碰，小孩子太好动，而且容易发生烫伤、鱼刺卡喉这种小意外，所以这两者都推荐购买。</p>
-</li>
-<li><p>空中飞人、出差达人</p>
-<p> 说起来让人心塞，但这两类人要注意看身故/伤残额度……</p>
-</li>
-</ol>
-<p>伤残这里有个坑，伤残等级最低是 10 级，最高是 1 级，有些意外险只赔全残（1、2级），不赔伤残。</p>
-<p>交通工具赔付这里也有个要注意的点：有些意外险只赔公共交通工具，像高铁、公交、地铁、出租车。但是网约车这种私人运营的交通工具，到底属不属于「公共」，法律没定性，所以部分保司也没更新，容易引起纠纷，买的时候多问一嘴。</p>
-]]></content>
-      <categories>
-        <category>转载</category>
-      </categories>
-      <tags>
-        <tag>转载</tag>
-        <tag>保险</tag>
       </tags>
   </entry>
   <entry>
@@ -5578,6 +5420,164 @@
       </categories>
       <tags>
         <tag>英语</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>煎蛋保险小课堂</title>
+    <url>/2021/09/29/%E7%85%8E%E8%9B%8B%E4%BF%9D%E9%99%A9%E5%B0%8F%E8%AF%BE%E5%A0%82/</url>
+    <content><![CDATA[<p>蛋友 阿Lam：</p>
+<blockquote>
+<p>因为看到部分蛋友有保险困扰。我又刚好是这行的，所以做了个小科普。</p>
+</blockquote>
+<p>转载自：<a href="http://jandan.net/p/109642">煎蛋保险小课堂</a></p>
+<span id="more"></span>
+<h2 id="有哪些保险？"><a href="#有哪些保险？" class="headerlink" title="有哪些保险？"></a>有哪些保险？</h2><p>保险的种类称作险种，按缴费方式分，可以分为<strong>社会保险</strong>（强制交）和<strong>商业保险</strong>（自愿购买）。</p>
+<h3 id="社会保险（社保）"><a href="#社会保险（社保）" class="headerlink" title="社会保险（社保）"></a>社会保险（社保）</h3><ol>
+<li><p>城镇职工五险一金中的五险：养老保险、医疗保险、工伤保险、失业保险、生育保险；</p>
+</li>
+<li><p>城市少儿医保；</p>
+</li>
+<li><p>城镇居民医疗保险/乡镇居民的新型农村合作医疗（新农合）。</p>
+</li>
+</ol>
+<p>社保是国家福利，是最基础的保障，商保可以没有，但社保必须在手。</p>
+<p>医保是社保中的一个类别，具体指五险中的医疗保险、城市少儿医保、城镇居民医疗保险、新农合。四者不能重复报销，所以在公司交了五险一金的，在老家就不用浪费钱交新农合了。</p>
+<p>城市少儿医保是给小孩子办的，有本市户口的，出生就可以办；没本市户口的，要等上幼儿园/小学后才能统一办；没本市户口的家庭，可以先给孩子在老家交个新农合，平时在城市门诊治疗是没法报销了，但住院治疗要花大钱时可以申请异地报销。</p>
+<p>有社保的人在买部分商保时，比没社保的要便宜</p>
+<h3 id="商业保险"><a href="#商业保险" class="headerlink" title="商业保险"></a>商业保险</h3><p>商业保险按保险标的（对象）分为<strong>人身险</strong>和<strong>财产险</strong>。</p>
+<p><strong>人身险</strong>就是保人的寿命和健康的，<strong>财产险</strong>就是保人的房车等财产的，其中的代表就是车险。</p>
+<p>人身险里有四大类险种，分别是<strong>寿险</strong>、<strong>重疾险</strong>、<strong>医疗险</strong>、<strong>意外险</strong>。其中<strong>重疾险</strong>和<strong>医疗险</strong>都属于健康险。</p>
+<ol>
+<li><p>寿险（保死，狗带了就赔一大笔钱）；</p>
+</li>
+<li><p>健康险（保生，生病了就赔钱或报销医疗费）；</p>
+<ol>
+<li><p>重疾险；</p>
+</li>
+<li><p>医疗险：百万医疗险、防癌医疗险、小额医疗险。</p>
+</li>
+</ol>
+</li>
+<li><p>意外险（保非疾病导致的生和死，比如被车撞了，狗带了就赔钱，没带就报销医疗费。但如果是因癌症等疾病引起的，那带不带都不赔）。</p>
+</li>
+</ol>
+<h3 id="课外小姿势"><a href="#课外小姿势" class="headerlink" title="课外小姿势"></a>课外小姿势</h3><h4 id="团险"><a href="#团险" class="headerlink" title="团险"></a>团险</h4><p>公司团险不是一个具体的险种，而是一种承保方式，我们平常办商保都是个人给个人买，团险则是一个团体给它的成员统一购买。<br>像有些公司 HR 招人时喊的「六险一金」，多的那个险就一般是商业团险，具体险种一般是意外险、医疗险，成本大概是 100 块/人年。</p>
+<h4 id="「我买了保险」"><a href="#「我买了保险」" class="headerlink" title="「我买了保险」"></a>「我买了保险」</h4><p>重疾险的理赔动不动就是几十万，所以审核会很严格，会查你的诊断报告、病例书等，所以在看一些你不知道是什么病的时候，记得提醒医生：「我买了保险！」</p>
+<p>然后有经验的医生都能 get 到，病例就尽量不会写影响理赔的内容了。</p>
+<h4 id="自由职业怎么交社保"><a href="#自由职业怎么交社保" class="headerlink" title="自由职业怎么交社保"></a>自由职业怎么交社保</h4><ol>
+<li><p>挂在朋友或专门的公司去正常交职工五险一金，但这个有法律风险，不提倡；</p>
+</li>
+<li><p>在当地社保局以灵活就业人员身份，去申请缴纳职工医保和养老保险；</p>
+</li>
+<li><p>在户口所在地的社保局交居民医疗保险和居民养老保险。</p>
+</li>
+</ol>
+<h2 id="社会保险有什么用？"><a href="#社会保险有什么用？" class="headerlink" title="社会保险有什么用？"></a>社会保险有什么用？</h2><h3 id="养老保险"><a href="#养老保险" class="headerlink" title="养老保险"></a>养老保险</h3><p>退休后发养老金。</p>
+<h3 id="工伤保险"><a href="#工伤保险" class="headerlink" title="工伤保险"></a>工伤保险</h3><p>因公受伤时，报销医疗费。</p>
+<h3 id="失业保险"><a href="#失业保险" class="headerlink" title="失业保险"></a>失业保险</h3><p>职工被辞退后无业，或农村户口辞职后无业时，可以领取失业保险金。</p>
+<h3 id="生育保险"><a href="#生育保险" class="headerlink" title="生育保险"></a>生育保险</h3><p>产妇在生育前后可以领取生育津贴、报销检查费、接生费、手术费等费用。</p>
+<h3 id="职工医疗保险、少儿保险、新农合、城镇居民医疗保险"><a href="#职工医疗保险、少儿保险、新农合、城镇居民医疗保险" class="headerlink" title="职工医疗保险、少儿保险、新农合、城镇居民医疗保险"></a>职工医疗保险、少儿保险、新农合、城镇居民医疗保险</h3><p>看病时报销医疗费。</p>
+<h3 id="注意"><a href="#注意" class="headerlink" title="注意"></a>注意</h3><p>凡是报销类的社保，要求治疗项目和药物必须在国家医保目录内，才可以报销。简称社保范围内用药。范围外的，不予报销。</p>
+<p>国家医保目录见链接：<a href="http://www.gov.cn/xinwen/2019-11/28/content_5456660.htm">国家医保局、人力资源社会保障部印发2019年国家医保谈判准入药品名单</a></p>
+<p>有人就问了，那我记不住怎么办？</p>
+<p>那就在问诊时对医生说一句：「医生你好，麻烦尽量开社保范围内用药哈~」。</p>
+<p>要是医生说他也记不住，那你就得好好寻思一下你找的是什么医生了。</p>
+<h2 id="商业保险有什么用？"><a href="#商业保险有什么用？" class="headerlink" title="商业保险有什么用？"></a>商业保险有什么用？</h2><h3 id="寿险"><a href="#寿险" class="headerlink" title="寿险"></a>寿险</h3><h4 id="寿险·分类"><a href="#寿险·分类" class="headerlink" title="寿险·分类"></a>寿险·分类</h4><p>寿险按保障期限，可以分为<strong>定期寿险</strong>和<strong>终身寿险</strong>。<strong>定寿</strong>便宜，预算有限就先买来用着；<strong>终身寿险</strong>贵，适合预算足，想留笔钱给子女，及「我不管！反正我花了钱就要有得赔！」的人。</p>
+<h4 id="寿险·赔付条件"><a href="#寿险·赔付条件" class="headerlink" title="寿险·赔付条件"></a>寿险·赔付条件</h4><p>那很明显啦，寿险是自己挂了，给家属拿钱的。</p>
+<h4 id="寿险·适合人群"><a href="#寿险·适合人群" class="headerlink" title="寿险·适合人群"></a>寿险·适合人群</h4><ol>
+<li>家庭支柱</li>
+<li>成年的独生子女</li>
+</ol>
+<p>比如一家老小靠着张三吃饭，但张三突然挂了，有寿险，那家里人就有几十万赔偿傍身；</p>
+<p>没赔偿，那家里人就要守着没还完的房贷吃土了。还有像我这种单身狗，很怕哪天突然狗带了，我妈没人照顾，所以我就给自己买了份保到 60 岁的定寿。</p>
+<h4 id="寿险·常见坑"><a href="#寿险·常见坑" class="headerlink" title="寿险·常见坑"></a>寿险·常见坑</h4><blockquote>
+<p>小孩子没必要买寿险</p>
+</blockquote>
+<p>给孩子买保险，是为了在孩子生病时有钱治。但寿险是人没了才能拿的，孩子都没了要这钱做什么？所以每次看到有些代理人逮着朋友刚生孩子就让买寿险，我！就！很！烦！</p>
+<h3 id="重疾险"><a href="#重疾险" class="headerlink" title="重疾险"></a>重疾险</h3><p>大部分人说的大病保险，就是<strong>重疾险</strong>和<strong>百万医疗险</strong>（下详）。</p>
+<h4 id="重疾险·分类"><a href="#重疾险·分类" class="headerlink" title="重疾险·分类"></a>重疾险·分类</h4><p>按保障期限，可以分为<strong>定期重疾险</strong>和<strong>终身重疾险</strong>，<strong>定期重疾险</strong>比<strong>终身重疾险</strong>便宜很多，男性 20 岁买 50 万保额，保到 60 岁只要两千左右，保到 70 岁是三四千，保终身要七八千。但我国男性平均寿命 70 岁，女性 73……</p>
+<p>按赔付条件，可以分为<strong>消费型重疾险</strong>和<strong>返还型重疾险</strong>。<strong>返还型重疾险</strong>是个坑，坑到有部分保司把「返还」给打成了敏感词，让我想批判都只能叫做「那个保险」，搞得像搞黄色一样。</p>
+<h4 id="重疾险·赔付条件"><a href="#重疾险·赔付条件" class="headerlink" title="重疾险·赔付条件"></a>重疾险·赔付条件</h4><p>确诊即赔（部分疾病需达到合同约定条件），提前给付。</p>
+<p>被保人一旦确诊保单约定的某种疾病，或达到合同约定条件，就提前赔付相应保额。这段话有点长，所以很多代理人图省事（或本身就是坏），省略了「达到合同约定条件」，简写为「确诊即赔」，但这是不规范的，所以就惹出了很多麻烦！</p>
+<p>首先，普通人、临床医学、保险医学，这三者对「重疾」的定义是不一样的。</p>
+<p>保险里的重疾是针对那些病情严重、治疗花费巨大、不易治愈的疾病。像心脏支架手术。人老了或太胖后，心脏血管就会硬化堵塞，管道变窄，这时候就可以在血管切个口子，放个支架进去，把血管撑大来，让它能正常工作。是物理+精神双重意义上的「开心」~</p>
+<ol>
+<li>普通人：都要动到心脏了，常威你还说不是重疾？</li>
+<li>临床医学：全麻都不用，局部麻醉就可以做，不算小手术，要经验丰富的医生才能做，但也不算什么大 case；</li>
+<li>保险医学：国产支架 8000 块，进口支架 1 万块，手术完就可以下床，1 天就能出院，1 周就能生活自理。要是这样都能拿 50 万重疾理赔，那患癌症的不要面子的啊？！</li>
+</ol>
+<p>再举个被最多人 diss「苛刻的急性心肌梗塞」，这是一个标准的急性心肌梗塞的重疾条款定义。</p>
+<blockquote>
+<p><strong>煎蛋保险小课堂</strong></p>
+<p><em>客户</em>：医生都说我是急性心肌梗塞咯！合同里也说了保急性心肌梗塞的啊，为什么你不赔？！</p>
+<p><em>理赔专员</em>：先生您好，合同里有说明急性心肌梗塞要满足至少 3 个条件才算重疾，才可以赔的。</p>
+<p><em>客户</em>：医生说了不算，你们说才算？你们这是要重新定义急性心肌梗塞吗？</p>
+<p><em>理赔专员</em>：先生，我们合同里有规……</p>
+<p><em>客户</em>：保险都是大屁眼子！</p>
+<p><em>理赔专员</em>：……（屁眼子好累）</p>
+</blockquote>
+<p>很多代理人在解释时，都只会复读「这是合同规定的」。但规定了什么，难道我们就不认字吗？<br>换我听了这种解释，我也会觉得保险是大屁眼子，但是为什么会要这样规定呢？</p>
+<p>这里借鉴一个车险里的玻璃险来参考，车的挡风玻璃出现轻微裂痕但又不影响正常使用时，为了避免车主拿到理赔后不更换玻璃，甚至在裂痕扩大后二次申请赔偿，所以会和车主协商，对玻璃进行扩损，用小锤锤砸到玻璃确保用不了，才能理赔。</p>
+<p>回到重疾定义也是一样的，就算是感冒也分轻感冒和重感冒、流感致死，重疾也是需要确定这个病到达了「重」的程度才能按重疾理赔。</p>
+<p>我们再回顾一下知识要点：保险里的重疾是针对那些<strong>病情严重</strong>、<strong>治疗花费巨大</strong>、<strong>不易治愈</strong>的疾病，都没到那么严重呢，保险公司赔的话也很委屈，而且 25 种重大疾病的重疾定义是由国家银保监会统一规定的，保险公司动不了手脚。</p>
+<h4 id="重疾险·适合人群"><a href="#重疾险·适合人群" class="headerlink" title="重疾险·适合人群"></a>重疾险·适合人群</h4><p>除了老人外的人。</p>
+<p>重疾险的价格是越年轻买就越便宜：0 岁小宝宝买定期重疾的抄底价是 500 左右/年。60 岁大宝宝买，就要奔近 10000 元/年去了，交的钱和赔的钱都要持平了。</p>
+<p>另外重疾险对被保人的健康状况有要求，像高血压、有肺结节的人群很难投保，或者需要加费，甚至直接被拒保。因此买到了重疾险的人，就相当于获得了保险公司的「检疫合格认证」：此人身体 OK，请大家放心食用。</p>
+<p>但对于那种什么「能买保险代表你有福气」的论调……我通常会回一句「对呀~能吃屎还代表您牙口好呢」。</p>
+<h3 id="医疗险"><a href="#医疗险" class="headerlink" title="医疗险"></a>医疗险</h3><h4 id="医疗险·分类"><a href="#医疗险·分类" class="headerlink" title="医疗险·分类"></a>医疗险·分类</h4><p>医疗险常见的有<strong>百万医疗险</strong>、<strong>防癌医疗险</strong>和<strong>小额医疗险</strong>。</p>
+<ol>
+<li><p>百万医疗险</p>
+<p> 300+/年，是为治大病用的，不管是因为意外、癌症或其他疾病原因都可以报销（违法犯罪的除外！），通常有 1 万免赔额，所以基本也就住院才能用得到了，额度最高可以报销上百万。</p>
+</li>
+<li><p>防癌医疗险</p>
+<p> 300～1000/年，是百万医疗险的精简版，只保因癌症导致的治疗，是专门给买不了百万医疗险提供的备胎。</p>
+</li>
+<li><p>小额医疗险</p>
+<p> 500～600/年，是日常看小病用的，免赔额从零到几百不等，额度通常在两三万内，是百万医疗险的补充。</p>
+</li>
+</ol>
+<h4 id="医疗险·赔付条件"><a href="#医疗险·赔付条件" class="headerlink" title="医疗险·赔付条件"></a>医疗险·赔付条件</h4><p>医疗险都是报销型，花多少，报多少。</p>
+<p>这里要注意一点：医疗险通常会要求社保范围内用药。部分产品可以报销非社保用药、门诊治疗，但价格也会相对比较贵，可以按需选择。</p>
+<p>很多人搞不懂<strong>医疗险</strong>和<strong>重疾险</strong>的区别，这里简单类比一下：</p>
+<p><strong>百万医疗险</strong>：报销型，需要治疗完成后拿着票据去报销。像个会计小姐姐：「发生医疗支出了？OK，拿发票来，我报销。」</p>
+<p><strong>重疾险</strong>：提前给付型，确诊即赔（部分需要达到理赔条件）。像个土豪朋友：「发生重大疾病了？OK，给个账号，我给你打钱」</p>
+<p>百万医疗险通常搭配重疾险使用，如果实在要 2 选 1 的话，我会先选百万医疗险。</p>
+<h4 id="医疗险·适合人群"><a href="#医疗险·适合人群" class="headerlink" title="医疗险·适合人群"></a>医疗险·适合人群</h4><ol>
+<li><p>百万医疗险：适合10岁以上所有能买的人买</p>
+<p> 百万医疗险是最体现保险本质的险种，但也是对被保人健康要求最严格的险种，老人、三高等人群通常是买不了的了。</p>
+<p> 不管是男是女，是20岁还是40岁，一年200多，就能换到最高100万的医疗费用报销。<br> 但8岁以下的宝宝理赔率比较高，会受到针对，价格会跳到900多。这时候就不推荐给孩子配医疗险了，可以换成惠民保+意外险。</p>
+</li>
+<li><p>防癌医疗险：适合买不了百万医疗险的老人和三高患者买</p>
+<p> 防癌险对健康要求会比百万医疗险宽松，所以老人和三高可以退而求其次，买一份防癌险，来保障最高发的癌症疾病。</p>
+</li>
+<li><p>小额医疗险：不推荐购买</p>
+<p> 小额医疗险使用的频率高，理赔率就高，所以保费也跟着贵，贵还是小事，最怕的是医疗险理赔多了，会被保险公司认为这人健康有问题，影响到后面买保险和理赔，所以综合考虑，不推荐购买。</p>
+</li>
+</ol>
+<h3 id="意外险"><a href="#意外险" class="headerlink" title="意外险"></a>意外险</h3><h4 id="意外险·分类"><a href="#意外险·分类" class="headerlink" title="意外险·分类"></a>意外险·分类</h4><p>按保障范围可以分为<strong>综合意外险</strong>和<strong>交通工具意外险</strong>、猝死险等<strong>专项意外险</strong>。</p>
+<p>部分意外险只保身故和全残，不保意外伤害医疗。这种一般还是长期型意外险，又贵又坑。还有部分打着<strong>综合意外险</strong>名号的产品，却只保交通工具引起的意外，像落水、被狗咬这种就不赔，这点需要看清楚。</p>
+<h4 id="意外险·理赔条件"><a href="#意外险·理赔条件" class="headerlink" title="意外险·理赔条件"></a>意外险·理赔条件</h4><p>意外险的理赔有一个基础定义：所受到的伤害必须是外来的、突发的、非本意的、非疾病的，才会赔。</p>
+<p>比如吃鱼时被刺卡喉了，这叫外来的突发的，可以赔。但坐姿不端导致腰椎间盘突出，这种就不是外来的，还属于疾病，不赔。张三出门被车撞了，这叫非本意的，可以赔。但要是张三看到车来了赶紧撞上去，没撞伤的叫碰瓷，撞伤了的叫骗保，不但不赔还要接受来自警察叔叔的惩罚。</p>
+<h4 id="意外险·适合人群"><a href="#意外险·适合人群" class="headerlink" title="意外险·适合人群"></a>意外险·适合人群</h4><ol>
+<li><p>普通人</p>
+<p> 普通人买意外险主要看意外伤害医疗额度，买的时候需要注意3大点：是否可以用于门诊医疗；是否可以报销社保范围外医疗；如果有住院津贴的话，那就更是加分项。</p>
+</li>
+<li><p>老人、孩子</p>
+<p> 老人腿脚不便，容易摔碰，小孩子太好动，而且容易发生烫伤、鱼刺卡喉这种小意外，所以这两者都推荐购买。</p>
+</li>
+<li><p>空中飞人、出差达人</p>
+<p> 说起来让人心塞，但这两类人要注意看身故/伤残额度……</p>
+</li>
+</ol>
+<p>伤残这里有个坑，伤残等级最低是 10 级，最高是 1 级，有些意外险只赔全残（1、2级），不赔伤残。</p>
+<p>交通工具赔付这里也有个要注意的点：有些意外险只赔公共交通工具，像高铁、公交、地铁、出租车。但是网约车这种私人运营的交通工具，到底属不属于「公共」，法律没定性，所以部分保司也没更新，容易引起纠纷，买的时候多问一嘴。</p>
+]]></content>
+      <categories>
+        <category>转载</category>
+      </categories>
+      <tags>
+        <tag>转载</tag>
+        <tag>保险</tag>
       </tags>
   </entry>
   <entry>
