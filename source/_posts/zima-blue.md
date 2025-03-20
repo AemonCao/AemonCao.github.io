@@ -8,7 +8,6 @@ tags:
 url: 316.html
 id: 316
 categories:
-  - 科幻
   - 转载
 date: 2019-03-22 15:59:27
 ---
