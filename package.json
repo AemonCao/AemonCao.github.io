@@ -10,7 +10,7 @@
     "new:post": "hexo new post $1"
   },
   "hexo": {
-    "version": "7.2.0"
+    "version": "7.1.0"
   },
   "dependencies": {
     "hexo": "^7.0.0-rc1",
