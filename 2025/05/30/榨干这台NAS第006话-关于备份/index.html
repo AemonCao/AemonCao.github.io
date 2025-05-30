@@ -1,0 +1,778 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 7.3.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-256x256-next.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.ico">
+  <link rel="mask-icon" href="/images/favicon-256x256-next.ico" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|Monaco:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.css">
+  <script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"aemoncao.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#ff69b4","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="防患于未然。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="榨干这台NAS第006话-关于备份">
+<meta property="og:url" content="https://aemoncao.github.io/2025/05/30/%E6%A6%A8%E5%B9%B2%E8%BF%99%E5%8F%B0NAS%E7%AC%AC006%E8%AF%9D-%E5%85%B3%E4%BA%8E%E5%A4%87%E4%BB%BD/index.html">
+<meta property="og:site_name" content="Aemon&#39;s Blog">
+<meta property="og:description" content="防患于未然。">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/%E6%A6%A8%E5%B9%B2%E8%BF%99%E5%8F%B0NAS%E7%AC%AC006%E8%AF%9D-%E5%85%B3%E4%BA%8E%E5%A4%87%E4%BB%BD/%E5%AF%86%E4%BF%9D%E5%8D%A1.webp">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/%E6%A6%A8%E5%B9%B2%E8%BF%99%E5%8F%B0NAS%E7%AC%AC006%E8%AF%9D-%E5%85%B3%E4%BA%8E%E5%A4%87%E4%BB%BD/Excel%E5%AF%86%E4%BF%9D%E5%8D%A1.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/%E6%A6%A8%E5%B9%B2%E8%BF%99%E5%8F%B0NAS%E7%AC%AC006%E8%AF%9D-%E5%85%B3%E4%BA%8E%E5%A4%87%E4%BB%BD/Backrest%E7%95%8C%E9%9D%A21.png">
+<meta property="og:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/%E6%A6%A8%E5%B9%B2%E8%BF%99%E5%8F%B0NAS%E7%AC%AC006%E8%AF%9D-%E5%85%B3%E4%BA%8E%E5%A4%87%E4%BB%BD/Backrest%E7%95%8C%E9%9D%A22.png">
+<meta property="article:published_time" content="2025-05-30T12:55:35.000Z">
+<meta property="article:modified_time" content="2025-05-30T18:01:25.792Z">
+<meta property="article:author" content="Aemon">
+<meta property="article:tag" content="Docker">
+<meta property="article:tag" content="NAS">
+<meta property="article:tag" content="unRAID">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/%E6%A6%A8%E5%B9%B2%E8%BF%99%E5%8F%B0NAS%E7%AC%AC006%E8%AF%9D-%E5%85%B3%E4%BA%8E%E5%A4%87%E4%BB%BD/%E5%AF%86%E4%BF%9D%E5%8D%A1.webp">
+
+<link rel="canonical" href="https://aemoncao.github.io/2025/05/30/%E6%A6%A8%E5%B9%B2%E8%BF%99%E5%8F%B0NAS%E7%AC%AC006%E8%AF%9D-%E5%85%B3%E4%BA%8E%E5%A4%87%E4%BB%BD/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>榨干这台NAS第006话-关于备份 | Aemon's Blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-160072313-1"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-160072313-1');
+      }
+    </script>
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?bba62503a88ce6563ac3ec7e0c6e491c";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Aemon's Blog" type="application/atom+xml">
+<link rel="alternate" href="/rss2.xml" title="Aemon's Blog" type="application/rss+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Aemon's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">切勿浅尝辄止</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fas fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="far fa-hand-spock fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fab fa-accessible-icon fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/AemonCao" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://aemoncao.github.io/2025/05/30/%E6%A6%A8%E5%B9%B2%E8%BF%99%E5%8F%B0NAS%E7%AC%AC006%E8%AF%9D-%E5%85%B3%E4%BA%8E%E5%A4%87%E4%BB%BD/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Aemon">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Aemon's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          榨干这台NAS第006话-关于备份
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+
+              <time title="创建时间：2025-05-30 20:55:35" itemprop="dateCreated datePublished" datetime="2025-05-30T20:55:35+08:00">2025-05-30</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">更新于</span>
+                <time title="修改时间：2025-05-31 02:01:25" itemprop="dateModified" datetime="2025-05-31T02:01:25+08:00">2025-05-31</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%A6%A8%E5%B9%B2%E8%BF%99%E5%8F%B0-NAS/" itemprop="url" rel="index"><span itemprop="name">榨干这台 NAS</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span>
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Valine：</span>
+    
+    <a title="valine" href="/2025/05/30/%E6%A6%A8%E5%B9%B2%E8%BF%99%E5%8F%B0NAS%E7%AC%AC006%E8%AF%9D-%E5%85%B3%E4%BA%8E%E5%A4%87%E4%BB%BD/#valine-comments" itemprop="discussionUrl">
+      <span class="post-comments-count valine-comment-count" data-xid="/2025/05/30/%E6%A6%A8%E5%B9%B2%E8%BF%99%E5%8F%B0NAS%E7%AC%AC006%E8%AF%9D-%E5%85%B3%E4%BA%8E%E5%A4%87%E4%BB%BD/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  <br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>4.3k</span>
+            </span>
+            <div class="post-description">防患于未然。</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>这是一系列关于 NAS 的文章，系列的名称你们也看到了：「<strong>榨干这台 NAS</strong>」。我将尽可能详细的介绍 NAS 相关的知识，帮助你最大限度的发挥你的手中 NAS 的威力！</p>
+<span id="more"></span>
+<p>又拖了一年，实在惭愧。今天来讲讲备份，这两天对于把 NAS 上的重要文件都做了备份，就顺便来写一下记录记录。</p>
+<h3 id="备份的重要性"><a href="#备份的重要性" class="headerlink" title="备份的重要性"></a>备份的重要性</h3><p>备份的重要性不言而喻，但是又只有当数据丢失时才会体会到它的重要。以下内容仅限于 NAS 上的文件备份，不包括手机和其他内容。大家可以定时先备份内容到 NAS 上。</p>
+<p>备份是为了安全，安全分为两种，数据安全和隐私安全。</p>
+<p>数据安全是指备份内容会不会丢失，损毁；而隐私安全是指你的备份数据会不会被窃取，被公开。对于数据内容的不同，两者的重要性也不一样。</p>
+<h3 id="常用的备份方式以及优缺点"><a href="#常用的备份方式以及优缺点" class="headerlink" title="常用的备份方式以及优缺点"></a>常用的备份方式以及优缺点</h3><h4 id="内部硬盘备份"><a href="#内部硬盘备份" class="headerlink" title="内部硬盘备份"></a>内部硬盘备份</h4><p>一般较为简单的方式就是拷贝一份到别的盘或文件夹上。这就是内部硬盘（Internal HDD）备份方式。这种方式优点是：</p>
+<ol>
+<li><p>备份快捷方便，只要定时复制一份就好；</p>
+</li>
+<li><p>成本较低，在现有硬盘空间富裕的情况下，无需多余的费用；</p>
+</li>
+</ol>
+<p>当然，其缺点也是显而易见的：</p>
+<ol>
+<li><p>同盘备份容易受损或感染，例如前几年开始流行的勒索病毒，它可以感染整台设备的上的文件，无一例外的你的备份也将无法幸免；</p>
+</li>
+<li><p>空间是有限的，在需要备份的文件过大时，对应所需的硬盘空间也会变大。</p>
+</li>
+</ol>
+<h4 id="可移动存储媒介备份"><a href="#可移动存储媒介备份" class="headerlink" title="可移动存储媒介备份"></a>可移动存储媒介备份</h4><p>这种方式兼顾了内部硬盘备份的方便，又保证了一定程度的安全，一般来说这也叫冷备份。方式是将需要备份的数据拷贝一份到 U 盘，移动硬盘，机械硬盘或光盘等存储介质上。并在备份完成后断电保存。其优点有：</p>
+<ol>
+<li><p>单次备份较为快捷，在进行一次性的备份时较为方便；</p>
+</li>
+<li><p>支持异地备份，由于可移动的性质，这种方式符合 <a target="_blank" rel="noopener" href="https://www.cisa.gov/sites/default/files/publications/data_backup_options.pdf">「3-2-1 原则」</a> 中的 <strong>1</strong>，即一份拷贝保存在异地，这样当发生例如火灾等险情时，可以保证异地备份的安全。</p>
+</li>
+</ol>
+<p>这种方式的缺点有：</p>
+<ol>
+<li><p>对于频繁增加的数据来说，例如日常生活照片，要做到及时备份会有些困难；</p>
+</li>
+<li><p>需要购买额外的存储设备；</p>
+</li>
+<li><p>可移动存储媒介的不稳定性，例如 U 盘本身不适合做为长时间的冷备份，而机械硬盘对于存放条件要求又有些高。</p>
+</li>
+</ol>
+<p>这里介绍一下常用介质的使用场景：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>类型</th>
+<th>特点和建议使用场景</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>外部硬盘</strong></td>
+<td>大容量但体积大；易受物理损坏和退磁影响。</td>
+</tr>
+<tr>
+<td><strong>固态存储（SSD、USB）</strong></td>
+<td>无机械部件，抗震耐用；价格高但寿命延长；常见于临时携带数据。</td>
+</tr>
+<tr>
+<td><strong>光盘（CD/DVD/Blu-ray）</strong></td>
+<td>容量小，便宜但寿命有限；适用于长期离线存档。</td>
+</tr>
+<tr>
+<td><strong>磁带</strong></td>
+<td>超大容量且成本低；多用于企业长期备份。</td>
+</tr>
+<tr>
+<td><strong>软盘/ZIP盘</strong></td>
+<td>已淘汰，因容量太低且不再生产。</td>
+</tr>
+</tbody>
+</table>
+</div>
+<h4 id="云备份"><a href="#云备份" class="headerlink" title="云备份"></a>云备份</h4><p>其实大家在生活中已经有过或多或少的备份行为，例如你把旅游的照片发了朋友圈，这是一种备份；你打开了百度云的照片自动备份功能；你购买并开启了各大手机厂商自带的云服务（iCloud）……这些都是备份。</p>
+<p>备份本质上是把重要的数据的副本保存在其他地方，上述例子中的其他地方都是指第三方厂家的服务器。</p>
+<p>这就是我们要说的第三种备份，我通称为云备份。云备份的优点有：</p>
+<ol>
+<li><p>异地备份，服务器厂商位于各个不同城市的服务器机房，在采用多个厂商产品的备份下，完全可以保证异地备份这一项的安全性；</p>
+</li>
+<li><p>方便，无需购买多余存储设备，现在的云盘厂商，动不动 TB 起步的容量，完全够普通人的备份需求。</p>
+</li>
+</ol>
+<p>缺点也是有的：</p>
+<ol>
+<li><p>依赖于网络，在第一次全量备份时，备份时间的瓶颈在上传带宽上，以目前家用的 <strong>50Mbps</strong> 上传带宽为例，如果需要备份 <strong>100GB</strong> 的数据，大概需要四个半小时。更不要说当找回数据时如果没开会员那十几 KB 的下载速度了；</p>
+</li>
+<li><p>隐私安全没有保障，毕竟存储在第三方的服务器下，还是会存在泄露的可能，例如阿里云盘曾经有过能看到其他人照片的恶性 bug；</p>
+</li>
+<li><p>存在厂商锁定风险，比如一些较为私密的照片非常有可能被某些云盘厂商封禁。</p>
+</li>
+<li><p>价格，这是毋庸置疑的，毕竟厂家也不是做慈善的，既然提供了服务，就必然需要收取一定的费用，例如会员费用，或者是 OSS 存储费用和流量费用。</p>
+</li>
+</ol>
+<h3 id="我的备份之路"><a href="#我的备份之路" class="headerlink" title="我的备份之路"></a>我的备份之路</h3><p>接下来说说我这些年来的备份方法。</p>
+<h4 id="手写"><a href="#手写" class="headerlink" title="手写"></a>手写</h4><p>记得小时候充值 QB 的时候，需要去书报亭购买 QB 卡，而 30 元面值的 QB 卡背后会带有密保卡。</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/榨干这台NAS第006话-关于备份/密保卡.webp" alt="密保卡.webp"></p>
+<p>当有过一次丢失的经历后，我意识到这玩意需要个备份，这时候，我就用纸笔将其写在本子上，这就成了我的第一个备份。</p>
+<h4 id="QQ-网络硬盘"><a href="#QQ-网络硬盘" class="headerlink" title="QQ 网络硬盘"></a>QQ 网络硬盘</h4><p>但是不久之后，我遇到了问题，当我前往<del>黑网吧</del>时，我发现我没有将家中的密保卡带上，导致那天的我无法进入被密保卡保护的游戏。回家后，我立马将实体的卡片转录到了 Excel 上。</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/榨干这台NAS第006话-关于备份/Excel密保卡.png" alt="Excel密保卡.png"></p>
+<p>并将其存在了当时的 QQ 网络硬盘（腾讯微云的前身）上，这就是我的第一个云备份。</p>
+<h4 id="永硕-E-盘"><a href="#永硕-E-盘" class="headerlink" title="永硕 E 盘"></a><a target="_blank" rel="noopener" href="http://www.ys168.com/">永硕 E 盘</a></h4><p>时代的记忆，当时的各类软件和工具，一般大家都是放在这里进行分享。由于我的最初账号已经丢失，实在是无法回忆起来当时存了什么东西。</p>
+<h4 id="千脑"><a href="#千脑" class="headerlink" title="千脑"></a>千脑</h4><p>只有百度百科还记录着零星的信息：<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%8D%83%E8%84%91">https://baike.baidu.com/item/%E5%8D%83%E8%84%91</a>。</p>
+<h4 id="各类网盘"><a href="#各类网盘" class="headerlink" title="各类网盘"></a>各类网盘</h4><p>后来，网盘产品如雨后春笋般出现，手机中的照片一般都是由各大网盘的默认推荐打开的自动备份功能所备份，各位可以去看看历史较为悠久的几家网盘，说不定还能在其中找到一些你觉得早已遗失的珍贵记忆。</p>
+<h4 id="NAS"><a href="#NAS" class="headerlink" title="NAS"></a>NAS</h4><p>在拥有了 NAS 之后，我的大部分文件都是会拷贝到 NAS 上一份作为一个备份。但是久而久之，在看过了网上各种硬盘损坏案例后，我开始对我这一张二手企业矿盘产生了怀疑：万一哪天坏了呢？</p>
+<p>在刚有这念头的几天里，我显得十分焦虑，总觉得下一秒硬盘就会歇菜。尤其是想到那上万张照片可能会丢失，NAS 备份刻不容缓！</p>
+<h3 id="第一版备份方案"><a href="#第一版备份方案" class="headerlink" title="第一版备份方案"></a>第一版备份方案</h3><p>我需要备份的文件大致分为两部分，一是数量较多但是对隐私要求不高的照片视频文件；二是数量较少但是对隐私安全较为看重的数据，例如：Vaultwarden 密码数据、Teslamate 行程数据等等。</p>
+<p>前者量大，我使用 <a target="_blank" rel="noopener" href="https://rclone.org/">Rclone</a> 花了快一周时间才将其全部上传到阿里云盘。但是还是上传失败了好一部分，并且比较难确定是哪些遗失了。</p>
+<p>后者量较少，但是对于安全保密性较高，我写了一个「导出-压缩-加密-上传-通知」的脚本，在 NAS 中以定时任务的形式每天进行全量备份。并且保存了近一年的历史备份。这对安全性要求较高的场景来说，不失为一个较为简单的方法，我将脚本分享在这里，大家改改应该就能直接用：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line">source ~/.bashrc</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">记录开始时间</span></span><br><span class="line">start_time=$(date +%s)</span><br><span class="line"></span><br><span class="line">docker exec MySQL-9 sh -c &#x27;exec mysqldump --databases traccar -u root -p&quot;$MYSQL_ROOT_PASSWORD&quot;&#x27; &gt; /mnt/user/UNRAID/backup/TraccarBackup/Traccar.sql</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">生成文件名</span></span><br><span class="line">file_name=&quot;Traccar`date +%Y%m%d%H%M%S`.7z&quot;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">将文件使用7z加密压缩，然后删除原始文件</span></span><br><span class="line">7z a -p$ZIP_PASSWORD /mnt/user/UNRAID/backup/TraccarBackup/$file_name /mnt/user/UNRAID/backup/TraccarBackup/Traccar.sql</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">获取压缩文件的大小（单位：字节）</span></span><br><span class="line">file_size=$(ls -lh /mnt/user/UNRAID/backup/TraccarBackup/$file_name | awk &#x27;&#123;print $5&#125;&#x27;)</span><br><span class="line"></span><br><span class="line">rm /mnt/user/UNRAID/backup/TraccarBackup/Traccar.sql</span><br><span class="line"></span><br><span class="line">if [ $? -eq 0 ]; then</span><br><span class="line"></span><br><span class="line">    find /mnt/user/UNRAID/backup/TraccarBackup/ -type f -ctime +365 | xargs rm -rf</span><br><span class="line"></span><br><span class="line">    docker exec Nacho-Rclone-Native-GUI rclone sync /data/backup/TraccarBackup AList:/AliyunDrive/阿里云盘/Backup/NAS-Backup/TraccarBackup</span><br><span class="line">    result_AliyunDrive=$?</span><br><span class="line"></span><br><span class="line">    docker exec Nacho-Rclone-Native-GUI rclone sync /data/backup/TraccarBackup AList:/Quark/backup/NAS-Backup/TraccarBackup</span><br><span class="line">    result_Quark=$?</span><br><span class="line"></span><br><span class="line">    # 将result_AliyunDrive和result_Quark的值存入数组</span><br><span class="line">    result_array=($result_AliyunDrive $result_Quark)</span><br><span class="line"></span><br><span class="line">    # 记录结束时间</span><br><span class="line">    end_time=$(date +%s)</span><br><span class="line"></span><br><span class="line">    # 计算运行时间</span><br><span class="line">    run_time=$((end_time - start_time))</span><br><span class="line"></span><br><span class="line">    # 通知标题</span><br><span class="line">    notification_title=&quot;TraccarBackup-NAS备份&quot;</span><br><span class="line">    # 通知内容</span><br><span class="line">    notification_content=&quot;TraccarBackup-NAS备份，文件大小为$file_size&quot;</span><br><span class="line">    # 结果变量，用于存储成功数量</span><br><span class="line">    success_count=0</span><br><span class="line"></span><br><span class="line">    # 根据result_array循环，拼接通知内容</span><br><span class="line">    for result in $&#123;result_array[@]&#125;; do</span><br><span class="line">        if [ $result -eq 0 ]; then</span><br><span class="line">            success_count=$((success_count + 1))</span><br><span class="line">        fi</span><br><span class="line">    done</span><br><span class="line"></span><br><span class="line">    # 计算成功率，</span><br><span class="line">    if [ $&#123;#result_array[@]&#125; -eq 0 ]; then</span><br><span class="line">        success_rate=0</span><br><span class="line">    else</span><br><span class="line">        success_rate=$((success_count * 100 / $&#123;#result_array[@]&#125;))</span><br><span class="line">    fi</span><br><span class="line"></span><br><span class="line">    # 判断success_count是否等于result_array的长度</span><br><span class="line">    if [ $success_count -eq $&#123;#result_array[@]&#125; ]; then</span><br><span class="line">        notification_title=&quot;$notification_title全部成功✅&quot;</span><br><span class="line">    elif [ $success_count -eq 0 ]; then</span><br><span class="line">        notification_title=&quot;$notification_title全部失败❌&quot;</span><br><span class="line">    else</span><br><span class="line">        notification_title=&quot;$notification_title部分成功🟡&quot;</span><br><span class="line">    fi</span><br><span class="line"></span><br><span class="line">    # 拼接通知内容</span><br><span class="line">    notification_content=&quot;$notification_content，上传网盘：$success_count/$&#123;#result_array[@]&#125;，成功率：$success_rate%，运行时间：$run_time 秒&quot;</span><br><span class="line"></span><br><span class="line">    # 对 notification_title 和 notification_content 进行 URL 编码</span><br><span class="line">    encoded_title=$(echo &quot;$notification_title&quot; | jq -sRr @uri)</span><br><span class="line">    encoded_content=$(echo &quot;$notification_content&quot; | jq -sRr @uri)</span><br><span class="line"></span><br><span class="line">    # 发送通知</span><br><span class="line">    curl &quot;$BARK_SERVER/$BARK_KEY/$encoded_title/$encoded_content?group=TraccarBackup&amp;icon=https://cdn.jsdelivr.net/gh/walkxcode/dashboard-icons/png/traccar.png&quot;</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">exit $?</span><br></pre></td></tr></table></figure>
+<p>需要注意的是上传部分使用了 AList 挂载了云盘，并使用 rclone 通过了 WebDAV 服务（照片部分的网盘上传也是通过这一途径）。</p>
+<p>同上上述的脚本进行的备份，由于进行了压缩加密，可以在上传到第三方网盘的同时保证其隐私安全性，当然千万不要忘记压缩密码，不然数据虽在，但是可能永远都看不了了。</p>
+<p>缺点也较为明显，只适用于较为小的文件备份，对于大文件的备份，由于需要加密压缩的原因，会导致最后压缩文件较大，不宜进行频繁备份。</p>
+<p>这里再放上一个最近修改过的脚本，支持一次备份多个项目的文件：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br><span class="line">300</span><br><span class="line">301</span><br><span class="line">302</span><br><span class="line">303</span><br><span class="line">304</span><br><span class="line">305</span><br><span class="line">306</span><br><span class="line">307</span><br><span class="line">308</span><br><span class="line">309</span><br><span class="line">310</span><br><span class="line">311</span><br><span class="line">312</span><br><span class="line">313</span><br><span class="line">314</span><br><span class="line">315</span><br><span class="line">316</span><br><span class="line">317</span><br><span class="line">318</span><br><span class="line">319</span><br><span class="line">320</span><br><span class="line">321</span><br><span class="line">322</span><br><span class="line">323</span><br><span class="line">324</span><br><span class="line">325</span><br><span class="line">326</span><br><span class="line">327</span><br><span class="line">328</span><br><span class="line">329</span><br><span class="line">330</span><br><span class="line">331</span><br><span class="line">332</span><br><span class="line">333</span><br><span class="line">334</span><br><span class="line">335</span><br><span class="line">336</span><br><span class="line">337</span><br><span class="line">338</span><br><span class="line">339</span><br><span class="line">340</span><br><span class="line">341</span><br><span class="line">342</span><br><span class="line">343</span><br><span class="line">344</span><br><span class="line">345</span><br><span class="line">346</span><br><span class="line">347</span><br><span class="line">348</span><br><span class="line">349</span><br><span class="line">350</span><br><span class="line">351</span><br><span class="line">352</span><br><span class="line">353</span><br><span class="line">354</span><br><span class="line">355</span><br><span class="line">356</span><br><span class="line">357</span><br><span class="line">358</span><br><span class="line">359</span><br><span class="line">360</span><br><span class="line">361</span><br><span class="line">362</span><br><span class="line">363</span><br><span class="line">364</span><br><span class="line">365</span><br><span class="line">366</span><br><span class="line">367</span><br><span class="line">368</span><br><span class="line">369</span><br><span class="line">370</span><br><span class="line">371</span><br><span class="line">372</span><br><span class="line">373</span><br><span class="line">374</span><br><span class="line">375</span><br><span class="line">376</span><br><span class="line">377</span><br><span class="line">378</span><br><span class="line">379</span><br><span class="line">380</span><br><span class="line">381</span><br><span class="line">382</span><br><span class="line">383</span><br><span class="line">384</span><br><span class="line">385</span><br><span class="line">386</span><br><span class="line">387</span><br><span class="line">388</span><br><span class="line">389</span><br><span class="line">390</span><br><span class="line">391</span><br><span class="line">392</span><br><span class="line">393</span><br><span class="line">394</span><br><span class="line">395</span><br><span class="line">396</span><br><span class="line">397</span><br><span class="line">398</span><br><span class="line">399</span><br><span class="line">400</span><br><span class="line">401</span><br><span class="line">402</span><br><span class="line">403</span><br><span class="line">404</span><br><span class="line">405</span><br><span class="line">406</span><br><span class="line">407</span><br><span class="line">408</span><br><span class="line">409</span><br><span class="line">410</span><br><span class="line">411</span><br><span class="line">412</span><br><span class="line">413</span><br><span class="line">414</span><br><span class="line">415</span><br><span class="line">416</span><br><span class="line">417</span><br><span class="line">418</span><br><span class="line">419</span><br><span class="line">420</span><br><span class="line">421</span><br><span class="line">422</span><br><span class="line">423</span><br><span class="line">424</span><br><span class="line">425</span><br><span class="line">426</span><br><span class="line">427</span><br><span class="line">428</span><br><span class="line">429</span><br><span class="line">430</span><br><span class="line">431</span><br><span class="line">432</span><br><span class="line">433</span><br><span class="line">434</span><br><span class="line">435</span><br><span class="line">436</span><br><span class="line">437</span><br><span class="line">438</span><br><span class="line">439</span><br><span class="line">440</span><br><span class="line">441</span><br><span class="line">442</span><br><span class="line">443</span><br><span class="line">444</span><br><span class="line">445</span><br><span class="line">446</span><br><span class="line">447</span><br><span class="line">448</span><br><span class="line">449</span><br><span class="line">450</span><br><span class="line">451</span><br><span class="line">452</span><br><span class="line">453</span><br><span class="line">454</span><br><span class="line">455</span><br><span class="line">456</span><br><span class="line">457</span><br><span class="line">458</span><br><span class="line">459</span><br><span class="line">460</span><br><span class="line">461</span><br><span class="line">462</span><br><span class="line">463</span><br><span class="line">464</span><br><span class="line">465</span><br><span class="line">466</span><br><span class="line">467</span><br><span class="line">468</span><br><span class="line">469</span><br><span class="line">470</span><br><span class="line">471</span><br><span class="line">472</span><br><span class="line">473</span><br><span class="line">474</span><br><span class="line">475</span><br><span class="line">476</span><br><span class="line">477</span><br><span class="line">478</span><br><span class="line">479</span><br><span class="line">480</span><br><span class="line">481</span><br><span class="line">482</span><br><span class="line">483</span><br><span class="line">484</span><br><span class="line">485</span><br><span class="line">486</span><br><span class="line">487</span><br><span class="line">488</span><br><span class="line">489</span><br><span class="line">490</span><br><span class="line">491</span><br><span class="line">492</span><br><span class="line">493</span><br><span class="line">494</span><br><span class="line">495</span><br><span class="line">496</span><br><span class="line">497</span><br><span class="line">498</span><br><span class="line">499</span><br><span class="line">500</span><br><span class="line">501</span><br><span class="line">502</span><br><span class="line">503</span><br><span class="line">504</span><br><span class="line">505</span><br><span class="line">506</span><br><span class="line">507</span><br><span class="line">508</span><br><span class="line">509</span><br><span class="line">510</span><br><span class="line">511</span><br><span class="line">512</span><br><span class="line">513</span><br><span class="line">514</span><br><span class="line">515</span><br><span class="line">516</span><br><span class="line">517</span><br><span class="line">518</span><br><span class="line">519</span><br><span class="line">520</span><br><span class="line">521</span><br><span class="line">522</span><br><span class="line">523</span><br><span class="line">524</span><br><span class="line">525</span><br><span class="line">526</span><br><span class="line">527</span><br><span class="line">528</span><br><span class="line">529</span><br><span class="line">530</span><br><span class="line">531</span><br><span class="line">532</span><br><span class="line">533</span><br><span class="line">534</span><br><span class="line">535</span><br><span class="line">536</span><br><span class="line">537</span><br><span class="line">538</span><br><span class="line">539</span><br><span class="line">540</span><br><span class="line">541</span><br><span class="line">542</span><br><span class="line">543</span><br><span class="line">544</span><br><span class="line">545</span><br><span class="line">546</span><br><span class="line">547</span><br><span class="line">548</span><br><span class="line">549</span><br><span class="line">550</span><br><span class="line">551</span><br><span class="line">552</span><br><span class="line">553</span><br><span class="line">554</span><br><span class="line">555</span><br><span class="line">556</span><br><span class="line">557</span><br><span class="line">558</span><br><span class="line">559</span><br><span class="line">560</span><br><span class="line">561</span><br><span class="line">562</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta prompt_">#</span><span class="language-bash">!/bin/bash</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">--- 脚本配置 ---</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">确保这些环境变量已在您的 ~/.bashrc 文件中设置，或在一个专门的配置文件中设置</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">或者，如果您倾向于此方式，可以直接在此处定义（对于密码而言不太安全）</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">必需: ZIP_PASSWORD, MYSQL_ROOT_PASSWORD (如果使用MySQL), BARK_SERVER, BARK_KEY</span></span><br><span class="line">source ~/.bashrc</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">--- 全局设置 ---</span></span><br><span class="line">MAIN_BACKUP_ROOT_HOST=&quot;/mnt/user/UNRAID/backup&quot; # unRAID 主机上的备份根目录</span><br><span class="line">RCLONE_DOCKER_CONTAINER=&quot;Nacho-Rclone-Native-GUI&quot; # Rclone Docker 容器的名称</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">MAIN_BACKUP_ROOT_HOST 在 RCLONE_DOCKER_CONTAINER 内部的映射路径</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">您的 rclone <span class="built_in">sync</span> 命令使用 /data/backup/... 所以这里应该是 /data/backup</span></span><br><span class="line">RCLONE_MOUNT_PREFIX_IN_CONTAINER=&quot;/data/backup&quot;</span><br><span class="line">DAYS_TO_KEEP_BACKUPS=365 # 本地备份文件保留天数</span><br><span class="line">GLOBAL_START_TIME=$(date +%s) # 脚本全局开始时间</span><br><span class="line">SCRIPT_VERSION=&quot;1.2-zh&quot; # 脚本版本</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">--- 日志文件 ---</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">暂不需要</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">LOG_FILE=<span class="string">&quot;/mnt/user/UNRAID/your_script_name.log&quot;</span></span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">--- 云盘远程配置 ---</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">在此定义您的 rclone 远程目标。键是易于识别的名称，值是 <span class="string">&quot;rclone远程配置名:路径前缀&quot;</span></span></span><br><span class="line">declare -A CLOUD_REMOTES</span><br><span class="line">CLOUD_REMOTES=(</span><br><span class="line">    [&quot;阿里云盘&quot;]=&quot;AList:/AliyunDrive/阿里云盘/Backup/NAS-Backup&quot; # 示例：阿里云盘</span><br><span class="line">    [&quot;夸克网盘&quot;]=&quot;AList:/Quark/backup/NAS-Backup&quot;         # 示例：夸克网盘</span><br><span class="line">)</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">--- 服务备份定义 ---</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">每个服务是一个关联数组。在此处添加新服务。</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">每个服务的参数说明:</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">  name:                     (字符串) 用于通知和日志的人类可读名称。</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">  <span class="built_in">type</span>:                     (字符串) 备份类型: <span class="string">&quot;mysql&quot;</span>, <span class="string">&quot;postgres&quot;</span>, <span class="string">&quot;folder&quot;</span>。</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">  enabled:                  (布尔字符串) <span class="string">&quot;true&quot;</span> 或 <span class="string">&quot;false&quot;</span>，用于启用/禁用此服务的备份。</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">  <span class="comment"># 针对 type=&quot;mysql&quot;:</span></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">  mysql_container:          (字符串) 运行 MySQL 的 Docker 容器名称。</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">  db_name:                  (字符串) 需要转储的数据库名称。</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">  raw_dump_filename:        (字符串) SQL 转储文件的临时文件名 (例如: <span class="string">&quot;db.sql&quot;</span>)。</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">  <span class="comment"># 针对 type=&quot;postgres&quot;:</span></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">  pg_compose_file:          (字符串) docker-compose.yml 文件的路径。</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">  pg_compose_service:       (字符串) docker-compose.yml 中 PostgreSQL 数据库服务的名称。</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">  pg_db_user:               (字符串) PostgreSQL 用户名。</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">  pg_db_name:               (字符串) PostgreSQL 数据库名称。</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">  raw_dump_filename:        (字符串) 原始备份文件的临时文件名 (例如: <span class="string">&quot;db.bck&quot;</span>)。</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">  <span class="comment"># 针对 type=&quot;folder&quot;:</span></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">  folder_to_backup_host:    (字符串) 主机上需要备份的文件夹的绝对路径。</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">  stop_start_container:     (字符串, 可选) 备份前停止、备份后启动的容器名称。</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">  <span class="comment"># 所有类型通用:</span></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">  local_backup_subdir:      (字符串) 在 MAIN_BACKUP_ROOT_HOST 下为此服务创建的备份子目录。</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">  archive_prefix:           (字符串) 最终 .7z 归档文件名的前缀 (例如: <span class="string">&quot;Gitea&quot;</span>)。</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">  bark_group:               (字符串) Bark 通知的群组名称。</span></span><br><span class="line"></span><br><span class="line">declare -A GITEA_CONFIG=(</span><br><span class="line">    [name]=&quot;Gitea&quot;</span><br><span class="line">    [type]=&quot;mysql&quot;</span><br><span class="line">    [enabled]=&quot;true&quot;</span><br><span class="line">    [mysql_container]=&quot;MySQL-9&quot;</span><br><span class="line">    [db_name]=&quot;gitea&quot;</span><br><span class="line">    [raw_dump_filename]=&quot;Gitea.sql&quot;</span><br><span class="line">    [local_backup_subdir]=&quot;GiteaBackup&quot;</span><br><span class="line">    [archive_prefix]=&quot;Gitea&quot;</span><br><span class="line">    [bark_group]=&quot;Backup&quot; # Bark 分组名</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">declare -A TESLAMATE_CONFIG=(</span><br><span class="line">    [name]=&quot;TeslaMate&quot;</span><br><span class="line">    [type]=&quot;postgres&quot;</span><br><span class="line">    [enabled]=&quot;true&quot;</span><br><span class="line">    [pg_compose_file]=&quot;/boot/config/plugins/compose.manager/projects/TeslaMate/docker-compose.yml&quot;</span><br><span class="line">    [pg_compose_service]=&quot;database&quot;</span><br><span class="line">    [pg_db_user]=&quot;teslamate&quot;</span><br><span class="line">    [pg_db_name]=&quot;teslamate&quot;</span><br><span class="line">    [raw_dump_filename]=&quot;teslamate.bck&quot;</span><br><span class="line">    [local_backup_subdir]=&quot;TeslaMateBackup&quot;</span><br><span class="line">    [archive_prefix]=&quot;teslamate&quot;</span><br><span class="line">    [bark_group]=&quot;TeslamateBackup&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">declare -A TRACCAR_CONFIG=(</span><br><span class="line">    [name]=&quot;Traccar&quot;</span><br><span class="line">    [type]=&quot;mysql&quot;</span><br><span class="line">    [enabled]=&quot;true&quot;</span><br><span class="line">    [mysql_container]=&quot;MySQL-9&quot;</span><br><span class="line">    [db_name]=&quot;traccar&quot;</span><br><span class="line">    [raw_dump_filename]=&quot;Traccar.sql&quot;</span><br><span class="line">    [local_backup_subdir]=&quot;TraccarBackup&quot;</span><br><span class="line">    [archive_prefix]=&quot;Traccar&quot;</span><br><span class="line">    [bark_group]=&quot;TraccarBackup&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">declare -A VAULTWARDEN_CONFIG=(</span><br><span class="line">    [name]=&quot;VaultWarden (密码管理器)&quot;</span><br><span class="line">    [type]=&quot;folder&quot;</span><br><span class="line">    [enabled]=&quot;true&quot;</span><br><span class="line">    [folder_to_backup_host]=&quot;/mnt/user/appdata/vaultwarden&quot;</span><br><span class="line">    [stop_start_container]=&quot;VaultWarden&quot; # 确保这是精确的容器名</span><br><span class="line">    [local_backup_subdir]=&quot;VaultWardenBackup&quot;</span><br><span class="line">    [archive_prefix]=&quot;VaultWarden&quot;</span><br><span class="line">    [bark_group]=&quot;VaultWardenBackup&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">declare -A WAKAPI_CONFIG=(</span><br><span class="line">    [name]=&quot;WakAPI (编程时长统计)&quot;</span><br><span class="line">    [type]=&quot;mysql&quot;</span><br><span class="line">    [enabled]=&quot;true&quot;</span><br><span class="line">    [mysql_container]=&quot;MySQL-9&quot;</span><br><span class="line">    [db_name]=&quot;wakapi&quot;</span><br><span class="line">    [raw_dump_filename]=&quot;WakAPI.sql&quot;</span><br><span class="line">    [local_backup_subdir]=&quot;WakAPIBackup&quot;</span><br><span class="line">    [archive_prefix]=&quot;WakAPI&quot;</span><br><span class="line">    [bark_group]=&quot;WakAPIBackup&quot;</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">declare -A QIANDAO_CONFIG=(</span><br><span class="line">    [name]=&quot;自动签到服务&quot;</span><br><span class="line">    [type]=&quot;mysql&quot;</span><br><span class="line">    [enabled]=&quot;true&quot;</span><br><span class="line">    [mysql_container]=&quot;MySQL-9&quot;</span><br><span class="line">    [db_name]=&quot;qiandao&quot;</span><br><span class="line">    [raw_dump_filename]=&quot;qiandao.sql&quot;</span><br><span class="line">    [local_backup_subdir]=&quot;自动签到备份&quot; # 目录名保持原样，以便兼容旧备份</span><br><span class="line">    [archive_prefix]=&quot;qiandao&quot;</span><br><span class="line">    [bark_group]=&quot;自动签到备份&quot; # Bark 分组名保持原样</span><br><span class="line">)</span><br><span class="line"></span><br><span class="line">declare -A TIEBA_CONFIG=(</span><br><span class="line">    [name]=&quot;贴吧云签到&quot;</span><br><span class="line">    [type]=&quot;mysql&quot;</span><br><span class="line">    [enabled]=&quot;true&quot;</span><br><span class="line">    [mysql_container]=&quot;MySQL-9&quot;</span><br><span class="line">    [db_name]=&quot;tiebacloud&quot;</span><br><span class="line">    [raw_dump_filename]=&quot;Tieba-Cloud-Sign.sql&quot;</span><br><span class="line">    [local_backup_subdir]=&quot;贴吧云签到备份&quot; # 目录名保持原样</span><br><span class="line">    [archive_prefix]=&quot;Tieba-Cloud-Sign&quot;</span><br><span class="line">    [bark_group]=&quot;贴吧云签到备份&quot; # Bark 分组名保持原样</span><br><span class="line">)</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">--- 备份顺序 ---</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">在此按期望的执行顺序列出上面定义的服务配置数组的名称。</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">例如: <span class="string">&quot;GITEA_CONFIG&quot;</span>, <span class="string">&quot;TESLAMATE_CONFIG&quot;</span> 等。</span></span><br><span class="line">BACKUP_ORDER=(</span><br><span class="line">    &quot;GITEA_CONFIG&quot;</span><br><span class="line">    &quot;TESLAMATE_CONFIG&quot;</span><br><span class="line">    &quot;TRACCAR_CONFIG&quot;</span><br><span class="line">    &quot;VAULTWARDEN_CONFIG&quot;</span><br><span class="line">    &quot;WAKAPI_CONFIG&quot;</span><br><span class="line">    &quot;QIANDAO_CONFIG&quot;</span><br><span class="line">    &quot;TIEBA_CONFIG&quot;</span><br><span class="line">)</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">--- 用于汇总的全局变量 ---</span></span><br><span class="line">declare -a SUMMARY_LINES # 存储每个任务的摘要信息</span><br><span class="line">TOTAL_JOBS=0 # 总任务数</span><br><span class="line">SUCCESSFUL_JOBS=0 # 成功任务数</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">--- 辅助函数 ---</span></span><br><span class="line">log_message() &#123;</span><br><span class="line">    local message_content=&quot;$1&quot;</span><br><span class="line">    local timestamp</span><br><span class="line">    timestamp=$(date &#x27;+%Y-%m-%d %H:%M:%S&#x27;)</span><br><span class="line">    local formatted_message=&quot;$&#123;timestamp&#125; - $&#123;message_content&#125;&quot;</span><br><span class="line"></span><br><span class="line">    # 输出到标准错误 (stderr)</span><br><span class="line">    printf &quot;%s\n&quot; &quot;$&#123;formatted_message&#125;&quot; &gt;&amp;2</span><br><span class="line"></span><br><span class="line">    # 追加输出到日志文件</span><br><span class="line">    # 确保 LOG_FILE 变量已定义并且脚本对该文件有写入权限</span><br><span class="line">    if [ -n &quot;$LOG_FILE&quot; ]; then</span><br><span class="line">        echo &quot;$&#123;formatted_message&#125;&quot; &gt;&gt; &quot;$LOG_FILE&quot;</span><br><span class="line">        # 可以添加一个检查，看写入是否成功，但通常 &gt;&gt; 如果失败会静默或由系统层面报错</span><br><span class="line">        # if [ $? -ne 0 ]; then</span><br><span class="line">        #     printf &quot;%s - %s\n&quot; &quot;$(date &#x27;+%Y-%m-%d %H:%M:%S&#x27;)&quot; &quot;警告: 写入日志文件 $&#123;LOG_FILE&#125; 失败！&quot; &gt;&amp;2</span><br><span class="line">        # fi</span><br><span class="line">    # else</span><br><span class="line">    #     printf &quot;%s - %s\n&quot; &quot;$(date &#x27;+%Y-%m-%d %H:%M:%S&#x27;)&quot; &quot;警告: LOG_FILE 未定义，无法写入文件日志。&quot; &gt;&amp;2</span><br><span class="line">    fi</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">URL 编码 (用于 Bark 通知)</span></span><br><span class="line">url_encode() &#123;</span><br><span class="line">    echo &quot;$1&quot; | jq -sRr @uri</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">--- 核心逻辑函数 ---</span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">转储 MySQL 数据库</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">参数: <span class="variable">$1</span>: mysql_container, <span class="variable">$2</span>: db_name, <span class="variable">$3</span>: output_dump_path (转储文件输出路径)</span></span><br><span class="line">dump_mysql() &#123;</span><br><span class="line">    local mysql_container=&quot;$1&quot;</span><br><span class="line">    local db_name=&quot;$2&quot;</span><br><span class="line">    local output_dump_path=&quot;$3&quot;</span><br><span class="line">    log_message &quot;正在从容器 &#x27;$mysql_container&#x27; 转储 MySQL 数据库 &#x27;$db_name&#x27; 到 &#x27;$output_dump_path&#x27;...&quot;</span><br><span class="line">    if docker exec &quot;$mysql_container&quot; sh -c &quot;exec mysqldump --databases \&quot;$db_name\&quot; -u root -p\&quot;\$MYSQL_ROOT_PASSWORD\&quot;&quot; &gt; &quot;$output_dump_path&quot;; then</span><br><span class="line">        log_message &quot;MySQL 数据库 &#x27;$db_name&#x27; 转储成功。&quot;</span><br><span class="line">        return 0</span><br><span class="line">    else</span><br><span class="line">        log_message &quot;错误：MySQL 数据库 &#x27;$db_name&#x27; 转储失败。&quot;</span><br><span class="line">        rm -f &quot;$output_dump_path&quot; # 清理可能产生的损坏转储文件</span><br><span class="line">        return 1</span><br><span class="line">    fi</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">转储 PostgreSQL 数据库</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">参数: <span class="variable">$1</span>: pg_compose_file, <span class="variable">$2</span>: pg_compose_service, <span class="variable">$3</span>: pg_db_user, <span class="variable">$4</span>: pg_db_name, <span class="variable">$5</span>: output_dump_path</span></span><br><span class="line">dump_postgres() &#123;</span><br><span class="line">    local pg_compose_file=&quot;$1&quot;</span><br><span class="line">    local pg_compose_service=&quot;$2&quot;</span><br><span class="line">    local pg_db_user=&quot;$3&quot;</span><br><span class="line">    local pg_db_name=&quot;$4&quot;</span><br><span class="line">    local output_dump_path=&quot;$5&quot;</span><br><span class="line">    log_message &quot;正在从 Compose 服务 &#x27;$pg_compose_service&#x27; (用户 &#x27;$pg_db_user&#x27;) 转储 PostgreSQL 数据库 &#x27;$pg_db_name&#x27; 到 &#x27;$output_dump_path&#x27;...&quot;</span><br><span class="line">    if /usr/local/bin/docker-compose -f &quot;$pg_compose_file&quot; exec -T &quot;$pg_compose_service&quot; pg_dump -U &quot;$pg_db_user&quot; &quot;$pg_db_name&quot; &gt; &quot;$output_dump_path&quot;; then</span><br><span class="line">        log_message &quot;PostgreSQL 数据库 &#x27;$pg_db_name&#x27; 转储成功。&quot;</span><br><span class="line">        return 0</span><br><span class="line">    else</span><br><span class="line">        log_message &quot;错误：PostgreSQL 数据库 &#x27;$pg_db_name&#x27; 转储失败。&quot;</span><br><span class="line">        rm -f &quot;$output_dump_path&quot; # 清理可能产生的损坏转储文件</span><br><span class="line">        return 1</span><br><span class="line">    fi</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">压缩文件或文件夹，并可选删除源文件</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">参数: <span class="variable">$1</span>: archive_output_path (完整 .7z 归档路径), <span class="variable">$2</span>: source_to_compress (待压缩的文件或文件夹), <span class="variable">$3</span>: (可选) raw_dump_file_to_delete (待删除的原始转储文件)</span></span><br><span class="line">compress_backup() &#123;</span><br><span class="line">    local archive_output_path=&quot;$1&quot;</span><br><span class="line">    local source_to_compress=&quot;$2&quot;</span><br><span class="line">    local raw_dump_file_to_delete=&quot;$&#123;3:-&#125;&quot; # 如果未提供，则默认为空</span><br><span class="line"></span><br><span class="line">    log_message &quot;正在将 &#x27;$source_to_compress&#x27; 压缩到 &#x27;$archive_output_path&#x27;...&quot;</span><br><span class="line">    if 7z a -p&quot;$ZIP_PASSWORD&quot; &quot;$archive_output_path&quot; &quot;$source_to_compress&quot;; then</span><br><span class="line">        log_message &quot;压缩成功。&quot;</span><br><span class="line">        if [ -n &quot;$raw_dump_file_to_delete&quot; ] &amp;&amp; [ -f &quot;$raw_dump_file_to_delete&quot; ]; then</span><br><span class="line">            log_message &quot;正在删除原始转储文件 &#x27;$raw_dump_file_to_delete&#x27;...&quot;</span><br><span class="line">            rm &quot;$raw_dump_file_to_delete&quot;</span><br><span class="line">        fi</span><br><span class="line">        return 0</span><br><span class="line">    else</span><br><span class="line">        log_message &quot;错误：压缩 &#x27;$source_to_compress&#x27; 失败。&quot;</span><br><span class="line">        return 1</span><br><span class="line">    fi</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">清理指定目录下的旧备份归档文件</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">参数: <span class="variable">$1</span>: directory_to_clean (待清理的目录)</span></span><br><span class="line">cleanup_old_archives() &#123;</span><br><span class="line">    local directory_to_clean=&quot;$1&quot;</span><br><span class="line">    log_message &quot;正在清理 &#x27;$directory_to_clean&#x27; 目录下超过 $DAYS_TO_KEEP_BACKUPS 天的旧备份...&quot;</span><br><span class="line">    find &quot;$directory_to_clean&quot; -type f -name &quot;*.7z&quot; -mtime &quot;+$DAYS_TO_KEEP_BACKUPS&quot; -print -delete</span><br><span class="line">    log_message &quot;旧备份清理完成。&quot;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">将备份同步到已配置的云盘远程目标</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">参数: <span class="variable">$1</span>: local_backup_subdir_name (例如 GiteaBackup), <span class="variable">$2</span>: service_name_for_log (用于日志的服务名)</span></span><br><span class="line">sync_to_cloud() &#123;</span><br><span class="line">    local local_backup_subdir_name=&quot;$1&quot;</span><br><span class="line">    local service_name_for_log=&quot;$2&quot;</span><br><span class="line"></span><br><span class="line">    local rclone_source_path_in_container=&quot;$&#123;RCLONE_MOUNT_PREFIX_IN_CONTAINER&#125;/$&#123;local_backup_subdir_name&#125;&quot;</span><br><span class="line">    local successful_syncs=0</span><br><span class="line">    local total_syncs=0</span><br><span class="line">    local sync_results_summary=&quot;&quot;</span><br><span class="line"></span><br><span class="line">    for remote_friendly_name in &quot;$&#123;!CLOUD_REMOTES[@]&#125;&quot;; do</span><br><span class="line">        total_syncs=$((total_syncs + 1))</span><br><span class="line">        local rclone_dest_full_path=&quot;$&#123;CLOUD_REMOTES[$remote_friendly_name]&#125;/$&#123;local_backup_subdir_name&#125;&quot;</span><br><span class="line">        log_message &quot;正在将 &#x27;$&#123;service_name_for_log&#125;&#x27; 的备份从容器内路径 &#x27;$rclone_source_path_in_container&#x27; 同步到 $&#123;remote_friendly_name&#125; (&#x27;$rclone_dest_full_path&#x27;)...&quot;</span><br><span class="line">        if docker exec &quot;$RCLONE_DOCKER_CONTAINER&quot; rclone sync &quot;$rclone_source_path_in_container&quot; &quot;$rclone_dest_full_path&quot;; then</span><br><span class="line">            log_message &quot;Rclone 同步 &#x27;$&#123;service_name_for_log&#125;&#x27; 到 $&#123;remote_friendly_name&#125; 成功。&quot;</span><br><span class="line">            successful_syncs=$((successful_syncs + 1))</span><br><span class="line">            sync_results_summary+=&quot;$&#123;remote_friendly_name&#125;: ✅; &quot;</span><br><span class="line">        else</span><br><span class="line">            log_message &quot;错误：Rclone 同步 &#x27;$&#123;service_name_for_log&#125;&#x27; 到 $&#123;remote_friendly_name&#125; 失败。&quot;</span><br><span class="line">            sync_results_summary+=&quot;$&#123;remote_friendly_name&#125;: ❌; &quot;</span><br><span class="line">        fi</span><br><span class="line">    done</span><br><span class="line"></span><br><span class="line">    # 移除末尾的 &quot;; &quot;</span><br><span class="line">    sync_results_summary=&quot;$&#123;sync_results_summary%; *&#125;&quot;</span><br><span class="line">    echo &quot;$successful_syncs/$total_syncs|$sync_results_summary&quot; # 返回成功数/总数和摘要字符串</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">--- 处理单个服务的主函数 ---</span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">参数: 传入服务配置的关联数组名称 (例如 <span class="string">&quot;GITEA_CONFIG&quot;</span>)</span></span><br><span class="line">process_one_service() &#123;</span><br><span class="line">    local service_config_name=&quot;$1&quot;</span><br><span class="line">    declare -n config_ref=&quot;$service_config_name&quot; # 使用 nameref 引用服务的配置数组</span><br><span class="line"></span><br><span class="line">    TOTAL_JOBS=$((TOTAL_JOBS + 1))</span><br><span class="line">    local job_start_time=$(date +%s)</span><br><span class="line">    local job_status_icon=&quot;❌&quot; # 默认为失败图标</span><br><span class="line">    local job_summary_line=&quot;&quot;</span><br><span class="line">    local final_archive_path=&quot;&quot;</span><br><span class="line">    local archive_file_size_human=&quot;&quot;</span><br><span class="line"></span><br><span class="line">    log_message &quot;--- 开始备份服务: $&#123;config_ref[name]&#125; ---&quot;</span><br><span class="line"></span><br><span class="line">    if [ &quot;$&#123;config_ref[enabled]&#125;&quot; != &quot;true&quot; ]; then</span><br><span class="line">        log_message &quot;服务 $&#123;config_ref[name]&#125; 已禁用，跳过。&quot;</span><br><span class="line">        job_summary_line=&quot;⚪ $&#123;config_ref[name]&#125;: 已跳过&quot;</span><br><span class="line">        SUMMARY_LINES+=(&quot;$job_summary_line&quot;)</span><br><span class="line">        # 对于跳过的任务，不计入 SUCCESSFUL_JOBS，但也不算作整体失败</span><br><span class="line">        return</span><br><span class="line">    fi</span><br><span class="line"></span><br><span class="line">    local host_service_backup_dir=&quot;$&#123;MAIN_BACKUP_ROOT_HOST&#125;/$&#123;config_ref[local_backup_subdir]&#125;&quot;</span><br><span class="line">    mkdir -p &quot;$host_service_backup_dir&quot; #确保备份子目录存在</span><br><span class="line"></span><br><span class="line">    local archive_filename_dated=&quot;$&#123;config_ref[archive_prefix]&#125;$(date +%Y%m%d%H%M%S).7z&quot;</span><br><span class="line">    final_archive_path=&quot;$&#123;host_service_backup_dir&#125;/$&#123;archive_filename_dated&#125;&quot;</span><br><span class="line"></span><br><span class="line">    local dump_success=false # 转储/准备是否成功</span><br><span class="line">    local compress_success=false # 压缩是否成功</span><br><span class="line">    local raw_dump_full_path=&quot;&quot; # 原始转储文件的完整路径</span><br><span class="line"></span><br><span class="line">    # 步骤 1: 执行备份 (转储数据库 或 准备文件夹)</span><br><span class="line">    case &quot;$&#123;config_ref[type]&#125;&quot; in</span><br><span class="line">        mysql)</span><br><span class="line">            raw_dump_full_path=&quot;$&#123;host_service_backup_dir&#125;/$&#123;config_ref[raw_dump_filename]&#125;&quot;</span><br><span class="line">            if dump_mysql &quot;$&#123;config_ref[mysql_container]&#125;&quot; &quot;$&#123;config_ref[db_name]&#125;&quot; &quot;$raw_dump_full_path&quot;; then</span><br><span class="line">                dump_success=true</span><br><span class="line">            fi</span><br><span class="line">            ;;</span><br><span class="line">        postgres)</span><br><span class="line">            raw_dump_full_path=&quot;$&#123;host_service_backup_dir&#125;/$&#123;config_ref[raw_dump_filename]&#125;&quot;</span><br><span class="line">            if dump_postgres &quot;$&#123;config_ref[pg_compose_file]&#125;&quot; &quot;$&#123;config_ref[pg_compose_service]&#125;&quot; &quot;$&#123;config_ref[pg_db_user]&#125;&quot; &quot;$&#123;config_ref[pg_db_name]&#125;&quot; &quot;$raw_dump_full_path&quot;; then</span><br><span class="line">                dump_success=true</span><br><span class="line">            fi</span><br><span class="line">            ;;</span><br><span class="line">        folder)</span><br><span class="line">            # 对于文件夹类型，可能需要先停止容器</span><br><span class="line">            if [ -n &quot;$&#123;config_ref[stop_start_container]&#125;&quot; ]; then</span><br><span class="line">                local container_id # 存储容器ID</span><br><span class="line">                # 使用 ^...$ 来精确匹配容器名，避免部分匹配</span><br><span class="line">                container_id=$(docker ps -q -f name=&quot;^$&#123;config_ref[stop_start_container]&#125;$&quot;)</span><br><span class="line">                if [ -n &quot;$container_id&quot; ]; then</span><br><span class="line">                    log_message &quot;正在停止容器 $&#123;config_ref[stop_start_container]&#125; (ID: $container_id)...&quot;</span><br><span class="line">                    if ! docker stop &quot;$container_id&quot;; then</span><br><span class="line">                         log_message &quot;错误：停止容器 $&#123;config_ref[stop_start_container]&#125; 失败。中止此服务的备份。&quot;</span><br><span class="line">                         job_summary_line=&quot;❌ $&#123;config_ref[name]&#125;: 失败 (停止容器时出错)&quot;</span><br><span class="line">                         SUMMARY_LINES+=(&quot;$job_summary_line&quot;)</span><br><span class="line">                         return # 中止此服务的处理</span><br><span class="line">                    fi</span><br><span class="line">                else</span><br><span class="line">                    log_message &quot;警告：未找到或未运行名为 $&#123;config_ref[stop_start_container]&#125; 的容器。继续执行备份。&quot;</span><br><span class="line">                    # 即使容器未找到，也可能希望继续备份文件夹（如果文件夹独立于容器运行状态）</span><br><span class="line">                fi</span><br><span class="line">            fi</span><br><span class="line"></span><br><span class="line">            # 对于文件夹类型，压缩步骤即为备份创建步骤</span><br><span class="line">            if compress_backup &quot;$final_archive_path&quot; &quot;$&#123;config_ref[folder_to_backup_host]&#125;&quot;; then</span><br><span class="line">                compress_success=true # 对于文件夹类型，dump_success 不适用，compress_success 是关键</span><br><span class="line">            fi</span><br><span class="line"></span><br><span class="line">            # 如果之前停止了容器，现在重新启动它</span><br><span class="line">            if [ -n &quot;$&#123;config_ref[stop_start_container]&#125;&quot; ] &amp;&amp; [ -n &quot;$container_id&quot; ]; then # 仅当找到并停止了容器时才启动</span><br><span class="line">                log_message &quot;正在启动容器 $&#123;config_ref[stop_start_container]&#125; (ID: $container_id)...&quot;</span><br><span class="line">                if ! docker start &quot;$container_id&quot;; then</span><br><span class="line">                    log_message &quot;错误：备份后启动容器 $&#123;config_ref[stop_start_container]&#125; 失败。请手动检查。&quot;</span><br><span class="line">                    # 即使启动失败，备份本身可能已成功，所以继续报告</span><br><span class="line">                fi</span><br><span class="line">            fi</span><br><span class="line">            ;;</span><br><span class="line">        *)</span><br><span class="line">            log_message &quot;错误：服务 $&#123;config_ref[name]&#125; 的备份类型 &#x27;$&#123;config_ref[type]&#125;&#x27; 未知。&quot;</span><br><span class="line">            job_summary_line=&quot;❌ $&#123;config_ref[name]&#125;: 失败 (未知备份类型)&quot;</span><br><span class="line">            SUMMARY_LINES+=(&quot;$job_summary_line&quot;)</span><br><span class="line">            return # 中止此服务的处理</span><br><span class="line">            ;;</span><br><span class="line">    esac</span><br><span class="line"></span><br><span class="line">    # 步骤 2: 压缩 (如果是数据库转储类型)</span><br><span class="line">    if [[ &quot;$&#123;config_ref[type]&#125;&quot; == &quot;mysql&quot; || &quot;$&#123;config_ref[type]&#125;&quot; == &quot;postgres&quot; ]]; then</span><br><span class="line">        if $dump_success; then</span><br><span class="line">            if compress_backup &quot;$final_archive_path&quot; &quot;$raw_dump_full_path&quot; &quot;$raw_dump_full_path&quot;; then</span><br><span class="line">                compress_success=true</span><br><span class="line">            fi</span><br><span class="line">        else</span><br><span class="line">            log_message &quot;由于 &#x27;$&#123;config_ref[name]&#125;&#x27; 的数据库转储失败，跳过压缩步骤。&quot;</span><br><span class="line">        fi</span><br><span class="line">    fi</span><br><span class="line"></span><br><span class="line">    # 步骤 3: 压缩后的操作 (清理旧备份, 同步到云端)</span><br><span class="line">    if $compress_success; then</span><br><span class="line">        # 获取压缩文件大小</span><br><span class="line">        archive_file_size_bytes=$(stat -c%s &quot;$final_archive_path&quot;) # 获取字节数，用于可能的进一步处理</span><br><span class="line">        archive_file_size_human=$(ls -lh &quot;$final_archive_path&quot; | awk &#x27;&#123;print $5&#125;&#x27;) # 人类可读的大小</span><br><span class="line">        log_message &quot;归档文件已创建: $final_archive_path, 大小: $archive_file_size_human&quot;</span><br><span class="line"></span><br><span class="line">        cleanup_old_archives &quot;$host_service_backup_dir&quot; # 清理此服务旧的本地备份</span><br><span class="line"></span><br><span class="line">        # 同步到云端</span><br><span class="line">        cloud_sync_result_str=$(sync_to_cloud &quot;$&#123;config_ref[local_backup_subdir]&#125;&quot; &quot;$&#123;config_ref[name]&#125;&quot;)</span><br><span class="line"></span><br><span class="line">        # debug</span><br><span class="line">        log_message &quot;debug 云同步结果: $cloud_sync_result_str&quot;</span><br><span class="line"></span><br><span class="line">        # 使用 cut 分割结果字符串（更简单且避免SC2086 shellcheck警告）</span><br><span class="line">        cloud_sync_counts=$(echo &quot;$cloud_sync_result_str&quot; | cut -d&#x27;|&#x27; -f1)</span><br><span class="line">        cloud_sync_details=$(echo &quot;$cloud_sync_result_str&quot; | cut -d&#x27;|&#x27; -f2)</span><br><span class="line"></span><br><span class="line">        #debug</span><br><span class="line">        log_message &quot;debug 云同步统计: $cloud_sync_counts, 详细信息: $cloud_sync_details&quot;</span><br><span class="line"></span><br><span class="line">        successful_cloud_syncs=$(echo &quot;$cloud_sync_counts&quot; | cut -d&#x27;/&#x27; -f1)</span><br><span class="line">        total_cloud_syncs=$(echo &quot;$cloud_sync_counts&quot; | cut -d&#x27;/&#x27; -f2)</span><br><span class="line"></span><br><span class="line">        # debug</span><br><span class="line">        log_message &quot;debug 云同步统计: 成功 $successful_cloud_syncs, 总计 $total_cloud_syncs&quot;</span><br><span class="line"></span><br><span class="line">        if [ &quot;$successful_cloud_syncs&quot; -eq &quot;$total_cloud_syncs&quot; ] &amp;&amp; [ &quot;$total_cloud_syncs&quot; -gt 0 ]; then</span><br><span class="line">            job_status_icon=&quot;✅&quot; # 所有云端同步成功</span><br><span class="line">            SUCCESSFUL_JOBS=$((SUCCESSFUL_JOBS + 1)) # 此任务计为成功</span><br><span class="line">        elif [ &quot;$successful_cloud_syncs&quot; -gt 0 ]; then</span><br><span class="line">            job_status_icon=&quot;🟡&quot; # 部分云端同步成功</span><br><span class="line">            # 根据需求，部分成功也可以计入 SUCCESSFUL_JOBS</span><br><span class="line">            # SUCCESSFUL_JOBS=$((SUCCESSFUL_JOBS + 1))</span><br><span class="line">        else</span><br><span class="line">            job_status_icon=&quot;❌&quot; # 云端同步完全失败或未配置远程目标</span><br><span class="line">        fi</span><br><span class="line"></span><br><span class="line">        job_summary_line=&quot;$&#123;job_status_icon&#125; $&#123;config_ref[name]&#125;: (大小: $&#123;archive_file_size_human&#125;, 云同步: $&#123;cloud_sync_details&#125;)&quot;</span><br><span class="line"></span><br><span class="line">    else # 压缩失败或因先前错误跳过压缩</span><br><span class="line">        job_status_icon=&quot;❌&quot;</span><br><span class="line">        if [[ &quot;$&#123;config_ref[type]&#125;&quot; == &quot;mysql&quot; || &quot;$&#123;config_ref[type]&#125;&quot; == &quot;postgres&quot; ]]; then</span><br><span class="line">            if ! $dump_success; then # 如果是转储失败</span><br><span class="line">                job_summary_line=&quot;$&#123;job_status_icon&#125; $&#123;config_ref[name]&#125;: (数据库转储失败)&quot;</span><br><span class="line">            else # 如果是转储成功但压缩失败</span><br><span class="line">                 job_summary_line=&quot;$&#123;job_status_icon&#125; $&#123;config_ref[name]&#125;: (压缩失败)&quot;</span><br><span class="line">            fi</span><br><span class="line">        elif [[ &quot;$&#123;config_ref[type]&#125;&quot; == &quot;folder&quot; ]]; then # 如果是文件夹类型且压缩失败</span><br><span class="line">             job_summary_line=&quot;$&#123;job_status_icon&#125; $&#123;config_ref[name]&#125;: (归档创建失败)&quot;</span><br><span class="line">        fi</span><br><span class="line">    fi</span><br><span class="line"></span><br><span class="line">    local job_end_time=$(date +%s)</span><br><span class="line">    local job_run_time=$((job_end_time - job_start_time))</span><br><span class="line">    job_summary_line+=&quot; - $&#123;job_run_time&#125;秒&quot; # 附加任务运行时长</span><br><span class="line"></span><br><span class="line">    SUMMARY_LINES+=(&quot;$job_summary_line&quot;) # 将此任务的摘要添加到全局列表</span><br><span class="line">    log_message &quot;--- 完成服务备份: $&#123;config_ref[name]&#125;。结果: $&#123;job_summary_line&#125; ---&quot;</span><br><span class="line">&#125;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">--- 主执行流程 ---</span></span><br><span class="line">log_message &quot;=== Docker 服务备份脚本 v$&#123;SCRIPT_VERSION&#125; 已启动 ===&quot;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">检查必需的工具</span></span><br><span class="line">for tool in docker 7z jq curl stat; do</span><br><span class="line">    if ! command -v $tool &amp;&gt; /dev/null; then</span><br><span class="line">        log_message &quot;错误：必需工具 &#x27;$tool&#x27; 未安装。请安装后再试。&quot;</span><br><span class="line">        # 尝试发送关于此严重错误的 Bark 基本通知</span><br><span class="line">        if [ -n &quot;$BARK_SERVER&quot; ] &amp;&amp; [ -n &quot;$BARK_KEY&quot; ]; then</span><br><span class="line">            # 避免在URL中直接包含可能导致问题的字符，进行简单替换或移除</span><br><span class="line">            error_tool_msg=&quot;必需工具 &#x27;$tool&#x27; 未找到。脚本中止。&quot;</span><br><span class="line">            encoded_error_title=$(url_encode &quot;Docker备份严重错误&quot;)</span><br><span class="line">            encoded_error_content=$(url_encode &quot;$error_tool_msg&quot;)</span><br><span class="line">            curl -sS &quot;$BARK_SERVER/$BARK_KEY/$encoded_error_title/$encoded_error_content&quot; &gt; /dev/null</span><br><span class="line">        fi</span><br><span class="line">        exit 1</span><br><span class="line">    fi</span><br><span class="line">done</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">检查基本的环境变量</span></span><br><span class="line">missing_vars=()</span><br><span class="line">[ -z &quot;$ZIP_PASSWORD&quot; ] &amp;&amp; missing_vars+=(&quot;ZIP_PASSWORD (压缩密码)&quot;)</span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">MYSQL_ROOT_PASSWORD 仅在启用了 MySQL 任务时才需要。稍后检查或用户自行确保。</span></span><br><span class="line">[ -z &quot;$BARK_SERVER&quot; ] &amp;&amp; missing_vars+=(&quot;BARK_SERVER (Bark服务器地址)&quot;)</span><br><span class="line">[ -z &quot;$BARK_KEY&quot; ] &amp;&amp; missing_vars+=(&quot;BARK_KEY (Bark设备密钥)&quot;)</span><br><span class="line"></span><br><span class="line">if [ $&#123;#missing_vars[@]&#125; -gt 0 ]; then</span><br><span class="line">    error_vars_msg=&quot;错误：以下环境变量未设置: $&#123;missing_vars[*]&#125;. 请在 ~/.bashrc 或脚本中设置它们。&quot;</span><br><span class="line">    log_message &quot;$error_vars_msg&quot;</span><br><span class="line">    # 尝试发送 Bark 通知</span><br><span class="line">     if [ -n &quot;$BARK_SERVER&quot; ] &amp;&amp; [ -n &quot;$BARK_KEY&quot; ]; then # 再次检查，以防部分变量缺失</span><br><span class="line">        encoded_error_title=$(url_encode &quot;Docker备份配置错误&quot;)</span><br><span class="line">        encoded_error_content=$(url_encode &quot;环境变量缺失: $&#123;missing_vars[*]&#125;. 脚本中止。&quot;)</span><br><span class="line">        curl -sS &quot;$BARK_SERVER/$BARK_KEY/$encoded_error_title/$encoded_error_content&quot; &gt; /dev/null</span><br><span class="line">    fi</span><br><span class="line">    exit 1</span><br><span class="line">fi</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">遍历 BACKUP_ORDER 数组中定义的服务，并依次处理</span></span><br><span class="line">for service_config_ref_name in &quot;$&#123;BACKUP_ORDER[@]&#125;&quot;; do</span><br><span class="line">    process_one_service &quot;$service_config_ref_name&quot;</span><br><span class="line">done</span><br><span class="line"></span><br><span class="line">GLOBAL_END_TIME=$(date +%s)</span><br><span class="line">TOTAL_RUN_TIME=$((GLOBAL_END_TIME - GLOBAL_START_TIME)) # 计算总运行时长</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">--- 汇总通知 ---</span></span><br><span class="line">notification_title_prefix=&quot;NAS Docker 服务备份&quot; # 通知标题前缀</span><br><span class="line">notification_title=&quot;&quot; # 最终通知标题</span><br><span class="line">notification_content_detail=&quot;&quot; # 通知内容的详细部分</span><br><span class="line"></span><br><span class="line">if [ &quot;$TOTAL_JOBS&quot; -eq 0 ]; then</span><br><span class="line">    notification_title=&quot;$&#123;notification_title_prefix&#125; - 未定义任务 🤷&quot;</span><br><span class="line">    notification_content_detail=&quot;没有配置或启用任何备份任务。&quot;</span><br><span class="line">else</span><br><span class="line">    if [ &quot;$SUCCESSFUL_JOBS&quot; -eq &quot;$TOTAL_JOBS&quot; ]; then</span><br><span class="line">        notification_title=&quot;$&#123;notification_title_prefix&#125; - 全部成功 ✅&quot;</span><br><span class="line">    elif [ &quot;$SUCCESSFUL_JOBS&quot; -gt 0 ]; then</span><br><span class="line">        notification_title=&quot;$&#123;notification_title_prefix&#125; - 部分成功 🟡&quot;</span><br><span class="line">    else</span><br><span class="line">        notification_title=&quot;$&#123;notification_title_prefix&#125; - 全部失败 ❌&quot;</span><br><span class="line">    fi</span><br><span class="line"></span><br><span class="line">    # 构建详细内容</span><br><span class="line">    for line in &quot;$&#123;SUMMARY_LINES[@]&#125;&quot;; do</span><br><span class="line">        notification_content_detail+=&quot;$&#123;line&#125;\n\n&quot; # Bark 中使用 \n 换行</span><br><span class="line">    done</span><br><span class="line">    # 移除最后一个多余的换行符</span><br><span class="line">    notification_content_detail=$(echo -e &quot;$&#123;notification_content_detail%\\n\\n&#125;&quot;)</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">notification_content_summary=&quot;汇总: $&#123;SUCCESSFUL_JOBS&#125;/$&#123;TOTAL_JOBS&#125; 个任务成功。总耗时: $&#123;TOTAL_RUN_TIME&#125;秒。&quot;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash">组合摘要和详情作为 Bark 通知内容</span></span><br><span class="line">final_notification_content=&quot;$&#123;notification_content_summary&#125; 详情:</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_">$</span><span class="language-bash">&#123;notification_content_detail&#125;<span class="string">&quot;</span></span></span><br><span class="line"></span><br><span class="line">log_message &quot;脚本运行完毕。$notification_content_summary&quot;</span><br><span class="line">log_message &quot;正在发送整合的 Bark 通知...&quot;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="string">为主通知使用通用图标或第一个服务的图标</span></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="string">或者，您可以定义一个全局图标URL</span></span></span><br><span class="line">main_notification_icon_url=&quot;https://cdn.jsdelivr.net/gh/xushier/HD-Icons/border-radius/Unraid_A.png&quot;</span><br><span class="line"></span><br><span class="line">encoded_title=$(url_encode &quot;$notification_title&quot;)</span><br><span class="line">encoded_content=$(url_encode &quot;$final_notification_content&quot;) # 确保这里用的是 final_notification_content</span><br><span class="line"></span><br><span class="line">bark_url=&quot;$&#123;BARK_SERVER&#125;/$&#123;BARK_KEY&#125;/$&#123;encoded_title&#125;/$&#123;encoded_content&#125;?group=NASDockerBackup&amp;icon=$&#123;main_notification_icon_url&#125;&quot;</span><br><span class="line"></span><br><span class="line">if curl -sS --fail --connect-timeout 10 --max-time 30 &quot;$bark_url&quot;; then # 增加超时设置并检查HTTP错误</span><br><span class="line">    log_message &quot;Bark 通知已成功发送。&quot;</span><br><span class="line">else</span><br><span class="line">    log_message &quot;错误：发送 Bark 通知失败。请检查 Bark 服务器地址、密钥以及网络连接。URL: $&#123;bark_url&#125;&quot;</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">log_message &quot;=== Docker 服务备份脚本执行完毕。总耗时: $&#123;TOTAL_RUN_TIME&#125;秒 ===&quot;</span><br><span class="line"><span class="meta prompt_"></span></span><br><span class="line"><span class="meta prompt_"># </span><span class="language-bash"><span class="string">如果并非所有已尝试的任务都成功，则以错误码退出 (跳过的任务不计入失败)</span></span></span><br><span class="line">if [ &quot;$SUCCESSFUL_JOBS&quot; -lt &quot;$TOTAL_JOBS&quot; ]; then</span><br><span class="line">    # 如果有任务被配置为执行 (enabled=true) 但失败了</span><br><span class="line">    actual_attempted_jobs=0</span><br><span class="line">    for cfg_name in &quot;$&#123;BACKUP_ORDER[@]&#125;&quot;; do</span><br><span class="line">        declare -n cfg=&quot;$cfg_name&quot;</span><br><span class="line">        if [[ &quot;$&#123;cfg[enabled]&#125;&quot; == &quot;true&quot; ]]; then</span><br><span class="line">            actual_attempted_jobs=$((actual_attempted_jobs + 1))</span><br><span class="line">        fi</span><br><span class="line">    done</span><br><span class="line">    if [ &quot;$SUCCESSFUL_JOBS&quot; -lt &quot;$actual_attempted_jobs&quot; ]; then</span><br><span class="line">        log_message &quot;部分或全部已启用的备份任务失败。脚本以错误状态退出。&quot;</span><br><span class="line">        exit 1</span><br><span class="line">    fi</span><br><span class="line">fi</span><br><span class="line"></span><br><span class="line">exit 0 # 所有已启用的任务都成功，或没有启用任务</span><br></pre></td></tr></table></figure>
+<h3 id="第二版备份方案"><a href="#第二版备份方案" class="headerlink" title="第二版备份方案"></a>第二版备份方案</h3><p>以下就是我写这一篇文章的契机，在某一次冲浪时，接触到了一款叫 <a target="_blank" rel="noopener" href="https://restic.net/">restic</a> 的开源软件。在使用后我发现，它完美解决了第一版备份中遇到的问题。例如安全性保证，大量文件的增量备份，甚至它还能提供版本管理！称它为完美的备份软件也不为过。</p>
+<p>当然事物都有其两面性，restic 是一款没有图形界面的工具，要想使用它得了解一些额外的知识。</p>
+<p>当然事物都有其两面性，既然它这么好用，那说不定会有人为它开发图形界面呢？这就是今天的主角：<a target="_blank" rel="noopener" href="https://github.com/garethgeorge/backrest">Backrest</a>。</p>
+<p>官网是这么介绍它的：</p>
+<blockquote>
+<p>Backrest is a web-accessible backup solution built on top of restic.</p>
+</blockquote>
+<p>Backrest 是一个构建于 Restic 之上的可通过网页访问的备份解决方案。</p>
+<p>通过 Backrest 我们就可以用较为简单的方式来使用 restic 备份文件。</p>
+<h4 id="安装-Backrest"><a href="#安装-Backrest" class="headerlink" title="安装 Backrest"></a>安装 Backrest</h4><p>我们可以通过 Docker 来安装 Backrest。安装命令如下：</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">docker run -d \</span><br><span class="line">  --name backrest \                                      # 容器名称</span><br><span class="line">  --net bridge \                                         # 使用默认的桥接网络模式</span><br><span class="line">  --pids-limit 2048 \                                    # 限制最大进程数为 2048</span><br><span class="line">  -p 9898:9898/tcp \                                     # 映射主机端口 9898 到容器端口 9898</span><br><span class="line">  -e TZ=&quot;Asia/Shanghai&quot; \                                # 设置时区</span><br><span class="line">  -e BACKREST_DATA=&quot;/data&quot; \                             # Backrest 数据目录环境变量</span><br><span class="line">  -e BACKREST_CONFIG=&quot;/config/config.json&quot; \             # Backrest 配置文件路径</span><br><span class="line">  -e XDG_CACHE_HOME=&quot;/cache&quot; \                           # 缓存目录路径</span><br><span class="line">  -v /mnt/user/appdata/backrest:/config:rw \             # 映射配置文件目录</span><br><span class="line">  -v /mnt/user/appdata/backrest/cache:/cache:rw \        # 映射缓存目录</span><br><span class="line">  -v /mnt/user/appdata/backrest/data:/data:rw \          # 映射数据目录</span><br><span class="line">  -v /mnt/user/appdata/backrest/repos:/repos:rw \        # 映射备份仓库目录</span><br><span class="line">  -v /mnt/user:/backup:ro \                              # 映射只读的备份源目录</span><br><span class="line">  -v /mnt/user/appdata/rclone:/root/.config/rclone:rw \  # 映射 rclone 配置目录</span><br><span class="line">  garethgeorge/backrest:latest                           # 使用的镜像名称</span><br></pre></td></tr></table></figure>
+<p>上述命令在使用时需要去除注释并按照自身情况修改映射的目录和端口。</p>
+<p>需要注意的有：</p>
+<ol>
+<li><p><code>-v /mnt/user:/backup:ro</code> 这部分是只读（ro），当需要恢复文件时，这部分可以临时修改为读写（rw），或者挂载另外一个恢复目录，由于大部分时间还是读为主，所以这里为了源数据安全考虑，还是写成只读会好一些；</p>
+</li>
+<li><p><code>-v /mnt/user/appdata/rclone:/root/.config/rclone:rw</code> 由于我的备份目的地是 rclone，所以这里需要传入 rclone 的备份文件，当在 Backrest 配置了目的地为 rclone 的仓库时，restic 就会从这里进行读取信息。</p>
+</li>
+</ol>
+<h4 id="创建用户"><a href="#创建用户" class="headerlink" title="创建用户"></a>创建用户</h4><p>这时我们访问宿主机的 <code>9898</code> 端口，就可以看到 Backrest 的图形界面了。</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/榨干这台NAS第006话-关于备份/Backrest界面1.png" alt="Backrest界面1.png"></p>
+<p>你需要输入一个实例ID，并创建一个用户。</p>
+<h4 id="创建仓库（repository）"><a href="#创建仓库（repository）" class="headerlink" title="创建仓库（repository）"></a>创建仓库（repository）</h4><p>在 restic 中，保存备份的地方就叫做 repository。和 git 中的 repository 一样，它是一个目录，包含一些由 restic 创建的一级目录和文件。里面存储着你的备份文件、元数据以及加密密钥。</p>
+<p>点击页面左侧菜单的 <em>Add Repo</em> （图中 1 部分）即可打开创建仓库的表单：</p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/榨干这台NAS第006话-关于备份/Backrest界面2.png" alt="Backrest界面2.png"></p>
+<p>首先输入仓库名称（图中 2 部分），这部分不支持中文，也不支持空格，你可以按照备份目的地和备份内容来进行取名，比如我的备份目的地是 123 网盘，备份内容是 NAS 的文件，所以我的仓库名叫做 <em>123CloudNASBackup</em>。</p>
+<p>然后是 Repository URI（图中 3 部分），这是 restic 较为关键的部分，可以把他当作连接到备份目的地的地址，这一部分根据你实际的备份目的地的不同，格式也不同。下面是一些常用的备份目的地类型：</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>存储库类型</th>
+<th>存储库 URL 示例</th>
+<th>备注（字段含义）</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>本地文件系统</td>
+<td><code>/srv/restic-repo</code></td>
+<td>本地路径作为存储库</td>
+</tr>
+<tr>
+<td>SFTP</td>
+<td><code>sftp:user@host:/srv/restic-repo</code></td>
+<td><code>user</code> 是用户名，<code>host</code> 是远程主机，路径为远程目录</td>
+</tr>
+<tr>
+<td>REST 服务器</td>
+<td><code>rest:http://host:8000/</code><br><code>rest:https://user:pass@host:8000/</code><br><code>rest:https://user:pass@host:8000/my_backup_repo/</code><br><code>rest:http+unix:///tmp/rest.socket:/my_backup_repo/</code></td>
+<td>支持 HTTP/HTTPS 或 Unix socket；可包含用户名密码、端口、路径等信息</td>
+</tr>
+<tr>
+<td>Amazon S3</td>
+<td><code>s3:s3.us-east-1.amazonaws.com/bucket_name</code></td>
+<td><code>s3.us-east-1.amazonaws.com</code> 是区域端点，<code>bucket_name</code> 是存储桶名称</td>
+</tr>
+<tr>
+<td>Rclone</td>
+<td><code>rclone:foo:bar</code></td>
+<td><code>foo</code> 是 Rclone 配置中的远程名，<code>bar</code> 是远程路径</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>未完待续</p>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div></div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="https://cdn.jsdelivr.net/gh/AemonCao/hexo-theme-next@master/source/images/wechatpay.jpg" alt="Aemon 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="https://cdn.jsdelivr.net/gh/AemonCao/hexo-theme-next@master/source/images/alipay.jpg" alt="Aemon 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/Docker/" rel="tag"><i class="fa fa-tag"></i> Docker</a>
+              <a href="/tags/NAS/" rel="tag"><i class="fa fa-tag"></i> NAS</a>
+              <a href="/tags/unRAID/" rel="tag"><i class="fa fa-tag"></i> unRAID</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2024/06/12/%E6%A6%A8%E5%B9%B2%E8%BF%99%E5%8F%B0NAS%E7%AC%AC005%E8%AF%9D-%E5%A4%96%E7%BD%91%E8%AE%BF%E9%97%AE%E4%B9%8BTailscale/" rel="prev" title="榨干这台 NAS 第 005 话-外网访问之 Tailscale">
+      <i class="fa fa-chevron-left"></i> 榨干这台 NAS 第 005 话-外网访问之 Tailscale
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="valine-comments"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%A4%87%E4%BB%BD%E7%9A%84%E9%87%8D%E8%A6%81%E6%80%A7"><span class="nav-number">1.</span> <span class="nav-text">备份的重要性</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E7%94%A8%E7%9A%84%E5%A4%87%E4%BB%BD%E6%96%B9%E5%BC%8F%E4%BB%A5%E5%8F%8A%E4%BC%98%E7%BC%BA%E7%82%B9"><span class="nav-number">2.</span> <span class="nav-text">常用的备份方式以及优缺点</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%86%85%E9%83%A8%E7%A1%AC%E7%9B%98%E5%A4%87%E4%BB%BD"><span class="nav-number">2.1.</span> <span class="nav-text">内部硬盘备份</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8F%AF%E7%A7%BB%E5%8A%A8%E5%AD%98%E5%82%A8%E5%AA%92%E4%BB%8B%E5%A4%87%E4%BB%BD"><span class="nav-number">2.2.</span> <span class="nav-text">可移动存储媒介备份</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E4%BA%91%E5%A4%87%E4%BB%BD"><span class="nav-number">2.3.</span> <span class="nav-text">云备份</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%88%91%E7%9A%84%E5%A4%87%E4%BB%BD%E4%B9%8B%E8%B7%AF"><span class="nav-number">3.</span> <span class="nav-text">我的备份之路</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%89%8B%E5%86%99"><span class="nav-number">3.1.</span> <span class="nav-text">手写</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#QQ-%E7%BD%91%E7%BB%9C%E7%A1%AC%E7%9B%98"><span class="nav-number">3.2.</span> <span class="nav-text">QQ 网络硬盘</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E6%B0%B8%E7%A1%95-E-%E7%9B%98"><span class="nav-number">3.3.</span> <span class="nav-text">永硕 E 盘</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%8D%83%E8%84%91"><span class="nav-number">3.4.</span> <span class="nav-text">千脑</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%90%84%E7%B1%BB%E7%BD%91%E7%9B%98"><span class="nav-number">3.5.</span> <span class="nav-text">各类网盘</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#NAS"><span class="nav-number">3.6.</span> <span class="nav-text">NAS</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%B8%80%E7%89%88%E5%A4%87%E4%BB%BD%E6%96%B9%E6%A1%88"><span class="nav-number">4.</span> <span class="nav-text">第一版备份方案</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E7%AC%AC%E4%BA%8C%E7%89%88%E5%A4%87%E4%BB%BD%E6%96%B9%E6%A1%88"><span class="nav-number">5.</span> <span class="nav-text">第二版备份方案</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%89%E8%A3%85-Backrest"><span class="nav-number">5.1.</span> <span class="nav-text">安装 Backrest</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E7%94%A8%E6%88%B7"><span class="nav-number">5.2.</span> <span class="nav-text">创建用户</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%88%9B%E5%BB%BA%E4%BB%93%E5%BA%93%EF%BC%88repository%EF%BC%89"><span class="nav-number">5.3.</span> <span class="nav-text">创建仓库（repository）</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Aemon"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Aemon</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">62</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">63</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/AemonCao" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;AemonCao" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:bot960528@gmail.com" title="E-Mail → mailto:bot960528@gmail.com" rel="noopener" target="_blank"><i class="far fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://t.me/Aemon_Cao" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;Aemon_Cao" rel="noopener" target="_blank"><i class="fab fa-telegram fa-fw"></i>Telegram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/rss2.xml" title="RSS → &#x2F;rss2.xml"><i class="fas fa-rss-square fa-fw"></i>RSS</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="Atom → &#x2F;atom.xml"><i class="fas fa-rss-square fa-fw"></i>Atom</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">浙ICP备20007726号-1 </a>
+  </div>
+
+<div class="copyright">
+  
+  &copy; 2017 – 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Aemon</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/velocity-animate@1/velocity.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/velocity-animate@1/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://aemoncao.github.io/2025/05/30/%E6%A6%A8%E5%B9%B2%E8%BF%99%E5%8F%B0NAS%E7%AC%AC006%E8%AF%9D-%E5%85%B3%E4%BA%8E%E5%A4%87%E4%BB%BD/',]
+      });
+      });
+  </script>
+
+
+<script>
+NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', () => {
+    var GUEST = ['nick', 'mail', 'link'];
+    var guest = 'nick,mail,link';
+    guest = guest.split(',').filter(item => {
+      return GUEST.includes(item);
+    });
+    new Valine({
+      el         : '#valine-comments',
+      verify     : false,
+      notify     : false,
+      appId      : 'dXrGvgAadbIcmIt5BIuqak9X-gzGzoHsz',
+      appKey     : 'BvQ660cw9YNVNjakRNfdsq1L',
+      placeholder: "评论支持 Markdown 样式。",
+      avatar     : 'mm',
+      meta       : guest,
+      pageSize   : '10' || 10,
+      visitor    : false,
+      lang       : '' || 'zh-cn',
+      path       : location.pathname,
+      recordIP   : true,
+      serverURLs : ''
+    });
+  }, window.Valine);
+});
+</script>
+
+</body>
+</html>
