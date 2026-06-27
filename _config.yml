@@ -102,6 +102,8 @@ ignore:
 ## Plugins: https://hexo.io/plugins/
 ## Themes: https://hexo.io/themes/
 theme: next
+theme_config:
+  reminder: false
 
 # Deployment
 ## Docs: https://hexo.io/docs/deployment.html
@@ -135,8 +137,10 @@ search:
   format: html
 
 math:
-  engine: 'mathjax'
   mathjax:
-    src: custom_mathjax_source
-    config:
-      # MathJax config
+    css: 'https://cdn.jsdelivr.net/npm/hexo-math@5.0.0/dist/style.css'
+    options:
+      conversion:
+        display: false
+      tex:
+      svg:

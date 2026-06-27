@@ -4,47 +4,16 @@
 
 ## 注意事项
 
-每次 `npm i` 之后需要进行的操作，为了使 hexo 支持 Mathjax：
+项目使用 Node.js 24.18.0 和 pnpm 11.8.0。安装依赖使用：
 
-### 更改 `formatText`
-
-去 `node_modules/hexo-renderer-kramed/lib/renderer.js` 将：
-
-```JavaScript
-// Change inline math rule
-function formatText(text) {
-    // Fit kramed's rule: $$ + \1 + $$
-    return text.replace(/`\$(.*?)\$`/g, '$$$$$1$$$$');
-}
+```bash
+pnpm install
 ```
 
-修改为：
+MathJax 由 `hexo-math` 在构建时渲染，不需要手动修改 `node_modules`。需要数学公式时使用 Hexo 标签：
 
-```JavaScript
-// Change inline math rule
-function formatText(text) {
-    return text;
-}
-```
-
-### 更改默认转义规则
-
-去 `node_modules\kramed\lib\rules\inline.js` 中将第 `11` 行 `escape` 变量的值改为：
-
-```JavaScript
-escape: /^\\([`*\[\]()#$+\-.!_>])/,
-```
-
-同时要将第 `20` 行 `em` 变量的值改为：
-
-```JavaScript
-em: /^\*((?:\*\*|[\s\S])+?)\*(?!\*)/,
-```
-
-### 更新 Mathjax 的 CDN 链接
-
-去 `node_modules/hexo-renderer-mathjax/mathjax.html` 将 `<script>` 更改为：
-
-```HTML
-<script src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.1/MathJax.js?config=TeX-MML-AM_CHTML"></script>
+```md
+{% mathjax %}
+\frac{1}{x^2-1}
+{% endmathjax %}
 ```

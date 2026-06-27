@@ -11,26 +11,34 @@ jobs:
     permissions:
       contents: write
     steps:
-      - uses: actions/checkout@v3
+      - uses: actions/checkout@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           # If your repository depends on submodule, please see: https://github.com/actions/checkout
           submodules: recursive
-      - name: Use Node.js 16.x
-        uses: actions/setup-node@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v4
         with:
-          node-version: '16.20.0'
-      - name: Cache NPM dependencies
-        uses: actions/cache@v4.2.2
+          node-version-file: .nvmrc
+      - name: Enable pnpm
+        run: |
+          corepack enable
+          corepack prepare pnpm@11.8.0 --activate
+      - name: Get pnpm store directory
+        id: pnpm-store
+        shell: bash
+        run: echo "path=$(pnpm store path --silent)" >> "$GITHUB_OUTPUT"
+      - name: Cache pnpm dependencies
+        uses: actions/cache@v4
         with:
-          path: node_modules
-          key: ${{ runner.OS }}-npm-cache
+          path: ${{ steps.pnpm-store.outputs.path }}
+          key: ${{ runner.OS }}-pnpm-store-${{ hashFiles('pnpm-lock.yaml') }}
           restore-keys: |
-            ${{ runner.OS }}-npm-cache
+            ${{ runner.OS }}-pnpm-store-
       - name: Install Dependencies
-        run: npm install
+        run: pnpm install --frozen-lockfile
       - name: Build
-        run: npm run build
+        run: pnpm run build
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
         with:
