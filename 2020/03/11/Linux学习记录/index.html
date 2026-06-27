@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 7.3.0">
+<meta name="generator" content="Hexo 8.1.2">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-256x256-next.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.ico">
@@ -30,9 +30,8 @@
 <meta property="og:description" content="这是一篇偏向流水账的文章，主要记一下平时使用 Linux 过程中的一些小技巧，或者某些命令的使用方法。 本文不定期更新，可以点击目录来跳转观看。">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/Linux%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E6%BA%90%E4%BB%A3%E7%A0%81%E7%AE%A1%E7%90%86%E6%8F%90%E4%BE%9B%E7%A8%8B%E5%BA%8F.png">
-<meta property="og:image" content="https://aemoncao.github.io/2020/03/11/Linux%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E6%BA%90%E4%BB%A3%E7%A0%81%E7%AE%A1%E7%90%86%E6%8F%90%E4%BE%9B%E7%A8%8B%E5%BA%8F.png">
 <meta property="article:published_time" content="2020-03-11T11:52:38.000Z">
-<meta property="article:modified_time" content="2025-05-31T09:25:57.348Z">
+<meta property="article:modified_time" content="2026-06-27T16:56:23.833Z">
 <meta property="article:author" content="Aemon">
 <meta property="article:tag" content="Linux">
 <meta property="article:tag" content="Vim">
@@ -101,7 +100,11 @@
   </style>
 </noscript>
 
-<link rel="alternate" href="/atom.xml" title="Aemon's Blog" type="application/atom+xml">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@5.0.0/dist/style.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="Aemon's Blog" type="application/atom+xml">
 <link rel="alternate" href="/rss2.xml" title="Aemon's Blog" type="application/rss+xml">
 </head>
 
@@ -240,7 +243,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-05-31 17:25:57" itemprop="dateModified" datetime="2025-05-31T17:25:57+08:00">2025-05-31</time>
+                <time title="修改时间：2026-06-28 00:56:23" itemprop="dateModified" datetime="2026-06-28T00:56:23+08:00">2026-06-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -279,7 +282,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>3k</span>
+              <span>2.2k</span>
             </span>
 
         </div>
@@ -294,6 +297,7 @@
         <p>这是一篇偏向流水账的文章，主要记一下平时使用 Linux 过程中的一些小技巧，或者某些命令的使用方法。</p>
 <p>本文不定期更新，可以点击目录来跳转观看。</p>
 <span id="more"></span>
+
 <h2 id="命令"><a href="#命令" class="headerlink" title="命令"></a>命令</h2><h3 id="tac"><a href="#tac" class="headerlink" title="tac"></a>tac</h3><blockquote>
 <p>用于将文件已行为单位的反序输出，即第一行最后显示，最后一行先显示。</p>
 </blockquote>
@@ -303,15 +307,19 @@
 <p>tac 其实就是 cat 的 reverse，包含于 <a target="_blank" rel="noopener" href="https://zh.wikipedia.org/zh-hans/GNU%E6%A0%B8%E5%BF%83%E5%B7%A5%E5%85%B7%E7%BB%84">coreutils</a>。</p>
 <p>用法和 cat 类似，预览：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tac abc.txt</span><br></pre></td></tr></table></figure>
+
 <p>输出到文件：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tac abc.txt &gt; cba.txt</span><br></pre></td></tr></table></figure>
+
 <p>目前想到的用法可能是用在日志文件上，可以将日志文件 reverse，方便查看最新的日志。</p>
 <h3 id="w"><a href="#w" class="headerlink" title="w"></a>w</h3><blockquote>
 <p>用于显示目前登入系统的用户信息。</p>
 </blockquote>
 <p>这个命令也不算是新学的，但是对输出的信息还只是一知半解，所以今天去查了一下，这边记录一下。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">w</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"> 22:33:11 up 4 days,  9:44,  1 user,  load average: 0.05, 0.03, 0.05</span><br><span class="line">USER     TTY      FROM             LOGIN@   IDLE   JCPU   PCPU WHAT</span><br><span class="line">root     pts/1    192.168.1.88     22:22    7.00s  0.03s  0.00s w</span><br></pre></td></tr></table></figure>
+
 <p>第一行显示以下信息：当前时间（<code>22:33:11</code>），系统运行时间（<code>up 4 days,  9:44</code>），当前一共有多少用户登录（<code>1 user</code>），以及过去 1 分钟，5 分钟，15 分钟的系统平均负载（<code>load average: 0.05, 0.03, 0.05</code>）。</p>
 <p>第二行开始是一张表，标头依次为登录名（<code>USER</code>），登录后系统分配的终端号（<code>TTY</code>），远程主机名（<code>FROM</code>），何时登录（<code>LOGIN@</code>），空闲时间（<code>IDLE</code>），与该 TTY 终端连接的所由进程占用的时间，不包括过去的后台作业时间（<code>JCPU</code>），当前进程所占用的时间（<code>PCPU</code>），当前进程（<code>WHAT</code>）。</p>
 <p>参考：</p>
@@ -320,7 +328,7 @@
 </li>
 <li><p><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/w-command-in-linux-with-examples/">w command in Linux with Examples</a></p>
 </li>
-<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Jerry_1126/article/details/52088987">图解Linux命令之—w命令</a></p>
+<li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/Jerry_1126/article/details/52088987">图解Linux命令之–w命令</a></p>
 </li>
 <li><p><a target="_blank" rel="noopener" href="https://blog.csdn.net/zzxian/article/details/8070144">Linux的JCPU与PCPU</a></p>
 </li>
@@ -331,6 +339,7 @@
 <p>这是一个很实用的命令，它可以在使文件搜索更上一层楼，往常的文件搜索关键字只能到文件名。而 <code>grep</code> 则可以<del>深入</del>到文件内部。</p>
 <p>用法是：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep &#x27;The quick brown fox jumps over a lazy dog.&#x27; a.txt</span><br></pre></td></tr></table></figure>
+
 <p>意思就是在 <em>a.txt</em> 文件中搜索 <code>The quick brown fox jumps over a lazy dog.</code> 字符串。</p>
 <p>它有几个常用的参数：</p>
 <ul>
@@ -361,6 +370,7 @@
 <p>在 Linux 中，外置的存储设备并不会自动挂载，所以需要 <code>mount</code> 命令来进行挂载。</p>
 <p>用法是：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mount /dev/mmcblk0p1 /home/pi/Mount/3TB</span><br></pre></td></tr></table></figure>
+
 <p>意思是将设备 <code>/dev/mmcblk0p1</code> 挂载到挂载点 <code>/home/pi/Mount/3TB</code>。这里要注意的是，如果挂载点不存在将会报错 <code>mount: mount point /home/pi/Mount/3TB does not exist</code>，所以要先手动创建挂载点目录；</p>
 <p>参考：</p>
 <ul>
@@ -398,12 +408,15 @@
 <h3 id="Vim-配置"><a href="#Vim-配置" class="headerlink" title="Vim 配置"></a>Vim 配置</h3><p>Vim 不仅功能强大，而且它的可配置性也非常强，所以如果想要更好的使用这个工具，适合自己的配置是必不可少的。</p>
 <p>这边就把我目前的配置放在下面，大家可以进行参考（其实大多数都是从<a target="_blank" rel="noopener" href="https://www.ruanyifeng.com/blog/2018/09/vimrc.html">阮老师</a>这里抄来哒）：</p>
 <figure class="highlight vim"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&quot; 显示行号</span></span><br><span class="line"><span class="keyword">set</span> <span class="keyword">number</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&quot; 显示相对行号</span></span><br><span class="line"><span class="keyword">set</span> relativenumber</span><br><span class="line"></span><br><span class="line"><span class="comment">&quot; 当前行高亮</span></span><br><span class="line"><span class="keyword">set</span> cursorline</span><br><span class="line"></span><br><span class="line"><span class="comment">&quot; 不与 Vi 兼容（采用 Vim 自己的操作命令）。</span></span><br><span class="line"><span class="keyword">set</span> nocompatible</span><br><span class="line"></span><br><span class="line"><span class="comment">&quot; 语法高亮</span></span><br><span class="line"><span class="keyword">syntax</span> <span class="keyword">on</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&quot; 显示当前是什么模式</span></span><br><span class="line"><span class="keyword">set</span> showmode</span><br><span class="line"></span><br><span class="line"><span class="comment">&quot; 使用utf-8编码</span></span><br><span class="line"><span class="keyword">set</span> encoding=utf-<span class="number">8</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&quot; 使用 256 色</span></span><br><span class="line"><span class="keyword">set</span> t_Co=<span class="number">256</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&quot; 垂直滚动时，光标距离底部的位置</span></span><br><span class="line"><span class="keyword">set</span> scrolloff=<span class="number">5</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&quot; 是否显示状态栏。0 表示不显示，1 表示只在多窗口时显示，2 表示显示。</span></span><br><span class="line"><span class="keyword">set</span> laststatus=<span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&quot; 在状态栏显示光标的当前位置（位于哪一行哪一列）。</span></span><br><span class="line"><span class="keyword">set</span>  ruler</span><br><span class="line"></span><br><span class="line"><span class="comment">&quot; 光标遇到圆括号、方括号、大括号时，自动高亮对应的另一个圆括号、方括号和大括号。</span></span><br><span class="line"><span class="keyword">set</span> showmatch</span><br><span class="line"></span><br><span class="line"><span class="comment">&quot; 打开英语单词的拼写检查。</span></span><br><span class="line"><span class="comment">&quot; set spell spelllang=en_us</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&quot; 保留撤销历史。</span></span><br><span class="line"><span class="keyword">set</span> <span class="built_in">undofile</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&quot; 出错时不要发出声音</span></span><br><span class="line"><span class="keyword">set</span> noerrorbells</span><br><span class="line"></span><br><span class="line"><span class="comment">&quot; 出错时，发出视觉提示</span></span><br><span class="line"><span class="keyword">set</span> visualbell</span><br><span class="line"></span><br><span class="line"><span class="comment">&quot; Vim 需要记住多少次历史操作。</span></span><br><span class="line"><span class="keyword">set</span> <span class="keyword">history</span>=<span class="number">1000</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&quot; 打开文件监视。如果在编辑过程中文件发生外部改变（比如被别的编辑器编辑了），就会发出提示。</span></span><br><span class="line"><span class="keyword">set</span> autoread</span><br><span class="line"></span><br><span class="line"><span class="comment">&quot; 如果行尾有多余的空格（包括 Tab 键），该配置将让这些空格显示成可见的小方块。</span></span><br><span class="line"><span class="keyword">set</span> listchars=<span class="keyword">tab</span>:»■,trail:■</span><br><span class="line"><span class="keyword">set</span> <span class="keyword">list</span></span><br><span class="line"></span><br><span class="line"><span class="comment">&quot; 命令模式下，底部操作指令按下 Tab 键自动补全。第一次按下 Tab，会显示所有匹配的操作指令的清单；第二次按下 Tab，会依次选择各个指令。</span></span><br><span class="line"><span class="keyword">set</span> wildmenu</span><br><span class="line"><span class="keyword">set</span> wildmode=longes<span class="variable">t:list</span>,full</span><br><span class="line"></span><br><span class="line"><span class="comment">&quot; 一直显示标签页</span></span><br><span class="line"><span class="keyword">set</span> showtabline=<span class="number">2</span></span><br></pre></td></tr></table></figure>
+
 <p>我将自己常用的几款软件的配置都放到了 <a target="_blank" rel="noopener" href="https://github.com/AemonCao/mySettings">GitHub</a> 上，如果有需要可以看看。</p>
 <h2 id="Git"><a href="#Git" class="headerlink" title="Git"></a>Git</h2><h3 id="保存-GitHub-的用户名和密码"><a href="#保存-GitHub-的用户名和密码" class="headerlink" title="保存 GitHub 的用户名和密码"></a>保存 GitHub 的用户名和密码</h3><p>通过 ssh 远程服务器进行开发后，如果需要 <code>git push</code> 到 GitHub 的话，每次都需要重新输入用户名和密码，比较繁琐。</p>
 <p>可以使用以下命令来设置：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global credential.helper cache</span><br></pre></td></tr></table></figure>
+
 <p>或者：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git config --global credential.helper store</span><br></pre></td></tr></table></figure>
+
 <p>使用 <code>cache</code> 选项的话，会将用户名密码保存在内存中，平且在15分钟后从内存中消失，使用 <code>store</code> 选项的话，则会将用户名密码保存在磁盘中，永远都不会消失，除非你更改了 GitHub 的密码，否则是永远都不用输入密码的。但是密码会以明文的方式存储在当前用户的根目录下的 <em>.git-credentials</em> 文件中，比较不安全。</p>
 <p>如果你是 Mac 系统，则可以使用第三个选项 <code>osxkeychain</code>，可以将凭证存储都<a target="_blank" rel="noopener" href="https://support.apple.com/zh-cn/HT204085">钥匙串</a>中。这样你的凭证虽然还是存储在磁盘中，但是它是被加密的，并且也是可以永久使用。</p>
 <p>参考：</p>
@@ -414,14 +427,17 @@
 <p>如果一个项目中包含了另一个项目，我们就要使用 Git 的 Submodules 来进行管理。</p>
 <p>首先要在当前主项目上使用 <code>git submodule</code> 命令来添加一个子项目：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git submodule add https://github.com/AemonCao/hexo-theme-next.git themes/next</span><br></pre></td></tr></table></figure>
+
 <p>默认情况下，子项目会放在一个与仓库名同名的目录中，如果想放到其他地方，可以在命令最后添加一个路径。</p>
 <p>这时候，主项目的目录下会有一个新的 <em>.gitmodules</em> 的文件。</p>
 <p>这是用来保存项子项目的 URL 以及已经拉取的本地目录之间的映射：</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">[submodule &quot;themes/next&quot;]</span><br><span class="line">        path = themes/next</span><br><span class="line">        url = https://github.com/AemonCao/hexo-theme-next.git</span><br></pre></td></tr></table></figure>
+
 <p>当前只有一条记录，如果添加了多个子项目，则会有多条记录。</p>
 <p>之后在 Visual Studio Code 的「源代码管理页面」的「源代码管理提供程序」中就会出现两个项目，一个是主项目，一个就是刚刚添加的子项目。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/Linux学习记录/源代码管理提供程序.png" alt="源代码管理提供程序"></p>
-<!-- <img data-src="/2020/03/11/Linux%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E6%BA%90%E4%BB%A3%E7%A0%81%E7%AE%A1%E7%90%86%E6%8F%90%E4%BE%9B%E7%A8%8B%E5%BA%8F.png" class="" title="源代码管理提供程序"> -->
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/Linux%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95/%E6%BA%90%E4%BB%A3%E7%A0%81%E7%AE%A1%E7%90%86%E6%8F%90%E4%BE%9B%E7%A8%8B%E5%BA%8F.png" alt="源代码管理提供程序"></p>
+<!-- {% asset_img 源代码管理提供程序.png 源代码管理提供程序 %} -->
+
 <p>现在你就可以更好得管理这两个项目了。</p>
 <p>此时在 GitHub 上，你的主项目中相应的<a target="_blank" rel="noopener" href="https://github.com/AemonCao/AemonCao.github.io/tree/source/themes">子项目文件夹</a>也会有一个指向原仓库的某一次提交的一个链接。</p>
 <p>参考：</p>
@@ -606,7 +622,7 @@
 <div class="copyright">
   
   &copy; 2017 – 
-  <span itemprop="copyrightYear">2025</span>
+  <span itemprop="copyrightYear">2026</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

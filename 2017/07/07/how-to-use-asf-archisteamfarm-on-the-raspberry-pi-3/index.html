@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 7.3.0">
+<meta name="generator" content="Hexo 8.1.2">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-256x256-next.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.ico">
@@ -30,10 +30,10 @@
 <meta property="og:description" content="最近和室友沉迷 CS:GO（Counter-Strike: Global Offensive）  ，然后就需要钱来起枪了呀。但是又不想往 Steam 里充钱，所以就瞄上了我库里 60 来个游戏，想挂点卡来换点钱去买枪。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2017-07-07T05:44:41.000Z">
-<meta property="article:modified_time" content="2025-05-31T09:25:57.510Z">
+<meta property="article:modified_time" content="2026-06-27T16:56:23.984Z">
 <meta property="article:author" content="Aemon">
-<meta property="article:tag" content="树莓派">
 <meta property="article:tag" content="Linux">
+<meta property="article:tag" content="树莓派">
 <meta name="twitter:card" content="summary">
 
 <link rel="canonical" href="https://aemoncao.github.io/2017/07/07/how-to-use-asf-archisteamfarm-on-the-raspberry-pi-3/">
@@ -98,7 +98,11 @@
   </style>
 </noscript>
 
-<link rel="alternate" href="/atom.xml" title="Aemon's Blog" type="application/atom+xml">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@5.0.0/dist/style.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="Aemon's Blog" type="application/atom+xml">
 <link rel="alternate" href="/rss2.xml" title="Aemon's Blog" type="application/rss+xml">
 </head>
 
@@ -237,7 +241,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-05-31 17:25:57" itemprop="dateModified" datetime="2025-05-31T17:25:57+08:00">2025-05-31</time>
+                <time title="修改时间：2026-06-28 00:56:23" itemprop="dateModified" datetime="2026-06-28T00:56:23+08:00">2026-06-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -280,7 +284,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2k</span>
+              <span>1.6k</span>
             </span>
 
         </div>
@@ -294,6 +298,7 @@
       
         <p>最近和室友沉迷 <em>CS:GO（Counter-Strike: Global Offensive）</em>  ，然后就需要钱来起枪了呀。但是又不想往 <em>Steam</em> 里充钱，所以就瞄上了我库里 60 来个游戏，想挂点卡来换点钱去买枪。</p>
 <span id="more"></span>
+
 <h2 id="什么是挂卡"><a href="#什么是挂卡" class="headerlink" title="什么是挂卡"></a>什么是挂卡</h2><blockquote>
 <p>卡的全称是<strong>Steam 集换式卡牌</strong>，当我们在运行游戏的时候，Steam 平台会产生一些该游戏的卡牌进入库存中。但不是所有游戏都会掉落，我们在游戏商店页面中，如果看到「集换式卡牌」几个字才说明这个游戏会掉卡。 卡牌有什么用？集换式卡牌可不是拿来打牌的，首先就是收藏用，如果你觉得某张卡很好看的话，你就可以把它留着。但是卡牌最主要的作用是用来合徽章的。 我们进入 Steam 的徽章界面就能看到有一行行游戏徽章和卡牌，当我们收集齐一个游戏的徽章之后，就可以消耗它们制作徽章。制作徽章后会得到：徽章、Steam 等级经验、游戏相关背景（用于 Steam 个人资料页）、表情以及随机游戏打折券。 但是需要说明的是，每一个游戏最多只会掉落所有卡牌总量的一半，所以如果你想集齐合徽章，剩下的一半只能通过交易（交换）或是在市场购买获得。 既然卡牌有这样的作用和需求，那么就一定会形成市场，所以如果你对这些卡牌不感兴趣，那就完全可以把它们都卖掉。在市场中出售这些卡牌可以赚取货币，自动存入Steam钱包中，这些货币与当地货币是1：1的兑换率，不能提现，但是可以用来购买游戏或是市场中的别的东西。 <a target="_blank" rel="noopener" href="http://soft.zol.com.cn/572/5727507.html">萌新教学 Steam挂卡回本是怎么一回事？</a></p>
 </blockquote>
@@ -306,23 +311,33 @@
 <p>可以树莓派直接连接输入输出设备，也可以在 <em>Windows</em> 上通过 <em>ssh</em> 来连接树莓派。</p>
 <p>在终端依次输入：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">echo &quot;deb http://download.mono-project.com/repo/debian raspbianjessie main&quot; | sudo tee /etc/apt/sources.list.d/mono-official.list</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure>
+
 <p>耐心等待后，再输入：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install mono-devel</span><br></pre></td></tr></table></figure>
+
 <p>这时候 <em>mono</em> 就开始下载并安装了。由于下载速度的原因，时间可以会比较长。请耐心等待，并且不要关闭终端或切断电源。 安装完成后输入：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mono -V</span><br></pre></td></tr></table></figure>
+
 <p>（注意 <code>V</code> 要大写）查看 <em>mono</em> 版本。好像最新版的 <em>ASF</em> 需要 <em>mono 4.8</em> 及以上版本才可以正常运行，通过上述方法安装的 <em>mono</em> 是 <em>5.0.1 Stable (5.0.1.1)</em> ，符合 <em>ASF</em> 的要求。</p>
 <h3 id="安装-Screen"><a href="#安装-Screen" class="headerlink" title="安装 Screen"></a>安装 Screen</h3><p>由于 <em>ASF</em> 需要全天启动，但是我们又不能一直开着 <em>ssh</em> 连接，所以我们就需要安装 <em>Screen</em> 来使 <em>ASF</em> 可以后台运行。 在终端分别输入：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get update</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo apt-get install screen</span><br></pre></td></tr></table></figure>
+
 <p>稍等片刻，<code>Screen</code> 就安装完成了。</p>
 <h3 id="运行-ASF"><a href="#运行-ASF" class="headerlink" title="运行 ASF"></a>运行 ASF</h3><p>进入刚才复制到树莓派中的 <em>ASF</em> 目录，输入：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">screen -S asf</span><br></pre></td></tr></table></figure>
+
 <p><em>ASF</em> 可以为任意名称。</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo mono ASF.exe</span><br></pre></td></tr></table></figure>
+
 <p>之后就是熟悉的 <em>ASF</em> 界面了，观察是否运行成功，如果成功了的话就按 Ctrl+a 和 Ctrl+d 就可以将 <em>ASF</em> 挂到后台啦，然后就可以关闭终端或切断 <code>ssh</code> 连接了。 如果想重新打开 <em>ASF</em> ，则可以通过：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">screen -r asf</span><br></pre></td></tr></table></figure>
+
 <p>来重新进入。</p>
 <h2 id="END"><a href="#END" class="headerlink" title="END"></a>END</h2><p>好啦，教程到这里就结束啦，祝大家挂卡顺利，多出闪卡，早日回本。</p>
 <p>等以后有空了会配上图片哒~</p>
@@ -504,7 +519,7 @@
 <div class="copyright">
   
   &copy; 2017 – 
-  <span itemprop="copyrightYear">2025</span>
+  <span itemprop="copyrightYear">2026</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

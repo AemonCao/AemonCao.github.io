@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 7.3.0">
+<meta name="generator" content="Hexo 8.1.2">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-256x256-next.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.ico">
@@ -30,11 +30,11 @@
 <meta property="og:description" content="之前有写过 Windows 版本的 ArchiSteamFarm 在树莓派上的挂卡教程，那次过后到现在已经一年多了，Steam 库又新进了批货，所以又要挂一次啦。这次呢，发现 ArchiSteamFarm 已经更新到了 3.3.6.0 版本，所以就准备用最新的版本。还有就是由于众所周知的原因，国内很难正常的登录 Steam ，所以这次挂机的平台从自家的树莓派转移到了 Google Cloud 上。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-09-20T09:26:59.000Z">
-<meta property="article:modified_time" content="2025-05-31T09:25:57.487Z">
+<meta property="article:modified_time" content="2026-06-27T16:56:23.964Z">
 <meta property="article:author" content="Aemon">
-<meta property="article:tag" content="Linux">
-<meta property="article:tag" content="ArchiSteamFarm">
 <meta property="article:tag" content="ASF">
+<meta property="article:tag" content="ArchiSteamFarm">
+<meta property="article:tag" content="Linux">
 <meta property="article:tag" content="Steam">
 <meta property="article:tag" content="喜加一">
 <meta property="article:tag" content="挂卡">
@@ -102,7 +102,11 @@
   </style>
 </noscript>
 
-<link rel="alternate" href="/atom.xml" title="Aemon's Blog" type="application/atom+xml">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@5.0.0/dist/style.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="Aemon's Blog" type="application/atom+xml">
 <link rel="alternate" href="/rss2.xml" title="Aemon's Blog" type="application/rss+xml">
 </head>
 
@@ -241,7 +245,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-05-31 17:25:57" itemprop="dateModified" datetime="2025-05-31T17:25:57+08:00">2025-05-31</time>
+                <time title="修改时间：2026-06-28 00:56:23" itemprop="dateModified" datetime="2026-06-28T00:56:23+08:00">2026-06-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -280,7 +284,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1.5k</span>
+              <span>988</span>
             </span>
 
         </div>
@@ -294,13 +298,14 @@
       
         <p>之前有写过 <em>Windows</em> 版本的 <em>ArchiSteamFarm</em> 在<strong>树莓派</strong>上的挂卡教程，那次过后到现在已经一年多了，<em>Steam</em> 库又新进了批货，所以又要挂一次啦。这次呢，发现 <em>ArchiSteamFarm</em> 已经更新到了 <strong>3.3.6.0</strong> 版本，所以就准备用最新的版本。还有就是由于众所周知的原因，国内很难正常的登录 <em>Steam</em> ，所以这次挂机的平台从自家的树莓派转移到了 <em>Google Cloud</em> 上。</p>
 <span id="more"></span>
-<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><ol>
+
+<h2 id="准备"><a href="#准备" class="headerlink" title="准备"></a>准备</h2><ol start="0">
 <li><p>最新版本的 <em>ArchiSteamFarm</em> ，具体可以去<a target="_blank" rel="noopener" href="https://github.com/JustArchi/ArchiSteamFarm/releases">这里</a>下载，我用的是 <strong>3.3.6.0</strong> 版本（这个作者更新得很勤快）；</p>
 </li>
 <li><p><em>Google Cloud</em> 的云服务器一台，这个的话只要你有国际信用卡，就能免费领取一台一年的云服务器，从开始到现在只装了一个梯子，其他什么都没用，现在终于可以发挥一下余热了。</p>
 </li>
 </ol>
-<h2 id="下载以及配置"><a href="#下载以及配置" class="headerlink" title="下载以及配置"></a>下载以及配置</h2><ol>
+<h2 id="下载以及配置"><a href="#下载以及配置" class="headerlink" title="下载以及配置"></a>下载以及配置</h2><ol start="0">
 <li><p>在最近的更新中，<em>ArchiSteamFarm</em> 开始支持多平台，所以我们不用像以前那样麻烦得再安装 <em>Mono</em> 了。首先先去下载对应的版本，可以去上面提到的<a target="_blank" rel="noopener" href="https://github.com/JustArchi/ArchiSteamFarm/releases">地址</a>，然后通过 <em>FTP</em> 等方式放入云主机，也可以直接通过如下命令下载：</p>
  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/JustArchi/ArchiSteamFarm/releases/download/3.3.0.6/ASF-linux-x64.zip</span><br></pre></td></tr></table></figure>
 </li>
@@ -309,32 +314,39 @@
 </li>
 <li><p>之后需要开始调整配置文件，总共需要调整的配置文件一共有三个，第一个是位于根目录下的 <code>ArchiSteamFarm.runtimeconfig.json</code>，默认值是这样的：</p>
  <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;runtimeOptions&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;configProperties&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;System.GC.Concurrent&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;System.GC.Server&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
 <p> 如果使用此配置来启动的话，在我的云服务器上会报如下错误</p>
 <blockquote>
 <p>FailFast: Couldn’t find a valid ICU package installed on the system. Set the configuration flag System.Globalization.Invariant to true if you want to run with no globalization support.</p>
 </blockquote>
 <p> 为此我们要加上这么一句：</p>
  <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;runtimeOptions&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">        <span class="attr">&quot;configProperties&quot;</span><span class="punctuation">:</span> <span class="punctuation">&#123;</span></span><br><span class="line">            <span class="attr">&quot;System.GC.Concurrent&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">            <span class="attr">&quot;System.GC.Server&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">            <span class="comment">// 防止运行报错</span></span><br><span class="line">            <span class="attr">&quot;System.Globalization.Invariant&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span></span><br><span class="line">        <span class="punctuation">&#125;</span></span><br><span class="line">    <span class="punctuation">&#125;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
 <p> 这个错误只在我这台谷歌云的云服务器上出现过，在其他的上面都是使用默认配置也能成功启动。所以可以暂时先不加这一句，如果启动时报错，可以加上这一句试一试。 第二处需要更改的配置文件是位于 <code>config</code> 文件夹下的 <code>ASF.json</code>，这部分的配置也不是必须的，主要是为了修改运行时的语言，默认的话都是系统设置的语言，而在 <em>Linux</em> 系统上，基本上都是英语，所以要将其更改成中文的话，需要将其修改成如下配置：</p>
  <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;AutoRestart&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;Blacklist&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span><span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;CommandPrefix&quot;</span><span class="punctuation">:</span> <span class="string">&quot;!&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;ConfirmationsLimiterDelay&quot;</span><span class="punctuation">:</span> <span class="number">10</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;ConnectionTimeout&quot;</span><span class="punctuation">:</span> <span class="number">60</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;CurrentCulture&quot;</span><span class="punctuation">:</span> <span class="string">&quot;zh-CN&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;Debug&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;FarmingDelay&quot;</span><span class="punctuation">:</span> <span class="number">15</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;GiftsLimiterDelay&quot;</span><span class="punctuation">:</span> <span class="number">1</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;Headless&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;IdleFarmingPeriod&quot;</span><span class="punctuation">:</span> <span class="number">8</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;InventoryLimiterDelay&quot;</span><span class="punctuation">:</span> <span class="number">3</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;IPC&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;IPCPassword&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">null</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;IPCPrefixes&quot;</span><span class="punctuation">:</span> <span class="punctuation">[</span></span><br><span class="line">        <span class="string">&quot;http://127.0.0.1:1242/&quot;</span></span><br><span class="line">    <span class="punctuation">]</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;LoginLimiterDelay&quot;</span><span class="punctuation">:</span> <span class="number">10</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;MaxFarmingTime&quot;</span><span class="punctuation">:</span> <span class="number">10</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;MaxTradeHoldDuration&quot;</span><span class="punctuation">:</span> <span class="number">15</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;OptimizationMode&quot;</span><span class="punctuation">:</span> <span class="number">0</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;Statistics&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;SteamMessagePrefix&quot;</span><span class="punctuation">:</span> <span class="string">&quot;/me &quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;SteamOwnerID&quot;</span><span class="punctuation">:</span> <span class="number">0</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;SteamProtocols&quot;</span><span class="punctuation">:</span> <span class="number">5</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;UpdateChannel&quot;</span><span class="punctuation">:</span> <span class="number">1</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;UpdatePeriod&quot;</span><span class="punctuation">:</span> <span class="number">24</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;WebLimiterDelay&quot;</span><span class="punctuation">:</span> <span class="number">200</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;WebProxy&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">null</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;WebProxyPassword&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">null</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;WebProxyUsername&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">null</span></span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
 <p> 在第 <em>7</em> 行，将 <code>CurrentCulture</code> 的值改为 <code>zh-CN</code>，记得要加双引号。 第三处的话就是我们自己的账号配置文件了，如果你想以默认配置挂卡，你只需要复制一份 <code>config</code> 目录下的 <code>minimal.json</code>，使用最简配置就可以了：</p>
  <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;Enabled&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">false</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;SteamLogin&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">null</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;SteamPassword&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">null</span></span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
 <p> 填入你的用户名和密码，并将 <code>Enabled</code> 的值改为 <code>true</code>：</p>
  <figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">    <span class="attr">&quot;Enabled&quot;</span><span class="punctuation">:</span> <span class="literal"><span class="keyword">true</span></span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;SteamLogin&quot;</span><span class="punctuation">:</span> <span class="string">&quot;Aemon&quot;</span><span class="punctuation">,</span></span><br><span class="line">    <span class="attr">&quot;SteamPassword&quot;</span><span class="punctuation">:</span> <span class="string">&quot;QdXR@Fj%YEb#bA@du#$p7nYS6E1XemFY&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
 <p> 就可以了。 如果你嫌这样麻烦，并且怕自己粗心的话，可以去这个官方提供的<a target="_blank" rel="noopener" href="https://justarchi.github.io/ArchiSteamFarm/#/">配置文件生成网站</a>，来生成自己的配置文件。 如果想配置更多的功能，但又看不懂属性名称的话，你可以对着这份<a target="_blank" rel="noopener" href="https://www.jianshu.com/p/a1459d1ca639">配置说明</a>，来进行配置。 当然，如果你英语足够好，也可以参阅<a target="_blank" rel="noopener" href="https://github.com/JustArchiNET/ArchiSteamFarm/wiki/Configuration">官方的文档</a>。</p>
 </li>
 </ol>
-<h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><ol>
+<h2 id="运行"><a href="#运行" class="headerlink" title="运行"></a>运行</h2><ol start="0">
 <li><p>在运行之前呢还需要一步，就是为 <em>ArchiSteamFarm</em> 增加可执行权限，只要执行一下命令即可：</p>
  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod +x ArchiSteamFarm</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>由于我们需要长时间挂机，需要 <em>ArchiSteamFarm</em> 能在后台运行，所以我就开一个名为 <em>asf</em> 的 <em>screen</em> ：</p>
  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">screen -S asf</span><br></pre></td></tr></table></figure>
+
 <p> 进入这个 <em>screen</em> ：</p>
  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">screen -r asf</span><br></pre></td></tr></table></figure>
 </li>
 <li><p>然后我们运行 <em>ArchiSteamFarm</em> 即可：</p>
  <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo ./ArchiSteamFarm</span><br></pre></td></tr></table></figure>
+
 <p> 根据你的设置不同，可能会提示你输入 <em>Steam 令牌</em> 的五位代码，检查一下你绑定的邮箱或者是手机 <em>APP</em> ，然后输入即可（不区分大小写）。 好了，现在就已经开始挂卡了，你可以按 <code>Ctrl</code> + <code>A</code> 和 <code>Ctrl</code> + <code>D</code> 来退出这个 <em>screen</em> ，并退出终端，程序会一直运行的。</p>
 </li>
 </ol>
@@ -521,7 +533,7 @@
 <div class="copyright">
   
   &copy; 2017 – 
-  <span itemprop="copyrightYear">2025</span>
+  <span itemprop="copyrightYear">2026</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

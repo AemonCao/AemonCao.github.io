@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 7.3.0">
+<meta name="generator" content="Hexo 8.1.2">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-256x256-next.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.ico">
@@ -30,7 +30,7 @@
 <meta property="og:description" content="因为现在是三个人合租，所以免不了 AA，但是在付钱的时候 AA，未免也太麻烦了。所以就要等到事后再去算账，然后分别转账，数量少还好，如果数量多的话，计算起来就会特别繁琐，尤其是有些东西不是完全公平的 AA，每个人所占的比例不同。 由此，想要借助微信小程序平台来进行一款记账小程序的开发，也可以借此学习一下小程序。">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2017-08-16T12:26:46.000Z">
-<meta property="article:modified_time" content="2025-05-31T09:25:57.523Z">
+<meta property="article:modified_time" content="2026-06-27T16:56:23.996Z">
 <meta property="article:author" content="Aemon">
 <meta name="twitter:card" content="summary">
 
@@ -96,7 +96,11 @@
   </style>
 </noscript>
 
-<link rel="alternate" href="/atom.xml" title="Aemon's Blog" type="application/atom+xml">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@5.0.0/dist/style.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="Aemon's Blog" type="application/atom+xml">
 <link rel="alternate" href="/rss2.xml" title="Aemon's Blog" type="application/rss+xml">
 </head>
 
@@ -235,7 +239,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-05-31 17:25:57" itemprop="dateModified" datetime="2025-05-31T17:25:57+08:00">2025-05-31</time>
+                <time title="修改时间：2026-06-28 00:56:23" itemprop="dateModified" datetime="2026-06-28T00:56:23+08:00">2026-06-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -274,7 +278,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>401</span>
+              <span>341</span>
             </span>
 
         </div>
@@ -288,13 +292,14 @@
       
         <p>因为现在是三个人合租，所以免不了 AA，但是在付钱的时候 AA，未免也太麻烦了。所以就要等到事后再去算账，然后分别转账，数量少还好，如果数量多的话，计算起来就会特别繁琐，尤其是有些东西不是完全公平的 AA，每个人所占的比例不同。 由此，想要借助<strong>微信小程序</strong>平台来进行一款记账小程序的开发，也可以借此学习一下小程序。</p>
 <span id="more"></span>
+
 <h2 id="介绍"><a href="#介绍" class="headerlink" title="介绍"></a>介绍</h2><h3 id="名字"><a href="#名字" class="headerlink" title="名字"></a>名字</h3><p>首先是名字，叫做 <em>RushA</em> ，本来是想取名叫 <em>RushB</em> 的，但是被已经有这个名字了，所以只能退而求其次。名字的来源是 <code>CS:GO</code> 中一个「战术」，意思就是 5 人快速去 B 点，从而达到出其不意的效果。通常这么使用：</p>
 <blockquote>
 <p>Rush B, dont stop.</p>
 </blockquote>
 <p>其他的话没有什么别的意思，纯粹是应景。</p>
 <h3 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h3><p>然后是需要实现的功能：</p>
-<ol>
+<ol start="0">
 <li><p>实现两人以上的 <code>AA</code> 账单分配；</p>
 </li>
 <li><p>能够动态的添加人数，并且添加要方便，每添加一个人就要分配一个颜色，这样会比较容易辨别，最好添加几个快捷选项；</p>
@@ -475,7 +480,7 @@
 <div class="copyright">
   
   &copy; 2017 – 
-  <span itemprop="copyrightYear">2025</span>
+  <span itemprop="copyrightYear">2026</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

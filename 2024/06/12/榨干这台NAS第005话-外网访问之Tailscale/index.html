@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 7.3.0">
+<meta name="generator" content="Hexo 8.1.2">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-256x256-next.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.ico">
@@ -33,7 +33,7 @@
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/%E6%A6%A8%E5%B9%B2%E8%BF%99%E5%8F%B0NAS%E7%AC%AC005%E8%AF%9D-%E5%A4%96%E7%BD%91%E8%AE%BF%E9%97%AE%E4%B9%8BTailscale/Tailscale-docker-config.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/%E6%A6%A8%E5%B9%B2%E8%BF%99%E5%8F%B0NAS%E7%AC%AC005%E8%AF%9D-%E5%A4%96%E7%BD%91%E8%AE%BF%E9%97%AE%E4%B9%8BTailscale/Tailscale-console.png">
 <meta property="article:published_time" content="2024-06-12T06:46:13.000Z">
-<meta property="article:modified_time" content="2025-05-31T09:25:58.150Z">
+<meta property="article:modified_time" content="2026-06-27T16:56:24.570Z">
 <meta property="article:author" content="Aemon">
 <meta property="article:tag" content="Docker">
 <meta property="article:tag" content="NAS">
@@ -103,7 +103,11 @@
   </style>
 </noscript>
 
-<link rel="alternate" href="/atom.xml" title="Aemon's Blog" type="application/atom+xml">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@5.0.0/dist/style.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="Aemon's Blog" type="application/atom+xml">
 <link rel="alternate" href="/rss2.xml" title="Aemon's Blog" type="application/rss+xml">
 </head>
 
@@ -242,7 +246,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-05-31 17:25:58" itemprop="dateModified" datetime="2025-05-31T17:25:58+08:00">2025-05-31</time>
+                <time title="修改时间：2026-06-28 00:56:24" itemprop="dateModified" datetime="2026-06-28T00:56:24+08:00">2026-06-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -281,7 +285,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>2.9k</span>
+              <span>2k</span>
             </span>
             <div class="post-description">轻松搞定外网访问，带你玩转Tailscale，把你的NAS变成随身携带的小宝贝！（简介是 ChatGPT 生成的~）</div>
 
@@ -296,6 +300,7 @@
       
         <p>这是一系列关于 NAS 的文章，系列的名称你们也看到了：「<strong>榨干这台 NAS</strong>」。我将尽可能详细的介绍 NAS 相关的知识，帮助你最大限度的发挥你的手中 NAS 的威力！</p>
 <span id="more"></span>
+
 <p>许久不见，拖更了快两年，今天继续来填坑。</p>
 <p>今天我们暂时先不捣鼓 PT、影视、下载那些问题了，我们来解决一个更加基础的问题：<strong>外网访问</strong>。</p>
 <p>家用 NAS 作为家庭存储的设备，绝大多数场景是在家中使用的，但是有时候我们需要在外面访问家中的 NAS，比如在外面需要访问家中的文件、下载文件到家中的 NAS 等等。那么，如何实现外网访问呢？</p>
@@ -321,14 +326,14 @@
 <p>首先我们先在外网设备上安装 Tailscale 客户端，打开 <a target="_blank" rel="noopener" href="https://tailscale.com/download">https://tailscale.com/download</a>，点击「Download」下载对应的客户端，然后安装。安装方式就不详细介绍了，很简单。</p>
 <p>安装完成后，打开 Tailscale 客户端，登录你刚刚注册的 Tailscale 账号即可。你可以将其设置为开机启动。</p>
 <p>然后我们在家中的 NAS 上安装 Tailscale 客户端，这里以 unRAID 为例，打开 unRAID 的「Apps」，搜索「Tailscale」，点击「Install」安装 Tailscale 客户端。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/榨干这台NAS第005话-外网访问之Tailscale/unRAID-App-Tailscale.png" alt="unRAID-App-Tailscale.png"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/%E6%A6%A8%E5%B9%B2%E8%BF%99%E5%8F%B0NAS%E7%AC%AC005%E8%AF%9D-%E5%A4%96%E7%BD%91%E8%AE%BF%E9%97%AE%E4%B9%8BTailscale/unRAID-App-Tailscale.png" alt="unRAID-App-Tailscale.png"></p>
 <p>docker 配置使用默认配置即可，然后点击「Apply」。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/榨干这台NAS第005话-外网访问之Tailscale/Tailscale-docker-config.png" alt="Tailscale-docker-config.png"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/%E6%A6%A8%E5%B9%B2%E8%BF%99%E5%8F%B0NAS%E7%AC%AC005%E8%AF%9D-%E5%A4%96%E7%BD%91%E8%AE%BF%E9%97%AE%E4%B9%8BTailscale/Tailscale-docker-config.png" alt="Tailscale-docker-config.png"></p>
 <p>安装完成后，我们需要打开 unRAID 的「Docker」，找到刚刚安装的 Tailscale 客户端，点击「Logs」，找到「logon URL」，然后在电脑上打开浏览器，输入这个 URL，然后登录你的 Tailscale 账号，点击「Auth」授权。</p>
 <p>如此一来，你的家中的 NAS 就和你的外网设备连接在了一起，你可以在外网设备上访问家中的 NAS 了。</p>
 <p>你可以将其当作是 TailScale 为你的外网设备和家中的 NAS 搭建局域网，这样你的外网设备就可以访问家中的 NAS 了。相反的，NAS 也可以访问外网设备。</p>
 <h4 id="TailScale-的使用"><a href="#TailScale-的使用" class="headerlink" title="TailScale 的使用"></a>TailScale 的使用</h4><p>Tailscale 的使用非常简单，你可以在 <a target="_blank" rel="noopener" href="https://login.tailscale.com/admin/machines">Tailscale 控制台</a> 中看到你的设备和它的 IP 地址，你可以通过这个 IP 地址访问到你的设备。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/榨干这台NAS第005话-外网访问之Tailscale/Tailscale-console.png" alt="Tailscale-console.png"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/%E6%A6%A8%E5%B9%B2%E8%BF%99%E5%8F%B0NAS%E7%AC%AC005%E8%AF%9D-%E5%A4%96%E7%BD%91%E8%AE%BF%E9%97%AE%E4%B9%8BTailscale/Tailscale-console.png" alt="Tailscale-console.png"></p>
 <p>例如，你可以在外网设备上通过 <code>http://TailScale-IP:Port</code> 访问到家中的 NAS 上的服务，比如你可以通过 <code>http://TailScale-IP</code> 直接访问到 unRAID 的 WebUI。其他服务也是一样，并且无需设置端口映射。</p>
 <h4 id="高阶使用-subnets"><a href="#高阶使用-subnets" class="headerlink" title="高阶使用 subnets"></a>高阶使用 subnets</h4><p>Tailscale 还有一个很强大的功能，就是 subnets，你可以在 Tailscale 控制台中设置 subnets，这样你就让你的外网设备访问到家中的局域网中的其他设备了。</p>
 <p>比如你家中有一个打印机，你可以设置 subnets，让外网设备访问到这个打印机，这样你就可以在外网设备上通过这台打印机打印文件了。</p>
@@ -520,7 +525,7 @@
 <div class="copyright">
   
   &copy; 2017 – 
-  <span itemprop="copyrightYear">2025</span>
+  <span itemprop="copyrightYear">2026</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

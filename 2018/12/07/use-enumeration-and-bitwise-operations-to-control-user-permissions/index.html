@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 7.3.0">
+<meta name="generator" content="Hexo 8.1.2">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-256x256-next.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.ico">
@@ -30,7 +30,7 @@
 <meta property="og:description" content="起因公司重构系统，我被分配到了用户管理模块，在做到权限的时候发现之前的权限管理是用一个长的字符串来存储所有权限的，例如：">
 <meta property="og:locale" content="zh_CN">
 <meta property="article:published_time" content="2018-12-07T06:39:46.000Z">
-<meta property="article:modified_time" content="2025-05-31T09:25:57.521Z">
+<meta property="article:modified_time" content="2026-06-27T16:56:23.995Z">
 <meta property="article:author" content="Aemon">
 <meta name="twitter:card" content="summary">
 
@@ -96,7 +96,11 @@
   </style>
 </noscript>
 
-<link rel="alternate" href="/atom.xml" title="Aemon's Blog" type="application/atom+xml">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@5.0.0/dist/style.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="Aemon's Blog" type="application/atom+xml">
 <link rel="alternate" href="/rss2.xml" title="Aemon's Blog" type="application/rss+xml">
 </head>
 
@@ -235,7 +239,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-05-31 17:25:57" itemprop="dateModified" datetime="2025-05-31T17:25:57+08:00">2025-05-31</time>
+                <time title="修改时间：2026-06-28 00:56:23" itemprop="dateModified" datetime="2026-06-28T00:56:23+08:00">2026-06-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -274,7 +278,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>1k</span>
+              <span>872</span>
             </span>
 
         </div>
@@ -288,26 +292,37 @@
       
         <h2 id="起因"><a href="#起因" class="headerlink" title="起因"></a>起因</h2><p>公司重构系统，我被分配到了用户管理模块，在做到权限的时候发现之前的权限管理是用一个长的字符串来存储所有权限的，例如：</p>
 <span id="more"></span>
+
 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">5101110</span><br><span class="line">ABCDEFG</span><br></pre></td></tr></table></figure>
+
 <p>上面的 <code>7</code> 位数字分别对应下面的 <code>7</code> 个权限，除了第一位为权限等级（分为 1 至 5 档）外，其他的都是是否拥有该权限的状态（1 代表拥有该权限，0 代表没有该权限）。 这样的做法虽然看似简单，但在代码编写中会麻烦很多，特别是当权限种类数量很多的时候。所以，在查阅资料后，我决定<strong>使用枚举和按位运算来控制用户权限</strong>（点题），在向 leader 请示后，开始改造。</p>
 <h2 id="原理"><a href="#原理" class="headerlink" title="原理"></a>原理</h2><p>首先要把原有的权限拆分为两部分，一部分是第一位的权限等级，另一部分是各个权限状态，需要改造的主要是各个权限状态。 为了简化步骤，我把权限数量缩小为 <code>6</code> 个，实际有 <code>15</code> 个（并且未来还可能增加），具体是这样的： 一个六个权限，分别用 0 和 1 来表示<strong>有</strong>或<strong>没有</strong>对应的权限：</p>
 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">17</span><br><span class="line"></span><br><span class="line">FEDCBA</span><br><span class="line">010001B</span><br></pre></td></tr></table></figure>
+
 <p>如上，代表用户拥有 <code>A</code> 权限和 <code>E</code> 权限，同理可得如果有 一个用户拥有 <code>B</code> 权限、<code>C</code> 权限和 <code>D</code> 权限，那我们就可以这样计算：</p>
 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">2 | 4 | 8 = 14</span><br><span class="line"></span><br><span class="line">  000010B</span><br><span class="line">  000100B</span><br><span class="line">| 001000B</span><br><span class="line">---------</span><br><span class="line">  001110B</span><br></pre></td></tr></table></figure>
+
 <p>然后我们就可以用 <code>001110</code> 来代表用户所拥有的权限了。 当我们需要<strong>添加权限</strong>的时候，我们就可以用<strong>按位或</strong>（<code>|</code>）来计算，比如我们要为上面的 <code>001110B</code> 来添加一个 F 权限（<code>100000B</code>）：</p>
 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">001110B | 100000B = 101110B</span><br><span class="line"></span><br><span class="line">14 | 32 = 45</span><br></pre></td></tr></table></figure>
+
 <p>而且就算用户已经有了需要添加的权限，再进行<strong>按位或</strong>的运算也是没有问题的：</p>
 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">45 | 32 = 45</span><br><span class="line"></span><br><span class="line">101110B | 100000B = 101110B</span><br></pre></td></tr></table></figure>
+
 <p>当我们需要<strong>移除权限</strong>的时候，我们就要用到<strong>与非运算</strong>（<code>&amp;</code> 和 <code>~</code>）：</p>
 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">45 &amp; ~32 = 14</span><br><span class="line"></span><br><span class="line">101110B &amp; ~100000B = 001110B</span><br></pre></td></tr></table></figure>
+
 <p>同样的，就算用户本来没有这个权限，在移除权限时也不会有问题：</p>
 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">14 &amp; ~32 = 14</span><br><span class="line"></span><br><span class="line">001110B &amp; ~100000B = 001110B</span><br></pre></td></tr></table></figure>
+
 <p>当我们需要判断一个用户<strong>是否拥有权限</strong>的时候，可以用用户的权限来<strong>与</strong>（<code>&amp;</code>）要判断的权限，当结果还是判断的权限时，则代表用户有这个权限：</p>
 <figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">45 &amp; 32 = 32</span><br><span class="line"></span><br><span class="line">101110B &amp; 100000B = 100000B</span><br></pre></td></tr></table></figure>
+
 <h2 id="编码"><a href="#编码" class="headerlink" title="编码"></a>编码</h2><p>首先列出所有的权限的枚举：</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 权限集枚举</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="keyword">public</span> <span class="built_in">enum</span> RightsSet</span><br><span class="line">&#123;</span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> A 权限</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    ARights = <span class="number">1</span>,</span><br><span class="line"></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> B 权限</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    BRights = <span class="number">2</span>,</span><br><span class="line"></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> C 权限</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    CRights = <span class="number">4</span>,</span><br><span class="line"></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> D 权限</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    DRights = <span class="number">8</span>,</span><br><span class="line"></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> E 权限</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    ERights = <span class="number">16</span>,</span><br><span class="line"></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> F 权限</span></span><br><span class="line">    <span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line">    FRights = <span class="number">32</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <p>注意，枚举的值一定要是 <code>2</code> 的 N 次幂形式。 然后是三个与权限相关个公共静态方法：</p>
 <figure class="highlight csharp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 判断是否拥有一个权限</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;userRights&quot;&gt;</span>用户原有的权限<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;newRights&quot;&gt;</span>需要判断的权限<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;returns&gt;</span>是否拥有一个权限<span class="doctag">&lt;/returns&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> Boolean <span class="title">hasRights</span>(<span class="params">RightsSet userRights, RightsSet newRights</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> (userRights &amp; newRights) == newRights;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 添加一个权限</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;userRights&quot;&gt;</span>用户原有的权限<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;newRights&quot;&gt;</span>需要添加的权限<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;returns&gt;</span>用户的新权限<span class="doctag">&lt;/returns&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> RightsSet <span class="title">addRights</span>(<span class="params">RightsSet userRights, RightsSet newRights</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> userRights | newRights;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> 删除一个权限</span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;/summary&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;userRights&quot;&gt;</span>用户原有的权限<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;param name=&quot;newRights&quot;&gt;</span>需要删除的权限<span class="doctag">&lt;/param&gt;</span></span></span><br><span class="line"><span class="comment"><span class="doctag">///</span> <span class="doctag">&lt;returns&gt;</span>用户的新权限<span class="doctag">&lt;/returns&gt;</span></span></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> RightsSet <span class="title">deleteRights</span>(<span class="params">RightsSet userRights, RightsSet newRights</span>)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">return</span> userRights &amp; ~newRights;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>位运算是最基础的计算机运算，各个语言的用法不会有太大的变化，所以不管是什么语言应该都是可以实现的； 在数据库中我们只需要存储 <code>RightsSet</code> 的值就可以代表各种权限的组合结果了； 在数据库操作中，如果我们要对某一类的权限进行处理时，也不需要像以前一样进行复杂的字符串处理了； 并且位运算作为基础的计算机运算的速度是非常快的，各种数据库也都支持位运算； 而在代码编写中，我们只需要使用权限的名称（类似于上方代码中的枚举标志符 <code>ARights</code>、<code>BRights</code>）来进行操作，而不用记忆各个权限对应的数值； 当在前端进行权限更改等操作时，我们也可以直接在前端计算好 <code>RightsSet</code> 的值，再传给后台，反过来前台显示也是一样；</p>
 
     </div>
@@ -482,7 +497,7 @@
 <div class="copyright">
   
   &copy; 2017 – 
-  <span itemprop="copyrightYear">2025</span>
+  <span itemprop="copyrightYear">2026</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>

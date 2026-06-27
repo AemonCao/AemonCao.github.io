@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 7.3.0">
+<meta name="generator" content="Hexo 8.1.2">
   <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-256x256-next.ico">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.ico">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.ico">
@@ -39,7 +39,7 @@
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/%E6%A6%A8%E5%B9%B2%E8%BF%99%E5%8F%B0NAS%E7%AC%AC006%E8%AF%9D-%E5%85%B3%E4%BA%8E%E5%A4%87%E4%BB%BD/Backrest%E7%95%8C%E9%9D%A26.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/%E6%A6%A8%E5%B9%B2%E8%BF%99%E5%8F%B0NAS%E7%AC%AC006%E8%AF%9D-%E5%85%B3%E4%BA%8E%E5%A4%87%E4%BB%BD/Backrest%E7%95%8C%E9%9D%A27.png">
 <meta property="article:published_time" content="2025-05-30T12:55:35.000Z">
-<meta property="article:modified_time" content="2025-05-31T09:25:58.152Z">
+<meta property="article:modified_time" content="2026-06-27T16:56:24.572Z">
 <meta property="article:author" content="Aemon">
 <meta property="article:tag" content="Docker">
 <meta property="article:tag" content="NAS">
@@ -109,7 +109,11 @@
   </style>
 </noscript>
 
-<link rel="alternate" href="/atom.xml" title="Aemon's Blog" type="application/atom+xml">
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@5.0.0/dist/style.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="Aemon's Blog" type="application/atom+xml">
 <link rel="alternate" href="/rss2.xml" title="Aemon's Blog" type="application/rss+xml">
 </head>
 
@@ -248,7 +252,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2025-05-31 17:25:58" itemprop="dateModified" datetime="2025-05-31T17:25:58+08:00">2025-05-31</time>
+                <time title="修改时间：2026-06-28 00:56:24" itemprop="dateModified" datetime="2026-06-28T00:56:24+08:00">2026-06-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -287,7 +291,7 @@
                 <i class="far fa-file-word"></i>
               </span>
                 <span class="post-meta-item-text">本文字数：</span>
-              <span>7.6k</span>
+              <span>5.5k</span>
             </span>
             <div class="post-description">防患于未然。</div>
 
@@ -302,6 +306,7 @@
       
         <p>这是一系列关于 NAS 的文章，系列的名称你们也看到了：「<strong>榨干这台 NAS</strong>」。我将尽可能详细的介绍 NAS 相关的知识，帮助你最大限度的发挥你的手中 NAS 的威力！</p>
 <span id="more"></span>
+
 <p>又拖了一年，实在惭愧。今天来讲讲备份，这两天对于把 NAS 上的重要文件都做了备份，就顺便来写一下记录记录。</p>
 <h3 id="备份的重要性"><a href="#备份的重要性" class="headerlink" title="备份的重要性"></a>备份的重要性</h3><p>备份的重要性不言而喻，但是又只有当数据丢失时才会体会到它的重要。以下内容仅限于 NAS 上的文件备份，不包括手机和其他内容。大家可以定时先备份内容到 NAS 上。</p>
 <p>备份是为了安全，安全分为两种，数据安全和隐私安全。</p>
@@ -337,7 +342,6 @@
 </li>
 </ol>
 <p>这里介绍一下常用介质的使用场景：</p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -345,8 +349,7 @@
 <th>特点和建议使用场景</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td><strong>外部硬盘</strong></td>
 <td>大容量但体积大；易受物理损坏和退磁影响。</td>
 </tr>
@@ -355,7 +358,7 @@
 <td>无机械部件，抗震耐用；价格高但寿命延长；常见于临时携带数据。</td>
 </tr>
 <tr>
-<td><strong>光盘（CD/DVD/Blu-ray）</strong></td>
+<td><strong>光盘（CD&#x2F;DVD&#x2F;Blu-ray）</strong></td>
 <td>容量小，便宜但寿命有限；适用于长期离线存档。</td>
 </tr>
 <tr>
@@ -363,12 +366,10 @@
 <td>超大容量且成本低；多用于企业长期备份。</td>
 </tr>
 <tr>
-<td><strong>软盘/ZIP盘</strong></td>
+<td><strong>软盘&#x2F;ZIP盘</strong></td>
 <td>已淘汰，因容量太低且不再生产。</td>
 </tr>
-</tbody>
-</table>
-</div>
+</tbody></table>
 <h4 id="云备份"><a href="#云备份" class="headerlink" title="云备份"></a>云备份</h4><p>其实大家在生活中已经有过或多或少的备份行为，例如你把旅游的照片发了朋友圈，这是一种备份；你打开了百度云的照片自动备份功能；你购买并开启了各大手机厂商自带的云服务（iCloud）……这些都是备份。</p>
 <p>备份本质上是把重要的数据的副本保存在其他地方，上述例子中的其他地方都是指第三方厂家的服务器。</p>
 <p>这就是我们要说的第三种备份，我通称为云备份。云备份的优点有：</p>
@@ -391,10 +392,10 @@
 </ol>
 <h3 id="我的备份之路"><a href="#我的备份之路" class="headerlink" title="我的备份之路"></a>我的备份之路</h3><p>接下来说说我这些年来的备份方法。</p>
 <h4 id="手写"><a href="#手写" class="headerlink" title="手写"></a>手写</h4><p>记得小时候充值 QB 的时候，需要去书报亭购买 QB 卡，而 30 元面值的 QB 卡背后会带有密保卡。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/榨干这台NAS第006话-关于备份/密保卡.webp" alt="密保卡.webp"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/%E6%A6%A8%E5%B9%B2%E8%BF%99%E5%8F%B0NAS%E7%AC%AC006%E8%AF%9D-%E5%85%B3%E4%BA%8E%E5%A4%87%E4%BB%BD/%E5%AF%86%E4%BF%9D%E5%8D%A1.webp" alt="密保卡.webp"></p>
 <p>当有过一次丢失的经历后，我意识到这玩意需要个备份，这时候，我就用纸笔将其写在本子上，这就成了我的第一个备份。</p>
 <h4 id="QQ-网络硬盘"><a href="#QQ-网络硬盘" class="headerlink" title="QQ 网络硬盘"></a>QQ 网络硬盘</h4><p>但是不久之后，我遇到了问题，当我前往<del>黑网吧</del>时，我发现我没有将家中的密保卡带上，导致那天的我无法进入被密保卡保护的游戏。回家后，我立马将实体的卡片转录到了 Excel 上。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/榨干这台NAS第006话-关于备份/Excel密保卡.png" alt="Excel密保卡.png"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/%E6%A6%A8%E5%B9%B2%E8%BF%99%E5%8F%B0NAS%E7%AC%AC006%E8%AF%9D-%E5%85%B3%E4%BA%8E%E5%A4%87%E4%BB%BD/Excel%E5%AF%86%E4%BF%9D%E5%8D%A1.png" alt="Excel密保卡.png"></p>
 <p>并将其存在了当时的 QQ 网络硬盘（腾讯微云的前身）上，这就是我的第一个云备份。</p>
 <h4 id="永硕-E-盘"><a href="#永硕-E-盘" class="headerlink" title="永硕 E 盘"></a><a target="_blank" rel="noopener" href="http://www.ys168.com/">永硕 E 盘</a></h4><p>时代的记忆，当时的各类软件和工具，一般大家都是放在这里进行分享。由于我的最初账号已经丢失，实在是无法回忆起来当时存了什么东西。</p>
 <h4 id="千脑"><a href="#千脑" class="headerlink" title="千脑"></a>千脑</h4><p>只有百度百科还记录着零星的信息：<a target="_blank" rel="noopener" href="https://baike.baidu.com/item/%E5%8D%83%E8%84%91">https://baike.baidu.com/item/%E5%8D%83%E8%84%91</a>。</p>
@@ -423,6 +424,7 @@
 <p>通过 Backrest 我们就可以用较为简单的方式来使用 restic 备份文件。</p>
 <h4 id="安装-Backrest"><a href="#安装-Backrest" class="headerlink" title="安装 Backrest"></a>安装 Backrest</h4><p>我们可以通过 Docker 来安装 Backrest。安装命令如下：</p>
 <figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">docker run -d \</span><br><span class="line">  --name backrest \                                      # 容器名称</span><br><span class="line">  --net bridge \                                         # 使用默认的桥接网络模式</span><br><span class="line">  --pids-limit 2048 \                                    # 限制最大进程数为 2048</span><br><span class="line">  -p 9898:9898/tcp \                                     # 映射主机端口 9898 到容器端口 9898</span><br><span class="line">  -e TZ=&quot;Asia/Shanghai&quot; \                                # 设置时区</span><br><span class="line">  -e BACKREST_DATA=&quot;/data&quot; \                             # Backrest 数据目录环境变量</span><br><span class="line">  -e BACKREST_CONFIG=&quot;/config/config.json&quot; \             # Backrest 配置文件路径</span><br><span class="line">  -e XDG_CACHE_HOME=&quot;/cache&quot; \                           # 缓存目录路径</span><br><span class="line">  -v /mnt/user/appdata/backrest:/config:rw \             # 映射配置文件目录</span><br><span class="line">  -v /mnt/user/appdata/backrest/cache:/cache:rw \        # 映射缓存目录</span><br><span class="line">  -v /mnt/user/appdata/backrest/data:/data:rw \          # 映射数据目录</span><br><span class="line">  -v /mnt/user/appdata/backrest/repos:/repos:rw \        # 映射备份仓库目录</span><br><span class="line">  -v /mnt/user:/backup:ro \                              # 映射只读的备份源目录</span><br><span class="line">  -v /mnt/user/appdata/rclone:/root/.config/rclone:rw \  # 映射 rclone 配置目录</span><br><span class="line">  garethgeorge/backrest:latest                           # 使用的镜像名称</span><br></pre></td></tr></table></figure>
+
 <p>上述命令在使用时需要去除注释并按照自身情况修改映射的目录和端口。</p>
 <p>需要注意的有：</p>
 <ol>
@@ -432,14 +434,13 @@
 </li>
 </ol>
 <h4 id="创建用户"><a href="#创建用户" class="headerlink" title="创建用户"></a>创建用户</h4><p>这时我们访问宿主机的 <code>9898</code> 端口，就可以看到 Backrest 的图形界面了。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/榨干这台NAS第006话-关于备份/Backrest界面1.png" alt="Backrest界面1.png"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/%E6%A6%A8%E5%B9%B2%E8%BF%99%E5%8F%B0NAS%E7%AC%AC006%E8%AF%9D-%E5%85%B3%E4%BA%8E%E5%A4%87%E4%BB%BD/Backrest%E7%95%8C%E9%9D%A21.png" alt="Backrest界面1.png"></p>
 <p>你需要输入一个实例ID，并创建一个用户。</p>
 <h4 id="创建仓库（repository）"><a href="#创建仓库（repository）" class="headerlink" title="创建仓库（repository）"></a>创建仓库（repository）</h4><p>在 restic 中，保存备份的地方就叫做 repository。和 git 中的 repository 一样，它是一个目录，包含一些由 restic 创建的一级目录和文件。里面存储着你的备份文件、元数据以及加密密钥。</p>
 <p>点击页面左侧菜单的 <em>Add Repo</em> （下图中 1 部分）即可打开创建仓库的表单：</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/榨干这台NAS第006话-关于备份/Backrest界面2.png" alt="Backrest界面2.png"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/%E6%A6%A8%E5%B9%B2%E8%BF%99%E5%8F%B0NAS%E7%AC%AC006%E8%AF%9D-%E5%85%B3%E4%BA%8E%E5%A4%87%E4%BB%BD/Backrest%E7%95%8C%E9%9D%A22.png" alt="Backrest界面2.png"></p>
 <p>首先输入仓库名称（上图中 2 部分），这部分不支持中文，也不支持空格，你可以按照备份目的地和备份内容来进行取名，比如我的备份目的地是 123 网盘，备份内容是 NAS 的文件，所以我的仓库名叫做 <em>123CloudNASBackup</em>。</p>
 <p>然后是 Repository URI（上图中 3 部分），这是 restic 较为关键的部分，可以把他当作连接到备份目的地的地址，这一部分根据你实际的备份目的地的不同，格式也不同。下面是一些常用的备份目的地类型：</p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -448,8 +449,7 @@
 <th>备注（字段含义）</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>本地文件系统</td>
 <td><code>/srv/restic-repo</code></td>
 <td>本地路径作为存储库</td>
@@ -462,7 +462,7 @@
 <tr>
 <td>REST 服务器</td>
 <td><code>rest:http://host:8000/</code><br><code>rest:https://user:pass@host:8000/</code><br><code>rest:https://user:pass@host:8000/my_backup_repo/</code><br><code>rest:http+unix:///tmp/rest.socket:/my_backup_repo/</code></td>
-<td>支持 HTTP/HTTPS 或 Unix socket；可包含用户名密码、端口、路径等信息</td>
+<td>支持 HTTP&#x2F;HTTPS 或 Unix socket；可包含用户名密码、端口、路径等信息</td>
 </tr>
 <tr>
 <td>Amazon S3</td>
@@ -474,18 +474,15 @@
 <td><code>rclone:foo:bar</code></td>
 <td><code>foo</code> 是 Rclone 配置中的远程名，<code>bar</code> 是远程路径</td>
 </tr>
-</tbody>
-</table>
-</div>
+</tbody></table>
 <p>可以根据你的实际情况来选择不同的备份目的地，比如我是通过 AList 挂载了 123 网盘，然后又通过 rclone 提供了 WebDAV 服务，这样我的仓库地址就是：<code>rclone:AList:/123Cloud/NASBackup</code>。</p>
 <p>之后就是密码（上图中 4 部分），之前 restic 是不允许创建无密码的存储库的，但是自从 restic 0.17.0 版本开始，允许创建<a target="_blank" rel="noopener" href="https://restic.readthedocs.io/en/latest/030_preparing_a_new_repo.html#repositories-with-empty-password">无密码的仓库</a>。但是为了安全起见，我们还是设置一个密码比较好，可以点击 Generate 按钮创建一个较为安全的密码（并且需要将其保存下来，因为这个密码会在后期恢复时用到）。</p>
 <p>接下来比较重要的是 Prune Policy（上图中 5 部分），也就是修剪策略，简单来说，由于 restic 存在快照，如果在备份文件频繁变动的情况下，存储库的将会越来越大。我们可以删除部分过时的快照，而当快照被删除时，存储库中的就会有相对于的数据不再被使用，修剪（prune）功能就是用来清除这部分数据以最大化利用空间的。</p>
 <p>修剪时比较占用时间和带宽（特别是在远程存储库时显得尤为重要）的，因为他会将数据从远程下载并在本地重新打包后再上传。</p>
 <p>所以这部分我推荐时按照系统默认的设置即可。</p>
-<p>之后是 Check Policy（上图中 6 部分），检查策略也尤为重要，这能及时发现存储库中的 [bit rot]<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Bit_rot)（比特腐烂）和">https://en.wikipedia.org/wiki/Bit_rot)（比特腐烂）和</a> silent corruption（静默损坏），同样默认设置即可。</p>
+<p>之后是 Check Policy（上图中 6 部分），检查策略也尤为重要，这能及时发现存储库中的 [bit rot]<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Bit_rot)%EF%BC%88%E6%AF%94%E7%89%B9%E8%85%90%E7%83%82%EF%BC%89%E5%92%8C">https://en.wikipedia.org/wiki/Bit_rot)（比特腐烂）和</a> silent corruption（静默损坏），同样默认设置即可。</p>
 <p>上述两项配置可以根据你的源数据更新频率以及重要程度，适当的缩短一下执行频率。</p>
 <p>然后是 Command Modifiers（上图中 7 部分），这一项可以修改备份时的 IO 优先级和 CPU 优先级，IO 优先级分为：</p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -493,8 +490,7 @@
 <th>描述</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>IO_BEST_EFFORT_LOW</td>
 <td>以低于默认磁盘优先级运行（将优先考虑其他进程）</td>
 </tr>
@@ -506,11 +502,8 @@
 <td>IO_IDLE</td>
 <td>仅在磁盘带宽空闲时运行（例如，没有其他操作排队）</td>
 </tr>
-</tbody>
-</table>
-</div>
+</tbody></table>
 <p>CPU 优先级分为：</p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -518,8 +511,7 @@
 <th>描述</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>CPU_DEFAULT</td>
 <td>优先级没有变化</td>
 </tr>
@@ -531,12 +523,9 @@
 <td>CPU_LOW</td>
 <td>低于默认优先级</td>
 </tr>
-</tbody>
-</table>
-</div>
+</tbody></table>
 <p>大家可以根据 NAS 其他服务的运行情况来设置。</p>
 <p>最后就是 Hooks，可以在不同状态下运行各类自定义的命令，支持的状态有：</p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
@@ -544,8 +533,7 @@
 <th>描述</th>
 </tr>
 </thead>
-<tbody>
-<tr>
+<tbody><tr>
 <td>CONDITION_ANY_ERROR</td>
 <td>执行任何任务时出错</td>
 </tr>
@@ -593,13 +581,11 @@
 <td>CONDITION_CHECK_ERROR</td>
 <td>检查失败结束</td>
 </tr>
-</tbody>
-</table>
-</div>
+</tbody></table>
 <p>我的设置是在 <code>CONDITION_SNAPSHOT_SUCCESS</code>，<code>CONDITION_SNAPSHOT_ERROR</code> 和 <code>CONDITION_SNAPSHOT_WARNING</code> 时发送一条 Bark 的通知。</p>
 <p>然后点击 Submit 按钮，等待 restic 初始化存储库即可。</p>
 <h4 id="创建备份计划"><a href="#创建备份计划" class="headerlink" title="创建备份计划"></a>创建备份计划</h4><p>现在有了存储库，我们就要开始制定存储计划了。点击左侧 <em>Add Plan</em> 按钮（下图中 1 部分），即可开始创建备份计划。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/榨干这台NAS第006话-关于备份/Backrest界面3.png" alt="Backrest界面3.png"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/%E6%A6%A8%E5%B9%B2%E8%BF%99%E5%8F%B0NAS%E7%AC%AC006%E8%AF%9D-%E5%85%B3%E4%BA%8E%E5%A4%87%E4%BB%BD/Backrest%E7%95%8C%E9%9D%A23.png" alt="Backrest界面3.png"></p>
 <p>首先还是设置一个计划名称（上图中 2 部分），我是按照备份内容来进行命名的，例如用来备份照片的我取名叫：<em>PhotoBackup</em>，用来备份 NAS<br> 的 Docker 容器数据的叫做：<em>NASAppdataBackup</em>，总之能让自己看懂就行。</p>
 <p>然后是选择一个备份存储库（上图中 3 部分），下拉选择刚刚创建好的那个存储库即可。比较可惜的是这里无法多选，如果想要备份到两个不同的存储库，就需要重新再建一个新的计划。</p>
 <p>之后是备份路径（上图中 4 部分），可以选择一个或多个路径，选择你需要备份的目录即可，注意，如果像我一样使用 Docker 容器进行部署的，则需要先将备份的路径提前映射进容器，不然将无法选到。</p>
@@ -609,14 +595,14 @@
 <p>最后就是 Hooks，这里的 Hooks 和上方存储库的 Hooks 一样，一般如果在存储库中配置过通知 Hooks，计划中就不需要再配置了。计划中的配置一般不以通知为主，而且某些特定的备份内容，例如一些程序的运行数据，这一般都需要先停止程序运行，然后再进行备份，在备份完成后再启动程序。</p>
 <p>点击 Submit 按钮，计划就创建完成了。</p>
 <h4 id="开始备份"><a href="#开始备份" class="headerlink" title="开始备份"></a>开始备份</h4><p>然后，只要选择你想要备份的计划，点击蓝色的 Backup Now 按钮（下图中 1 部分），就可以手动启动一次备份，第一次由于是全量备份，备份的时间会比较久。但是 restic 有一个好处是，它支持中断后的继续备份，所以不论是手动停止还是异常断电，之后 restic 都能从上次停下的地方继续，而无需从头来过。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/榨干这台NAS第006话-关于备份/Backrest界面4.png" alt="Backrest界面4.png"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/%E6%A6%A8%E5%B9%B2%E8%BF%99%E5%8F%B0NAS%E7%AC%AC006%E8%AF%9D-%E5%85%B3%E4%BA%8E%E5%A4%87%E4%BB%BD/Backrest%E7%95%8C%E9%9D%A24.png" alt="Backrest界面4.png"></p>
 <p>在备份完成后，将会生成一条快照信息（上图中 2 部分），页面上会显示快照所备份文件的大小，备份时长。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/榨干这台NAS第006话-关于备份/Backrest界面5.png" alt="Backrest界面5.png"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/%E6%A6%A8%E5%B9%B2%E8%BF%99%E5%8F%B0NAS%E7%AC%AC006%E8%AF%9D-%E5%85%B3%E4%BA%8E%E5%A4%87%E4%BB%BD/Backrest%E7%95%8C%E9%9D%A25.png" alt="Backrest界面5.png"></p>
 <p>当我们点击这个快照时就你看到更加详细的快照信息，例如这次快照相较于上次快照添加了多少文件（上图中 3 部分），修改了多少文件（上图中 4 部分）。以及此次备份的日志信息（上图中 2 部分）和 Hooks 调用信息（上图中 5 部分）。并且可以忘记（删除）此次快照（上图中 1 部分）。</p>
 <h4 id="恢复"><a href="#恢复" class="headerlink" title="恢复"></a>恢复</h4><p>很遗憾你需要用到这一部分，但是也很庆幸还好有做备份。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/榨干这台NAS第006话-关于备份/Backrest界面6.png" alt="Backrest界面6.png"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/%E6%A6%A8%E5%B9%B2%E8%BF%99%E5%8F%B0NAS%E7%AC%AC006%E8%AF%9D-%E5%85%B3%E4%BA%8E%E5%A4%87%E4%BB%BD/Backrest%E7%95%8C%E9%9D%A26.png" alt="Backrest界面6.png"></p>
 <p>我们需要点击你想要恢复的那个快照（上图中 1 部分），然后点击 Snapshot Browser（上图中 2 部分），并在其中展开你需要恢复的目录（上图中 3 部分）。点击目录右侧的下载按钮（上图中 4 部分），选择 Restore to path（上图中 5 部分）。</p>
-<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/榨干这台NAS第006话-关于备份/Backrest界面7.png" alt="Backrest界面7.png"></p>
+<p><img data-src="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/%E6%A6%A8%E5%B9%B2%E8%BF%99%E5%8F%B0NAS%E7%AC%AC006%E8%AF%9D-%E5%85%B3%E4%BA%8E%E5%A4%87%E4%BB%BD/Backrest%E7%95%8C%E9%9D%A27.png" alt="Backrest界面7.png"></p>
 <p>然后在弹出的对话框中选择你需要恢复的路径，点击 Restore，等待其恢复完成即可。</p>
 <h3 id="总结"><a href="#总结" class="headerlink" title="总结"></a>总结</h3><p>回顾自己的备份之路，从最早的手写笔记、QQ 网络硬盘，到后来的各种网盘服务，再到现在拥有了 NAS 和更系统化的备份方案，可以说每一步都是对数据安全意识的提升。也许早期的方式略显原始，但也正是这些尝试，促使我逐步建立起属于自己的数据管理体系。</p>
 <p>在备份这件事上，没有「之后再说」这种选择。意外总是在你最没准备的时候发生，真正能救你的，只有那个已经默默跑了几个月甚至几年的备份计划。</p>
@@ -808,7 +794,7 @@
 <div class="copyright">
   
   &copy; 2017 – 
-  <span itemprop="copyrightYear">2025</span>
+  <span itemprop="copyrightYear">2026</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
