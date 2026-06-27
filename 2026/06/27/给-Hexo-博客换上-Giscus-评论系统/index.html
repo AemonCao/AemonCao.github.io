@@ -1,0 +1,662 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 8.1.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/favicon-256x256-next.ico">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.ico">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.ico">
+  <link rel="mask-icon" href="/images/favicon-256x256-next.ico" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="https://fonts.loli.net/css?family=Lato:300,300italic,400,400italic,700,700italic|Monaco:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/pace-js@1/themes/blue/pace-theme-minimal.css">
+  <script src="//cdn.jsdelivr.net/npm/pace-js@1/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"aemoncao.github.io","root":"/","scheme":"Muse","version":"7.8.0","exturl":false,"sidebar":{"position":"right","display":"always","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"default"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":true,"color":"#ff69b4","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":true,"pangu":true,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="旧评论系统快到站了，是时候换一辆车。">
+<meta property="og:type" content="article">
+<meta property="og:title" content="给 Hexo 博客换上 Giscus 评论系统">
+<meta property="og:url" content="https://aemoncao.github.io/2026/06/27/%E7%BB%99-Hexo-%E5%8D%9A%E5%AE%A2%E6%8D%A2%E4%B8%8A-Giscus-%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/index.html">
+<meta property="og:site_name" content="Aemon&#39;s Blog">
+<meta property="og:description" content="旧评论系统快到站了，是时候换一辆车。">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-06-27T18:30:00.000Z">
+<meta property="article:modified_time" content="2026-06-27T18:27:23.100Z">
+<meta property="article:author" content="Aemon">
+<meta property="article:tag" content="Giscus">
+<meta property="article:tag" content="Hexo">
+<meta property="article:tag" content="博客">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://aemoncao.github.io/2026/06/27/%E7%BB%99-Hexo-%E5%8D%9A%E5%AE%A2%E6%8D%A2%E4%B8%8A-Giscus-%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'zh-CN'
+  };
+</script>
+
+  <title>给 Hexo 博客换上 Giscus 评论系统 | Aemon's Blog</title>
+  
+    <script async src="https://www.googletagmanager.com/gtag/js?id=UA-160072313-1"></script>
+    <script>
+      if (CONFIG.hostname === location.hostname) {
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+        gtag('config', 'UA-160072313-1');
+      }
+    </script>
+
+
+  <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "https://hm.baidu.com/hm.js?bba62503a88ce6563ac3ec7e0c6e491c";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@5.0.0/dist/style.css">
+<!-- hexo injector head_end end --><link rel="alternate" href="/atom.xml" title="Aemon's Blog" type="application/atom+xml">
+<link rel="alternate" href="/rss2.xml" title="Aemon's Blog" type="application/rss+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Aemon's Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">切勿浅尝辄止</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fas fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="far fa-hand-spock fa-fw"></i>首页</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/about/" rel="section"><i class="fab fa-accessible-icon fa-fw"></i>关于</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>搜索
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="搜索..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+  <div class="reading-progress-bar"></div>
+  <a role="button" class="book-mark-link book-mark-link-fixed"></a>
+
+  <a href="https://github.com/AemonCao" class="github-corner" title="Follow me on GitHub" aria-label="Follow me on GitHub" rel="noopener" target="_blank"><svg width="80" height="80" viewBox="0 0 250 250" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"></path><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"></path><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"></path></svg></a>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="https://aemoncao.github.io/2026/06/27/%E7%BB%99-Hexo-%E5%8D%9A%E5%AE%A2%E6%8D%A2%E4%B8%8A-Giscus-%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.jpg">
+      <meta itemprop="name" content="Aemon">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Aemon's Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          给 Hexo 博客换上 Giscus 评论系统
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">发表于</span>
+              
+
+              <time title="创建时间：2026-06-28 02:30:00 / 修改时间：02:27:23" itemprop="dateCreated datePublished" datetime="2026-06-28T02:30:00+08:00">2026-06-28</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">分类于</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/GitHub/" itemprop="url" rel="index"><span itemprop="name">GitHub</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="阅读次数" id="busuanzi_container_page_pv" style="display: none;">
+              <span class="post-meta-item-icon">
+                <i class="fa fa-eye"></i>
+              </span>
+              <span class="post-meta-item-text">阅读次数：</span>
+              <span id="busuanzi_value_page_pv"></span>
+            </span><br>
+            <span class="post-meta-item" title="本文字数">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+                <span class="post-meta-item-text">本文字数：</span>
+              <span>1.2k</span>
+            </span>
+            <div class="post-description">旧评论系统快到站了，是时候换一辆车。</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>之前博客用的是 Valine，后端数据放在 LeanCloud 上。这个组合用了好多年，基本上属于「配好之后就忘了它存在」的东西。</p>
+<p>但是最近 LeanCloud 发了停止对外服务的公告，2027 年 1 月 12 日之后，数据读写、API、控制台这些都会停。也就是说，如果什么都不做，评论系统早晚会变成摆设。</p>
+<p>所以今天来捣鼓一下：把旧的 Valine 评论换成 Giscus，新评论走 GitHub Discussions，旧评论则静态归档到页面里。</p>
+<span id="more"></span>
+
+<h2 id="为什么选-Giscus"><a href="#为什么选-Giscus" class="headerlink" title="为什么选 Giscus"></a>为什么选 Giscus</h2><p>一开始也看了 Waline、Twikoo 之类的方案。它们都挺好，体验上也更接近 Valine，匿名评论、后台管理、邮件通知这些都能做。</p>
+<p>但我这次想优先解决一个问题：<strong>别再依赖一个单独的在线数据库服务了</strong>。</p>
+<p>Giscus 的思路很简单：每篇文章对应一个 GitHub Discussion，评论数据就存在 GitHub 里。我的博客本来就部署在 GitHub Pages 上，源码也在 GitHub，评论也放过去，心理负担比较小。</p>
+<p>当然它也有缺点：读者必须登录 GitHub 才能评论。这个门槛不算低，但对我这个博客来说可以接受。</p>
+<h2 id="准备-GitHub-仓库"><a href="#准备-GitHub-仓库" class="headerlink" title="准备 GitHub 仓库"></a>准备 GitHub 仓库</h2><p>Giscus 配置之前，需要先确认三件事：</p>
+<ol>
+<li>仓库是公开的。</li>
+<li>仓库开启了 Discussions。</li>
+<li>安装了 giscus GitHub App。</li>
+</ol>
+<p>Discussions 在仓库的 <code>Settings</code> 里打开。giscus App 则去 GitHub Marketplace 或 giscus 官网按提示安装，仓库权限选择当前博客仓库即可。</p>
+<p>准备好之后，打开 giscus 的配置页，填入仓库：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">AemonCao/AemonCao.github.io</span><br></pre></td></tr></table></figure>
+
+<p>页面和 discussion 的映射关系我选的是：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Discussion 的标题包含页面的 pathname</span><br></pre></td></tr></table></figure>
+
+<p>原因是 Hexo 的永久链接本来就长这样：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">/2020/12/25/whatisthisthing-5/</span><br><span class="line">/2022/08/08/榨干这台NAS第000话-目录结构/</span><br><span class="line">/about/</span><br></pre></td></tr></table></figure>
+
+<p>之前 Valine 导出的评论里，<code>url</code> 字段也是这个格式。用 <code>pathname</code> 作为绑定关系，比完整 URL 更稳。以后即使用了自定义域名，也不会因为域名变了导致评论分裂。</p>
+<p>另外我勾选了严格匹配。博客里有很多类似 <code>whatisthisthing-9</code>、<code>whatisthisthing-10</code> 这样的标题，严格匹配可以减少 GitHub 搜索匹配错 discussion 的概率。</p>
+<p>最后得到的关键配置大概是这样：</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;https://giscus.app/client.js&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">data-repo</span>=<span class="string">&quot;AemonCao/AemonCao.github.io&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">data-repo-id</span>=<span class="string">&quot;MDEwOlJlcG9zaXRvcnkyNDQ1NDY0NjE=&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">data-category</span>=<span class="string">&quot;Announcements&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">data-category-id</span>=<span class="string">&quot;DIC_kwDODpN7nc4DAA13&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">data-mapping</span>=<span class="string">&quot;pathname&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">data-strict</span>=<span class="string">&quot;1&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">data-reactions-enabled</span>=<span class="string">&quot;1&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">data-emit-metadata</span>=<span class="string">&quot;0&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">data-input-position</span>=<span class="string">&quot;bottom&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">data-theme</span>=<span class="string">&quot;preferred_color_scheme&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">data-lang</span>=<span class="string">&quot;zh-CN&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">data-loading</span>=<span class="string">&quot;lazy&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">crossorigin</span>=<span class="string">&quot;anonymous&quot;</span></span></span><br><span class="line"><span class="tag">        <span class="attr">async</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="接入-NexT-主题"><a href="#接入-NexT-主题" class="headerlink" title="接入 NexT 主题"></a>接入 NexT 主题</h2><p>我这个博客用的是 Hexo + NexT。当前主题本身内置了 Valine、Gitalk、Disqus 等评论系统，但是没有内置 Giscus。</p>
+<p>所以做法是按 NexT 原来的评论注入方式补一个 Giscus。</p>
+<p>先在主题配置里关掉 Valine：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">valine:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">false</span></span><br></pre></td></tr></table></figure>
+
+<p>然后新增 Giscus 配置：</p>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="attr">giscus:</span></span><br><span class="line">  <span class="attr">enable:</span> <span class="literal">true</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">AemonCao/AemonCao.github.io</span></span><br><span class="line">  <span class="attr">repo_id:</span> <span class="string">MDEwOlJlcG9zaXRvcnkyNDQ1NDY0NjE=</span></span><br><span class="line">  <span class="attr">category:</span> <span class="string">Announcements</span></span><br><span class="line">  <span class="attr">category_id:</span> <span class="string">DIC_kwDODpN7nc4DAA13</span></span><br><span class="line">  <span class="attr">mapping:</span> <span class="string">pathname</span></span><br><span class="line">  <span class="attr">strict:</span> <span class="number">1</span></span><br><span class="line">  <span class="attr">reactions_enabled:</span> <span class="number">1</span></span><br><span class="line">  <span class="attr">emit_metadata:</span> <span class="number">0</span></span><br><span class="line">  <span class="attr">input_position:</span> <span class="string">bottom</span></span><br><span class="line">  <span class="attr">theme:</span> <span class="string">preferred_color_scheme</span></span><br><span class="line">  <span class="attr">lang:</span> <span class="string">zh-CN</span></span><br><span class="line">  <span class="attr">loading:</span> <span class="string">lazy</span></span><br></pre></td></tr></table></figure>
+
+<p>主题里再加两个东西：</p>
+<ol>
+<li>一个 filter，用来告诉 NexT：页面上要放一个 <code>#giscus-comments</code> 容器，页面底部还要加载 Giscus 脚本。</li>
+<li>一个 swig 模板，用来真正生成 Giscus 的 <code>&lt;script&gt;</code>。</li>
+</ol>
+<p>这样每个开启评论的页面底部都会出现 Giscus 评论区。</p>
+<h2 id="旧评论怎么办"><a href="#旧评论怎么办" class="headerlink" title="旧评论怎么办"></a>旧评论怎么办</h2><p>旧评论不建议直接导入 Giscus。</p>
+<p>不是完全不能做，而是导入之后会有几个问题：</p>
+<ol>
+<li>所有旧评论都会变成同一个 GitHub 账号发布。</li>
+<li>原始评论时间不能真正变成 GitHub 评论时间。</li>
+<li>匿名昵称、邮箱、IP、UA 这些 Valine 元数据不适合搬进 GitHub。</li>
+<li>嵌套回复关系也很难做到完全一致。</li>
+</ol>
+<p>所以最后我选了一个比较朴素的办法：<strong>旧评论静态归档，新评论交给 Giscus</strong>。</p>
+<p>LeanCloud 导出的评论是 JSON streaming 格式，每一行是一条评论。先按 <code>url</code> 分组，然后只保留这些字段：</p>
+<figure class="highlight json"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="punctuation">&#123;</span></span><br><span class="line">  <span class="attr">&quot;id&quot;</span><span class="punctuation">:</span> <span class="string">&quot;5ff983415d6b37098950665c&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;nick&quot;</span><span class="punctuation">:</span> <span class="string">&quot;nathanZheng&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;link&quot;</span><span class="punctuation">:</span> <span class="string">&quot;&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;createdAt&quot;</span><span class="punctuation">:</span> <span class="string">&quot;2021-01-09T10:19:45.434Z&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;replyTo&quot;</span><span class="punctuation">:</span> <span class="string">&quot;&quot;</span><span class="punctuation">,</span></span><br><span class="line">  <span class="attr">&quot;content&quot;</span><span class="punctuation">:</span> <span class="string">&quot;我还以为昨天更新了， 原来是修改日期&quot;</span></span><br><span class="line"><span class="punctuation">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>这些字段不会放进页面：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ip</span><br><span class="line">mail</span><br><span class="line">ua</span><br><span class="line">ACL</span><br><span class="line">QQAvatar</span><br></pre></td></tr></table></figure>
+
+<p>评论内容也不再原样输出 HTML，而是转成纯文本，再交给模板转义。这样可以避免把旧评论里的用户 HTML 直接塞回页面。</p>
+<p>最后把净化后的数据放到：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">source/_data/old_comments.json</span><br></pre></td></tr></table></figure>
+
+<p>再写一个 helper，通过当前页面的 <code>page.path</code> 找对应的旧评论。如果有旧评论，就在 Giscus 上方渲染一个「历史评论」区域；没有旧评论，就什么也不显示。</p>
+<p>最终效果就是：</p>
+<figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">文章正文</span><br><span class="line">历史评论</span><br><span class="line">Giscus 新评论</span><br></pre></td></tr></table></figure>
+
+<h2 id="验证"><a href="#验证" class="headerlink" title="验证"></a>验证</h2><p>改完之后跑一遍：</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">pnpm clean</span><br><span class="line">pnpm build</span><br></pre></td></tr></table></figure>
+
+<p>我检查了几个页面：</p>
+<ol>
+<li>有旧评论的文章会显示「历史评论」。</li>
+<li><code>/about/</code> 这种独立页面也能显示旧评论。</li>
+<li>新文章没有旧评论区，只显示 Giscus。</li>
+<li>生成后的 HTML 里没有旧评论导出里的邮箱和 IP。</li>
+</ol>
+<p>这样就算 LeanCloud 到期停服，旧评论也不会丢；新的评论则继续放在 GitHub Discussions 里。</p>
+<h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ul>
+<li>LeanCloud 停止对外服务公告：<a target="_blank" rel="noopener" href="https://docs.leancloud.cn/sdk/announcements/sunset-announcement">https://docs.leancloud.cn/sdk/announcements/sunset-announcement</a></li>
+<li>Giscus 官网：<a target="_blank" rel="noopener" href="https://giscus.app/">https://giscus.app/</a></li>
+<li>Giscus GitHub 仓库：<a target="_blank" rel="noopener" href="https://github.com/giscus/giscus">https://github.com/giscus/giscus</a></li>
+<li>GitHub Discussions 文档：<a target="_blank" rel="noopener" href="https://docs.github.com/discussions/quickstart">https://docs.github.com/discussions/quickstart</a></li>
+<li>启用 GitHub Discussions：<a target="_blank" rel="noopener" href="https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/enabling-or-disabling-github-discussions-for-a-repository">https://docs.github.com/en/repositories/managing-your-repositorys-settings-and-features/enabling-features-for-your-repository/enabling-or-disabling-github-discussions-for-a-repository</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+        <div class="reward-container">
+  <div></div>
+  <button onclick="var qr = document.getElementById('qr'); qr.style.display = (qr.style.display === 'none') ? 'block' : 'none';">
+    打赏
+  </button>
+  <div id="qr" style="display: none;">
+      
+      <div style="display: inline-block;">
+        <img src="https://cdn.jsdelivr.net/gh/AemonCao/hexo-theme-next@master/source/images/wechatpay.jpg" alt="Aemon 微信支付">
+        <p>微信支付</p>
+      </div>
+      
+      <div style="display: inline-block;">
+        <img src="https://cdn.jsdelivr.net/gh/AemonCao/hexo-theme-next@master/source/images/alipay.jpg" alt="Aemon 支付宝">
+        <p>支付宝</p>
+      </div>
+
+  </div>
+</div>
+
+
+      <footer class="post-footer">
+          
+          <div class="post-tags">
+              <a href="/tags/%E5%8D%9A%E5%AE%A2/" rel="tag"><i class="fa fa-tag"></i> 博客</a>
+              <a href="/tags/Hexo/" rel="tag"><i class="fa fa-tag"></i> Hexo</a>
+              <a href="/tags/Giscus/" rel="tag"><i class="fa fa-tag"></i> Giscus</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2026/06/27/%E7%94%A8-Pandoc-%E6%8A%8A-Markdown-%E7%AE%80%E5%8E%86%E8%BD%AC%E6%88%90-HTML-%E5%92%8C-PDF/" rel="prev" title="用 Pandoc 把 Markdown 简历转成 HTML 和 PDF">
+      <i class="fa fa-chevron-left"></i> 用 Pandoc 把 Markdown 简历转成 HTML 和 PDF
+    </a></div>
+      <div class="post-nav-item"></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+
+<div class="comments" id="giscus-comments"></div>
+
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BA%E4%BB%80%E4%B9%88%E9%80%89-Giscus"><span class="nav-number">1.</span> <span class="nav-text">为什么选 Giscus</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%87%86%E5%A4%87-GitHub-%E4%BB%93%E5%BA%93"><span class="nav-number">2.</span> <span class="nav-text">准备 GitHub 仓库</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8E%A5%E5%85%A5-NexT-%E4%B8%BB%E9%A2%98"><span class="nav-number">3.</span> <span class="nav-text">接入 NexT 主题</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%97%A7%E8%AF%84%E8%AE%BA%E6%80%8E%E4%B9%88%E5%8A%9E"><span class="nav-number">4.</span> <span class="nav-text">旧评论怎么办</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%AA%8C%E8%AF%81"><span class="nav-number">5.</span> <span class="nav-text">验证</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83"><span class="nav-number">6.</span> <span class="nav-text">参考</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Aemon"
+      src="/images/avatar.jpg">
+  <p class="site-author-name" itemprop="name">Aemon</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives">
+          <span class="site-state-item-count">64</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+        <span class="site-state-item-count">24</span>
+        <span class="site-state-item-name">分类</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+        <span class="site-state-item-count">68</span>
+        <span class="site-state-item-name">标签</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="https://github.com/AemonCao" title="GitHub → https:&#x2F;&#x2F;github.com&#x2F;AemonCao" rel="noopener" target="_blank"><i class="fab fa-github fa-fw"></i>GitHub</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="mailto:bot960528@gmail.com" title="E-Mail → mailto:bot960528@gmail.com" rel="noopener" target="_blank"><i class="far fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://t.me/Aemon_Cao" title="Telegram → https:&#x2F;&#x2F;t.me&#x2F;Aemon_Cao" rel="noopener" target="_blank"><i class="fab fa-telegram fa-fw"></i>Telegram</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/rss2.xml" title="RSS → &#x2F;rss2.xml"><i class="fas fa-rss-square fa-fw"></i>RSS</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="/atom.xml" title="Atom → &#x2F;atom.xml"><i class="fas fa-rss-square fa-fw"></i>Atom</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+  <div class="beian"><a href="https://beian.miit.gov.cn/" rel="noopener" target="_blank">浙ICP备20007726号-1 </a>
+  </div>
+
+<div class="copyright">
+  
+  &copy; 2017 – 
+  <span itemprop="copyrightYear">2026</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Aemon</span>
+</div>
+
+        
+<div class="busuanzi-count">
+  <script async src="https://busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+    <span class="post-meta-item" id="busuanzi_container_site_uv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-user"></i>
+      </span>
+      <span class="site-uv" title="总访客量">
+        <span id="busuanzi_value_site_uv"></span>
+      </span>
+    </span>
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item" id="busuanzi_container_site_pv" style="display: none;">
+      <span class="post-meta-item-icon">
+        <i class="fa fa-eye"></i>
+      </span>
+      <span class="site-pv" title="总访问量">
+        <span id="busuanzi_value_site_pv"></span>
+      </span>
+    </span>
+</div>
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="//cdn.jsdelivr.net/npm/animejs@3.1.0/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/lozad@1/dist/lozad.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/pangu@4/dist/browser/pangu.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/velocity-animate@1/velocity.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/velocity-animate@1/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+<script src="/js/bookmark.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  
+  <script src="//cdn.jsdelivr.net/npm/quicklink@1/dist/quicklink.umd.js"></script>
+  <script>
+      window.addEventListener('load', () => {
+      quicklink({
+        timeout : 3000,
+        priority: true,
+        ignores : [uri => uri.includes('#'),uri => uri === 'https://aemoncao.github.io/2026/06/27/%E7%BB%99-Hexo-%E5%8D%9A%E5%AE%A2%E6%8D%A2%E4%B8%8A-Giscus-%E8%AF%84%E8%AE%BA%E7%B3%BB%E7%BB%9F/',]
+      });
+      });
+  </script>
+
+<script>
+NexT.utils.loadComments(document.querySelector('#giscus-comments'), () => {
+  var giscus = document.createElement('script');
+  giscus.src = 'https://giscus.app/client.js';
+  giscus.async = true;
+  giscus.crossOrigin = 'anonymous';
+  giscus.setAttribute('data-repo', 'AemonCao/AemonCao.github.io');
+  giscus.setAttribute('data-repo-id', 'MDEwOlJlcG9zaXRvcnkyNDQ1NDY0NjE=');
+  giscus.setAttribute('data-category', 'Announcements');
+  giscus.setAttribute('data-category-id', 'DIC_kwDODpN7nc4DAA13');
+  giscus.setAttribute('data-mapping', 'pathname');
+  giscus.setAttribute('data-strict', '1');
+  giscus.setAttribute('data-reactions-enabled', '1');
+  giscus.setAttribute('data-emit-metadata', '0');
+  giscus.setAttribute('data-input-position', 'bottom');
+  giscus.setAttribute('data-theme', 'preferred_color_scheme');
+  giscus.setAttribute('data-lang', 'zh-CN');
+  giscus.setAttribute('data-loading', 'lazy');
+  document.querySelector('#giscus-comments').appendChild(giscus);
+});
+</script>
+
+</body>
+</html>
