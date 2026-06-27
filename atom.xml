@@ -11,7 +11,27 @@
   <rights>All rights reserved 2026, Aemon</rights>
   <subtitle>切勿浅尝辄止</subtitle>
   <title>Aemon's Blog</title>
-  <updated>2026-06-27T17:08:12.431Z</updated>
+  <updated>2026-06-27T17:33:02.903Z</updated>
+  <entry>
+    <author>
+      <name>Aemon</name>
+    </author>
+    <category term="WEB 前端" scheme="https://aemoncao.github.io/categories/WEB-%E5%89%8D%E7%AB%AF/"/>
+    <category term="Pandoc" scheme="https://aemoncao.github.io/tags/Pandoc/"/>
+    <category term="Markdown" scheme="https://aemoncao.github.io/tags/Markdown/"/>
+    <category term="简历" scheme="https://aemoncao.github.io/tags/%E7%AE%80%E5%8E%86/"/>
+    <content>
+      <![CDATA[<p>由于最近在找工作，需要重新整理一下简历。之前简历一般都是用 Word 或者在线平台写的，改起来总有一点不太顺手。既然简历本质上也是一份结构化文档，那不如直接用 Markdown 来写内容，再用 CSS 来控制样式，最后导出成 HTML 和 PDF。</p><span id="more"></span><p>这样做的好处是内容和样式可以分开。简历内容放在 Markdown 里，之后要改经历、技能、项目，只需要改文本；样式放在 CSS 里，想换字体、间距、颜色，也不会影响内容本身。</p><p>这篇就简单记录一下这次折腾的过程。</p><h2 id="目录结构"><a href="#目录结构" class="headerlink" title="目录结构"></a>目录结构</h2><p>我单独建了一个 <code>pandoc-workspace</code>，大致目录如下：</p><figure class="highlight text"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">pandoc-workspace</span><br><span class="line">├── markdown</span><br><span class="line">│   └── frontend_resume.md</span><br><span class="line">├── styles</span><br><span class="line">│   └── resume-calm-professional.css</span><br><span class="line">├── outputs</span><br><span class="line">│   ├── frontend_resume.html</span><br><span class="line">│   └── frontend_resume.pdf</span><br><span class="line">└── manifest.md</span><br></pre></td></tr></table></figure><p>其中：</p><ol><li><p><code>markdown</code> 放简历源文件；</p></li><li><p><code>styles</code> 放 CSS；</p></li><li><p><code>outputs</code> 放最后生成的 HTML 和 PDF；</p></li><li><p><code>manifest.md</code> 简单记录一下转换清单，免得过几天忘了哪个文件对应哪个样式。</p></li></ol><h2 id="写-Markdown"><a href="#写-Markdown" class="headerlink" title="写 Markdown"></a>写 Markdown</h2><p>简历本身不用写得太复杂，正常使用标题、段落、列表和表格就够了。比如：</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 张三</span></span><br><span class="line"><span class="section">### Web Frontend Engineer</span></span><br><span class="line"></span><br><span class="line">浙江杭州 · 1990.01</span><br><span class="line">13800000000 · example@example.com</span><br><span class="line"></span><br><span class="line"><span class="section">## 01 EXPERIENCE / 工作经历</span></span><br><span class="line"></span><br><span class="line"><span class="section">### 某科技公司</span></span><br><span class="line"><span class="strong">**Frontend Engineer / 前端核心开发**</span></span><br><span class="line">2021.04 — 2025.05</span><br><span class="line"></span><br><span class="line"><span class="bullet">-</span> 基于 Vue 3 + TypeScript + Pinia 搭建 AI 对话主链路</span><br><span class="line"><span class="bullet">-</span> 设计 Prompt Template + Zod Schema 的结构化输出方案</span><br></pre></td></tr></table></figure><p>这里我没有追求很复杂的 Markdown 语法，主要是为了之后维护方便。简历这种东西，最重要的还是内容本身，样式只要清楚、稳定、专业就好。</p><h2 id="写-CSS"><a href="#写-CSS" class="headerlink" title="写 CSS"></a>写 CSS</h2><p>这次简历内容偏前端工程、医疗 AI、IoT 管理后台这些方向，所以样式没有做得太花，而是用了比较冷静的文档风格。</p><p>大概思路是：</p><ol><li><p>页面居中，限制最大宽度；</p></li><li><p>使用浅色背景和白色纸张区域；</p></li><li><p>用一个偏冷的蓝绿色作为强调色；</p></li><li><p>标题、公司、项目、关键价值之间拉开层级；</p></li><li><p>加上 <code>@media print</code>，让打印成 PDF 时少一点意外。</p></li></ol><p>类似这种：</p><figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-pseudo">:root</span> &#123;</span><br><span class="line">  <span class="attr">--page-bg</span>: <span class="number">#f3f5f7</span>;</span><br><span class="line">  <span class="attr">--paper</span>: <span class="number">#ffffff</span>;</span><br><span class="line">  <span class="attr">--ink</span>: <span class="number">#1f2933</span>;</span><br><span class="line">  <span class="attr">--muted</span>: <span class="number">#5f6f7f</span>;</span><br><span class="line">  <span class="attr">--accent</span>: <span class="number">#246b73</span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">body</span> &#123;</span><br><span class="line">  <span class="attribute">max-width</span>: <span class="number">920px</span>;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">36px</span> auto;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">48px</span> <span class="number">64px</span>;</span><br><span class="line">  <span class="attribute">background</span>: <span class="built_in">var</span>(--paper);</span><br><span class="line">  <span class="attribute">color</span>: <span class="built_in">var</span>(--ink);</span><br><span class="line">  <span class="attribute">font-family</span>: <span class="string">&quot;Inter&quot;</span>, <span class="string">&quot;Segoe UI&quot;</span>, <span class="string">&quot;PingFang SC&quot;</span>, <span class="string">&quot;Microsoft YaHei&quot;</span>, Arial, sans-serif;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="selector-tag">h2</span> &#123;</span><br><span class="line">  <span class="attribute">margin</span>: <span class="number">2.35rem</span> <span class="number">0</span> <span class="number">1rem</span>;</span><br><span class="line">  <span class="attribute">padding</span>: <span class="number">0.72rem</span> <span class="number">0</span> <span class="number">0.45rem</span>;</span><br><span class="line">  <span class="attribute">border-top</span>: <span class="number">2px</span> solid <span class="built_in">var</span>(--accent);</span><br><span class="line">  <span class="attribute">border-bottom</span>: <span class="number">1px</span> solid <span class="number">#e5ebf0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>当然，完整 CSS 还是要根据自己的简历内容来调。比如项目经历很多，就要注意段落间距不要太大；奖项是表格，就要单独处理表格样式；如果要打印，就还要考虑分页。</p><h2 id="转成-HTML"><a href="#转成-HTML" class="headerlink" title="转成 HTML"></a>转成 HTML</h2><p>安装好 Pandoc 后，在项目根目录执行：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">pandoc `</span><br><span class="line">  <span class="literal">--from</span> markdown+yaml_metadata_block+pipe_tables+hard_line_breaks+autolink_bare_uris `</span><br><span class="line">  <span class="literal">--to</span> html5 `</span><br><span class="line">  <span class="literal">--standalone</span> `</span><br><span class="line">  <span class="literal">--variable</span> lang=zh<span class="literal">-CN</span> `</span><br><span class="line">  <span class="literal">--metadata</span> pagetitle=<span class="string">&quot;张三&quot;</span> `</span><br><span class="line">  <span class="literal">--metadata</span> title=<span class="string">&quot;&quot;</span> `</span><br><span class="line">  <span class="literal">--css</span> ../styles/<span class="built_in">resume-calm</span><span class="literal">-professional</span>.css `</span><br><span class="line">  <span class="literal">--output</span> outputs/frontend_resume.html `</span><br><span class="line">  markdown/frontend_resume.md</span><br></pre></td></tr></table></figure><p>这里有几个参数需要注意：</p><ol><li><p><code>--standalone</code> 会生成一份完整 HTML，而不是只有 body 片段；</p></li><li><p><code>hard_line_breaks</code> 会保留 Markdown 里的换行，适合简历顶部的联系方式；</p></li><li><p><code>autolink_bare_uris</code> 会把裸 URL 自动转成链接；</p></li><li><p><code>--metadata title=&quot;&quot;</code> 是为了避免 YAML 里的 <code>title</code> 被 Pandoc 再渲染一次，导致页面顶部出现两个姓名；</p></li><li><p><code>--css ../styles/resume-calm-professional.css</code> 是因为 HTML 输出在 <code>outputs</code> 目录里，所以 CSS 路径要从 <code>outputs</code> 往上找。</p></li></ol><p>如果本机没有安装 Pandoc，可以先去官网下载安装，或者临时用便携版也可以。</p><h2 id="转成-PDF"><a href="#转成-PDF" class="headerlink" title="转成 PDF"></a>转成 PDF</h2><p>一开始我想直接用 Pandoc 转 PDF，但 Pandoc 默认走 LaTeX 路线。对于这种已经写好 HTML + CSS 的简历来说，直接用浏览器打印成 PDF 会更接近预览效果。</p><p>Windows 下可以用 Chrome 的 headless 模式：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&amp; <span class="string">&quot;C:\Program Files\Google\Chrome\Application\chrome.exe&quot;</span> `</span><br><span class="line">  <span class="literal">--headless</span>=new `</span><br><span class="line">  <span class="literal">--disable-gpu</span> `</span><br><span class="line">  <span class="literal">--no-first-run</span> `</span><br><span class="line">  <span class="literal">--print-to-pdf</span>=<span class="string">&quot;D:\Code\pandoc-workspace\outputs\frontend_resume.pdf&quot;</span> `</span><br><span class="line">  <span class="string">&quot;file:///D:/Code/pandoc-workspace/outputs/frontend_resume.html&quot;</span></span><br></pre></td></tr></table></figure><p>如果你装的是 Edge，也可以把路径换成：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">C:\Program Files (x86)\Microsoft\Edge\Application\msedge.exe</span><br></pre></td></tr></table></figure><p>生成 PDF 前，最好先在浏览器里打开 HTML 看一遍。因为 PDF 本质上就是把这个页面打印出来，如果 HTML 本身有问题，PDF 也会跟着有问题。</p><h2 id="遇到的两个小问题"><a href="#遇到的两个小问题" class="headerlink" title="遇到的两个小问题"></a>遇到的两个小问题</h2><h3 id="Pandoc-没有安装"><a href="#Pandoc-没有安装" class="headerlink" title="Pandoc 没有安装"></a>Pandoc 没有安装</h3><p>一开始直接执行：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">pandoc <span class="literal">--version</span></span><br></pre></td></tr></table></figure><p>发现系统里没有这个命令。解决方法也简单，要么安装 Pandoc，要么临时下载一个 Windows 版的可执行文件，然后在命令里使用完整路径。</p><h3 id="页面顶部出现重复标题"><a href="#页面顶部出现重复标题" class="headerlink" title="页面顶部出现重复标题"></a>页面顶部出现重复标题</h3><p>Markdown 文件开头有 YAML：</p><figure class="highlight yaml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">---</span></span><br><span class="line"><span class="attr">title:</span> <span class="string">&quot;张三&quot;</span></span><br><span class="line"><span class="attr">subtitle:</span> <span class="string">&quot;Web Frontend Engineer&quot;</span></span><br><span class="line"><span class="meta">---</span></span><br></pre></td></tr></table></figure><p>正文里又写了一次：</p><figure class="highlight markdown"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="section"># 张三</span></span><br><span class="line"><span class="section">### Web Frontend Engineer</span></span><br></pre></td></tr></table></figure><p>Pandoc 默认模板会把 YAML 里的 <code>title</code> 渲染到正文里，所以就重复了。我的处理方式是保留 YAML 给浏览器标题用，但在转换命令里加上：</p><figure class="highlight powershell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="literal">--metadata</span> pagetitle=<span class="string">&quot;张三&quot;</span> `</span><br><span class="line"><span class="literal">--metadata</span> title=<span class="string">&quot;&quot;</span> `</span><br></pre></td></tr></table></figure><p>这样浏览器标题还是示例姓名，正文里也不会多出一份标题。</p><h2 id="最后"><a href="#最后" class="headerlink" title="最后"></a>最后</h2><p>这套方案不复杂，但是比较适合像我这样既想自己控制样式，又不想每次打开 Word 慢慢拖格式的人。</p><p>Markdown 负责内容，CSS 负责样式，Pandoc 负责转换，Chrome 负责打印 PDF。每一步都很明确，之后修改简历的时候，只要改 Markdown，再重新跑一遍命令就行了。</p><h2 id="参考"><a href="#参考" class="headerlink" title="参考"></a>参考</h2><ol><li><p><a href="https://pandoc.org/MANUAL.html">https://pandoc.org/MANUAL.html</a></p></li><li><p><a href="https://developer.chrome.com/docs/chromium/headless">https://developer.chrome.com/docs/chromium/headless</a></p></li></ol>]]>
+    </content>
+    <id>https://aemoncao.github.io/2026/06/27/%E7%94%A8-Pandoc-%E6%8A%8A-Markdown-%E7%AE%80%E5%8E%86%E8%BD%AC%E6%88%90-HTML-%E5%92%8C-PDF/</id>
+    <link href="https://aemoncao.github.io/2026/06/27/%E7%94%A8-Pandoc-%E6%8A%8A-Markdown-%E7%AE%80%E5%8E%86%E8%BD%AC%E6%88%90-HTML-%E5%92%8C-PDF/"/>
+    <published>2026-06-27T17:30:00.000Z</published>
+    <summary>
+      <![CDATA[<p>由于最近在找工作，需要重新整理一下简历。之前简历一般都是用 Word 或者在线平台写的，改起来总有一点不太顺手。既然简历本质上也是一份结构化文档，那不如直接用 Markdown 来写内容，再用 CSS 来控制样式，最后导出成 HTML 和 PDF。</p>]]>
+    </summary>
+    <title>用 Pandoc 把 Markdown 简历转成 HTML 和 PDF</title>
+    <updated>2026-06-27T17:33:02.903Z</updated>
+  </entry>
   <entry>
     <author>
       <name>Aemon</name>
@@ -28,7 +48,7 @@
     <published>2025-05-30T12:55:35.000Z</published>
     <summary>防患于未然。</summary>
     <title>榨干这台NAS第006话-关于备份</title>
-    <updated>2026-06-27T17:08:12.431Z</updated>
+    <updated>2026-06-27T17:33:02.897Z</updated>
   </entry>
   <entry>
     <author>
@@ -46,7 +66,7 @@
     <published>2024-06-12T06:46:13.000Z</published>
     <summary>轻松搞定外网访问，带你玩转Tailscale，把你的NAS变成随身携带的小宝贝！（简介是 ChatGPT 生成的~）</summary>
     <title>榨干这台 NAS 第 005 话-外网访问之 Tailscale</title>
-    <updated>2026-06-27T17:08:12.429Z</updated>
+    <updated>2026-06-27T17:33:02.895Z</updated>
   </entry>
   <entry>
     <author>
@@ -65,7 +85,7 @@
     <published>2022-11-21T03:18:17.000Z</published>
     <summary>秩序很重要。</summary>
     <title>榨干这台 NAS 第 004 话-刮削</title>
-    <updated>2026-06-27T17:08:12.422Z</updated>
+    <updated>2026-06-27T17:33:02.888Z</updated>
   </entry>
   <entry>
     <author>
@@ -85,7 +105,7 @@
     <published>2022-08-24T03:56:26.000Z</published>
     <summary>不知大家小时候有没有去过网吧复制过一堆快捷方式到 U 盘带回家玩的呢？</summary>
     <title>榨干这台 NAS 第 003 话-硬链接</title>
-    <updated>2026-06-27T17:08:12.420Z</updated>
+    <updated>2026-06-27T17:33:02.886Z</updated>
   </entry>
   <entry>
     <author>
@@ -106,7 +126,7 @@
     <published>2022-08-09T14:03:32.000Z</published>
     <summary>只要种子不死，那些不存在的音乐图书和视频就还活在互联网上，没有任何人可以毁掉。</summary>
     <title>榨干这台 NAS 第 002 话-下载工具</title>
-    <updated>2026-06-27T17:08:12.415Z</updated>
+    <updated>2026-06-27T17:33:02.882Z</updated>
   </entry>
   <entry>
     <author>
@@ -127,7 +147,7 @@
       <![CDATA[<p>这是一系列关于 NAS 的文章，系列的名称你们也看到了：「<strong>榨干这台 NAS</strong>」。我将尽可能详细的介绍 NAS 相关的知识，帮助你最大限度的发挥你的手中 NAS 的威力！</p>]]>
     </summary>
     <title>榨干这台 NAS 第 001 话-文件浏览器（File Browser）</title>
-    <updated>2026-06-27T17:08:12.414Z</updated>
+    <updated>2026-06-27T17:33:02.880Z</updated>
   </entry>
   <entry>
     <author>
@@ -146,7 +166,7 @@
       <![CDATA[<p>这是一系列关于 NAS 的文章，系列的名称你们也看到了：「<strong>榨干这台 NAS</strong>」。我将尽可能详细的介绍 NAS 相关的知识，帮助你最大限度的发挥你的手中 NAS 的威力！</p>]]>
     </summary>
     <title>榨干这台 NAS 第 000 话-目录结构</title>
-    <updated>2026-06-27T17:08:12.414Z</updated>
+    <updated>2026-06-27T17:33:02.880Z</updated>
   </entry>
   <entry>
     <author>
@@ -169,7 +189,7 @@
 <p>转载自：<a href="http://jandan.net/p/109642">煎蛋保险小课堂</a></p>]]>
     </summary>
     <title>煎蛋保险小课堂</title>
-    <updated>2026-06-27T17:08:12.437Z</updated>
+    <updated>2026-06-27T17:33:02.903Z</updated>
   </entry>
   <entry>
     <author>
@@ -186,7 +206,7 @@
     <published>2021-09-22T03:00:20.000Z</published>
     <summary>For the identification of mysterious objects</summary>
     <title>What is this thing 15</title>
-    <updated>2026-06-27T17:08:12.033Z</updated>
+    <updated>2026-06-27T17:33:02.501Z</updated>
   </entry>
   <entry>
     <author>
@@ -203,7 +223,7 @@
     <published>2021-08-21T05:33:31.000Z</published>
     <summary>For the identification of mysterious objects</summary>
     <title>What is this thing 14</title>
-    <updated>2026-06-27T17:08:12.007Z</updated>
+    <updated>2026-06-27T17:33:02.475Z</updated>
   </entry>
   <entry>
     <author>
@@ -221,7 +241,7 @@
     <published>2021-08-03T11:33:42.000Z</published>
     <summary>Life, the Universe and Everything</summary>
     <title>如何「黑入」你的特斯拉</title>
-    <updated>2026-06-27T17:08:11.679Z</updated>
+    <updated>2026-06-27T17:33:02.153Z</updated>
   </entry>
   <entry>
     <author>
@@ -238,7 +258,7 @@
     <published>2021-07-22T05:18:55.000Z</published>
     <summary>For the identification of mysterious objects</summary>
     <title>What is this thing 13</title>
-    <updated>2026-06-27T17:08:11.977Z</updated>
+    <updated>2026-06-27T17:33:02.446Z</updated>
   </entry>
   <entry>
     <author>
@@ -254,7 +274,7 @@
     <published>2021-06-30T09:23:19.000Z</published>
     <summary>🌕🌖🌗🌘🌑🌒🌓🌔🌕</summary>
     <title>emoji 背后的故事</title>
-    <updated>2026-06-27T17:08:11.817Z</updated>
+    <updated>2026-06-27T17:33:02.292Z</updated>
   </entry>
   <entry>
     <author>
@@ -271,7 +291,7 @@
     <published>2021-06-22T02:08:46.000Z</published>
     <summary>For the identification of mysterious objects</summary>
     <title>What is this thing 12</title>
-    <updated>2026-06-27T17:08:11.927Z</updated>
+    <updated>2026-06-27T17:33:02.400Z</updated>
   </entry>
   <entry>
     <author>
@@ -287,7 +307,7 @@
     <published>2021-06-20T06:44:31.000Z</published>
     <summary>An apple a day keeps the doctor away</summary>
     <title>A puzzle a day</title>
-    <updated>2026-06-27T17:08:11.688Z</updated>
+    <updated>2026-06-27T17:33:02.162Z</updated>
   </entry>
   <entry>
     <author>
@@ -306,7 +326,7 @@
     <published>2021-06-17T03:47:14.000Z</published>
     <summary>解决问题是令人开心的。</summary>
     <title>nvm use 命令不生效问题以及解决方法</title>
-    <updated>2026-06-27T17:08:11.837Z</updated>
+    <updated>2026-06-27T17:33:02.312Z</updated>
   </entry>
   <entry>
     <author>
@@ -323,7 +343,7 @@
     <published>2021-05-22T02:28:18.000Z</published>
     <summary>For the identification of mysterious objects</summary>
     <title>What is this thing 11</title>
-    <updated>2026-06-27T17:08:11.876Z</updated>
+    <updated>2026-06-27T17:33:02.348Z</updated>
   </entry>
   <entry>
     <author>
@@ -340,7 +360,7 @@
     <published>2021-05-18T01:19:41.000Z</published>
     <summary>「不要盯着微波炉看，会有辐射。」</summary>
     <title>微波炉简易使用指南</title>
-    <updated>2026-06-27T17:08:12.414Z</updated>
+    <updated>2026-06-27T17:33:02.880Z</updated>
   </entry>
   <entry>
     <author>
@@ -357,22 +377,6 @@
     <published>2021-04-22T08:41:59.000Z</published>
     <summary>For the identification of mysterious objects</summary>
     <title>What is this thing 10</title>
-    <updated>2026-06-27T17:08:11.850Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>Aemon</name>
-    </author>
-    <category term="记事" scheme="https://aemoncao.github.io/categories/%E8%AE%B0%E4%BA%8B/"/>
-    <category term="旅行" scheme="https://aemoncao.github.io/tags/%E6%97%85%E8%A1%8C/"/>
-    <content>
-      <![CDATA[<p>在出发前就已经想好要做一个沙发客，或者住青年旅舍。说实话从来没有一个人去旅行过，过去都是和朋友家人一起住快捷酒店。这次一个人出来，住青旅的第一个目的是为了省钱，毕竟比起快捷酒店来说，青旅一天只需要几十元，便宜了一半不止。其二，由于是一个人的原因，我想着住青旅说不定就遇到志同道合的朋友，可以一起旅行。</p><p>写下这些文字的时候，是我到武汉的第一晚。之前我的行程是厦门-深圳-长沙，算上武汉一共是四家青旅，分别是厦门的<strong>国际青年旅舍</strong>、深圳的<strong>侨城旅友国际青年旅舍</strong>、长沙的<strong>天鹅之旅国际青年旅舍五一广场店</strong>以及武汉的<strong>享趣国际青年旅舍</strong>。其中有三家是<a href="https://www.yhachina.com/">YHA</a>的（除了长沙的不是）。</p><h3 id="厦门国际青年旅舍"><a href="#厦门国际青年旅舍" class="headerlink" title="厦门国际青年旅舍"></a>厦门国际青年旅舍</h3><p>厦门国际青年旅舍是我住的第一家青旅，位置还行。离各个景点都很近，交通也比较方便，就是离机场有点远。它在一个小山坡上，我第一次找的时候走了一段上坡的小路才到的，为什么说是第一次呢？因为后来我才发现那是后门。公共区域的环境还好，有间玻璃房，里边有很多油画（后来才发现这里还进行油画教学）。有一只狗狗，名叫 tuōtuō 或 tātā，有些记不清了，是条很听话的大狗狗。我把在八市买的手撕鸡都给他吃了，吃的很开心。</p><p>我住的是四人间，两张上下铺的床位，我睡的下铺，算上我是一共睡了三个人。原本我以为来住青旅的都是学生或者像我这样的旅游的人，但是其中一位是工作出差的，还有一位呢，我也不太清楚是做什么的。也没去问过，但是他每天的活动就是起床，然后去楼下玻璃房打 Switch。</p><p>我在青旅手洗衣服的时候，感觉又回到了高中时候。</p><p>总之，厦门国际青年旅舍作为我的第一家青旅，体验还是很不错的。除了它位于山上，蚊子很多。</p><p>然后价格也还可以接受，我是四月底的时候去的，一晚是 45 元，住了三晚之后由于清明假期的原因，一晚贵了 10 元。我一共住了四晚，总共是 190 元。</p><p>噢，对了，我住的那间的空调是坏的，不过那些天也不算热，晚上洗完澡基本上就不太会出汗了。</p><h3 id="深圳侨城旅友国际青年旅舍"><a href="#深圳侨城旅友国际青年旅舍" class="headerlink" title="深圳侨城旅友国际青年旅舍"></a>深圳侨城旅友国际青年旅舍</h3><p>我本以为深圳会有很多的 YHA 青旅，但是我在官网上搜索的时候只有这么一家。所以就直接选了这家。</p><p>这家的位置其实还算不错的，周边有趣的店很多。但是不好的是宾馆离地铁口比较远，不背着行李还好，如果背着全部行李，还是有点吃不消的。</p><p>说点和青旅无关的，深圳不是个旅游城市，果然还是适合打工人的城市。很多景点我根本不想去，吃的东西也没什么，甚至有一晚的晚餐我是在全家吃的泡面和维他柠檬茶（维他柠檬茶真好喝啊）。</p><p>这家青旅是偏贵的，一晚是 80 元，还是我有 YHA 会员的情况（会员便宜了 5 元）。我住的三人间，本来选的是下铺，但是前台说，他们的下铺可能有点矮，担心我睡下铺会太压抑。我看网上的图其实觉得还好，可能是和网上的图片的拍摄视角有关系吧。于是我就听取了前台的意见，换成了上铺。但是我实际到房间看的时候，其实看起来也还好，没有会感到压抑这么夸张。其实第一晚过后，我有想过去和前台说一下，帮我换成下铺，因为我感觉爬上爬下实在是太麻烦了。但是后来由于太懒，还是睡了三天上铺。房间偏小，只放了一张高低铺和一张双人床。卫生间是在房间外面的，一个楼层公用一间卫生间和一间淋浴间（两间是分开的）。</p><p>前台有只小猫猫，很好撸。</p><p>深圳那几天的天气我觉得是刚刚好的，只是两个室友比较怕热，每天 22 度空调，导致我晚上只能卷着被子睡。</p><h3 id="长沙天鹅之旅国际青年旅舍五一广场店"><a href="#长沙天鹅之旅国际青年旅舍五一广场店" class="headerlink" title="长沙天鹅之旅国际青年旅舍五一广场店"></a>长沙天鹅之旅国际青年旅舍五一广场店</h3><p>这是四家中唯一不是 YHA 的青旅。还是我在到了长沙站后手机上现找的。</p><p>天鹅之旅的位置可以说是非常不错，我基本上每天都是步行，根本没怎么坐交通工具。因此遗憾的错过了长沙的公交车水平。</p><p>价格是 62 元一晚，住的六人间。三张上下铺，我选的下铺。这家青旅的位于商业大楼的顶层（29 层），等电梯比较慢。然后住客都是偏年轻一点，学生偏多。大多数的人都是夜猫子，每次都是凌晨了就开始活跃起来了，例如狼人杀，都是在凌晨一两天开始在群里组队了。也会有很多人去楼下的酒吧夜店玩个通宵。我一直觉得自己还很年轻，但是在住在这里的这几天，我发现自己其实已经没有那么年轻了。</p><p>青旅的浴室是公共浴室，不过是带有隔间的，很小，也就一平米左右，密封性很好，好到墙上会有「注意洗浴时间，以免缺氧」的标语。大家都是夜猫子，晚点洗澡也不太会打搅到其他人。</p><p>有一点不好的是洗衣房特别小，并且洗衣晒衣都是在一间屋子。里面密密麻麻都挂满了衣服，甚至防盗窗上面也是。再结合长沙那几天的阴雨天气，我就没指望的我的衣服会干。但是我还是心存侥幸的把用完的速干浴巾晾在那里，不出所料的，没有干。离开长沙的前一个晚上，我用了四次每次四十分钟的烘干机，折腾到凌晨两点多，衣服还都是半干状态的。</p><h3 id="武汉享趣国际青年旅舍"><a href="#武汉享趣国际青年旅舍" class="headerlink" title="武汉享趣国际青年旅舍"></a>武汉享趣国际青年旅舍</h3><p>这家青旅是我重点要提的，这一家才有些我心目中青旅的感觉。说实话，地理位置不算特别好，最近的地铁站需要乘公交两站路。前后左右都是老旧的居民楼，半夜太吵闹会被邻居阿姨苛责。青旅的老板叫虎哥，应该是武汉本地人，年龄应该在五十左右吧，老板娘是广州人。我刚到的时候，两人一直在自己测血压，后来才知道是因为要打新冠疫苗，血压过了 150 毫米汞柱，医院那边不让打。</p><p>我到的当天，入住，四人间，两张木制上下铺，一天是 37 元。有独立卫生间（四人公用），座式马桶（甚至还有马桶圈清洁剂），电吹风，除了一间房四张床，其他都和普通的快捷酒店差不多。之后我去户部巷了，被各种网红小吃坑了 70 元。回来后，刚到大厅门口，虎哥就叫住了我：「就差你一个了。」说实话，这是我住过三家青旅，第一次有人找过说话（噢，厦门还有个外国小哥被蚊子咬得不行，找我借了驱蚊水）。</p><p>我说：「什么？」</p><p>虎哥说：「狼人杀呀！」</p><p>虽说我听过狼人杀，也知道大致的规则，但是我从来没有玩过一把狼人杀。心想，闲着也是闲着，那就来嘛！</p><p>就这样，之后的我，一发不可收拾，每天就想着到晚上的时候能玩狼人杀。大家都是天南地北来武汉的游客，互相都不认识，有玩过上万把的老手，也有我这样一把没玩过的新手。我就懵懵懂懂开始了我的第一把狼人杀。一开始我觉得狼人杀应该是很无聊的游戏，大家全凭一张嘴，会有什么意思呢？可是才一把，我就完全上头，虽然一开始并不知道应该怎么发言，都是直接滑水过的。但是玩了几把过后，懂得了大部分规则和术语之后，就彻底沦陷了。脑子了无时不刻不在推理，每个人发言的时候我都会盯着ta看，看看自己能不能看出对方有说谎的迹象，感觉自己像个侦探。</p><p>我一共在武汉住了五晚，有三晚都在狼人杀，其中有一天玩到了早上五点半，由于狼人杀需要大脑一直思考，越到后来，大家的脑子就越迷糊，最后实在是撑不住了，就都回屋睡觉了。</p><p>对了，青旅还有好多宠物，有一条叫做「皮蛋」的牧羊犬，有三只猫，一只英短蓝猫，大部分时间都在笼子里，还有两只，一只是橘猫，一只是黑猫，叫做「享享」和「趣趣」，都是可爱的毛茸朋友。</p><p>青旅的客人不止有我这样的游客，也有来附近考试的考生，也有来武汉出差的人（那天就有几位是阿里巴巴的员工来武汉培训），也有学生，还有来武汉寻找旧时味道的人——一位来自新疆的大叔。从零星的对话中，我了解到，大叔原本是武汉人，在文革期间被打成右派，之后又得了癌症，然后去了新疆。一别武汉就是几十年。现在，他已经将儿子，抚养成人，自己也击败了癌症，已经开始了自己的养老生活。他想到了自己的家乡武汉，所以就独自一人来武汉，准备寻找一些小时候的记忆。他吃到热干面时落泪，并说「再也不吃热干面了，吃一次哭一次」。他也说「吃了这么多大菜，都没有小时候的味道了」。</p><p>最后一晚，我买了些鸭脖卤味，另一位客人借用了虎哥的厨房，做了两道菜，我们几个坐下边喝边吃边聊。我也是第一次把自己的烦恼说给陌生人听，我甚至不知道大家叫什么名字。萍水相逢，可能在彼此的生命中，这是我们一起吃的第一顿饭也是最后一顿。但是大家都没想这么多，聊到最后，大家说的还都是身体健康，只要人还在，什么都有可能。</p><p>第二天一早，我就走了，起身回家，昨晚做菜的老哥也起了大早，他要带昨天认识的女生去游武汉。虎哥的血压也降了下来，吃了片降压药准备去打第二针疫苗了。</p>]]>
-    </content>
-    <id>https://aemoncao.github.io/2021/04/08/%E9%9D%92%E6%97%85/</id>
-    <link href="https://aemoncao.github.io/2021/04/08/%E9%9D%92%E6%97%85/"/>
-    <published>2021-04-08T16:50:40.000Z</published>
-    <summary>背包客</summary>
-    <title>青旅</title>
-    <updated>2026-06-27T17:08:12.438Z</updated>
+    <updated>2026-06-27T17:33:02.324Z</updated>
   </entry>
 </feed>
