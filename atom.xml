@@ -11,7 +11,7 @@
   <rights>All rights reserved 2026, Aemon</rights>
   <subtitle>切勿浅尝辄止</subtitle>
   <title>Aemon's Blog</title>
-  <updated>2026-06-27T17:33:02.903Z</updated>
+  <updated>2026-06-27T18:21:23.885Z</updated>
   <entry>
     <author>
       <name>Aemon</name>
@@ -30,7 +30,7 @@
       <![CDATA[<p>由于最近在找工作，需要重新整理一下简历。之前简历一般都是用 Word 或者在线平台写的，改起来总有一点不太顺手。既然简历本质上也是一份结构化文档，那不如直接用 Markdown 来写内容，再用 CSS 来控制样式，最后导出成 HTML 和 PDF。</p>]]>
     </summary>
     <title>用 Pandoc 把 Markdown 简历转成 HTML 和 PDF</title>
-    <updated>2026-06-27T17:33:02.903Z</updated>
+    <updated>2026-06-27T18:21:23.885Z</updated>
   </entry>
   <entry>
     <author>
@@ -48,7 +48,7 @@
     <published>2025-05-30T12:55:35.000Z</published>
     <summary>防患于未然。</summary>
     <title>榨干这台NAS第006话-关于备份</title>
-    <updated>2026-06-27T17:33:02.897Z</updated>
+    <updated>2026-06-27T18:21:23.879Z</updated>
   </entry>
   <entry>
     <author>
@@ -66,7 +66,7 @@
     <published>2024-06-12T06:46:13.000Z</published>
     <summary>轻松搞定外网访问，带你玩转Tailscale，把你的NAS变成随身携带的小宝贝！（简介是 ChatGPT 生成的~）</summary>
     <title>榨干这台 NAS 第 005 话-外网访问之 Tailscale</title>
-    <updated>2026-06-27T17:33:02.895Z</updated>
+    <updated>2026-06-27T18:21:23.878Z</updated>
   </entry>
   <entry>
     <author>
@@ -85,7 +85,7 @@
     <published>2022-11-21T03:18:17.000Z</published>
     <summary>秩序很重要。</summary>
     <title>榨干这台 NAS 第 004 话-刮削</title>
-    <updated>2026-06-27T17:33:02.888Z</updated>
+    <updated>2026-06-27T18:21:23.872Z</updated>
   </entry>
   <entry>
     <author>
@@ -105,7 +105,7 @@
     <published>2022-08-24T03:56:26.000Z</published>
     <summary>不知大家小时候有没有去过网吧复制过一堆快捷方式到 U 盘带回家玩的呢？</summary>
     <title>榨干这台 NAS 第 003 话-硬链接</title>
-    <updated>2026-06-27T17:33:02.886Z</updated>
+    <updated>2026-06-27T18:21:23.870Z</updated>
   </entry>
   <entry>
     <author>
@@ -126,7 +126,7 @@
     <published>2022-08-09T14:03:32.000Z</published>
     <summary>只要种子不死，那些不存在的音乐图书和视频就还活在互联网上，没有任何人可以毁掉。</summary>
     <title>榨干这台 NAS 第 002 话-下载工具</title>
-    <updated>2026-06-27T17:33:02.882Z</updated>
+    <updated>2026-06-27T18:21:23.866Z</updated>
   </entry>
   <entry>
     <author>
@@ -147,7 +147,7 @@
       <![CDATA[<p>这是一系列关于 NAS 的文章，系列的名称你们也看到了：「<strong>榨干这台 NAS</strong>」。我将尽可能详细的介绍 NAS 相关的知识，帮助你最大限度的发挥你的手中 NAS 的威力！</p>]]>
     </summary>
     <title>榨干这台 NAS 第 001 话-文件浏览器（File Browser）</title>
-    <updated>2026-06-27T17:33:02.880Z</updated>
+    <updated>2026-06-27T18:21:23.865Z</updated>
   </entry>
   <entry>
     <author>
@@ -166,7 +166,7 @@
       <![CDATA[<p>这是一系列关于 NAS 的文章，系列的名称你们也看到了：「<strong>榨干这台 NAS</strong>」。我将尽可能详细的介绍 NAS 相关的知识，帮助你最大限度的发挥你的手中 NAS 的威力！</p>]]>
     </summary>
     <title>榨干这台 NAS 第 000 话-目录结构</title>
-    <updated>2026-06-27T17:33:02.880Z</updated>
+    <updated>2026-06-27T18:21:23.865Z</updated>
   </entry>
   <entry>
     <author>
@@ -189,7 +189,7 @@
 <p>转载自：<a href="http://jandan.net/p/109642">煎蛋保险小课堂</a></p>]]>
     </summary>
     <title>煎蛋保险小课堂</title>
-    <updated>2026-06-27T17:33:02.903Z</updated>
+    <updated>2026-06-27T18:21:23.885Z</updated>
   </entry>
   <entry>
     <author>
@@ -206,7 +206,7 @@
     <published>2021-09-22T03:00:20.000Z</published>
     <summary>For the identification of mysterious objects</summary>
     <title>What is this thing 15</title>
-    <updated>2026-06-27T17:33:02.501Z</updated>
+    <updated>2026-06-27T18:21:23.540Z</updated>
   </entry>
   <entry>
     <author>
@@ -223,7 +223,7 @@
     <published>2021-08-21T05:33:31.000Z</published>
     <summary>For the identification of mysterious objects</summary>
     <title>What is this thing 14</title>
-    <updated>2026-06-27T17:33:02.475Z</updated>
+    <updated>2026-06-27T18:21:23.517Z</updated>
   </entry>
   <entry>
     <author>
@@ -241,7 +241,7 @@
     <published>2021-08-03T11:33:42.000Z</published>
     <summary>Life, the Universe and Everything</summary>
     <title>如何「黑入」你的特斯拉</title>
-    <updated>2026-06-27T17:33:02.153Z</updated>
+    <updated>2026-06-27T18:21:23.241Z</updated>
   </entry>
   <entry>
     <author>
@@ -258,7 +258,7 @@
     <published>2021-07-22T05:18:55.000Z</published>
     <summary>For the identification of mysterious objects</summary>
     <title>What is this thing 13</title>
-    <updated>2026-06-27T17:33:02.446Z</updated>
+    <updated>2026-06-27T18:21:23.492Z</updated>
   </entry>
   <entry>
     <author>
@@ -274,7 +274,7 @@
     <published>2021-06-30T09:23:19.000Z</published>
     <summary>🌕🌖🌗🌘🌑🌒🌓🌔🌕</summary>
     <title>emoji 背后的故事</title>
-    <updated>2026-06-27T17:33:02.292Z</updated>
+    <updated>2026-06-27T18:21:23.359Z</updated>
   </entry>
   <entry>
     <author>
@@ -291,7 +291,7 @@
     <published>2021-06-22T02:08:46.000Z</published>
     <summary>For the identification of mysterious objects</summary>
     <title>What is this thing 12</title>
-    <updated>2026-06-27T17:33:02.400Z</updated>
+    <updated>2026-06-27T18:21:23.451Z</updated>
   </entry>
   <entry>
     <author>
@@ -307,7 +307,7 @@
     <published>2021-06-20T06:44:31.000Z</published>
     <summary>An apple a day keeps the doctor away</summary>
     <title>A puzzle a day</title>
-    <updated>2026-06-27T17:33:02.162Z</updated>
+    <updated>2026-06-27T18:21:23.247Z</updated>
   </entry>
   <entry>
     <author>
@@ -326,7 +326,7 @@
     <published>2021-06-17T03:47:14.000Z</published>
     <summary>解决问题是令人开心的。</summary>
     <title>nvm use 命令不生效问题以及解决方法</title>
-    <updated>2026-06-27T17:33:02.312Z</updated>
+    <updated>2026-06-27T18:21:23.376Z</updated>
   </entry>
   <entry>
     <author>
@@ -343,7 +343,7 @@
     <published>2021-05-22T02:28:18.000Z</published>
     <summary>For the identification of mysterious objects</summary>
     <title>What is this thing 11</title>
-    <updated>2026-06-27T17:33:02.348Z</updated>
+    <updated>2026-06-27T18:21:23.407Z</updated>
   </entry>
   <entry>
     <author>
@@ -360,7 +360,7 @@
     <published>2021-05-18T01:19:41.000Z</published>
     <summary>「不要盯着微波炉看，会有辐射。」</summary>
     <title>微波炉简易使用指南</title>
-    <updated>2026-06-27T17:33:02.880Z</updated>
+    <updated>2026-06-27T18:21:23.864Z</updated>
   </entry>
   <entry>
     <author>
@@ -377,6 +377,6 @@
     <published>2021-04-22T08:41:59.000Z</published>
     <summary>For the identification of mysterious objects</summary>
     <title>What is this thing 10</title>
-    <updated>2026-06-27T17:33:02.324Z</updated>
+    <updated>2026-06-27T18:21:23.386Z</updated>
   </entry>
 </feed>

@@ -965,6 +965,57 @@ pre .javascript .function {
   margin-top: 0;
   padding-top: 0;
 }
+.old-comments {
+  background: var(--content-bg-color);
+  padding: 0 2px;
+}
+.old-comments-header {
+  align-items: baseline;
+  border-bottom: 1px solid var(--body-bg-color);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5em 1em;
+  justify-content: space-between;
+  margin-bottom: 0.75em;
+  padding-bottom: 0.75em;
+}
+.old-comments-title {
+  font-size: 1.15em;
+  margin: 0;
+}
+.old-comments-count,
+.old-comment-meta {
+  color: var(--text-color);
+  font-size: 0.875em;
+  opacity: 0.72;
+}
+.old-comments-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.old-comment-item {
+  border-bottom: 1px solid var(--body-bg-color);
+  padding: 1em 0;
+}
+.old-comment-item:last-child {
+  border-bottom: 0;
+}
+.old-comment-meta {
+  align-items: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35em 0.75em;
+}
+.old-comment-author {
+  font-weight: 600;
+}
+.old-comment-content {
+  line-height: 1.8;
+  margin-top: 0.45em;
+  white-space: pre-wrap;
+  word-break: break-word;
+}
 .container {
   min-height: 100%;
   position: relative;
@@ -1311,7 +1362,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #ff54ff;
+  background: #307494;
   border-radius: 50%;
   content: ' ';
   display: inline-block;

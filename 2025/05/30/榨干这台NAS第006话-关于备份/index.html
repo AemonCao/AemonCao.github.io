@@ -39,7 +39,7 @@
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/%E6%A6%A8%E5%B9%B2%E8%BF%99%E5%8F%B0NAS%E7%AC%AC006%E8%AF%9D-%E5%85%B3%E4%BA%8E%E5%A4%87%E4%BB%BD/Backrest%E7%95%8C%E9%9D%A26.png">
 <meta property="og:image" content="https://cdn.jsdelivr.net/gh/AemonCao/AemonCao.github.io@master/source/_posts/%E6%A6%A8%E5%B9%B2%E8%BF%99%E5%8F%B0NAS%E7%AC%AC006%E8%AF%9D-%E5%85%B3%E4%BA%8E%E5%A4%87%E4%BB%BD/Backrest%E7%95%8C%E9%9D%A27.png">
 <meta property="article:published_time" content="2025-05-30T12:55:35.000Z">
-<meta property="article:modified_time" content="2026-06-27T17:33:02.897Z">
+<meta property="article:modified_time" content="2026-06-27T18:21:23.879Z">
 <meta property="article:author" content="Aemon">
 <meta property="article:tag" content="Docker">
 <meta property="article:tag" content="NAS">
@@ -252,7 +252,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">更新于</span>
-                <time title="修改时间：2026-06-28 01:33:02" itemprop="dateModified" datetime="2026-06-28T01:33:02+08:00">2026-06-28</time>
+                <time title="修改时间：2026-06-28 02:21:23" itemprop="dateModified" datetime="2026-06-28T02:21:23+08:00">2026-06-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -271,21 +271,7 @@
               </span>
               <span class="post-meta-item-text">阅读次数：</span>
               <span id="busuanzi_value_page_pv"></span>
-            </span>
-  
-  <span class="post-meta-item">
-    
-      <span class="post-meta-item-icon">
-        <i class="far fa-comment"></i>
-      </span>
-      <span class="post-meta-item-text">Valine：</span>
-    
-    <a title="valine" href="/2025/05/30/%E6%A6%A8%E5%B9%B2%E8%BF%99%E5%8F%B0NAS%E7%AC%AC006%E8%AF%9D-%E5%85%B3%E4%BA%8E%E5%A4%87%E4%BB%BD/#valine-comments" itemprop="discussionUrl">
-      <span class="post-comments-count valine-comment-count" data-xid="/2025/05/30/%E6%A6%A8%E5%B9%B2%E8%BF%99%E5%8F%B0NAS%E7%AC%AC006%E8%AF%9D-%E5%85%B3%E4%BA%8E%E5%A4%87%E4%BB%BD/" itemprop="commentCount"></span>
-    </a>
-  </span>
-  
-  <br>
+            </span><br>
             <span class="post-meta-item" title="本文字数">
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
@@ -678,7 +664,26 @@
 
           </div>
           
-    <div class="comments" id="valine-comments"></div>
+    
+<section class="comments old-comments" id="old-comments">
+  <div class="old-comments-header">
+    <h3 class="old-comments-title">历史评论</h3>
+    <span class="old-comments-count">从旧评论系统迁移，共 1 条</span>
+  </div>
+  <ol class="old-comments-list">
+      <li class="old-comment-item" id="old-comment-6985ecb68591971b54c40e03">
+        <div class="old-comment-meta">
+            <span class="old-comment-author">vas</span>
+            <time datetime="2026-02-06T13:29:26.610Z">2026-02-06 21:29</time>
+        </div>
+        <div class="old-comment-content">https://www.newcmy.com/register?aff=HBVX
+建议您试试草莓云机场，可以流畅观看youtube和tiktok，上reddit/x也没有问题，还有各种ai优化节点。</div>
+      </li>
+  </ol>
+</section>
+
+<div class="comments" id="giscus-comments"></div>
+
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -895,32 +900,25 @@
       });
   </script>
 
-
 <script>
-NexT.utils.loadComments(document.querySelector('#valine-comments'), () => {
-  NexT.utils.getScript('//cdn.jsdelivr.net/npm/valine@1/dist/Valine.min.js', () => {
-    var GUEST = ['nick', 'mail', 'link'];
-    var guest = 'nick,mail,link';
-    guest = guest.split(',').filter(item => {
-      return GUEST.includes(item);
-    });
-    new Valine({
-      el         : '#valine-comments',
-      verify     : false,
-      notify     : false,
-      appId      : 'dXrGvgAadbIcmIt5BIuqak9X-gzGzoHsz',
-      appKey     : 'BvQ660cw9YNVNjakRNfdsq1L',
-      placeholder: "评论支持 Markdown 样式。",
-      avatar     : 'mm',
-      meta       : guest,
-      pageSize   : '10' || 10,
-      visitor    : false,
-      lang       : '' || 'zh-cn',
-      path       : location.pathname,
-      recordIP   : true,
-      serverURLs : ''
-    });
-  }, window.Valine);
+NexT.utils.loadComments(document.querySelector('#giscus-comments'), () => {
+  var giscus = document.createElement('script');
+  giscus.src = 'https://giscus.app/client.js';
+  giscus.async = true;
+  giscus.crossOrigin = 'anonymous';
+  giscus.setAttribute('data-repo', 'AemonCao/AemonCao.github.io');
+  giscus.setAttribute('data-repo-id', 'MDEwOlJlcG9zaXRvcnkyNDQ1NDY0NjE=');
+  giscus.setAttribute('data-category', 'Announcements');
+  giscus.setAttribute('data-category-id', 'DIC_kwDODpN7nc4DAA13');
+  giscus.setAttribute('data-mapping', 'pathname');
+  giscus.setAttribute('data-strict', '1');
+  giscus.setAttribute('data-reactions-enabled', '1');
+  giscus.setAttribute('data-emit-metadata', '0');
+  giscus.setAttribute('data-input-position', 'bottom');
+  giscus.setAttribute('data-theme', 'preferred_color_scheme');
+  giscus.setAttribute('data-lang', 'zh-CN');
+  giscus.setAttribute('data-loading', 'lazy');
+  document.querySelector('#giscus-comments').appendChild(giscus);
 });
 </script>
 
